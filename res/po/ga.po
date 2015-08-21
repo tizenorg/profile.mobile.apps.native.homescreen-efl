@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Cuir ar ceal"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Déan fillteán"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Taispeáin"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Oscail"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Eagraigh"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Cuir"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Scrios fillteán"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Iontráil ainm an fhillteáin"
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Déan"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Ag lódáil..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Feidhmchláir"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Ceol"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Bunúsach"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Folaigh"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Ticbhosca"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Cuir tic"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Teideal"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Bain tic"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Díshuiteáil"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Roghn. f'chláir le cur leis"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Roghn. f'chláir le folú"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Roghn. f'chláir le taisp."
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Amharc mar"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Le leathanaigh a atheagrú, beidh ort an cineál amhairc a athrú go greille in-saincheaptha."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Díshuiteáil %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mion-f'chláir"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Díroghnaigh"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Fillteán gan ainm"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Déthapáil leis an tráidire feidhmchlár a dhúnadh."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Déthapáil leis an tráidire feidhmchlár a oscailt."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Déthapáil le hoscailt."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Cnaipe"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Scrios"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Déthapáil agus coinnigh le bogadh."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Déthapáil le dúnadh."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Amharc Aníos ar oscailt."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Feidhmchláir cheanáin"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Cruthófar scáileán baile le suas le %d mír roghnaithe sa chéad scáileán eile"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "I bhFeidhmchláir cheanáin"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Bog chuig fillteán %s."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Bogadh %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Níl inneachar ann"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Leathanach %1$d as %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Suíomh %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Tá an fillteán ar oscailt"
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Scriosfar an fillteán agus gach mír atá istigh ann leis seo"
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Ní féidir tuilleadh feidhmchlár a chur leis. Uaslíon na bhfeidhmchlár bainte amach."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Ní féidir sonraí a choinneáil. Tapáil le triail arís."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Cúlbhrait"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "F.chláir"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Scrios"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Díchumasaigh"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Cabhair"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Baile"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Iris"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Fón"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Cuir míreanna leis"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Fillteán"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Atheagraigh íocóin"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Atheagraigh leathanaigh"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Roghnaigh bosca téacs"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Roghnaigh teimpléad"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Cuir bosca téacs leis"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Athraigh an cúlbhrat"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Cruthaigh fillteán"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Scrios fillteán"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Feidhmchláir íoslódáilte"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Asbhn. f.chláir + scrios fillt."
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Díchumasaigh an feidhmchlár seo?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Beidh S Planner, Tascanna agus S Memo Dynamic Boxes ar an leathanach nua"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Beidh Twitter Dynamic Boxes ar an leathanach nua. Ar an gcéad scáileán eile, roghnaigh suas le %d amlíne de chuid daoine atá á leanúint agat lena dtaispeáint ar an leathanach nua."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Scriosfar an fillteán seo, ach beidh na feidhmchláir laistigh de ar fáil ar do scáileán baile i gcónaí. Scrios an fillteán seo?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Theip ar athlódáil. Tá cuimhne an ghléis lán."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Níl tacú ann don chló ag an méid seo."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Ní féidir líne bhreise a chur leis de dheasca teorann spáis."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 mhír neamhléite"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Mód cuir in eagar"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "%d roghnaithe ar an iomlán."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d fógra neamhléite"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Roghchlár aníos"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Svaidhpeáil le dhá mhéar le hamharc ar an gcéad leathanach eile."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Ceanntásc aníos"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Téacs i gcorp na míre aníos"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Scáileán baile"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Leathanach bogtha chuig %1$d de %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Ró %1$d, colún %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Cuir leathanach leis"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Gan roghnú"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Cnaipe Raidió"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Roghnaithe"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Snag snasta"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Cló réamhshocraithe"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Teagmhálaithe"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Uaslíon na gcarachtar bainte amach."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Cuir ar ceal"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Déanta"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "%d mír á dtaispeáint"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Sceideal"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Déthapáil leis an roghchlár a dhúnadh."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Scipeáil"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Roghnaigh"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "An tIdirlíon"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d roghnaithe"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Ar aghaidh"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "Folófar %d mír."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Scriosfar an leathanach seo agus na míreanna ar fad istigh ann leis seo."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Scrios leathanach"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Scrios"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Taispeáin f.chláir fholaithe"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Folaigh feidhmchláir"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Taisp. f.chláir dhíchumasaithe"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "Ní féidir %s a dhíshuiteáil. Díchumasófar ina ionad é."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "Folófar 1 mhír."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Ní féidir an Bosca Baile seo a chur leis an scáileán baile. Níl go leor spáis ar an scáileán baile. Scrios roinnt Boscaí Baile agus triail arís."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Ní féidir cur leis"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Boscaí Baile"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Gach leathanach"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Bán"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Cuir Dynamic Box leis"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Bain"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Bain fillteán"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Bainfear an fillteán. Ní dhíshuiteálfar feidhmchláir san fhillteán seo."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "De láimh"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "De réir ainm (A-Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "Díshuiteálfar %s"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Ní féidir íocóin atá sórtáilte de réir ainm (A-Z) a atheagrú."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "DÉANTA"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "CUIR AR CEAL"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Sórtáil míreanna"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Sórtáil míreanna"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Giuirléidí"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Ní féid. giuirléid a chur leis"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Cuir giuirléid leis"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Níl dóthain spáis ar an scáileán baile. Bain roinnt giuirléidí agus triail arís."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Cuir in eagar"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Cuir in eagar"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Téamaí"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Níl an feidhmchlár suiteáilte."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "Díchumasófar %s mar aon leis na gnéithe go léir a bhaineann leis. Lena chumasú athuair, gabh chuig Socruithe > Bainisteoir feidhmchlár."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Uaslíon na bhfeidhmchlár i bhfillteán (%d) bainte amach."
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="2.4" package="org.tizen.homescreen-efl" version="0.0.1" install-location="internal-only">
+    <author email="m.szczecinsk@samsung.com" href="www.samsung.com">Michal Szczecinski</author>
+    <label>homescreen-efl</label>
+    <description>Homescreen Application</description>
+    <ui-application appid="org.tizen.homescreen-efl" exec="/opt/usr/apps/org.tizen.homescreen-efl/bin/homescreen-efl" nodisplay="true" multiple="false" type="capp" taskmanage="false" hw-acceleration="use-GL">
+        <label>homescreen-efl</label>
+		<category name="http://tizen.org/category/homeapp"/>
+        <icon>/usr/share/icons/default/small/org.tizen.menu-screen.png</icon>
+    </ui-application>
+    <privileges>
+        <privilege>http://tizen.org/privilege/shortcut</privilege>
+        <privilege>http://tizen.org/privilege/systemsettings</privilege>
+        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+        <privilege>http://tizen.org/privilege/notification</privilege>
+        <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+        <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+    </privileges>
+</manifest>

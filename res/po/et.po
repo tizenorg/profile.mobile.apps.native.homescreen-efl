@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Tühista"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Loo kaust"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Näita"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Ava"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Muuda"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Lisa"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Kustuta kaust"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Sisestage kausta nimi."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Loo"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Laadimine..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Rakendused"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Muusika"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Põhiline"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Peida"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Märkeruut"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Märgista"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Pealkiri"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Eemalda märgistus"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Deinstalli"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Vali lisatav rak."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Valige rak., mida peita"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Valige rak., mida näidata"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Kuvamisviis"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Lehtede ümberkorraldamiseks peate kuvaviisiks valima kohandatava ruudustiku."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Kas desinstallida %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mini-raken.-d"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Tühista valik"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Nimetamata kaust"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Toksake kaks korda, et sulgeda rakenduste salve."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Toksake kaks korda, et avada rakenduste salve."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Toksake kaks korda, et avada."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Nupp"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Kustuta"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Toksake kaks korda ja hoidke sõrme peal, et liigutada."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Toksake kaks korda, et sulgeda."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Rippvaade on avatud."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Lemmikrakendused"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Avaekraan moodustatakse kuni %d üksusest, mis valitakse järgmisel ekraanil"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "Lemmikrakendustes"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Teisaldatakse kausta %s."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Üksuse %s teisaldamine"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Sisu pole"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Leht %1$d/%2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Asukoht %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Kaust on avatud."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "See kustutab kausta ja koik selle uksused."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Rohkem rakendusi ei saa lisada. Maksimaalne rakenduste arv on saavutatud."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Andmeid ei saa laadida. Toksake, et proovida uuesti."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Taustpildid"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Rak.-d"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Kust."
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Desaktiveeri"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Spikker"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Avaekr"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Ajakiri"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telefon"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Lisa üksused"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Kaust"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Järjesta ikoonid ümber"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Järjesta lehed ümber"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Valige tekstikast"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Vali mall"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Lisa tekstikast"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Muuda taustpilti"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Loo kaust"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Kustuta kaust"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Allalaetud rakendused"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Ekstr. rak.-d ja kustuta kaust"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Kas desaktiveerida see rakendus?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Uuel lehel on rakenduste S Planner, Ülesanded ja S Memo Dynamic Box’id"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Uuel lehel on Twitteri Dynamic Box’id. Järgmisel ekraanil saate valida kuni %d teie poolt jälgitava inimese ajaskaalat, mida kuvatakse uuel lehel."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "See kaust kustutatakse, kuid selles olevad rakendused jäävad teie avaekraanil kättesaadavaks. Kas kustutada see kaust?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Uuesti laadimine nurjus. Seadme mälu on täis."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Fonti ei toetata selles suuruses"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Lisarida ei saa lisada, kuna ruumi pole piisavalt"
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 lugemata üksus"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Redigeerimisrežiim"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "%d üksust on valitud kokku."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d lugemata teavitust"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Menüühüpik"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Libistage kahe sõrmega, et vaadata järgmist lehte."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Hüpikpäis"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Hüpiku tekst"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Avaleht"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Leht on teisaldatud: %1$d/%2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Rida %1$d, veerg %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Lisa leht"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Pole valitud"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Raadio nupp"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Valitud"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Vaikefont"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Kontaktid"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Lubatud arv märke on täis."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Tühista"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Valmis"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Näidatakse %d üksust"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Ajakava"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Toksake kaks korda, et sulgeda menüüd."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Jäta v."
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Vali"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d on valitud"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Järgmine"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d üksust peidetakse."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "See leht ja kõik selle üksused kustutatakse."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Kustuta leht"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Kustuta"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Kuva peidetud rakendused"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Peida rakendused"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Kuva desaktiv.-tud rakendused"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "Rakendust %s ei saa desinstallida. See desaktiveeritakse hoopis."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 üksus peidetakse."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Seda Home Box’i ei saa lisada avaekraanile. Avaekraanil pole piisavalt ruumi. Eemaldage mõni Home Box ja proovige uuesti."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Ei saa lisada"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Box’id"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Kõik lehed"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Tühi"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Lisa Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Eemalda"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Eemalda kaust"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Kaust eemaldatakse. Selles kaustas olevaid rakendusi ei desinstallita."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Käsitsi"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Nime järgi (A–Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s desinstallitakse."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Nime järgi sorditud ikoone ei saa ümber korraldada (A–Z)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "VALMIS"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "TÜHISTA"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Sordi üksused"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Üksuste sortimine"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Vidinad"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Vidinat ei saa lisada"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Vidina lisamine"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Avaekraanil pole piisavalt ruumi. Kustutage mõned vidinad ja proovige uuesti."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Redigeeri"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Redigeeri"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Teemad"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Rakendus pole installitud."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s ja kõik sellega seotud funktsioonid desaktiveeritakse. Selle uuesti aktiveerimiseks avage Seaded > Rakenduse haldur."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Rakenduste maksimaalne arv kaustas (%d) on täis."
+

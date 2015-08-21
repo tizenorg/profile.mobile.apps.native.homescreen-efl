@@ -1,0 +1,402 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "إلغاء"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "موافق"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "إنشاء مجلد"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "عرض"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "فتح"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "تعديل"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "إضافة"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "مسح المجلد"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "أدخل اسم المجلد."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "إنشاء"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "جاري التحميل ..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "التطبيقات"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "الموسيقى"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "أساسي"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "إخفاء"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "مربع التحديد"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "تحديد"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "العنوان"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "إلغاء التحديد"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "إلغاء التثبيت"
+
+msgid "IDS_AT_BUTTON_CHANGE_VIEW"
+msgstr "تغيير العرض"
+
+msgid "IDS_AT_HEADER_PD_SELECTED"
+msgstr "تم تحديد %d"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "حدد تطبيقات للإضافة"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "تحديد تطبيقات لإخفائها"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "تحديد تطبيقات لعرضها"
+
+msgid "IDS_AT_OPT_ALPHABETICAL_GRID_ABB"
+msgstr "شبكة أبجدية"
+
+msgid "IDS_AT_OPT_CUSTOMISABLE_GRID_ABB"
+msgstr "شبكة قابلة للتخصيص"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "عرض ﻜ"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "لإعادة ترتيب الشاشات، يجب تغيير نوع العرض إلى شبكة قابلة للتخصيص."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "هل تريد إلغاء تثبيت %s؟"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "تطبيقات صغيرة"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "إلغاء تحديد"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "مجلد ‏‫بدون اسم"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "انقر نقرًا مزدوجًا لإغلاق علبة التطبيقات."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "انقر نقرًا مزدوجًا لفتح علبة التطبيقات."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "انقر نقرا مزدوجا للفتح."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "الزر"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "حذف"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "انقر نقرا مزدوجا مع الاستمرار للتحريك."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "انقر نقرا مزدوجا للإغلاق."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "فتح إفلات العرض."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "التطبيقات المفضلة"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "ستتألف الشاشة الرئيسية من عناصر يصل عددها إلى %d يتم تحديدها في الشاشة التالية"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "في التطبيقات المفضلة"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "انقل إلى مجلد %s."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "يتم نقل %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "لا يوجد محتوى"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "صفحة %1$d من %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "الموقع %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "تم فتح المجلد."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "سيترتب على ذلك حذف المجلد وجميع العناصر التي يشتمل عليه."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "تتعذر إضافة المزيد من التطبيقات. تم الوصول إلى الحد الأقصى لعدد التطبيقات."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "يتعذر تحميل البيانات. انقر لإعادة المحاولة."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "خلفيات"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "تطبيقات"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "حذف"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "إلغاء تفعيل"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "تعليمات"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "الرئيسية"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "المجلة"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "الهاتف"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "إضافة عناصر"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "المجلد"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "إعادة ترتيب الرموز"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "إعادة ترتيب الصفحات"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "تحديد مربع نص"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "تحديد القالب"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "إضافة مربع نص"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "تغيير الخلفية"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "إنشاء مجلد"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "حذف المجلد"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "تطبيقات تم تنزيلها"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "استخراج التطبيقات وحذف المجلد"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "هل تريد إلغاء تفعيل هذا التطبيق؟"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "ستتألّف الصفحة الجديدة من صناديق S Memo والمهام وS Planner الديناميكية"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "ستتألّف الصفحة الجديدة من صناديق Twitter الديناميكية. في الشاشة التالية، حدّد ما يصل إلى %d من يوميات الأشخاص الذين تتابعهم لعرضها على الصفحة الجديدة."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "سيتم حذف هذا المجلد، إلا أنّ التطبيقات الموجودة فيه ستبقى متوفرة على الشاشة الرئيسية. هل تريد حذف هذا المجلد؟"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "فشلت إعادة التحميل. ذاكرة الجهاز ممتلئة."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "الخط بهذا الحجم غير معتمد"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "تتعذر إضافة سطر آخر بسبب تقييد المساحة"
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "يوجد عنصر واحد غير مقروء"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "وضع التحرير"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "تم تحديد %d بشكل إجمالي."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "توجد %d إخطارات غير مقروءة‬"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "إطار القائمة المنبثق"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "اسحب بإصبعين لعرض الصفحة التالية."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "عنوان منبثق"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "النص في الإطار المنبثق الأساسي"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "الشاشة الرئيسية"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "تم نقل الصفحة إلى %1$d من %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "الصف%1$d، العمود %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "إضافة صفحة"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "لم يتم اختياره"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "زر الراديو"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "تم التحديد"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "شوكو كوكي"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "جاز هادئ"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "الخط الافتراضي"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "إكليل الجبل"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "جهات الاتصال"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "تم الوصول إلى أقصى عدد من الحروف."
+
+msgid "IDS_COM_SK_OK"
+msgstr "موافق"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "إظهار %d عناصر"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "منظم"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "هلفتيكا نويه"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "انقر نقرا مزدوجا لإغلاق القائمة."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "تخطي"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "اختيار"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "الإنترنت"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "التالي"
+
+msgid "IDS_HS_OPT_MANAGE_APPLICATIONS_ABB"
+msgstr "إدارة التطبيقات"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "سيتم إخفاء %d من العناصر."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "سيتم حذف هذه الصفحة وكافة العناصر التي تتضمنها."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "حذف الصفحة"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "مسح"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "إظهار التطبيقات المخفية"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "إخفاء التطبيقات"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "عرض التطبيقات التي تم إلغاء تفعيلها"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "يتعذر إلغاء تثبيت %s. سيتم إلغاء تفعيله بدلاً من ذلك."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "سيتم إخفاء عنصر واحد."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "تتعذر إضافة مربع الشاشة الرئيسية هذا إلى الشاشة الرئيسية. ما من مساحة كافية على الشاشة الرئيسية. قم بإزالة بعض مربعات الشاشة الرئيسية وحاول مرة أخرى."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "غير قابل على الإضافة"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "مربعات الشاشة الرئيسية"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "كل الصفحات"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "فارغ"
+
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "فرز العناصر بالترتيب الأبجدي"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "فرز العناصر بالترتيب الأبجدي"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "سيتم تخزين رموز التطبيقات ومجلداتها بالترتيب الأبجدي. سيتم تجاهل أي عمليات تخصيص قمت بها من قبل."
+

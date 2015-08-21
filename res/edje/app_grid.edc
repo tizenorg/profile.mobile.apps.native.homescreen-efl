@@ -1,0 +1,148 @@
+/*
+ * Copyright 2012  Samsung Electronics Co., Ltd
+ *
+ * Licensed under the Flora License, Version 1.1 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://floralicense.org/license/
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include "../../inc/conf.h"
+
+collections {
+	group {
+		name: GROUP_APP_GRID;
+		parts {
+			//We want to have animations and don't take care about gengrid size from code.
+			//Because of that we must to add a part into the layout which set the size of the elm_layout
+			//widget properly.
+			part {
+				name: PART_APP_GRID_SIZE_SETTER;
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					rel1 {relative: 0.0 0.0;}
+					rel2 {relative: 1.0 1.0;}
+				}
+			}
+			part {
+				name: PART_APP_GRID_BG;
+				type: RECT;
+				description {
+					state: "default" 0.0;
+					rel1 {relative: 0.0 0.0; to: PART_APP_GRID_SIZE_SETTER;}
+					rel2 {relative: 1.0 1.0; to: PART_APP_GRID_SIZE_SETTER;}
+					color: 0 0 0 45;
+					visible: 1;
+				}
+				description {
+					state: "hidden" 0.0; //Used in the folder
+					inherit: "default" 0.0;
+					visible: 0;
+				}
+			}
+			part {
+				name: PART_APP_GRID_EDIT_BG;
+				type: RECT;
+				description {
+					state: "default" 0.0;
+					rel1 {relative: 0.0 0.0; to: PART_APP_GRID_CONTENT;}
+					rel2 {relative: 1.0 1.0; to: PART_APP_GRID_CONTENT;}
+					color: 20 20 20 0;
+					visible: 1;
+				}
+				description {
+					state: "edit" 0.0;
+					inherit: "default" 0.0;
+					color: 20 20 20 40;
+				}
+				description {
+					state: "hidden" 0.0; //Used in the folder
+					inherit: "default" 0.0;
+					visible: 0;
+				}
+			}
+			part {
+				name: PART_APP_GRID_CONTENT;
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					align: 0.5 0.5;
+					rel1 {relative: 0.0 CONTENT_Y_MIN; to: PART_APP_GRID_SIZE_SETTER;}
+					rel2 {relative: 1.0 CONTENT_APP_Y_MAX; to: PART_APP_GRID_SIZE_SETTER;}
+				}
+				description {
+					state: "edit" 0.0;
+					inherit: "default" 0.0;
+					rel1.relative: 0.05 CONTENT_Y_MIN;
+					rel2.relative: 0.95 0.9;
+				}
+			}
+		}
+		programs {
+			program {
+				name: "bg_edit_mode_on";
+				signal: SIGNAL_EDIT_MODE_ON;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "edit" 0.0;
+				target: PART_APP_GRID_CONTENT;
+				target: PART_APP_GRID_EDIT_BG;
+				transition: DECELERATE ANIMATION_RESIZE_TIME;
+			}
+			program {
+				name: "bg_edit_mode_off";
+				signal: SIGNAL_EDIT_MODE_OFF;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "default" 0.0;
+				target: PART_APP_GRID_CONTENT;
+				target: PART_APP_GRID_EDIT_BG;
+				transition: DECELERATE ANIMATION_RESIZE_TIME;
+			}
+			program {
+				name: "bg_choose_mode_off";
+				signal: SIGNAL_CHOOSE_MODE_OFF;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "default" 0.0;
+				target: PART_APP_GRID_CONTENT;
+				transition: DECELERATE ANIMATION_RESIZE_TIME;
+			}
+			program {
+				name: "bg_choose_mode_on";
+				signal: SIGNAL_CHOOSE_MODE_ON;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "edit" 0.0;
+				target: PART_APP_GRID_CONTENT;
+				transition: DECELERATE ANIMATION_RESIZE_TIME;
+			}
+			program {
+				name: "bg_hidden";
+				signal: SIGNAL_APP_GRID_BG_HIDE;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "hidden" 0.0;
+				target: PART_APP_GRID_BG;
+				target: PART_APP_GRID_EDIT_BG;
+			}
+		}
+	}
+	group {
+		name: GROUP_APP_GRID_ITEM_CONTAINER;
+		parts {
+			part {
+				name: PART_APP_GRID_ITEM;
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					rel1.relative: 0.0 0.0;
+					rel2.relative: 1.0 1.0;
+				}
+			}
+		}
+	}
+}

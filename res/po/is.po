@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Hætta við"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "Í lagi"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Búa til möppu"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Birta"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Opna"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Breyta"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Bæta"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Eyða möppu"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Ritið heiti möppu."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Búa til"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Hleð..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Forrit"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Tónlist"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Venjulegt"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Hylja"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Merkibox"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Merkja"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Titill"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Afmerkja"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Fjarlægja"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Veldu forrit"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Veldu forrit til að fela"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Veldu forrit til að sýna"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Sjá sem"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Til að endurraða síðum þarftu að breyta skoðunarstillingunni í stillanlega töflu."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Fjarlægja %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Smá-forrit"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Afvelja"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Ónefnd mappa"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Pikkaðu tvisvar til að loka forritaskúffu."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Pikkaðu tvisvar til að opna forritaskúffu."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Pikkaðu tvisvar til að opna."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Hnappur"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Eyða"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Tvípikkaðu og haltu fingri á skjánum til að færa."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Tvípikkaðu til að loka."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Felligluggi opinn."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Uppáhaldsforrit"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Heimaskjár verður búinn til með allt að %d atriðum sem valin eru á næsta skjá"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "Í uppáhaldsforritum"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Færa í möppuna %s."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Færi %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Efni vantar"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Síða %1$d af %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Staða %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Mappan er opin."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Þetta eyðir möppunni og öllum atriðum sem í henni eru."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Ekki er hægt að bæta við fleiri forritum. Hámarksfjölda forrita hefur verið náð."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Ekki tókst að hlaða gögn. Pikkaðu til að reyna aftur."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Veggfóður"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Forrit"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Eyða"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Slökkva"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Hjálp"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Heim"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Tímarit"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Í síma"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Bæta við hlutum"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Mappa"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Endurraða táknum"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Endurraða síðum"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Veldu textareit"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Velja sniðmát"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Bæta við textareit"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Skipta um veggfóður"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Búa til möppu"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Eyða möppu"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Sótt forrit"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Flytja forrit út og eyða möppu"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Viltu gera þetta forrit óvirkt?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Nýja síðan mun samanstanda af Dynamic Box fyrir S Planner, Verkefni og S Memo"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Nýja síðan mun samanstanda af Dynamic Box fyrir Twitter. Á næsta skjá skaltu velja allt að %d tímalínur fólks sem þú fylgist með og vilt birta á nýju síðunni."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Þessari möppu verður eytt en forritin sem í henni eru verða áfram tiltæk á heimaskjánum. Viltu eyða möppunni?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Mistókst að endurhlaða. Minni tækisins er fullt."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Leturgerð er ekki studd í þessari stærð."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Ekki er nægt pláss til að bæta við annarri línu."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "Eitt ólesið atriði"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Breytingastilling"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "%d valin alls."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d ólesnar tilkynningar"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Sprettivalmynd"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Strjúktu með tveimur fingrum til að skoða næstu síðu."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Sprettihaus"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Texti í meginmáli sprettiglugga"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Heimaskjár"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Síða færð á %1$d af %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Lína %1$d, dálkur %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Bæta við síðu"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Ekki valið"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Valhringur"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Valið"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Sjálfgefin leturgerð"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Tengiliðir"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Hámarksfjölda stafa hefur verið náð."
+
+msgid "IDS_COM_SK_OK"
+msgstr "Í lagi"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Hætta við"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Lokið"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Birti %d atriði"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Dagskrá"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Tvípikkaðu til að loka valmyndinni."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Sl."
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Velja"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internetið"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d valið"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Næsta"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d atriði voru falin."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Þessari síðu og öllum atriðum á henni verður eytt."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Eyða síðu"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Eyða"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Sýna falin forrit"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Fela forrit"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Sýna óvirk forrit"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "Ekki er hægt að fjarlægja %s. Það verður gert óvirkt í staðinn."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 atriði verður falið."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Ekki er hægt að bæta þessum heimakassa á heimaskjáinn. Ekki er nægt pláss á heimaskjánum. Fjarlægðu einhverja heimakassa og reyndu aftur."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Ekki hægt að bæta við"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Heimakassar"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Allar síður"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Autt"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Bæta við Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Fjarlægja"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Fjarlægja möppu"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Mappa verður fjarlægð. Forrit í þessari möppu verða ekki fjarlægð."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Handvirkt"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Eftir heiti (A–Ö)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s verður fjarlægt."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Ekki er hægt að endurraða táknum sem eru í stafrófsröð (A–Ö)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "LOKIÐ"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "HÆTTA VIÐ"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Raða atriðum"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Raða atriðum"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Græjur"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Ekki er hægt að bæta við græju"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Bæta við græju"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Ekki er nægt pláss á heimaskjánum. Fjarlægðu einhverjar græjur og reyndu aftur."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Breyta"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Breyta"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Þemu"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Forritið var ekki sett upp."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s og allir tengdir eiginleikar verða gerðir óvirkir. Farðu í Stillingar > Forritastjórnun til að gera það virkt að nýju."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Hámarksfjölda forrita í möppu (%d) hefur verið náð."
+

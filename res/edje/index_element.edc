@@ -1,0 +1,113 @@
+/*
+ * Copyright 2012  Samsung Electronics Co., Ltd
+ *
+ * Licensed under the Flora License, Version 1.1 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://floralicense.org/license/
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include "../../inc/conf.h"
+
+collections {
+	group {
+		name: GROUP_INDEX_ELEMENT;
+
+		images {
+			image: "../images/core_page_indicator_on.png" COMP;
+			image: "../images/core_page_indicator_on_horizontal.png" COMP;
+		}
+
+		script {
+			public rot;
+			public alpha;
+
+			public message(Msg_Type:type, id, ...) {
+				if(type == MSG_FLOAT_SET)
+				{
+					set_float(rot, getfarg(2));
+					set_float(alpha, getfarg(3));
+					send_message(type, id, getfarg(2), getfarg(3));
+				}
+			}
+		}
+
+		parts {
+			part {
+				name: INDICE_SIZE_SETTER;
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					rel1 {relative: 0.0 0.0;}
+					rel2 {relative: 1.0 1.0;}
+				}
+			}
+			part {
+				name: "element";
+				type: IMAGE;
+
+				description {
+					state: "default" 0.0;
+					color: 255 255 255 75;
+					rel1 {relative: 0.0 0.0; to: INDICE_SIZE_SETTER;}
+					rel2 {relative: 1.0 1.0; to: INDICE_SIZE_SETTER;}
+					image {
+						normal: "../images/core_page_indicator_on_horizontal.png";
+					}
+					map {
+						on: 1;
+						perspective_on: 1;
+						smooth: 1;
+						alpha: 1;
+
+					}
+				}
+				description {
+					state: "current" 0.0;
+					inherit: "default" 0.0;
+					color: 255 255 255 255;
+					image {
+						normal: "../images/core_page_indicator_on.png";
+					}
+				}
+			}
+		}
+
+		programs {
+			program {
+				name: "rotation,change";
+				signal: "rot_changed";
+				source: "ly";
+				script {
+					custom_state(PART:"element", "default", 0.0);
+					set_state_val(PART:"element", STATE_MAP_ROT_Z, get_float(rot));
+					set_state_val(PART:"element", STATE_COLOR, 255, 255, 255, round(get_float(alpha)));
+					set_state(PART:"element", "custom", 0.0);
+				}
+			}
+			program
+			{
+				name: "indice_set_default";
+				signal: SIGNAL_SET_DEFAULT;
+				source: "layout";
+				action: STATE_SET "default" 0.0;
+				target: "element";
+			}
+			program
+			{
+				name: "indice_set_current";
+				signal: SIGNAL_SET_CURRENT;
+				source: "layout";
+				action: STATE_SET "current" 0.0;
+				target: "element";
+			}
+		}
+	}
+}

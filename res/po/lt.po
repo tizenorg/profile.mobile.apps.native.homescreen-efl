@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Atšaukti"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "Gerai"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Kurti aplanką"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Rodyti"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Atidaryti"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Redaguoti"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Įtr."
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Trinti aplanką"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Įrašyti aplanko pavadinimą."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Kurti"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Įkeliama..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Programos"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Muzika"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Pagrindinis"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Nerodyti"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Žymimasis langelis"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Pažymėti"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Pavadinimas"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Panaikinti žymėjimą"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Pašalinti"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Rink.pridėt.progr."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Rink. slėptinas programas"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Rink. rodytinas programas"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Peržiūrėti kaip"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Jei norite pertvarkyti puslapius, rodinio tipą turite pakeisti į pasirinktinį tinklelį."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Pašalinti „%s“?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Miniprogramos"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Panaikinti žymėjimą"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Aplankas be pavadinimo"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Bakstelėkite dukart, kad uždarytumėte programų dėklą."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Bakstelėkite dukart, kad atidarytumėte programų dėklą."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Bakstelėkite dukart ir atidarykite."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Mygtukas"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Trinti"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Bakstelėkite du kartus ir laikykite, kad perkeltumėte."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Bakstelėkite du kartus norėdami uždaryti."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "„Drop view“ atidarytas."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Mėgstamiausios programos"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Pradžios ekranas bus suformuotas iš %d elementų, pasirinktų kitame ekrane"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "Mėgstamiausiose programose"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Perkelti į aplanką „%s“."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Perkeliama %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Turinio nėra"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "%1$d iš %2$d psl."
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "%d padėtis"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Aplankas atidarytas."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Bus ištrintas šis aplankas ir visi jame esantys elementai."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Neįmanoma pridėti daugiau programų. Pasiektas didžiausias programų skaičius."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Neįmanoma įkelti duomenų. Bakstelėkite ir bandykite dar kartą."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Ekrano fonai"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Progr."
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Trinti"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Išjungti"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Žinynas"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Pradž."
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Žurnalas"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telef."
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Pridėti elementų"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Aplankas"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Pertvarkyti piktogramas"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Pertvarkyti puslapius"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Pasirinkite teksto lauką"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Rinktis šabloną"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Pridėti teksto laukelį"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Keisti ekrano foną"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Sukurti aplanką"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Trinti aplanką"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Atsisiųstos programos"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Išskleist prog.ir trin.aplnk."
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Išjungti šią programą?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Naujame puslapyje bus „S Planner“, užduotys ir „S Memo Dynamic Box“"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Naujame puslapyje bus „Twitter Dynamic Box“. Kitame ekrane pasirinkite iki %d stebimų žmonių laiko juostų, kurios bus rodomos naujame puslapyje."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Šis aplankas bus ištrintas, bet jame esančios programos liks pasiekiamos pradžios ekrane. Ištrinti šį aplanką?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Nepavyko įkelti iš naujo. Įrenginio atmintis pilna."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Šio dydžio šriftas nepalaikomas"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Papildomos eilutės neįmanoma pridėti dėl vietos apribojimų"
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 neskaitytas elementas"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Redagavimo režimas"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Iš viso pasirinkta: %d."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "Neskaitytų pranešimų: %d"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Iškylantis meniu"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Norėdami peržiūrėti kitą puslapį braukite dviem pirštais."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Iškylančiojo lango antraštė"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Iškylančiojo lango teksto turinys"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Pradžios ekranas"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Puslapis perkeltas į %1$d iš %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "%1$d eilutė, %2$d stulpelis"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Pridėti puslapį"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Nepasirinkta"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Akutė"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Pasirinkta"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "„Choco cooky“"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Numatytasis šriftas"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Adresatai"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Pasiektas didžiausias simbolių skaičius."
+
+msgid "IDS_COM_SK_OK"
+msgstr "Gerai"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Atšaukti"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Atlikta"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Rodoma elementų: %d"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Tvarkaraštis"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Bakstelėkite du kartus, kad uždarytumėte meniu."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Praleis."
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Rinktis"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internetas"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "Pasirinkta: %d"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Kitas"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "Bus paslėpta elementų: %d."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Šis puslapis ir visi jame esantys elementai bus ištrinti."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Ištrinti puslapį"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Trinti"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Rodyti paslėptas programas"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Slėpti programas"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Rodyti išjungtas programas"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "Neįmanoma pašalinti „%s“. Ji bus išjungta."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 elementas bus paslėptas."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Negalima pridėti šio „Home Box“ pradžios ekrane. Pradžios ekrane nepakanka vietos. Pašalinkite kelis „Home Box“ ir bandykite dar kartą."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Negalima pridėti"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "„Home Box“\nelementai"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Visi puslapiai"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Tuščia"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Pridėti „Dynamic Box“"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Šalinti"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Pašalinti aplanką"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Aplankas bus pašalintas. Šiame aplanke esančios programos nebus pašalintos."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Rankiniu būdu"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Pagal vardą (A-Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s bus pašalinta."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Neįmanoma pertvarkyti pagal pavadinimą (A–Z) surūšiuotų piktogramų."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "ATLIKTA"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ATŠAUKTI"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Rūšiuoti elementus"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Rūšiuoti elementus"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Valdikliai"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Neįmanoma pridėti valdiklio"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Pridėti valdiklį"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Pradžios ekrane nepakanka vietos. Pašalinkite kelis valdiklius ir bandykite dar kartą."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Redaguoti"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Redaguoti"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Temos"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Programa nebuvo įdiegta."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s ir visos su ja susijusios funkcijos bus išjungtos. Norėdami ją įjungti eikite į skirtuką Nustatymai > Programų tvarkyklė."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Pasiektas didžiausias programų skaičius aplanke (%d)."
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="2.3" package="org.tizen.homescreen-efl" version="1.0.0">
+    <profile name="mobile"/>
+    <ui-application appid="org.tizen.homescreen-efl" exec="homescreen-efl" multiple="false" nodisplay="true" taskmanage="false" type="capp">
+        <label>homescreen-efl</label>
+        <icon>homescreen-efl.png</icon>
+    </ui-application>
+    <privileges>
+        <privilege>http://tizen.org/privilege/shortcut</privilege>
+        <privilege>http://tizen.org/privilege/systemsettings</privilege>
+        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+        <privilege>http://tizen.org/privilege/notification</privilege>
+        <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
+        <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+    </privileges>
+</manifest>

@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Atcelt"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "Labi"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Izveidot mapi"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Rādīt"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Atvērt"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Rediģēt"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Piev."
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Dzēst mapi"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Ievadiet mapes nosaukumu."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Izveidot"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Ielādē..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Programmas"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Mūzika"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Pamata"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Slēpt"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Atzīmējamais lodziņš"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Atzīmēt"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Nosaukums"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Noņemt atzīmi"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Atinstalēt"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Izvēl. programmas"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Izv. slēpjamās programmas"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Izv. parādāmās programmas"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Skatīt kā"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Lai pārkārtotu lapas, skata veids ir jānomaina uz pielāgojamu režģi."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Vai atinstalēt %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mini programmas"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Atcelt izvēli"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Nenosaukta mape"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Lai aizvērtu programmu ikonjoslu, veiciet dubultskārienu."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Lai atvērtu programmu ikonjoslu, veiciet dubultskārienu."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Veiciet dubultskārienu, lai atvērtu."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Poga"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Dzēst"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Veiciet dubultskārienu un turiet, lai pārvietotu."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Veiciet dubultskārienu, lai aizvērtu."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Nolaižamais skats ir atvērts."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Izlases programmas"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Sākuma ekrāns tiks izveidots no līdz pat %d objektiem, ko varēs izvēlēties nākamajā ekrānā"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "Izlases programmās"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Pārvietojiet uz mapi %s."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Pārvieto %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Nav satura"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "%1$d. lapa no %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Pozīcija %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Mape ir atvērta."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Tādējādi tiks izdzēsta mape un visi tajā esošie objekti."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Nevar pievienot papildu programmas. Sasniegts maksimālais programmu skaits."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Nevar ielādēt datus. Pieskarieties, lai mēģinātu vēlreiz."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Fona attēli"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Progr."
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Dzēst"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Deaktivizēt"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Palīdzība"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Sākums"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Žurnāls"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Tālr."
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Pievienot objektus"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Mape"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Pārkārtojiet ikonas"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Pārkārtojiet lapas"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Izvēlieties tekstlodziņu"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Izvēlēties veidni"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Pievienot tekstlodziņu"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Mainīt fona attēlu"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Izveidot mapi"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Dzēst mapi"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Lejupielādētās programmas"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Izvilkt progr. un izdzēst mapi"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Vai deaktivizēt šo programmu?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Jaunajā lapā būs S Planner, uzdevumu un S Memo Dynamic Box lauki"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Jaunajā lapā būs Twitter Dynamic Box lauki. Nākamajā ekrānā izvēlieties līdz %d laika skalas personām, kurām sekojat, lai tās tiktu parādītas jaunajā lapā."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Šī mape tiks izdzēsta, bet tajā esošās programmas būs pieejamas jūsu sākuma ekrānā. Vai izdzēst šo mapi?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Neizdevās ielādēt atkārtoti. Ierīces atmiņa ir pilna."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Fonts šajā lielumā netiek atbalstīts"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Vietas ierobežojuma dēļ nevar pievienot papildu līniju"
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 nelasīts objekts"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Rediģēšanas režīms"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Kopā izvēlēti %d."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d nelasīti paziņojumi"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Uznirstošā izvēlne"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Lai skatītu nākamo lapu, pavelciet ar diviem pirkstiem."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Uznirstošā loga virsraksts"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Uznirstošā loga pamatteksts"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Sākuma ekrāns"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Lapa ir pārvietota uz %1$d no %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "%1$d. rinda, %2$d. kolonna"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Pievienot lapu"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Nav izvēlēts"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Radiopoga"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Izvēlēts"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Šokolādes cepums"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Nomierinošs džezs"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Noklusējuma fonts"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rozmarīns"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Kontakti"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Sasniegts maksimālais rakstzīmju skaits."
+
+msgid "IDS_COM_SK_OK"
+msgstr "Labi"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Atcelt"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Gatavs"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Rāda %d objektus"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Grafiks"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Veiciet dubultskārienu, lai aizvērtu izvēlni."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Izlaist"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Atlasīt"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internets"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "Izvēlētas %d"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Nāk."
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d objekti tiks paslēpti."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Šī lapa un visi tajā esošie objekti tiks izdzēsti."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Dzēst lapu"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Dzēst"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Rādīt slēptās programmas"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Slēpt programmas"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Rādīt deaktivizētās programmas"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "Programmu %s nevar atinstalēt. Tā vietā tā tiks deaktivizēta."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "Tiks paslēpts 1 objekts."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Nevar pievienot šo Home Box sākuma ekrānam. Sākuma ekrānā nepietiek vietas. Noņemiet dažus elementus Home Box un mēģiniet vēlreiz."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Nevar pievienot"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Box"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Visas lapas"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Tukšs"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Pievienot Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Noņemt"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Noņemt mapi"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Mape tiks noņemta. Mapē esošās programmas netiks atinstalētas."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Manuāli"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Pēc nosaukuma (A–Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s tiks atinstalēts."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Nevar pārkārtot ikonas pēc nosaukuma (A–Z)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "GATAVS"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ATCELT"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Kārtot objektus"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Kārtot objektus"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Logrīki"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Nevar pievienot logrīku"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Pievienot logrīku"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Sākuma ekrānā nepietiek vietas. Noņemiet dažus logrīkus un mēģiniet vēlreiz."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Rediģēt"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Rediģēt"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Motīvi"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Programma nav instalēta."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s un visas ar to saistītās funkcijas tiks deaktivizētas. Lai to aktivizētu, atveriet Iestatījumi > Programmu pārvaldnieks."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Sasniegts maksimālais programmu skaits mapē (%d)."
+

@@ -1,0 +1,622 @@
+/*
+ * Copyright 2012  Samsung Electronics Co., Ltd
+ *
+ * Licensed under the Flora License, Version 1.1 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://floralicense.org/license/
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include "../../inc/conf.h"
+
+images
+{
+	image: "../images/btn_delete_nor.png" COMP;
+	image: "../images/edit_all_page_create.png" COMP;
+	image: "../images/frame.png" COMP;
+	image: "../images/resize_button.png" COMP;
+}
+
+collections {
+	group {
+		///@todo it would rather be named livebox_scroller_page
+		name: "livebox_container";
+
+		parts {
+			part {
+				//background fills the whole page in pagescroller
+				name: "bg";
+				scale: 1;
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					rel1
+					{
+						relative: 0.0 CONTENT_Y_MIN;
+					}
+					rel2 {
+						relative: 1.0 CONTENT_Y_MAX;
+					}
+				}
+			}
+
+			part
+			{
+				name: "grid_bg";
+				scale: 1;
+				type: SWALLOW;
+				description
+				{
+					state: "default" 0.0;
+					visible: 1;
+					rel1
+					{
+						relative: 0.0 0.0; to: "content";
+					}
+					rel2
+					{
+						relative: 1.0 1.0; to: "content";
+					}
+				}
+				description
+				{
+					state: "hidden" 0.0;
+					inherit: "default";
+					visible: 0;
+				}
+
+			}
+
+			part {
+				name: "edit_dim";
+				scale: 1;
+				type: RECT;
+				repeat_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 {relative: 0.0 0.0; to: "content";}
+					rel2 {relative: 1.0 1.0; to: "content";}
+					color: 0 0 0 40;
+					visible: 0;
+				}
+				description {
+					state: "edit";
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+
+			part {
+				name : "add_page_button";
+				scale: 1;
+				type: IMAGE;
+				description {
+					state: "default" 0.0;
+					rel1 {relative: LIVEBOX_ADD_PAGE_BUTTON_X_MIN LIVEBOX_ADD_PAGE_BUTTON_Y_MIN; to: "edit_dim";}
+					rel2 {relative: LIVEBOX_ADD_PAGE_BUTTON_X_MAX LIVEBOX_ADD_PAGE_BUTTON_Y_MAX; to: "edit_dim";}
+					image {
+						normal: "../images/edit_all_page_create.png";
+					}
+					aspect_preference: BOTH;
+					visible: 0;
+				}
+				description {
+					state: "visible";
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+
+			part {
+				//content is smaller than the background and positioned in the center
+				name: "content";
+				scale: 1;
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: LIVEBOX_X_MIN 0.0; to: "bg";}
+					rel2 { relative: LIVEBOX_X_MAX 1.0; to: "bg";}
+					fixed: 1 1;
+				}
+				description {
+					state: "edit" 0.0;
+					rel1 {relative: LIVEBOX_EDIT_X_MIN LIVEBOX_EDIT_Y_MIN; to: "bg";}
+					rel2 {relative: LIVEBOX_EDIT_X_MAX LIVEBOX_EDIT_Y_MAX; to: "bg";}
+				}
+			}
+
+			part {
+				name: "remove_button";
+				scale: 1;
+				type: IMAGE;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1{relative: 0.0 0.0; to: "content";}
+					rel2{relative: 1.0 1.0; to: "content";}
+					color: 255 255 255 255;
+					visible: 0;
+					aspect: 1.0 1.0;
+					align: 0.0 0.0;
+					min: LIVEBOX_REMOVE_BUTTON_SIZE LIVEBOX_REMOVE_BUTTON_SIZE;
+					max: LIVEBOX_REMOVE_BUTTON_SIZE LIVEBOX_REMOVE_BUTTON_SIZE;
+					aspect_preference: BOTH;
+					fixed: 1 1;
+					image {
+						normal: "../images/btn_delete_nor.png";
+					}
+				}
+				description {
+					state: "show" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+
+// =================================================================================
+			part
+			{
+				name: "slider.vertical";
+				type: SPACER;
+				scale: 1;
+				repeat_events: 1;
+				description
+				{
+					state: "default" 0.0;
+					align: 0.5 0.5;
+					rel1
+					{
+						relative: 0.0 -0.025;
+						to_x: "button.left";
+						to_y: "content";
+					}
+					rel2
+					{
+						relative: 1.0 1.03;
+						to_x: "button.right";
+						to_y: "content";
+					}
+
+					min: LIVEBOX_SLIDER_BUTTON_SIZE 0;
+					max: LIVEBOX_SLIDER_BUTTON_SIZE -1;
+				}
+			}
+			part
+			{
+				name: "button.down";
+				type: IMAGE;
+				scale: 1;
+				mouse_events: 1;
+				repeat_events: 0;
+
+				dragable {
+					confine: "slider.vertical";
+					x: 0 0 0;
+					y: 1 1 10;
+				}
+				description
+				{
+					state: "default" 0.0;
+					color: 0 255 0 255;
+					align: 0.5 0.5;
+					visible: 1;
+					min: LIVEBOX_SLIDER_BUTTON_SIZE LIVEBOX_SLIDER_BUTTON_SIZE;
+
+					image
+					{
+						normal: "../images/resize_button.png";
+					}
+				}
+				description
+				{
+					state: "button,warning" 0.0;
+					inherit: "default";
+					color: 255 0 0 255;
+				}
+				description
+				{
+					state: "hidden";
+					inherit: "default";
+					visible: 0;
+				}
+			}
+			part
+			{
+				name: "button.up";
+				type: IMAGE;
+				scale: 1;
+				mouse_events: 1;
+				repeat_events: 0;
+
+				dragable
+				{
+					confine: "slider.vertical";
+					x: 0 0 0;
+					y: 1 1 10;
+				}
+
+				description
+				{
+					state: "default" 0.0;
+					color: 0 255 0 255;
+					align: 0.5 0.5;
+					visible: 1;
+					min: LIVEBOX_SLIDER_BUTTON_SIZE LIVEBOX_SLIDER_BUTTON_SIZE;
+
+					image
+					{
+						normal: "../images/resize_button.png";
+					}
+				}
+				description
+				{
+					state: "button,warning" 0.0;
+					inherit: "default";
+					color: 255 0 0 255;
+				}
+				description
+				{
+					state: "hidden";
+					inherit: "default";
+					visible: 0;
+				}
+			}
+
+			part
+			{
+				name: "slider.horizontal";
+				type: SPACER;
+				scale: 1;
+				repeat_events: 1;
+
+				description
+				{
+					state: "default" 0.0;
+					align: 0.5 0.5;
+
+					rel1
+					{
+						relative: -0.025 0.0;
+						to_x: "content";
+						to_y: "button.up";
+					}
+					rel2
+					{
+						relative: 1.03 1.0;
+						to_x: "content";
+						to_y: "button.down";
+					}
+
+					min: 0 LIVEBOX_SLIDER_BUTTON_SIZE;
+					max: -1 LIVEBOX_SLIDER_BUTTON_SIZE;
+				}
+			}
+			part
+			{
+				name: "button.right";
+				type: IMAGE;
+				scale: 1;
+				mouse_events: 1;
+				repeat_events: 0;
+
+				dragable
+				{
+					confine: "slider.horizontal";
+					x: 1 1 10;
+					y: 0 0 0;
+				}
+
+				description
+				{
+					state: "default" 0.0;
+					color: 0 255 0 255;
+					align: 0.5 0.5;
+					min: LIVEBOX_SLIDER_BUTTON_SIZE LIVEBOX_SLIDER_BUTTON_SIZE;
+					max: LIVEBOX_SLIDER_BUTTON_SIZE LIVEBOX_SLIDER_BUTTON_SIZE;
+					rel1
+					{
+						relative: 0.90 0.0;
+						to_y: "button.up";
+					}
+					rel2
+					{
+						relative: 1.00 1.0;
+						to_y: "button.down";
+					}
+
+					image
+					{
+						normal: "../images/resize_button.png";
+					}
+				}
+				description
+				{
+					state: "button,warning" 0.0;
+					inherit: "default";
+					color: 255 0 0 255;
+				}
+				description
+				{
+					state: "hidden";
+					inherit: "default";
+					visible: 0;
+				}
+			}
+			part
+			{
+				name: "button.left";
+				type: IMAGE;
+				scale: 1;
+				mouse_events: 1;
+				repeat_events: 0;
+
+				dragable
+				{
+					confine: "slider.horizontal";
+					x: 1 1 10;
+					y: 0 0 0;
+				}
+
+				description
+				{
+					state: "default" 0.0;
+					color: 0 255 0 255;
+					align: 0.5 0.5;
+					min: LIVEBOX_SLIDER_BUTTON_SIZE LIVEBOX_SLIDER_BUTTON_SIZE;
+					max: LIVEBOX_SLIDER_BUTTON_SIZE LIVEBOX_SLIDER_BUTTON_SIZE;
+					visible: 1;
+					rel1
+					{
+						relative: 0.0 1.0;
+						to_y: "button.up";
+					}
+					rel2
+					{
+						relative: 0.1 0.0;
+						to_y: "button.down";
+					}
+
+					image
+					{
+						normal: "../images/resize_button.png";
+					}
+				}
+				description
+				{
+					state: "button,warning" 0.0;
+					inherit: "default";
+					color: 255 0 0 255;
+				}
+				description
+				{
+					state: "hidden";
+					inherit: "default";
+					visible: 0;
+				}
+			}
+
+			part {
+				name: "event_blocker";
+				type: RECT;
+				mouse_events: 1;
+				repeat_events: 1;
+				description {
+					state: "default" 0.0;
+					fixed: 1 1;
+					color: 0 0 0 0;
+					visible: 0;
+					rel1 { relative: 0.0 0.0; to: "content";}
+					rel2 { relative: 1.0 1.0; to: "content";}
+				}
+				description {
+					state: "show" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+
+			part {
+				name : "frame";
+				type: IMAGE;
+				mouse_events: 0;
+				repeat_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1
+					{
+						relative: LIVEBOX_RESIZE_FRAME_REL_1 LIVEBOX_RESIZE_FRAME_REL_1;
+						to_x: "button.left";
+						to_y: "button.up";
+					}
+					rel2
+					{
+						relative: LIVEBOX_RESIZE_FRAME_REL_2 LIVEBOX_RESIZE_FRAME_REL_2;
+						to_x: "button.right";
+						to_y: "button.down";
+					}
+					image {
+						normal: "../images/frame.png";
+						border: 20 20 20 20;
+					}
+					color: 0 255 0 255;
+					visible: 1;
+				}
+				description {
+					state: "hidden";
+					inherit: "default" 0.0;
+					visible: 0;
+				}
+				description {
+					state: "button,warning";
+					inherit: "default" 0.0;
+					color: 255 0 0 255;
+				}
+			}
+
+// ===========================================================================
+		programs {
+		//Remove button
+			program {
+				name: "remove_button_show";
+				signal: "remove_button,show";
+				source: "layout";
+				action: STATE_SET "show" 0.0;
+				target: "remove_button";
+				transition: DECELERATE 0.20;
+			}
+			program {
+				name: "event_blocker_show";
+				action: STATE_SET "show" 0.0;
+				target: "event_blocker";
+			}
+
+			program {
+				name: "remove_button_hide";
+				signal: "remove_button,hide";
+				source: "layout";
+				action: STATE_SET "default" 0.0;
+				target: "remove_button";
+				transition: DECELERATE 0.20;
+			}
+			program {
+				name: "remove_button_hide_instant";
+				signal: "remove_button,hide,instant";
+				source: "layout";
+				action: STATE_SET "default" 0.0;
+				target: "remove_button";
+				after: "event_blocker_hide";
+			}
+			program {
+				name: "event_blocker_hide";
+				action: STATE_SET "default" 0.0;
+				target: "event_blocker";
+			}
+
+			program {
+				name: "remove_button_clicked";
+				signal: "mouse,clicked,1";
+				source: "remove_button";
+				action: SIGNAL_EMIT "remove_button,clicked" "layout";
+			}
+
+// =========================================================================
+			program
+			{
+				name: "drag,outside";
+				signal: "drag,outside";
+				source: "livebox";
+				action: STATE_SET "button,warning" 0.0;
+				target: "button.left";
+				target: "button.right";
+				target: "button.up";
+				target: "button.down";
+				target: "frame";
+			}
+			program
+			{
+				name: "drag,ok";
+				signal: "drag,ok";
+				source: "livebox";
+				action: STATE_SET "default" 0.0;
+				target: "button.left";
+				target: "button.right";
+				target: "button.up";
+				target: "button.down";
+				target: "frame";
+			}
+
+			program
+			{
+				name: "sliders,hide";
+				signal: "sliders,hide";
+				source: "livebox";
+				action: STATE_SET "hidden" 0.0;
+				target: "button.left";
+				target: "button.right";
+				target: "button.up";
+				target: "button.down";
+				target: "frame";
+			}
+
+			program
+			{
+				name: "sliders,show";
+				signal: "sliders,show";
+				source: "livebox";
+				action: STATE_SET "default" 0.0;
+				target: "button.left";
+				target: "button.right";
+				target: "button.up";
+				target: "button.down";
+				target: "frame";
+			}
+// ==================================================================================================
+
+			program
+			{
+				name: "grid,hide";
+				signal: SIGNAL_GRID_SHADOW_HIDE;
+				source: PART_GRID_BG;
+				action: STATE_SET "hidden" 0.0;
+				target: "grid_bg";
+			}
+
+			program
+			{
+				name: "grid,show";
+				signal: SIGNAL_GRID_SHADOW_SHOW;
+				source: PART_GRID_BG;
+				action: STATE_SET "default" 0.0;
+				target: "grid_bg";
+			}
+
+
+// ==================================================================================================
+
+			program {
+				name: "edit_start";
+				signal: "edit,start";
+				source: "layout";
+				action: STATE_SET "edit" 0.0;
+				target: "edit_dim";
+				target: "content";
+			}
+			program {
+				name: "edit_stop";
+				signal: "edit,stop";
+				source: "layout";
+				action: STATE_SET "default" 0.0;
+				target: "edit_dim";
+				target: "content";
+			}
+			program {
+				name: "add_show";
+				signal: "add,show";
+				source: "layout";
+				action: STATE_SET "visible" 0.0;
+				target: "add_page_button";
+			}
+			program {
+				name: "add_hide";
+				signal: "add,hide";
+				source: "layout";
+				action: STATE_SET "default" 0.0;
+				target: "add_page_button";
+			}
+			program
+			{
+				name: "add_page_clicked";
+				signal: "mouse,clicked,1";
+				source: "add_page_button";
+				action: SIGNAL_EMIT "add_page_button_clicked" "layout";
+			}
+		}
+	}
+}

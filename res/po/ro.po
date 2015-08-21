@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Anulare"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Creare folder"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Afişare"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Deschidere"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Editare"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Adăug."
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Ştergere Director"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Introduceţi numele folderului."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Creare"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Încărcare..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Aplicaţii"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Muzică"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "De bază"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Ascundere"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Casetă de bifare"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Bifare"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Titlu"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Debifare"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Dezinstalare"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Sel. apl. de ad."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Sel. aplicaţii de ascuns"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Sel. aplicaţii de afişat"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Vizualizare ca"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Pentru a rearanja paginile, trebuie să schimbaţi tipul de vizualizare la grilă personalizabilă."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Dezinstalaţi %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mini ap."
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Deselectare"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Folder fără nume"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Atingeţi de două ori pentru a închide bara de aplicaţii."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Atingeţi de două ori pentru a deschide bara de aplicaţii."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Atingeţi de două ori pentru a deschide."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Buton"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Ştergere"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Atingeţi de două ori şi menţineţi pentru a muta."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Atingeţi de două ori pentru a închide."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Vizualizarea detaliată a fost deschisă."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Aplicaţii preferate"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Ecranul de pornire va fi format cu până la %d elemente selectate din ecranul următor"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "În Aplicaţii preferate"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Mutaţi în folderul %s."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Se mută %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Nu există conţinut"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Pagina %1$d din %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Poziţia %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Folderul este deschis."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Această acţiune va şterge folderul şi toate elementele pe care le conţine."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Nu se mai pot adăuga aplicaţii. A fost atins numărul maxim de aplicaţii."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Datele nu pot fi încărcate. Atingeţi pentru a reîncerca."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Fundaluri"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Aplic."
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Şterg."
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Dezactivare"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Ajutor"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Acasă"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Revistă"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telefon"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Adăugare elemente"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Folder"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Rearanjaţi pictogramele"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Rearanjaţi paginile"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Selectare casetă text"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Selectare şablon"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Adăugare casetă text"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Schimbare fundal"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Creare folder"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Ştergere folder"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Aplicaţii descărcate"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Extrag. apl. şi şterg. folder"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Dezactivaţi această aplicaţie?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Noua pagină va fi alcătuită din casetele Dynamic Box pentru Planificator S, Activităţi şi S Memo"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Noua pagină va fi alcătuită din casetele Dynamic Box pentru Twitter. În ecranul următor, selectaţi maximum %d cronologii ale persoanelor pe care le urmăriţi, pentru ca acestea să fie afişate pe noua pagină."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Acest folder va fi şters, dar aplicaţiile din acesta vor fi în continuare disponibile pe ecranul acasă. Ştergeţi acest folder?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Reîncărcarea nu a reuşit. Memoria dispozitivului este plină."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Fontul nu este acceptat la această dimensiune."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Nu se poate adăuga un alt rând din cauza limitei de spaţiu."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 element necitit"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Modul Editare"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Aţi selectat în total %d elemente."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d notificări necitite"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Fereastră pop-up meniu"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Glisaţi cu două degete pentru a vizualiza pagina următoare."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Antet fereastră de tip pop-up"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Text în corpul ferestrei de tip pop-up"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Ecran de pornire"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Pagina a fost mutată la %1$d din %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Rândul %1$d, coloana %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Adăugare pagină"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Neselectat"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Buton radio"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Selectat"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Font prestabilit"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Contacte"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Adăugare la marcaje"
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Anulare"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Gata"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Se afişează %d elemente"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Planificare"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Atingeţi de două ori pentru a închide meniul."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Sar"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Selectare"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d selectate"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Următor"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d elemente vor fi ascunse."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Această pagină şi elementele pe care le conţine vor fi şterse."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Ştergere pagină"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Ştergere"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Afişare aplicaţii ascunse"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Ascundere aplicaţii"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Afişare aplicaţii dezactivate"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "%s nu se poate dezinstala. În schimb, se va dezactiva."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 element va fi ascuns."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Această Casetă acasă nu poate fi adăugată pe ecranul acasă. Nu există suficient spaţiu pe ecranul acasă. Eliminaţi câteva Casete acasă şi încercaţi din nou."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Imposibil de adăugat"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Casete acasă"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Toate paginile"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Necompletat"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Adăugare Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Eliminare"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Eliminare folder"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Folderul va fi eliminat. Aplicaţiile din acest folder nu vor fi dezinstalate."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Manual"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "După nume (A-Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s va fi dezinstalat."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Pictogramele nu pot fi reorganizate conform sortării după nume (A-Z)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "EFECTUAT"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ANULARE"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Sortare elemente"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Sortare elemente"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Widgeturi"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Widgetul nu poate fi adăugat"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Adăugare widget"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Spaţiul de pe ecranul Acasă este insuficient. Ştergeţi câteva widgeturi şi încercaţi din nou."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Editare"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Editare"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Teme"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Aplicaţia nu este instalată."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "Aplicaţia %s şi toate caracteristicile asociate vor fi dezactivate. Pentru a o reactiva, accesaţi Setări > Manager aplicaţii."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "A fost atins numărul maxim de aplicaţii în folder (%d)."
+

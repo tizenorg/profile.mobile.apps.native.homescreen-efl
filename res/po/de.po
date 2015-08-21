@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Abbrechen"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Ordner erstellen"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Anzeigen"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Öffnen"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Bearbeiten"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Hzfg."
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Ordner löschen"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Ordnernamen eingeben"
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Erstellen"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Ladevorgang läuft"
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Anwendungen"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Musik"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Einfach"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Ausblenden"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Kontrollkästchen"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Markieren"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Titel"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Markierung aufheben"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Deinstallieren"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Apps z. Hzfg. wäh."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Auszubl. Apps auswählen"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Einzubl. Apps auswählen"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Anzeigen als"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Sie müssen die Ansicht auf „Anpassbares Raster“ umstellen, um die Seiten neu anzuordnen."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "%s deinstallieren?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mini-Apps"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Deaktivieren"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Unbenannter Ordner"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Zweimal tippen, um das App-Fach zu schließen."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Zweimal tippen, um das App-Fach zu öffnen."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Zum Öffnen zweimal tippen."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Taste"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Löschen"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Zweimal tippen und halten, um zu verschieben."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Tippen Sie zum Schließen zweimal."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Ablageansicht geöffnet."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Bevorzugte Apps"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Der Startbildschirm wird aus bis zu %d Elementen gebildet, die im nächsten Bildschirm ausgewählt werden."
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "In bevorzugten Anwendungen"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "In der Ordner „%s“ verschieben."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "%s verschieben"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Kein Inhalt"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Seite %1$d von %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Position %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Der Ordner ist geöffnet."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Hierdurch werden der Ordner und alle darin enthaltenen Elemente gelöscht."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Hinzufügen von weiteren Elementen nicht möglich. Maximale Anzahl von Apps erreicht."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Daten konnten nicht geladen werden. Für erneuten Versuch tippen"
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Hintergrund"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Menü"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Lösch."
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Deaktivieren"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Hilfe"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Home"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Magazine"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telefon"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Elemente hinzufügen"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Ordner"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Neuanordnen von Symbolen"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Neuanordnen von Seiten"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Textfeld auswählen"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Vorlage auswählen"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Textfeld hinzufügen"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Hintergrund ändern"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Ordner erstellen"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Ordner löschen"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Heruntergeladene Apps"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Apps extr. und Ordner löschen"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Diese Anwendung deaktivieren?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Die neue Seite besteht aus S Planner, Aufgaben und Dynamic Boxes für S Memo."
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Die neue Seite besteht aus Dynamic Boxes für Twitter. Wählen Sie auf dem nächsten Bildschirm bis zu %d Zeitleisten von Personen aus, die auf der nächsten Seite angezeigt werden sollen."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Dieser Ordner wird gelöscht, die darin befindlichen Anwendungen bleiben jedoch auf dem Startbildschirm verfügbar. Diesen Ordner löschen?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Fehler beim erneuten Laden. Gerätespeicher voll."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Die Schrift wird in dieser Größe nicht unterstützt."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Aus Platzgründen kann keine zusätzliche Zeile hinzugefügt werden."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 ungelesenes Element"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Bearbeitungsmodus"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Insgesamt %d ausgewählt."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d ungelesene Benachrichtigungen"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Menü-Pop-up"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Mit zwei Fingern streichen, um die nächste Seite anzuzeigen."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Pop-up-Kopfzeile"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Text innerhalb eines Popup"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Startbildschirm"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Seite zu %1$d von %2$d verschoben."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Zeile%1$d, Spalte %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Seite hinzufügen"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Nicht ausgewählt"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Optionsfeld"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Ausgewählt"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Schoko-Cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Standardschriftart"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Kontakte"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Maximal zulässige Zeichenanzahl erreicht."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Abbrechen"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Fertig"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "%d Elemente werden angezeigt."
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Termine"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Zweimal tippen, um das Menü zu schließen."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Überspr."
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Auswählen"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d ausgewählt."
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Weiter"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d Elemente werden ausgeblendet."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Diese Seite und alle darin enthaltenen Elemente werden gelöscht."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Löschen der Seite"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Löschen"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Ausgebl. Anwendungen anzeigen"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Anwendungen ausblenden"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Deaktiv. Anwendungen zeigen"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "%s kann nicht deinstalliert werden. Es wird stattdessen deaktiviert."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 Element wird ausgeblendet."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Diese Home Box kann nicht zu Ihrem Startbildschirm hinzugefügt werden. Auf dem Startbildschirm ist nicht genug Platz. Löschen Sie einige Home Boxes und versuchen Sie es erneut."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Hinzufügen nicht möglich"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Boxes"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Alle Seiten"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Leer"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Dynamic Box hinzufügen"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Entfernen"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Ordner entfernen"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Ordner wird entfernt. Anwendungen in diesem Ordner werden nicht deinstalliert."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Manuell"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Nach Name (A–Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s wird deinstalliert."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Elemente können nicht nach Namen (A-Z) sortiert neu angeordnet werden."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "FERTIG"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ABBRECHEN"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Elemente sortieren"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Sortieren von Elementen"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Widgets"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Hinzufügen nicht möglich"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Hinzufügen von Widgets"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Auf dem Startbildschirm ist nicht genug Platz. Entfernen Sie einige Widgets und versuchen Sie es erneut."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Bearbeiten"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Bearbeiten"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Themes"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Anwendung nicht installiert"
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s und alle damit zusammenhängenden Funktionen werden deaktiviert. Unter „Einstellungen > Anwendungsmanager“ können Sie sie wieder aktivieren."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Maximale Anzahl an Anwendungen im Ordner (%d) erreicht."
+

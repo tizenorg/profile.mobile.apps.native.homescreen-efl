@@ -1,0 +1,11 @@
+<manifest>
+	<define>
+		<domain name="org.tizen.homescreen-efl" />
+	</define>
+	<assign>
+		<filesystem path="/usr/share/packages/org.tizen.homescreen-efl.xml" label="_" />
+		<filesystem path="/usr/share/icons/default/small/org.tizen.menu-screen.png" label="_" />
+		<filesystem path="/opt/usr/apps/org.tizen.homescreen-efl/bin" label="org.tizen.homescreen-efl" />
+		<filesystem path="/opt/usr/apps/org.tizen.homescreen-efl/res" label="org.tizen.homescreen-efl" />
+	</assign>
+</manifest>

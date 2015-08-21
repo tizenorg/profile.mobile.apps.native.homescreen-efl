@@ -1,0 +1,402 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Zrušit"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Vytvořit složku"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Zobrazit"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Otevřít"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Upravit"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Přid."
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Odstranit složku"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Zadejte název složky."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Vytv."
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Nahrávám..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Aplikace"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Hudba"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Základní"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Skrýt"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Zaškrtávací políčko"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Zaškrtnout"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Název"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Zrušit zaškrtnutí"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Odinstalovat"
+
+msgid "IDS_AT_BUTTON_CHANGE_VIEW"
+msgstr "Změnit zob."
+
+msgid "IDS_AT_HEADER_PD_SELECTED"
+msgstr "Vybráno: %d"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Vyberte přid. apl."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Vyberte skryté aplikace"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Vyberte zobr. aplikace"
+
+msgid "IDS_AT_OPT_ALPHABETICAL_GRID_ABB"
+msgstr "Abecední tabulka"
+
+msgid "IDS_AT_OPT_CUSTOMISABLE_GRID_ABB"
+msgstr "Vlastní tabulka"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Zobrazit jako"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Chcete-li změnit uspořádání stránek, musíte změnit typ zobrazení na přizpůsobitelnou tabulku."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Odinstalovat %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mini-aplikace"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Zrušit výběr"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Složka bez názvu"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Poklepáním zavřete panel aplikací."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Poklepáním otevřete panel aplikací."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Poklepáním otevřete."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Tlačítko"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Odstranit"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Chcete-li přesunout zaostření, poklepejte na něj a přidržte ho."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Poklepáním zavřete."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Rozevírací zobrazení bylo otevřeno."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Oblíbené aplikace"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Domovská obrazovka bude vytvořena pomocí až %d položek vybraných na následující obrazovce"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "V Oblíbených aplikacích"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Přejděte do složky %s."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Přesouvání %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Žádný obsah"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Stránka %1$d z %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Pozice %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Složka je otevřená."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Tím se odstraní složka a všechny položky, které obsahuje."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Další aplikace nelze přidat. Bylo dosaženo maximálního počtu aplikací."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Data nelze načíst. Klepnutím opakujte akci."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Pozadí"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Aplik."
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Odstr."
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Vypnout"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Nápov."
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Domů"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Časopis"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telefon"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Přidat položky"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Složka"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Změna uspořádání ikon"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Změna uspořádání stránek"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Vyberte textové pole"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Vyberte šablonu"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Přidat textové pole"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Změnit pozadí"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Vytvořit složku"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Odstranit složku"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Stažené aplikace"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Extr. aplikace a odstr. složku"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Vypnout tuto aplikaci?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Nová stránka bude obsahovat Dynamic Boxy pro S plánovač, Úkoly a S Poznámku"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Nová stránka bude obsahovat Dynamic Boxy pro Twitter. Na další obrazovce vyberte max. %d časových os lidí, které sledujete, které se zobrazí na nové stránce."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Složka bude odstraněna, ale aplikace ze složky budou nadále dostupné na domovské obrazovce. Odstranit složku?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Nové načtení se nezdařilo. Paměť zařízení je plná."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Písmo není v této velikosti podporováno."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Není možné přidat další řádek z důvodu omezení místa."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 nepřečtená položka"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Režim úprav"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Celkem vybráno %d."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d nepřečtených oznámení"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Místní menu"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Přejetím dvěma prsty zobrazíte další stránku."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Záhlaví kontextového okna"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Text v kontextovém okně"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Domovská obrazovka"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Stránka byla přesunuta na %1$d z %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Řádek %1$d, sloupec %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Přidat stránku"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Nevybráno"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Přepínač"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Vybráno"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Výchozí písmo"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Kontakty"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Bylo dosaženo maximálního počtu znaků."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Zobrazení %d položek"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Plán"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Poklepáním zavřete menu."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Přesk."
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Vybrat"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internet"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Další"
+
+msgid "IDS_HS_OPT_MANAGE_APPLICATIONS_ABB"
+msgstr "Správa aplikací"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d položek bude skryto."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Tato stránka a všechny položky, které obsahuje, budou odstraněny."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Odstranit stránku"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Odstranit"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Zobrazit skryté aplikace"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Skrýt aplikace"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Zobrazit vypnuté aplikace"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "%s nelze odinstalovat. Místo toho bude zakázána."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "Bude skryta 1 položka."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Tento Home Box nelze přidat na domovskou obrazovku. Na domovské obrazovce není dostatek volného místa. Odstraňte některé Home Boxy a opakujte akci."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Nelze přidat"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Boxy"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Všechny stránky"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Prázdné"
+
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Seřadit položky abecedně"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Seřadit položky abecedně"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Ikony aplikací a složky budou upořádány v abecedním pořadí. Veškeré provedené vlastní úpravy budou zrušeny."
+

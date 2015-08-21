@@ -1,0 +1,708 @@
+/*
+ * Copyright 2012  Samsung Electronics Co., Ltd
+ *
+ * Licensed under the Flora License, Version 1.1 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://floralicense.org/license/
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include "../../inc/conf.h"
+
+images {
+	image: "../images/home_button_bg.png" COMP;
+	image: "../images/home_icon_home.png" COMP;
+	image: "../images/home_icon_menu.png" COMP;
+	image: "../images/all_apps_icon_menu.png" COMP;
+	image: "../images/home_icon_reorder.png" COMP;
+}
+
+collections {
+	group {
+		name: "home_ly";
+		parts {
+			part {
+				name: "bg_spacer";
+				type: SPACER;
+				scale: 0;
+				description {
+					state: "default" 0.0;
+					rel1.relative: 0.0 0.0;
+					rel2.relative: 1.0 1.0;
+				}
+			}
+			part {
+				name: "content";
+				type: SWALLOW;
+				mouse_events: 1;
+				repeat_events: 1;
+				scale: 0;
+				description {
+					state: "default" 0.0;
+					rel1.relative: 0.0 0.0/*HOME_WGT_MIN_Y*/;
+					rel2.relative: 1.0 1.0/*HOME_WGT_MAX_Y*/;
+				}
+			}
+
+			/*======================CHOOSER CAPTION=========================*/
+			part {
+				name: "chooser_caption";
+				type: SPACER;
+				scale: 0;
+				description {
+					state: "default" 0.0;
+					rel1.relative: 0.0 HOME_CHOOSER_CAPTION_Y_MIN;
+					rel2.relative: 1.0 HOME_CHOOSER_CAPTION_Y_MAX;
+				}
+			}
+			part {
+				name: PART_CHOOSER_CAPTION_MIDDLE_LABEL;
+				type: TEXT;
+				scale: 1;
+				description
+				{
+					state: "default" 0.0;
+					visible: 0;
+					color: 255 255 255 255;
+					text
+					{
+						align: 0.5 0.90;
+						text:"999 selected";
+						size: 36;
+					}
+					rel1
+					{
+						relative: 0.30 0.0;
+						to: "chooser_caption";
+					}
+					rel2
+					{
+						relative: 0.70 1.0;
+						to: "chooser_caption";
+					}
+				}
+				description {
+					state: "chooser_activated" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			 }
+			 part {
+				name: PART_CHOOSER_CAPTION_LEFT_LABEL;
+				type: TEXT;
+				scale: 1;
+				description
+				{
+					color: 255 255 255 255;
+					state: "default" 0.0;
+					visible: 0;
+					text
+					{
+						align: 0.25 0.90;
+						size: 28;
+						text: "CANCEL";
+					}
+					rel1
+					{
+						relative: 0.0 0.0;
+						to: "chooser_caption";
+					}
+					rel2
+					{
+						relative: 0.33 1.0;
+						to: "chooser_caption";
+					}
+				}
+				description {
+					state: "chooser_activated" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			 }
+			 part {
+				name: "chooser_caption_left_clickable_space";
+				type: RECT;
+				mouse_events: 1;
+				scale: 0;
+				description
+				{
+					state: "default" 0.0;
+					color: 0 0 0 0;
+					visible: 0;
+					rel1
+					{
+						to: "chooser_caption_left_label";
+						relative: 0.0 0.0;
+					}
+					rel2
+					{
+						to: "chooser_caption_left_label";
+						relative: 1.0 1.0;
+					}
+				}
+				description {
+					state: "chooser_activated" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+			part {
+				name: PART_CHOOSER_CAPTION_RIGHT_LABEL;
+				type: TEXT;
+				scale: 1;
+				description
+				{
+					state: "default" 0.0;
+					visible: 0;
+					color: 255 255 255 255;
+					text
+					{
+						align: (1.0 - 0.25) 0.90;
+						size: 28;
+						text: "DONE";
+					}
+					rel1
+					{
+						relative: 0.66 0.0;
+						to: "chooser_caption";
+					}
+					rel2
+					{
+						relative: 1.0 1.0;
+						to: "chooser_caption";
+					}
+				}
+				description {
+					state: "chooser_activated" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+			part {
+				name: "chooser_caption_right_clickable_space";
+				type: RECT;
+				mouse_events: 1;
+				scale: 0;
+				description
+				{
+					state: "default" 0.0;
+					visible: 0;
+					color: 0 0 0 0;
+					rel1
+					{
+						to: "chooser_caption_right_label";
+						relative: 0.0 0.0;
+					}
+					rel2
+					{
+						to: "chooser_caption_right_label";
+						relative: 1.0 1.0;
+					}
+				}
+				description {
+					state: "chooser_activated" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+
+			/*==================== BUTTON : MENU IMPLEMENATION ===============*/
+			part {
+				name: "menu_btn";
+				type: SPACER;
+				scale: 0;
+				description {
+					state: "default" 0.0;
+					rel1.relative: HOME_MENU_BTN_X_MIN HOME_BTNS_Y_MIN;
+					rel2.relative: HOME_MENU_BTN_X_MAX HOME_BTNS_Y_MAX;
+				}
+			}
+			part {
+				name: "menu_btn_bg";
+				type: IMAGE;
+				scale: 0;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to: "menu_btn"; }
+					rel2 { relative: 1.0 1.0; to: "menu_btn"; }
+					color: 0 0 0 40;
+					visible: 1;
+					image {
+						normal: "../images/home_button_bg.png";
+					}
+				}
+				description {
+					state: "press" 0.0;
+					inherit: "default" 0.0;
+					color: 255 255 255 40;
+				}
+				description {
+					state: "chooser_activated" 0.0;
+					visible: 0;
+				}
+				description
+				{
+					state: "all_apps_view_state" 0.0;
+					inherit: "default" 0.0;
+				}
+				description
+				{
+					state: "home_view_state" 0.0;
+					inherit: "default" 0.0;
+				}
+				description
+				{
+					state: "all_apps_edit_state" 0.0;
+					inherit: "default" 0.0;
+					visible: 0;
+				}
+			}
+			part {
+				name: "home_view_menu_icon";
+				type: IMAGE;
+				mouse_events: 0;
+				repeat_events: 1;
+				scale: 0;
+				description
+				{
+					state: "default" 0.0;
+					rel1 { relative: 0.27 0.1; to: "menu_btn"; }
+					rel2 { relative: 0.73 0.9; to: "menu_btn"; }
+					color: 255 255 255 255;
+					visible: 1;
+					image
+					{
+						normal: "../images/home_icon_menu.png";
+					}
+				}
+				description
+				{
+					state: "all_apps_view_state" 0.0;
+					inherit: "default" 0.0;
+					color: 255 255 255 0;
+				}
+				description
+				{
+					state: "home_view_state" 0.0;
+					inherit: "default" 0.0;
+				}
+				description
+				{
+					state: "all_apps_edit_state" 0.0;
+					inherit: "all_apps_view_state" 0.0;
+					visible: 0;
+				}
+			}
+			part
+			{
+				name: "all_apps_view_menu_icon";
+				type: IMAGE;
+				mouse_events: 0;
+				repeat_events: 1;
+				scale: 0;
+				description
+				{
+					state: "default" 0.0;
+					rel1 { relative: 0.27 0.1; to: "menu_btn"; }
+					rel2 { relative: 0.73 0.9; to: "menu_btn"; }
+					color: 255 255 255 0;
+					visible: 1;
+					image
+					{
+						normal: "../images/all_apps_icon_menu.png";
+					}
+				}
+				description
+				{
+					state: "chooser_activated" 0.0;
+					visible: 0;
+				}
+				description
+				{
+					state: "all_apps_view_state" 0.0;
+					inherit: "default" 0.0;
+					color: 255 255 255 255;
+				}
+				description
+				{
+					state: "home_view_state" 0.0;
+					inherit: "default" 0.0;
+				}
+				description
+				{
+					state: "all_apps_edit_state" 0.0;
+					inherit: "all_apps_view_state" 0.0;
+					visible: 0;
+				}
+			}
+
+			/*==================== BUTTON : HOME ICON IMPLEMENTATION ===============*/
+			part {
+				name: "home";
+				type: SPACER;
+				scale: 0;
+				description {
+					state: "default" 0.0;
+					rel1.relative: HOME_HOME_BTN_X_MIN HOME_BTNS_Y_MIN;
+					rel2.relative: HOME_HOME_BTN_X_MAX HOME_BTNS_Y_MAX;
+				}
+			}
+			part {
+				name: "home_btn_bg";
+				type: IMAGE;
+				scale: 0;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to: "home"; }
+					rel2 { relative: 1.0 1.0; to: "home"; }
+					color: 0 0 0 40;
+					visible: 1;
+					image {
+						normal: "../images/home_button_bg.png";
+					}
+				}
+				description {
+					state: "press" 0.0;
+					inherit: "default" 0.0;
+					color: 255 255 255 40;
+				}
+				description {
+					state: "chooser_activated" 0.0;
+					visible: 0;
+				}
+				description
+				{
+					state: "all_apps_view_state" 0.0;
+					inherit: "default" 0.0;
+				}
+				description
+				{
+					state: "home_view_state" 0.0;
+					inherit: "default" 0.0;
+				}
+				description
+				{
+					state: "all_apps_edit_state" 0.0;
+					inherit: "default" 0.0;
+					visible: 0;
+				}
+			}
+			part
+			{
+				name: "home_view_home_icon";
+				type: IMAGE;
+				mouse_events: 0;
+				repeat_events: 1;
+				scale: 0;
+				description
+				{
+					state: "default" 0.0;
+					rel1 { relative: 0.27 0.1; to: "home"; }
+					rel2 { relative: 0.73 0.9; to: "home"; }
+					color: 255 255 255 255;
+					visible: 1;
+					image
+					{
+						normal: "../images/home_icon_reorder.png";
+					}
+				}
+				description
+				{
+					state: "chooser_activated" 0.0;
+					visible: 0;
+				}
+				description
+				{
+					state: "all_apps_view_state" 0.0;
+					inherit: "default" 0.0;
+					color: 255 255 255 0;
+				}
+				description
+				{
+					state: "home_view_state" 0.0;
+					inherit: "default" 0.0;
+				}
+				description
+				{
+					state: "all_apps_edit_state" 0.0;
+					inherit: "all_apps_view_state" 0.0;
+					visible: 0;
+				}
+			}
+
+			part
+			{
+				name: "all_apps_view_home_icon";
+				type: IMAGE;
+				mouse_events: 0;
+				repeat_events: 1;
+				scale: 0;
+				description
+				{
+					state: "default" 0.0;
+					rel1 { relative: 0.27 0.1; to: "home"; }
+					rel2 { relative: 0.73 0.9; to: "home"; }
+					color: 255 255 255 0;
+					visible: 1;
+					image
+					{
+						normal: "../images/home_icon_home.png";
+					}
+				}
+				description
+				{
+					state: "chooser_activated" 0.0;
+					visible: 0;
+				}
+				description
+				{
+					state: "all_apps_view_state" 0.0;
+					inherit: "default" 0.0;
+					color: 255 255 255 255;
+				}
+				description
+				{
+					state: "home_view_state" 0.0;
+					inherit: "default" 0.0;
+					color: 255 255 255 0;
+				}
+				description
+				{
+					state: "all_apps_edit_state" 0.0;
+					inherit: "all_apps_view_state" 0.0;
+					visible: 0;
+				}
+			}
+
+			/*==================== DYNAMIC INDEX: ===============*/
+			part {
+				name: PART_INDEX;
+				type: SWALLOW;
+				scale: 0;
+				description {
+					state: "default" 0.0;
+					rel1.relative: HOME_PG_INDEX_X_MIN HOME_BTNS_Y_MIN;
+					rel2.relative: HOME_PG_INDEX_X_MAX HOME_BTNS_Y_MAX;
+				}
+			}
+
+			part {
+				name: PART_NEXT_PAGE_INDICE;
+				type: RECT;
+				scale: 0;
+				description {
+					state: "default" 0.0;
+					color: 20 20 100 100;
+					rel1.relative: INDICE_NEXT_PAGE_X_MIN HOME_WGT_MIN_Y;
+					rel2.relative: INDICE_NEXT_PAGE_X_MAX HOME_WGT_EDIT_MAX_Y;
+					visible: 0;
+				}
+				description {
+					state: "visible" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+			part {
+				name: PART_PREV_PAGE_INDICE;
+				type: RECT;
+				scale: 0;
+				description {
+					state: "default" 0.0;
+					color: 20 20 100 100;
+					rel1.relative: INDICE_PREV_PAGE_X_MIN HOME_WGT_MIN_Y;
+					rel2.relative: INDICE_PREV_PAGE_X_MAX HOME_WGT_EDIT_MAX_Y;
+					visible: 0;
+				}
+				description {
+					state: "visible" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+			part {
+				name: PART_EVENT_BLOCKER;
+				type: RECT;
+				mouse_events:  1;
+				repeat_events: 0;
+				description {
+					state: "default" 0.0;
+					visible: 0;
+					rel1 {relative: 0.0 0.0; to: "bg_spacer";}
+					rel2 {relative: 1.0 1.0; to: "bg_spacer";}
+					color: 0 0 0 0;
+				}
+				description {
+					state: "blocked" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+		}
+		/*============== PROGRAMS TO OPERATE ON bottom buttons =============*/
+		programs {
+			program {
+				name: "menu_btn_down";
+				signal: "mouse,down,1";
+				source: "menu_btn_bg";
+				action: STATE_SET "press" 0.0;
+				target: "menu_btn_bg";
+				transition: DECELERATE 0.1;
+			}
+			program {
+				name: "menu_btn_up";
+				signal: "mouse,up,1";
+				source: "menu_btn_bg";
+				action: STATE_SET "default" 0.0;
+				target: "menu_btn_bg";
+				transition: DECELERATE 0.1;
+			}
+			program {
+				name: "menu_btn_click";
+				signal: "mouse,clicked,1";
+				source: "menu_btn_bg";
+				action: SIGNAL_EMIT SIGNAL_MENU_BTN_CLICKED SIGNAL_SOURCE;
+			}
+			program {
+				name: "home_btn_down";
+				signal: "mouse,down,1";
+				source: "home_btn_bg";
+				action: STATE_SET "press" 0.0;
+				target: "home_btn_bg";
+				transition: DECELERATE 0.1;
+			}
+			program {
+				name: "home_btn_up";
+				signal: "mouse,up,1";
+				source: "home_btn_bg";
+				action: STATE_SET "default" 0.0;
+				target: "home_btn_bg";
+				transition: DECELERATE 0.1;
+			}
+			program {
+				name: "home_btn_click";
+				signal: "mouse,clicked,1";
+				source: "home_btn_bg";
+				action: SIGNAL_EMIT SIGNAL_HOME_BTN_CLICKED SIGNAL_SOURCE;
+			}
+			program
+			{
+				name: "menu_icon_home_view_state_set";
+				signal: SIGNAL_BOTTOM_BUTTONS_HOME_STATE_SET;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "home_view_state" 0.0;
+				target: "home_view_menu_icon";
+				target: "all_apps_view_menu_icon";
+				target: "home_view_home_icon";
+				target: "all_apps_view_home_icon";
+				target: "menu_btn_bg";
+				target: "home_btn_bg";
+				transition: LINEAR 0.3;
+			}
+			program
+			{
+				name: "menu_icon_all_apps_view_state_set";
+				signal: SIGNAL_BOTTOM_BUTTONS_ALL_APPS_STATE_SET;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "all_apps_view_state" 0.0;
+				target: "home_view_menu_icon";
+				target: "all_apps_view_menu_icon";
+				target: "home_view_home_icon";
+				target: "all_apps_view_home_icon";
+				target: "menu_btn_bg";
+				target: "home_btn_bg";
+				transition: LINEAR 0.3;
+			}
+			program
+			{
+				name: "menu_icon_all_apps_edit_state_set";
+				signal: SIGNAL_BOTTOM_BUTTONS_ALL_APPS_EDIT_STATE_SET;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "all_apps_edit_state" 0.0;
+				target: "home_view_menu_icon";
+				target: "all_apps_view_menu_icon";
+				target: "home_view_home_icon";
+				target: "all_apps_view_home_icon";
+				target: "menu_btn_bg";
+				target: "home_btn_bg";
+			}
+
+			/*============== PROGRAMS TO OPERATE ON CHOOSER CAPTION =============*/
+			program {
+				name: "chooser_caption_activate";
+				signal: SIGNAL_CHOOSER_CAPTION_ACTIVATE;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "chooser_activated" 0.0;
+				target: "chooser_caption_middle_label";
+				target: "chooser_caption_left_label";
+				target: "chooser_caption_left_clickable_space";
+				target: "chooser_caption_right_label";
+				target: "chooser_caption_right_clickable_space";
+				target: "all_apps_view_menu_icon";
+				target: "menu_btn_bg";
+				target: "home_btn_bg";
+				target: "all_apps_view_home_icon";
+			}
+			program {
+				name: "chooser_caption_deactivate";
+				signal: SIGNAL_CHOOSER_CAPTION_DEACTIVATE;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "default" 0.0;
+				target: "chooser_caption_middle_label";
+				target: "chooser_caption_left_label";
+				target: "chooser_caption_left_clickable_space";
+				target: "chooser_caption_right_label";
+				target: "chooser_caption_right_clickable_space";
+				target: "menu_btn_bg";
+				target: "all_apps_view_menu_icon";
+				target: "home_btn_bg";
+				target: "all_apps_view_home_icon";
+			}
+			/*============= PROGRAMS TO OPERATOE ON INDICES =====================*/
+			program {
+				name: "next_page_indice_show";
+				signal: SIGNAL_NEXT_PAGE_INDICE_SHOW;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "visible" 0.0;
+				target: PART_NEXT_PAGE_INDICE;
+			}
+			program {
+				name: "prev_page_indice_show";
+				signal: SIGNAL_PREV_PAGE_INDICE_SHOW;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "visible" 0.0;
+				target: PART_PREV_PAGE_INDICE;
+			}
+			program {
+				name: "indice_off_program";
+				signal: SIGNAL_INDICE_HIDE;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "default" 0.0;
+				target: PART_PREV_PAGE_INDICE;
+				target: PART_NEXT_PAGE_INDICE;
+			}
+			program {
+				name: "block_events";
+				signal: SIGNAL_BLOCK_EVENTS;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "blocked" 0.0;
+				target: PART_EVENT_BLOCKER;
+			}
+			program {
+				name: "unblock_events";
+				signal: SIGNAL_UNBLOCK_EVENTS;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "default" 0.0;
+				target: PART_EVENT_BLOCKER;
+				in: 0.1 0.0;
+			}
+		}
+	}
+}

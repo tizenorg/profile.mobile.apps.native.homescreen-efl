@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Ləğv et"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Qovluq yarat"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Göstər"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Aç"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Redaktə et"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Əlavə"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Qovluğu sil"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Qovluq adını daxil edin."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Yarat"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Yüklənir..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Əlavə vasitələr"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Musiqi"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Əsas"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Gizlə"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "İşarə xanası"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "İşarələ"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Başlıq"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "İşarəni sil"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Quraşdırılma ləğv edilsin"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Əlv et üç proq seç"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Gizlətmək üçün proqr seç"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Göstərmək üçün proqr seç"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Nə kimi bax"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Səhifələri yenidən sıralamaq üçün siz görünüş növünü fərdiləşdirilən tora dəyişdirməlisiniz."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "%s silinsin?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mini proqramlar"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Seçimi ləğv et"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Adsız qovluq"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Proqram panelini bağlamaq üçün iki dəfə vurun."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Proqram panelini açmaq üçün iki dəfə vurun."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Açmaq üçün iki dəfə vur."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Düymə"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Sil"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Hərəkət etdirmək üçün iki dəfə vurun və saxlayın."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Bağlamaq üçün iki dəfə vurun."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Enən görünüş açıqdır."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Sevimli proqramlar"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Başlanğıc ekran növbəti ekranda seçilən %d qədər elementdən formalaşdırılmışdır"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "Sevimli proqramlarda"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "%s qovluğuna keçin."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Hərəkət edən %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Məzmun yoxdur"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Səhifə %1$d / %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "%d yerləşdir"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Qovluq açıqdır."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Bu, qovluğu və onun məzmununu siləcək."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Əlavə proqramlar əlavə etmək mümkün deyil. Proqramların sayı maksimuma çatıb."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Məlumatları yükləmək mümkün deyil. Yenidən cəhd etmək üçün vurun"
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Divar kağızları"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Proqramlar"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Sil"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Q-aktiv et"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Yardım"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Başlanğic"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Jurnal"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telefon"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Elementlər əlavə et"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Qovluq"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Nişanları yenidən nizamla"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Səhifələri yenidən nizamla"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Mətn xanası seç"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Şablon seçin"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Mətn xanası əlavə et"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Divar kağız. dəyişin"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Qovluq yarat"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Qovluğu sil"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Yüklənmiş proqramlar"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Proq ixrac et və qovluğu sil"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Bu proqram qeyri-aktiv edilsin?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Yeni səhifə S Planner, Tapşırıqlar və S Memo Dynamic Box funksiyalarından ibarət olacaqdır"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Yeni səhifə Twitter Dynamic Box-dan ibarət olacaqdır. Yeni səhifədə təsvir edilməsi üçün növbəti ekranda izlədiyiniz insanların %d-qədər fəaliyyət sırasını seçin."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Bu qovluq silinəcək, lakin proqramlar ilk öncə ixrac ediləcək və əsas ekranınızda qalacaq. Bu qovluq silinsin?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Təkrar yükləmək mümkün olmadı. Cihazın yaddaşı doludur."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Şrift bu ölçüdə dəstəklənmir"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Yer məhdudiyyəti səbəbindən əlavə xətt əlavə etmək mümkün olmadı"
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 oxunmamış element"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Redaktə rejimi"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Cəmi %d seçilmişdir."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d oxunmamış bildiriş"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Menyunun ani pəncərəsi"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Növbəti səhifəyə baxmaq üçün iki barmağınızla sürüşdürün."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Peyda olan başlıq"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Menyunun məzmununda mətn"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Əsas ekran"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Səhifə köçürüldü: %1$d / %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Sıra %1$d, sütun %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Səhifəni əlavə et"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Seçilməyib"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Radio düyməsi"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Seçildi"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Susmaya görə şrift"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Adlar"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Simvol sayı maksimuma çatıb."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Ləğv et"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Bitdi"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "%d dəfə göstərmə"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Plan"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Menyunu bağlamaq üçün iki dəfə vurun."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Burax"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Göndər"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "İnternet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d seçilmişdir"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Növbəti"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d element gizlədiləcək."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Bu səhifə və onda olan bütün məzmunlar silinəcək."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Səhifəni sil"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Sil"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Gizli proqramları göstər"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Proqramları gizlət"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Q-aktiv edilmiş proq göstər"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "%s quraşdırması ləğv edilə bilməz. Əvəzində qeyri-aktiv ediləcək."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 element gizlədiləcək."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Bu Home Box-u əsas ekrana əlavə etmək olmadı. Əsas ekranda kifayət qədər yer yoxdur. Bəzi Home Box-ları silin və yenidən cəhd edin."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Əlavə etmək mümkün deyil"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Box-lar"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Bütün səhifələr"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Boş"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Dynamic Box əlavə et"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Sil"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Qovluğu sil"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Qovluq silinəcək. Bu qovluqda olan proqramlar silinməyəcək."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Əl ilə"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Adla (A-Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s quraşdırılması ləğv ediləcək."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Ada görə çeşidlənmiş nişanları yenidən sıralamaq olmur (A-Z)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "HAZIR"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "LƏĞV ET"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Elementləri çeşidlə"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Elementləri çeşidlə"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Vidjetlər"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Piktoqram əlavə etmək olmadı"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Piktoqram əlavə et"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Əsas ekranda kifayət qədər yer yoxdur. Bəzi vidjetləri silin və yenidən cəhd edin."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Redaktə et"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Redaktə et"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Mövzular"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Proqram quraşdırılmamışdır."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s və onunla bağlı bütün xüsusiyyətlər qeyri-aktiv ediləcək. Onu yenidən aktiv etmək üçün, Parametrlər > Proqram menecerinə daxil olun"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Qovluqdakı proqramların sayı maksimuma (%d) çatdı."
+

@@ -1,0 +1,292 @@
+/*
+ * Copyright 2012  Samsung Electronics Co., Ltd
+ *
+ * Licensed under the Flora License, Version 1.1 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://floralicense.org/license/
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include "page_edit_util.edc"
+#include "../../inc/conf.h"
+
+images {
+	image: "../images/btn_delete_nor.png" COMP;
+	image: "../images/btn_delete_press.png" COMP;
+	image: "../images/edit_all_page_drag.png" COMP;
+	image: "../images/edit_all_page_bg.png" COMP;
+	image: "../images/edit_all_page_create.png" COMP;
+}
+
+collections
+{
+	group
+	{
+		name: GROUP_ALL_PAGES;
+
+		parts {
+			part
+			{
+				name: "base";
+				type: SPACER;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0;}
+					rel2 { relative: 1.0 1.0;}
+				}
+			}
+			part
+			{
+				name: "bg";
+				type: SWALLOW;
+				description
+				{
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to:"base";}
+					rel2 { relative: 1.0 1.0; to:"base";}
+				}
+			}
+			part
+			{
+				name: PART_LAYOUT_CONTENT;
+				type: SWALLOW; //gengrid swallow
+				description
+				{
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to:"base";}
+					rel2 { relative: 1.0 1.0; to:"base";}
+				}
+			}
+		}
+	}
+
+	group {
+		name: GROUP_GRID_ITEM;
+
+		parts {
+			part {
+				name: "base";
+				type: SPACER;
+				description {
+					state: "default" 0.0;
+					rel1 {relative: 0.0 0.0;}
+					rel2 {relative: 1.0 1.0;}
+				}
+			}
+
+			part {
+				name: PART_GRID_ITEM_CONTENT;
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					rel1 {relative: 0.0 0.0; to: "base";}
+					rel2 {relative: 1.0 1.0; to: "base";}
+				}
+			}
+		}
+	}
+
+	group
+	{
+		name: GROUP_THUMB;
+		parts
+		{
+			part
+			{
+				name: "base";
+				type: SPACER;
+				description
+				{
+					state: "default" 0.0;
+					rel1 {relative: 0.0 0.0;}
+					rel2 {relative: 1.0 1.0;}
+				}
+			}
+			part
+			{
+				name: "bg";
+				type: IMAGE;
+				description
+				{
+					state: "default" 0.0;
+					rel1 {relative: 0.0 0.0; to: PART_THUMB_CONTENT;}
+					rel2 {relative: 1.0 1.0; to: PART_THUMB_CONTENT;}
+					image {
+						normal: "../images/edit_all_page_bg.png";
+					}
+				}
+				description
+				{
+					state: "hide" 0.0;
+					inherit: "default" 0.0;
+					visible: 0;
+				}
+				description
+				{
+					state: "reposition" 0.0;
+					inherit: "default";
+					rel1 {relative: -0.05 -0.05;}
+					rel2 {relative: 1.05 1.05;}
+					visible: 1;
+					image
+					{
+						normal: "../images/edit_all_page_drag.png";
+					}
+				}
+			}
+			part {
+				name: "add_bg";
+				type: IMAGE;
+				description {
+					state: "default" 0.0;
+					rel1 {relative: 0.34 0.34; to: "bg";}
+					rel2 {relative: 0.67 0.67; to: "bg";}
+					visible: 0;
+					image {
+						normal : "../images/edit_all_page_create.png";
+					}
+				}
+				description {
+					state: "visible" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+			part
+			{
+				name: PART_THUMB_CONTENT;
+				type: SWALLOW;
+				description
+				{
+					state: "default" 0.0;
+					rel1 {relative: 0.0 0.0; to: "base";}
+					rel2 {relative: 1.0 1.0; to: "base";}
+				}
+			}
+			part {
+				name: "remove_button";
+				type: IMAGE;
+				description {
+					state: "default" 0.0;
+					rel1{relative: BADGE_REL1_X BADGE_REL1_Y; to: "base";}
+					rel2{relative: BADGE_REL2_X BADGE_REL2_Y; to: "base";}
+					visible: 1;
+					aspect: 0.0 0.0;
+					aspect_preference: BOTH;
+					fixed: 1 1;
+					image {
+						normal: "../images/btn_delete_nor.png";
+					}
+				}
+				description {
+					state: "pressed";
+					inherit: "default" 0.0;
+					image {
+						normal: "../images/btn_delete_press.png";
+					}
+				}
+				description {
+					state: "hidden" 0.0;
+					inherit: "default" 0.0;
+					color: 255 255 255 0;
+					visible: 0;
+				}
+			}
+		}
+		programs
+		{
+			program
+			{
+				name: "bg_hide";
+				signal: SIGNAL_BG_HIDE;
+				source: "layout";
+				action: STATE_SET "hide" 0.0;
+				target: "bg";
+			}
+			program
+			{
+				name: "bg_reposition";
+				signal: SIGNAL_BG_REPOSITON;
+				source: "layout";
+				action: STATE_SET "reposition" 0.0;
+				target: "bg";
+				transition: DECELERATE 0.2;
+			}
+			program
+			{
+				name: "bg_normal";
+				signal: SIGNAL_BG_NORMAL;
+				source: "layout";
+				action: STATE_SET "default" 0.0;
+				target: "bg";
+				transition: DECELERATE 0.2;
+			}
+			program {
+				name: "thumbnail_clicked";
+				signal: "mouse,clicked,1";
+				source: "page_thumbnail";
+				action: SIGNAL_EMIT SIGNAL_THUMBNAIL_CLICKED SIGNAL_SOURCE;
+			}
+			program {
+				name: "add_icon_show";
+				signal: SIGNAL_ADD_ICON_SHOW;
+				source: "layout";
+				action: STATE_SET "visible" 0.0;
+				target: "add_bg";
+			}
+			program {
+				name: "remove_button_clicked";
+				signal: "mouse,clicked,1";
+				source: "remove_button";
+				action: SIGNAL_EMIT SIGNAL_REMOVE_BUTTON_CLICKED SIGNAL_SOURCE;
+			}
+			program {
+				name: "remove_button_show";
+				signal: SIGNAL_REMOVE_BUTTON_SHOW;
+				source: "layout";
+				action: STATE_SET "default" 0.0;
+				target: "remove_button";
+				transition: DECELERATE 0.20;
+			}
+			program {
+				name: "remove_button_hide";
+				signal: SIGNAL_REMOVE_BUTTON_HIDE;
+				source: "layout";
+				action: STATE_SET "hidden" 0.0;
+				target: "remove_button";
+				transition: DECELERATE 0.20;
+			}
+			program {
+				name: "remove_button_hide_instant";
+				signal: SIGNAL_REMOVE_BUTTON_HIDE_INSTANT;
+				source: "layout";
+				action: STATE_SET "hidden" 0.0;
+				target: "remove_button";
+			}
+			program {
+				name: "remove_button_mouse_down";
+				signal: "mouse,down,1";
+				source: "remove_button";
+				action: STATE_SET "pressed" 0.0;
+				target: "remove_button";
+				transition: DECELERATE 0.20;
+			}
+			program {
+				name: "remove_button_mouse_up";
+				signal: "mouse,up,1";
+				source: "remove_button";
+				action: STATE_SET "default" 0.0;
+				target: "remove_button";
+				transition: DECELERATE 0.20;
+			}
+		}
+	}
+}
+
