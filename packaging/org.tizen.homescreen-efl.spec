@@ -81,13 +81,13 @@ dlogutil -c
 %manifest %{name}.manifest
 %defattr(-,root,root,-)
 
-%{_optdir}/usr/apps/%{name}/bin/homescreen-efl
-%{_optdir}/usr/apps/%{name}/res/edje/*.edj
-%{_optdir}/usr/apps/%{name}/res/images/*.png
-%{_optdir}/usr/apps/%{name}/res/images/livebox/*.png
-%{_optdir}/usr/apps/%{name}/res/locale/*/*/*.mo
+/usr/apps/%{name}/bin/homescreen-efl
+/usr/apps/%{name}/res/edje/*.edj
+/usr/apps/%{name}/res/images/*.png
+/usr/apps/%{name}/res/images/livebox/*.png
+/usr/apps/%{name}/res/locale/*/*/*.mo
 %{_datadir}/packages/%{name}.xml
 %{_sysconfdir}/smack/accesses.d/*.efl
-%dir %{_optdir}/usr/apps/%{name}/data
-%attr(777, root, root) %{_optdir}/usr/apps/%{name}/data
+%dir /usr/apps/%{name}/data
+%attr(777, root, root) /usr/apps/%{name}/data
 /usr/share/license/homescreen-efl

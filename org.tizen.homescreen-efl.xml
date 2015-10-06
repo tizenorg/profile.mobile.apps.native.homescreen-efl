@@ -3,7 +3,7 @@
     <author email="m.szczecinsk@samsung.com" href="www.samsung.com">Michal Szczecinski</author>
     <label>homescreen-efl</label>
     <description>Homescreen Application</description>
-    <ui-application appid="org.tizen.homescreen-efl" exec="/opt/usr/apps/org.tizen.homescreen-efl/bin/homescreen-efl" nodisplay="true" multiple="false" type="capp" taskmanage="false" hw-acceleration="use-GL">
+    <ui-application appid="org.tizen.homescreen-efl" exec="/usr/apps/org.tizen.homescreen-efl/bin/homescreen-efl" nodisplay="true" multiple="false" type="capp" taskmanage="false" hw-acceleration="use-GL">
         <label>homescreen-efl</label>
 		<category name="http://tizen.org/category/homeapp"/>
         <icon>/usr/share/icons/default/small/org.tizen.menu-screen.png</icon>

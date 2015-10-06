@@ -268,8 +268,9 @@ HAPI void home_screen_mvc_set_ly_scale(Evas_Object *layout)
 	} else if(width == WVGA_WIDTH && height == WVGA_HEIGHT) {
 		LOGD("WVGA_RES");
 		edje_object_scale_set(edje, WVGA_SCALE_FACTOR);
+	} else if(width == UHD_WIDTH && height == UHD_HEIGHT) {
+		edje_object_scale_set(edje, UHD_SCALE_FACTOR);
 	}
-
 }
 
 /*====================END OF PUBLIC FUNCTIONS IMPLEMENTATION=========================*/
@@ -317,6 +318,7 @@ static void __homescreen_efl_create_base_gui(void)
 
 	/* Window */
 	s_info.win = elm_win_util_standard_add(PACKAGE, PACKAGE);
+	// evas_object_resize(s_info.win, 1440, 2560);
 	elm_win_autodel_set(s_info.win, EINA_TRUE);
 
 	evas_object_smart_callback_add(s_info.win, "delete,request", __homescreen_efl_win_delete_request_cb, NULL);
@@ -338,18 +340,20 @@ static void __homescreen_efl_create_base_gui(void)
 	evas_object_show(s_info.bg);
 
 	__homescreen_efl_get_window_size(s_info.win);
-	__homescreen_efl_make_gradient_bg();
 
 	/* Conformant */
-	s_info.conformant = _create_conformant();
+	// s_info.conformant = _create_conformant();
 
-	/* Base Layout */
+	// /* Base Layout */
 	snprintf(edj_path, sizeof(edj_path), EDJE_DIR"/home.edj");
 	s_info.layout = elm_layout_add(s_info.win);
 	elm_layout_file_set(s_info.layout, edj_path, GROUP_HOME_LY);
 	evas_object_size_hint_weight_set(s_info.layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+	// evas_object_size_hint_min_set(s_info.layout, 1440, 2560);
+	// evas_object_size_hint_max_set(s_info.layout, 1440, 2560);
 	elm_win_resize_object_add(s_info.win, s_info.layout);
 	evas_object_show(s_info.layout);
+
 
 	home_screen_mvc_set_ly_scale(s_info.layout);
 
@@ -367,6 +371,7 @@ static void __homescreen_efl_create_base_gui(void)
 	elm_object_part_content_set(s_info.layout, PART_CONTENT, s_info.home);
 
 	/* Show window after base gui is set up */
+	dlog_print(DLOG_INFO, LOG_TAG ,"WINDOW SIZE IS : %d %d", s_info.root_width, s_info.root_height);
 	evas_object_show(s_info.win);
 	elm_object_signal_callback_add(s_info.layout, SIGNAL_HOME_BTN_CLICKED, SIGNAL_SOURCE, __homescreen_efl_home_btn_clicked, NULL);
 	elm_object_signal_callback_add(s_info.layout, SIGNAL_MENU_BTN_CLICKED, SIGNAL_SOURCE, __homescreen_efl_menu_btn_clicked, NULL);

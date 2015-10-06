@@ -110,13 +110,13 @@ HAPI Evas_Object *all_apps_create(Evas_Object *parent, void *data)
 		return NULL;
 	}
 
-	s_info.index = dynamic_index_new(s_info.all_apps);
-	if (!s_info.index) {
-		LOGE("[FAILED][dynamic_index_new]");
-		page_scroller_destroy(s_info.all_apps);
-		s_info.all_apps = NULL;
-		return NULL;
-	}
+	// s_info.index = dynamic_index_new(s_info.all_apps);
+	// if (!s_info.index) {
+	// 	LOGE("[FAILED][dynamic_index_new]");
+	// 	page_scroller_destroy(s_info.all_apps);
+	// 	s_info.all_apps = NULL;
+	// 	return NULL;
+	// }
 
 	evas_object_size_hint_min_set(s_info.all_apps, home_screen_get_root_width(), home_screen_get_root_height());
 	evas_object_resize(s_info.all_apps, home_screen_get_root_width(), home_screen_get_root_height());
@@ -127,18 +127,17 @@ HAPI Evas_Object *all_apps_create(Evas_Object *parent, void *data)
 
 HAPI void all_apps_show(void)
 {
-	if (s_info.index) {
-		elm_object_part_content_set(s_info.parent, PART_INDEX, s_info.index->box);
-		evas_object_show(s_info.index->box);
-	}
+	// if (s_info.index) {
+	// 	elm_object_part_content_set(s_info.parent, PART_INDEX, s_info.index->box);
+	// 	evas_object_show(s_info.index->box);
+	// }
 }
 
 HAPI void all_apps_hide(void)
 {
-	elm_object_part_content_unset(s_info.parent, PART_INDEX);
-	if (s_info.index)
-		evas_object_hide(s_info.index->box);
-
+	// elm_object_part_content_unset(s_info.parent, PART_INDEX);
+	// if (s_info.index)
+	// 	evas_object_hide(s_info.index->box);
 }
 
 HAPI void all_apps_del(void)

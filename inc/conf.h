@@ -35,10 +35,13 @@
 #define QHD_HEIGHT 960
 #define WVGA_WIDTH 480
 #define WVGA_HEIGHT 800
+#define UHD_WIDTH 1440
+#define UHD_HEIGHT 2560
 
 #define HD_SCALE_FACTOR 1.2
 #define QHD_SCALE_FACTOR 0.85
 #define WVGA_SCALE_FACTOR 0.70
+#define UHD_SCALE_FACTOR 1.3
 
 /*=================================DATA KEYS CONF=============================*/
 #define KEY_ICON_DATA "item_data"
@@ -51,13 +54,13 @@
 
 /*=================================DATABASE===================================*/
 #define DATABASE_FILE \
-	"/opt/usr/apps/org.tizen.homescreen-efl/data/homescreen-efl.db"
+	"/usr/apps/org.tizen.homescreen-efl/data/homescreen-efl.db"
 
 /*=================================RESOURCES==================================*/
 #define DEFAULT_BG \
-	"opt/usr/apps/com.samsung.home-lite/res/images/default_bg.png"
-#define EDJE_DIR "/opt/usr/apps/org.tizen.homescreen-efl/res/edje"
-#define IMAGE_DIR "/opt/usr/apps/org.tizen.homescreen-efl/res/images"
+	"/usr/apps/com.samsung.home-lite/res/images/default_bg.png"
+#define EDJE_DIR "/usr/apps/org.tizen.homescreen-efl/res/edje"
+#define IMAGE_DIR "/usr/apps/org.tizen.homescreen-efl/res/images"
 
 /*******************************************************************************
 *
@@ -84,7 +87,7 @@
 
 /*================================ APP_ICON.C=================================*/
 #define DEFAULT_APP_ICON  \
-	"/opt/usr/apps/org.tizen.homescreen-efl/res/images/default.png"
+	"/usr/apps/org.tizen.homescreen-efl/res/images/default.png"
 
 #define BADGE_REL_X 0.85
 #define BADGE_REL_Y 0.00
@@ -113,7 +116,7 @@
 #define LIVEBOX_ON_CREATE_SIZE 4
 #define LIVEBOX_MIN_MOUSE_MOVE 100
 
-#define TEST_PKG "/opt/usr/apps/org.tizen.homescreen-efl/res/images/livebox/"
+#define TEST_PKG "/usr/apps/org.tizen.homescreen-efl/res/images/livebox/"
 #define TEST_PKG_ALARM        TEST_PKG"preview_alarm.png"
 #define TEST_PKG_DUAL_CLOCK   TEST_PKG"preview_dual_clock.png"
 #define TEST_PKG_MUSIC        TEST_PKG"preview_music.png"
