@@ -36,6 +36,12 @@ collections {
 					state: "default" 0.0;
 					rel1.relative: 0.0 0.0;
 					rel2.relative: 1.0 1.0;
+					/*
+					* This is temporary fix due to strange elm_box bechaviour in the index swallow.
+					* Box has dynamic size which affects whole layout.
+					*/
+					min: 1440 2560;
+					max: 1440 2560;
 				}
 			}
 			part {
@@ -492,7 +498,6 @@ collections {
 					rel2.relative: HOME_PG_INDEX_X_MAX HOME_BTNS_Y_MAX;
 				}
 			}
-
 			part {
 				name: PART_NEXT_PAGE_INDICE;
 				type: RECT;

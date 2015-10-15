@@ -190,7 +190,7 @@ void livebox_panel_fill(void)
 
 	data_model_iterate_pages(home, __livebox_panel_iterate_page_fill_cb,
 		__livebox_panel_iterate_node_fill_cb, &widget_pos_h);
-	// livebox_panel_create_dynamic_index();
+	livebox_panel_create_dynamic_index();
 }
 
 Evas_Object *livebox_panel_create(Evas_Object *parent)
@@ -215,8 +215,8 @@ Evas_Object *livebox_panel_create(Evas_Object *parent)
 
 void livebox_panel_set_content(Evas_Object *layout)
 {
-	// if(s_info.dynamic_index->box)
-	// 	elm_layout_content_set(layout, PART_INDEX, s_info.dynamic_index->box);
+	if(s_info.dynamic_index->box)
+		elm_layout_content_set(layout, PART_INDEX, s_info.dynamic_index->box);
 }
 
 void livebox_panel_unset_content(Evas_Object *layout)

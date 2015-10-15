@@ -349,11 +349,8 @@ static void __homescreen_efl_create_base_gui(void)
 	s_info.layout = elm_layout_add(s_info.win);
 	elm_layout_file_set(s_info.layout, edj_path, GROUP_HOME_LY);
 	evas_object_size_hint_weight_set(s_info.layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-	// evas_object_size_hint_min_set(s_info.layout, 1440, 2560);
-	// evas_object_size_hint_max_set(s_info.layout, 1440, 2560);
 	elm_win_resize_object_add(s_info.win, s_info.layout);
 	evas_object_show(s_info.layout);
-
 
 	home_screen_mvc_set_ly_scale(s_info.layout);
 

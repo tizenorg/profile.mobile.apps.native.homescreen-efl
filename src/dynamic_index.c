@@ -69,10 +69,8 @@ HAPI dynamic_index_t *dynamic_index_new(Evas_Object *page_scroller)
 
 	elm_object_signal_callback_add(page_scroller, "scroller,count,changed", "*", __dynamic_index_page_count_changed_cb, dynamic_index);
 	evas_object_smart_callback_add(page_scroller, "scroll", __dynamic_index_page_area_changed_cb, dynamic_index);
-
 	evas_object_smart_callback_add(page_scroller, "scroll,drag,start", __dynamic_index_current_page_changed_start_cb, dynamic_index);
 	evas_object_smart_callback_add(page_scroller, "scroll,anim,stop", __dynamic_index_current_page_changed_stop_cb, dynamic_index);
-
 	evas_object_data_set(page_scroller, KEY_INDEX, dynamic_index);
 
 	return dynamic_index;
@@ -136,7 +134,6 @@ static Evas_Object *__dynamic_index_create_indice(Evas_Object *box)
 	int idx_width = (INDEX_ELEMENT_CONTAINER_WIDTH / ROOT_WIN_W) * home_screen_get_root_width();
 	int idx_height = (INDEX_ELEMENT_CONTAINER_HEIGHT / ROOT_WIN_H) * home_screen_get_root_height();
 
-
 	if (!box) {
 		LOGD("Invalid argument : box is NULL");
 		return NULL;
@@ -168,7 +165,6 @@ static Evas_Object *__dynamic_index_create_indice(Evas_Object *box)
 
 	evas_object_show(layout);
 	elm_box_pack_end(box, layout);
-
 	return layout;
 }
 
@@ -214,7 +210,6 @@ static Eina_Bool __dynamic_index_fill_box(dynamic_index_t *dynamic_index)
 
 	elm_layout_signal_emit(dynamic_index->indices[c_page], SIGNAL_SET_CURRENT, SIGNAL_SOURCE);
 	__dynamic_index_set_properties(dynamic_index->indices[dynamic_index->page_current], 1.0);
-
 	return EINA_TRUE;
 }
 
@@ -302,7 +297,6 @@ static Evas_Object *__dynamic_index_box_create(void)
 	elm_box_horizontal_set(box, EINA_TRUE);
 
 	evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-
 	elm_box_align_set(box, 0.5, 0.5);
 	evas_object_show(box);
 
