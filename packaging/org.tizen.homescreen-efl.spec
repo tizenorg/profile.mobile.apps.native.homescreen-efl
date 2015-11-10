@@ -44,6 +44,7 @@ BuildRequires:  pkgconfig(widget_viewer_evas)
 BuildRequires:  pkgconfig(shortcut)
 BuildRequires:  pkgconfig(capi-appfw-preference)
 
+
 %description
 Tizen Homescreen
 

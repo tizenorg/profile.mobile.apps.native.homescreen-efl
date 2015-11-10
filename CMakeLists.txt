@@ -30,6 +30,7 @@ pkg_check_modules(MENU_PKGS REQUIRED
 	widget_service
 	widget_viewer_evas
 	capi-appfw-preference
+	sqlite3
 )
 
 ADD_DEFINITIONS("-DENABLE_BGIMAGE")
