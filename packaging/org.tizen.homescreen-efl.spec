@@ -1,10 +1,8 @@
-%define _optdir /opt
-
-%define _appdir /opt/usr/apps
+%define _appdir /usr/apps
 %define _packagedir %{_appdir}/%{_package_name}
 
 Name:       org.tizen.homescreen-efl
-Summary: Homescreen
+Summary: Homescreen-Efl
 Version: 0.0.1
 Release: 0.1
 Group:      TO_BE/FILLED_IN
@@ -52,10 +50,14 @@ Tizen Homescreen
 %setup -q
 
 %build
-%if 0%{?tizen_build_binary_release_type_eng}
-export CFLAGS="${CFLAGS} -DTIZEN_ENGINEER_MODE"
-export CXXFLAGS="${CXXFLAGS} -DTIZEN_ENGINEER_MODE"
-export FFLAGS="${FFLAGS} -DTIZEN_ENGINEER_MODE"
+%if 0%{?sec_build_binary_debug_enable}
+export CFLAGS="${CFLAGS} -DTIZEN_DEBUG_ENABLE"
+export CXXFLAGS="${CXXFLAGS} -DTIZEN_DEBUG_ENABLE"
+export FFLAGS="${FFLAGS} -DTIZEN_DEBUG_ENABLE"
+%endif
+
+%ifarch %{arm}
+CXXFLAGS+=" -D_ARCH_ARM_ -mfpu=neon"
 %endif
 
 %cmake . -DCMAKE_INSTALL_PREFIX=%{_prefix}
@@ -66,7 +68,7 @@ make %{?jobs:-j%jobs}
 %make_install
 %define tizen_sign 1
 %define tizen_sign_base %{_packagedir}
-%define tizen_sign_level platform
+%define tizen_sign_level public
 %define tizen_author_sign 1
 %define tizen_dist_sign 1
 mkdir -p %{buildroot}%{_datadir}
@@ -74,21 +76,17 @@ mkdir -p %{buildroot}/usr/share/license
 cp LICENSE %{buildroot}/usr/share/license/homescreen-efl
 
 %post
-killall -9 homescreen-efl
-dlogutil -c
-#/usr/bin/signing-client/hash-signer-client.sh -a -d -p platform %{_packagedir}
 
 %files
 %manifest %{name}.manifest
 %defattr(-,root,root,-)
-
 /usr/apps/%{name}/bin/homescreen-efl
 /usr/apps/%{name}/res/edje/*.edj
 /usr/apps/%{name}/res/images/*.png
 /usr/apps/%{name}/res/images/livebox/*.png
 /usr/apps/%{name}/res/locale/*/*/*.mo
+/usr/share/icons/default/small/homescreen-efl.png
 %{_datadir}/packages/%{name}.xml
-%{_sysconfdir}/smack/accesses.d/*.efl
 %dir /usr/apps/%{name}/data
 %attr(777, root, root) /usr/apps/%{name}/data
 /usr/share/license/homescreen-efl

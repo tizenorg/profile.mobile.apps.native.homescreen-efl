@@ -40,8 +40,8 @@ collections {
 					* This is temporary fix due to strange elm_box bechaviour in the index swallow.
 					* Box has dynamic size which affects whole layout.
 					*/
-					min: 1440 2560;
-					max: 1440 2560;
+					min: 720 1280;
+					max: 720 1280;
 				}
 			}
 			part {
