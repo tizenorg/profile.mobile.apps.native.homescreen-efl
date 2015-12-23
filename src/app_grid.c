@@ -492,7 +492,7 @@ static void __app_grid_resize_cb(void *data, Evas *e, Evas_Object *obj, void *ei
 		item_w = w/APP_COLS;
 		item_h = h/APP_ROWS;
 	} else if ((app_grid_type_t)data == APP_GRID_TYPE_FOLDER) {
-		item_w = w/FOLDER_COL_APPS - FOLDER_ITEM_MARGIN*home_screen_get_root_width();
+		item_w = (int)(w/FOLDER_COL_APPS - FOLDER_ITEM_MARGIN*home_screen_get_root_width());
 		item_h = h/FOLDER_ROW_APPS;
 	}
 
