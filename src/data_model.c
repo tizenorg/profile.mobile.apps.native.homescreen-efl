@@ -110,7 +110,7 @@ HAPI void data_model_load_app_mgr(void)
 	EINA_LIST_FOREACH(apps, it, app_mgr_item) {
 		if (!tree_node_new(&item)) {
 			LOGE("app_mgr_load -> tree_node_new failure2");
-			return;
+			continue;
 		}
 		item->data = app_item_create(
 				APP_ITEM_ICON,
