@@ -18,9 +18,9 @@
 
 images
 {
-	image: "../images/btn_delete_nor.png" COMP;
-	image: "../images/reposition_bg.png" COMP;
-	image: "../images/reposition_bg_shadow.png" COMP;
+	image: "btn_delete_nor.png" COMP;
+	image: "reposition_bg.png" COMP;
+	image: "reposition_bg_shadow.png" COMP;
 }
 
 collections
@@ -45,7 +45,7 @@ collections
 					color: LIVEBOX_REPOSITION_BG_COLOR LIVEBOX_REPOSITION_BG_COLOR LIVEBOX_REPOSITION_BG_COLOR 0;
 					image
 					{
-						normal: "../images/reposition_bg.png";
+						normal: "reposition_bg.png";
 						border: LIVEBOX_REPOSITION_BG_BORDER LIVEBOX_REPOSITION_BG_BORDER LIVEBOX_REPOSITION_BG_BORDER LIVEBOX_REPOSITION_BG_BORDER;
 					}
 				}
@@ -114,7 +114,7 @@ collections
 					fixed: 1 1;
 					image
 					{
-						normal: "../images/btn_delete_nor.png";
+						normal: "btn_delete_nor.png";
 					}
 				}
 				description

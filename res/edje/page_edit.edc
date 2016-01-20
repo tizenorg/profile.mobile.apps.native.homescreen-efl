@@ -18,11 +18,11 @@
 #include "../../inc/conf.h"
 
 images {
-	image: "../images/btn_delete_nor.png" COMP;
-	image: "../images/btn_delete_press.png" COMP;
-	image: "../images/edit_all_page_drag.png" COMP;
-	image: "../images/edit_all_page_bg.png" COMP;
-	image: "../images/edit_all_page_create.png" COMP;
+	image: "btn_delete_nor.png" COMP;
+	image: "btn_delete_press.png" COMP;
+	image: "edit_all_page_drag.png" COMP;
+	image: "edit_all_page_bg.png" COMP;
+	image: "edit_all_page_create.png" COMP;
 }
 
 collections
@@ -119,7 +119,7 @@ collections
 					rel1 {relative: 0.0 0.0; to: PART_THUMB_CONTENT;}
 					rel2 {relative: 1.0 1.0; to: PART_THUMB_CONTENT;}
 					image {
-						normal: "../images/edit_all_page_bg.png";
+						normal: "edit_all_page_bg.png";
 					}
 				}
 				description
@@ -137,7 +137,7 @@ collections
 					visible: 1;
 					image
 					{
-						normal: "../images/edit_all_page_drag.png";
+						normal: "edit_all_page_drag.png";
 					}
 				}
 			}
@@ -150,7 +150,7 @@ collections
 					rel2 {relative: 0.67 0.67; to: "bg";}
 					visible: 0;
 					image {
-						normal : "../images/edit_all_page_create.png";
+						normal : "edit_all_page_create.png";
 					}
 				}
 				description {
@@ -182,14 +182,14 @@ collections
 					aspect_preference: BOTH;
 					fixed: 1 1;
 					image {
-						normal: "../images/btn_delete_nor.png";
+						normal: "btn_delete_nor.png";
 					}
 				}
 				description {
 					state: "pressed";
 					inherit: "default" 0.0;
 					image {
-						normal: "../images/btn_delete_press.png";
+						normal: "btn_delete_press.png";
 					}
 				}
 				description {

@@ -17,11 +17,11 @@
 #include "../../inc/conf.h"
 
 images {
-	image: "../images/home_button_bg.png" COMP;
-	image: "../images/home_icon_home.png" COMP;
-	image: "../images/home_icon_menu.png" COMP;
-	image: "../images/all_apps_icon_menu.png" COMP;
-	image: "../images/home_icon_reorder.png" COMP;
+	image: "home_button_bg.png" COMP;
+	image: "home_icon_home.png" COMP;
+	image: "home_icon_menu.png" COMP;
+	image: "all_apps_icon_menu.png" COMP;
+	image: "home_icon_reorder.png" COMP;
 }
 
 collections {
@@ -241,7 +241,7 @@ collections {
 					color: 0 0 0 40;
 					visible: 1;
 					image {
-						normal: "../images/home_button_bg.png";
+						normal: "home_button_bg.png";
 					}
 				}
 				description {
@@ -285,7 +285,7 @@ collections {
 					visible: 1;
 					image
 					{
-						normal: "../images/home_icon_menu.png";
+						normal: "home_icon_menu.png";
 					}
 				}
 				description
@@ -322,7 +322,7 @@ collections {
 					visible: 1;
 					image
 					{
-						normal: "../images/all_apps_icon_menu.png";
+						normal: "all_apps_icon_menu.png";
 					}
 				}
 				description
@@ -371,7 +371,7 @@ collections {
 					color: 0 0 0 40;
 					visible: 1;
 					image {
-						normal: "../images/home_button_bg.png";
+						normal: "home_button_bg.png";
 					}
 				}
 				description {
@@ -416,7 +416,7 @@ collections {
 					visible: 1;
 					image
 					{
-						normal: "../images/home_icon_reorder.png";
+						normal: "home_icon_reorder.png";
 					}
 				}
 				description
@@ -459,7 +459,7 @@ collections {
 					visible: 1;
 					image
 					{
-						normal: "../images/home_icon_home.png";
+						normal: "home_icon_home.png";
 					}
 				}
 				description
