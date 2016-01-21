@@ -311,7 +311,7 @@ static Evas_Object *_create_conformant(void)
 static void __homescreen_efl_create_base_gui(void)
 {
 	char edj_path[PATH_MAX] = {0, };
-	const char *bg_path = IMAGE_DIR"/default_bg.png";
+	const char *bg_path = util_get_res_file_path(IMAGE_DIR"/default_bg.png");
 	char trbuf[PATH_MAX] = {0, };
 	char *buf = NULL;
 	int ret = -1;
@@ -345,7 +345,7 @@ static void __homescreen_efl_create_base_gui(void)
 	// s_info.conformant = _create_conformant();
 
 	// /* Base Layout */
-	snprintf(edj_path, sizeof(edj_path), EDJE_DIR"/home.edj");
+	snprintf(edj_path, sizeof(edj_path), "%s", util_get_res_file_path(EDJE_DIR"/home.edj"));
 	s_info.layout = elm_layout_add(s_info.win);
 	elm_layout_file_set(s_info.layout, edj_path, GROUP_HOME_LY);
 	evas_object_size_hint_weight_set(s_info.layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);

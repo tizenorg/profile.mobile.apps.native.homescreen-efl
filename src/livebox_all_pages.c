@@ -122,7 +122,7 @@ HAPI Evas_Object *livebox_all_pages_show(void)
 		return NULL;
 	}
 
-	all_pages_layout = util_create_edje_layout(win, EDJE_DIR"/page_edit.edj", GROUP_ALL_PAGES);
+	all_pages_layout = util_create_edje_layout(win, util_get_res_file_path(EDJE_DIR"/page_edit.edj"), GROUP_ALL_PAGES);
 	if (!all_pages_layout) {
 		LOGE("[FAILED][util_edje_layout_create]");
 		return NULL;
@@ -555,13 +555,13 @@ static Evas_Object *__livebox_all_pages_create_thumb(Evas_Object *page, bool is_
 	w = THUMB_W_REL * w;
 	h = THUMB_H_REL * h;
 
-	ly_grid_item = util_create_edje_layout(win, EDJE_DIR"/page_edit.edj", GROUP_GRID_ITEM);
+	ly_grid_item = util_create_edje_layout(win, util_get_res_file_path(EDJE_DIR"/page_edit.edj"), GROUP_GRID_ITEM);
 	if (!ly_grid_item) {
 		LOGE("[FAILED][util_edje_layout_create]");
 		return NULL;
 	}
 
-	ly_thumb = util_create_edje_layout(win, EDJE_DIR"/page_edit.edj", GROUP_THUMB);
+	ly_thumb = util_create_edje_layout(win, util_get_res_file_path(EDJE_DIR"/page_edit.edj"), GROUP_THUMB);
 	if (!ly_thumb) {
 		LOGE("[FAILED][util_edje_layout_create]");
 		evas_object_del(ly_grid_item);
@@ -647,14 +647,14 @@ static Evas_Object *__livebox_all_pages_create_add_icon_layout(void)
 	}
 	evas_object_color_set(add_icon, 0, 0, 0, 0);
 
-	ly_grid_item = util_create_edje_layout(win, EDJE_DIR"/page_edit.edj", GROUP_GRID_ITEM);
+	ly_grid_item = util_create_edje_layout(win, util_get_res_file_path(EDJE_DIR"/page_edit.edj"), GROUP_GRID_ITEM);
 	if (!ly_grid_item) {
 		LOGE("[FAILED][util_edje_layout_create]");
 		evas_object_del(add_icon);
 		return NULL;
 	}
 
-	ly_thumb = util_create_edje_layout(win, EDJE_DIR"/page_edit.edj", GROUP_THUMB);
+	ly_thumb = util_create_edje_layout(win, util_get_res_file_path(EDJE_DIR"/page_edit.edj"), GROUP_THUMB);
 	if (!ly_thumb) {
 		LOGE("[FAILED][util_edje_layout_create]");
 		evas_object_del(add_icon);

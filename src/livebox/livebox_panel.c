@@ -941,8 +941,9 @@ static Evas_Object *__livebox_panel_create_page(Evas_Object *livebox_scroller)
 {
 	Evas_Object *grid = NULL;
 	Evas_Object *rect = NULL;
+
 	Evas_Object *livebox_container = util_create_edje_layout(
-		livebox_scroller, EDJE_LIVEBOX_CONTAINER_FILENAME,
+		livebox_scroller, util_get_res_file_path(EDJE_LIVEBOX_CONTAINER_FILENAME),
 		GROUP_LIVEBOX_CONTAINER);
 
 	if (!livebox_container) {

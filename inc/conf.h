@@ -54,13 +54,11 @@
 
 /*=================================DATABASE===================================*/
 #define DATABASE_FILE \
-	"/usr/apps/org.tizen.homescreen-efl/data/homescreen-efl.db"
+	"homescreen-efl.db"
 
 /*=================================RESOURCES==================================*/
-#define DEFAULT_BG \
-	"/usr/apps/com.samsung.home-lite/res/images/default_bg.png"
-#define EDJE_DIR "/usr/apps/org.tizen.homescreen-efl/res/edje"
-#define IMAGE_DIR "/usr/apps/org.tizen.homescreen-efl/res/images"
+#define EDJE_DIR "edje"
+#define IMAGE_DIR "images"
 
 /*******************************************************************************
 *
@@ -87,7 +85,7 @@
 
 /*================================ APP_ICON.C=================================*/
 #define DEFAULT_APP_ICON  \
-	"/usr/apps/org.tizen.homescreen-efl/res/images/default.png"
+	IMAGE_DIR "/default.png"
 
 #define BADGE_REL_X 0.85
 #define BADGE_REL_Y 0.00

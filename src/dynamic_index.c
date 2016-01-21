@@ -145,7 +145,7 @@ static Evas_Object *__dynamic_index_create_indice(Evas_Object *box)
 		return NULL;
 	}
 
-	if (!elm_layout_file_set(layout, INDEX_EDJE, GROUP_INDEX_ELEMENT)) {
+	if (!elm_layout_file_set(layout, util_get_res_file_path(INDEX_EDJE), GROUP_INDEX_ELEMENT)) {
 		evas_object_del(layout);
 		return NULL;
 	}

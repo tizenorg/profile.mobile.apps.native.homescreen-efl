@@ -96,7 +96,7 @@ HAPI void folder_panel_init_module(void)
 		}
 
 		elm_theme_ref_set(s_info.folder_entry_theme, NULL);
-		elm_theme_extension_add(s_info.folder_entry_theme, EDJE_DIR"/folder_entry.edj");
+		elm_theme_extension_add(s_info.folder_entry_theme, util_get_res_file_path(EDJE_DIR"/folder_entry.edj"));
 	}
 }
 
@@ -409,7 +409,7 @@ static bool __folder_panel_create_layout(Evas_Object *parent, app_item_t *folder
 		return false;
 	}
 
-	if (!elm_layout_file_set(s_info.opened_folder_window, EDJE_DIR"/folder.edj", GROUP_FOLDER_WINDOW)) {
+	if (!elm_layout_file_set(s_info.opened_folder_window, util_get_res_file_path(EDJE_DIR"/folder.edj"), GROUP_FOLDER_WINDOW)) {
 		LOGE("Failed to load edje file for layout");
 		evas_object_del(s_info.opened_folder_window);
 		s_info.opened_folder_window = NULL;
@@ -607,7 +607,7 @@ static Evas_Object* __folder_panel_create_add_icon(app_item_t *folder)
 	Evas_Object *add_icon = NULL;
 	LOGI("");
 
-	icon_layout = util_create_edje_layout(home_screen_get_win(), EDJE_DIR"/icon.edj", GROUP_ICON_LY);
+	icon_layout = util_create_edje_layout(home_screen_get_win(), util_get_res_file_path(EDJE_DIR"/icon.edj"), GROUP_ICON_LY);
 	if (!icon_layout) {
 		LOGE("Failed to create icon layout");
 		return NULL;
@@ -620,7 +620,7 @@ static Evas_Object* __folder_panel_create_add_icon(app_item_t *folder)
 		return NULL;
 	}
 
-	if (!elm_layout_file_set(add_icon, EDJE_DIR"/folder.edj", GROUP_FOLDER_ADD_ICON)) {
+	if (!elm_layout_file_set(add_icon, util_get_res_file_path(EDJE_DIR"/folder.edj"), GROUP_FOLDER_ADD_ICON)) {
 		LOGE("Failed to load edje file for layout");
 		evas_object_del(add_icon);
 		evas_object_del(icon_layout);
@@ -661,7 +661,7 @@ static Evas_Object *__folder_panel_create_popup(Evas_Object *parent, app_item_t 
 		return NULL;
 	}
 
-	if (!elm_layout_file_set(folder_popup, EDJE_DIR"/folder.edj", GROUP_FOLDER_POPUP)) {
+	if (!elm_layout_file_set(folder_popup, util_get_res_file_path(EDJE_DIR"/folder.edj"), GROUP_FOLDER_POPUP)) {
 		LOGE("Failed to set folder popup");
 		evas_object_del(folder_popup);
 		return NULL;

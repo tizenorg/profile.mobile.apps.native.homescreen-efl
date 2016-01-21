@@ -588,8 +588,8 @@ static Evas_Object *__app_grid_create_ly(Evas_Object *parent)
 		return NULL;
 	}
 
-	if (!elm_layout_file_set(ly, EDJE_DIR"/app_grid.edj", GROUP_APP_GRID)) {
-		LOGE("[FAILED][elm_layout_file_set][%s]", EDJE_DIR"/app_grid.edj");
+	if (!elm_layout_file_set(ly, util_get_res_file_path(EDJE_DIR"/app_grid.edj)"), GROUP_APP_GRID)) {
+		LOGE("[FAILED][elm_layout_file_set][%s]", util_get_res_file_path(EDJE_DIR"/app_grid.edj"));
 		evas_object_del(ly);
 		return NULL;
 	}
@@ -782,8 +782,8 @@ static Evas_Object *__app_grid_create_item_container(Evas_Object *parent)
 
 	container = elm_layout_add(parent);
 
-	if (!elm_layout_file_set(container, EDJE_DIR"/app_grid.edj", GROUP_APP_GRID_ITEM_CONTAINER)) {
-		LOGE("[FAILED][elm_layout_file_set][%s]", EDJE_DIR"/app_grid.edj");
+	if (!elm_layout_file_set(container, util_get_res_file_path(EDJE_DIR"/app_grid.edj"), GROUP_APP_GRID_ITEM_CONTAINER)) {
+		LOGE("[FAILED][elm_layout_file_set][%s]", util_get_res_file_path(EDJE_DIR"/app_grid.edj"));
 		evas_object_del(container);
 		return NULL;
 	}

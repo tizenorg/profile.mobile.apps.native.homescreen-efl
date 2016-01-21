@@ -81,7 +81,7 @@ HAPI Evas_Object *app_icon_create(Tree_node_t *tree_data, app_icon_type_t type)
 	}
 
 	if (type == APP_ICON_TYPE_APP || type == APP_ICON_TYPE_FOLDER) {
-		icon_layout = util_create_edje_layout(parent, EDJE_DIR"/icon.edj", GROUP_ICON_LY);
+		icon_layout = util_create_edje_layout(parent, util_get_res_file_path(EDJE_DIR"/icon.edj"), GROUP_ICON_LY);
 		if (!icon_layout) {
 			LOGE("Failed to create icon layout");
 			return NULL;
@@ -118,7 +118,7 @@ HAPI Evas_Object *app_icon_create(Tree_node_t *tree_data, app_icon_type_t type)
 			return NULL;
 		}
 
-		if (!elm_layout_file_set(folder_icon_layout, EDJE_DIR"/folder.edj", GROUP_FOLDER_ICON_LAYOUT)) {
+		if (!elm_layout_file_set(folder_icon_layout, util_get_res_file_path(EDJE_DIR"/folder.edj"), GROUP_FOLDER_ICON_LAYOUT)) {
 			LOGE("Failed to load edje file for layout");
 			evas_object_del(folder_icon_layout);
 			evas_object_del(icon_layout);
@@ -578,7 +578,7 @@ Evas_Object *__app_icon_load(Evas_Object *parent, const char *icon_path)
 		return NULL;
 	}
 
-	if ((strncmp("", icon_path, strlen(icon_path)) && elm_image_file_set(icon_image, icon_path, NULL)) || elm_image_file_set(icon_image, DEFAULT_APP_ICON, NULL))
+	if ((strncmp("", icon_path, strlen(icon_path)) && elm_image_file_set(icon_image, icon_path, NULL)) || elm_image_file_set(icon_image, util_get_res_file_path(DEFAULT_APP_ICON), NULL))
 		return icon_image;
 
 	evas_object_del(icon_image);
