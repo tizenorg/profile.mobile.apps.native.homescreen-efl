@@ -10,11 +10,9 @@
         <metadata key="http://developer.samsung.com/tizen/metadata/legacylifecycle"/>
     </ui-application>
     <privileges>
-        <privilege>http://tizen.org/privilege/systemsettings</privilege>
         <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
         <privilege>http://tizen.org/privilege/shortcut</privilege>
         <privilege>http://tizen.org/privilege/notification</privilege>
-        <privilege>http://tizen.org/privilege/packagemanager.admin</privilege>
         <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
     </privileges>
 </manifest>
