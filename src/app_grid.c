@@ -588,7 +588,7 @@ static Evas_Object *__app_grid_create_ly(Evas_Object *parent)
 		return NULL;
 	}
 
-	if (!elm_layout_file_set(ly, util_get_res_file_path(EDJE_DIR"/app_grid.edj)"), GROUP_APP_GRID)) {
+	if (!elm_layout_file_set(ly, util_get_res_file_path(EDJE_DIR"/app_grid.edj"), GROUP_APP_GRID)) {
 		LOGE("[FAILED][elm_layout_file_set][%s]", util_get_res_file_path(EDJE_DIR"/app_grid.edj"));
 		evas_object_del(ly);
 		return NULL;
