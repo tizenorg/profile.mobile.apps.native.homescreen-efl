@@ -55,15 +55,12 @@ void livebox_widget_init(void)
 
 	ret = widget_service_get_widget_list(__livebox_widget_get_pkg_list_cb, NULL);
 
-	if (ret == WIDGET_ERROR_INVALID_PARAMETER ||
-		ret == WIDGET_ERROR_IO_ERROR ||
-		ret == WIDGET_ERROR_PERMISSION_DENIED) {
+	if (ret < 0) {
 		LOGE("FAILED TO GET PKGLIST. ERROR CODE: %d", ret);
 		return;
-	} else {
-		LOGI("SUCCESS TO GET PKGLIST. COUNT: %d", ret);
 	}
 
+	LOGI("SUCCESS TO GET PKGLIST. COUNT: %d", ret);
 	widget_viewer_evas_init(home_screen_get_win());
 
 	ret = shortcut_set_request_cb(request_cb, NULL);
