@@ -237,7 +237,7 @@ static void __dynamic_index_page_count_changed_cb(void *data, Evas_Object *obj, 
 
 HAPI double _dist(int current, int page_x, int page_width)
 {
-	return 1.0-((double)fabs(page_x-current))/page_width;
+	return 1.0-((double)fabs((float)page_x-current))/page_width;
 }
 
 static void __dynamic_index_page_area_changed_cb(void *data, Evas_Object *obj, void *event_info)
@@ -257,7 +257,7 @@ static void __dynamic_index_page_area_changed_cb(void *data, Evas_Object *obj, v
 
 	angle = (double)(x - dynamic_index->x_current)/dynamic_index->page_width * 90.0;
 
-	if(fabs(x - dynamic_index->x_current) <= dynamic_index->page_width)
+	if(fabs((float)(x - dynamic_index->x_current)) <= dynamic_index->page_width)
 	{
 		next_page = x > dynamic_index->x_current ? (dynamic_index->page_current+1) % dynamic_index->page_count : dynamic_index->page_current-1;
 		color = fabs(angle) * 2;

@@ -280,34 +280,6 @@ static void __homescreen_efl_win_delete_request_cb(void *data, Evas_Object *obj,
 	ui_app_exit();
 }
 
-static Evas_Object *_create_conformant(void)
-{
-	Evas_Object *conformant   = NULL;
-
-	if (!s_info.win) {
-		LOGE("Window is not created");
-		return NULL;
-	}
-
-	conformant = elm_conformant_add(s_info.win);
-	if (!conformant) {
-		LOGE("Failed to create conformant");
-		return NULL;
-	}
-	elm_win_conformant_set(s_info.win, EINA_TRUE);
-
-	evas_object_size_hint_weight_set(conformant, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-	elm_win_resize_object_add(s_info.win, conformant);
-
-	elm_win_indicator_mode_set(s_info.win, ELM_WIN_INDICATOR_SHOW);
-	elm_win_indicator_opacity_set(s_info.win, ELM_WIN_INDICATOR_TRANSLUCENT);
-	elm_object_signal_emit(conformant, "elm,state,indicator,overlap", "elm");
-
-	evas_object_show(conformant);
-
-	return conformant;
-}
-
 static void __homescreen_efl_create_base_gui(void)
 {
 	char edj_path[PATH_MAX] = {0, };

@@ -152,6 +152,7 @@ static Eina_Bool __key_release_cb(void *data, int type, void *event)
 		case HOMESCREEN_VIEW_ALL_APPS_CHOOSE:
 			folder_panel_cancel_add_icon();
 			folder_panel_set_click_ignore_state(false);
+			break;
 		case HOMESCREEN_VIEW_ALL_APPS_EDIT:
 			home_screen_set_view_type(HOMESCREEN_VIEW_ALL_APPS);
 			break;
