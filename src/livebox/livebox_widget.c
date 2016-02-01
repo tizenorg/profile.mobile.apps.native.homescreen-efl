@@ -17,7 +17,7 @@
 #include <Elementary.h>
 #include <widget_viewer_evas.h>
 #include <widget_errno.h>
-#include <shortcut.h>
+#include <shortcut_manager.h>
 
 #include "homescreen-efl.h"
 #include "livebox/livebox_widget.h"
