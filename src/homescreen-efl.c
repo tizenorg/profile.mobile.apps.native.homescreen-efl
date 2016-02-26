@@ -342,7 +342,7 @@ static void __homescreen_efl_create_base_gui(void)
 	__homescreen_efl_get_window_size(s_info.win);
 
 	/* Conformant */
-	// s_info.conformant = _create_conformant();
+	s_info.conformant = _create_conformant();
 
 	// /* Base Layout */
 	snprintf(edj_path, sizeof(edj_path), EDJE_DIR"/home.edj");
