@@ -142,6 +142,10 @@ extern void home_screen_mvc_drag_item_from_folder_cb(void);
  */
 extern void home_screen_mvc_set_ly_scale(Evas_Object *layout);
 
-
+/**
+ * @brief Close all apps choose view.
+ *
+ */
+extern void home_screen_close_all_apps_choose_view(void);
 
 #endif /* __homescreen-efl_H__ */

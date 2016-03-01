@@ -273,6 +273,14 @@ HAPI void home_screen_mvc_set_ly_scale(Evas_Object *layout)
 	}
 }
 
+HAPI void home_screen_close_all_apps_choose_view(void)
+{
+	folder_panel_cancel_add_icon();
+	folder_panel_set_click_ignore_state(false);
+	data_model_check_all_apps(data_model_get_all_apps(), false);
+	home_screen_set_view_type(HOMESCREEN_VIEW_ALL_APPS);
+}
+
 /*====================END OF PUBLIC FUNCTIONS IMPLEMENTATION=========================*/
 
 static void __homescreen_efl_win_delete_request_cb(void *data, Evas_Object *obj, void *event_info)
@@ -842,10 +850,7 @@ static void __homescreen_efl_chooser_caption_done_button_cb(void *data, Evas_Obj
 
 static void __homescreen_efl_chooser_caption_cancel_button_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
-	folder_panel_cancel_add_icon();
-	folder_panel_set_click_ignore_state(false);
-	data_model_check_all_apps(data_model_get_all_apps(), false);
-	home_screen_set_view_type(HOMESCREEN_VIEW_ALL_APPS);
+	home_screen_close_all_apps_choose_view();
 }
 
 static void __homescreen_efl_show_all_apps(void)
