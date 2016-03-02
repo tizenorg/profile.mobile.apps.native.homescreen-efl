@@ -182,10 +182,12 @@ HAPI void home_screen_set_view_type(homescreen_view_t view)
 			all_apps_set_view_mode(view);
 			__homescreen_efl_show_home_view();
 		}
+		else if(s_info.view_type == HOMESCREEN_VIEW_HOME_EDIT)
+			elm_object_signal_emit(s_info.layout, SIGNAL_BOTTOM_BUTTONS_HOME_STATE_SET, SIGNAL_SOURCE);
 		break;
 	case HOMESCREEN_VIEW_HOME_EDIT:
 		LOGI("HOMESCREEN_VIEW_HOME_EDIT");
-
+		elm_object_signal_emit(s_info.layout, SIGNAL_BOTTOM_BUTTONS_HOME_EDIT_STATE_SET, SIGNAL_SOURCE);
 		break;
 	case HOMESCREEN_VIEW_HOME_ALL_PAGES:
 		LOGI("HOMESCREEN_VIEW_HOME_ALL_PAGES");

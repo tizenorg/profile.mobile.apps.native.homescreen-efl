@@ -328,6 +328,7 @@
 /*these signals change states of bottom buttons (menu and home/all apps) */
 #define SIGNAL_BOTTOM_BUTTONS_HOME_STATE_SET "menu_icon_home_state_set"
 #define SIGNAL_BOTTOM_BUTTONS_ALL_APPS_STATE_SET "menu_icon_all_apps_state_set"
+#define SIGNAL_BOTTOM_BUTTONS_HOME_EDIT_STATE_SET "menu_icon_home_edit_state_set"
 #define SIGNAL_BOTTOM_BUTTONS_ALL_APPS_EDIT_STATE_SET "menu_icon_edit_state_set"
 
 /*========================== LIVEBOX EDC CONFIG ==============================*/
