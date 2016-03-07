@@ -437,6 +437,12 @@ collections {
 				}
 				description
 				{
+					state: "home_edit_state" 0.0;
+					inherit: "default" 0.0;
+					visible: 0;
+				}
+				description
+				{
 					state: "all_apps_edit_state" 0.0;
 					inherit: "all_apps_view_state" 0.0;
 					visible: 0;
@@ -478,6 +484,12 @@ collections {
 					state: "home_view_state" 0.0;
 					inherit: "default" 0.0;
 					color: 255 255 255 0;
+				}
+				description
+				{
+					state: "home_edit_state" 0.0;
+					inherit: "default" 0.0;
+					visible: 0;
 				}
 				description
 				{
@@ -624,6 +636,20 @@ collections {
 				target: "menu_btn_bg";
 				target: "home_btn_bg";
 				transition: LINEAR 0.3;
+			}
+			program
+			{
+				name: "menu_icon_home_edit_state_set";
+				signal: SIGNAL_BOTTOM_BUTTONS_HOME_EDIT_STATE_SET;
+				source: SIGNAL_SOURCE;
+				script {
+					set_state(PART:"home_view_home_icon","home_edit_state",0.0);
+					set_state(PART:"all_apps_view_home_icon","home_edit_state",0.0);
+					set_state(PART:"home_view_menu_icon","all_apps_edit_state",0.0);
+					set_state(PART:"all_apps_view_menu_icon","all_apps_edit_state",0.0);
+					set_state(PART:"menu_btn_bg","all_apps_edit_state",0.0);
+					set_state(PART:"home_btn_bg","all_apps_edit_state",0.0);
+				}
 			}
 			program
 			{
