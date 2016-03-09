@@ -43,9 +43,11 @@ static struct {
 	Evas_Object *bg;
 	Evas_Object *gradient_bg;
 	Evas_Object *conformant;
+	Evas_Object *gesture_rect;
 	Evas_Object *layout;
 	Evas_Object *all_apps;
 	Evas_Object *home;
+	Elm_Gesture_Layer *gesture_layer;
 	int root_width;
 	int root_height;
 	homescreen_view_t view_type;
@@ -55,9 +57,11 @@ static struct {
 	.bg = NULL,
 	.gradient_bg = NULL,
 	.conformant = NULL,
+	.gesture_rect = NULL,
 	.layout = NULL,
 	.all_apps = NULL,
 	.home = NULL,
+	.gesture_layer = NULL,
 	.root_width = 0,
 	.root_height = 0,
 	.view_type = HOMESCREEN_VIEW_HOME,
@@ -291,6 +295,34 @@ HAPI void home_screen_close_all_apps_choose_view(void)
 	home_screen_set_view_type(HOMESCREEN_VIEW_ALL_APPS);
 }
 
+HAPI int home_screen_gesture_cb_set(Elm_Gesture_Type idx, Elm_Gesture_State cb_type, Elm_Gesture_Event_Cb cb, void *data)
+{
+	Elm_Gesture_Layer *gesture_layer = s_info.gesture_layer;
+
+	if (!gesture_layer) {
+		LOGE("Can not set callback");
+		return -1;
+	}
+
+	elm_gesture_layer_cb_set(gesture_layer, idx, cb_type, cb, NULL);
+
+	return 0;
+}
+
+HAPI int home_screen_gesture_cb_unset(Elm_Gesture_Type idx, Elm_Gesture_State cb_type, Elm_Gesture_Event_Cb cb, void *data)
+{
+	Elm_Gesture_Layer *gesture_layer = s_info.gesture_layer;
+
+	if (!gesture_layer) {
+		LOGE("Can not unset callback");
+		return -1;
+	}
+
+	elm_gesture_layer_cb_del(gesture_layer, idx, cb_type, cb, NULL);
+
+	return 0;
+}
+
 /*====================END OF PUBLIC FUNCTIONS IMPLEMENTATION=========================*/
 
 static void __homescreen_efl_win_delete_request_cb(void *data, Evas_Object *obj, void *event_info)
@@ -326,6 +358,58 @@ static Evas_Object *_create_conformant(void)
 	return conformant;
 }
 
+static Evas_Object *_create_gesture_rect(Evas *e, int w, int h)
+{
+	LOGD("");
+	Evas_Object *gesture_rect = NULL;
+
+	if (!s_info.win) {
+		LOGE("Window is not created");
+		return NULL;
+	}
+
+	gesture_rect = evas_object_rectangle_add(e);
+	if(!gesture_rect) { LOGE("Failed to create gesture rectangle");
+		return NULL;
+	}
+
+	evas_object_layer_set(gesture_rect, EVAS_LAYER_MAX);
+	evas_object_color_set(gesture_rect, 0, 0, 0, 0);
+	evas_object_geometry_set(gesture_rect, 0, 0, w, h);
+	evas_object_repeat_events_set(gesture_rect, EINA_TRUE);
+
+	evas_object_show(gesture_rect);
+
+	return gesture_rect;
+}
+
+static Elm_Gesture_Layer *_create_gesture_layer(void)
+{
+	Elm_Gesture_Layer *gesture_layer = NULL;
+	Eina_Bool ret = EINA_FALSE;
+
+	if(!s_info.gesture_rect) {
+		LOGE("Gesture rectangle is not created");
+		return NULL;
+	}
+
+	gesture_layer = elm_gesture_layer_add(s_info.win);
+	if(!gesture_layer) {
+		LOGE("Failed to create gesture layer");
+		return NULL;
+	}
+
+	ret = elm_gesture_layer_attach(gesture_layer, s_info.gesture_rect);
+	if(ret == EINA_FALSE) {
+		LOGE("Failed to attach gesture layer to gesture rectangle");
+		free(gesture_layer);
+		return NULL;
+	}
+
+
+	return gesture_layer;
+}
+
 static void __homescreen_efl_create_base_gui(void)
 {
 	char edj_path[PATH_MAX] = {0, };
@@ -333,6 +417,7 @@ static void __homescreen_efl_create_base_gui(void)
 	char trbuf[PATH_MAX] = {0, };
 	char *buf = NULL;
 	int ret = -1;
+	Evas *e_conf = NULL;
 
 	/* Window */
 	s_info.win = elm_win_util_standard_add(PACKAGE, PACKAGE);
@@ -362,7 +447,7 @@ static void __homescreen_efl_create_base_gui(void)
 	/* Conformant */
 	s_info.conformant = _create_conformant();
 
-	// /* Base Layout */
+	/* Base Layout */
 	snprintf(edj_path, sizeof(edj_path), "%s", util_get_res_file_path(EDJE_DIR"/home.edj"));
 	s_info.layout = elm_layout_add(s_info.win);
 	elm_layout_file_set(s_info.layout, edj_path, GROUP_HOME_LY);
@@ -382,6 +467,10 @@ static void __homescreen_efl_create_base_gui(void)
 		LOGE("s_info.home == NULL");
 		return;
 	}
+
+	e_conf = evas_object_evas_get(s_info.conformant);
+	s_info.gesture_rect = _create_gesture_rect(e_conf, s_info.root_width, s_info.root_height);
+	s_info.gesture_layer = _create_gesture_layer();
 
 	elm_object_part_content_set(s_info.layout, PART_CONTENT, s_info.home);
 

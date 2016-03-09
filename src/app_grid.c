@@ -116,11 +116,11 @@ static Eina_Bool __app_grid_mouse_up_cb(void *data, int type, void *event);
 
 /*================================= DND FUNCTIONS ================================================*/
 static void __app_grid_return_to_origin_pos(void);
-static void __app_grid_dnd_pos_cb(void *data, Evas_Object *obj, Evas_Coord x, Evas_Coord y,
+static void __app_grid_icon_drop(void *data, Evas_Object *obj, Evas_Coord x, Evas_Coord y,
 		Elm_Xdnd_Action action);
-static void __app_grid_dnd_drag_done_cb(void *data, Evas_Object *obj);
-static void __app_grid_dnd_pos_changed_cb(void *data, Evas_Object *obj, Evas_Coord x,
-		Evas_Coord y, Elm_Xdnd_Action action);
+static void __app_grid_drag_done(void *data, Evas_Object *obj);
+static Evas_Event_Flags __app_grid_icon_move(void *data, void *event_info);
+static Evas_Event_Flags __app_grid_icon_move_end(void *data, void *event_info);
 
 /*================================= PUBLIC FUNCTIONS DEFS ========================================*/
 HAPI Evas_Object *app_grid_create(Evas_Object *parent, Tree_node_t *data, Evas_Coord gengrid_width,
@@ -205,9 +205,6 @@ HAPI Evas_Object *app_grid_create(Evas_Object *parent, Tree_node_t *data, Evas_C
 	elm_object_part_content_set(layout, PART_APP_GRID_CONTENT, gengrid);
 	evas_object_smart_callback_add(gengrid, "longpressed", __app_grid_item_longpressed_cb, NULL);
 
-	elm_drop_target_add(gengrid, ELM_SEL_FORMAT_TARGETS,
-				NULL, NULL, NULL, NULL, __app_grid_dnd_pos_cb, NULL, NULL, NULL);
-
 	data->data->layout = layout;
 	evas_object_event_callback_add(gengrid, EVAS_CALLBACK_RESIZE, __app_grid_resize_cb, (void *)type);
 
@@ -223,7 +220,6 @@ HAPI Evas_Object *app_grid_create(Evas_Object *parent, Tree_node_t *data, Evas_C
 
 HAPI Elm_Object_Item *app_grid_append_item(Evas_Object *layout, Evas_Object *icon_to_append)
 {
-	LOGD("");
 	Elm_Object_Item *result = NULL;
 	Evas_Object *container = NULL;
 
@@ -374,6 +370,94 @@ HAPI Eina_Bool app_grid_get_item_content(Elm_Object_Item *item, Evas_Object **ic
 	return EINA_TRUE;
 }
 
+static Evas_Event_Flags __app_grid_icon_move(void *data, void *event_info)
+{
+	Elm_Gesture_Momentum_Info *pos_info = event_info;
+
+	if(s_info.repositioned_icon == NULL)
+		return EVAS_EVENT_FLAG_NONE;
+
+	evas_object_move(s_info.repositioned_icon, pos_info->x2 - s_info.dx, pos_info->y2 - s_info.dy);
+
+	if (folder_panel_is_folder_visible()) {
+		LOGD("Folder is visible");
+		if ((pos_info->y2 <= s_info.f_y || pos_info->y2 >= s_info.f_y + s_info.f_h) &&
+				!s_info.outside_folder_timer) {
+
+			LOGD("Icon is outside folder");
+			s_info.outside_folder_timer = ecore_timer_add(1.0, __app_grid_close_folder_cb, NULL);
+			if (!s_info.outside_folder_timer) {
+				LOGE("[FAILED][timer=NULL]");
+				return EVAS_EVENT_FLAG_ON_HOLD;
+			}
+		} else if (pos_info->y2 >= s_info.f_y && pos_info->y2 <= s_info.f_y + s_info.f_h) {
+			LOGD("Icons position is on folder");
+			ecore_timer_del(s_info.outside_folder_timer);
+			s_info.outside_folder_timer = NULL;
+		}
+	}
+
+	return EVAS_EVENT_FLAG_NONE;
+}
+
+static Eina_Bool __app_grid_icon_move_cb_set(void *data)
+{
+	LOGD("Set icon move cb");
+	int ret = 0;
+
+	ret = home_screen_gesture_cb_set(ELM_GESTURE_MOMENTUM, ELM_GESTURE_STATE_MOVE,
+			__app_grid_icon_move, NULL);
+	ret |= home_screen_gesture_cb_set(ELM_GESTURE_MOMENTUM, ELM_GESTURE_STATE_END,
+			__app_grid_icon_move_end, NULL);
+	ret |= home_screen_gesture_cb_set(ELM_GESTURE_MOMENTUM, ELM_GESTURE_STATE_ABORT,
+			__app_grid_icon_move_end, NULL);
+
+	if (ret) {
+		LOGE("Can not set icon move callbacks");
+		return EINA_TRUE;
+	}
+
+	return EINA_FALSE;
+}
+
+static Eina_Bool __app_grid_icon_move_cb_del(void *data)
+{
+	LOGD("Delete icon move cb");
+	int ret = 0;
+
+	ret = home_screen_gesture_cb_unset(ELM_GESTURE_MOMENTUM, ELM_GESTURE_STATE_MOVE,
+			__app_grid_icon_move, NULL);
+	ret |= home_screen_gesture_cb_unset(ELM_GESTURE_MOMENTUM, ELM_GESTURE_STATE_END,
+			__app_grid_icon_move_end, NULL);
+	ret |= home_screen_gesture_cb_unset(ELM_GESTURE_MOMENTUM, ELM_GESTURE_STATE_ABORT,
+			__app_grid_icon_move_end, NULL);
+
+	if (ret)
+		LOGE("Can not unset callbacks");
+
+	return ECORE_CALLBACK_CANCEL;
+}
+
+static Evas_Event_Flags __app_grid_icon_move_end(void *data, void *event_info)
+{
+	Elm_Gesture_Momentum_Info *pos_info = event_info;
+	LOGD("Drag end at: x,y=<%d,%d>", pos_info->x2, pos_info->y2);
+
+
+	if(s_info.repositioned_icon != NULL) {
+		__app_grid_icon_drop(NULL, s_info.src_grid, pos_info->x2,
+				pos_info->y2, ELM_XDND_ACTION_UNKNOWN);
+		__app_grid_drag_done(NULL, NULL);
+	}
+
+	/* quickfix: idler adds delay so cb func might be deleted after it is finished
+	 * removing cb inside its body causes memory errors
+	*/
+	ecore_idler_add(__app_grid_icon_move_cb_del, NULL);
+
+	return EVAS_EVENT_FLAG_NONE;
+}
+
 /*=====================GENGRID CALLBACKS IMPLEMENTATION===========================================*/
 static void __app_grid_item_longpressed_cb(void *data, Evas_Object *obj, void *ei)
 {
@@ -382,6 +466,13 @@ static void __app_grid_item_longpressed_cb(void *data, Evas_Object *obj, void *e
 	Evas_Object *icon_layout = NULL;
 	Evas_Object *icon = NULL;
 	Tree_node_t *icon_node = NULL;
+	homescreen_view_t view_type = HOMESCREEN_VIEW_UNKNOWN;
+
+	view_type = home_screen_get_view_type();
+
+	if (view_type != HOMESCREEN_VIEW_ALL_APPS &&
+			view_type != HOMESCREEN_VIEW_ALL_APPS_EDIT)
+		return;
 
 	if (!it || !app_grid_get_item_content(it, &icon_layout, NULL)) {
 		LOGE("[FAILED][app_grid_item_content_get]");
@@ -391,18 +482,13 @@ static void __app_grid_item_longpressed_cb(void *data, Evas_Object *obj, void *e
 	if (!evas_object_data_get(icon_layout, KEY_IS_REPOSITIONABLE))
 		return;
 
-	if (home_screen_get_view_type() == HOMESCREEN_VIEW_ALL_APPS_CHOOSE)
-		return;
-
-	if (home_screen_get_view_type() == HOMESCREEN_VIEW_ALL_APPS) {
-		home_screen_set_view_type(HOMESCREEN_VIEW_ALL_APPS_EDIT);
-		elm_drag_cancel(obj);
-	}
-
 	if (!icon_layout) {
 		LOGE("[FAILED][icon_layout=NULL]");
 		return;
 	}
+
+	if (view_type == HOMESCREEN_VIEW_ALL_APPS)
+		home_screen_set_view_type(HOMESCREEN_VIEW_ALL_APPS_EDIT);
 
 	icon = elm_object_part_content_get(icon_layout, PART_ICON_CONTENT);
 	if (!icon) {
@@ -442,8 +528,11 @@ static void __app_grid_item_longpressed_cb(void *data, Evas_Object *obj, void *e
 
 		app_grid_unpack_item(it);
 
-		elm_drag_start(icon, ELM_SEL_FORMAT_TARGETS, "dnd", ELM_XDND_ACTION_MOVE,
-			NULL, NULL, __app_grid_dnd_pos_changed_cb, NULL, NULL, NULL, __app_grid_dnd_drag_done_cb, obj);
+		if (__app_grid_icon_move_cb_set(NULL)) {
+			LOGE("Gesture cb set failed");
+
+			__app_grid_icon_move_cb_del(NULL);
+		}
 
 		evas_object_data_set(icon, KEY_REPOSITION_DATA, icon_layout);
 		/*This is necessary for hide only box content in grid*/
@@ -817,7 +906,7 @@ static void __app_grid_return_to_origin_pos(void)
 	evas_object_show(s_info.repositioned_icon_layout);
 }
 
-static void __app_grid_dnd_pos_cb(void *data, Evas_Object *obj, Evas_Coord x, Evas_Coord y,
+static void __app_grid_icon_drop(void *data, Evas_Object *obj, Evas_Coord x, Evas_Coord y,
 				Elm_Xdnd_Action action)
 {
 	static Elm_Object_Item *it = NULL;
@@ -854,7 +943,7 @@ static void __app_grid_dnd_pos_cb(void *data, Evas_Object *obj, Evas_Coord x, Ev
 	}
 }
 
-static void __app_grid_dnd_drag_done_cb(void *data, Evas_Object *obj)
+static void __app_grid_drag_done(void *data, Evas_Object *obj)
 {
 	Tree_node_t *folder = s_info.destination_folder;
 	Tree_node_t *item = s_info.repositioned_node;
@@ -903,23 +992,4 @@ static void __app_grid_dnd_drag_done_cb(void *data, Evas_Object *obj)
 	__app_grid_clear_reposition_structure();
 	all_apps_set_scrolling_blocked_state(false);
 	folder_panel_enable_entry(true);
-}
-
-static void __app_grid_dnd_pos_changed_cb(void *data, Evas_Object *obj, Evas_Coord x,
-				Evas_Coord y, Elm_Xdnd_Action action)
-{
-	evas_object_move(obj, x - s_info.dx, y - s_info.dy);
-
-	if (folder_panel_is_folder_visible()) {
-		if ((y <= s_info.f_y || y >= s_info.f_y + s_info.f_h) && !s_info.outside_folder_timer) {
-			s_info.outside_folder_timer = ecore_timer_add(1.0, __app_grid_close_folder_cb, NULL);
-			if (!s_info.outside_folder_timer) {
-				LOGE("[FAILED][timer=NULL]");
-				return;
-			}
-		} else if (y >= s_info.f_y && y <= s_info.f_y + s_info.f_h) {
-			ecore_timer_del(s_info.outside_folder_timer);
-			s_info.outside_folder_timer = NULL;
-		}
-	}
 }

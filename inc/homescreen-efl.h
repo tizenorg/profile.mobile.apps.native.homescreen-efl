@@ -145,4 +145,36 @@ extern void home_screen_mvc_set_ly_scale(Evas_Object *layout);
  */
 extern void home_screen_close_all_apps_choose_view(void);
 
+/**
+ * @brief Register gesture state change callback.
+ *
+ * @details Function adds callback of type Elm_Gesture_Type
+ * to main homescreen gui gesture layer.
+ *
+ * @param[in] idx The gesture you want to track state of.
+ * @param[in] cb_type The event the callback tracks (START, MOVE, END, ABORT).
+ * @param[in] cb The callback itself.
+ * @param[in] data Custom data to be passed.
+ *
+ * @return 0 on success otherwise negative value on failure
+ */
+extern int home_screen_gesture_cb_set(Elm_Gesture_Type idx, Elm_Gesture_State cb_type,
+		Elm_Gesture_Event_Cb cb, void *data);
+
+/**
+ * @brief Unregister gesture state change callback.
+ *
+ * @details Function unregisters callback on Elm_Gesture_Type
+ * from main homescreen gui gesture layer.
+ *
+ * @param[in] idx The gesture you want to track state of.
+ * @param[in] cb_type The event the callback tracks (START, MOVE, END, ABORT).
+ * @param[in] cb The callback itself.
+ * @param[in] data Custom data to be passed.
+ *
+ * @return 0 on success otherwise negative value on failure
+ */
+extern int home_screen_gesture_cb_unset(Elm_Gesture_Type idx, Elm_Gesture_State cb_type,
+		Elm_Gesture_Event_Cb cb, void *data);
+
 #endif /* __homescreen-efl_H__ */

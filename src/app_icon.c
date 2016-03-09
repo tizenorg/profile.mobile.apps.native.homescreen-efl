@@ -87,11 +87,15 @@ HAPI Evas_Object *app_icon_create(Tree_node_t *tree_data, app_icon_type_t type)
 			return NULL;
 		}
 
-		elm_object_signal_callback_add(icon_layout, SIGNAL_CHECKBOX_CHECKED, SIGNAL_SOURCE, __app_icon_check_cb, tree_data);
-		elm_object_signal_callback_add(icon_layout, SIGNAL_CHECKBOX_UNCHECKED, SIGNAL_SOURCE, __app_icon_uncheck_cb, tree_data);
-		elm_object_signal_callback_add(icon_layout, SIGNAL_UNINSTALL_BUTTON_CLICKED, SIGNAL_SOURCE, __app_icon_uninstall_button_clicked_cb, tree_data);
+		elm_object_signal_callback_add(icon_layout, SIGNAL_CHECKBOX_CHECKED, SIGNAL_SOURCE,
+				__app_icon_check_cb, tree_data);
+		elm_object_signal_callback_add(icon_layout, SIGNAL_CHECKBOX_UNCHECKED, SIGNAL_SOURCE,
+				__app_icon_uncheck_cb, tree_data);
+		elm_object_signal_callback_add(icon_layout, SIGNAL_UNINSTALL_BUTTON_CLICKED, SIGNAL_SOURCE,
+				__app_icon_uninstall_button_clicked_cb, tree_data);
 
-		elm_object_signal_callback_add(icon_layout, "mouse,down,1", SIGNAL_PRESS_SOURCE, __app_icon_pressed_cb, (void *)item->type);
+		elm_object_signal_callback_add(icon_layout, "mouse,down,1", SIGNAL_PRESS_SOURCE,
+				__app_icon_pressed_cb, (void *)item->type);
 
 		home_screen_mvc_set_ly_scale(icon_layout);
 	}
