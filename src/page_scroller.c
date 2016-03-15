@@ -334,7 +334,7 @@ static Evas_Object* __page_scroller_create_scroller(void)
 	Evas_Object *box = NULL;
 
 	if (!win) {
-		print_log(DLOG_ERROR, LOG_TAG, "Window doesn't exist");
+		LOGD("Window doesn't exist");
 		return NULL;
 	}
 
