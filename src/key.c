@@ -20,6 +20,7 @@
 
 #include "homescreen-efl.h"
 #include "option_menu.h"
+#include "add_viewer/add_viewer.h"
 #include "livebox/livebox_panel.h"
 #include "livebox_all_pages.h"
 #include "folder_panel.h"
@@ -153,6 +154,9 @@ static Eina_Bool __key_release_cb(void *data, int type, void *event)
 			livebox_panel_set_edit_mode_layout(false);
 			livebox_panel_change_edit_mode_state(true);
 			break;
+		case HOMESCREEN_VIEW_HOME_ADD_VIEWER:
+			add_viewer_window_delete();
+			break;
 		case HOMESCREEN_VIEW_HOME_ALL_PAGES:
 			/*TODO: this should be invoked in homescreen-efl.c*/
 			livebox_all_pages_hide();
@@ -163,7 +167,7 @@ static Eina_Bool __key_release_cb(void *data, int type, void *event)
 			break;
 		case HOMESCREEN_VIEW_ALL_APPS_CHOOSE:
 			home_screen_close_all_apps_choose_view();
-			if(pressed_key == HW_KEY_HOME)
+			if (pressed_key == HW_KEY_HOME)
 				home_screen_set_view_type(HOMESCREEN_VIEW_HOME);
 			break;
 		case HOMESCREEN_VIEW_ALL_APPS_EDIT:

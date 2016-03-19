@@ -21,12 +21,12 @@
 #include <Elementary.h>
 #include <stdbool.h>
 
-#define BUF_SIZE 64
-
 #ifdef  LOG_TAG
 #undef  LOG_TAG
 #endif
 #define LOG_TAG "HOMESCREEN_EFL"
+
+#define BUF_SIZE 64
 
 /* Multi-language */
 #ifndef _

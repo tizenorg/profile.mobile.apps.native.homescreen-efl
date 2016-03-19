@@ -9,7 +9,7 @@ type = app
 profile = mobile-3.0
 
 # C Sources
-USER_SRCS = src/tree.c src/db/db.c src/homescreen-efl.c src/popup.c src/livebox/livebox_widget.c src/dynamic_index.c src/app_mgr.c src/all_apps.c src/layout.c src/app_grid.c src/livebox_all_pages.c src/livebox/livebox_panel.c src/data_model.c src/option_menu.c src/key.c src/app_icon.c src/mouse.c src/folder_panel.c src/livebox/grid_reposition.c src/livebox/livebox_utils.c src/livebox/livebox_animator.c src/livebox/grid_item_resize.c src/app_item.c src/page_scroller.c src/util.c 
+USER_SRCS = src/tree.c src/db/db.c src/homescreen-efl.c src/popup.c src/livebox/livebox_widget.c src/dynamic_index.c src/app_mgr.c src/all_apps.c src/layout.c src/app_grid.c src/livebox_all_pages.c src/livebox/livebox_panel.c src/data_model.c src/option_menu.c src/key.c src/app_icon.c src/mouse.c src/folder_panel.c src/livebox/grid_reposition.c src/livebox/livebox_utils.c src/livebox/livebox_animator.c src/livebox/grid_item_resize.c src/app_item.c src/page_scroller.c src/util.c src/add_viewer/add_viewer.c src/add_viewer/list_view.c  src/add_viewer/view.c src/add_viewer/widget.c
 
 # EDC Sources
 USER_EDCS =  
@@ -59,7 +59,7 @@ USER_EDCS_FONT_DIRS_ABS =
 # EDC Flags
 USER_EXT_EDC_KEYS = EDC0 
 
-USER_EXT_EDC0_EDCS = res/edje/folder_entry.edc res/edje/livebox_layout.edc res/edje/page_edit_util.edc res/edje/icon.edc res/edje/livebox_container.edc res/edje/folder.edc res/edje/home.edc res/edje/page_edit.edc res/edje/app_grid.edc res/edje/index_element.edc 
+USER_EXT_EDC0_EDCS = res/edje/folder_entry.edc res/edje/livebox_layout.edc res/edje/page_edit_util.edc res/edje/icon.edc res/edje/livebox_container.edc res/edje/folder.edc res/edje/home.edc res/edje/page_edit.edc res/edje/app_grid.edc res/edje/index_element.edc res/edje/preview.edc res/edje/color_classes.edc res/edje/tizen-dark-inc.edc
 USER_EXT_EDC0_EDCS_IMAGE_DIRS = res/images 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
 USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds 

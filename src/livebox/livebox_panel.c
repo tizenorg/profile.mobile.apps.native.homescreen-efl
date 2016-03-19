@@ -379,6 +379,7 @@ void livebox_panel_add_livebox(Tree_node_t *node, Evas_Object *page,
 	Evas_Object *livebox = NULL;
 	Evas_Object *livebox_layout = NULL;
 	Evas_Object *grid = NULL;
+	int ret = 0;
 
 
 	livebox_layout = elm_layout_add(s_info.livebox_page_scroller);
@@ -395,7 +396,6 @@ void livebox_panel_add_livebox(Tree_node_t *node, Evas_Object *page,
 
 #ifdef LIVEBOX_RESIZE_TEST
 	livebox = elm_image_add(livebox_layout);
-	elm_image_file_set(livebox, livebox_pkgname, NULL);
 #else
 	livebox = livebox_widget_add(livebox_pkgname, livebox_layout, content_info);
 #endif
@@ -408,12 +408,25 @@ void livebox_panel_add_livebox(Tree_node_t *node, Evas_Object *page,
 	node->data->layout = livebox_layout;
 	evas_object_data_set(livebox_layout, KEY_ICON_DATA, node);
 
-	elm_layout_file_set(livebox_layout, EDJE_LIVEBOX_LAYOUT_FILENAME,
+	ret = elm_layout_file_set(livebox_layout, util_get_res_file_path(EDJE_LIVEBOX_LAYOUT_FILENAME),
 		GROUP_LIVEBOX_LAYOUT);
-	elm_layout_content_set(livebox_layout, PART_LIVEBOX, livebox);
+	if (ret != EINA_TRUE) {
+		LOGE("Can not set layout file");
+		return;
+	}
+
+	ret = elm_layout_content_set(livebox_layout, PART_LIVEBOX, livebox);
+	if (ret != EINA_TRUE) {
+		LOGE("Can not set layout file");
+		return;
+	}
+
 	evas_object_size_hint_weight_set(livebox_layout, EVAS_HINT_EXPAND,
 		EVAS_HINT_EXPAND);
+
+	evas_object_show(livebox);
 	evas_object_show(livebox_layout);
+
 	elm_layout_signal_callback_add(livebox_layout, SIGNAL_CLICKED,
 		SIGNAL_REMOVE_SOURCE, __livebox_panel_del_cb, NULL);
 

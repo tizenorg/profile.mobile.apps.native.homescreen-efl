@@ -366,7 +366,7 @@ static int __livebox_widget_get_pkg_list_cb(const char *pkg_id, const char *widg
 	return 0;
 }
 
-static void livebox_widget_new(int widget_width, int widget_height, const char *content_info)
+static void livebox_widget_new(int widget_width, int widget_height, const char *appid)
 {
 	int page_index = -1;
 	int pos_x = 0;
@@ -414,14 +414,14 @@ static void livebox_widget_new(int widget_width, int widget_height, const char *
 		}
 	}
 
-	item_node = data_model_add_widget(page_node, content_info, pos_x, pos_y, widget_width, widget_height, NULL);
+	item_node = data_model_add_widget(page_node, appid, pos_x, pos_y, widget_width, widget_height, NULL);
 	if (!item_node) {
 		LOGE("item == NULL");
 		return;
 	}
 
 	elm_scroller_page_bring_in(livebox_panel_get(), page_index, 0);
-	livebox_panel_add_livebox(item_node, page, content_info, pos_x, pos_y, widget_width, widget_height, NULL);
+	livebox_panel_add_livebox(item_node, page, appid, pos_x, pos_y, widget_width, widget_height, NULL);
 	livebox_panel_update_dynamic_index();
 }
 
@@ -481,7 +481,7 @@ static int request_cb(const char *appid, const char *name, int type,
 
 	LOGI("Widget will be added: %dx%d\n", widget_width, widget_height);
 
-	livebox_widget_new(widget_width, widget_height, content_info);
+	livebox_widget_new(widget_width, widget_height, appid);
 	home_screen_print_tree();
 
 	return 0; /*returns success. */

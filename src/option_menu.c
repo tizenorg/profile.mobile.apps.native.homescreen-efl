@@ -180,8 +180,6 @@ static void __option_menu_entry_all_apps_edit_apps_cb(void *data, Evas_Object *o
 static void __option_menu_entry_all_apps_edit_home_cb(void *data, Evas_Object *obj, void *event_info)
 {
 	home_screen_set_view_type(HOMESCREEN_VIEW_HOME_EDIT);
-	livebox_panel_set_edit_mode_layout(true);
-	livebox_panel_change_edit_mode_state(false);
 	option_menu_hide();
 }
 
@@ -215,27 +213,8 @@ static void __option_menu_entry_all_apps_add_widget_cb(void *data, Evas_Object *
 {
 	LOGD("__option_menu_entry_all_apps_add_widget_cb");
 
-	const char *appid = OPTION_MENU_ADD_VIEWER;
-	app_control_h app_control_handle = NULL;
+	home_screen_set_view_type(HOMESCREEN_VIEW_HOME_ADD_VIEWER);
 
-	if (app_control_create(&app_control_handle) != APP_CONTROL_ERROR_NONE) {
-		LOGE("[FAILED][app_control_create]");
-		return;
-	}
-
-	if (app_control_set_app_id(app_control_handle, appid) != APP_CONTROL_ERROR_NONE) {
-		LOGE("[FAILED][app_control_set_app_id]");
-		app_control_destroy(app_control_handle);
-		return;
-	}
-
-	if (app_control_send_launch_request(app_control_handle, _launch_request_cb, NULL) != APP_CONTROL_ERROR_NONE) {
-		LOGE("[FAILED][app_control_send_launch_request]");
-		app_control_destroy(app_control_handle);
-		return;
-	}
-
-	app_control_destroy(app_control_handle);
 	option_menu_hide();
 }
 
