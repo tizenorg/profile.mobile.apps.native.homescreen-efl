@@ -248,7 +248,22 @@ static void __app_mgr_event_cb(const char *type, const char *package,
 	}
 
 	if (PACKAGE_MANAGER_EVENT_TYPE_UNINSTALL == event_type && progress == 100)
+	{
 		LOGI("%s", package);
+		Tree_node_t *it = data_model_search_package(package);
+		Tree_node_t *parent_folder = NULL;
+
+		if (it != NULL) {
+			if (it->parent && it->parent->parent
+					&& (it->parent->parent->data->type == APP_ITEM_FOLDER))
+				parent_folder = it->parent->parent;
+
+			app_icon_uninstall(it->data->layout);
+
+			if (parent_folder != NULL)
+				app_icon_update_folder_icon(parent_folder);
+		}
+	}
 }
 
 static bool __app_info_cb(app_info_h ai, void *ud)

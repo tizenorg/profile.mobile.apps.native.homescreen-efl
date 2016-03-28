@@ -56,8 +56,6 @@ static void __app_icon_check_cb(void *data, Evas_Object *obj, const char *emissi
 static void __app_icon_uncheck_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 static Evas_Object *__app_icon_load(Evas_Object *parent, const char *icon_path);
 static void __app_icon_uninstall_button_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
-
-static void __app_icon_uninstall(void *data);
 static void __app_icon_highlight_folder_icon_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 static void __app_icon_unhighlight_folder_icon_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 static void __app_icon_higlight_impossible_folder_icon_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
@@ -622,7 +620,7 @@ static void __app_icon_uninstall_button_clicked_cb(void *data, Evas_Object *obj,
 		p_data->popup_confirm_text = strdup(_("IDS_ST_BUTTON_REMOVE_ABB2"));
 		p_data->popup_cancel_text = strdup(_("IDS_CAM_SK_CANCEL"));
 		p_data->orientation = ELM_POPUP_ORIENT_CENTER;
-		popup_show(p_data, __app_icon_uninstall, NULL, (void *) obj);
+		popup_show(p_data, app_icon_uninstall, NULL, (void *) obj);
 	} else if (app_node->data->type == APP_ITEM_ICON) {
 		snprintf(buf, sizeof(buf), _("IDS_HS_POP_PS_WILL_BE_UNINSTALLED"), app_node->data->label);
 		p_data->type = POPUP_TWO_BUTTONS;
@@ -631,14 +629,14 @@ static void __app_icon_uninstall_button_clicked_cb(void *data, Evas_Object *obj,
 		p_data->popup_confirm_text = strdup(_("IDS_AT_BODY_UNINSTALL"));
 		p_data->popup_cancel_text = strdup(_("IDS_CAM_SK_CANCEL"));
 		p_data->orientation = ELM_POPUP_ORIENT_CENTER;
-		popup_show(p_data, __app_icon_uninstall, NULL, (void *) obj);
+		popup_show(p_data, app_icon_uninstall, NULL, (void *) obj);
 	} else {
-		__app_icon_uninstall((void *) obj);
+		app_icon_uninstall((void *) obj);
 		popup_data_free(p_data);
 	}
 }
 
-static void __app_icon_uninstall(void *data)
+void app_icon_uninstall(void *data)
 {
 	Tree_node_t *app_node = NULL;
 	Evas_Object *icon = NULL;

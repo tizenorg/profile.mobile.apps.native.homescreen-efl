@@ -205,5 +205,13 @@ extern void data_model_update_item(Tree_node_t *node);
 extern void data_model_detach_from_folder(Tree_node_t *folder_node,
 	Tree_node_t *node);
 
+/**
+ * @brief Search node with package name.
+ *
+ * @param package name
+ * @return node or NULL
+ */
+Tree_node_t *data_model_search_package(const char* pkg_str);
+
 
 #endif /* DATA_MODEL_H_ */

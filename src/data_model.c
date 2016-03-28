@@ -36,6 +36,11 @@ static struct {
 	.home = NULL,
 };
 
+typedef struct {
+	Tree_node_t *data;
+	char *search;
+} search_package_t;
+
 static bool __data_model_get_empty_page(Tree_node_t *nothing, Tree_node_t *page, void *data);
 static void __data_model_load_item(Tree_node_t *parent, Tree_node_t **item, db_item_t* db_item, Eina_List* apps_db);
 static void __data_model_free_subtree(Tree_node_t *root_node);
@@ -53,6 +58,8 @@ static Eina_Inarray *__data_model_sort_children(const Tree_node_t *const root,
 static void __add_default_widget(widget_info_t *widget);
 
 static Eina_Bool __data_model_reattach_children(const void *container, void *node, void *fdata);
+static bool __data_model_search_package_cb(Tree_node_t *parent, Tree_node_t *node, void *data);
+
 
 HAPI Tree_node_t *data_model_get_data(void)
 {
@@ -599,6 +606,27 @@ HAPI void data_model_sort(Eina_Compare_Cb sort_compare_function)
 			}
 		}
 	}
+}
+
+Tree_node_t *data_model_search_package(const char* pkg_str)
+{
+	search_package_t search;
+	search.data = NULL;
+	search.search = pkg_str;
+
+	tree_in_depth_browse(s_info.all_apps, __data_model_search_package_cb, &search);
+
+	return search.data;
+}
+
+static bool __data_model_search_package_cb(Tree_node_t *parent, Tree_node_t *node, void *data)
+{
+	search_package_t *search_data = (search_package_t *)data;
+
+	if (node->data->appid && strcmp(search_data->search, node->data->appid) == 0)
+		search_data->data = node;
+
+	return true;
 }
 
 static bool __data_model_get_empty_page(Tree_node_t *nothing, Tree_node_t *page, void *data)

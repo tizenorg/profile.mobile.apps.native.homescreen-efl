@@ -158,4 +158,11 @@ void app_icon_set_label_black(Evas_Object *icon_layout);
  */
 void app_icon_remove(Evas_Object *icon_layout);
 
+/**
+ * @brief Removes application icon and data.
+ * @param icon_layout Pointer to app_icon layout.
+ */
+void app_icon_uninstall(void *data);
+
+
 #endif /* APP_ICON_H_ */
