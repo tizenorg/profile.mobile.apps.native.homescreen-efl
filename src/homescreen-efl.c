@@ -117,7 +117,7 @@ static Eina_Bool __homescreen_efl_show_home_anim(void *data, double pos);
 static bool folder_count_pending = false;
 static unsigned int folder_badge_counter = 0;
 
-int main(int argc, char *argv[])
+DAPI int main(int argc, char *argv[])
 {
 	dlog_print(DLOG_DEBUG, LOG_TAG, "Starting homescreen-efl");
 

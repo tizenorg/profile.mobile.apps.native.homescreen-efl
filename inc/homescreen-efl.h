@@ -27,14 +27,10 @@
 #include "app_item.h"
 #include "tree.h"
 
-#ifdef  LOG_TAG
-#undef  LOG_TAG
-#endif
-#define LOG_TAG "HOMESCREEN_EFL"
-
 #if !defined(PACKAGE)
 #define PACKAGE "org.tizen.homescreen-efl"
 #endif
+
 
 typedef enum {
 	HOMESCREEN_VIEW_HOME = 0,

@@ -23,6 +23,11 @@
 
 #define BUF_SIZE 64
 
+#ifdef  LOG_TAG
+#undef  LOG_TAG
+#endif
+#define LOG_TAG "HOMESCREEN_EFL"
+
 /* Multi-language */
 #ifndef _
 #define _(str) gettext(str)
@@ -30,10 +35,28 @@
 
 /* Build */
 #define HAPI __attribute__((visibility("hidden")))
+#define DAPI __attribute__((visibility("default")))
 
 #define COUNT_OF(x) \
 ((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
 
+#define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
+
+#if !defined(LOGD)
+#define LOGD(fmt, arg...) dlog_print(DLOG_DEBUG, LOG_TAG, "%s: %s[%d]\t " #fmt "\n", __FILENAME__, __func__, __LINE__, ##arg)
+#endif
+
+#if !defined(LOGW)
+#define LOGW(fmt, arg...) dlog_print(DLOG_WARN, LOG_TAG, "%s: %s[%d]\t " #fmt "\n", __FILENAME__, __func__, __LINE__, ##arg)
+#endif
+
+#if !defined(LOGE)
+#define LOGE(fmt, arg...) dlog_print(DLOG_ERROR, LOG_TAG, "%s: %s[%d]\t " #fmt "\n", __FILENAME__, __func__, __LINE__, ##arg)
+#endif
+
+#if !defined(LOGI)
+#define LOGI(fmt, arg...) dlog_print(DLOG_ERROR, LOG_TAG, "%s: %s[%d]\t " #fmt "\n", __FILENAME__, __func__, __LINE__, ##arg)
+#endif
 
 /**
  * @brief Creates elm_layout widget and load edje file to it.

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" install-location="internal-only" package="org.tizen.homescreen-efl" version="0.0.1">
     <label>homescreen-efl</label>
-    <author email="m.szczecinsk@samsung.com" href="www.samsung.com">Michal Szczecinski</author>
     <description>Homescreen Application</description>
     <ui-application appid="org.tizen.homescreen-efl" exec="homescreen-efl" multiple="false" nodisplay="true" taskmanage="false" type="capp">
         <label>homescreen-efl</label>
