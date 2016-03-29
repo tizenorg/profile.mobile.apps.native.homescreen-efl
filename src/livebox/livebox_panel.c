@@ -1212,8 +1212,6 @@ static void __libebox_panel_toggle_selected_livebox(Evas_Object *livebox, Evas_O
 		elm_object_signal_emit(prev_selected_page,
 			SIGNAL_GRID_SHADOW_HIDE, PART_GRID_BG);
 	}
-
-	elm_object_signal_emit(page, SIGNAL_GRID_SHADOW_SHOW, PART_GRID_BG);
 }
 
 static void __livebox_panel_mouse_up_cb(void *data, Evas *evas,
@@ -1232,6 +1230,7 @@ static void __livebox_panel_mouse_up_cb(void *data, Evas *evas,
 	__livebox_panel_set_remove_button_visibility(
 		grid_reposition_get_repositioned_item(), true);
 	__livebox_panel_set_reposition_bg_visibility(false);
+	elm_object_signal_emit(livebox_container, SIGNAL_GRID_SHADOW_HIDE, PART_GRID_BG);
 
 	grid_reposition_end();
 	livebox_utils_set_shadow_visibility(false);
@@ -1316,6 +1315,7 @@ static Eina_Bool __livebox_panel_longpress_cb(void *data)
 	s_info.is_longpress = true;
 
 	__libebox_panel_toggle_selected_livebox(livebox, longpressed_page);
+	elm_object_signal_emit(longpressed_page, SIGNAL_GRID_SHADOW_SHOW, PART_GRID_BG);
 
 	grid_item_set_resize_sliders_visibility(longpressed_page, false);
 	grid_reposition_init(livebox_utils_get_livebox_container_grid(

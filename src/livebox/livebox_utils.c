@@ -497,7 +497,7 @@ static Evas_Object *__livebox_utils_create_grid_bg(Evas_Object *parent)
 				return NULL;
 			}
 
-			evas_object_color_set(item, 255, 255, 255, 255);
+			evas_object_color_set(item, 0, 0, 0, 30);
 			evas_object_pass_events_set(item, true);
 			evas_object_show(item);
 			evas_object_size_hint_weight_set(item,
