@@ -1,0 +1,1093 @@
+images {
+	image: "icon_list_open.png" COMP;
+	image: "icon_list_close.png" COMP;
+
+	image: "icon_shadow.png" COMP;
+	image: "1x1 preview shortcut.png" COMP;
+
+	image: "preview_bg_1x1.png" COMP;
+	image: "preview_bg_2x1.png" COMP;
+	image: "preview_bg_2x2.png" COMP;
+	image: "preview_bg_4x1.png" COMP;
+	image: "preview_bg_4x2.png" COMP;
+	image: "preview_bg_4x3.png" COMP;
+	image: "preview_bg_4x4.png" COMP;
+	image: "icon_drawer_search.png" COMP;
+}
+
+
+#define BG_PREVIEW_COLOR 134 177 197 255
+
+#include "color_classes.edc"
+
+
+
+styles {
+	style {
+		name: "tree,font";
+		base: "font=Tizen text_class=ATO001 font_size=28 align=left color=#FFFFFF color_class=ATO001 ellipsis=1.0";
+		tag:  "br" "\n";
+		tag:  "hilight" "+ font=Tizen:style=Bold";
+		tag:  "b" "+ font=Tizen:style=Bold";
+		tag:  "tab" "\t";
+	}
+
+	style {
+		name: "open,title,font";
+		base: "font=Tizen text_class=ATO001 font_size=28 align=left color=#FFFFFF color_class=ATO001 ellipsis=1.0";
+		tag: "br" "\n";
+		tag: "hilight" "+ font=Tizen:style=Bold";
+		tag: "b" "+ font=Tizen:style=Bold";
+		tag: "tag" "\t";
+	}
+
+	style {
+		name: "leaf,font";
+		base: "font=Tizen text_class=TO23 font_size=28 align=left color=#AAAAAA color_class=AT0001 ellipsis=1.0";
+		tag:  "br" "\n";
+		tag:  "hilight" "+ font=Tizen:style=Bold";
+		tag:  "b" "+ font=Tizen:style=Bold";
+		tag:  "tab" "\t";
+	}
+}
+
+// 44 + 76
+#define LEFT_SPACE	0
+#define PHYSI_WIDTH	480
+#define LOGI_WIDTH	(PHYSI_WIDTH - LEFT_SPACE)
+
+collections {
+	base_scale: 1.8;
+	plugins {
+		plugin {
+			name: "touch_sound";
+			source: "feedback";
+			param: "1 0";
+		}
+	}
+
+	group {
+		name: "elm/genlist/item/widget,leaf/default";
+
+		data.item: "contents" "elm.icon bg";
+		data.item: "texts" "elm.text";
+
+		parts {
+			part {
+				name: "bg";
+				type: SWALLOW;
+				scale: 1;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+					min: 1 270;
+					max: -1 270;
+				}
+				description {
+					state: "selected" 0.0;
+					inherit: "default" 0.0;
+				}
+			}
+
+			part {
+				name: "padding.top";
+				type: SPACER;
+				scale: 1;
+				mouse_events: 0;
+				description
+				{
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to: "bg";}
+					rel2 { relative: 1.0 0.0; to: "bg"; }
+					min: 0 20;
+				}
+			}
+
+			part {
+				name: "padding.bottom";
+				type: SPACER;
+				scale: 1;
+				mouse_events: 0;
+				description
+				{
+					state: "default" 0.0;
+					rel1 { relative: 0.0 1.0; to: "bg";}
+					rel2 { relative: 1.0 1.0; to: "bg";}
+					min: 0 20;
+				}
+			}
+
+			part {
+				name: "padding.left";
+				type: SPACER;
+				scale: 1;
+				mouse_events: 0;
+				description
+				{
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to: "bg";}
+					rel2 { relative: 0.0 1.0; to: "bg";}
+					min: 20 0;
+				}
+			}
+
+			part {
+				name: "padding.right";
+				type: SPACER;
+				scale: 1;
+				mouse_events: 0;
+				description
+				{
+					state: "default" 0.0;
+					rel1 { relative: 1.0 0.0; to: "bg";}
+					rel2 { relative: 1.0 1.0; to: "bg";}
+					min: 20 0;
+				}
+			}
+
+			part {
+				name: "elm.text";
+				type: TEXTBLOCK;
+				mouse_events: 0;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.042 1.0; to_y: "padding.top"; }
+					rel2 { relative: 0.958 1.0; to_y: "padding.top"; }
+					min: 0 36;
+					align: 0.0 0.0;
+					text { style: "leaf,font"; }
+				}
+			}
+
+			part {
+				name: "text.right.padding";
+				type: SPACER;
+				mouse_events: 0;
+				scale: 1;
+				description
+				{
+					state: "default" 0.0;
+					rel1 { relative: 1.0 1.0; to_x: "elm.text"; to_y: "padding.top"; }
+					rel2 { relative: 1.0 0.0; to_x: "elm.text"; to_y: "padding.bottom"; }
+					align: 0.0 0.0;
+				}
+			}
+
+			part {
+				name: "elm.icon";
+				type: SWALLOW;
+				mouse_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 1.0; to: "elm.text"; }
+					rel2 { relative: 1.0 0.0; to: "padding.bottom"; }
+					align: 0.0 0.0;
+				}
+			}
+
+			part {
+				name: "top,line";
+				// clip_to: "disclip";
+				type: RECT;
+				mouse_events: 0;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0/112; }
+					rel2 { relative: 1.0 1/112; }
+					color_class: "B0223";
+				}
+			}
+		}
+
+		programs {
+			program {
+				name: "go_active";
+				signal: "elm,state,selected";
+				source: "elm";
+				action: STATE_SET "selected" 0.0;
+				target: "bg";
+			}
+			program {
+				name: "go_passive";
+				signal: "elm,state,unselected";
+				source: "elm";
+				action: STATE_SET "default" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+		}
+	}
+
+
+	group {
+		name: "conformant,frame";
+		parts {
+			part {
+				name: "bg";
+				type: RECT;
+				scale: 1;
+				mouse_events: 0;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 0.0; }
+					align: 0.5 0.0;
+					min: 0 100;
+					max: -1 100;
+					fixed: 0 1;
+					color_class: "B041";
+					visible: 0;
+				}
+				description {
+					state: "show,search" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+
+			part {
+				name: "content";
+				type: SWALLOW;
+				mouse_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+				}
+				description {
+					state: "show" 0.0;
+					inherit: "default" 0.0;
+					visible: 0;
+				}
+			}
+
+			part {
+				name: "entry";
+				type: SWALLOW;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to, "bg"; }
+					rel2 { relative: 1.0 1.0; to, "bg"; }
+					visible: 0;
+				}
+				description {
+					state: "show,search" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+
+			part {
+				name: "nocontent";
+				type: SWALLOW;
+				mouse_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 1.0; to_y, "bg"; }
+					rel2 { relative: 1.0 1.0; }
+					visible: 0;
+				}
+				description {
+					state: "show" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+		}
+
+		programs {
+			program {
+				name: "show,search";
+				signal: "display,search";
+				source: "container";
+				action: STATE_SET "show,search" 0.0;
+				target: "content";
+				target: "bg";
+				target: "entry";
+			}
+			program {
+				name: "hide,search";
+				signal: "undisplay,search";
+				source: "container";
+				action: STATE_SET "default" 0.0;
+				target: "content";
+				target: "bg";
+				target: "entry";
+			}
+
+			program {
+				name: "nocontent";
+				signal: "nocontent";
+				source: "container";
+				action: STATE_SET "show" 0.0;
+				target: "nocontent";
+				target: "content";
+			}
+			program {
+				name: "content";
+				signal: "content";
+				source: "container";
+				action: STATE_SET "default" 0.0;
+				target: "nocontent";
+				target: "content";
+			}
+		}
+	}
+
+	group {
+		name: "content,frame";
+		parts {
+			part {
+				name: "content";
+				type: SWALLOW;
+				mouse_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+					align: 0.0 0.0;
+					visible: 0;
+				}
+				description {
+					state: "show,normal" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+				description {
+					state: "show,easy" 0.0;
+					inherit: "default" 0.0;
+					rel2 { relative: 1.0 1.0; }
+					visible: 1;
+				}
+			}
+
+			part {
+				name: "index";
+				type: SWALLOW;
+				mouse_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.00 0.0;}
+					rel2 { relative: 1.00 1.00; }
+					visible: 0;
+				}
+				description {
+					state: "show,normal" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+				description {
+					state: "show,easy" 0.0;
+					visible: 0;
+				}
+			}
+
+			part {
+				name: "loading";
+				type: RECT;
+				mouse_events: 0;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.25 0.40; }
+					rel2 { relative: 0.75 0.60; }
+					color: 100 100 200 200;
+					visible: 0;
+				}
+
+				description {
+					state: "show" 0.0;
+					inherit: "default" 0.0;
+					visible: 0;
+				}
+			}
+
+			part {
+				name: "loading,txt";
+				type: TEXT;
+				mouse_events: 0;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to, "loading"; }
+					rel2 { relative: 1.0 1.0; to, "loading"; }
+					text {
+						font: "Tizen:style=Bold";
+						text_class: "tizen";
+						align: 0.5 0.5;
+						size: 26;
+						text: "Loading";
+					}
+					visible: 0;
+				}
+				description {
+					state: "show" 0.0;
+					inherit: "default" 0.0;
+					visible: 0;
+				}
+			}
+		}
+		programs {
+			program {
+				name: "loading,on";
+				source: "content,frame";
+				signal: "loading,on";
+				action: STATE_SET "show" 0.0;
+				target: "loading";
+				target: "loading,txt";
+			}
+			program {
+				name: "loading,off";
+				source: "content,frame";
+				signal: "loading,off";
+				action: STATE_SET "default" 0.0;
+				target: "loading";
+				target: "loading,txt";
+			}
+			program {
+				name: "show,normal";
+				signal: "display,normal";
+				source: "container";
+				action: STATE_SET "show,normal" 0.0;
+				target: "content";
+			}
+			program {
+				name: "show,normal,index";
+				signal: "display,index";
+				source: "container";
+				action: STATE_SET "show,normal" 0.0;
+				target: "index";
+			}
+			program {
+				name: "show,easy";
+				signal: "display,easy";
+				source: "container";
+				action: STATE_SET "show,easy" 0.0;
+				target: "content";
+				target: "index";
+			}
+			program {
+				name: "hide";
+				signal: "undisplay";
+				source: "container";
+				action: STATE_SET "default" 0.0;
+				target: "content";
+			}
+		}
+	}
+
+
+	group {
+		name: "preview,1x1";
+		parts {
+			part {
+				name: "bg";
+				type: IMAGE;
+				mouse_events: 0;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+					image { normal: "preview_bg_1x1.png"; }
+					color_class: "B041";
+				}
+				description {
+					state: "clicked" 0.0;
+					inherit: "default" 0.0;
+					rel1 { relative: 4/87 4/87; }
+					rel2 { relative: 83/87 83/87; }
+				}
+			}
+
+			part {
+				name: "preview";
+				type: SWALLOW;
+				mouse_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to, "bg"; }
+					rel2 { relative: 1.0 1.0; to, "bg"; }
+				}
+			}
+
+			part {
+				name: "preview,dbg";
+				type: RECT;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { to, "preview"; }
+					rel2 { to, "preview"; }
+					color: 0 0 0 0;
+				}
+			}
+		}
+
+		programs {
+			program {
+				name: "touch_snd";
+				signal: "mouse,clicked,1";
+				source: "preview,dbg";
+				action: RUN_PLUGIN "touch_sound";
+			}
+			program {
+				name: "in,effect";
+				source: "preview,dbg";
+				signal: "mouse,down,1";
+				action: STATE_SET "clicked" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "out,effect";
+				source: "preview,dbg";
+				signal: "mouse,up,1";
+				action: STATE_SET "default" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "add,to,home";
+				source: "preview,dbg";
+				signal: "mouse,clicked,1";
+				action: SIGNAL_EMIT "add,to,home" "preview";
+			}
+		}
+	}
+
+	group {
+		name: "preview,2x1";
+		parts {
+			part {
+				name: "bg";
+				type: IMAGE;
+				mouse_events: 0;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+					image { normal: "preview_bg_2x1.png"; }
+					color_class: "B041";
+					min: 164 87;
+				}
+				description {
+					state: "clicked" 0.0;
+					inherit: "default" 0.0;
+					rel1 { relative: 4/164 4/87; }
+					rel2 { relative: 160/164 83/87; }
+					min: 156 79;
+				}
+			}
+
+			part {
+				name: "preview";
+				type: SWALLOW;
+				mouse_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to, "bg"; }
+					rel2 { relative: 1.0 1.0; to, "bg"; }
+				}
+			}
+
+			part {
+				name: "preview,dbg";
+				type: RECT;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { to, "preview"; }
+					rel2 { to, "preview"; }
+					color: 0 0 0 0;
+				}
+			}
+		}
+
+		programs {
+			program {
+				name: "touch_snd";
+				signal: "mouse,clicked,1";
+				source: "preview,dbg";
+				action: RUN_PLUGIN "touch_sound";
+			}
+			program {
+				name: "in,effect";
+				source: "preview,dbg";
+				signal: "mouse,down,1";
+				action: STATE_SET "clicked" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "out,effect";
+				source: "preview,dbg";
+				signal: "mouse,up,1";
+				action: STATE_SET "default" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "add,to,home";
+				source: "preview,dbg";
+				signal: "mouse,clicked,1";
+				action: SIGNAL_EMIT "add,to,home" "preview";
+			}
+		}
+	}
+
+	group {
+		name: "preview,2x2";
+		parts {
+			part {
+				name: "bg";
+				type: IMAGE;
+				mouse_events: 0;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+					image { normal: "preview_bg_2x2.png"; }
+					min: 164 164;
+				}
+				description {
+					state: "clicked" 0.0;
+					inherit: "default" 0.0;
+					rel1 { relative: 4/164 4/164; }
+					rel2 { relative: 160/164 160/164; }
+					min: 156 156;
+				}
+			}
+
+			part {
+				name: "preview";
+				type: SWALLOW;
+				mouse_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to, "bg"; }
+					rel2 { relative: 1.0 1.0; to, "bg"; }
+					min: 133 133;
+				}
+			}
+
+			part {
+				name: "preview,dbg";
+				type: RECT;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { to, "preview"; }
+					rel2 { to, "preview"; }
+					color: 255 0 0 150;
+				}
+			}
+		}
+
+		programs {
+			program {
+				name: "touch_snd";
+				signal: "mouse,clicked,1";
+				source: "preview,dbg";
+				action: RUN_PLUGIN "touch_sound";
+			}
+			program {
+				name: "in,effect";
+				source: "preview,dbg";
+				signal: "mouse,down,1";
+				action: STATE_SET "clicked" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "out,effect";
+				source: "preview,dbg";
+				signal: "mouse,up,1";
+				action: STATE_SET "default" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "add,to,home";
+				source: "preview,dbg";
+				signal: "mouse,clicked,1";
+				action: SIGNAL_EMIT "add,to,home" "preview";
+			}
+		}
+	}
+
+	group {
+		name: "preview,4x1";
+		parts {
+			part {
+				name: "bg";
+				type: IMAGE;
+				mouse_events: 0;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+					image { normal: "preview_bg_4x1.png"; }
+					color_class: "B041";
+					min: 214 107;
+				}
+				description {
+					state: "clicked" 0.0;
+					inherit: "default" 0.0;
+					rel1 { relative: 4/314 4/52; }
+					rel2 { relative: 310/314 48/52; }
+					min: 200 100;
+				}
+			}
+
+			part {
+				name: "preview";
+				type: SWALLOW;
+				mouse_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to, "bg"; }
+					rel2 { relative: 1.0 1.0; to, "bg"; }
+				}
+			}
+		}
+
+		programs {
+			program {
+				name: "touch_snd";
+				signal: "mouse,clicked,1";
+				source: "preview,dbg";
+				action: RUN_PLUGIN "touch_sound";
+			}
+			program {
+				name: "in,effect";
+				source: "preview,dbg";
+				signal: "mouse,down,1";
+				action: STATE_SET "clicked" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "out,effect";
+				source: "preview,dbg";
+				signal: "mouse,up,1";
+				action: STATE_SET "default" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "add,to,home";
+				source: "preview,dbg";
+				signal: "mouse,clicked,1";
+				action: SIGNAL_EMIT "add,to,home" "preview";
+			}
+		}
+	}
+
+	group {
+		name: "preview,4x2";
+		parts {
+			part {
+				name: "bg";
+				type: RECT;
+				mouse_events: 0;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+					color: BG_PREVIEW_COLOR;
+					min: 214 107;
+				}
+				description {
+					state: "clicked" 0.0;
+					inherit: "default" 0.0;
+					rel1 { relative: 4/314 4/164; }
+					rel2 { relative: 310/314 160/164; }
+					min: 207 100;
+				}
+			}
+
+			part {
+				name: "preview";
+				type: SWALLOW;
+				mouse_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to, "bg"; }
+					rel2 { relative: 1.0 1.0; to, "bg"; }
+				}
+			}
+			part {
+				name: "preview,dbg";
+				type: RECT;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { to, "preview"; }
+					rel2 { to, "preview"; }
+					color: 0 0 0 0;
+				}
+			}
+		}
+
+		programs {
+			program {
+				name: "touch_snd";
+				signal: "mouse,clicked,1";
+				source: "preview,dbg";
+				action: RUN_PLUGIN "touch_sound";
+			}
+			program {
+				name: "in,effect";
+				source: "preview,dbg";
+				signal: "mouse,down,1";
+				action: STATE_SET "clicked" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "out,effect";
+				source: "preview,dbg";
+				signal: "mouse,up,1";
+				action: STATE_SET "default" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "add,to,home";
+				source: "preview,dbg";
+				signal: "mouse,clicked,1";
+				action: SIGNAL_EMIT "add,to,home" "preview";
+			}
+		}
+	}
+
+	group {
+		name: "preview,4x3";
+		parts {
+			part {
+				name: "bg";
+				type: IMAGE;
+				mouse_events: 0;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+					image { normal: "preview_bg_4x3.png"; }
+					color_class: "B041";
+					min: 314 239;
+				}
+				description {
+					state: "clicked" 0.0;
+					inherit: "default" 0.0;
+					rel1 { relative: 4/314 4/239; }
+					rel2 { relative: 310/314 235/239; }
+					min: 306 231;
+				}
+			}
+
+			part {
+				name: "preview";
+				type: SWALLOW;
+				mouse_events: 1;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to, "bg"; }
+					rel2 { relative: 1.0 1.0; to, "bg"; }
+				}
+			}
+
+			part {
+				name: "preview,dbg";
+				type: RECT;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { to, "preview"; }
+					rel2 { to, "preview"; }
+					color: 0 0 0 0;
+				}
+			}
+		}
+
+		programs {
+			program {
+				name: "touch_snd";
+				signal: "mouse,clicked,1";
+				source: "preview,dbg";
+				action: RUN_PLUGIN "touch_sound";
+			}
+			program {
+				name: "in,effect";
+				source: "preview,dbg";
+				signal: "mouse,down,1";
+				action: STATE_SET "clicked" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "out,effect";
+				source: "preview,dbg";
+				signal: "mouse,up,1";
+				action: STATE_SET "default" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "add,to,home";
+				source: "preview,dbg";
+				signal: "mouse,clicked,1";
+				action: SIGNAL_EMIT "add,to,home" "preview";
+			}
+		}
+	}
+
+	group {
+		name: "preview,4x4";
+		parts {
+			part {
+				name: "bg";
+				type: RECT;
+				mouse_events: 0;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+					color: BG_PREVIEW_COLOR;
+					min: 214 214;
+				}
+				description {
+					state: "clicked" 0.0;
+					inherit: "default" 0.0;
+					rel1 { relative: 4/312 4/312; }
+					rel2 { relative: 308/312 308/312; }
+					min: 200 200;
+				}
+			}
+
+			part {
+				name: "preview";
+				type: SWALLOW;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; to, "bg"; }
+					rel2 { relative: 1.0 1.0; to, "bg"; }
+				}
+			}
+			part {
+				name: "preview,dbg";
+				type: RECT;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { to, "preview"; }
+					rel2 { to, "preview"; }
+					color: 0 0 0 0;
+				}
+			}
+		}
+
+		programs {
+			program {
+				name: "touch_snd";
+				signal: "mouse,clicked,1";
+				source: "preview,dbg";
+				action: RUN_PLUGIN "touch_sound";
+			}
+			program {
+				name: "in,effect";
+				source: "preview,dbg";
+				signal: "mouse,down,1";
+				action: STATE_SET "clicked" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "out,effect";
+				source: "preview,dbg";
+				signal: "mouse,up,1";
+				action: STATE_SET "default" 0.0;
+				target: "bg";
+				transition: LINEAR 0.1;
+			}
+			program {
+				name: "add,to,home";
+				source: "preview,dbg";
+				signal: "mouse,clicked,1";
+				action: SIGNAL_EMIT "add,to,home" "preview";
+			}
+		}
+	}
+
+	group {
+		name: "search,btn";
+		parts {
+			part {
+				name: "image";
+				type: IMAGE;
+				scale: 1;
+				description {
+					state: "default" 0.0;
+					rel1 { relative: 0.0 0.0; }
+					rel2 { relative: 1.0 1.0; }
+					image { normal: "icon_drawer_search.png"; }
+					color_class: "B052L1";
+					aspect: 1 1;
+					aspect_preference: BOTH;
+					min: 63 63;
+					max: 63 63;
+				}
+				description {
+					state: "pressed" 0.0;
+					inherit: "default" 0.0;
+					color_class: "B052L1P";
+				}
+				description {
+					state: "dim" 0.0;
+					inherit: "default" 0.0;
+					color_class: "B052L1D";
+				}
+			}
+		}
+		programs {
+			program {
+				name: "pressed";
+				source: "image";
+				signal: "mouse,down,1";
+				action: STATE_SET "pressed" 0.0;
+				target: "image";
+			}
+			program {
+				name: "released";
+				source: "image";
+				signal: "mouse,up,1";
+				action: STATE_SET "default" 0.0;
+				target: "image";
+			}
+		}
+	}
+} // collections
+
+

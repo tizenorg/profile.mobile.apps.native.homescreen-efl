@@ -69,3 +69,19 @@ ADD_CUSTOM_TARGET(page_edit.edj
 )
 ADD_DEPENDENCIES(${PROJECT_NAME} page_edit.edj)
 INSTALL(FILES page_edit.edj DESTINATION ${EDJEDIR})
+
+ADD_CUSTOM_TARGET(preview.edj
+		COMMAND edje_cc -id ${PROJECT_EDC_DIR}/../images ${EDJE_CFLAGS}
+		${PROJECT_EDC_DIR}/preview.edc preview.edj
+		DEPENDS ${PROJECT_EDC_DIR}/preview.edc
+)
+ADD_DEPENDENCIES(${PROJECT_NAME} preview.edj)
+INSTALL(FILES preview.edj DESTINATION ${EDJEDIR})
+
+ADD_CUSTOM_TARGET(color_classes.edj
+		COMMAND edje_cc -id ${PROJECT_EDC_DIR}/../images ${EDJE_CFLAGS}
+		${PROJECT_EDC_DIR}/color_classes.edc color_classes.edj
+		DEPENDS ${PROJECT_EDC_DIR}/color_classes.edc
+)
+ADD_DEPENDENCIES(${PROJECT_NAME} color_classes.edj)
+INSTALL(FILES color_classes.edj DESTINATION ${EDJEDIR})

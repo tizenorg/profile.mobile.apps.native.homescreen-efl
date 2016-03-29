@@ -21,8 +21,10 @@
 #include <system_settings.h>
 #include <alloca.h>
 #include "homescreen-efl.h"
+#include "add_viewer/add_viewer.h"
 #include "key.h"
 #include "option_menu.h"
+#include "add_viewer/add_viewer.h"
 #include "livebox/livebox_panel.h"
 #include "livebox/livebox_utils.h"
 #include "mouse.h"
@@ -187,7 +189,13 @@ HAPI void home_screen_set_view_type(homescreen_view_t view)
 		break;
 	case HOMESCREEN_VIEW_HOME_EDIT:
 		LOGI("HOMESCREEN_VIEW_HOME_EDIT");
+		livebox_panel_set_edit_mode_layout(true);
+		livebox_panel_change_edit_mode_state(false);
 		elm_object_signal_emit(s_info.layout, SIGNAL_BOTTOM_BUTTONS_HOME_EDIT_STATE_SET, SIGNAL_SOURCE);
+		break;
+	case HOMESCREEN_VIEW_HOME_ADD_VIEWER:
+		LOGI("HOMESCREEN_VIEW_ADD_VIEWER");
+		add_viewer_window_create(s_info.root_width, s_info.root_height);
 		break;
 	case HOMESCREEN_VIEW_HOME_ALL_PAGES:
 		LOGI("HOMESCREEN_VIEW_HOME_ALL_PAGES");

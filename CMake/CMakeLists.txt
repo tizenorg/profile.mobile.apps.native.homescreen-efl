@@ -72,6 +72,11 @@ ADD_EXECUTABLE(${PROJECT_NAME}
 	${PROJECT_ROOT_DIR}/src/livebox/livebox_utils.c
 	${PROJECT_ROOT_DIR}/src/livebox/grid_reposition.c
 	${PROJECT_ROOT_DIR}/src/livebox/livebox_widget.c
+
+	${PROJECT_ROOT_DIR}/src/add_viewer/add_viewer.c
+	${PROJECT_ROOT_DIR}/src/add_viewer/list_view.c
+	${PROJECT_ROOT_DIR}/src/add_viewer/view.c
+	${PROJECT_ROOT_DIR}/src/add_viewer/widget.c
 )
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${pkgs_LDFLAGS} -lm)

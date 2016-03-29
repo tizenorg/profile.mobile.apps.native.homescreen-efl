@@ -69,7 +69,6 @@
 *******************************************************************************/
 
 /*================================ OPTION_MENU.C==============================*/
-#define OPTION_MENU_ADD_VIEWER "org.tizen.add-viewer"
 #define OPTION_MENU_SETTINGS "org.tizen.wallpaper-ui-service"
 #define CAPTION_MENU_CENTER_LABEL_TEXT_LEN_MAX 16
 
