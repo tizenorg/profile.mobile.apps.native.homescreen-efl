@@ -6,7 +6,7 @@ Summary: Homescreen-Efl
 Version: 0.0.1
 Release: 0.1
 Group:      TO_BE/FILLED_IN
-License:    Flora License
+License: Flora-1.1
 Source0:    %{name}-%{version}.tar.gz
 
 %if "%{?tizen_profile_name}" == "wearable"
