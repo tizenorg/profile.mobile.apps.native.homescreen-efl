@@ -59,7 +59,7 @@ USER_EDCS_FONT_DIRS_ABS =
 # EDC Flags
 USER_EXT_EDC_KEYS = EDC0 
 
-USER_EXT_EDC0_EDCS = res/edje/folder_entry.edc res/edje/livebox_layout.edc res/edje/page_edit_util.edc res/edje/icon.edc res/edje/livebox_container.edc res/edje/folder.edc res/edje/home.edc res/edje/page_edit.edc res/edje/app_grid.edc res/edje/index_element.edc res/edje/preview.edc res/edje/color_classes.edc res/edje/tizen-dark-inc.edc
+USER_EXT_EDC0_EDCS = res/edje/folder_entry.edc res/edje/livebox_layout.edc res/edje/page_edit_util.edc res/edje/icon.edc res/edje/livebox_container.edc res/edje/folder.edc res/edje/home.edc res/edje/page_edit.edc res/edje/app_grid.edc res/edje/index_element.edc res/edje/preview.edc res/edje/color_classes.edc
 USER_EXT_EDC0_EDCS_IMAGE_DIRS = res/images 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
 USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds 
