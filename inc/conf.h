@@ -227,7 +227,7 @@
 /*========================== KEY CONFIG ======================================*/
 
 #define KEY_HOME "XF86Home"
-#define KEY_MENU "XF86Send"
+#define KEY_MENU "XF86Menu"
 #define KEY_BACK "XF86Back"
 #define KEY_RETURN "Return"
 
