@@ -705,8 +705,8 @@ static Evas_Object *__folder_panel_create_entry(Evas_Object *parent, const char 
 	elm_entry_input_panel_layout_set(entry, ELM_INPUT_PANEL_LAYOUT_NORMAL);
 	elm_entry_input_panel_return_key_type_set(entry, ELM_INPUT_PANEL_RETURN_KEY_TYPE_DONE);
 
-	evas_object_smart_callback_add(entry,"changed", __folder_panel_entry_changed_cb, parent);
-	evas_object_smart_callback_add(entry, "clicked",__folder_panel_entry_clicked_cb, parent);
+	evas_object_smart_callback_add(entry, "changed", __folder_panel_entry_changed_cb, parent);
+	evas_object_smart_callback_add(entry, "clicked", __folder_panel_entry_clicked_cb, parent);
 	elm_object_signal_callback_add(parent, SIGNAL_CLEAR_BTN_CLICKED, SIGNAL_SOURCE,
 				__folder_panel_entry_clear_button_clicked_cb, entry);
 
@@ -716,6 +716,7 @@ static Evas_Object *__folder_panel_create_entry(Evas_Object *parent, const char 
 	} else {
 		elm_object_signal_emit(s_info.opened_folder_popup, SIGNAL_FOLDER_UNNAMED_TEXT_SHOW,
 						SIGNAL_SOURCE);
+		elm_object_text_set(entry, "");
 		s_info.opened_folder_name_is_empty = true;
 	}
 
@@ -734,10 +735,8 @@ static void __folder_panel_entry_activated_cb(void *data, Evas_Object *obj, void
 		return;
 	}
 
-	if (!strcmp(folder->label, "")) {
-		elm_object_text_set(obj, "");
+	if (!strcmp(folder->label, ""))
 		s_info.opened_folder_name_is_empty = true;
-	}
 
 	elm_object_signal_emit(s_info.opened_folder_popup, SIGNAL_FOLDER_UNNAMED_TEXT_HIDE,
 			SIGNAL_SOURCE);
