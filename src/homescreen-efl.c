@@ -52,6 +52,7 @@ static struct {
 	int root_height;
 	homescreen_view_t view_type;
 	bool is_bg_blurred;
+	Ecore_Animator* animator;
 } s_info = {
 	.win = NULL,
 	.bg = NULL,
@@ -65,7 +66,8 @@ static struct {
 	.root_width = 0,
 	.root_height = 0,
 	.view_type = HOMESCREEN_VIEW_HOME,
-	.is_bg_blurred = false
+	.is_bg_blurred = false,
+	.animator = NULL
 };
 
 static bool mvc_badge_refresh_enable = true;
@@ -737,12 +739,13 @@ static void __homescreen_efl_get_window_size(Evas_Object *win)
 
 static void __homescreen_efl_home_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
-	homescreen_view_t view_t = home_screen_get_view_type();
-
-	if (view_t == HOMESCREEN_VIEW_HOME) {
-		home_screen_set_view_type(HOMESCREEN_VIEW_ALL_APPS);
-	} else if (view_t == HOMESCREEN_VIEW_ALL_APPS) {
-		home_screen_set_view_type(HOMESCREEN_VIEW_HOME);
+	if (s_info.animator == NULL) {
+		homescreen_view_t view_t = home_screen_get_view_type();
+		if (view_t == HOMESCREEN_VIEW_HOME) {
+			home_screen_set_view_type(HOMESCREEN_VIEW_ALL_APPS);
+		} else if (view_t == HOMESCREEN_VIEW_ALL_APPS) {
+			home_screen_set_view_type(HOMESCREEN_VIEW_HOME);
+		}
 	}
 }
 
@@ -996,7 +999,7 @@ static void __homescreen_efl_show_all_apps(void)
 	elm_object_signal_emit(s_info.layout, SIGNAL_BLOCK_EVENTS, SIGNAL_SOURCE);
 	app_icon_set_click_ignore(true);
 
-	ecore_animator_timeline_add(APPS_SHOW_HIDE_ANIMATION_TIME, __homescreen_efl_show_all_apps_anim, NULL);
+	s_info.animator = ecore_animator_timeline_add(APPS_SHOW_HIDE_ANIMATION_TIME, __homescreen_efl_show_all_apps_anim, NULL);
 }
 
 static void __homescreen_efl_show_home_view(void)
@@ -1008,7 +1011,7 @@ static void __homescreen_efl_show_home_view(void)
 	elm_object_signal_emit(s_info.layout, SIGNAL_BLOCK_EVENTS, SIGNAL_SOURCE);
 	app_icon_set_click_ignore(true);
 
-	ecore_animator_timeline_add(APPS_SHOW_HIDE_ANIMATION_TIME, __homescreen_efl_show_home_anim, NULL);
+	s_info.animator = ecore_animator_timeline_add(APPS_SHOW_HIDE_ANIMATION_TIME, __homescreen_efl_show_home_anim, NULL);
 }
 
 static bool __update_all_badges_count(Tree_node_t *parent, Tree_node_t *node, void *data)
@@ -1231,6 +1234,7 @@ static Eina_Bool __homescreen_efl_show_all_apps_anim(void *data, double pos)
 		elm_object_part_content_set(s_info.layout, PART_CONTENT, s_info.all_apps);
 		all_apps_show();
 		elm_object_signal_emit(s_info.layout, SIGNAL_UNBLOCK_EVENTS, SIGNAL_SOURCE);
+		s_info.animator = NULL;
 		return ECORE_CALLBACK_DONE;
 	}
 
@@ -1253,6 +1257,7 @@ static Eina_Bool __homescreen_efl_show_home_anim(void *data, double pos)
 		}
 
 		elm_object_signal_emit(s_info.layout, SIGNAL_UNBLOCK_EVENTS, SIGNAL_SOURCE);
+		s_info.animator = NULL;
 		return ECORE_CALLBACK_DONE;
 	}
 
