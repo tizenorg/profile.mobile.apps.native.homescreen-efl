@@ -79,6 +79,7 @@ static void __folder_panel_entry_activated_cb(void *data, Evas_Object *obj, void
 static void __folder_panel_entry_deactivated_cb(void *data, Evas_Object *obj, void *ei);
 static void __folder_panel_entry_changed_cb(void *data, Evas_Object *obj, void *ei);
 static void __folder_panel_entry_clicked_cb(void *data, Evas_Object *obj, void *ei);
+static void __folder_panel_entry_done_cb(void *data, Evas_Object *obj, void *ei);
 static void __folder_panel_entry_clear_button_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 
 static void __folder_panel_item_add_to_folder_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
@@ -707,6 +708,8 @@ static Evas_Object *__folder_panel_create_entry(Evas_Object *parent, const char 
 
 	evas_object_smart_callback_add(entry, "changed", __folder_panel_entry_changed_cb, parent);
 	evas_object_smart_callback_add(entry, "clicked", __folder_panel_entry_clicked_cb, parent);
+	evas_object_smart_callback_add(entry, "activated", __folder_panel_entry_done_cb, parent);
+
 	elm_object_signal_callback_add(parent, SIGNAL_CLEAR_BTN_CLICKED, SIGNAL_SOURCE,
 				__folder_panel_entry_clear_button_clicked_cb, entry);
 
@@ -796,6 +799,20 @@ static void __folder_panel_entry_clicked_cb(void *data, Evas_Object *obj, void *
 	else
 		elm_object_signal_emit(folder_popup, SIGNAL_CLEAR_BTN_HIDE, SIGNAL_SOURCE);
 	elm_entry_input_panel_show(obj);
+}
+
+static void __folder_panel_entry_done_cb(void *data, Evas_Object *obj, void *ei)
+{
+	LOGI("");
+	Evas_Object *entry = obj;
+	Evas_Object *folder_popup = data;
+
+	if (!folder_popup || !entry) {
+		LOGE("Invalid data");
+		return;
+	}
+
+	elm_entry_input_panel_hide(entry);
 }
 
 static void __folder_panel_entry_clear_button_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
