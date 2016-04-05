@@ -1044,8 +1044,10 @@ static bool __homescreen_efl_update_icon_badge(Tree_node_t *parent, Tree_node_t 
 		folder_count_pending = false;
 	}
 
-	if (folder_count_pending && node->data->type == APP_ITEM_ICON)
+	if (folder_count_pending && node->data->type == APP_ITEM_ICON) {
+		app_mgr_app_get_badge_count(node->data->appid, &node->data->badge_count);
 		folder_badge_counter += node->data->badge_count;
+	}
 
 	if (!folder_count_pending && app == node->data)
 		return false;

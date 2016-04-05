@@ -113,6 +113,9 @@ HAPI Evas_Object *app_icon_create(Tree_node_t *tree_data, app_icon_type_t type)
 
 		app_icon_set_label(icon_layout, item->label);
 
+		if (item->badge_count > 0)
+			app_icon_show_badge(icon_layout, item->badge_count);
+
 		evas_object_show(icon_image);
 	} else if (type == APP_ICON_TYPE_FOLDER) {
 		folder_icon_layout = elm_layout_add(parent);
