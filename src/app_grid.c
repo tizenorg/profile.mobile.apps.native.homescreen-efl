@@ -441,12 +441,16 @@ static Eina_Bool __app_grid_icon_move_cb_del(void *data)
 static Evas_Event_Flags __app_grid_icon_move_end(void *data, void *event_info)
 {
 	Elm_Gesture_Momentum_Info *pos_info = event_info;
-	LOGD("Drag end at: x,y=<%d,%d>", pos_info->x2, pos_info->y2);
-
 
 	if(s_info.repositioned_icon != NULL) {
-		__app_grid_icon_drop(NULL, s_info.src_grid, pos_info->x2,
-				pos_info->y2, ELM_XDND_ACTION_UNKNOWN);
+
+		if (pos_info != NULL) {
+			LOGD("Drag end at: x,y=<%d,%d>", pos_info->x2, pos_info->y2);
+
+			__app_grid_icon_drop(NULL, s_info.src_grid, pos_info->x2,
+					pos_info->y2, ELM_XDND_ACTION_MOVE);
+		}
+
 		__app_grid_drag_done(NULL, NULL);
 	}
 
@@ -591,6 +595,11 @@ static void __app_grid_resize_cb(void *data, Evas *e, Evas_Object *obj, void *ei
 /*=========================== MOUSE HANDLERS =====================================================*/
 static Eina_Bool __app_grid_mouse_up_cb(void *data, int type, void *event)
 {
+	LOGD("");
+
+	if (s_info.is_dnd_on)
+		__app_grid_icon_move_end(NULL, NULL);
+
 	home_screen_set_indice_state(INDICE_OFF);
 	return ECORE_CALLBACK_RENEW;
 }
