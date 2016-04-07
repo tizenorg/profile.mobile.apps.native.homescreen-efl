@@ -84,6 +84,8 @@ HAPI void app_item_free(app_item_t *item)
 	free((void *)item->appid);
 	free((void *)item->content_info);
 
+	evas_object_data_del(item->layout, KEY_ICON_DATA);
+
 	free(item);
 }
 
