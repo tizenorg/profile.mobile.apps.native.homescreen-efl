@@ -1,4 +1,4 @@
 ADD_SUBDIRECTORY(edje)
 ADD_SUBDIRECTORY(images)
 ADD_SUBDIRECTORY(po)
-# End of a file
+

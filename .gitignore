@@ -1,10 +1,6 @@
-.cproject
-.exportMap
-.project
 .sdk_delta.info
 .sign/
 .rds_delta
-.tproject
 Debug/
 crash-info/
 /Release

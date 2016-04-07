@@ -274,7 +274,7 @@ bool _db_open(void)
 	if (db_info.db)
 		return true;
 
-	if (!_db_is_success(sqlite3_open(DATABASE_FILE, &db_info.db)))
+	if (!_db_is_success(sqlite3_open(util_get_data_file_path(DATABASE_FILE), &db_info.db)))
 		return false;
 
 	if (sqlite3_exec(db_info.db, "BEGIN IMMEDIATE TRANSACTION", NULL,

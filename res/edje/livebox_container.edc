@@ -18,10 +18,10 @@
 
 images
 {
-	image: "../images/btn_delete_nor.png" COMP;
-	image: "../images/edit_all_page_create.png" COMP;
-	image: "../images/frame.png" COMP;
-	image: "../images/resize_button.png" COMP;
+	image: "btn_delete_nor.png" COMP;
+	image: "edit_all_page_create.png" COMP;
+	image: "frame.png" COMP;
+	image: "resize_button.png" COMP;
 }
 
 collections {
@@ -102,7 +102,7 @@ collections {
 					rel1 {relative: LIVEBOX_ADD_PAGE_BUTTON_X_MIN LIVEBOX_ADD_PAGE_BUTTON_Y_MIN; to: "edit_dim";}
 					rel2 {relative: LIVEBOX_ADD_PAGE_BUTTON_X_MAX LIVEBOX_ADD_PAGE_BUTTON_Y_MAX; to: "edit_dim";}
 					image {
-						normal: "../images/edit_all_page_create.png";
+						normal: "edit_all_page_create.png";
 					}
 					aspect_preference: BOTH;
 					visible: 0;
@@ -150,7 +150,7 @@ collections {
 					aspect_preference: BOTH;
 					fixed: 1 1;
 					image {
-						normal: "../images/btn_delete_nor.png";
+						normal: "btn_delete_nor.png";
 					}
 				}
 				description {
@@ -211,7 +211,7 @@ collections {
 
 					image
 					{
-						normal: "../images/resize_button.png";
+						normal: "resize_button.png";
 					}
 				}
 				description
@@ -252,7 +252,7 @@ collections {
 
 					image
 					{
-						normal: "../images/resize_button.png";
+						normal: "resize_button.png";
 					}
 				}
 				description
@@ -333,7 +333,7 @@ collections {
 
 					image
 					{
-						normal: "../images/resize_button.png";
+						normal: "resize_button.png";
 					}
 				}
 				description
@@ -385,7 +385,7 @@ collections {
 
 					image
 					{
-						normal: "../images/resize_button.png";
+						normal: "resize_button.png";
 					}
 				}
 				description
@@ -442,7 +442,7 @@ collections {
 						to_y: "button.down";
 					}
 					image {
-						normal: "../images/frame.png";
+						normal: "frame.png";
 						border: 20 20 20 20;
 					}
 					color: 0 255 0 255;

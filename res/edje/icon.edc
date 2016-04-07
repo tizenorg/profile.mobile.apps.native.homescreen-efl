@@ -17,13 +17,13 @@
 #include "../../inc/conf.h"
 
 images {
-	image: "../images/app_press_117.png" COMP;
-	image: "../images/btn_delete_nor.png" COMP;
-	image: "../images/btn_delete_press.png" COMP;
-	image: "../images/app_icon_checkbox_bg.png" COMP;
-	image: "../images/app_icon_checkbox_on.png" COMP;
-	image: "../images/app_icon_checkbox_border.png" COMP;
-	image: "../images/icon_badge_container.png" COMP;
+	image: "app_press_117.png" COMP;
+	image: "btn_delete_nor.png" COMP;
+	image: "btn_delete_press.png" COMP;
+	image: "app_icon_checkbox_bg.png" COMP;
+	image: "app_icon_checkbox_on.png" COMP;
+	image: "app_icon_checkbox_border.png" COMP;
+	image: "icon_badge_container.png" COMP;
 }
 
 styles {
@@ -107,7 +107,7 @@ collections {
 					aspect_preference: BOTH;
 					color: 0 0 0 0;
 					image {
-						normal: "../images/app_press_117.png";
+						normal: "app_press_117.png";
 					}
 				}
 				description{
@@ -172,7 +172,7 @@ collections {
 					visible: 0;
 					image
 					{
-						normal: "../images/icon_badge_container.png";
+						normal: "icon_badge_container.png";
 						border: 15 14 0 0;
 					}
 				}
@@ -205,6 +205,7 @@ collections {
 						text_class: "ATO002";
 						min: 1 1;
 						max: 1 1;
+						ellipsis: -1;
 					}
 				}
 				description
@@ -230,7 +231,7 @@ collections {
 					aspect: 1.0 1.0;
 					aspect_preference: BOTH;
 					image {
-						normal: "../images/btn_delete_nor.png";
+						normal: "btn_delete_nor.png";
 					}
 				}
 				description {
@@ -244,7 +245,7 @@ collections {
 					inherit: "default" 0.0;
 					color: 255 255 255 255;
 					image {
-						normal: "../images/btn_delete_press.png";
+						normal: "btn_delete_press.png";
 					}
 					visible: 1;
 				}
@@ -265,7 +266,7 @@ collections {
 					aspect_preference: BOTH;
 					//TODO: image from home-lite is used...
 					image {
-						normal: "../images/app_icon_checkbox_bg.png";
+						normal: "app_icon_checkbox_bg.png";
 					}
 				}
 				description {
@@ -295,7 +296,7 @@ collections {
 					aspect: 1.0 1.0;
 					aspect_preference: BOTH;
 					image {
-						normal: "../images/app_icon_checkbox_border.png";
+						normal: "app_icon_checkbox_border.png";
 					}
 				}
 				description {
@@ -325,7 +326,7 @@ collections {
 					aspect: 1.0 1.0;
 					aspect_preference: BOTH;
 					image {
-						normal: "../images/app_icon_checkbox_on.png";
+						normal: "app_icon_checkbox_on.png";
 					}
 				}
 				description {

@@ -17,14 +17,14 @@
 #include "../../inc/conf.h"
 
 images {
-	image: "../images/folder_appicon_bg.png" COMP;
-	image: "../images/folder_appicon_bg_possible.png" COMP;
-	image: "../images/folder_appicon_bg_impossible.png" COMP;
-	image: "../images/folder_appicon_empty_bg.png" COMP;
-	image: "../images/folder_popup_bg.png" COMP;
-	image: "../images/btn_input_clear.png" COMP;
-	image: "../images/btn_add_nor.png" COMP;
-	image: "../images/btn_add_press.png" COMP;
+	image: "folder_appicon_bg.png" COMP;
+	image: "folder_appicon_bg_possible.png" COMP;
+	image: "folder_appicon_bg_impossible.png" COMP;
+	image: "folder_appicon_empty_bg.png" COMP;
+	image: "folder_popup_bg.png" COMP;
+	image: "btn_input_clear.png" COMP;
+	image: "btn_add_nor.png" COMP;
+	image: "btn_add_press.png" COMP;
 }
 
 collections {
@@ -60,21 +60,21 @@ collections {
 					aspect: 1.0 1.0;
 					aspect_preference: BOTH;
 					image {
-						normal: "../images/folder_appicon_bg.png";
+						normal: "folder_appicon_bg.png";
 					}
 				}
 				description {
 					state: "frame_possible" 0.0;
 					inherit: "default" 0.0;
 					image {
-						normal: "../images/folder_appicon_bg_possible.png";
+						normal: "folder_appicon_bg_possible.png";
 					}
 				}
 				description {
 					state: "frame_impossible" 0.0;
 					inherit: "default" 0.0;
 					image {
-						normal: "../images/folder_appicon_bg_impossible.png";
+						normal: "folder_appicon_bg_impossible.png";
 					}
 				}
 			}
@@ -95,7 +95,7 @@ collections {
 					visible: 0;
 					image
 					{
-						normal: "../images/folder_appicon_empty_bg.png";
+						normal: "folder_appicon_empty_bg.png";
 					}
 				}
 				description
@@ -310,7 +310,7 @@ collections {
 					aspect: 1.0 1.0;
 					aspect_preference: BOTH;
 					image {
-						normal: "../images/btn_add_nor.png";
+						normal: "btn_add_nor.png";
 					}
 				}
 				description
@@ -318,7 +318,7 @@ collections {
 					state: "pressed" 0.0;
 					inherit: "default" 0.0;
 					image {
-						normal: "../images/btn_add_press.png";
+						normal: "btn_add_press.png";
 					}
 				}
 			}
@@ -384,7 +384,7 @@ collections {
 					rel1 {relative: 0.0 0.0;}
 					rel2 {relative: 1.0 0.0;}
 					image {
-						normal: "../images/folder_popup_bg.png";
+						normal: "folder_popup_bg.png";
 						border: 5 5 5 5;
 					}
 				}
@@ -458,7 +458,7 @@ collections {
 					aspect_preference: BOTH;
 					image
 					{
-						normal: "../images/btn_input_clear.png";
+						normal: "btn_input_clear.png";
 					}
 					visible: 0;
 				}

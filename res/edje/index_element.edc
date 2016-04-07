@@ -21,8 +21,8 @@ collections {
 		name: GROUP_INDEX_ELEMENT;
 
 		images {
-			image: "../images/core_page_indicator_on.png" COMP;
-			image: "../images/core_page_indicator_on_horizontal.png" COMP;
+			image: "core_page_indicator_on.png" COMP;
+			image: "core_page_indicator_on_horizontal.png" COMP;
 		}
 
 		script {
@@ -59,7 +59,7 @@ collections {
 					rel1 {relative: 0.0 0.0; to: INDICE_SIZE_SETTER;}
 					rel2 {relative: 1.0 1.0; to: INDICE_SIZE_SETTER;}
 					image {
-						normal: "../images/core_page_indicator_on_horizontal.png";
+						normal: "core_page_indicator_on_horizontal.png";
 					}
 					map {
 						on: 1;
@@ -74,7 +74,7 @@ collections {
 					inherit: "default" 0.0;
 					color: 255 255 255 255;
 					image {
-						normal: "../images/core_page_indicator_on.png";
+						normal: "core_page_indicator_on.png";
 					}
 				}
 			}

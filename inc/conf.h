@@ -54,13 +54,11 @@
 
 /*=================================DATABASE===================================*/
 #define DATABASE_FILE \
-	"/usr/apps/org.tizen.homescreen-efl/data/homescreen-efl.db"
+	"homescreen-efl.db"
 
 /*=================================RESOURCES==================================*/
-#define DEFAULT_BG \
-	"/usr/apps/com.samsung.home-lite/res/images/default_bg.png"
-#define EDJE_DIR "/usr/apps/org.tizen.homescreen-efl/res/edje"
-#define IMAGE_DIR "/usr/apps/org.tizen.homescreen-efl/res/images"
+#define EDJE_DIR "edje"
+#define IMAGE_DIR "images"
 
 /*******************************************************************************
 *
@@ -71,7 +69,6 @@
 *******************************************************************************/
 
 /*================================ OPTION_MENU.C==============================*/
-#define OPTION_MENU_ADD_VIEWER "org.tizen.add-viewer"
 #define OPTION_MENU_SETTINGS "org.tizen.wallpaper-ui-service"
 #define CAPTION_MENU_CENTER_LABEL_TEXT_LEN_MAX 16
 
@@ -87,7 +84,7 @@
 
 /*================================ APP_ICON.C=================================*/
 #define DEFAULT_APP_ICON  \
-	"/usr/apps/org.tizen.homescreen-efl/res/images/default.png"
+	IMAGE_DIR "/default.png"
 
 #define BADGE_REL_X 0.85
 #define BADGE_REL_Y 0.00
@@ -229,8 +226,8 @@
 #define OFFSET 100
 /*========================== KEY CONFIG ======================================*/
 
-#define KEY_HOME "XF86Phone"
-#define KEY_MENU "XF86Send"
+#define KEY_HOME "XF86Home"
+#define KEY_MENU "XF86Menu"
 #define KEY_BACK "XF86Back"
 #define KEY_RETURN "Return"
 
@@ -330,6 +327,7 @@
 /*these signals change states of bottom buttons (menu and home/all apps) */
 #define SIGNAL_BOTTOM_BUTTONS_HOME_STATE_SET "menu_icon_home_state_set"
 #define SIGNAL_BOTTOM_BUTTONS_ALL_APPS_STATE_SET "menu_icon_all_apps_state_set"
+#define SIGNAL_BOTTOM_BUTTONS_HOME_EDIT_STATE_SET "menu_icon_home_edit_state_set"
 #define SIGNAL_BOTTOM_BUTTONS_ALL_APPS_EDIT_STATE_SET "menu_icon_edit_state_set"
 
 /*========================== LIVEBOX EDC CONFIG ==============================*/

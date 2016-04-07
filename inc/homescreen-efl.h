@@ -27,19 +27,16 @@
 #include "app_item.h"
 #include "tree.h"
 
-#ifdef  LOG_TAG
-#undef  LOG_TAG
-#endif
-#define LOG_TAG "HOMESCREEN_EFL"
-
 #if !defined(PACKAGE)
 #define PACKAGE "org.tizen.homescreen-efl"
 #endif
+
 
 typedef enum {
 	HOMESCREEN_VIEW_HOME = 0,
 	HOMESCREEN_VIEW_HOME_EDIT,
 	HOMESCREEN_VIEW_HOME_ALL_PAGES,
+	HOMESCREEN_VIEW_HOME_ADD_VIEWER,
 	HOMESCREEN_VIEW_ALL_APPS,
 	HOMESCREEN_VIEW_ALL_APPS_EDIT,
 	HOMESCREEN_VIEW_ALL_APPS_CHOOSE,
@@ -142,6 +139,42 @@ extern void home_screen_mvc_drag_item_from_folder_cb(void);
  */
 extern void home_screen_mvc_set_ly_scale(Evas_Object *layout);
 
+/**
+ * @brief Close all apps choose view.
+ *
+ */
+extern void home_screen_close_all_apps_choose_view(void);
 
+/**
+ * @brief Register gesture state change callback.
+ *
+ * @details Function adds callback of type Elm_Gesture_Type
+ * to main homescreen gui gesture layer.
+ *
+ * @param[in] idx The gesture you want to track state of.
+ * @param[in] cb_type The event the callback tracks (START, MOVE, END, ABORT).
+ * @param[in] cb The callback itself.
+ * @param[in] data Custom data to be passed.
+ *
+ * @return 0 on success otherwise negative value on failure
+ */
+extern int home_screen_gesture_cb_set(Elm_Gesture_Type idx, Elm_Gesture_State cb_type,
+		Elm_Gesture_Event_Cb cb, void *data);
+
+/**
+ * @brief Unregister gesture state change callback.
+ *
+ * @details Function unregisters callback on Elm_Gesture_Type
+ * from main homescreen gui gesture layer.
+ *
+ * @param[in] idx The gesture you want to track state of.
+ * @param[in] cb_type The event the callback tracks (START, MOVE, END, ABORT).
+ * @param[in] cb The callback itself.
+ * @param[in] data Custom data to be passed.
+ *
+ * @return 0 on success otherwise negative value on failure
+ */
+extern int home_screen_gesture_cb_unset(Elm_Gesture_Type idx, Elm_Gesture_State cb_type,
+		Elm_Gesture_Event_Cb cb, void *data);
 
 #endif /* __homescreen-efl_H__ */

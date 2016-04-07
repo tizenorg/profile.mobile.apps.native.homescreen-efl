@@ -20,6 +20,7 @@
 
 #include "homescreen-efl.h"
 #include "option_menu.h"
+#include "add_viewer/add_viewer.h"
 #include "livebox/livebox_panel.h"
 #include "livebox_all_pages.h"
 #include "folder_panel.h"
@@ -29,6 +30,12 @@
 static Eina_Bool __key_release_cb(void *data, int type, void *event);
 static Eina_Bool __key_press_cb(void *data, int type, void *event);
 
+typedef enum {
+	HW_KEY_NONE = -1,
+	HW_KEY_BACK,
+	HW_KEY_HOME,
+	HW_KEY_MENU,
+} hw_key_t;
 
 static struct {
 	Eina_Bool pressed;
@@ -94,6 +101,7 @@ static Eina_Bool __key_press_cb(void *data, int type, void *event)
 static Eina_Bool __key_release_cb(void *data, int type, void *event)
 {
 	Evas_Event_Key_Up *ev = event;
+	hw_key_t pressed_key = HW_KEY_NONE;
 
 	if (!key_info_s.register_handler || !ev)
 		return ECORE_CALLBACK_RENEW;
@@ -103,23 +111,28 @@ static Eina_Bool __key_release_cb(void *data, int type, void *event)
 	if (key_info_s.pressed == EINA_FALSE)
 		return ECORE_CALLBACK_RENEW;
 
-	if (!strcmp(ev->keyname, KEY_MENU)) {
+	if (!strcmp(ev->keyname, KEY_BACK))
+		pressed_key = HW_KEY_BACK;
+	else if (!strcmp(ev->keyname, KEY_MENU))
+		pressed_key = HW_KEY_MENU;
+	else if(!strcmp(ev->keyname, KEY_HOME))
+		pressed_key = HW_KEY_HOME;
+	else {
+		key_info_s.pressed = EINA_FALSE;
+
+		return ECORE_CALLBACK_RENEW;
+	}
+
+	if (pressed_key == HW_KEY_MENU) {
 		LOGD("Menu pressed");
 		option_menu_change_state_on_hw_menu_key();
 
 		return ECORE_CALLBACK_RENEW;
 	}
 
-	/*TODO: Keyname to key menu and key home are the same, so this code is doesn't execute*/
-	if (!strcmp(ev->keyname, KEY_HOME)) {
-		LOGD("Home pressed");
-		home_screen_set_view_type(HOMESCREEN_VIEW_HOME);
+	homescreen_view_t view_t = home_screen_get_view_type();
 
-		return ECORE_CALLBACK_RENEW;
-	}
-
-	if (!strcmp(ev->keyname, KEY_BACK)) {
-		homescreen_view_t view_t = home_screen_get_view_type();
+	if (pressed_key == HW_KEY_BACK || pressed_key == HW_KEY_HOME) {
 
 		option_menu_hide();
 		if (popup_destroy()) {
@@ -141,6 +154,9 @@ static Eina_Bool __key_release_cb(void *data, int type, void *event)
 			livebox_panel_set_edit_mode_layout(false);
 			livebox_panel_change_edit_mode_state(true);
 			break;
+		case HOMESCREEN_VIEW_HOME_ADD_VIEWER:
+			add_viewer_window_delete();
+			break;
 		case HOMESCREEN_VIEW_HOME_ALL_PAGES:
 			/*TODO: this should be invoked in homescreen-efl.c*/
 			livebox_all_pages_hide();
@@ -150,10 +166,14 @@ static Eina_Bool __key_release_cb(void *data, int type, void *event)
 			home_screen_set_view_type(HOMESCREEN_VIEW_HOME);
 			break;
 		case HOMESCREEN_VIEW_ALL_APPS_CHOOSE:
-			folder_panel_cancel_add_icon();
-			folder_panel_set_click_ignore_state(false);
+			home_screen_close_all_apps_choose_view();
+			if (pressed_key == HW_KEY_HOME)
+				home_screen_set_view_type(HOMESCREEN_VIEW_HOME);
+			break;
 		case HOMESCREEN_VIEW_ALL_APPS_EDIT:
 			home_screen_set_view_type(HOMESCREEN_VIEW_ALL_APPS);
+			if(pressed_key ==  HW_KEY_HOME)
+				home_screen_set_view_type(HOMESCREEN_VIEW_HOME);
 			break;
 		case HOMESCREEN_VIEW_UNKNOWN:
 			break;

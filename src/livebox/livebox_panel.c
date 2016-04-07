@@ -379,6 +379,7 @@ void livebox_panel_add_livebox(Tree_node_t *node, Evas_Object *page,
 	Evas_Object *livebox = NULL;
 	Evas_Object *livebox_layout = NULL;
 	Evas_Object *grid = NULL;
+	int ret = 0;
 
 
 	livebox_layout = elm_layout_add(s_info.livebox_page_scroller);
@@ -395,7 +396,6 @@ void livebox_panel_add_livebox(Tree_node_t *node, Evas_Object *page,
 
 #ifdef LIVEBOX_RESIZE_TEST
 	livebox = elm_image_add(livebox_layout);
-	elm_image_file_set(livebox, livebox_pkgname, NULL);
 #else
 	livebox = livebox_widget_add(livebox_pkgname, livebox_layout, content_info);
 #endif
@@ -408,12 +408,25 @@ void livebox_panel_add_livebox(Tree_node_t *node, Evas_Object *page,
 	node->data->layout = livebox_layout;
 	evas_object_data_set(livebox_layout, KEY_ICON_DATA, node);
 
-	elm_layout_file_set(livebox_layout, EDJE_LIVEBOX_LAYOUT_FILENAME,
+	ret = elm_layout_file_set(livebox_layout, util_get_res_file_path(EDJE_LIVEBOX_LAYOUT_FILENAME),
 		GROUP_LIVEBOX_LAYOUT);
-	elm_layout_content_set(livebox_layout, PART_LIVEBOX, livebox);
+	if (ret != EINA_TRUE) {
+		LOGE("Can not set layout file");
+		return;
+	}
+
+	ret = elm_layout_content_set(livebox_layout, PART_LIVEBOX, livebox);
+	if (ret != EINA_TRUE) {
+		LOGE("Can not set layout file");
+		return;
+	}
+
 	evas_object_size_hint_weight_set(livebox_layout, EVAS_HINT_EXPAND,
 		EVAS_HINT_EXPAND);
+
+	evas_object_show(livebox);
 	evas_object_show(livebox_layout);
+
 	elm_layout_signal_callback_add(livebox_layout, SIGNAL_CLICKED,
 		SIGNAL_REMOVE_SOURCE, __livebox_panel_del_cb, NULL);
 
@@ -941,8 +954,9 @@ static Evas_Object *__livebox_panel_create_page(Evas_Object *livebox_scroller)
 {
 	Evas_Object *grid = NULL;
 	Evas_Object *rect = NULL;
+
 	Evas_Object *livebox_container = util_create_edje_layout(
-		livebox_scroller, EDJE_LIVEBOX_CONTAINER_FILENAME,
+		livebox_scroller, util_get_res_file_path(EDJE_LIVEBOX_CONTAINER_FILENAME),
 		GROUP_LIVEBOX_CONTAINER);
 
 	if (!livebox_container) {
@@ -1198,8 +1212,6 @@ static void __libebox_panel_toggle_selected_livebox(Evas_Object *livebox, Evas_O
 		elm_object_signal_emit(prev_selected_page,
 			SIGNAL_GRID_SHADOW_HIDE, PART_GRID_BG);
 	}
-
-	elm_object_signal_emit(page, SIGNAL_GRID_SHADOW_SHOW, PART_GRID_BG);
 }
 
 static void __livebox_panel_mouse_up_cb(void *data, Evas *evas,
@@ -1218,6 +1230,7 @@ static void __livebox_panel_mouse_up_cb(void *data, Evas *evas,
 	__livebox_panel_set_remove_button_visibility(
 		grid_reposition_get_repositioned_item(), true);
 	__livebox_panel_set_reposition_bg_visibility(false);
+	elm_object_signal_emit(livebox_container, SIGNAL_GRID_SHADOW_HIDE, PART_GRID_BG);
 
 	grid_reposition_end();
 	livebox_utils_set_shadow_visibility(false);
@@ -1302,6 +1315,7 @@ static Eina_Bool __livebox_panel_longpress_cb(void *data)
 	s_info.is_longpress = true;
 
 	__libebox_panel_toggle_selected_livebox(livebox, longpressed_page);
+	elm_object_signal_emit(longpressed_page, SIGNAL_GRID_SHADOW_SHOW, PART_GRID_BG);
 
 	grid_item_set_resize_sliders_visibility(longpressed_page, false);
 	grid_reposition_init(livebox_utils_get_livebox_container_grid(

@@ -1,0 +1,73 @@
+
+# Project Name
+APPNAME = homescreen-efl
+
+# Project Type
+type = app
+
+# Project Profile
+profile = mobile-3.0
+
+# C Sources
+USER_SRCS = src/tree.c src/db/db.c src/homescreen-efl.c src/popup.c src/livebox/livebox_widget.c src/dynamic_index.c src/app_mgr.c src/all_apps.c src/layout.c src/app_grid.c src/livebox_all_pages.c src/livebox/livebox_panel.c src/data_model.c src/option_menu.c src/key.c src/app_icon.c src/mouse.c src/folder_panel.c src/livebox/grid_reposition.c src/livebox/livebox_utils.c src/livebox/livebox_animator.c src/livebox/grid_item_resize.c src/app_item.c src/page_scroller.c src/util.c src/add_viewer/add_viewer.c src/add_viewer/list_view.c  src/add_viewer/view.c src/add_viewer/widget.c
+
+# EDC Sources
+USER_EDCS =  
+
+# PO Sources
+USER_POS = res/po/pt_BR.po res/po/ro.po res/po/ko_KR.po res/po/ka.po res/po/is.po res/po/ru_RU.po res/po/en_PH.po res/po/it_IT.po res/po/el_GR.po res/po/uk.po res/po/hr.po res/po/az.po res/po/zh_CN.po res/po/es_US.po res/po/kk.po res/po/eu.po res/po/et.po res/po/lv.po res/po/hy.po res/po/ga.po res/po/ja_JP.po res/po/bg.po res/po/es_ES.po res/po/pt_PT.po res/po/pl.po res/po/hu.po res/po/en_US.po res/po/da.po res/po/tr_TR.po res/po/uz.po res/po/sv.po res/po/sk.po res/po/nl.po res/po/fr.po res/po/ca.po res/po/nb.po res/po/mk.po res/po/lt.po res/po/zh_TW.po res/po/de.po res/po/sl.po res/po/fr_CA.po res/po/gl.po res/po/sr.po res/po/cs.po res/po/ar.po res/po/fi.po res/po/hi.po res/po/en.po res/po/zh_HK.po 
+
+# User Defines
+USER_DEFS = 
+USER_CPP_DEFS = 
+
+# User Undefines
+USER_UNDEFS = 
+USER_CPP_UNDEFS = 
+
+# User Libraries
+USER_LIBS = 
+
+# User Objects
+USER_OBJS = 
+USER_OBJS_ABS = 
+
+# User Includes
+## C Compiler
+USER_INC_DIRS = inc 
+USER_INC_DIRS_ABS = 
+USER_INC_FILES = 
+USER_INC_FILES_ABS = 
+## C++ Compiler
+USER_CPP_INC_DIRS = 
+USER_CPP_INC_DIRS_ABS = 
+USER_CPP_INC_FILES = 
+USER_CPP_INC_FILES_ABS = 
+
+# User Library Path
+USER_LIB_DIRS = 
+USER_LIB_DIRS_ABS = 
+
+# EDC Resource Path
+USER_EDCS_IMAGE_DIRS = res/images 
+USER_EDCS_IMAGE_DIRS_ABS = 
+USER_EDCS_SOUND_DIRS = edje/sounds 
+USER_EDCS_SOUND_DIRS_ABS = 
+USER_EDCS_FONT_DIRS = edje/fonts 
+USER_EDCS_FONT_DIRS_ABS = 
+
+# EDC Flags
+USER_EXT_EDC_KEYS = EDC0 
+
+USER_EXT_EDC0_EDCS = res/edje/folder_entry.edc res/edje/livebox_layout.edc res/edje/page_edit_util.edc res/edje/icon.edc res/edje/livebox_container.edc res/edje/folder.edc res/edje/home.edc res/edje/page_edit.edc res/edje/app_grid.edc res/edje/index_element.edc res/edje/preview.edc res/edje/color_classes.edc
+USER_EXT_EDC0_EDCS_IMAGE_DIRS = res/images 
+USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
+USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds 
+USER_EXT_EDC0_EDCS_SOUND_DIRS_ABS = 
+USER_EXT_EDC0_EDCS_FONT_DIRS = edje/fonts 
+USER_EXT_EDC0_EDCS_FONT_DIRS_ABS = 
+
+# Resource Filter
+USER_RES_INCLUDE = 
+USER_RES_EXCLUDE = 
+

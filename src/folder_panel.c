@@ -79,6 +79,7 @@ static void __folder_panel_entry_activated_cb(void *data, Evas_Object *obj, void
 static void __folder_panel_entry_deactivated_cb(void *data, Evas_Object *obj, void *ei);
 static void __folder_panel_entry_changed_cb(void *data, Evas_Object *obj, void *ei);
 static void __folder_panel_entry_clicked_cb(void *data, Evas_Object *obj, void *ei);
+static void __folder_panel_entry_done_cb(void *data, Evas_Object *obj, void *ei);
 static void __folder_panel_entry_clear_button_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 
 static void __folder_panel_item_add_to_folder_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
@@ -96,7 +97,7 @@ HAPI void folder_panel_init_module(void)
 		}
 
 		elm_theme_ref_set(s_info.folder_entry_theme, NULL);
-		elm_theme_extension_add(s_info.folder_entry_theme, EDJE_DIR"/folder_entry.edj");
+		elm_theme_extension_add(s_info.folder_entry_theme, util_get_res_file_path(EDJE_DIR"/folder_entry.edj"));
 	}
 }
 
@@ -409,7 +410,7 @@ static bool __folder_panel_create_layout(Evas_Object *parent, app_item_t *folder
 		return false;
 	}
 
-	if (!elm_layout_file_set(s_info.opened_folder_window, EDJE_DIR"/folder.edj", GROUP_FOLDER_WINDOW)) {
+	if (!elm_layout_file_set(s_info.opened_folder_window, util_get_res_file_path(EDJE_DIR"/folder.edj"), GROUP_FOLDER_WINDOW)) {
 		LOGE("Failed to load edje file for layout");
 		evas_object_del(s_info.opened_folder_window);
 		s_info.opened_folder_window = NULL;
@@ -607,7 +608,7 @@ static Evas_Object* __folder_panel_create_add_icon(app_item_t *folder)
 	Evas_Object *add_icon = NULL;
 	LOGI("");
 
-	icon_layout = util_create_edje_layout(home_screen_get_win(), EDJE_DIR"/icon.edj", GROUP_ICON_LY);
+	icon_layout = util_create_edje_layout(home_screen_get_win(), util_get_res_file_path(EDJE_DIR"/icon.edj"), GROUP_ICON_LY);
 	if (!icon_layout) {
 		LOGE("Failed to create icon layout");
 		return NULL;
@@ -620,7 +621,7 @@ static Evas_Object* __folder_panel_create_add_icon(app_item_t *folder)
 		return NULL;
 	}
 
-	if (!elm_layout_file_set(add_icon, EDJE_DIR"/folder.edj", GROUP_FOLDER_ADD_ICON)) {
+	if (!elm_layout_file_set(add_icon, util_get_res_file_path(EDJE_DIR"/folder.edj"), GROUP_FOLDER_ADD_ICON)) {
 		LOGE("Failed to load edje file for layout");
 		evas_object_del(add_icon);
 		evas_object_del(icon_layout);
@@ -661,7 +662,7 @@ static Evas_Object *__folder_panel_create_popup(Evas_Object *parent, app_item_t 
 		return NULL;
 	}
 
-	if (!elm_layout_file_set(folder_popup, EDJE_DIR"/folder.edj", GROUP_FOLDER_POPUP)) {
+	if (!elm_layout_file_set(folder_popup, util_get_res_file_path(EDJE_DIR"/folder.edj"), GROUP_FOLDER_POPUP)) {
 		LOGE("Failed to set folder popup");
 		evas_object_del(folder_popup);
 		return NULL;
@@ -705,8 +706,10 @@ static Evas_Object *__folder_panel_create_entry(Evas_Object *parent, const char 
 	elm_entry_input_panel_layout_set(entry, ELM_INPUT_PANEL_LAYOUT_NORMAL);
 	elm_entry_input_panel_return_key_type_set(entry, ELM_INPUT_PANEL_RETURN_KEY_TYPE_DONE);
 
-	evas_object_smart_callback_add(entry,"changed", __folder_panel_entry_changed_cb, parent);
-	evas_object_smart_callback_add(entry, "clicked",__folder_panel_entry_clicked_cb, parent);
+	evas_object_smart_callback_add(entry, "changed", __folder_panel_entry_changed_cb, parent);
+	evas_object_smart_callback_add(entry, "clicked", __folder_panel_entry_clicked_cb, parent);
+	evas_object_smart_callback_add(entry, "activated", __folder_panel_entry_done_cb, parent);
+
 	elm_object_signal_callback_add(parent, SIGNAL_CLEAR_BTN_CLICKED, SIGNAL_SOURCE,
 				__folder_panel_entry_clear_button_clicked_cb, entry);
 
@@ -716,6 +719,7 @@ static Evas_Object *__folder_panel_create_entry(Evas_Object *parent, const char 
 	} else {
 		elm_object_signal_emit(s_info.opened_folder_popup, SIGNAL_FOLDER_UNNAMED_TEXT_SHOW,
 						SIGNAL_SOURCE);
+		elm_object_text_set(entry, "");
 		s_info.opened_folder_name_is_empty = true;
 	}
 
@@ -734,10 +738,8 @@ static void __folder_panel_entry_activated_cb(void *data, Evas_Object *obj, void
 		return;
 	}
 
-	if (!strcmp(folder->label, "")) {
-		elm_object_text_set(obj, "");
+	if (!strcmp(folder->label, ""))
 		s_info.opened_folder_name_is_empty = true;
-	}
 
 	elm_object_signal_emit(s_info.opened_folder_popup, SIGNAL_FOLDER_UNNAMED_TEXT_HIDE,
 			SIGNAL_SOURCE);
@@ -797,6 +799,20 @@ static void __folder_panel_entry_clicked_cb(void *data, Evas_Object *obj, void *
 	else
 		elm_object_signal_emit(folder_popup, SIGNAL_CLEAR_BTN_HIDE, SIGNAL_SOURCE);
 	elm_entry_input_panel_show(obj);
+}
+
+static void __folder_panel_entry_done_cb(void *data, Evas_Object *obj, void *ei)
+{
+	LOGI("");
+	Evas_Object *entry = obj;
+	Evas_Object *folder_popup = data;
+
+	if (!folder_popup || !entry) {
+		LOGE("Invalid data");
+		return;
+	}
+
+	elm_entry_input_panel_hide(entry);
 }
 
 static void __folder_panel_entry_clear_button_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source)

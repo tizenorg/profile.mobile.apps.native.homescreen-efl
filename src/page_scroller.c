@@ -161,8 +161,6 @@ HAPI Evas_Object* page_scroller_get_page(Evas_Object *scroller, int n)
 
 HAPI bool page_scroller_freeze(Evas_Object *scroller)
 {
-	LOGD("Freeze page scroller");
-
 	if (!scroller) {
 		LOGE("Page Scroller is NULL");
 		return false;
@@ -175,8 +173,6 @@ HAPI bool page_scroller_freeze(Evas_Object *scroller)
 
 HAPI bool page_scroller_unfreeze(Evas_Object *scroller)
 {
-	LOGD("Unfreeze page scroller");
-
 	if (!scroller) {
 		LOGE("Page Scroller is NULL");
 		return false;
@@ -334,7 +330,7 @@ static Evas_Object* __page_scroller_create_scroller(void)
 	Evas_Object *box = NULL;
 
 	if (!win) {
-		print_log(DLOG_ERROR, LOG_TAG, "Window doesn't exist");
+		LOGE("Window doesn't exist");
 		return NULL;
 	}
 

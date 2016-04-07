@@ -9,7 +9,7 @@ SET(MSGFMT "/usr/bin/msgfmt")
 
 MESSAGE(STATUS "po files ---")
 FOREACH(pofile ${POFILES})
-	SET(pofile ${CMAKE_CURRENT_SOURCE_DIR}/${pofile})
+	SET(pofile ${PROJECT_PO_DIR}/${pofile})
 	MESSAGE(STATUS "  ${pofile}")
 	GET_FILENAME_COMPONENT(absPofile ${pofile} ABSOLUTE)
 	GET_FILENAME_COMPONENT(lang ${absPofile} NAME_WE)
@@ -19,8 +19,7 @@ FOREACH(pofile ${POFILES})
 			COMMAND ${MSGFMT} -o ${moFile} ${absPofile}
 			DEPENDS ${absPofile}
 	)
-	INSTALL(FILES ${moFile}
-			DESTINATION ${LOCALEDIR}/${lang}/LC_MESSAGES RENAME ${PROJECT_NAME}.mo)
+	INSTALL(FILES ${moFile} DESTINATION ${LOCALEDIR}/${lang}/LC_MESSAGES RENAME ${PROJECT_NAME}.mo)
 	SET(moFiles ${moFiles} ${moFile})
 ENDFOREACH(pofile)
 

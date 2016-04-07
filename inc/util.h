@@ -21,6 +21,11 @@
 #include <Elementary.h>
 #include <stdbool.h>
 
+#ifdef  LOG_TAG
+#undef  LOG_TAG
+#endif
+#define LOG_TAG "HOMESCREEN_EFL"
+
 #define BUF_SIZE 64
 
 /* Multi-language */
@@ -30,10 +35,28 @@
 
 /* Build */
 #define HAPI __attribute__((visibility("hidden")))
+#define DAPI __attribute__((visibility("default")))
 
 #define COUNT_OF(x) \
 ((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
 
+#define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
+
+#if !defined(LOGD)
+#define LOGD(fmt, arg...) dlog_print(DLOG_DEBUG, LOG_TAG, "%s: %s[%d]\t " #fmt "\n", __FILENAME__, __func__, __LINE__, ##arg)
+#endif
+
+#if !defined(LOGW)
+#define LOGW(fmt, arg...) dlog_print(DLOG_WARN, LOG_TAG, "%s: %s[%d]\t " #fmt "\n", __FILENAME__, __func__, __LINE__, ##arg)
+#endif
+
+#if !defined(LOGE)
+#define LOGE(fmt, arg...) dlog_print(DLOG_ERROR, LOG_TAG, "%s: %s[%d]\t " #fmt "\n", __FILENAME__, __func__, __LINE__, ##arg)
+#endif
+
+#if !defined(LOGI)
+#define LOGI(fmt, arg...) dlog_print(DLOG_ERROR, LOG_TAG, "%s: %s[%d]\t " #fmt "\n", __FILENAME__, __func__, __LINE__, ##arg)
+#endif
 
 /**
  * @brief Creates elm_layout widget and load edje file to it.
@@ -71,5 +94,43 @@ extern Eina_List *elm_gengrid_get_evas_objects_from_items(Evas_Object *gengrid);
  * @return Pointer to elm_object_item
  */
 Elm_Object_Item *elm_gengrid_get_item_at_index(Evas_Object *gengrid, int idx);
+
+/*
+ * @brief Application sub-directories type.
+ */
+enum app_subdir {
+	APP_DIR_DATA,
+	APP_DIR_CACHE,
+	APP_DIR_RESOURCE,
+	APP_DIR_SHARED_DATA,
+	APP_DIR_SHARED_RESOURCE,
+	APP_DIR_SHARED_TRUSTED,
+	APP_DIR_EXTERNAL_DATA,
+	APP_DIR_EXTERNAL_CACHE,
+	APP_DIR_EXTERNAL_SHARED_DATA,
+};
+
+/**
+ * @brief Returns absolute path to resource file located in applications directory.
+ *
+ * @param subdir type of subdirectory
+ * @param relative path of resource from starting from "data" dir.
+ *        eg. for DATA_DIR subdir and relative "database.db" => "/home/owner/apps/org.tizen.homescreen-efl/data/database.db"
+ * @return absolute path string.
+ */
+const char *util_get_file_path(enum app_subdir dir, const char *relative);
+
+/**
+ * @brief Convinience macros
+ */
+#define util_get_data_file_path(x) util_get_file_path(APP_DIR_DATA, (x))
+#define util_get_cache_file_path(x) util_get_file_path(APP_DIR_CACHE, (x))
+#define util_get_res_file_path(x) util_get_file_path(APP_DIR_RESOURCE, (x))
+#define util_get_shared_data_file_path(x) util_get_file_path(APP_DIR_SHARED_DATA, (x))
+#define util_get_shared_res_file_path(x) util_get_file_path(APP_DIR_SHARED_RESOURCE, (x))
+#define util_get_trusted_file_path(x) util_get_file_path(APP_DIR_SHARED_TRUSTED, (x))
+#define util_get_external_data_file_path(x) util_get_file_path(APP_DIR_EXTERNAL_DATA, (x))
+#define util_get_external_cache_file_path(x) util_get_file_path(APP_DIR_EXTERNAL_CACHE, (x))
+#define util_get_external_shared_data_file_path(x) util_get_file_path(APP_DIR_EXTERNAL_SHARED_DATA, (x))
 
 #endif /* __HOME_SCREEN_UTIL_H__ */
