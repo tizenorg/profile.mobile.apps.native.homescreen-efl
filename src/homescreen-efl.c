@@ -432,12 +432,14 @@ static void __homescreen_efl_create_base_gui(void)
 	s_info.bg = evas_object_image_filled_add(evas_object_evas_get(s_info.win));
 
 	ret = system_settings_get_value_string(SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN, &buf);
-	if (!buf || ret != SYSTEM_SETTINGS_ERROR_NONE) {
+
+	if (!buf || ret != SYSTEM_SETTINGS_ERROR_NONE || !ecore_file_exists(buf)
+			|| !ecore_file_can_read(buf))
 		evas_object_image_file_set(s_info.bg, bg_path, "bg");
-	} else {
+	else
 		evas_object_image_file_set(s_info.bg, buf, "bg");
-		free(buf);
-	}
+
+	free(buf);
 
 	system_settings_set_changed_cb(SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN, __homescreen_efl_home_bg_changed_cb, NULL);
 
