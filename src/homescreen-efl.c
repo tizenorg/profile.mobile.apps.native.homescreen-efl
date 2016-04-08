@@ -1095,7 +1095,8 @@ static void __homescreen_efl_home_bg_changed_cb(system_settings_key_e key, void 
 	}
 
 	ret = system_settings_get_value_string(SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN, &buf);
-	if (!buf || ret != SYSTEM_SETTINGS_ERROR_NONE) {
+	if (!buf || ret != SYSTEM_SETTINGS_ERROR_NONE || !ecore_file_exists(buf)
+			|| !ecore_file_can_read(buf)) {
 		LOGE("[FAILED][failed to get bg path]");
 		return;
 	}
@@ -1132,6 +1133,8 @@ static void __homescreen_efl_apply_home_bg_effect(bool is_on)
 	const int size = COUNT_OF(kernel);
 	const int half = size / 2;
 
+	int ret = -1;
+
 	if (!s_info.bg) {
 		LOGE("[FAILED][bg=NULL]");
 		return;
@@ -1140,8 +1143,10 @@ static void __homescreen_efl_apply_home_bg_effect(bool is_on)
 	/*if is_on == false, then restore original image data*/
 	if (!is_on) {
 		/*restore original data and return;*/
-		system_settings_get_value_string(SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN, &buf);
-		if (!buf) {
+		ret = system_settings_get_value_string(SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN, &buf);
+		if (!buf || ret != SYSTEM_SETTINGS_ERROR_NONE || !ecore_file_exists(buf)
+				|| !ecore_file_can_read(buf)) {
+
 			LOGE("[FAILED][failed to get bg path]");
 			return;
 		}

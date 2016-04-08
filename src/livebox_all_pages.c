@@ -439,7 +439,9 @@ static void __livebox_all_pages_add_page_clicked_cb(void *data, Evas_Object *obj
 static Evas_Object *__livebox_all_pages_create_bg(Evas_Object *parent)
 {
 	LOGI("");
+
 	Evas_Object *bg = NULL;
+	const char *bg_path = util_get_res_file_path(IMAGE_DIR"/default_bg.png");
 	char *buf = NULL;
 	int ret = -1;
 
@@ -456,13 +458,15 @@ static Evas_Object *__livebox_all_pages_create_bg(Evas_Object *parent)
 
 	ret = system_settings_get_value_string(SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN, &buf);
 
-	if (ret != SYSTEM_SETTINGS_ERROR_NONE || !buf) {
-		LOGE("[FAILED][failed to get bg path]");
-		evas_object_del(bg);
-		return NULL;
-	}
+	if (!buf || ret != SYSTEM_SETTINGS_ERROR_NONE || !ecore_file_exists(buf)
+			|| !ecore_file_can_read(buf)) {
+		LOGE("[FAILED][failed to get bg path, use default]");
 
-	if (!elm_bg_file_set(bg, buf, NULL)) {
+		ret = elm_bg_file_set(bg, bg_path, NULL);
+	} else
+		ret = elm_bg_file_set(bg, buf, NULL);
+
+	if (!ret) {
 		LOGE("[FAILED][failed to set bg]");
 		evas_object_del(bg);
 		free(buf);
