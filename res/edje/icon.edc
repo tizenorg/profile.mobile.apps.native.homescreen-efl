@@ -275,6 +275,10 @@ collections {
 					visible: 1;
 				}
 				description {
+					state: "dimmed" 0.0;
+					inherit: "blank" 0.0;
+				}
+				description {
 					state: "checked" 0.0;
 					inherit: "default" 0.0;
 					//color_class: "ATO005";
@@ -304,6 +308,10 @@ collections {
 					inherit: "default" 0.0;
 					color: 255 255 255 255;
 					visible: 1;
+				}
+				description {
+					state: "dimmed" 0.0;
+					inherit: "blank" 0.0;
 				}
 				description {
 					state: "checked" 0.0;
@@ -340,6 +348,10 @@ collections {
 					inherit: "default" 0.0;
 					color: 255 255 255 255;
 					visible: 1;
+				}
+				description {
+					state: "dimmed" 0.0;
+					inherit: "checked" 0.0;
 				}
 			}
 
@@ -491,6 +503,16 @@ collections {
 				after: "checkbox_area_visible";
 			}
 			program {
+				name: "checkbox_show_dimmed";
+				signal: SIGNAL_CHECKBOX_SHOW_DIMMED;
+				source: SIGNAL_SOURCE;
+				script {
+					set_int(checkbox_state, 1);
+					emit("checkbox,dimmed,show", SIGNAL_SOURCE);
+				}
+				after: "checkbox_area_visible";
+			}
+			program {
 				name: "checkbox_blank_show";
 				signal: "checkbox,blank,show";
 				source: SIGNAL_SOURCE;
@@ -515,6 +537,16 @@ collections {
 				signal: "checkbox,checked,show";
 				source: SIGNAL_SOURCE;
 				action: STATE_SET "checked" 0.0;
+				target: "icon_checkbox";
+				target: "icon_checkbox_border";
+				target: "icon_checkbox_bg";
+				transition: DECELERATE 0.20;
+			}
+			program {
+				name: "checkbox_dimmed_show";
+				signal: "checkbox,dimmed,show";
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "dimmed" 0.0;
 				target: "icon_checkbox";
 				target: "icon_checkbox_border";
 				target: "icon_checkbox_bg";

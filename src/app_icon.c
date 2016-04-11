@@ -279,6 +279,8 @@ HAPI void app_icon_set_click_ignore(bool ignore)
 
 HAPI bool app_icon_set_view_mode(Evas_Object *icon, homescreen_view_t view, bool in_folder)
 {
+	Tree_node_t *node = NULL;
+
 	switch (view) {
 	case HOMESCREEN_VIEW_ALL_APPS:
 		in_folder ? elm_object_signal_emit(icon, SIGNAL_EDIT_MODE_BLACK_OFF, SIGNAL_SOURCE) :
@@ -298,7 +300,13 @@ HAPI bool app_icon_set_view_mode(Evas_Object *icon, homescreen_view_t view, bool
 		in_folder ? elm_object_signal_emit(icon, SIGNAL_EDIT_MODE_BLACK_ON, SIGNAL_SOURCE) :
 				elm_object_signal_emit(icon, SIGNAL_EDIT_MODE_ON, SIGNAL_SOURCE);
 		elm_object_signal_emit(icon, SIGNAL_UNINSTALL_BUTTON_HIDE, SIGNAL_SOURCE);
-		elm_object_signal_emit(icon, SIGNAL_CHECKBOX_SHOW_UNCHECKED, SIGNAL_SOURCE);
+
+		node = evas_object_data_get(icon, KEY_ICON_DATA);
+		if (node && node->data->type != APP_ITEM_FOLDER)
+			elm_object_signal_emit(icon, SIGNAL_CHECKBOX_SHOW_UNCHECKED, SIGNAL_SOURCE);
+		else
+			elm_object_signal_emit(icon, SIGNAL_CHECKBOX_HIDE, SIGNAL_SOURCE);
+
 		app_icon_set_click_ignore(true);
 		break;
 	case HOMESCREEN_VIEW_HOME:
@@ -514,6 +522,7 @@ static bool __app_icon_check_removeable_state(Evas_Object *icon)
 
 static void __app_icon_check_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
+	folder_checked_t check_info = FOLDER_PANEL_CHECKED_NONE;
 	Tree_node_t *node = (Tree_node_t *)data;
 	app_item_t *item = node->data;
 	int count = -1;
@@ -521,8 +530,22 @@ static void __app_icon_check_cb(void *data, Evas_Object *obj, const char *emissi
 
 	if (item->type == APP_ITEM_ICON) {
 		item->is_checked = true;
-		if (node->parent->parent->data->type == APP_ITEM_FOLDER && folder_panel_set_content_checked(node->parent->parent))
-			elm_object_signal_emit(node->parent->parent->data->layout, SIGNAL_CHECKBOX_SHOW_CHECKED, SIGNAL_SOURCE);
+		if (node->parent->parent->data->type == APP_ITEM_FOLDER) {
+
+			check_info = folder_panel_set_content_checked(node->parent->parent);
+
+			switch (check_info) {
+			case FOLDER_PANEL_CHECKED_NONE:
+				elm_object_signal_emit(node->parent->parent->data->layout, SIGNAL_CHECKBOX_HIDE, SIGNAL_SOURCE);
+				break;
+			case FOLDER_PANEL_CHECKED_ANY:
+				elm_object_signal_emit(node->parent->parent->data->layout, SIGNAL_CHECKBOX_SHOW_DIMMED, SIGNAL_SOURCE);
+				break;
+			case FOLDER_PANEL_CHECKED_ALL:
+				elm_object_signal_emit(node->parent->parent->data->layout, SIGNAL_CHECKBOX_SHOW_CHECKED, SIGNAL_SOURCE);
+				break;
+			}
+		}
 	} else if (item->type == APP_ITEM_FOLDER) {
 		data_model_check_all_apps(node, true);
 	}
@@ -556,14 +579,32 @@ static void __app_icon_check_cb(void *data, Evas_Object *obj, const char *emissi
 
 static void __app_icon_uncheck_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
+	folder_checked_t check_info = FOLDER_PANEL_CHECKED_NONE;
+
 	Tree_node_t *node = (Tree_node_t *)data;
 	app_item_t *item = node->data;
 	if (item->type == APP_ITEM_ICON) {
 		item->is_checked = false;
-		if (node->parent->parent->data->type == APP_ITEM_FOLDER && !folder_panel_set_content_checked(node->parent->parent))
-			elm_object_signal_emit(node->parent->parent->data->layout, SIGNAL_CHECKBOX_SHOW_UNCHECKED, SIGNAL_SOURCE);
+
+		if (node->parent->parent->data->type == APP_ITEM_FOLDER) {
+
+			check_info = folder_panel_set_content_checked(node->parent->parent);
+
+			switch (check_info) {
+			case FOLDER_PANEL_CHECKED_NONE:
+				elm_object_signal_emit(node->parent->parent->data->layout, SIGNAL_CHECKBOX_HIDE, SIGNAL_SOURCE);
+				break;
+			case FOLDER_PANEL_CHECKED_ANY:
+				elm_object_signal_emit(node->parent->parent->data->layout, SIGNAL_CHECKBOX_SHOW_DIMMED, SIGNAL_SOURCE);
+				break;
+			case FOLDER_PANEL_CHECKED_ALL:
+				elm_object_signal_emit(node->parent->parent->data->layout, SIGNAL_CHECKBOX_SHOW_CHECKED, SIGNAL_SOURCE);
+				break;
+			}
+		}
 	} else if (item->type == APP_ITEM_FOLDER) {
 		data_model_check_all_apps(node, false);
+		elm_object_signal_emit(item->layout, SIGNAL_CHECKBOX_HIDE, SIGNAL_SOURCE);
 	}
 	option_menu_update_on_item_selected();
 }

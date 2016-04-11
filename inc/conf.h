@@ -438,6 +438,7 @@
 #define SIGNAL_UNINSTALL_BUTTON_CLICKED "uninstall_button,clicked"
 #define SIGNAL_CHECKBOX_SHOW_UNCHECKED "checkbox,show,unchecked"
 #define SIGNAL_CHECKBOX_SHOW_CHECKED "checkbox,show,checked"
+#define SIGNAL_CHECKBOX_SHOW_DIMMED "checkbox,show,dimmed"
 #define SIGNAL_CHECKBOX_HIDE "checkbox,hide"
 #define SIGNAL_CHECKBOX_CHECKED "checkbox,checked"
 #define SIGNAL_CHECKBOX_UNCHECKED "checkbox,unchecked"

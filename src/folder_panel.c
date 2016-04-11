@@ -55,6 +55,10 @@ static struct
 	.opened_folder_entrychange_cb_ignore = true
 };
 
+typedef struct {
+	bool all_checked;
+	bool any_checked;
+} check_info_s;
 
 static void __folder_panel_create_folder_window_layout_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 static void __folder_window_destroy_signal_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
@@ -202,11 +206,28 @@ HAPI bool folder_panel_is_folder_visible(void)
 	return s_info.is_opened;
 }
 
-HAPI bool folder_panel_set_content_checked(Tree_node_t *node)
+HAPI folder_checked_t folder_panel_set_content_checked(Tree_node_t *node)
 {
-	bool all_checked = true;
-	tree_in_depth_browse(node, __folder_panel_get_checked_icons, &all_checked);
-	return all_checked;
+	LOGD("");
+	check_info_s check_info = {
+		.all_checked = true,
+		.any_checked = false
+	};
+
+	tree_in_depth_browse(node, __folder_panel_get_checked_icons, &check_info);
+
+	if (check_info.all_checked) {
+		LOGD("All items checked");
+		return FOLDER_PANEL_CHECKED_ALL;
+	}
+	else if (check_info.any_checked) {
+		LOGD("Any item checked");
+		return FOLDER_PANEL_CHECKED_ANY;
+	}
+	else {
+		LOGD("None items checked");
+		return FOLDER_PANEL_CHECKED_NONE;
+	}
 }
 
 HAPI Tree_node_t *folder_panel_get_opened_folder_node(void)
@@ -545,10 +566,13 @@ static bool __folder_panel_show_checkbox(Tree_node_t *parent, Tree_node_t *leaf,
 
 static bool __folder_panel_get_checked_icons(Tree_node_t *parent, Tree_node_t *leaf, void *data)
 {
-	if (leaf->data->type == APP_ITEM_ICON && !leaf->data->is_checked) {
-		*(bool *)data = false;
-		return false;
+	check_info_s *check_info = data;
+
+	if (leaf->data->type == APP_ITEM_ICON) {
+		check_info->all_checked = check_info->all_checked && leaf->data->is_checked;
+		check_info->any_checked = check_info->any_checked || leaf->data->is_checked;
 	}
+
 	return true;
 }
 

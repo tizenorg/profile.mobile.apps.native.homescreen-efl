@@ -28,6 +28,12 @@ typedef struct {
 	Evas_Object *folder_scroller;
 } folder_data_t;
 
+typedef enum {
+	FOLDER_PANEL_CHECKED_NONE = 0,
+	FOLDER_PANEL_CHECKED_ANY,
+	FOLDER_PANEL_CHECKED_ALL,
+} folder_checked_t;
+
 /**
  * @brief Initializes folder module
  */
@@ -91,7 +97,7 @@ extern bool folder_panel_is_folder_visible(void);
 /**
  * @brief Shows checkboxes on the folder icon.
  */
-extern bool folder_panel_set_content_checked(Tree_node_t *node);
+extern folder_checked_t folder_panel_set_content_checked(Tree_node_t *node);
 
 /**
  * @brief Function returns pointer to data node of the opened folder
