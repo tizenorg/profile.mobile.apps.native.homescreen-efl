@@ -400,7 +400,7 @@
 
 #define _ICON_NAME_X_MIN 6
 #define _ICON_NAME_X_MAX 126
-#define _ICON_NAME_Y_MIN 101
+#define _ICON_NAME_Y_MIN 98
 #define _ICON_NAME_Y_MAX 156
 #define _ICON_NAME_EDIT_Y_MAX 144
 
@@ -518,7 +518,7 @@
 #define _SEPARATOR_Y_MIN 62
 #define _SEPARATOR_Y_MAX 64
 
-#define _CONTENT_Y_MIN 69
+#define _CONTENT_Y_MIN 53
 #define _CONTENT_Y_MAX 569
 
 #define _INDEX_Y_MIN 355
@@ -567,7 +567,7 @@
 #define FOLDER_POPUP_X_REL 0.0441
 
 #define FOLDER_GRID_W_REL 0.9
-#define FOLDER_GRID_H_REL 0.5
+#define FOLDER_GRID_H_REL 0.58
 #define FOLDER_ITEM_MARGIN 0.04
 
 #define FOLDER_LEFT_MARGIN 0.07

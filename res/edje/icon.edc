@@ -126,7 +126,7 @@ collections {
 				description {
 					state: "default" 0.0;
 					rel1{relative: ICON_NAME_X_MIN ICON_NAME_Y_MIN; to: "icon_bg";}
-					rel2{relative: ICON_NAME_X_MAX ICON_NAME_Y_MAX; to: "icon_bg";}
+					rel2{relative: ICON_NAME_X_MAX 1.0; to: "icon_bg";}
 					color: 255 255 255 255;
 					text {
 						style: "icon_label";
@@ -137,7 +137,7 @@ collections {
 					state: "edit" 0.0;
 					inherit: "default" 0.0;
 					rel1{relative: ICON_NAME_X_MIN ICON_NAME_Y_MIN; to: "icon_bg";}
-					rel2{relative: ICON_NAME_X_MAX 1.0; to: "icon_bg";}
+					rel2{relative: ICON_NAME_X_MAX ICON_NAME_Y_MAX; to: "icon_bg";}
 					text {
 						style: "icon_label_edit";
 					}
