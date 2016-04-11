@@ -1,0 +1,15 @@
+collections {
+   group { name: "home_ly";
+      parts {
+         part { name: "size_setter";
+            type: SWALLOW;
+            scale: 1;
+            description { state: "default" 0.0;
+               align: 0 0;
+               rel1.relative: 0.0 0.0;
+               rel2.relative: 0.0 0.0;
+            }
+         }
+     }
+   }
+}

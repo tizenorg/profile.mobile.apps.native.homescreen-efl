@@ -15,6 +15,7 @@
  *
  */
 
+#include <system_settings.h>
 #include "homescreen-efl.h"
 
 static struct {
@@ -40,6 +41,12 @@ static struct {
 };
 
 static void __homescreen_efl_create_base_gui(void);
+static void __homescreen_efl_get_window_size(Evas_Object *win);
+static void __homescreen_efl_set_main_layout(void);
+static void __homescreen_efl_set_wallpaper(void);
+static void __homescreen_efl_set_conformant(void);
+
+static void __homescreen_efl_home_bg_changed_cb(system_settings_key_e key, void *data);
 
 static void __homescreen_efl_lang_changed_cb(app_event_info_h event_info, void *user_data)
 {
@@ -87,7 +94,6 @@ static void __homescreen_efl_app_pause_cb(void *data)
 
 static void __homescreen_efl_app_resume_cb(void *data)
 {
-
 }
 
 static void __homescreen_efl_app_terminate_cb(void *data)
@@ -126,26 +132,82 @@ int main(int argc, char *argv[])
 
 static void __homescreen_efl_create_base_gui(void)
 {
-	Evas_Object *label;
 	main_info.win = elm_win_util_standard_add(PACKAGE, PACKAGE);
 
-	main_info.conformant = elm_conformant_add(main_info.win);
+	__homescreen_efl_get_window_size(main_info.win);
 
-	elm_win_conformant_set(main_info.win, EINA_TRUE);
-	evas_object_size_hint_weight_set(main_info.conformant, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+	__homescreen_efl_set_main_layout();
 
-	elm_win_resize_object_add(main_info.win, main_info.conformant);
+	__homescreen_efl_set_wallpaper();
 
-	elm_win_indicator_mode_set(main_info.win, ELM_WIN_INDICATOR_SHOW);
-	elm_win_indicator_opacity_set(main_info.win, ELM_WIN_INDICATOR_OPAQUE);
-	elm_object_signal_emit(main_info.conformant, "elm,state,indicator,overlap", "elm");
-
-	evas_object_show(main_info.conformant);
-
-	label = elm_label_add(main_info.conformant);
-	elm_object_text_set(label, "<align=center>EMPTY PROJECT</align>");
-	evas_object_size_hint_weight_set(label, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-	elm_object_content_set(main_info.conformant, label);
+	__homescreen_efl_set_conformant();
 
 	evas_object_show(main_info.win);
 }
+
+static void __homescreen_efl_get_window_size(Evas_Object *win)
+{
+	elm_win_screen_size_get(win, NULL, NULL, &main_info.root_width, &main_info.root_height);
+	LOGD("Width: [%d], Height: [%d]", main_info.root_width, main_info.root_height);
+}
+
+static void __homescreen_efl_set_main_layout(void)
+{
+	char edj_path[PATH_MAX] = {0, };
+
+	snprintf(edj_path, sizeof(edj_path), "%s", util_get_res_file_path(EDJE_DIR"/home.edj"));
+
+	main_info.main_layout = elm_layout_add(main_info.win);
+	elm_layout_file_set(main_info.main_layout, edj_path, GROUP_HOME_LY);
+	evas_object_size_hint_weight_set(main_info.main_layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+	elm_win_resize_object_add(main_info.win, main_info.main_layout);
+
+	evas_object_show(main_info.main_layout);
+}
+
+static void __homescreen_efl_set_wallpaper(void)
+{
+	const char *bg_path = util_get_res_file_path(IMAGE_DIR"/default_bg.png");
+	char *buf = NULL;
+	int ret = -1;
+
+	if (main_info.bg == NULL) {
+		main_info.bg = evas_object_image_filled_add(evas_object_evas_get(main_info.main_layout));
+
+		system_settings_set_changed_cb(SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN, __homescreen_efl_home_bg_changed_cb, NULL);
+
+		evas_object_size_hint_min_set(main_info.bg, main_info.root_width, main_info.root_height);
+		elm_object_part_content_set(main_info.main_layout, "size_setter", main_info.bg);
+		evas_object_show(main_info.bg);
+	}
+
+	ret = system_settings_get_value_string(SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN, &buf);
+	if (!buf || !ecore_file_can_read(buf) || ret != SYSTEM_SETTINGS_ERROR_NONE) {
+		evas_object_image_file_set(main_info.bg, bg_path, "bg");
+	} else {
+		evas_object_image_file_set(main_info.bg, buf, "bg");
+	}
+	if (buf) free(buf);
+}
+
+static void __homescreen_efl_home_bg_changed_cb(system_settings_key_e key, void *data)
+{
+	__homescreen_efl_set_wallpaper();
+}
+
+static void __homescreen_efl_set_conformant(void)
+{
+	elm_win_conformant_set(main_info.win, EINA_TRUE);
+
+	main_info.conformant = elm_conformant_add(main_info.win);
+	evas_object_size_hint_weight_set(main_info.conformant, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+	elm_win_resize_object_add(main_info.win, main_info.conformant);
+
+	elm_win_indicator_mode_set(main_info.win, ELM_WIN_INDICATOR_SHOW);
+	elm_win_indicator_opacity_set(main_info.win, ELM_WIN_INDICATOR_TRANSLUCENT);
+	elm_object_signal_emit(main_info.conformant, "elm,state,indicator,overlap", "elm");
+
+	evas_object_show(main_info.conformant);
+}
+
+

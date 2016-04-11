@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2000 - 2015 Samsung Electronics Co., Ltd. All rights reserved.
  *
@@ -15,14 +16,9 @@
  *
  */
 
-#ifndef CONF_H_
-#define CONF_H_
+#ifndef EDC_CONF_H_
+#define EDC_CONF_H_
 
-#include "edc_conf.h"
+#define GROUP_HOME_LY "home_ly"
 
-#define FRAMES_PER_SECOND 1.0/60.0
-
-#define EDJE_DIR "edje"
-#define IMAGE_DIR "images"
-
-#endif /* CONF_H_ */
+#endif /* EDC_CONF_H_ */

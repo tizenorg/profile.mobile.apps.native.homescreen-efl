@@ -15,8 +15,8 @@
  *
  */
 
-#ifndef __homescreen-efl_H__
-#define __homescreen-efl_H__
+#ifndef __homescreen_efl_H__
+#define __homescreen_efl_H__
 
 #include <app.h>
 #include <Elementary.h>
@@ -25,11 +25,6 @@
 
 #include "conf.h"
 #include "util.h"
-
-#ifdef  LOG_TAG
-#undef  LOG_TAG
-#endif
-#define LOG_TAG "HOMESCREEN_EFL"
 
 #if !defined(PACKAGE)
 #define PACKAGE "org.tizen.homescreen-efl"
@@ -47,4 +42,4 @@ typedef enum {
 } homescreen_view_t;
 
 
-#endif /* __homescreen-efl_H__ */
+#endif /* __homescreen_efl_H__ */
