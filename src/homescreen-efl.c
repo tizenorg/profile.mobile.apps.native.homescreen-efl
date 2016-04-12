@@ -1239,7 +1239,7 @@ static Eina_Bool __homescreen_efl_show_all_apps_anim(void *data, double pos)
 
 	evas_object_color_set(box, 255, 255, 255, pos*(double)255);
 
-	if (pos >= 1.0) {
+	if (pos >= 0.99) {
 		elm_object_part_content_set(s_info.layout, PART_CONTENT, s_info.all_apps);
 		all_apps_show();
 		elm_object_signal_emit(s_info.layout, SIGNAL_UNBLOCK_EVENTS, SIGNAL_SOURCE);
@@ -1259,7 +1259,7 @@ static Eina_Bool __homescreen_efl_show_home_anim(void *data, double pos)
 
 	evas_object_color_set(box, 255, 255, 255, (1.0 - pos * 2.0)*(double)255);
 
-	if (pos >= 1.0) {
+	if (pos >= 0.99) {
 		if (s_info.layout && elm_object_part_content_get(s_info.layout, PART_CONTENT) == NULL && s_info.home) {
 			elm_object_part_content_set(s_info.layout, PART_CONTENT, s_info.home);
 			livebox_panel_set_content(s_info.layout);
