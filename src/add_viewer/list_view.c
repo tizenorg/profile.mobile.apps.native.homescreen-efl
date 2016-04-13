@@ -405,6 +405,9 @@ static Evas_Object *__list_view_preview_box_create(Evas_Object *main_box, widget
 	int *preview_type = calloc(1, sizeof(int));
 	if (!preview_type) {
 		LOGE("Can not allocate memory for additional data");
+		evas_object_del(preview_img);
+		evas_object_del(preview_layout);
+		return NULL;
 	}
 
 	*preview_type = preview->type;
