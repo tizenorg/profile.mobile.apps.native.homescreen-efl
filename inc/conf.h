@@ -519,7 +519,7 @@
 #define _SEPARATOR_Y_MAX 64
 
 #define _CONTENT_Y_MIN 53
-#define _CONTENT_Y_MAX 569
+#define _CONTENT_Y_MAX 635
 
 #define _INDEX_Y_MIN 355
 #define _INDEX_Y_MAX 421
@@ -567,7 +567,7 @@
 #define FOLDER_POPUP_X_REL 0.0441
 
 #define FOLDER_GRID_W_REL 0.9
-#define FOLDER_GRID_H_REL 0.58
+#define FOLDER_GRID_H_REL 0.6
 #define FOLDER_ITEM_MARGIN 0.04
 
 #define FOLDER_LEFT_MARGIN 0.07
