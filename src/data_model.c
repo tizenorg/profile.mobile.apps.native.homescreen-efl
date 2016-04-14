@@ -612,7 +612,7 @@ Tree_node_t *data_model_search_package(const char* pkg_str)
 {
 	search_package_t search;
 	search.data = NULL;
-	search.search = pkg_str;
+	search.search = (char *)pkg_str;
 
 	tree_in_depth_browse(s_info.all_apps, __data_model_search_package_cb, &search);
 
