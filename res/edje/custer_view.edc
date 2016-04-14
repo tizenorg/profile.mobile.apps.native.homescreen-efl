@@ -1,0 +1,21 @@
+#include "../../inc/edc_conf.h"
+
+collections {
+    images {
+    }
+    group { name: GROUP_CLUSTER_LY;
+        parts {
+            part { name: SIZE_SETTER;
+                type: SWALLOW;
+                description { 
+                    state: "default" 0.0;
+                    align: 0 0;
+                    rel1.relative: 0.0 0.0;
+                    rel2.relative: 0.0 0.0;
+                }
+            }
+        }
+        programs {
+        }
+    }
+}

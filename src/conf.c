@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-#ifndef __homescreen_efl_H__
-#define __homescreen_efl_H__
+#include "conf.h"
 
-#if !defined(PACKAGE)
-#define PACKAGE "org.tizen.homescreen-efl"
-#endif
+double resolution_scale_h = 1.0;
+double RESOLUTION_SCALE_W = 1.0;
 
-typedef enum {
-	HOMESCREEN_VIEW_HOME = 0,
-	HOMESCREEN_VIEW_HOME_EDIT,
-	HOMESCREEN_VIEW_HOME_ALL_PAGES,
-	HOMESCREEN_VIEW_HOME_ADD_VIEWER,
-	HOMESCREEN_VIEW_APPS,
-	HOMESCREEN_VIEW_APPS_EDIT,
-	HOMESCREEN_VIEW_APPS_CHOOSE,
-	HOMESCREEN_VIEW_UNKNOWN,
-} homescreen_view_t;
+double __conf_get_resolution_scale_h() {
+    return resolution_scale_h;
+}
 
+double __conf_get_resolution_scale_w() {
+    return RESOLUTION_SCALE_W;
+}
 
-#endif /* __homescreen_efl_H__ */
+void conf_set_resolution_scale(int win_width, int win_height)
+{
+    RESOLUTION_SCALE_W = win_width / 720;
+    resolution_scale_h = win_height / 1280;
+}

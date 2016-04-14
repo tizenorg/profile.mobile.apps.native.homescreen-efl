@@ -9,7 +9,7 @@ type = app
 profile = mobile-3.0
 
 # C Sources
-USER_SRCS = src/homescreen-efl.c 
+USER_SRCS = src/cluster_view.c src/homescreen-efl.c src/util.c src/conf.c src/apps_view.c 
 
 # EDC Sources
 USER_EDCS =  
@@ -49,15 +49,23 @@ USER_LIB_DIRS = lib
 USER_LIB_DIRS_ABS = 
 
 # EDC Resource Path
-USER_EDCS_IMAGE_DIRS = 
+USER_EDCS_IMAGE_DIRS = edje/images 
 USER_EDCS_IMAGE_DIRS_ABS = 
-USER_EDCS_SOUND_DIRS = 
+USER_EDCS_SOUND_DIRS = edje/sounds 
 USER_EDCS_SOUND_DIRS_ABS = 
-USER_EDCS_FONT_DIRS = 
+USER_EDCS_FONT_DIRS = edje/fonts 
 USER_EDCS_FONT_DIRS_ABS = 
 
 # EDC Flags
-USER_EXT_EDC_KEYS = 
+USER_EXT_EDC_KEYS = EDC0 
+
+USER_EXT_EDC0_EDCS = res/edje/custer_view.edc res/edje/home.edc res/edje/apps_view.edc 
+USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images 
+USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
+USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds 
+USER_EXT_EDC0_EDCS_SOUND_DIRS_ABS = 
+USER_EXT_EDC0_EDCS_FONT_DIRS = edje/fonts 
+USER_EXT_EDC0_EDCS_FONT_DIRS_ABS = 
 
 # Resource Filter
 USER_RES_INCLUDE = 
