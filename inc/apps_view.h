@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-#ifndef APPS_VIEW_H_
-#define APPS_VIEW_H_
+#ifndef __APPS_VIEW_H__
+#define __APPS_VIEW_H__
 
 #include <Elementary.h>
 
 Evas_Object *apps_view_create(Evas_Object *parent);
 
-#endif /* APPS_VIEW_H_ */
+#endif /* __APPS_VIEW_H__ */

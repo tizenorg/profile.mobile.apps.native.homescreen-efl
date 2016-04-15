@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef UTIL_H_
-#define UTIL_H_
+#ifndef __UTIL_H__
+#define __UTIL_H__
 
 #include <dlog.h>
 
@@ -63,4 +63,4 @@ const char *util_get_file_path(enum app_subdir dir, const char *relative);
 #define util_get_external_cache_file_path(x) util_get_file_path(APP_DIR_EXTERNAL_CACHE, (x))
 #define util_get_external_shared_data_file_path(x) util_get_file_path(APP_DIR_EXTERNAL_SHARED_DATA, (x))
 
-#endif /* UTIL_H_ */
+#endif /* __UTIL_H__ */

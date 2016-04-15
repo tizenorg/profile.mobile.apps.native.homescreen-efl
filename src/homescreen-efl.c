@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-#include <app.h>
-#include <Elementary.h>
 #include <system_settings.h>
 #include <dlog.h>
 
@@ -103,7 +101,7 @@ static bool __homescreen_efl_app_create_cb(void *data)
         LOGE("main_info.cluster_layout  == NULL");
         return false;
     }
-    evas_object_color_set(main_info.cluster_layout, 255, 0, 255, 255);
+    evas_object_color_set(main_info.cluster_layout, 255, 255, 255, 255);
     evas_object_move(main_info.cluster_layout, 0, INDICATOR_H);
     evas_object_show(main_info.cluster_layout);
 
@@ -112,8 +110,8 @@ static bool __homescreen_efl_app_create_cb(void *data)
         LOGE("main_info.apps_layout  == NULL");
         return false;
     }
-    evas_object_color_set(main_info.apps_layout, 255, 255, 0, 0);
-    evas_object_move(main_info.apps_layout, 0, APPS_VIEW_PADDING_TOP);
+    evas_object_color_set(main_info.apps_layout, 255, 255, 255, 0);
+    evas_object_move(main_info.apps_layout, 0, main_info.root_height);
     evas_object_show(main_info.apps_layout);
 
     return true;
@@ -161,7 +159,7 @@ int main(int argc, char *argv[])
 
     ret = ui_app_main(argc, argv, &event_callback, NULL);
     if (ret != APP_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "ui_app_main() is failed. err = %d", ret);
+        LOGE("ui_app_main() is failed. err = %d", ret);
 
     main_info.view_type = HOMESCREEN_VIEW_HOME;
 
@@ -256,7 +254,7 @@ static void __homescreen_efl_set_conformant(void)
 
 static void __homescreen_efl_menu_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
-    LOGD("menu");
+
 }
 
 static void __homescreen_efl_home_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
@@ -293,13 +291,13 @@ static void __homescreen_efl_show_apps(void)
 
 static Eina_Bool __homescreen_efl_show_apps_anim(void *data, double pos)
 {
-    evas_object_color_set(main_info.cluster_layout, 255, 0, 255, (1-pos)*255);
-    evas_object_color_set(main_info.apps_layout, 255, 255, 0, pos*255);
+    evas_object_color_set(main_info.cluster_layout, 255, 255, 255, (1-pos)*255);
+    evas_object_color_set(main_info.apps_layout, 255, 255, 255, pos*255);
     evas_object_move(main_info.apps_layout, 0, APPS_VIEW_PADDING_TOP + (APPS_VIEW_ANIMATION_DELTA * (1-pos)));
     if (pos >= (1.0 - (1e-10))) {
         main_info.animator = NULL;
-        evas_object_color_set(main_info.cluster_layout, 255, 0, 255, 0);
-        evas_object_color_set(main_info.apps_layout, 255, 255, 0, 255);
+        evas_object_color_set(main_info.cluster_layout, 255, 255, 255, 0);
+        evas_object_color_set(main_info.apps_layout, 255, 255, 255, 255);
         evas_object_move(main_info.apps_layout, 0, APPS_VIEW_PADDING_TOP);
 
         return ECORE_CALLBACK_DONE;
@@ -317,16 +315,21 @@ static void __homescreen_efl_show_cluster(void)
 
 static Eina_Bool __homescreen_efl_show_cluster_anim(void *data, double pos)
 {
-    evas_object_color_set(main_info.apps_layout, 255, 255, 0, (1-pos)*255);
-    evas_object_color_set(main_info.cluster_layout, 255, 0, 255, pos*255);
+    evas_object_color_set(main_info.apps_layout, 255, 255, 255, (1-pos)*255);
+    evas_object_color_set(main_info.cluster_layout, 255, 255, 255, pos*255);
     evas_object_move(main_info.apps_layout, 0, APPS_VIEW_PADDING_TOP + (APPS_VIEW_ANIMATION_DELTA * pos));
     if (pos >= (1.0 - (1e-10))) {
         main_info.animator = NULL;
-        evas_object_color_set(main_info.cluster_layout, 255, 0, 255, 255);
-        evas_object_color_set(main_info.apps_layout, 255, 255, 0, 0);
-        evas_object_move(main_info.apps_layout, 0, APPS_VIEW_PADDING_TOP + APPS_VIEW_ANIMATION_DELTA);
+        evas_object_color_set(main_info.cluster_layout, 255, 255, 255, 255);
+        evas_object_color_set(main_info.apps_layout, 255, 255, 255, 0);
+        evas_object_move(main_info.apps_layout, 0, main_info.root_height);
         return ECORE_CALLBACK_DONE;
     }
 
     return ECORE_CALLBACK_RENEW;
+}
+
+Evas_Object *homescreen_efl_get_win(void)
+{
+    return main_info.win;
 }

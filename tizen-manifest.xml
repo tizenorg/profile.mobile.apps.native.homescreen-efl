@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" package="org.tizen.homescreen-efl" version="1.0.0">
 	<profile name="mobile" />
-	<ui-application appid="org.tizen.homescreen-efl" exec="homescreen-efl" type="capp" multiple="false" taskmanage="true" nodisplay="false" launch_mode="single">
+	<ui-application appid="org.tizen.homescreen-efl" exec="homescreen-efl" type="capp" multiple="false" taskmanage="false" nodisplay="true" launch_mode="single">
 		<icon>homescreen-efl.png</icon>
 		<label>homescreen-efl</label>
 	</ui-application>

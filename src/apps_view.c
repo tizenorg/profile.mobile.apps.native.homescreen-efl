@@ -35,8 +35,6 @@ Evas_Object *apps_view_create(Evas_Object *parent)
 {
     elm_win_screen_size_get(parent, NULL, NULL, &apps_info.width, &apps_info.height);
 
-    LOGD("%d %d", apps_info.width, apps_info.height);
-
     apps_info.scroller = elm_scroller_add(parent);
     if (!apps_info.scroller) {
         LOGE("[FAILED][apps_info.scroller==NULL]");

@@ -49,7 +49,8 @@ collections {
             }
             part { name: "menu_btn_icon";
                 type: IMAGE;
-                mouse_events: 0;
+                mouse_events: 1;
+                repeat_events: 1;
                 description { state: "default" 0.0;
                     align: 0 0;
                     rel1{relative: 0.27 0.1; to:"menu_btn";}
@@ -82,7 +83,8 @@ collections {
             }
             part { name: "home_btn_home_icon";
                 type: IMAGE;
-                mouse_events: 0;
+                mouse_events: 1;
+                repeat_events: 1;
                 description { state: "default" 0.0;
                     align: 0 0;
                     rel1{relative: 0.27 0.1; to:"home_btn";}
@@ -104,7 +106,8 @@ collections {
             }
             part { name: "home_btn_app_icon";
                 type: IMAGE;
-                mouse_events: 0;
+                mouse_events: 1;
+                repeat_events: 1;
                 description { state: "default" 0.0;
                     align: 0 0;
                     rel1{relative: 0.27 0.1; to:"home_btn";}
