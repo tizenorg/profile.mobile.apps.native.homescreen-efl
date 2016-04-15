@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef EDC_CONF_H_
-#define EDC_CONF_H_
+#ifndef __EDC_CONF_H__
+#define __EDC_CONF_H__
 
 #define GROUP_HOME_LY "home_ly"
 #define HOME_BG "home_bg"
@@ -37,5 +37,9 @@
 #define GROUP_CLUSTER_LY "cluster_ly"
 #define SIZE_SETTER "size_setter"
 
+#define GROUP_PAGE_INDICATOR_UNIT "page_indicator_unit"
+#define SIGNAL_PAGE_IDICATOR_ROTATION_CHANGE "rotation,changed"
+#define SIGNAL_PAGE_IDICATOR_DEFAULT "default,set"
+#define SIGNAL_PAGE_IDICATOR_CURRENT "current,set"
 
-#endif /* EDC_CONF_H_ */
+#endif /* __EDC_CONF_H__ */

@@ -14,23 +14,28 @@
  * limitations under the License.
  */
 
-#ifndef __homescreen_efl_H__
-#define __homescreen_efl_H__
+#ifndef __HOMESCREEN_EFL_H__
+#define __HOMESCREEN_EFL_H__
+
+#include <app.h>
+#include <Elementary.h>
 
 #if !defined(PACKAGE)
 #define PACKAGE "org.tizen.homescreen-efl"
 #endif
 
 typedef enum {
-	HOMESCREEN_VIEW_HOME = 0,
-	HOMESCREEN_VIEW_HOME_EDIT,
-	HOMESCREEN_VIEW_HOME_ALL_PAGES,
-	HOMESCREEN_VIEW_HOME_ADD_VIEWER,
-	HOMESCREEN_VIEW_APPS,
-	HOMESCREEN_VIEW_APPS_EDIT,
-	HOMESCREEN_VIEW_APPS_CHOOSE,
-	HOMESCREEN_VIEW_UNKNOWN,
+    HOMESCREEN_VIEW_HOME = 0,
+    HOMESCREEN_VIEW_HOME_EDIT,
+    HOMESCREEN_VIEW_HOME_ALL_PAGES,
+    HOMESCREEN_VIEW_HOME_ADD_VIEWER,
+    HOMESCREEN_VIEW_APPS,
+    HOMESCREEN_VIEW_APPS_EDIT,
+    HOMESCREEN_VIEW_APPS_CHOOSE,
+    HOMESCREEN_VIEW_UNKNOWN,
 } homescreen_view_t;
 
 
-#endif /* __homescreen_efl_H__ */
+Evas_Object *homescreen_efl_get_win(void);
+
+#endif /* __HOMESCREEN_EFL_H__ */

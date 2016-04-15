@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef CLUSTER_VIEW_H_
-#define CLUSTER_VIEW_H_
+#ifndef __CLUSTER_VIEW_H__
+#define __CLUSTER_VIEW_H__
 
 #include <Elementary.h>
 
 Evas_Object *cluster_view_create(Evas_Object *parent);
+void cluster_view_show(void);
+void cluster_view_hide(void);
 
-#endif /* CLUSTER_VIEW_H_ */
+#endif /* __CLUSTER_VIEW_H__ */

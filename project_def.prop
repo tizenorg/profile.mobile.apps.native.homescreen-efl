@@ -9,7 +9,7 @@ type = app
 profile = mobile-3.0
 
 # C Sources
-USER_SRCS = src/cluster_view.c src/homescreen-efl.c src/util.c src/conf.c src/apps_view.c 
+USER_SRCS = src/cluster_view.c src/homescreen-efl.c src/util.c src/conf.c src/page_indicator.c src/apps_view.c 
 
 # EDC Sources
 USER_EDCS =  
@@ -59,7 +59,7 @@ USER_EDCS_FONT_DIRS_ABS =
 # EDC Flags
 USER_EXT_EDC_KEYS = EDC0 
 
-USER_EXT_EDC0_EDCS = res/edje/custer_view.edc res/edje/home.edc res/edje/apps_view.edc 
+USER_EXT_EDC0_EDCS = res/edje/page_indicator_unit.edc res/edje/custer_view.edc res/edje/home.edc res/edje/apps_view.edc 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
 USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds 

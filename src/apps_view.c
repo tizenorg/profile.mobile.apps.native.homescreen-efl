@@ -18,24 +18,25 @@
 #include "conf.h"
 #include "edc_conf.h"
 #include "util.h"
+#include "page_indicator.h"
 
 static struct {
     Evas_Object *scroller;
     Evas_Object *box;
     int width;
     int height;
+    page_indicator_t *indicator;
 } apps_info = {
     .scroller = NULL,
     .box = NULL,
     .width = 0,
-    .height = 0
+    .height = 0,
+    .indicator = NULL
 };
 
 Evas_Object *apps_view_create(Evas_Object *parent)
 {
     elm_win_screen_size_get(parent, NULL, NULL, &apps_info.width, &apps_info.height);
-
-    LOGD("%d %d", apps_info.width, apps_info.height);
 
     apps_info.scroller = elm_scroller_add(parent);
     if (!apps_info.scroller) {
@@ -69,5 +70,21 @@ Evas_Object *apps_view_create(Evas_Object *parent)
     elm_box_pack_end(apps_info.box, rect);
     evas_object_show(apps_info.scroller);
 
+    apps_info.indicator = page_indictor_create(apps_info.scroller);
+    page_indicator_set_page_count(apps_info.indicator, 1);
+    page_indicator_set_current_page(apps_info.indicator, 0);
+    page_indicator_scroller_resize(apps_info.indicator, apps_info.width, apps_info.height);
+    page_indicator_hide(apps_info.indicator);
+
     return apps_info.scroller;
+}
+
+void apps_view_show(void)
+{
+    page_indicator_show(apps_info.indicator);
+}
+
+void apps_view_hide(void)
+{
+    page_indicator_hide(apps_info.indicator);
 }
