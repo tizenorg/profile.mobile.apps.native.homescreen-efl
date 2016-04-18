@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="3.0" package="org.tizen.homescreen-efl" version="1.0.0">
-	<profile name="mobile" />
-	<ui-application appid="org.tizen.homescreen-efl" exec="homescreen-efl" type="capp" multiple="false" taskmanage="false" nodisplay="true" launch_mode="single">
-		<icon>homescreen-efl.png</icon>
-		<label>homescreen-efl</label>
-	</ui-application>
+    <profile name="mobile"/>
+    <ui-application appid="org.tizen.homescreen-efl" exec="homescreen-efl" launch_mode="single" multiple="false" nodisplay="true" taskmanage="false" type="capp">
+        <label>homescreen-efl</label>
+        <icon>homescreen-efl.png</icon>
+    </ui-application>
+    <privileges>
+        <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+        <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+    </privileges>
 </manifest>

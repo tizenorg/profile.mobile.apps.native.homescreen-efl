@@ -39,6 +39,11 @@ extern int __conf_get_window_w();
 #define APPS_VIEW_H ((1060) * (__conf_get_resolution_scale_h()))
 #define APPS_VIEW_ANIMATION_DELTA ((100) * (__conf_get_resolution_scale_h()))
 
+#define CLUSTER_VIEW_W ((720) * (__conf_get_resolution_scale_w()))
+#define CLUSTER_VIEW_H ((1060) * (__conf_get_resolution_scale_h()))
+#define CLUSTER_W CLUSTER_VIEW_W
+#define CLUSTER_H CLUSTER_W
+
 #define PAGE_INDICATOR_PADDING_BOTTON ((16) * (__conf_get_resolution_scale_h()))
 #define PAGE_INDICATOR_H ((76) * (__conf_get_resolution_scale_h()))
 #define PAGE_INDICATOR_W ((720) * (__conf_get_resolution_scale_w()))

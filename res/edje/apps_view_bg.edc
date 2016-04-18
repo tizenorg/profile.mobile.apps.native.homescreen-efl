@@ -1,0 +1,107 @@
+#include "../../inc/edc_conf.h"
+
+collections {
+    group { name: GROUP_APPS_BG_LY;
+        script {
+            public rel1;
+            public rel2;
+            public alpha;
+
+            public message(Msg_Type:type, id, ...) {
+                if(type == MSG_FLOAT_SET)
+                {
+                    set_float(rel1, getfarg(2));
+                    set_float(rel2, getfarg(3));
+                    set_float(alpha, getfarg(4));
+                    send_message(type, id, getfarg(2), getfarg(3), getfarg(4));
+                }
+            }
+        }
+        parts {
+            part { name: PART_APPS_VIEW_BG;
+                type: SWALLOW;
+                mouse_events: 1;
+                repeat_events: 1;
+                description {
+                    state: "default" 0.0;
+                    align: 0 0;
+                    rel1.relative: 0.0 0.0;
+                    rel2.relative: 1.0 1.0;
+                    visible: 0;
+                }
+                description {
+                    state: "edit" 0.0;
+                    inherit: "default" 0.0;
+                    rel1 {relative: 0.06 0.07;}
+                    rel2 {relative: 0.94 0.81;}
+                }
+                description {
+                    state: "hide" 0.0;
+                    inherit: "default" 0.0;
+                    visible: 0;
+                    map {
+                        on: 1;
+                        perspective_on: 1;
+                        smooth: 1;
+                        alpha: 1;
+                    }
+                }
+                description {
+                    state: "show" 0.0;
+                    inherit: "default" 0.0;
+                    visible: 1;
+                    map {
+                        on: 1;
+                        perspective_on: 1;
+                        smooth: 1;
+                        alpha: 1;
+                    }
+                }
+            }
+        }
+        programs {
+            program {
+                name: "apps_bg_hide";
+                signal: SIGNAL_APPS_VIEW_HIDE;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "hide" 0.0;
+                target: PART_APPS_VIEW_BG;
+            }
+            program {
+                name: "apps_bg_show";
+                signal: SIGNAL_APPS_VIEW_SHOW;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "show" 0.0;
+                target: PART_APPS_VIEW_BG;
+            }
+            program {
+                name: "rotation,changed";
+                signal: SIGNAL_APPS_VIEW_ANIM;
+                source: SIGNAL_SOURCE;
+                script {
+                    custom_state(PART:PART_APPS_VIEW_BG, "show", 0.0);
+                    //set_state_val(PART:PART_APPS_VIEW_BG, STATE_REL1, 0, get_float(rel1));
+                    //set_state_val(PART:PART_APPS_VIEW_BG, STATE_REL2, 0, get_float(rel2));
+                    set_state_val(PART:PART_APPS_VIEW_BG, STATE_COLOR, 255, 255, 255, round(get_float(alpha)));
+                    set_state(PART:PART_APPS_VIEW_BG, "custom", 0.0);
+                }
+            }
+            program {
+                name: "bg_edit_mode_on";
+                signal: SIGNAL_EDIT_MODE_ON;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "edit" 0.0;
+                target: PART_APPS_VIEW_BG;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "bg_edit_mode_off";
+                signal: SIGNAL_EDIT_MODE_OFF;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "default" 0.0;
+                target: PART_APPS_VIEW_BG;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+        }
+    }
+}

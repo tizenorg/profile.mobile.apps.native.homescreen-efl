@@ -33,6 +33,9 @@
 #define SIGNAL_APPS_BTN_SHOW "apps_btn_show"
 #define SIGNAL_APPS_BTN_HIDE "apps_btn_hide"
 
+
+#define GROUP_HOME_BTN_LY "home_btn_ly"
+
 // cluster
 #define GROUP_CLUSTER_LY "cluster_ly"
 #define SIZE_SETTER "size_setter"
@@ -42,4 +45,18 @@
 #define SIGNAL_PAGE_IDICATOR_DEFAULT "default,set"
 #define SIGNAL_PAGE_IDICATOR_CURRENT "current,set"
 
+
+// apps view
+#define GROUP_APPS_LY "apps_ly"
+#define PART_APPS_VIEW_BG "apps_view_bg"
+
+#define GROUP_APPS_BG_LY "apps_bg_ly"
+
+#define ANIMATION_RESIZE_TIME 0.3
+#define SIGNAL_EDIT_MODE_ON "apps_edit_on"
+#define SIGNAL_EDIT_MODE_OFF "apps_edit_off"
+
+#define SIGNAL_APPS_VIEW_HIDE "apps_bg_hide"
+#define SIGNAL_APPS_VIEW_SHOW "apps_bg_show"
+#define SIGNAL_APPS_VIEW_ANIM "apps_bg_anim"
 #endif /* __EDC_CONF_H__ */
