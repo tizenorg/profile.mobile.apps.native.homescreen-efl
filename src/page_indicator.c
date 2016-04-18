@@ -97,6 +97,7 @@ void page_indicator_set_page_count(page_indicator_t *page_indicator, int count)
 
 void page_indicator_scroller_resize(page_indicator_t *page_indicator, int width, int height)
 {
+    LOGD("w:%d h:%d", width, height);
     page_indicator->w = width;
     page_indicator->h = height;
 }
@@ -105,6 +106,10 @@ void page_indicator_set_current_page(page_indicator_t *page_indicator, int page_
 {
     Evas_Object *edje = NULL;
     LOGD("Set Current :%d", page_number);
+
+    edje = elm_layout_edje_get(page_indicator->unit[page_indicator->current_page]);
+    edje_object_signal_emit(edje, SIGNAL_PAGE_IDICATOR_DEFAULT, SIGNAL_SOURCE);
+
     page_indicator->current_page = page_number;
     edje = elm_layout_edje_get(page_indicator->unit[page_number]);
     edje_object_signal_emit(edje, SIGNAL_PAGE_IDICATOR_CURRENT, SIGNAL_SOURCE);

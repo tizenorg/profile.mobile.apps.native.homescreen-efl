@@ -31,6 +31,7 @@ static struct {
     Evas_Object *main_layout;
     Evas_Object *apps_layout;
     Evas_Object *cluster_layout;
+    Evas_Object *btn_layout;
     int root_width;
     int root_height;
     homescreen_view_t view_type;
@@ -42,26 +43,24 @@ static struct {
     .main_layout = NULL,
     .apps_layout = NULL,
     .cluster_layout = NULL,
+    .btn_layout = NULL,
     .root_width = 0,
     .root_height = 0,
     .view_type = HOMESCREEN_VIEW_HOME,
     .animator = NULL
 };
 
-static void __homescreen_efl_create_base_gui(void);
 static void __homescreen_efl_get_window_size(Evas_Object *win);
-static void __homescreen_efl_set_main_layout(void);
 static void __homescreen_efl_set_wallpaper(void);
 static void __homescreen_efl_set_conformant(void);
+static void __homescreen_efl_create_home_btn(void);
 
 static void __homescreen_efl_home_bg_changed_cb(system_settings_key_e key, void *data);
 static void __homescreen_efl_menu_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
 static void __homescreen_efl_home_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
 
 static void __homescreen_efl_change_view(void);
-static void __homescreen_efl_show_apps(void);
 static Eina_Bool __homescreen_efl_show_apps_anim(void *data, double pos);
-static void __homescreen_efl_show_cluster(void);
 static Eina_Bool __homescreen_efl_show_cluster_anim(void *data, double pos);
 
 static void __homescreen_efl_lang_changed_cb(app_event_info_h event_info, void *user_data)
@@ -94,25 +93,31 @@ static bool __homescreen_efl_app_create_cb(void *data)
     elm_config_accel_preference_set("3d");
     ecore_animator_frametime_set(FRAMES_PER_SECOND);
 
-    __homescreen_efl_create_base_gui();
+    main_info.win = elm_win_util_standard_add(PACKAGE, PACKAGE);
+    __homescreen_efl_get_window_size(main_info.win);
+
+    __homescreen_efl_set_wallpaper();
+
+    evas_object_show(main_info.win);
 
     main_info.cluster_layout = cluster_view_create(main_info.win);
     if (main_info.cluster_layout == NULL) {
         LOGE("main_info.cluster_layout  == NULL");
         return false;
     }
-    evas_object_color_set(main_info.cluster_layout, 255, 255, 255, 255);
     evas_object_move(main_info.cluster_layout, 0, INDICATOR_H);
     evas_object_show(main_info.cluster_layout);
 
-    main_info.apps_layout = apps_view_create(main_info.main_layout);
+    main_info.apps_layout = apps_view_create(main_info.win);
     if (main_info.apps_layout == NULL) {
         LOGE("main_info.apps_layout  == NULL");
         return false;
     }
-    evas_object_color_set(main_info.apps_layout, 255, 255, 255, 0);
     evas_object_move(main_info.apps_layout, 0, main_info.root_height);
     evas_object_show(main_info.apps_layout);
+
+    __homescreen_efl_set_conformant();
+    __homescreen_efl_create_home_btn();
 
     return true;
 }
@@ -134,7 +139,7 @@ static void __homescreen_efl_app_resume_cb(void *data)
 
 static void __homescreen_efl_app_terminate_cb(void *data)
 {
-
+    cluster_view_app_terminate();
 }
 
 int main(int argc, char *argv[])
@@ -166,21 +171,6 @@ int main(int argc, char *argv[])
     return ret;
 }
 
-static void __homescreen_efl_create_base_gui(void)
-{
-    main_info.win = elm_win_util_standard_add(PACKAGE, PACKAGE);
-
-    __homescreen_efl_get_window_size(main_info.win);
-
-    __homescreen_efl_set_main_layout();
-
-    __homescreen_efl_set_wallpaper();
-
-    __homescreen_efl_set_conformant();
-
-    evas_object_show(main_info.win);
-}
-
 static void __homescreen_efl_get_window_size(Evas_Object *win)
 {
     elm_win_screen_size_get(win, NULL, NULL, &main_info.root_width, &main_info.root_height);
@@ -190,9 +180,12 @@ static void __homescreen_efl_get_window_size(Evas_Object *win)
     LOGD("Width: [%d], Height: [%d]", main_info.root_width, main_info.root_height);
 }
 
-static void __homescreen_efl_set_main_layout(void)
+static void __homescreen_efl_set_wallpaper(void)
 {
     char edj_path[PATH_MAX] = {0, };
+    const char *bg_path = util_get_res_file_path(IMAGE_DIR"/default_bg.png");
+    char *buf = NULL;
+    int ret = -1;
 
     snprintf(edj_path, sizeof(edj_path), "%s", util_get_res_file_path(EDJE_DIR"/home.edj"));
 
@@ -202,16 +195,6 @@ static void __homescreen_efl_set_main_layout(void)
     elm_win_resize_object_add(main_info.win, main_info.main_layout);
 
     evas_object_show(main_info.main_layout);
-
-    elm_object_signal_callback_add(main_info.main_layout, SIGNAL_MENU_BTN_CLICKED, SIGNAL_SOURCE, __homescreen_efl_menu_btn_clicked, NULL);
-    elm_object_signal_callback_add(main_info.main_layout, SIGNAL_HOME_BTN_CLICKED, SIGNAL_SOURCE, __homescreen_efl_home_btn_clicked, NULL);
-}
-
-static void __homescreen_efl_set_wallpaper(void)
-{
-    const char *bg_path = util_get_res_file_path(IMAGE_DIR"/default_bg.png");
-    char *buf = NULL;
-    int ret = -1;
 
     if (main_info.bg == NULL) {
         main_info.bg = evas_object_image_filled_add(evas_object_evas_get(main_info.main_layout));
@@ -252,6 +235,23 @@ static void __homescreen_efl_set_conformant(void)
     evas_object_show(main_info.conformant);
 }
 
+static void __homescreen_efl_create_home_btn(void)
+{
+    char edj_path[PATH_MAX] = {0, };
+
+    snprintf(edj_path, sizeof(edj_path), "%s", util_get_res_file_path(EDJE_DIR"/home_btn.edj"));
+
+    main_info.btn_layout = elm_layout_add(main_info.win);
+    elm_layout_file_set(main_info.btn_layout, edj_path, GROUP_HOME_BTN_LY);
+    evas_object_size_hint_weight_set(main_info.btn_layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+    elm_win_resize_object_add(main_info.win, main_info.btn_layout);
+
+    evas_object_show(main_info.btn_layout);
+
+    elm_object_signal_callback_add(main_info.btn_layout, SIGNAL_MENU_BTN_CLICKED, SIGNAL_SOURCE, __homescreen_efl_menu_btn_clicked, NULL);
+    elm_object_signal_callback_add(main_info.btn_layout, SIGNAL_HOME_BTN_CLICKED, SIGNAL_SOURCE, __homescreen_efl_home_btn_clicked, NULL);
+}
+
 static void __homescreen_efl_menu_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
 
@@ -270,62 +270,44 @@ static void __homescreen_efl_change_view(void)
     }
 
     if (main_info.view_type == HOMESCREEN_VIEW_APPS) {
-        __homescreen_efl_show_cluster();
-        elm_object_signal_emit(main_info.main_layout, SIGNAL_APPS_BTN_HIDE, SIGNAL_SOURCE);
-        elm_object_signal_emit(main_info.main_layout, SIGNAL_HOME_BTN_SHOW, SIGNAL_SOURCE);
+        apps_view_hide();
+        main_info.animator = ecore_animator_timeline_add(HOME_ANIMATION_TIME, __homescreen_efl_show_cluster_anim, NULL);
+
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_APPS_BTN_HIDE, SIGNAL_SOURCE);
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_HOME_BTN_SHOW, SIGNAL_SOURCE);
         main_info.view_type = HOMESCREEN_VIEW_HOME;
     } else if (main_info.view_type == HOMESCREEN_VIEW_HOME) {
-        __homescreen_efl_show_apps();
-        elm_object_signal_emit(main_info.main_layout, SIGNAL_HOME_BTN_HIDE, SIGNAL_SOURCE);
-        elm_object_signal_emit(main_info.main_layout, SIGNAL_APPS_BTN_SHOW, SIGNAL_SOURCE);
-        main_info.view_type = HOMESCREEN_VIEW_APPS;
-    }
-}
-
-static void __homescreen_efl_show_apps(void)
-{
-    if (main_info.animator == NULL) {
         cluster_view_hide();
         main_info.animator = ecore_animator_timeline_add(HOME_ANIMATION_TIME, __homescreen_efl_show_apps_anim, NULL);
+
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_HOME_BTN_HIDE, SIGNAL_SOURCE);
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_APPS_BTN_SHOW, SIGNAL_SOURCE);
+        main_info.view_type = HOMESCREEN_VIEW_APPS;
     }
 }
 
 static Eina_Bool __homescreen_efl_show_apps_anim(void *data, double pos)
 {
-    evas_object_color_set(main_info.cluster_layout, 255, 255, 255, (1-pos)*255);
-    evas_object_color_set(main_info.apps_layout, 255, 255, 255, pos*255);
-    evas_object_move(main_info.apps_layout, 0, APPS_VIEW_PADDING_TOP + (APPS_VIEW_ANIMATION_DELTA * (1-pos)));
+    cluster_view_hide_anim(pos);
+    apps_view_show_anim(pos);
+
     if (pos >= (1.0 - (1e-10))) {
-        main_info.animator = NULL;
-        evas_object_color_set(main_info.cluster_layout, 255, 255, 255, 0);
-        evas_object_color_set(main_info.apps_layout, 255, 255, 255, 255);
-        evas_object_move(main_info.apps_layout, 0, APPS_VIEW_PADDING_TOP);
         apps_view_show();
+        main_info.animator = NULL;
         return ECORE_CALLBACK_DONE;
     }
 
     return ECORE_CALLBACK_RENEW;
 }
 
-static void __homescreen_efl_show_cluster(void)
-{
-    if (main_info.animator == NULL) {
-        apps_view_hide();
-        main_info.animator = ecore_animator_timeline_add(HOME_ANIMATION_TIME, __homescreen_efl_show_cluster_anim, NULL);
-    }
-}
-
 static Eina_Bool __homescreen_efl_show_cluster_anim(void *data, double pos)
 {
-    evas_object_color_set(main_info.apps_layout, 255, 255, 255, (1-pos)*255);
-    evas_object_color_set(main_info.cluster_layout, 255, 255, 255, pos*255);
-    evas_object_move(main_info.apps_layout, 0, APPS_VIEW_PADDING_TOP + (APPS_VIEW_ANIMATION_DELTA * pos));
+    apps_view_hide_anim(pos);
+    cluster_view_show_anim(pos);
+
     if (pos >= (1.0 - (1e-10))) {
-        main_info.animator = NULL;
-        evas_object_color_set(main_info.cluster_layout, 255, 255, 255, 255);
-        evas_object_color_set(main_info.apps_layout, 255, 255, 255, 0);
-        evas_object_move(main_info.apps_layout, 0, main_info.root_height);
         cluster_view_show();
+        main_info.animator = NULL;
         return ECORE_CALLBACK_DONE;
     }
 

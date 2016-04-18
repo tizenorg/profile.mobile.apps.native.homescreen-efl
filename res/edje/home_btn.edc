@@ -1,0 +1,196 @@
+#include "../../inc/edc_conf.h"
+
+collections {
+    images {
+        image: "../res/images/home_button_bg.png" COMP;
+        image: "../res/images/home_button_menu.png" COMP;
+        image: "../res/images/home_button_home.png" COMP;
+        image: "../res/images/home_button_apps.png" COMP;
+    }
+    group { name: GROUP_HOME_BTN_LY;
+        parts { 
+            // Menu button
+            part { name: MENU_BUTTON;
+                type: IMAGE;
+                description { state: "default" 0.0;
+                    align: 0 0;
+                    rel1{relative: 0.044 0.928;}
+                    rel2{relative: 0.223 0.986;}
+                    color: 0 0 0 40;
+                    visible: 1;
+                    image {
+                        normal: "../res/images/home_button_bg.png";
+                    }
+                }
+                description {
+                    state: "press" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 40;
+                }
+            }
+            part { name: "menu_btn_icon";
+                type: IMAGE;
+                mouse_events: 0;
+                description { state: "default" 0.0;
+                    align: 0 0;
+                    rel1{relative: 0.27 0.1; to:"menu_btn";}
+                    rel2{relative: 0.73 0.9; to:"menu_btn";}
+                    color: 255 255 255 255;
+                    visible: 1;
+                    image {
+                        normal: "../res/images/home_button_menu.png";
+                    }
+                }
+            }
+            //Home Button
+            part { name: HOME_BUTTON;
+                type: IMAGE;
+                description {state: "default" 0.0;
+                    align: 0 0;
+                    rel1{relative: 0.776 0.928;}
+                    rel2{relative: 0.955 0.986;}
+                    color: 0 0 0 40;
+                    visible: 1;
+                    image {
+                        normal: "../res/images/home_button_bg.png";
+                    }
+                }
+                description {
+                    state: "press" 0.0;
+                    inherit: "default" 0.0;
+                    color : 255 255 255 40;
+                }
+            }
+            part { name: "home_btn_home_icon";
+                type: IMAGE;
+                mouse_events: 0;
+                description { state: "default" 0.0;
+                    align: 0 0;
+                    rel1{relative: 0.27 0.1; to:"home_btn";}
+                    rel2{relative: 0.73 0.9; to:"home_btn";}
+                    color: 255 255 255 0;
+                    visible: 1;
+                    image {
+                        normal: "../res/images/home_button_home.png";
+                    }
+                }
+                description { state: "show" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 255;
+                }
+                description { state: "hide" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 0;
+                }
+            }
+            part { name: "home_btn_app_icon";
+                type: IMAGE;
+                mouse_events: 0;
+                description { state: "default" 0.0;
+                    align: 0 0;
+                    rel1{relative: 0.27 0.1; to:"home_btn";}
+                    rel2{relative: 0.73 0.9; to:"home_btn";}
+                    color: 255 255 255 255;
+                    visible: 1;
+                    image {
+                        normal: "../res/images/home_button_apps.png";
+                    }
+                }
+                description { state: "show" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 255;
+                }
+                description { state: "hide" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 0;
+                }
+            }
+        }
+        programs {
+            //menu button event
+            program {
+                name: "menu_btn_down";
+                signal: "mouse,down,1";
+                source: MENU_BUTTON;
+                action: STATE_SET "press" 0.0;
+                target: MENU_BUTTON;
+                transition: DECELERATE 0.1;
+            }
+            program {
+                name: "menu_btn_up";
+                signal: "mouse,up,1";
+                source: MENU_BUTTON;
+                action: STATE_SET "default" 0.0;
+                target: MENU_BUTTON;
+                transition: DECELERATE 0.1;
+            }
+            program {
+                name: "menu_btn_click";
+                signal: "mouse,clicked,1";
+                source: MENU_BUTTON;
+                action: SIGNAL_EMIT SIGNAL_MENU_BTN_CLICKED SIGNAL_SOURCE;
+            }
+            //home button event
+            program {
+                name: "home_btn_down";
+                signal: "mouse,down,1";
+                source: HOME_BUTTON;
+                action: STATE_SET "press" 0.0;
+                target: HOME_BUTTON;
+                transition: DECELERATE 0.1;
+            }
+
+            program {
+                name: "home_btn_up";
+                signal: "mouse,up,1";
+                source: HOME_BUTTON;
+                action: STATE_SET "default" 0.0;
+                target: HOME_BUTTON;
+                transition: DECELERATE 0.1;
+            }
+
+            program {
+                name: "home_btn_click";
+                signal: "mouse,clicked,1";
+                source: HOME_BUTTON;
+                action: SIGNAL_EMIT SIGNAL_HOME_BTN_CLICKED SIGNAL_SOURCE;
+            }
+
+            program {
+                name: "home_btn_show";
+                signal: SIGNAL_HOME_BTN_SHOW;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "show" 0.0;
+                target: "home_btn_home_icon";
+                transition: DECELERATE 0.3;
+            }
+
+            program {
+                name: "home_btn_hide";
+                signal: SIGNAL_HOME_BTN_HIDE;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "hide" 0.0;
+                target: "home_btn_home_icon";
+                transition: DECELERATE 0.3;
+            }
+
+            program {
+                name: "apps_btn_show";
+                signal: SIGNAL_APPS_BTN_SHOW;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "show" 0.0;
+                target: "home_btn_app_icon";
+                transition: DECELERATE 0.3;
+            }
+
+            program {
+                name: "apps_btn_hide";
+                signal: SIGNAL_APPS_BTN_HIDE;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "hide" 0.0;
+                target: "home_btn_app_icon";
+                transition: DECELERATE 0.3;
+            }
+        }
+    }
+}

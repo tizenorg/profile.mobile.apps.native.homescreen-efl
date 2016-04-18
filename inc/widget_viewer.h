@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-#ifndef __CLUSTER_VIEW_H__
-#define __CLUSTER_VIEW_H__
+#ifndef __WIDGET_VIEWER_H__
+#define __WIDGET_VIEWER_H__
 
 #include <Elementary.h>
+#include <widget_service.h>
+#include <widget_viewer_evas.h>
 
-Evas_Object *cluster_view_create(Evas_Object *parent);
-void cluster_view_app_terminate(void);
+void widget_viewer_init(Evas_Object *win);
+void widget_viewer_fini(void);
 
-void cluster_view_show(void);
-void cluster_view_hide(void);
-void cluster_view_show_anim(double pos);
-void cluster_view_hide_anim(double pos);
+Evas_Object *widget_viewer_add_widget(Evas_Object *parent, const char *pkgid, const char *sub_id
+        , double period, int *widget_width, int *widget_height);
 
-#endif /* __CLUSTER_VIEW_H__ */
+#endif /* __WIDGET_VIEWER_H__ */

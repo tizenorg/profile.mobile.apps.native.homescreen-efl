@@ -22,5 +22,7 @@
 Evas_Object *apps_view_create(Evas_Object *parent);
 void apps_view_show(void);
 void apps_view_hide(void);
+void apps_view_show_anim(double pos);
+void apps_view_hide_anim(double pos);
 
 #endif /* __APPS_VIEW_H__ */
