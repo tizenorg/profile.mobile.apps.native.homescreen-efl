@@ -234,6 +234,12 @@ static void __app_mgr_event_cb(const char *type, const char *package,
 		}
 
 		app_mgr_item = __app_mgr_load_item_info(ai_handle);
+		if (!app_mgr_item) {
+			LOGE("Failed to load app mgr item info");
+			app_info_destroy(ai_handle);
+			return;
+		}
+
 		item = data_model_install_application(app_mgr_item);
 		if (!item) {
 			LOGE("Failed to create app item");
