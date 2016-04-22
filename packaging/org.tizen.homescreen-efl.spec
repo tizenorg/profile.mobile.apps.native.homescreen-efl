@@ -1,10 +1,10 @@
 Name:       org.tizen.homescreen-efl
-#VCS_FROM:   profile/mobile/apps/native/homescreen-efl#4a9eb46abbe7491cb9042144bbb399d5f60b4b2c
-#RS_Ver:    20160419_1 
+#VCS_FROM:   profile/mobile/apps/native/homescreen-efl#d245e469d8a339bda12d4baa6bb8fa7ee9934741
+#RS_Ver:    20160422_1 
 Summary:    Homescreen-Efl
 Version:    0.0.1
 Release:    1
-Group:      Applications/CoreApplications
+Group:      Applications/Core Applications
 License:    Flora-1.1
 Source0:    %{name}-%{version}.tar.gz
 
