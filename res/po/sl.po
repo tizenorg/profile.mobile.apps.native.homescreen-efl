@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Prekliči"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "V redu"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Ustvari mapo"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Prikaži"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Odpri"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Uredi"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Dodaj"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Izbriši mapo"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Vnesite ime mape."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Ustvari"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Nalaganje..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Aplikacije"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Glasba"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Osnovno"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Skrij"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Polje za potrditev"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Potrdi"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Naslov"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Počisti"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Odstrani"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Dodajte aplikacije"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Izb. apl., da jih skrij."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Izb. apl., da jih pokaž."
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Prikaži kot"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Če želite prerazporediti strani, morate vrsto pogleda spremeniti v prilagodljivo mrežo."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Želite odstraniti %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mini programi"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Opusti"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Neimenovana mapa"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Dvakrat pritisnite, da zaprete vrstico z aplikacijami."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Dvakrat pritisnite, da odprete vrstico z aplikacijami."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Dvakrat pritisnite, da odprete."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Gumb"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Brisanje"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Dvakrat pritisnite in držite za premikanje."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Dvakrat pritisnite, da zaprete."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Spustni pogled odprt."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Priljubljene aplikacije"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Domači zaslon bo sestavljen z največ %d elementi, izbranimi na naslednjem zaslonu"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "Med priljubljenimi aplikacijami"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Premaknite v mapo %s."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Premikanje elementa %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Ni vsebine"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Stran %1$d od %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Položaj %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Mapa je odprta."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "S tem boste izbrisali mapo in vse elemente, ki jih vsebuje."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Aplikacij ni mogoče več dodati. Doseženo je največje število aplikacij."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Podatkov ni mogoče naložiti. Pritisnite, da poskusite znova."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Ozadja"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Prog."
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Izbris"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Onemogoči"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Pomoč"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Domov"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Revija"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telefon"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Dodaj predmete"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Mapa"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Prerazporejanje ikon"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Prerazporejanje strani"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Izberite besedilni okvir"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Izberite predlogo"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Dodaj besedilno polje"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Spremeni ozadje"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Ustvarite mapo"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Izbrišite mapo"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Prenesene aplikacije"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Izvlec. aplik. in izbriš. mapo"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Želite onemogočiti to aplikacijo?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Nova stran bo vsebovala S Planner, Opravila in polja Dynamic Boxes za S Memo"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Nova stran bo vsebovala polja Dynamic Boxes za Twitter. Na naslednjem zaslonu izberite do %d časovnic oseb, ki jim sledite, da bodo prikazane na novi strani."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Ta mapa bo izbrisana, vendar bodo aplikacije v njej še vedno na voljo na domačem zaslonu. Želite izbrisati to mapo?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Vnovično nalaganje ni uspelo. Pomnilnik naprave je poln."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Pisava ni podprta v tej velikosti."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Dodatne vrstice ni mogoče dodati zaradi omejitve prostora."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 neprebran element"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Način urejanja"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Skupno število izbranih: %d."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d neprebranih obvestil"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Meni v pojavnem oknu"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Podrsajte z dvema prstoma, da prikažete naslednjo stran."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Glava pojavnega okna"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Besedilo v telesu pojavnega okna"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Domači zaslon"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Stran premaknjena na %1$d od %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Vrstica %1$d, stolpec %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Dodaj stran"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Ni izbrano"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Gumb za radio"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Izbrano"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Privzeta pisava"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Imenik"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Doseženo je največje dovoljeno število znakov."
+
+msgid "IDS_COM_SK_OK"
+msgstr "V redu"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Prekliči"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Končano"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Število prikazanih elementov: %d"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Urnik"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Dvakrat pritisnite, da zaprete meni."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Presk."
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Izberi"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "Izbranih: %d"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Naprej"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "Skritih bo toliko elementov: %d."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Ta stran in vsi elementi na njej bodo izbrisani."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Izbrišite stran"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Izbriši"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Prikaz skritih aplikacij"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Skrivanje aplikacij"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Prikaz onemogočenih aplikacij"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "Aplikacije %s ni mogoče odstraniti. Namesto tega bo onemogočena."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "Skrit bo 1 element."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Tega polja ni mogoče dodati na domači zaslon. Na domačem zaslonu ni dovolj prostora. Odstranite nekaj polj in poskusite znova."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Ni mogoče dodati."
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Polja na domačem zaslonu"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Vse strani"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Prazno"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Dodaj Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Odstranite"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Odstrani mapo"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Mapa bo odstranjena. Programi v tej mapi ne bodo odstranjeni."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Ročno"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Po imenu (A–Ž)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "Program %s bo odstranjen."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Ikon, ki so razvrščene po imenu (A–Ž), ni mogoče prerazporediti."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "KONČANO"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "PREKLIČI"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Razvrstitev elementov"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Razvrstitev elementov"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Pripomočki"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Pripomočka ni mogoče dodati"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Dodajanje pripomočka"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Na domačem zaslonu ni dovolj prostora. Odstranite nekaj pripomočkov in poskusite znova."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Uredi"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Uredi"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Teme"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Program ni nameščen."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "Aplikacija %s in vse z njo povezane funkcije bodo onemogočene. Če jo želite znova omogočiti, pojdite v meni Nastavitve > Upravitelj aplikacij."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Doseženo je največje dovoljeno število aplikacij v mapi (%d)."
+

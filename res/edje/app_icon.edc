@@ -1,0 +1,152 @@
+#include "../../inc/edc_conf.h"
+
+images {
+    image: "../res/images/app_press_117.png" COMP;
+    image: "../res/images/btn_delete_nor.png" COMP;
+    image: "../res/images/btn_delete_press.png" COMP;
+    image: "../res/images/icon_badge_container.png" COMP;
+    image: "../res/images/core_check_bg.png" COMP;
+    image: "../res/images/core_check_bg_stroke.png" COMP;
+    image: "../res/images/core_check_icon.png" COMP;
+}
+
+styles {
+    style{
+        name: "icon_label";
+        base: "font=Samsung Condensed:style=Regular align=center color=#FFFFFFFF font_size=12 wrap=mixed";
+    }
+    style{
+        name: "icon_label_edit";
+        base: "font=Samsung Condensed:style=Regular align=center color=#FFFFFFFF font_size=10 wrap=mixed";
+    }
+}
+
+collections {
+    images {
+    }
+    group { name: GROUP_APP_ICON_LY;
+        parts {
+            part { name: SIZE_SETTER;
+                type: SWALLOW;
+                mouse_events: 1;
+                repeat_events: 1;
+                description {
+                    state: "default" 0.0;
+                    align: 0 0;
+                    rel1.relative: 0.0 0.0;
+                    rel2.relative: 0.0 0.0;
+                }
+            }
+            part { name: PART_ICON_CONTENT;
+                type: SWALLOW;
+                description {
+                    state: "default" 0.0;
+                    rel1{relative: 0.16 0; to: SIZE_SETTER;}
+                    rel2{relative: 0.84 0.6; to: SIZE_SETTER;}
+                    align: 0.5 0.5;
+                }
+            } //PART_ICON_CONTENT
+
+            part { name: PART_ICON_CONTENT_TOUCH;
+                type: IMAGE;
+                mouse_events: 1;
+                repeat_events: 1;
+                scale: 1;
+                description {
+                    state: "default" 0.0;
+                    rel1{relative: 0.0 0.0; to: PART_ICON_CONTENT;}
+                    rel2{relative: 1.0 1.0; to: PART_ICON_CONTENT;}
+                    aspect: 1.0 1.0;
+                    aspect_preference: BOTH;
+                    color: 0 0 0 0;
+                    image {
+                        normal: "../res/images/app_press_117.png";
+                    }
+                }
+                description{
+                    state: "icon_touched" 0.0;
+                    inherit: "default" 0.0;
+                    color: 0 0 0 250;
+                }
+            } //PART_ICON_CONTENT_TOUCH
+
+            part { name: PART_ICON_NAME;
+                type: TEXTBLOCK;
+                mouse_events: 1;
+                repeat_events: 1;
+                scale: 1;
+                description {
+                    state: "default" 0.0;
+                    rel1{relative: 0.04 0.63; to: SIZE_SETTER;}
+                    rel2{relative: 0.95 0.98; to: SIZE_SETTER;}
+                    color: 255 255 255 255;
+                    text {
+                            style: "icon_label";
+                            align: 0.5 0.0;
+                    }
+                }
+                description {
+                    state: "edit" 0.0;
+                    inherit: "default" 0.0;
+                    rel1{relative: 0.04 0.63 ; to: SIZE_SETTER;}
+                    rel2{relative: 0.95 1.0; to: SIZE_SETTER;}
+                    text {
+                        style: "icon_label_edit";
+                    }
+                }
+                description {
+                    state: "black_text" 0.0;
+                    inherit: "default" 0.0;
+                    color: 0 0 0 255;
+                }
+                description {
+                    state: "black_edit" 0.0;
+                    inherit: "black_text" 0.0;
+                    text {
+                        style: "icon_label_edit";
+                    }
+                }
+            }//PART_ICON_NAME
+        }
+        programs {
+            program {
+                name: "icon_touch_program";
+                signal: "mouse,down,1";
+                source: PART_ICON_CONTENT_TOUCH;
+                action: STATE_SET "icon_touched" 0.0;
+                target: PART_ICON_CONTENT_TOUCH;
+                transition: LINEAR 0.1;
+            }
+            program {
+                name: "icon_touch_release_program";
+                signal: "mouse,up,1";
+                source: PART_ICON_CONTENT_TOUCH;
+                action: STATE_SET "default" 0.0;
+                target: PART_ICON_CONTENT_TOUCH;
+                transition: LINEAR 0.1;
+            }
+            program {
+                name: "icon_clicked_program";
+                signal :"mouse,clicked,1";
+                source: PART_ICON_CONTENT_TOUCH;
+                action: SIGNAL_EMIT SIGNAL_ICON_CLICKED SIGNAL_SOURCE;
+            }
+            program {
+                name: "bg_edit_mode_on";
+                signal: SIGNAL_EDIT_MODE_ON;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "edit" 0.0;
+                target: PART_ICON_NAME;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "bg_edit_mode_off";
+                signal: SIGNAL_EDIT_MODE_OFF;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "default" 0.0;
+                target: PART_ICON_NAME;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+        }
+    }
+}

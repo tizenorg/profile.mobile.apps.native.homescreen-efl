@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "取消"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "确定"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "新建文件夹"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "显示"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "打开"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "编辑"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "添加"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "删除文件夹"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "输入文件夹名称"
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "创建"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "载入中…"
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "应用程序"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "音乐"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "基本"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "隐藏"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "复选框"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "勾选"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "标题"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "取消勾选"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "卸载"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "选择要添加的应用程序"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "选择应用程序以隐藏"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "选择应用程序以显示"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "查看方式"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "若要重新排列页面，您需要将视图类型更改为可自定义网格。"
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "是否卸载 %s？"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "迷你应用程序"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "不选"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "未命名文件夹"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "双击以关闭应用程序托盘。"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "双击以打开应用程序托盘。"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "双击以开启。"
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "按钮"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "删除"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "双击并按住以移动。"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "双击以关闭。"
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Drop view 打开。"
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "常用应用程序"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "主屏将由在下一屏幕中选中的多达 %d 个项目构成"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "在收藏应用程序中"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "移至 %s 文件夹。"
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "移动中的 %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "无内容"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "第 %1$d 页，共 %2$d 页"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "位置 %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "文件夹已打开。"
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "这将删除文件夹及其所含所有项目。"
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "无法添加更多应用程序。已达到最大应用程序数。"
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "无法载入数据。轻敲以重试。"
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "墙纸"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "应用程序"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "删除"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "禁用"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "帮助"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "主界面"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "杂志"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "手机"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "添加项目"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "文件夹"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "重新排列图标"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "重新排列页面"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "选择一个文本框"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "选择模板"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "添加文本框"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "更改墙纸"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "创建文件夹"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "删除文件夹"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "已下载应用程序"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "提取应用程序并删除文件夹"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "是否禁用该应用程序？"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "新页面将包含 S 日历、任务和 S 备忘录动态窗口"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "新页面将包含 Twitter 动态窗口。在下一个屏幕上，选择多达 %d 个您正在关注的人的时间轴以在新页面上显示。"
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "该文件夹将被删除，但其内的应用程序将在您的主屏幕上保持可用。是否删除该文件夹？"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "重新载入失败。设备内存已满。"
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "不支持此大小的字体"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "由于空间限制，无法添加额外的行"
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 个未读项目"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "编辑模式"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "总共 %d 个已选中。"
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d 个未读通知"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "菜单弹出窗口"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "用两个手指滑动以查看下一页"
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "弹出标题"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "提示窗口正文文本"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Home screen"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "页面已移动至 %2$d 之 %1$d。"
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "行%1$d，列%2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "添加页面"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "未选中"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "单选按钮"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "已选中"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "巧克饼干"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "爵士酷"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "默认字体"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "玛丽玫瑰"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "联系人"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "已达到最大字符限制"
+
+msgid "IDS_COM_SK_OK"
+msgstr "确定"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "取消"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "完成"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "显示 %d 个项目"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "日程表"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "双击以关闭菜单。"
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "跳过"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "选择"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "互联网"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d 已选中"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "下一步"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "将隐藏 %d 个项目。"
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "将删除该页面及页面包含的所有项目。"
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "删除页面"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "删除"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "显示隐藏的应用程序"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "隐藏应用程序"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "显示已禁用的应用程序"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "%s 无法卸载。将改为禁用。"
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "将隐藏 1 个项目。"
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "无法将该主页框添加至主屏幕。主屏幕上的空间不足。移除部分主页框并重试。"
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "无法添加"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "主页框"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "全部页面"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "无内容"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "添加 Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "移除"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "移除文件夹"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "将移除文件夹。该文件夹中的应用程序将不会卸载。"
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "手动"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "按名称 (A-Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s将被卸载。"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "无法重新排列按名称 (A-Z) 排序的图标"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "完成"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "取消"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "排序项目"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "排序项目"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "小组件"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "无法添加小组件"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "添加小组件"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "主屏幕上的可用空间不足。请移除部分小组件并重试。"
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "编辑"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "编辑"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "主题"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "未安装应用程序。"
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "将停用 %s 及所有相关功能。若要重新启用，请前往设定 > 应用程序管理器。"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "已达到文件夹中的最大应用程序数 (%d)"
+

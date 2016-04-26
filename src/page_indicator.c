@@ -37,6 +37,7 @@ page_indicator_t * page_indictor_create(Evas_Object *scroller)
     page_indicator = (page_indicator_t *)malloc(sizeof(page_indicator_t));
     page_indicator->scroller = scroller;
     page_indicator->page_count = 0;
+    page_indicator->current_page = -1;
 
     page_indicator->box = elm_box_add(homescreen_efl_get_win());
     if (!page_indicator->box) {
@@ -105,10 +106,12 @@ void page_indicator_scroller_resize(page_indicator_t *page_indicator, int width,
 void page_indicator_set_current_page(page_indicator_t *page_indicator, int page_number)
 {
     Evas_Object *edje = NULL;
-    LOGD("Set Current :%d", page_number);
+    LOGD("Set Current :%d, old : %d", page_number, page_indicator->current_page);
 
-    edje = elm_layout_edje_get(page_indicator->unit[page_indicator->current_page]);
-    edje_object_signal_emit(edje, SIGNAL_PAGE_IDICATOR_DEFAULT, SIGNAL_SOURCE);
+    if (page_indicator->current_page != -1) {
+        edje = elm_layout_edje_get(page_indicator->unit[page_indicator->current_page]);
+        edje_object_signal_emit(edje, SIGNAL_PAGE_IDICATOR_DEFAULT, SIGNAL_SOURCE);
+    }
 
     page_indicator->current_page = page_number;
     edje = elm_layout_edje_get(page_indicator->unit[page_number]);

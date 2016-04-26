@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Cancel"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Create folder"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Show"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Open"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Edit"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Add"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Delete folder"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Enter folder name."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Create"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Loading..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Applications"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Music"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Basic"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Hide"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Tickbox"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Tick"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Title"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Untick"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Uninstall"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Select apps to add"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Select apps to hide"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Select apps to show"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "View as"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "To rearrange pages, change the view type to a customizable grid."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Uninstall %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mini apps"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Deselect"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Unnamed folder"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Double tap to close app tray."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Double tap to open app tray."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Double tap to open."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Button"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Delete"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Double tap and hold to move."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Double tap to close."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Drop view open."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Favorite apps"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Home screen will be formed with up to %d items selected in the next screen."
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "In Favorite applications"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Move into %s folder."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Moving %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "No content"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Page %1$d of %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Position %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "The folder is open."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "This will delete the folder and all the items it contains."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Unable to add more apps. Maximum number of apps reached."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Unable to load data. Tap to retry."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Wallpapers"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Apps"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Delete"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Turn off"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Help"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Home"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Magazine"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Device"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Add items"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Folder"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Rearrange icons"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Rearrange pages"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Select a text box"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Select template"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Add text box"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Change wallpaper"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Create folder"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Delete folder"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Downloaded apps"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Extract apps and delete folder"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Disable this application?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "The new page will consist of the S Planner, Tasks, and S Memo Dynamic Boxes."
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "The new page will consist of Twitter Dynamic Boxes. On the next screen, select up to %d timelines of people you are following to be shown on the new page."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "This folder will be deleted, but the applications within it will remain available on your Home screen. Delete this folder?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Failed to reload. Device memory full."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Font not supported at this size."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Unable to add extra line due to space restriction."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 unread item"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Edit mode"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "%d selected in total."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d unread notifications"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Menu pop-up"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Swipe with two fingers to view next page."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Pop-up header"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Text in body of pop-up"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Home screen"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Page moved to %1$d of %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Row %1$d, column %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Add page"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Not selected"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Radio button"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Selected"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Default font"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Contacts"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Maximum number of characters reached."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Cancel"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Done"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Showing %d items"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Schedule"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "UDRGothic"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Double tap to close the menu."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Skip"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Select"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d selected"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Next"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d items will be hidden."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "This page and all the items it contains will be deleted."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Delete page"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Delete"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Show hidden applications"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Hide applications"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Show disabled applications"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "%s cannot be uninstalled. It will be turned off instead."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 item will be hidden."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Unable to add this Home Box to the Home screen. There is not enough space on the Home screen. Remove some Home Boxes and try again."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Unable to add"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Boxes"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "All pages"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Blank"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Add Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Remove"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Remove folder"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Folder will be removed. Applications in this folder will not be uninstalled."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Manually"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "By name (A-Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s will be uninstalled."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Unable to rearrange icons sorted by name (A-Z)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "DONE"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "CANCEL"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Sort items"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Sort items"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Widgets"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Unable to add widget"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Add widget"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "There is not enough space on the Home screen. Remove some widgets and try again."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Edit"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Edit"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Themes"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Application not installed."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s and all the features related to it will be turned off. To turn it on again, go to Settings > Application manager."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Maximum number of applications in folder (%d) reached."
+

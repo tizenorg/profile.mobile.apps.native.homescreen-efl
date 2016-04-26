@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Anuluj"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Utwórz katalog"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Pokaż"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Otwórz"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Edytuj"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Dodaj"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Usuń katalog"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Wpisz nazwę katalogu."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Utwórz"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Ładuję..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Aplikacje"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Muzyka"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Podstawowy"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Ukryj"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Pole zaznaczenia"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Zaznaczenie"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Tytuł"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Brak zaznaczenia"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Odinstaluj"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Wybór apl. do dod."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Wybór aplikac. do ukrycia"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Wybór aplikacji do wyśw."
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Wyświetl jako"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Aby zmienić rozmieszczenie stron, musisz przełączyć typ widoku na siatkę niestandardową."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Odinstalować %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mini-aplikac."
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Odznacz"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Katalog bez nazwy"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Dotknij dwukrotnie, aby zamknąć zasobnik aplikacji."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Dotknij dwukrotnie, aby otworzyć zasobnik aplikacji."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Dotknij dwukrotnie, aby otworzyć."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Przycisk"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Usuń"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Dotknij dwukrotnie i przytrzymaj, aby przesunąć."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Dotknij dwukrotnie, aby zamknąć."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Funkcja Drop View jest otwarta."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Ulubione aplikacje"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Zostanie utworzony ekran startowy złożony z elementów wybranych na następnym ekranie (maksymalnie %d)"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "W ulubionych aplikacjach"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Przenieś do katalogu %s."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Przenoszenie %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Brak zawartości"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Strona %1$d z %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Pozycja %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Katalog jest otwarty."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "To spowoduje usunięcie folderu i wszystkich znajdujących się w nim elementów."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Nie można dodać więcej aplikacji. Osiągnięto ich maksymalną liczbę."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Nie można załadować danych. Dotknij, aby spróbować ponownie."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Tapety"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Aplik."
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Usuń"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Wyłącz"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Pomoc"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Główna"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Magazyn"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telefon"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Dodaj elementy"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Katalog"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Zmiana położenia ikon"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Zmiana położenia stron"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Wybierz pole tekstowe"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Wybór szablonu"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Dodaj pole tekstowe"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Zmień tapetę"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Utwórz katalog"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Usuń katalog"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Pobrane aplikacje"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Wyodrębnij apl. i usuń katalog"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Wyłączyć tę aplikację?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Nowa strona będzie składać się z pól Dynamic Box aplikacji Terminarz S, Zadania i S Memo"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Nowa strona będzie składać się z pól Dynamic Box Twittera. Na kolejnym ekranie wybierz osie czasu (maksymalnie: %d) obserwowanych przez Ciebie osób, jakie mają być wyświetlane na nowej stronie."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Ten katalog zostanie usunięty, ale znajdujące się w nim aplikacje pozostaną dostępne na ekranie startowym. Usunąć ten katalog?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Odświeżenie nie powiodło się. Pamięć urządzenia pełna."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Czcionka nie jest obsługiwana w tym rozmiarze."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Nie można dodać dodatkowej linii z powodu ograniczenia miejsca."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "Nieprzeczytanych elementów: 1"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Tryb edycji"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Łącznie wybrano elementów: %d."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "Nieprzeczytanych powiadomień: %d"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Menu wyskakujące"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Przeciągnij dwoma palcami, aby wyświetlić następną stronę."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Nagłówek wyskakującego okna"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Tekst w treści wyskakującego okna"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Ekran startowy"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Strona przeniesiona na %1$d z %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Wiersz %1$d, kolumna %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Dodaj stronę"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Niewybrany"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Przycisk radiowy"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Wybrano"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Czcionka domyślna"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Książka telefoniczna"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Osiągnięto maksymalną liczbę znaków."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Anuluj"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Gotowe"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Wyświetlanie elementów: %d"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Terminarz"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Dotknij dwukrotnie, aby zamknąć menu."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Pomiń"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Wybierz"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "Wybranych: %d"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Dalej"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "Elementów do ukrycia: %d."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Ta strona i wszystkie znajdujące się na niej elementy zostaną usunięte."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Usuń stronę"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Usuń"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Pokaż ukryte aplikacje"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Ukryj aplikacje"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Pokaż wyłączone aplikacje"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "Nie można odinstalować aplikacji %s. Zamiast tego aplikacja ta zostanie wyłączona."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 element zostanie ukryty."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Nie można dodać tego pola Home Box do ekranu startowego. Za mało miejsca na ekranie startowym. Usuń niektóre pola Home Box i spróbuj ponownie."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Nie można dodać"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Pola Home Box"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Wszystkie strony"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Pusty"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Dodaj Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Usuń"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Usuń katalog"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Katalog zostanie usunięty. Aplikacje w tym katalogu nie zostaną odinstalowane."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Ręcznie"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Wg nazwy (A–Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "Aplikacja %s zostanie odinstalowana."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Nie można zmienić rozmieszczenia ikon posortowanych wg nazwy (A–Z)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "GOTOWE"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ANULUJ"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Sortuj elementy"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Sortowanie elementów"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Widgety"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Nie można dodać widgetu"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Dodawanie widgetu"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Za mało miejsca na ekranie startowym. Usuń niektóre widgety i spróbuj ponownie."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Edycja"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Edytuj"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Motywy"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Aplikacja nie została zainstalowana."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "Aplikacje %s i wszystkie funkcje z nią związane zostaną wyłączone. Aby włączyć ją ponownie, przejdź do menu Ustawienia > Menedżer aplikacji."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Osiągnięto maksymalną liczbę aplikacji w katalogu (%d)."
+

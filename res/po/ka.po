@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "გაუქმება"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "კი"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "შექმენი საქაღალდე"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "ჩვენება"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "გახსნა"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "რედაქტ."
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "დამატ."
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "საქაღალდის წაშლა"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "შეიყვანეთ საქაღალდის სახელი."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "შექმნა"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "იტვირთება..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "პროგრამები"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "მუსიკა"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "ძირითადი"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "დამალვა"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "მოსანიშნი უჯრა"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "მონიშვნა"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "სათაური"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "მონიშვნის გაუქმება"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "ინსტალაციის გაუქმება"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "აირჩიეთ დასამატებ."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "აირჩიეთ დასამალი აპები"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "აირჩიეთ გამოსაჩენი აპები"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "დათვალიერება როგორც"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "თუ გსურთ სხვაგვარად დაალაგოთ გვერდები, უნდა აირჩიოთ გაფორმებადი ბადის ხედი."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "ამოინსტალირდეს %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "მინი-პროგრამები"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "მონიშვნის მოხსნა"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "საქაღალდე სახელის გარეშე"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "შეეხეთ ორჯერ და პროგრამის ლანგარი დაიხურება."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "შეეხეთ ორჯერ და პროგრამის ლანგარი გაიხსნება."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "გასახსნელად შეეხეთ ორჯერ."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "ღილაკი"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "წაშლა"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "ორჯერ შეეხეთ და არ აუშვათ ხელი, რომ გადაიტანოთ."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "ორჯერ შეეხეთ და დაიხურება."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "ჩასმის ხედი გახსნილია."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "ფავორიტი პროგრამები"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "საწყისი ეკრანი შედგენილი იქნება შემდეგ ეკრანზე არჩეული %d ელემენტისგან"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "ფავორიტ პროგრამებში"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "„%s“ საქაღალდეზე გადასვლა."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "გადაადგილდება %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "მასალა არ არის"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "გვერდი %1$d, სულ %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "პოზიცია %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "საქაღალდე ღიაა."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "ამით წაიშლება საქაღალდე და მთელი მისი შემცველობა."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "პროგრამების დამატება შეუძლებელია. მიღწეულია პროგრამების მაქსიმალური რაოდენობა."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "მონაცემთა ჩატვირთვა შეუძლებელია. შეეხეთ და გაიმეორეთ მცდელობა"
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "ფონები"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "პროგრ."
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "წაშლა"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "გამორთვა"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "დახმარ."
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "საწ.გვ"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "ჟურნალი"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "ტელ."
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "ელემენტების დამატება"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "საქაღალდე"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "ნიშნების თავიდან დალაგება"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "გვერდების თავიდან დალაგება"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "აირჩიეთ ტექსტური ველი"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "აირჩიეთ შაბლონი"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "დაამატეთ ტექსტური ველი"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "ფონის შეცვლა"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "საქაღალდის შექმნა"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "საქაღალდის წაშლა"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "ჩამოტვირთული პროგრამები"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "ამოიღე აპები, წაშალე საქაღალდე"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "გამოირთოს ეს პროგრამა?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "ახალი გვერდის შემადგენლობაში შევა S Planner-ს, დავალებებისა და S Memo-ს Dynamic Box-ები"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "ახალ გვერდზე იქნება Twitter-ის Dynamic Box-ები. შემდეგ გვერდზე აირჩიეთ ახალ გვერდზე გამოსაჩენი მაქსიმუმ %d მომხმარებლის ქრონიკა, რომლებსაც ადევნებთ თვალს."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "ეს საქაღალდე წაიშლება, მაგრამ მასში მყოფი პროგრამების გახსნას შეძლებთ საწყის ეკრანიდან. წაიშალოს ეს საქაღალდე?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "ჩატვირთვა ვერ გამეორდა. აპარატის მეხსიერება სავსეა."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "ამ ზომის შრიფტი არ არის გათვალისწინებული"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "დამატებითი ხაზის დამატება შეუძლებელია ადგილის შეზღუდვის გამო"
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 წაუკითხავი ელემენტი"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "რედაქტირების რეჟიმი"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "სულ შერჩეულია %d."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d წაუკითხავი შეტყობინება"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "მენიუს სარკმელი"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "შემდეგი გვერდი ნახეთ ორი თითის გადასმით."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "დიალოგის სარკმლის თავსართი"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "დიალოგის სარკმელში ნაჩვენები ტექსტი"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "საწყისი ეკრანი"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "გვერდი გადავიდა %1$d-ზე, სულ %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "სტრიქონი %1$d, სვეტი %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "გვერდის დამატება"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "არ არის არჩეული"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "მოსანიშნი წრე"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "შერჩეულია"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "საწყისი ფონტი"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "კონტაქტები"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "მიღწეულია სიმბოლოების მაქსიმალური რაოდენობა."
+
+msgid "IDS_COM_SK_OK"
+msgstr "კი"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "გაუქმება"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "შესრულდა"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "ჩანს %d ელემენტი"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "განრიგი"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "შეეხეთ ორჯერ და მენიუ დაიხურება."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "გამოტ."
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "არჩევა"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "ინტერნეტი"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d არჩეულია"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "შემდეგი"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d ელემენტი დაიმალება."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "წაიშლება გვერდი და მთელი მისი შემცველობა."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "გვერდის წაშლა"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "წაშლა"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "დამალული აპლიკაციების ჩვენება"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "აპლიკაციების დამალვა"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "გათიშული აპლიკაციების ჩვენება"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "%s ვერ დეინსტალირდება. სანაცვლოდ, გამოირთვება."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 ელემენტი დაიმალება."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "საწყის ეკრანზე ამ Home Box-ის დამატება შეუძლებელია. საწყის ეკრანზე არ არის საკმარისი ადგილი. წაშალეთ ზოგიერთი Home Box და ისევ სცადეთ."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "ვერ ვამატებ"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Box-ები"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "ყველა გვერდი"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "ცარიელი"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Dynamic Box-ის დამატება"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "წაშლა"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "საქაღალდის მოცილება"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "საქაღალდე წაიშლება. ამ საქაღალდეში პროგრამების ამოინსტალირება არ მოხდება."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "მექანიკურად"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "სახელით (ა-ჰ)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "შესრულდება %s პროგრამის დეინსტალაცია."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "სახელით (ა-ჰ) დალაგებული ნიშნების რიგის შეცვლა შეუძლებელია."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "მზადაა"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "გაუქმება"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "ელემენტების დალაგება"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "ელემენტების დალაგება"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "ვიჯეტები"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "ვიჯეტის დამატება შეუძლებელია"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "ვიჯეტის დამატება"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "საწყის ეკრანზე არ არის საკმარისი ადგილი. წაშალეთ ზოგიერთი ვიჯეტი და ისევ სცადეთ."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "შესწორება"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "რედაქტირება"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "თემები"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "პროგრამა არაა დაინსტალირებული."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s და მასთან დაკავშირებული ყველა ფუნქცია გაითიშება. მის ხელახლა ჩასართავად გახსენით პარამეტრები > პროგრამების მმართველი"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "საქაღალდეში მიღწეულია აპლიკაციის მაქსიმალური რაოდენობა (%d)."
+

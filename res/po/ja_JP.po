@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "キャンセル"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "フォルダ作成"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "表示"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "開く"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "編集"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "追加"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "フォルダを削除"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "フォルダ名を入力してください。"
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "作成"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "読み込み中..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "アプリケーション"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "音楽"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "標準"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "非表示"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "チェックボックス"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "チェックを付ける"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "タイトル"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "チェックを外す"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "アンインストール"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "追加アプリを選択"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "非表示にするアプリを選択"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "表示するアプリを選択"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "表示形式"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "ページを並べ替えるには、表示タイプをカスタマイズ可能グリッドに変更する必要があります。"
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "%sをアンインストールしますか？"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "ミニアプリ"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "選択解除"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "名称未設定のフォルダ"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "アプリトレイを閉じるにはダブルタップします。"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "アプリトレイを開くにはダブルタップします。"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "開くにはダブルタップしてください。"
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "ボタン"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "削除"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "移動するには、ダブルタップして長押しします。"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "閉じるにはダブルタップします。"
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Drop Viewが開きました。"
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Boxです。"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "お気に入りアプリ"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "ホーム画面は次の画面で選択した%d件までのアイテムで構成されます。"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "お気に入りアプリケーションの中で"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "%sフォルダに移動します。"
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "%sを移動"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "コンテンツがありません"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "%2$dページ中%1$dページ"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "ポジション%d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "フォルダを開きます。"
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "フォルダとフォルダ内のアイテムを全て削除します。"
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "これ以上アプリを追加できません。アプリの最大数に達しました。"
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "データをロードできません。タップして再度実行してください。"
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "壁紙"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "アプリ"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "削除"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "無効"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "ヘルプ"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "ホーム"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "マガジン"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "電話"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "アイテムを追加"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "フォルダ"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "アイコンを並べ替え"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "ページを並べ替え"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "テキストボックスを選択"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "テンプレートを選択"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "テキストボックスを追加"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "壁紙を変更"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "フォルダを作成"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "フォルダを削除"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "ダウンロード済みアプリ"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "フォルダを削除してアプリを展開"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "このアプリケーションを無効にしますか？"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "新しいページには、Sプランナー、タスク、SメモのDynamic Boxがあります。"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "新しいページには、TwitterのDynamic Boxがあります。フォロー中の人たちのタイムラインを表示するために、次の画面で最大%d人まで選択してください。"
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "このフォルダは削除されますが、フォルダ内のアプリケーションはホーム画面で引き続き利用できます。このフォルダを削除しますか？"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "再読み込みに失敗しました。システムメモリ(本体)の容量がいっぱいです。"
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "選択したフォントは、設定中のフォントサイズに対応していません。"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "スペースの制限により行を追加できません。"
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1件の未読アイテム"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "編集モード"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "合計%d件を選択しました。"
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d件の未読通知"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "メニューのポップアップ"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "次のページを表示するには、2本の指でスワイプします。"
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "ポップアップのヘッダーです。"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "ポップアップの本文テキストです。"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "ホーム画面"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "ページを%2$dページ中%1$dページ目に移動しました。"
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "%1$d行、%2$d列"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "ページを追加"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "選択なし"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "ラジオボタン"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "選択"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "チョコクッキー"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "クールジャズ"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "標準フォント"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "ローズマリー"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "電話帳"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "最大文字数に達しました。"
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "キャンセル"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "完了"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "%d件のアイテムを表示"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UD丸ゴシック"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UD明朝"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDゴシック"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "予定"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "ポップ"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "UD丸ゴシック"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "メニューを閉じるにはダブルタップします。"
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "スキップ"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "選択"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "ブラウザ"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d件選択"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "次へ"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d件のアイテムを非表示にします。"
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "このページとその中の全てのアイテムを削除します。"
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "ページを削除"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "削除"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "非表示のアプリを表示"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "アプリを非表示"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "無効なアプリを表示"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "%sをアンインストールすることができません。代わりにアプリは無効になります。"
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1件のアイテムを非表示にします。"
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "ホーム画面に十分なスペースがないため、Home Boxをホーム画面に追加することができません。不要なHome Boxを削除し、再度実行してください。"
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "追加不可"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Box"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "全てのページ"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "空白です。"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Dynamic Boxを追加"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "削除"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "フォルダを削除"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "フォルダを削除します。フォルダ内のアプリケーションはアンインストールされません。"
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "手動"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "名前順(A～Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%sをアンインストールします。"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "名前順(A～Z)で表示しているアイコンを並べ替えることはできません。"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "完了"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "キャンセル"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "アイテムを並べ替え"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "アイテムを並べ替え"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "ウィジェット"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "ウィジェットの追加不可"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "ウィジェットを追加"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "ホーム画面に十分なスペースがありません。不要なウィジェットを削除して再度実行してください。"
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "編集"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "編集"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "テーマ"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "アプリケーションがインストールされていません。"
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%sと関連する全ての機能が無効になります。再度有効にするには、[設定] > [アプリケーション管理]に移動してください。"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "フォルダ内のアプリケーションの最大件数(%d件)に達しました。"
+

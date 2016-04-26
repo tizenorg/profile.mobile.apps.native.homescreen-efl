@@ -33,9 +33,12 @@ typedef enum {
     HOMESCREEN_VIEW_APPS_EDIT,
     HOMESCREEN_VIEW_APPS_CHOOSE,
     HOMESCREEN_VIEW_UNKNOWN,
-} homescreen_view_t;
-
+} homescreen_view_type;
 
 Evas_Object *homescreen_efl_get_win(void);
+
+void homescreen_efl_hw_menu_key_release(void);
+void homescreen_efl_hw_home_key_release(void);
+void homescreen_efl_hw_back_key_release(void);
 
 #endif /* __HOMESCREEN_EFL_H__ */

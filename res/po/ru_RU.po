@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Отмена"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Создать папку"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Показать"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Открыть"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Изменить"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Добав."
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Удалить папку"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Введите имя папки."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Созд."
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Загрузка..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Приложения"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Музыка"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Основной"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Скрыть"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Флажок"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Установить"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Название"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Снять"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Удалить"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Выбор приложений"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Выбер. прил. для скрытия"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Выберите прил. для отобр."
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Вид просмотра"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Чтобы изменить порядок страниц, необходимо изменить вид на “Настраиваемая сетка”."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Удалить %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Мини-приложения"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Отменить выбор"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Папка без имени"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Дважды нажмите, чтобы закрыть область приложений."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Дважды нажмите, чтобы открыть область приложений."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Дважды нажмите, чтобы открыть."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Кнопка"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Удалить"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Дважды коснитесь и удерживайте для перемещения."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Дважды нажмите, чтобы закрыть."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Раскрывающийся просмотр открыт."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Избранные приложения"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Будет создан главный экран с элементами, выбранными на следующем экране. Можно выбрать до %d элементов."
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "В избранные приложения"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Переместить в папку %s."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Перемещение %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Нет содержимого"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Страница %1$d из %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Положение %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Папка открыта."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Папка со всем содержимым будет удалена."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Невозможно добавить другие приложения. Достигнуто максимальное количество приложений."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Не удалось загрузить данные. Коснитесь для повтора"
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Обои"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Меню"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Удалить"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Отключить"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Справка"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Дом"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Журнал"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Телефон"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Добавить элементы"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Папка"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Пересортировка значков"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Пересортировка страниц"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Выберите текстовое поле"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Выбрать шаблон"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Добавить надпись"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Изменить обои"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Создать папку"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Удалить папку"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Загруж. прилож."
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Извл. приложения и удал. папку"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Отключить это приложение?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Новая страница будет включать элементы Dynamic Box для S Planner, задач и S Memo."
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Новая страница будет включать элементы Dynamic Box для Twitter. На следующем экране выберите до %d хроник людей, на которых вы подписаны, чтобы добавить их на новую страницу."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Эта папка будет удалена, но приложения из нее останутся доступными на главном экране. Удалить папку?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Сбой повторной загрузки. Память устройства заполнена."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Шрифт не поддерживается для этого размера"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Не удалось добавить строку из-за ограничения места"
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 непрочитанный элемент"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Режим редактирования"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Всего выбрано: %d."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "Непрочитанных уведомлений: %d"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Всплывающее окно меню"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Проведите двумя пальцами, чтобы просмотреть следующую страницу."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Всплывающий заголовок"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Текст во всплывающем окне"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Главный экран"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Страница перемещена на %1$d из %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Строка %1$d, столбец %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Добавить страницу"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Не выбрано"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Переключатель"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Выбрано"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Шрифт по умолчанию"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Контакты"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Достигнуто максимальное число символов."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Отмена"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Готово"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Отображается элементов: %d"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Расписание"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Дважды нажмите, чтобы закрыть меню."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Пропуск"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Выделить"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Интернет"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "Выбрано: %d"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Далее"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "Элементы (%d) будут скрыты."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Страница со всем содержимым будет удалена."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Удалить страницу"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Удалить"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Показать скрытые приложения"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Скрыть приложения"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Вывести отключенные приложения"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "Невозможно удалить приложение %s. Оно будет отключено."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 элемент будет скрыт."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Не удалось добавить Home Box на главный экран. Недостаточно места на главном экране. Удалите некоторые элементы Home Box и повторите попытку."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Не удалось добавить"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Элементы Home Box"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Все страницы"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Пусто"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Добавить Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Удалить"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Удалить папку"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Папка будет удалена. Приложения в этой папке не будут удалены."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Вручную"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "По имени (от А до Я)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "Приложение %s будет удалено."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Невозможно изменить порядок значков, отсортированных по имени (от А до Я)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "ГОТОВО"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ОТМЕНА"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Сортировать элементы"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Сортировать элементы"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Виджеты"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Не удалось добавить виджет"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Добавить виджет"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Недостаточно места на главном экране. Удалите несколько виджетов и повторите попытку."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Изменить"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Изменить"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Темы"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Приложение не установлено."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s и все связанные возможности отключатся. Чтобы снова включить их, перейдите в меню “Параметры” > “Диспетчер приложений”"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Достигнуто максимальное число приложений в папке (%d)."
+

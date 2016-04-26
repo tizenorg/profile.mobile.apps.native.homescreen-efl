@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Ezeztatu"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "Ados"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Karpeta sortu"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Erakutsi"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Ireki"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Editatu"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Gehitu"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Karpeta ezabatu"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Idatzi karpetaren izena."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Sortu"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Kargatzen..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Aplikazioak"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Musika"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Oinarrizkoa"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Ezkutatu"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Markatze laukia"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Markatu"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Izenburua"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Desmarkatu"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Desinstalatu"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Haut. gehitz. apl."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Hautatu ezkutatzeko apl."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Hautatu erakusteko apl."
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Nola ikusi"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Orriak berrantolatzeko, ikuspegi mota sareta pertsonalizagarrira aldatu behar duzu."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Desinstalatu %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mini aplikaz."
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Desmarkatu"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Izenik gabeko karpeta"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Ukitu bi aldiz aplikazio ontzia ixteko."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Ukitu bi aldiz aplikazio ontzia irekitzeko."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Ukitu bi aldiz irekitzeko."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Botoia"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Ezabatu"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Ukitu bi aldiz eta eutsi mugitzeko."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Bi aldiz ukitu ixteko."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Zabaldu ikuspegia irekita."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Gogoko aplikazioak"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Pantaila nagusia hurrengo pantailan hautatutako %d elementurekin ere osatuko da"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "Gogoko aplikazioetan"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Mugitu %s karpetara."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "%s mugitzea"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Edukirik ez"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "%1$d. orria %2$d-(e)tik"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "%d kokapena"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Karpeta irekita dago"
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Horrek karpeta eta horretan dauden elementu guztiak ezabatuko ditu"
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Ezin dira aplikazio gehiago erantsi. Aplikazioen gehieneko kopurura iritsi zara."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Ezin dira datuak kargatu. Ukitu berriz saiatzeko."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Horma paperak"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Aplik."
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Ezab."
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Ezgaitu"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Laguntza"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Hasi."
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Aldizk."
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telef."
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Elementuak gehitu"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Karpeta"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Berrantolatu ikonoak"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Berrantolatu orriak"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Hautatu testu kutxa"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Hautatu txantiloia"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Gehitu testu kutxa"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Aldatu horma papera"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Sortu karpeta"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Ezabatu karpeta"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Deskargatutako aplikazioak"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Atera apl. eta ezabatu karpeta"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Ezgaitu aplikazio hau?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Orri berriak Egutegiak, Atazek eta S Memo Dynamic Box-ek osatuko dute"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Orri berria Twitter Dynamic Box-ek osatuko dute. Hurrengo pantailan, hautatu orri berrian erakutsiko diren jarraitzen dituzun gehienez %d pertsonaren denbora lerroak."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Karpeta hau ezabatuko da, baina horren barruko aplikazioak erabilgarri egongo dira pantaila nagusian. Ezabatu karpeta?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Ezin da berriz kargatu. Gailuaren memoria beteta."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Ez da letra neurri honetan onartzen."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Ezin da beste lerro bat gehitu espazio mugak direla eta."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "Irakurrita gabeko elementu 1"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Editatu modua"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Guztira %d hautatu dira."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d irakurri gabeko jakinarazpen"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Menu agerkaria"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Irristatu bi hatzez, hurrengo orria ikusteko."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Agerkari goiburua"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Agerkariaren gorputzeko testua"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Hasierako pantaila"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Orria hona mugituta: %1$d %2$d-(e)ra."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "%1$d. lerroa, %2$d. zutabea"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Gehitu orria"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Ez da aukeratu"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Irratiaren botoia"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Aukeratuta"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Lehenetsitako letra mota"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Kontaktuak"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Gehienezko karaktere kopurura heldu zara"
+
+msgid "IDS_COM_SK_OK"
+msgstr "Ados"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Ezeztatu"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Amaituta"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "%d elementu erakustea"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Antolaketa"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Ukitu bi aldiz menua ixteko."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Pasatu"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Aukeratu"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d aukeratuta"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Hurrengoa"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d elementu ezkutatuko dira."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Orri hau eta bertako elementu guztiak ezabatuko dira."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Ezabatu orria"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Ezabatu"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Erakutsi ezkutat. aplikazioak"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Ezkutatu aplikazioak"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Erakutsi ezgaitut. aplikazioak"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "Ezin da %s desinstalatu. Ezgaitu egingo da."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "Elementu 1 ezkutatuko da."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Ezin da Hasierako koadro hau pantaila nagusian gehitu. Ez dago nahikoa espazio pantaila nagusian. Kendu hainbat Hasierako koadro eta saiatu berriz."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Ezin da gehitu"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Hasierako koadroak"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Orri guztiak"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Hutsik"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Gehitu Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Ezabatu"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Kendu karpeta"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Karpeta kenduko da. Karpeta honetako aplikazioak ez dira desinstalatuko."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Eskuz"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Izen. arab. (Atik Zra)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s desinstalatuko da"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Ezin dira ikonoak izenaren arabera berrantolatu (Atik Zra)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "EGINA"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "UTZI"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Sailkatu elementuak"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Sailkatu elementuak"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Widgetak"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Ezin da widgeta gehitu"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Gehitu widgeta"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Ez dago nahikoa espazio pantaila nagusian. Kendu hainbat widget eta saiatu berriz."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Editatu"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Editatu"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Gaiak"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Aplikazioa ez dago instalatuta"
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s eta berari lotutako eginkizun guztiak desgaituko dira. Berriz ere gaitzeko, zoaz Ezarpenak > Aplikazio kudeatzailera."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Karpeta bakoitzeko aplikazioen gehieneko kopurura (%d) iritsi zara."
+

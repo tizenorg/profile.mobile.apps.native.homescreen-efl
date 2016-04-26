@@ -53,10 +53,26 @@
 #define GROUP_APPS_BG_LY "apps_bg_ly"
 
 #define ANIMATION_RESIZE_TIME 0.3
-#define SIGNAL_EDIT_MODE_ON "apps_edit_on"
-#define SIGNAL_EDIT_MODE_OFF "apps_edit_off"
+#define SIGNAL_EDIT_MODE_ON "edit_on"
+#define SIGNAL_EDIT_MODE_OFF "edit_off"
 
 #define SIGNAL_APPS_VIEW_HIDE "apps_bg_hide"
 #define SIGNAL_APPS_VIEW_SHOW "apps_bg_show"
 #define SIGNAL_APPS_VIEW_ANIM "apps_bg_anim"
+#define APPS_VIEW_COL 4
+#define APPS_VIEW_ROW 5
+
+#define APPS_VIEW_BG_OPACITY 70
+
+#define GROUP_APP_ICON_LY "icon_ly"
+#define PART_ICON_CONTENT "icon_content"
+#define PART_ICON_CONTENT_TOUCH "icon_touch"
+#define PART_ICON_NAME "icon_name"
+
+#define SIGNAL_ICON_CLICKED "icon_clicked"
+
+#define GROUP_FOLDER_ICON_LY "folder_ly"
+#define SIGNAL_FRAME_POSSIBLE_SHOW "frame_possible_show"
+#define SIGNAL_FRAME_IMPOSSIBLE_SHOW "frame_impossible_show"
+
 #endif /* __EDC_CONF_H__ */

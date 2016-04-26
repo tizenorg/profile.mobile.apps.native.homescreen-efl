@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Тоқтату"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Қалтаны құру"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Көрсету"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Ашу"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Өзгер."
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Қосу"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Қалтаны жою"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Қалта атын енгізңіз."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Жазу"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Жазылуда..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Қосымшалар"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Музыка"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Негізгі"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Жасыру"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Белгі көзі"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Белгі"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Тақырыбы"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Белгілемеу"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Жою"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Қосу үш. бағ. таң."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Жасыру үшін бағд-р таңдау"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Көрс.үшін бағд-рды таңдау"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Көру түрі"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Беттерді қайта реттеу үшін, реттелмелі тор көрінісіне өзгерту керек."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "%s жою керек пе?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Шағын бағдар-р"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Таңдауды алып тастау"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Атаусыз қалта"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Бағдарлама науасын жабу үшін екі рет түртіңіз."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Бағдарлама науасын ашу үшін екі рет түртіңіз."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Ашу үшін екі рет түртіңіз."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Түйме"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Жою"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Жылжыту үшін екі рет түртіп ұстаңыз."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Жабу үшін екі рет түртіңіз."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Сүйреу көрінісі ашылды."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Таңдаулы бағдарламалар"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Бастапқы экран келесі экранда таңдалған %d элементке дейін жасалады"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "Таңдаулы бағдарламаларда"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "%s қалтасына жылжыту."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "%s жылжыту"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Мазмұн жоқ"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "%2$d ішіндегі %1$d-бет"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "%d орны"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Қалта ашық."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Бұл қалта мен ондағы барлық элементтерді жояды."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Басқа бағдарлама қосу мүмкін емес. Бағдарламалардың ең көп санына жетті."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Деректерді жүктеу мүмкін емес. Қайталау үшін түртіңіз"
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Түсқағаздар"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Қолданбалар"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Жою"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Өшіру"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Анық-ма"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Басты"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Журнал"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Телефон"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Элементтер қосу"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Қалта"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Белгішелерді қайта ретке келтіру"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Беттерді қайта ретке келтіру"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Мәтіндік терезені таңдау"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Үлгі таңдау"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Мәтіндік терезені қосу"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Түсқағазды өзгерту"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Қалта жасау"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Қалтаны жою"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Жүктелген бағдарламалар"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Бағд-рды шығ.және қалтаны жою"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Бұл бағдарламаны өшіру керек пе?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Жаңа бет S Planner, Тапсырмалар және S Memo Dynamic Boxes тұрады"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Жаңа бет Twitter Dynamic Boxes қамтиды. Келесі экранда жаңа бетте көрсетілуін күтудегі адамдардың %d дейінгі уақыт шкаласын таңдаңыз."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Бұл қалта жойылады, бірақ оның ішіндегі бағдарламалар бастапқы экраныңызда қол жетімді болады. Бұл қалтаны жоясыз ба?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Қайта жүктелмеді. Құрылғы жады толы."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Қаріп бұл өлшемде берілмеген"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Бос орын шектеуі себепті қосымша жол қосу мүмкін емес"
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 оқылмаған элемент"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Режим өзгерту"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Жалпы %d таңдалды."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d оқылмаған хабарландыру"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Мәзір қалқымалы терезесі"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Келесі бетті көру үшін екі саусағыңызбен сипаңыз."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Қалқымалы тақырып"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Қалқымалы терезенің мәтіні"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Бейнебеттің өзіндік беті"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Бет %2$d ішіндегі %1$d жылжытылды."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Қатар %1$d, баған %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Бет қосу"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Таңдалмаған"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Ауыстырғыш түйме"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Таңдалған"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Әдепкі қаріп"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Контактілер"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Таңбалардың ен көп саны артты."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Тоқтату"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Дайын"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "%d элементті көрсету"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Кесте"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Мәзірді жабу үшін, екі рет түртіңіз."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Өткі."
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Таңдау"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Шолушы"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d таңдалды"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Сосын"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d элемент жасырылады."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Бұл бет және оның құрамындағы барлық элементтер жойылады."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Бетті жою"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Жою"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Жасырын бағд-рды көрсету"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Бағдарламаларды жасыру"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Өшірілген бағд-рды көрсету"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "%s жою мүмкін емес. Ол тек өшіріледі."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 элемент жасырылады."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Home Box бастапқы экранға қосылмады. Бастапқы экранда бос орын жеткіліксіз. Бірнеше Home Box қалталарын жойып, әрекетті қайталаңыз."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Қосу мүмкін емес"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Box элементтері"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Барлық беттер"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Бос"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Dynamic Box қосу"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Жою"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Қалтаны алып тастау"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Қалта алынып тасталады. Бұл қалтадағы бағдарламалар жойылмайды."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Қолмен"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Аты бойынша (А-Я)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s жойылады."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Аты бойынша (А-Я) сұрыпталған белгішелерді қайта ретке келтіру мүмкін емес."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "ДАЙЫН"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "БАС ТАРТУ"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Элементтерді сұрыптау"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Элементтерді сұрыптау"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Виджеттер"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Виджет қосу мүмкін емес"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Виджет қосу"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Бастапқы экранда бос орын жеткіліксіз. Кейбір виджеттерді жойып, әрекетті қайталаңыз."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Өңдеу"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Өңдеу"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Тақырыптар"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Бағдарлама орнатылмаған."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s және оған қатысты барлық мүмкіндіктер өшіріледі. Оны қайта қосу үшін, Параметрлер > Бағдарламалар реттеушісі бөліміне өтіңіз"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Қалтадағы қолданбалардың ең көп саны (%d) шегіне жетті."
+
