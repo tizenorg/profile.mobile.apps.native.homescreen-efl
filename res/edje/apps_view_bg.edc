@@ -18,22 +18,36 @@ collections {
             }
         }
         parts {
-            part { name: PART_APPS_VIEW_BG;
+            part { name: SIZE_SETTER;
                 type: SWALLOW;
                 mouse_events: 1;
                 repeat_events: 1;
                 description {
                     state: "default" 0.0;
-                    align: 0 0;
+                    align: 0.0 0.0;
                     rel1.relative: 0.0 0.0;
-                    rel2.relative: 1.0 1.0;
+                    rel2.relative: 0.0 0.0;
+                    visible: 1;
+                }
+            }
+            part { name: PART_APPS_VIEW_BG;
+                type: RECT;
+                mouse_events: 1;
+                repeat_events: 1;
+                description {
+                    state: "default" 0.0;
+                    align: 0.0 0.0;
+                    color: 0 0 0 APPS_VIEW_BG_OPACITY;
+                    rel1 {relative: 0.0 0.0; to:SIZE_SETTER;}
+                    rel2 {relative: 1.0 1.0; to:SIZE_SETTER;}
                     visible: 0;
                 }
                 description {
                     state: "edit" 0.0;
                     inherit: "default" 0.0;
-                    rel1 {relative: 0.06 0.07;}
-                    rel2 {relative: 0.94 0.81;}
+                    visible: 1;
+                    rel1 {relative: 0.06 0.07; to:SIZE_SETTER;}
+                    rel2 {relative: 0.94 0.81; to:SIZE_SETTER;}
                 }
                 description {
                     state: "hide" 0.0;
@@ -82,7 +96,7 @@ collections {
                     custom_state(PART:PART_APPS_VIEW_BG, "show", 0.0);
                     //set_state_val(PART:PART_APPS_VIEW_BG, STATE_REL1, 0, get_float(rel1));
                     //set_state_val(PART:PART_APPS_VIEW_BG, STATE_REL2, 0, get_float(rel2));
-                    set_state_val(PART:PART_APPS_VIEW_BG, STATE_COLOR, 255, 255, 255, round(get_float(alpha)));
+                    set_state_val(PART:PART_APPS_VIEW_BG, STATE_COLOR, 0, 0, 0, round(get_float(alpha)));
                     set_state(PART:PART_APPS_VIEW_BG, "custom", 0.0);
                 }
             }
@@ -98,7 +112,7 @@ collections {
                 name: "bg_edit_mode_off";
                 signal: SIGNAL_EDIT_MODE_OFF;
                 source: SIGNAL_SOURCE;
-                action: STATE_SET "default" 0.0;
+                action: STATE_SET "show" 0.0;
                 target: PART_APPS_VIEW_BG;
                 transition: DECELERATE ANIMATION_RESIZE_TIME;
             }

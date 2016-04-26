@@ -15,6 +15,8 @@
  */
 
 #include "widget_viewer.h"
+#include "util.h"
+#include "conf.h"
 
 void widget_viewer_init(Evas_Object *win)
 {
@@ -29,8 +31,17 @@ void widget_viewer_fini(void)
 Evas_Object *widget_viewer_add_widget(Evas_Object *parent, const char *pkgid, const char *sub_id
         , double period, int *widget_width, int *widget_height)
 {
-    //Evas_Object *widget = widget_viewer_evas_add_widget(parent, "org.tizen.calendar.widget", NULL, 0);
-    Evas_Object *widget = evas_object_rectangle_add(parent);
+    Evas_Object *widget = widget_viewer_evas_add_widget(parent, "org.tizen.calendar.widget", NULL, 0);
+
+    //Evas_Object *widget = evas_object_rectangle_add(parent);
+
+    /*const char *bg_path = util_get_res_file_path(IMAGE_DIR"/home_button_apps.png");
+    Evas_Object *widget = evas_object_image_filled_add(evas_object_evas_get(parent));
+    evas_object_image_file_set(widget, bg_path, "bg");*/
+
+    /*Evas_Object *widget = elm_button_add(parent);
+    elm_object_text_set(widget, "HOME");*/
+
     widget_service_get_size(WIDGET_SIZE_TYPE_4x4, widget_width, widget_height);
 
     return widget;

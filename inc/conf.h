@@ -23,6 +23,7 @@
 #define IMAGE_DIR "images"
 
 #define HOME_ANIMATION_TIME 0.3
+#define MAX_FILE_PATH_LEN 1024
 
 extern double __conf_get_resolution_scale_h();
 extern double __conf_get_resolution_scale_w();
@@ -38,6 +39,8 @@ extern int __conf_get_window_w();
 #define APPS_VIEW_W ((720) * (__conf_get_resolution_scale_w()))
 #define APPS_VIEW_H ((1060) * (__conf_get_resolution_scale_h()))
 #define APPS_VIEW_ANIMATION_DELTA ((100) * (__conf_get_resolution_scale_h()))
+
+#define APPS_VIEW_ICON_IMAGE ((118) * (__conf_get_resolution_scale_w()))
 
 #define CLUSTER_VIEW_W ((720) * (__conf_get_resolution_scale_w()))
 #define CLUSTER_VIEW_H ((1060) * (__conf_get_resolution_scale_h()))

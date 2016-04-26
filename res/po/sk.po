@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Zrušiť"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Vytvoriť priečinok"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Zobraziť"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Otvoriť"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Upraviť"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Pridať"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Odstrániť priečinok"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Zadajte názov priečinka."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Vytv."
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Načítava sa..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Aplikácie"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Hudba"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Základný"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Skryť"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Začiarkavacie políčko"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Začiarknuť"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Názov"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Zrušiť začiarknutie"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Odinštalovať"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Vyb. apl. na prid."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Vyberte aplik. na skrytie"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Vyberte aplik. na zobraz."
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Zobraziť ako"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Ak chcete zmeniť usporiadanie strán, musíte zmeniť typ zobrazenia na prispôsobiteľnú mriežku."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Odinštalovať program %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Miniap-likácie"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Zrušiť výber"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Priečinok bez názvu"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Dvojitým ťuknutím môžete zavrieť panel aplikácií."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Dvojitým ťuknutím môžete otvoriť panel aplikácií."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Dvojitým ťuknutím vykonáte otvorenie."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Tlačidlo"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Odstrániť"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Dvojitým ťuknutím a podržaním môžete vykonať premiestnenie."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Dvojitým ťuknutím vykonáte zatvorenie."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Rozbaľovacie zobrazenie je otvorené."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Obľúbené aplikácie"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Domovská obrazovka sa vytvorí z najviac %d položiek vybratých na nasledujúcej obrazovke"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "V obľúbených aplikáciách"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Premiestni sa do priečinka %s."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Premiestňuje sa %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Žiadny obsah"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Strana %1$d z %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Pozícia %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Priečinok je otvorený."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Týmto sa vykoná odstránenie priečinka a všetkých položiek, ktoré obsahuje."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Nemožno pridať ďalšie aplikácie. Dosiahol sa maximálny počet aplikácií."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Nemožno načítať údaje. Ťuknutím to môžete skúsiť znova."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Tapety"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Menu"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Vymaz."
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Vypnúť"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Pomoc"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Domov"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Časopis"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telefón"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Pridať položky"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Priečinok"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Zmena usporiadania ikon"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Zmena usporiadania strán"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Vyberte textové pole"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Vyberte šablónu"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Pridať textové pole"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Zmeniť tapetu"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Vytvoriť priečinok"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Odstrániť priečinok"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Stiahnuté aplikácie"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Extrah. aplik. a odstr. prieč."
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Vypnúť túto aplikáciu?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Nová stránka bude obsahovať rámčeky Dynamic Box aplikácií S plánovač, Úlohy a S Memo"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Nová stránka bude obsahovať rámčeky Dynamic Box aplikácie Twitter. Na nasledujúcej obrazovke vyberte najviac %d časových osí vami nasledovaných ľudí, ktoré chcete zobraziť na novej stránke."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Tento priečinok sa odstráni, ale aplikácie v ňom zostanú k dispozícii na domovskej obrazovke. Odstrániť tento priečinok?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Nepodarilo sa znova načítať. Pamäť zariadenia je plná."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Písmo nie je podporované s touto veľkosťou."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Nemožno pridať ďalší riadok z dôvodu obmedzeného miesta."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "﻿1 neprečítaná položka"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Režim úprav"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Vybraté spolu: %d."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "Neprečítané oznámenia: %d"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Kontextové okno s menu"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Potiahnutím dvomi prstami môžete zobraziť nasledujúcu stranu."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Hlavička kontextového okna"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Text v tele kontextového okna"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Domovská obrazovka"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Stránka bola premiestnená do %1$d z %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Riadok %1$d, stĺpec %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Pridať stranu"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Nevybraté"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Prepínač"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Vybraté"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Predvolené písmo"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Kontakty"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Bol dosiahnutý maximálny počet znakov."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Zrušiť"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Hotovo"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Počet zobrazených položiek: %d"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Plán"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Dvojitým ťuknutím môžete zavrieť menu."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Vynech."
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Vybrať"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "Vybraté: %d"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Ďalej"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "Vykoná sa skrytie %d položiek."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Táto stránka sa odstráni so všetkými položkami, ktoré obsahuje."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Odstránenie stránky"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Odstrániť"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Zobraziť skryté aplikácie"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Skryť aplikácie"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Zobraziť vypnuté aplikácie"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "Aplikácia %s sa nedá odinštalovať. Namiesto toho sa vypne."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 položka bude skrytá."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Táto domovská schránka sa nedá pridať na domovskú obrazovku. Na domovskej obrazovke nie je dostatok miesta. Odstráňte niektoré domovské schránky a skúste to znova."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Nedá sa pridať"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Domovské schránky"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Všetky stránky"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Prázdne"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Pridať Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Odstrániť"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Odstrániť priečinok"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Priečinok sa odstráni. Aplikácie v tomto priečinku sa neodinštalujú."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Manuálne"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Podľa názvu (A – Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s sa odinštaluje."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Nedá sa zmeniť usporiadanie ikon zoradených podľa názvu (A – Z)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "HOTOVO"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ZRUŠIŤ"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Zoradiť položky"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Zoradenie položiek"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Miniaplikácie"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Miniaplikácia sa nedá pridať"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Pridanie miniaplikácie"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Na domovskej obrazovke nie je dostatok miesta. Odstráňte niektoré miniaplikácie a skúste to znova."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Upraviť"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Upraviť"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Motívy"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Aplikácia nie je nainštalovaná."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s a všetky funkcie súvisiace s ňou sa vypnú. Ak ju chcete znova zapnúť, prejdite do menu Nastavenia > Správca aplikácií."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Dosiahol sa maximálny počet aplikácií v priečinku (%d)."
+

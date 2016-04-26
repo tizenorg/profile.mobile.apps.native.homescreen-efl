@@ -16,6 +16,7 @@
 
 #include <system_settings.h>
 #include <dlog.h>
+#include <feedback.h>
 
 #include "conf.h"
 #include "edc_conf.h"
@@ -23,6 +24,8 @@
 #include "homescreen-efl.h"
 #include "apps_view.h"
 #include "cluster_view.h"
+#include "hw_key.h"
+#include "view.h"
 
 static struct {
     Evas_Object *win;
@@ -34,7 +37,7 @@ static struct {
     Evas_Object *btn_layout;
     int root_width;
     int root_height;
-    homescreen_view_t view_type;
+    homescreen_view_type view_type;
     Ecore_Animator *animator;
 } main_info = {
     .win = NULL,
@@ -93,13 +96,15 @@ static bool __homescreen_efl_app_create_cb(void *data)
     elm_config_accel_preference_set("3d");
     ecore_animator_frametime_set(FRAMES_PER_SECOND);
 
+    feedback_initialize();
+
+    hw_key_register();
+
     main_info.win = elm_win_util_standard_add(PACKAGE, PACKAGE);
     __homescreen_efl_get_window_size(main_info.win);
 
     __homescreen_efl_set_wallpaper();
-
     evas_object_show(main_info.win);
-
     main_info.cluster_layout = cluster_view_create(main_info.win);
     if (main_info.cluster_layout == NULL) {
         LOGE("main_info.cluster_layout  == NULL");
@@ -107,7 +112,6 @@ static bool __homescreen_efl_app_create_cb(void *data)
     }
     evas_object_move(main_info.cluster_layout, 0, INDICATOR_H);
     evas_object_show(main_info.cluster_layout);
-
     main_info.apps_layout = apps_view_create(main_info.win);
     if (main_info.apps_layout == NULL) {
         LOGE("main_info.apps_layout  == NULL");
@@ -115,10 +119,8 @@ static bool __homescreen_efl_app_create_cb(void *data)
     }
     evas_object_move(main_info.apps_layout, 0, main_info.root_height);
     evas_object_show(main_info.apps_layout);
-
     __homescreen_efl_set_conformant();
     __homescreen_efl_create_home_btn();
-
     return true;
 }
 
@@ -139,7 +141,10 @@ static void __homescreen_efl_app_resume_cb(void *data)
 
 static void __homescreen_efl_app_terminate_cb(void *data)
 {
+    apps_view_app_terminate();
     cluster_view_app_terminate();
+    hw_key_unregister();
+    feedback_deinitialize();
 }
 
 int main(int argc, char *argv[])
@@ -254,11 +259,13 @@ static void __homescreen_efl_create_home_btn(void)
 
 static void __homescreen_efl_menu_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
-
+    feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
+    homescreen_efl_hw_menu_key_release();
 }
 
 static void __homescreen_efl_home_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
+    feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
     __homescreen_efl_change_view();
 }
 
@@ -317,4 +324,41 @@ static Eina_Bool __homescreen_efl_show_cluster_anim(void *data, double pos)
 Evas_Object *homescreen_efl_get_win(void)
 {
     return main_info.win;
+}
+
+void homescreen_efl_hw_menu_key_release(void)
+{
+    if (main_info.view_type == HOMESCREEN_VIEW_HOME) {
+        cluster_view_hw_key_menu();
+    } else if (main_info.view_type == HOMESCREEN_VIEW_APPS) {
+        apps_view_hw_key_menu();
+    }
+}
+
+void homescreen_efl_hw_home_key_release(void)
+{
+    if (main_info.view_type == HOMESCREEN_VIEW_HOME) {
+        if (cluster_view_get_state() != VIEW_STATE_NOMAL) {
+            cluster_view_set_state(VIEW_STATE_NOMAL);
+        } else {
+            cluster_view_scroll_to_home();
+        }
+    } else if (main_info.view_type == HOMESCREEN_VIEW_APPS) {
+        __homescreen_efl_change_view();
+    }
+}
+
+void homescreen_efl_hw_back_key_release(void)
+{
+    if (main_info.view_type == HOMESCREEN_VIEW_HOME) {
+        if (cluster_view_get_state() != VIEW_STATE_NOMAL) {
+            cluster_view_set_state(VIEW_STATE_NOMAL);
+        }
+    } else if (main_info.view_type == HOMESCREEN_VIEW_APPS) {
+        if (apps_view_get_state() != VIEW_STATE_NOMAL) {
+            apps_view_set_state(VIEW_STATE_NOMAL);
+        } else {
+            __homescreen_efl_change_view();
+        }
+    }
 }

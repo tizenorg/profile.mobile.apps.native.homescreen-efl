@@ -1,0 +1,321 @@
+#include "../../inc/edc_conf.h"
+
+images {
+    image: "../res/images/folder_appicon_bg.png" COMP;
+    image: "../res/images/folder_appicon_bg_possible.png" COMP;
+    image: "../res/images/folder_appicon_bg_impossible.png" COMP;
+    image: "../res/images/folder_appicon_empty_bg.png" COMP;
+}
+collections {
+    group { name: GROUP_FOLDER_ICON_LY;
+    parts {
+        part {
+            name: SIZE_SETTER;
+            type: SWALLOW;
+            mouse_events: 1;
+            repeat_events: 1;
+            description {
+                state: "default" 0.0;
+                rel1{relative: 0.0 0.0; }
+                rel2{relative: 1.0 1.0; }
+                align: 0.5 0.5;
+            }
+        }       
+        part {
+            name: "folder_icon_bg_image";
+            type: IMAGE;
+            mouse_events: 1;
+            scale: 1;
+            description {
+                state: "default" 0.0;
+                rel1{relative: 0.0 0.0; to: SIZE_SETTER;}
+                rel2{relative: 1.0 1.0; to: SIZE_SETTER;}
+                aspect: 1.0 1.0;
+                aspect_preference: BOTH;
+                image {
+                    normal: "../res/images/folder_appicon_empty_bg.png";
+                }
+            }
+            description {
+                state: "item_count_1" 0.0;
+                inherit: "default" 0.0;
+                image {
+                    normal: "../res/images/folder_appicon_bg.png";
+                }
+            }
+            description {
+                state: "item_count_2" 0.0;
+                inherit: "default" 0.0;
+                image {
+                    normal: "../res/images/folder_appicon_bg.png";
+                }
+            }
+            description {
+                state: "item_count_3" 0.0;
+                inherit: "default" 0.0;
+                image {
+                    normal: "../res/images/folder_appicon_bg.png";
+                }
+            }
+            description {
+                state: "item_count_4" 0.0;
+                inherit: "default" 0.0;
+                image {
+                    normal: "../res/images/folder_appicon_bg.png";
+                }
+            }
+        }
+        part {
+            name: "folder_icon_image_possible";
+            type: IMAGE;
+            mouse_events: 1;
+            scale: 1;
+            description {
+                state: "default" 0.0;
+                rel1{relative: 0.0 0.0; to: SIZE_SETTER;}
+                rel2{relative: 1.0 1.0; to: SIZE_SETTER;}
+                aspect: 1.0 1.0;
+                aspect_preference: BOTH;
+                image {
+                    normal: "../res/images/folder_appicon_bg_possible.png";
+                }
+                visible: 0;
+            }
+            description {
+                state: "frame_possible" 0.0;
+                inherit: "default" 0.0;
+                image {
+                    normal: "../res/images/folder_appicon_bg_possible.png";
+                }
+                visible: 1;
+            }
+            description {
+                state: "frame_impossible" 0.0;
+                inherit: "default" 0.0;
+                image {
+                    normal: "../res/images/folder_appicon_bg_impossible.png";
+                }
+                visible: 1;
+            }
+        }
+        part{
+            name :"folder_icon_1";
+            type: SWALLOW;
+            description {
+                state: "default" 0.0;
+                rel1{relative: 0.325 0.325; to: SIZE_SETTER;}
+                rel2{relative: 0.675 0.675; to: SIZE_SETTER;}
+                aspect: 1.0 1.0;
+                aspect_preference: BOTH;
+                visible: 0;
+            }
+            description {
+                state: "item_count_1" 0.0;
+                rel1{relative: 0.325 0.325; to: SIZE_SETTER;}
+                rel2{relative: 0.675 0.675; to: SIZE_SETTER;}
+                visible: 1;
+            }
+            description {
+                state: "item_count_2" 0.0;
+                rel1{relative: 0.135 0.325; to: SIZE_SETTER;}
+                rel2{relative: 0.485 0.675; to: SIZE_SETTER;}
+                visible: 1;
+            }
+            description {
+                state: "item_count_3" 0.0;
+                rel1{relative: 0.185 0.185; to: SIZE_SETTER;}
+                rel2{relative: 0.485 0.485; to: SIZE_SETTER;}
+                visible: 1;
+            }
+            description {
+                state: "item_count_4" 0.0;
+                rel1{relative: 0.185 0.185; to: SIZE_SETTER;}
+                rel2{relative: 0.485 0.485; to: SIZE_SETTER;}
+                visible: 1;
+            }
+        }
+        part{
+            name :"folder_icon_2";
+            type: SWALLOW;
+            description {
+                state: "default" 0.0;
+                rel1{relative: 0.488 0.325; to: SIZE_SETTER;}
+                rel2{relative: 0.838 0.675; to: SIZE_SETTER;}
+                aspect: 1.0 1.0;
+                aspect_preference: BOTH;
+                visible: 0;
+            }
+            
+            description {
+                state: "item_count_1" 0.0;
+                inherit: "default" 0.0;
+                visible: 0;
+            }
+            description {
+                state: "item_count_2" 0.0;
+                rel1{relative: 0.488 0.325; to: SIZE_SETTER;}
+                rel2{relative: 0.838 0.675; to: SIZE_SETTER;}
+                visible: 1;
+            }
+            description {
+                state: "item_count_3" 0.0;
+                rel1{relative: 0.515 0.185; to: SIZE_SETTER;}
+                rel2{relative: 0.815 0.485; to: SIZE_SETTER;}
+                visible: 1;
+            }
+            description {
+                state: "item_count_4" 0.0;
+                rel1{relative: 0.515 0.185; to: SIZE_SETTER;}
+                rel2{relative: 0.815 0.485; to: SIZE_SETTER;}
+                visible: 1;
+            }
+        }
+        part{
+            name :"folder_icon_3";
+            type: SWALLOW;
+            description {
+                state: "default" 0.0;
+                rel1{relative: 0.185 0.515; to: SIZE_SETTER;}
+                rel2{relative: 0.485 0.815; to: SIZE_SETTER;}
+                aspect: 1.0 1.0;
+                aspect_preference: BOTH;
+                visible: 0;
+            }
+            description {
+                state: "item_count_1" 0.0;
+                inherit: "default" 0.0;
+                visible: 0;
+            }
+            description {
+                state: "item_count_2" 0.0;
+                inherit: "default" 0.0;
+                visible: 0;
+            }
+            description {
+                state: "item_count_3" 0.0;
+                rel1{relative: 0.185 0.515; to: SIZE_SETTER;}
+                rel2{relative: 0.485 0.815; to: SIZE_SETTER;}
+                visible: 1;
+            }
+            description {
+                state: "item_count_4" 0.0;
+                rel1{relative: 0.185 0.515; to: SIZE_SETTER;}
+                rel2{relative: 0.485 0.815; to: SIZE_SETTER;}
+                visible: 1;
+            }
+        }
+        part{
+            name :"folder_icon_4";
+            type: SWALLOW;
+            description {
+                state: "default" 0.0;
+                rel1{relative: 0.515 0.515; to: SIZE_SETTER;}
+                rel2{relative: 0.815 0.815; to: SIZE_SETTER;}
+                aspect: 1.0 1.0;
+                aspect_preference: BOTH;
+                visible: 0;
+            }
+            description {
+                state: "item_count_1" 0.0;
+                inherit: "default" 0.0;
+                visible: 0;
+            }
+            description {
+                state: "item_count_2" 0.0;
+                inherit: "default" 0.0;
+                visible: 0;
+            }
+            description {
+                state: "item_count_3" 0.0;
+                inherit: "default" 0.0;
+                visible: 0;
+            }
+            description {
+                state: "item_count_4" 0.0;
+                rel1{relative: 0.515 0.515; to: SIZE_SETTER;}
+                rel2{relative: 0.815 0.815; to: SIZE_SETTER;}
+                visible: 1;
+            }
+        }               
+        programs
+        {       
+            program {
+                name: "set_item_count_1";
+                signal: "set_item_count_1";
+                source: SIGNAL_SOURCE;  
+                action: STATE_SET "item_count_1" 0.0;
+                target: "folder_icon_1";
+                target: "folder_icon_2";
+                target: "folder_icon_3";
+                target: "folder_icon_4";
+                target: "folder_icon_bg_image";
+                transition: DECELERATE 0.2;
+            }
+            
+            program {
+                name: "set_item_count_2";
+                signal: "set_item_count_2";
+                source: SIGNAL_SOURCE;  
+                action: STATE_SET "item_count_2" 0.0;
+                target: "folder_icon_1";
+                target: "folder_icon_2";
+                target: "folder_icon_3";
+                target: "folder_icon_4";
+                target: "folder_icon_bg_image";
+                transition: DECELERATE 0.2;
+            }
+            
+            program {
+                name: "set_item_count_3";
+                signal: "set_item_count_3";
+                source: SIGNAL_SOURCE;  
+                action: STATE_SET "item_count_3" 0.0;
+                target: "folder_icon_1";
+                target: "folder_icon_2";
+                target: "folder_icon_3";
+                target: "folder_icon_4";
+                target: "folder_icon_bg_image";
+                transition: DECELERATE 0.2;
+            }
+            program {
+                name: "set_item_count_4";
+                signal: "set_item_count_4";
+                source: SIGNAL_SOURCE;  
+                action: STATE_SET "item_count_4" 0.0;
+                target: "folder_icon_1";
+                target: "folder_icon_2";
+                target: "folder_icon_3";
+                target: "folder_icon_4";
+                target: "folder_icon_bg_image";
+                transition: DECELERATE 0.2;
+            }           
+            program {
+                name: "set_item_count_0";
+                signal: "set_item_count_0";
+                source: SIGNAL_SOURCE;  
+                action: STATE_SET "default" 0.0;
+                target: "folder_icon_1";
+                target: "folder_icon_2";
+                target: "folder_icon_3";
+                target: "folder_icon_4";
+                target: "folder_icon_bg_image";
+            }           
+            
+            program {
+                name: "show,bg,possible";
+                signal: SIGNAL_FRAME_POSSIBLE_SHOW;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "frame_possible" 0.0;
+                target: "folder_icon_image_possible";
+            }
+            program {
+                name: "show,bg,impossible";
+                signal: SIGNAL_FRAME_IMPOSSIBLE_SHOW;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "frame_impossible" 0.0;
+                target: "folder_icon_image_possible";
+            }
+            
+        }
+    }
+}

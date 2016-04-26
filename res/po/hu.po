@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Mégse"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Mappát létrehoz"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Mutass"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Megnyit"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Szerkeszt"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Hozzáad"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Mappa törlése"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Adja meg a mappa nevét."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Új"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Betöltés..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Alkalmazások"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Zenék"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Alapvető"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Elrejtés"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Jelölőnégyzet"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Bejelölés"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Cím"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Bejelölés törlése"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Eltávolítás"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Válasszon alk.kat"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Elrejtendő alk. kivál."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Megjelen.endő alk. kivál."
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Megtekintés"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Az oldalak átrendezéséhez módosítsa a megjelenítés típusát testreszabható rácsra."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Eltávolítja a(z) %s animált emotikont?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Minialk."
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Kijelölés törlése"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Névtelen mappa"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Érintse meg kétszer az alkalmazástálca bezárásához."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Érintse meg kétszer az alkalmazástálca megnyitásához."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Érintse meg kétszer a megnyitáshoz."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Gomb"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Törlés"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Áthelyezéshez kétszer érintse meg, majd tartsa."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Érintse meg kétszer a bezáráshoz."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Lenyíló nézet megnyitva."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Kedvenc alkalmazások"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "A kezdőképernyő kialakításához válasszon ki legfeljebb %d tételt a következő képernyőn"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "A Kedvenc alkalmazásokban"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Áthelyezés a %s mappába."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "%s áthelyezése"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Nincs tartalom"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "%1$d. oldal, összesen: %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "%d számú pozíció"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Megnyitotta a mappát."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Ezzel törli a mappát és annak minden elemét."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Nem lehet több alkalmazást hozzáadni. Elérte az alkalmazások maximális számát."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Nem lehet betölteni az adatokat. Érintse meg az újabb próbálkozáshoz."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Háttérképek"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Alk."
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Törlés"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Letiltás"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Súgó"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Kezdő"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Folyóirat"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telefon"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Elemek hozzáadása"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Mappa"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Ikonok átrendezése"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Oldalak átrendezése"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Válasszon egy szövegmezőt"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Sablon kiválasztása"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Szövegmező hozzáadása"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Háttérkép módosítása"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Mappa létrehozása"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Mappa törlése"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Letöltött alk."
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Alk. kibont. és mappa törlése"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Törli az alkalmazást?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Az új oldalt az S Tervező, a Feladatok és az S Memo Dynamic Boxai alkotják majd."
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Az új oldalt a Twitter Dynamic Boxai alkotják majd. A következő képernyőn válassza ki legfeljebb %d Ön által követett személy idővonalának megjelenítését."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "A mappa törlődik, a benne található alkalmazások azonban elérhetők maradnak a kezdőképernyőn. Törli a mappát?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Nem sikerült újra betölteni. Az eszköz memóriája megtelt."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "A betűtípus ebben a méretben nincs támogatva."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Helykorlátozás miatt nem lehet további sort hozzáadni."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 olvasatlan tétel"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Szerkesztési mód"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "%d van összesen kijelölve."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d olvasatlan értesítés"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Előugró menü"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Simítson két ujjal a következő oldal megjelenítéséhez."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Előugró ablak fejléce"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Előugró ablak törzsének szövege"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Kezdőképernyő"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Oldal áthelyezve %2$d közül a %1$d számú helyre."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "%1$d. sor, %2$d. oszlop"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Oldal hozzáadása"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Nincs kijelölve"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Választógomb"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Kiválasztva"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Alapértelmezett betűtípus"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Névjegyek"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Nincs hely több karakternek."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Mégse"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Kész"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "%d tétel jelent meg"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Programok"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Kétszeri érintéssel bezárhatja a menüt."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Átugrik"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Választ"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d kijelölve"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Tovább"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d tétel rejtett lesz."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Törli ezt az oldalt és annak minden elemét."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Oldal törlése"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Töröl"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Rejtett alkalm. megjelenítése"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Alkalmazások elrejtése"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Tiltott alkalm. megjelenítése"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "A(z) %s alkalmazást nem lehet eltávolítani, a rendszer azonban kikapcsolja azt."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 elemet elrejt."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Nem lehet hozzáadni a Home Boxot kezdőképernyőhöz. Nincs elég hely a kezdőképernyőn. Távolítson el Home Boxokat, és próbálja újra."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Nem adható hozzá"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Boxok"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Összes oldal"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Üres"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Dynamic Box hozzáadása"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Eltávolítás"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Mappa eltávolítása"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "El fogja távolítani a mappát. A mappában található alkalmazások el lesznek távolítva a rendszerből."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Manuálisan"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Név szerint (A–Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "El fogja távolítani a(z) %s alkalmazást."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "A név szerint (A–Z) rendezett ikonokat nem lehet átrendezni."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "KÉSZ"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "MÉGSE"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Elemek rendezése"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Elemek rendezése"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Widgetek"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Nem adható hozzá a widget"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Widget hozzáadása"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Nincs elég hely a kezdőképernyőn. Távolítson el widgeteket, és próbálja újra."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Szerkesztés"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Szerkesztés"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Témák"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Az alkalmazás nincs telepítve."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "A(z) %s és minden kapcsolódó funkció le lesz tiltva. Az újbóli engedélyezéshez válassza a Beállítások > Alkalmazáskezelő menüpontot."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Elérte az egy mappához adható alkalmazások maximális számát (%d)."
+

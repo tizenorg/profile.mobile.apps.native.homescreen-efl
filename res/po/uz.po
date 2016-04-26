@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Bekor qilish"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Jild yaratish"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Ko‘rsatish"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Ochish"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Tahrirl."
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Qo‘sh"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Jildni o'chirib tashlash"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Jild nomini kiriting."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Yarat"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Yuklanmoqda..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Ilovalar"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Musiqa"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Boshlang'ich"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Yashirish"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Belgilash katakchasi"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Belgi qo‘yish"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Sarlavha"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Belgini olib tashlash"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Olib tashlash"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Qo‘sh. ilova tanla"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Yashir. ilovalar tanlang"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Ko‘rsat. ilovalar tanlang"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Quyidagi sifatida ko‘rib chiqish"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Sahifalar tartibini o‘zgartirish uchun ko‘rinish turini sozlanadigan to‘rga almashtirishingiz lozim."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "%s olib tashlansinmi?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mini-ilovalar"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Tanlovni bekor qilish"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Nomsiz jild"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Ilova treyni yopish uchun ikki marta teging."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Ilova treyni ochish uchun ikki marta teging."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Ochish uchun ikki marta teging."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Tugma"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Yo‘q qilish"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Ko‘chirish uchun ikki marta cherting va bosib turing."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Yopish uchun ikki marta bosing."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Tushadigan ko‘rinish ochiq."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Tanlangan ilovalar"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Asosiy ekran keyingi ekranda tanlanadigan ko‘pi bilan %dta elementdan shakllanadi"
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "Sevimli ilovalarda"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "%s jildiga ko‘chirish."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "%sni ko‘chirish"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Tarkib yo‘q"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Sahifa %1$d/%2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "%dni joylashtirish"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Jild ochildi."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Bu jildni va uning barcha elementlarini yo‘q qiladi."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Ko‘proq ilovalarni qo‘shib bo‘lmaydi. Ilovalar soni maksimal miqdorga yetdi."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Ma’lumotni yuklab bo‘lmaydi. Qayta urinib ko‘rish uchun cherting"
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Fon rasmlari"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Ilovalar"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Yo‘q/q"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "O‘chirish"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Yordam"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Asosiy"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Jurnal"
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telefon"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Elementlar qo‘shish"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Jild"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Ikonachalar tartibini o‘zgartirish"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Sahifalar tartibini o‘zgartirish"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Matn qutisini tanlang"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Shablon tanlash"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Matn qutisini qo‘shish"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Fon rasmini o‘zgar"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Jild yaratish"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Jildni yo‘q qilish"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Yuklab olingan ilovalar"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Ilova chiqar va jild yo‘q qil"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Ushbu ilova o‘chirilsinmi?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Yangi sahifa S Planner, Topshiriqlar va S Memo Dynamic Box-lardan tashkil topadi"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Yangi sahifa Twitter Dynamic Box-laridan tashkil topadi. Keyingi ekranda yangi sahifada ko‘rsatilishi uchun Siz ergashayotgan insonlarning ko‘pi bilan %dta taymlaynini tanlang."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Ushbu jild yo‘q qilinadi, lekin undagi ilovalar asosiy ekraningizda qoladi. Ushbu jild yo‘q qilinsinmi?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Qayta yuklab bo‘lmadi. Qurilma xotirasi to‘la."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Shrift ushbu o‘lchamda qo‘llab-quvvatlanmaydi"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Bo‘shliq cheklovi sababli qo‘shimcha chiziqni qo‘shib bo‘lmaydi"
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1ta o‘qilmagan element"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Tahrirlash rejimi"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "Jami %dta tanlandi."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%dta o‘qilmagan bildirishnomalar"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Qalqib chiquvchi menyu"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Keyingi sahifani ko‘rib chiqish uchun ikkita barmoq bilan suring."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Qalqib chiquvchi sarlavha"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Qalqib chiquvchi oynaga matn kiritish"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Asosiy ekran"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Sahifa %1$d/%2$dga ko‘chirildi."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Satr %1$d, ustun %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Sahifa qo‘shish"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Tanlanmagan"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Radio button"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Selected"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Shokoladli pechenye"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Birlamchi o'rnatilgan shrift"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Kontaktlar"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Belgilar soni ruxsat etilgan maksimal miqdorga yetdi."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Bekor qilish"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Bajarildi"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "%d ta elementni ko‘rsatish"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Jadval"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Menyuni yopish uchun ikki marta bosing."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "O‘tkaz"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Tanlash"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%dta tanlandi"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Keyingi"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%dta element yashiriladi."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Ushbu sahifa va uning tarkibidagi barcha elementlar yo‘q qilinadi."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Sahifani yo‘q qilish"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "O'chirish"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Yashirin ilovalarni ko‘rsatish"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Ilovalarni yashirish"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "O‘chirilgan ilovalarni ko‘rsat"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "%sni olib tashlab bo‘lmaydi. O‘rniga u o‘chiriladi."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 ta element yashiriladi."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Ushbu Home Box-ni asosiy ekranga qo‘shib bo‘lmaydi. Asosiy ekranda yetarli xotira mavjud emas. Ba’zi Home Box-larni olib tashlang va qayta urinib ko‘ring."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Qo‘shib bo‘lmaydi"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Box-lar"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Barcha sahifalar"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Bo‘sh"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Dynamic Box qo‘shish"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Olib tashlash"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Jildni olib tashlash"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Jild olib tashlanadi. Ushbu jilddagi ilovalar o‘rnatilmaydi."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Qo‘lda"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Nom bo‘yicha (A-Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s olib tashlanadi."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Nomi bo‘yicha saralangan ikonachalar tartibini o‘zgartirib bo‘lmaydi (A-Z)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "BAJARILDI"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "BEKOR QILISH"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Elementlarni saralash"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Elementlarni saralash"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Vidjetlar"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Vidjetni qo‘shib bo‘lmaydi"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Vidjet qo‘shish"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Asosiy ekranda yetarli xotira mavjud emas. Ba’zi vidjetlarni olib tashlang va qayta urinib ko‘ring."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Tahrirlash"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Tahrirlash"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Mavzular"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Ilova o‘rnatilmadi."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s va unga tegishli barcha funksiyalar o‘chiriladi. Uni yoqish uchun Parametrlar > Ilova menejeriga o‘ting"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Jilddagi ilovalar soni maksimal miqdorga (%d) yetdi."
+

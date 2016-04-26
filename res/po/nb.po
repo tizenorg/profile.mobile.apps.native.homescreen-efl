@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Avbryt"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Opprett mappe"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Vis"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Åpne"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Rediger"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Tilføy"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Slett mappe"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Angi mappenavn."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Oppr."
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Åpner..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Apper"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Musikk"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Grunnleggende"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Skjul"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Avmerkingsboks"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Merk av"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Tittel"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Fjern merking"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Avinstaller"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Legg til apper"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Velg apper du vil skjule"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Velg apper du vil vise"
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Visningstype"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Hvis du vil endre rekkefølge på sider, må du endre visningstypen til et tilpassbart rutenett."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Avinstallere %s?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Mini-apper"
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Fjern markering"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Mappe uten navn"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Trykk raskt to ganger for å lukke appskuffen."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Trykk raskt to ganger for å åpne appskuffen."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Trykk raskt to ganger for å åpne."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Knapp"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Slett"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Trykk raskt to ganger på og hold for å flytte."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Trykk raskt to ganger for å lukke."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Utvidet visning er åpen."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Favorittapper"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Startskjermbildet vil bli dannet med opptil %d av de valgte elementene på det neste skjermbildet."
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "I Favorittapper"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Flytt til %s-mappe."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Flytter %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Ikke noe innhold"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Side %1$d av %2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Posisjon %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Mappen er åpen."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Dette vil slette mappen og alle elementene den inneholder."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Kan ikke legge til flere apper. Maksimalt antall apper er nådd."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Kan ikke laste data. Trykk for å prøve på nytt."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Bakgrunner"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Apper"
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Slett"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Deaktiver"
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Hjelp"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Hjem"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Tidsskr."
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Telefon"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Legg til objekter"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Mappe"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Omorganisere ikoner"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Omorganisere sider"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Velg en tekstboks"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Velg mal"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Legg til tekstboks"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Endre bakgrunn"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Opprett mappe"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Slett mappe"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Nedlastede apper"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Hent ut apper og slett mappe"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Vil du deaktivere denne appen?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Den nye siden vil bestå av Dynamic Boxes for S Planner, Oppgaver og S Memo."
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Den nye siden vil bestå av Dynamic Boxes for Twitter. På den neste skjermen kan du velge opptil %d tidslinjer for personer du følger. Disse vises deretter på den nye siden."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Denne mappen blir slettet, men appene i den vil fortsatt være tilgjengelige på startskjermbildet. Vil du slette denne mappen?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Kunne ikke oppdatere. Enhetsminnet er fullt."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Skrifttypen støttes ikke for denne størrelsen."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Kan ikke legge til ekstra linjer på grunn av plassbegrensningen."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 ulest element"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Redigeringsmodus"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "%d er valgt totalt."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d uleste varsler"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Sprettoppvindu for meny"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Stryk med to fingre for å vise neste side."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Sprettoppoverskrift"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Tekst i hoveddelen til sprettoppvinduet"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Startskjerm"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Siden ble flyttet til %1$d av %2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Rad %1$d, kolonne %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Legg til side"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Ikke valgt"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Radioknapp"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Valgt"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Standardskrift"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Kontakter"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Nådd maksimalt antall tegn."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Avbryt"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "OK"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Viser %d elementer"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Tidsplan"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Trykk raskt to ganger for å lukke menyen."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Neste"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Velg"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internett"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d valgt"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Neste"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d elementer blir skjult."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Denne siden og alle elementene den inneholder, blir slettet."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Slett side"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Slett"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Vis skjulte apper"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Skjul apper"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Vis deaktiverte apper"
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "%s kan ikke installeres. Den blir i stedet deaktivert."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 element blir skjult."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Kan ikke legge til en Home Box på startskjermbildet. Det er ikke nok plass på startskjermbildet. Fjern en Home Box, og prøv på nytt."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Kan ikke legge til"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Boxes"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Alle sider"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Tom"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Legg til Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Fjern"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Fjern mappe"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Mappen blir fjernet. Apper i denne mappen blir ikke avinstallerte."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Manuell"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Etter navn (A–Å)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s blir avinstallert."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Kan ikke endre rekkefølgen på ikoner som er sortert etter navn (A–Å)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "FULLFØRT"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "AVBRYT"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Sorter elementer"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Sorter elementer"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Widgeter"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Kan ikke legge til widget"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Legg til widget"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Det er ikke nok ledig plass på startskjermbildet. Fjern noen widgeter, og prøv på nytt."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Rediger"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Rediger"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Tema"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "App ikke installert."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s og alle relaterte funksjoner blir deaktivert. Du kan reaktivere appen ved å gå til Innstillinger > Appstyring."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Maksimalt antall apper i mappe (%d) er nådd."
+

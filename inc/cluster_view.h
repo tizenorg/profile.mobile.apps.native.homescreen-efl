@@ -19,6 +19,8 @@
 
 #include <Elementary.h>
 
+#include "view.h"
+
 Evas_Object *cluster_view_create(Evas_Object *parent);
 void cluster_view_app_terminate(void);
 
@@ -26,5 +28,10 @@ void cluster_view_show(void);
 void cluster_view_hide(void);
 void cluster_view_show_anim(double pos);
 void cluster_view_hide_anim(double pos);
+
+void cluster_view_hw_key_menu(void);
+view_state_t cluster_view_get_state(void);
+void cluster_view_set_state(view_state_t state);
+void cluster_view_scroll_to_home(void);
 
 #endif /* __CLUSTER_VIEW_H__ */

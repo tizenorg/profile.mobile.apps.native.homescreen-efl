@@ -19,10 +19,24 @@
 
 #include <Elementary.h>
 
+#include "view.h"
+#include "apps_data.h"
+
 Evas_Object *apps_view_create(Evas_Object *parent);
+void apps_view_app_terminate(void);
 void apps_view_show(void);
 void apps_view_hide(void);
 void apps_view_show_anim(double pos);
 void apps_view_hide_anim(double pos);
+void apps_view_reroder(void);
+
+Evas_Object* apps_view_create_icon(app_data_t *item);
+void apps_view_icon_unset(app_data_t *item);
+bool apps_view_icon_set(app_data_t *item);
+void apps_view_icon_add(app_data_t *item);
+
+void apps_view_hw_key_menu(void);
+view_state_t apps_view_get_state(void);
+void apps_view_set_state(view_state_t state);
 
 #endif /* __APPS_VIEW_H__ */

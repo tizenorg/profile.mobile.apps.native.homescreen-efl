@@ -1,0 +1,453 @@
+msgid "IDS_CAM_SK_CANCEL"
+msgstr "Peruuta"
+
+msgid "IDS_CAM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_BODY_CREATE_FOLDER"
+msgstr "Luo kansio"
+
+msgid "IDS_COM_POP_SHOW_A"
+msgstr "Näytä"
+
+msgid "IDS_COM_SK_OPEN"
+msgstr "Avaa"
+
+msgid "IDS_MB_SK_EDIT"
+msgstr "Muokkaa"
+
+msgid "IDS_MEMO_SK_ADD_ABB"
+msgstr "Lisää"
+
+msgid "IDS_MF_OPT_DELETEFOLDER"
+msgstr "Poista kansio"
+
+msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
+msgstr "Kirjoita kansion nimi."
+
+msgid "IDS_PB_SK_CREATE_ABB"
+msgstr "Luo"
+
+msgid "IDS_ST_BODY_LOADING_ING"
+msgstr "Ladataan..."
+
+msgid "IDS_ST_HEADER_APPLICATIONS"
+msgstr "Sovellukset"
+
+msgid "IDS_ST_HEADER_MUSIC"
+msgstr "Musiikki"
+
+msgid "IDS_ST_OPT_BASIC"
+msgstr "Perus"
+
+msgid "IDS_ST_SK_HIDE"
+msgstr "Piilota"
+
+msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
+msgstr "Valintaruutu"
+
+msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
+msgstr "Valitse"
+
+msgid "IDS_TPLATFORM_BODY_TITLE"
+msgstr "Otsikko"
+
+msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
+msgstr "Poista valinta"
+
+msgid "IDS_AT_BODY_UNINSTALL"
+msgstr "Poista asennus"
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
+msgstr "Val. lisätt. sov."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_HIDE_ABB"
+msgstr "Valitse piilot. sovell."
+
+msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
+msgstr "Valitse näytett. sovell."
+
+msgid "IDS_AT_OPT_VIEW_AS"
+msgstr "Katsele muodossa"
+
+msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
+msgstr "Sinun on vaihdettava näkymän tyyppi mukautettavaksi ruudukoksi sivujen uudelleenjärjestämistä varten."
+
+msgid "IDS_AT_POP_UNINSTALL_PS_Q"
+msgstr "Poistetaanko kohteen %s asennus?"
+
+msgid "IDS_AT_TAB4_MINI_APPS"
+msgstr "Pienois-sovell."
+
+msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
+msgstr "Poista valinta"
+
+msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
+msgstr "Nimetön kansio"
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
+msgstr "Sulje sovelluspalkki kaksoisnapauttamalla."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
+msgstr "Avaa sovelluspalkki kaksoisnapauttamalla."
+
+msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
+msgstr "Avaa kaksoisnapauttamalla."
+
+msgid "IDS_HS_BODY_BUTTON_T_TTS"
+msgstr "Painike"
+
+msgid "IDS_HS_BODY_DELETE_OPT_TTS"
+msgstr "Poista"
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
+msgstr "Liiku kaksoisnapauttamalla ja pitämällä painettuna."
+
+msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
+msgstr "Sulje kaksoisnapauttamalla."
+
+msgid "IDS_HS_BODY_DROP_VIEW_OPEN_T_TTS"
+msgstr "Pudotusnäkymä avattu."
+
+msgid "IDS_HS_BODY_DYNAMIC_BOX"
+msgstr "Dynamic Box"
+
+msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
+msgstr "Suosikkisovellukset"
+
+msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
+msgstr "Alkunäyttö muodostuu enintään %d seuraavassa näytössä valitusta kohteesta."
+
+msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
+msgstr "Suosikkisovelluksissa"
+
+msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
+msgstr "Siirrä kansioon %s."
+
+msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
+msgstr "Siirretään %s"
+
+msgid "IDS_HS_BODY_NO_CONTENT"
+msgstr "Ei sisältöä"
+
+msgid "IDS_HS_BODY_PAGE_P1SD_OF_P2SD"
+msgstr "Sivu %1$d/%2$d"
+
+msgid "IDS_HS_BODY_POSITION_PD"
+msgstr "Sijainti %d"
+
+msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
+msgstr "Kansio on avattu."
+
+msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
+msgstr "Tämä poistaa kansion ja kaikki siinä olevat kohteet."
+
+msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
+msgstr "Muita sovelluksia ei voi lisätä. Sovellusten enimmäismäärä on saavutettu."
+
+msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
+msgstr "Tietoja ei voi ladata. Yritä napauttamalla uudelleen."
+
+msgid "IDS_HS_BODY_WALLPAPERS_ABB"
+msgstr "Taustakuvat"
+
+msgid "IDS_HS_BUTTON_APPS"
+msgstr "Sov."
+
+msgid "IDS_HS_BUTTON_DELETE"
+msgstr "Poista"
+
+msgid "IDS_HS_BUTTON_DISABLE_ABB"
+msgstr "Poista käyt."
+
+msgid "IDS_HS_BUTTON_HELP"
+msgstr "Ohje"
+
+msgid "IDS_HS_BUTTON_HOME_ABB"
+msgstr "Koti"
+
+msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
+msgstr "Aikak.l."
+
+msgid "IDS_HS_BUTTON_PHONE"
+msgstr "Puhelin"
+
+msgid "IDS_HS_HEADER_ADD_ITEMS"
+msgstr "Lisää kohteita"
+
+msgid "IDS_HS_HEADER_FOLDER"
+msgstr "Kansio"
+
+msgid "IDS_HS_HEADER_REARRANGE_ICONS"
+msgstr "Järjestä kuvakkeet uudelleen"
+
+msgid "IDS_HS_HEADER_REARRANGE_PAGES"
+msgstr "Järjestä sivut uudelleen"
+
+msgid "IDS_HS_HEADER_SELECT_A_TEXT_BOX_ABB"
+msgstr "Valitse tekstiruutu"
+
+msgid "IDS_HS_HEADER_SELECT_TEMPLATE_ABB"
+msgstr "Valitse malli"
+
+msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
+msgstr "Lisää tekstiruutu"
+
+msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
+msgstr "Vaihda taustakuva"
+
+msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
+msgstr "Luo kansio"
+
+msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
+msgstr "Poista kansio"
+
+msgid "IDS_HS_OPT_DOWNLOADED_APPS"
+msgstr "Ladatut sovellukset"
+
+msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
+msgstr "Pura sovell. ja poista kansio"
+
+msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
+msgstr "Poistetaanko tämä sovellus käytöstä?"
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
+msgstr "Uusi sivu muodostuu Kalenterin, Tehtävien ja S Memon Dynamic Boxeista."
+
+msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
+msgstr "Uusi sivu muodostuu Twitterin Dynamic Boxeista. Valitse seuraavalla sivulla enintään %d seurattavan ihmisen aikajanat, jotka näytetään uudella sivulla."
+
+msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
+msgstr "Tämä kansio poistetaan, mutta kaikki siinä olevat sovellukset ovat edelleen käytettävissä alkunäytössä. Poistetaanko tämä kansio?"
+
+msgid "IDS_HS_TPOP_FAILED_TO_RELOAD_DEVICE_MEMORY_FULL"
+msgstr "Uudelleenlataus epäonnistui. Laitteen muisti on täynnä."
+
+msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
+msgstr "Fonttia ei tueta tässä koossa."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
+msgstr "Ylimääräistä riviä ei voi lisätä tilarajoituksen vuoksi."
+
+msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
+msgstr "1 lukematon kohde"
+
+msgid "IDS_SCR_BODY_EDIT_MODE_TTS"
+msgstr "Muokkaustila"
+
+msgid "IDS_SCR_BODY_PD_SELECTED_IN_TOTAL_TTS"
+msgstr "%d valittu yhteensä."
+
+msgid "IDS_SCR_BODY_PD_UNREAD_ITEMS"
+msgstr "%d lukematonta ilmoitusta"
+
+msgid "IDS_SCR_OPT_MENU_POP_UP_TTS"
+msgstr "Ponnahdusvalikko"
+
+msgid "IDS_STORYALBUM_BODY_SWIPE_WITH_TWO_FINGERS_TO_VIEW_NEXT_PAGE_TTS"
+msgstr "Näytä seuraava sivu pyyhkäisemällä kahdella sormella."
+
+msgid "IDS_ST_BODY_POP_UP_HEADER_T_TALKBACK_T_TALKBACK"
+msgstr "Ponnahdusotsikko"
+
+msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
+msgstr "Ponnahdusikkunan tekstiosa"
+
+msgid "IDS_ST_HEADER_HOME_SCREEN"
+msgstr "Alkunäyttö"
+
+msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
+msgstr "Sivu siirretty: %1$d/%2$d."
+
+msgid "IDS_TTS_BODY_ROW_P1SD_COLUMN_P2SD"
+msgstr "Rivi %1$d, sarake %2$d"
+
+msgid "IDS_TTS_BUTTON_ADD_PAGE"
+msgstr "Lisää sivu"
+
+msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
+msgstr "Ei ole valittu"
+
+msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
+msgstr "Valintanappi"
+
+msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
+msgstr "Valittu"
+
+msgid "IDS_ST_BODY_CHOCO_COOKY"
+msgstr "Choco cooky"
+
+msgid "IDS_ST_BODY_COOL_JAZZ"
+msgstr "Cool jazz"
+
+msgid "IDS_ST_BODY_DEFAULT_FONT"
+msgstr "Oletusfontti"
+
+msgid "IDS_ST_BODY_FONTSTYLE_ROSEMARY"
+msgstr "Rosemary"
+
+msgid "IDS_COM_BODY_CONTACTS"
+msgstr "Yhteystiedot"
+
+msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
+msgstr "Merkkien enimmäismäärä saavutettu."
+
+msgid "IDS_COM_SK_OK"
+msgstr "OK"
+
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Peruuta"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Valmis"
+
+msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
+msgstr "Näytetään %d kohdetta"
+
+msgid "IDS_ST_BODY_UDRGOTHICM_JPN"
+msgstr "UDRGothicM"
+
+msgid "IDS_ST_BODY_UDMINCHO_JPN"
+msgstr "UDMincho"
+
+msgid "IDS_ST_BODY_UDGOTHIC_M_FONT"
+msgstr "UDGothic"
+
+msgid "IDS_ST_BODY_SCHEDULE"
+msgstr "Ajoitettu tapahtuma"
+
+msgid "IDS_ST_BODY_POP_JPN_DCM"
+msgstr "POP"
+
+msgid "IDS_ST_BODY_MARUBERI_JPN_DCM"
+msgstr "Maruberi"
+
+msgid "IDS_ST_BODY_HELVETICA_NEUE_M_FONT_NAME"
+msgstr "Helvetica Neue"
+
+msgid "IDS_ST_BODY_DOUBLE_TAP_TO_CLOSE_THE_MENU_T_TTS"
+msgstr "Sulje valikko kaksoisnapauttamalla tätä."
+
+msgid "IDS_ST_SK_SKIP_LITE"
+msgstr "Ohita"
+
+msgid "IDS_COM_SK_SELECT"
+msgstr "Valitse"
+
+msgid "IDS_COM_BODY_INTERNET"
+msgstr "Internet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d valittu"
+
+msgid "IDS_ST_SK_NEXT"
+msgstr "Seuraava"
+
+msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
+msgstr "%d kohdetta piilotetaan."
+
+msgid "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"
+msgstr "Tämä sivu ja kaikki sillä olevat kohteet poistetaan."
+
+msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
+msgstr "Poista sivu"
+
+msgid "IDS_HS_OPT_DELETE"
+msgstr "Poista"
+
+msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
+msgstr "Näytä piilotetut sovellukset"
+
+msgid "IDS_HS_OPT_HIDE_APPLICATIONS_ABB"
+msgstr "Piilota sovellukset"
+
+msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
+msgstr "Näytä käytöstä poistetut sov."
+
+msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
+msgstr "Sovelluksen %s asennusta ei voi poistaa. Se poistetaan käytöstä."
+
+msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
+msgstr "1 kohde piilotetaan."
+
+msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
+msgstr "Tätä Home Boxia ei voi lisätä alkunäyttöön. Alkunäytössä ei ole riittävästi tilaa. Poista joitakin Home Boxeja ja yritä uudelleen."
+
+msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
+msgstr "Lisääminen ei onnistu"
+
+msgid "IDS_HS_OPT_HOME_BOXES"
+msgstr "Home Boxeista"
+
+msgid "IDS_HS_OPT_ALL_PAGES"
+msgstr "Kaikki sivut"
+
+msgid "IDS_JAVA_POP_BLANK"
+msgstr "Tyhjä"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Lisää Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Poista"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Poista kansio"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Kansio poistetaan. Tässä kansiossa olevien sovellusten asennusta ei poisteta."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Manuaalisesti"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Nimen mukaan (A–Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "Sovelluksen %s asennus poistetaan."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Kuvakkeita ei voi järjestää nimen mukaan uudelleen (A–Z)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "VALMIS"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "PERUUTA"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Lajittele kohteet"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Lajittele kohteet"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Pienoisohjelmat"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Pienoisohjelmaa ei voi lisätä"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Lisää pienoisohjelma"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Alkunäytössä ei ole riittävästi tilaa. Poista joitakin pienoisohjelmia ja yritä uudelleen."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Muokkaa"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Muokkaa"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Teemat"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Sovellusta ei ole asennettu."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s ja kaikki siihen liittyvät toiminnot poistetaan käytöstä. Voit ottaa sen uudelleen käyttöön valitsemalla Asetukset > Sovellusten hallinta."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Kansiossa olevien sovellusten enimmäismäärä (%d) on saavutettu."
+
