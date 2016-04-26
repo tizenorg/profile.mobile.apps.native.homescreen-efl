@@ -195,7 +195,10 @@ HAPI void home_screen_set_view_type(homescreen_view_t view)
 		break;
 	case HOMESCREEN_VIEW_HOME_EDIT:
 		LOGI("HOMESCREEN_VIEW_HOME_EDIT");
-		livebox_panel_set_edit_mode_layout(true);
+		/*FIXME: It seems that widgets can not be resized and after edit mode is on
+		 * 	 they disappear
+		 */
+		//livebox_panel_set_edit_mode_layout(true);
 		livebox_panel_change_edit_mode_state(false);
 		elm_object_signal_emit(s_info.layout, SIGNAL_BOTTOM_BUTTONS_HOME_EDIT_STATE_SET, SIGNAL_SOURCE);
 		break;

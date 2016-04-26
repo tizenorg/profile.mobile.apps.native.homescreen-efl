@@ -50,6 +50,10 @@ static void __livebox_panel_mouse_down_cb(void *data, Evas *evas, Evas_Object *o
 static void __livebox_panel_mouse_up_cb(void *data, Evas *evas, Evas_Object *object,
 	void *event_info);
 static Eina_Bool __livebox_panel_longpress_cb(void *data);
+static void __livebox_scroller_mouse_down_cb(void *data, Evas *evas,
+	Evas_Object *object, void *event_info);
+static void __livebox_scroller_mouse_up_cb(void *data, Evas *evas,
+	Evas_Object *object, void *event_info);
 
 static void __livebox_panel_update_edit_mode_layout(Evas_Object *livebox_scroller_layout);
 static void __livebox_panel_add_page_clicked_cb(void *data, Evas_Object *obj,
@@ -86,11 +90,13 @@ static struct {
 	Ecore_Timer *longpress_timer;
 	int origination_page_num;
 	Ecore_Timer *page_change_timer;
+	Ecore_Timer *edit_mode_timer;
 	int page_change;
 } livebox_reposition_info_s = {
 	.longpress_timer = NULL,
 	.origination_page_num = 0,
 	.page_change_timer = NULL,
+	.edit_mode_timer = NULL,
 	.page_change = LIVEBOX_PAGE_NO_CHANGE,
 };
 
@@ -329,6 +335,11 @@ Evas_Object *livebox_panel_create_scroller(void)
 	elm_object_signal_callback_add(livebox_page_scroller,
 		SIGNAL_SCROLLER_PAGE_COUNT_CHANGED, SIGNAL_LAYOUT_SOURCE,
 		__livebox_panel_page_count_changed_cb, NULL);
+
+	evas_object_event_callback_add(livebox_page_scroller, EVAS_CALLBACK_MOUSE_DOWN,
+		__livebox_scroller_mouse_down_cb, NULL);
+	evas_object_event_callback_add(livebox_page_scroller, EVAS_CALLBACK_MOUSE_UP,
+		__livebox_scroller_mouse_up_cb, NULL);
 
 	/*After creation empty one empty space should be created.*/
 
@@ -1270,6 +1281,28 @@ static void __livebox_panel_page_changed_cb(void *data, Evas_Object *obj,
 	/*livebox_utils_set_shadow_visibility(false);*/
 }
 
+static Eina_Bool __livebox_scroller_edit_timer_cb(void *data)
+{
+	home_screen_set_view_type(HOMESCREEN_VIEW_HOME_EDIT);
+	livebox_reposition_info_s.edit_mode_timer = NULL;
+
+	return EINA_FALSE;
+}
+
+static void __livebox_scroller_mouse_down_cb(void *data, Evas *evas,
+	Evas_Object *object, void *event_info)
+{
+	livebox_reposition_info_s.edit_mode_timer = ecore_timer_add(1.0, __livebox_scroller_edit_timer_cb, NULL);
+}
+
+static void __livebox_scroller_mouse_up_cb(void *data, Evas *evas,
+	Evas_Object *object, void *event_info)
+{
+	if(livebox_reposition_info_s.edit_mode_timer) {
+		ecore_timer_del(livebox_reposition_info_s.edit_mode_timer);
+		livebox_reposition_info_s.edit_mode_timer = NULL;
+	}
+}
 
 static Eina_Bool _longpress_timer_cb(void *data)
 {
