@@ -29,9 +29,10 @@ void cluster_view_hide(void);
 void cluster_view_show_anim(double pos);
 void cluster_view_hide_anim(double pos);
 
-void cluster_view_hw_key_menu(void);
+void cluster_view_hw_menu_key(void);
+bool cluster_view_hw_home_key(void);
+bool cluster_view_hw_back_key(void);
 view_state_t cluster_view_get_state(void);
 void cluster_view_set_state(view_state_t state);
-void cluster_view_scroll_to_home(void);
 
 #endif /* __CLUSTER_VIEW_H__ */

@@ -37,7 +37,7 @@ static struct {
     Evas_Object *btn_layout;
     int root_width;
     int root_height;
-    homescreen_view_type view_type;
+    homescreen_view_t view_type;
     Ecore_Animator *animator;
 } main_info = {
     .win = NULL,
@@ -271,7 +271,7 @@ static void __homescreen_efl_home_btn_clicked(void *data, Evas_Object *obj, cons
 
 static void __homescreen_efl_change_view(void)
 {
-    if(main_info.animator != NULL) {
+    if (main_info.animator != NULL) {
         LOGE("main_info.animator != NULL");
         return ;
     }
@@ -329,36 +329,62 @@ Evas_Object *homescreen_efl_get_win(void)
 void homescreen_efl_hw_menu_key_release(void)
 {
     if (main_info.view_type == HOMESCREEN_VIEW_HOME) {
-        cluster_view_hw_key_menu();
+        cluster_view_hw_menu_key();
     } else if (main_info.view_type == HOMESCREEN_VIEW_APPS) {
-        apps_view_hw_key_menu();
+        apps_view_hw_menu_key();
     }
 }
 
 void homescreen_efl_hw_home_key_release(void)
 {
     if (main_info.view_type == HOMESCREEN_VIEW_HOME) {
-        if (cluster_view_get_state() != VIEW_STATE_NOMAL) {
-            cluster_view_set_state(VIEW_STATE_NOMAL);
-        } else {
-            cluster_view_scroll_to_home();
+        if (cluster_view_hw_home_key() == false) {
+            __homescreen_efl_change_view();
         }
     } else if (main_info.view_type == HOMESCREEN_VIEW_APPS) {
-        __homescreen_efl_change_view();
+        if (apps_view_hw_home_key() == false) {
+            __homescreen_efl_change_view();
+        }
     }
 }
 
 void homescreen_efl_hw_back_key_release(void)
 {
     if (main_info.view_type == HOMESCREEN_VIEW_HOME) {
-        if (cluster_view_get_state() != VIEW_STATE_NOMAL) {
-            cluster_view_set_state(VIEW_STATE_NOMAL);
-        }
-    } else if (main_info.view_type == HOMESCREEN_VIEW_APPS) {
-        if (apps_view_get_state() != VIEW_STATE_NOMAL) {
-            apps_view_set_state(VIEW_STATE_NOMAL);
-        } else {
+        if (cluster_view_hw_back_key() == false) {
             __homescreen_efl_change_view();
         }
+    } else if (main_info.view_type == HOMESCREEN_VIEW_APPS) {
+        if (apps_view_hw_back_key() == false) {
+            __homescreen_efl_change_view();
+        }
+    }
+}
+
+void homescreen_efl_btn_show(homescreen_view_t view_t)
+{
+    switch (view_t) {
+    case HOMESCREEN_VIEW_HOME:
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_BTN_SHOW_HOME, SIGNAL_SOURCE);
+        break;
+    case HOMESCREEN_VIEW_APPS:
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_BTN_SHOW_APPS, SIGNAL_SOURCE);
+        break;
+    default:
+        break;
+    }
+}
+
+void homescreen_efl_btn_hide(homescreen_view_t view_t)
+{
+    switch (view_t) {
+    case HOMESCREEN_VIEW_HOME:
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_BTN_HIDE_HOME, SIGNAL_SOURCE);
+        break;
+    case HOMESCREEN_VIEW_APPS:
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_BTN_HIDE_APPS, SIGNAL_SOURCE);
+        break;
+    default:
+        break;
     }
 }

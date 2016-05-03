@@ -26,19 +26,21 @@
 
 typedef enum {
     HOMESCREEN_VIEW_HOME = 0,
-    HOMESCREEN_VIEW_HOME_EDIT,
-    HOMESCREEN_VIEW_HOME_ALL_PAGES,
-    HOMESCREEN_VIEW_HOME_ADD_VIEWER,
+    //HOMESCREEN_VIEW_HOME_EDIT,
+    //HOMESCREEN_VIEW_HOME_ALL_PAGES,
+    //HOMESCREEN_VIEW_HOME_ADD_VIEWER,
     HOMESCREEN_VIEW_APPS,
-    HOMESCREEN_VIEW_APPS_EDIT,
-    HOMESCREEN_VIEW_APPS_CHOOSE,
+    //HOMESCREEN_VIEW_APPS_EDIT,
+    //HOMESCREEN_VIEW_APPS_CHOOSE,
     HOMESCREEN_VIEW_UNKNOWN,
-} homescreen_view_type;
-
+} homescreen_view_t;
 Evas_Object *homescreen_efl_get_win(void);
 
 void homescreen_efl_hw_menu_key_release(void);
 void homescreen_efl_hw_home_key_release(void);
 void homescreen_efl_hw_back_key_release(void);
+
+void homescreen_efl_btn_show(homescreen_view_t view_t);
+void homescreen_efl_btn_hide(homescreen_view_t view_t);
 
 #endif /* __HOMESCREEN_EFL_H__ */

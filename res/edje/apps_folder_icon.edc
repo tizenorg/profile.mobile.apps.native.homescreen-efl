@@ -99,7 +99,7 @@ collections {
             }
         }
         part{
-            name :"folder_icon_1";
+            name :"icon_0";
             type: SWALLOW;
             description {
                 state: "default" 0.0;
@@ -135,7 +135,7 @@ collections {
             }
         }
         part{
-            name :"folder_icon_2";
+            name :"icon_1";
             type: SWALLOW;
             description {
                 state: "default" 0.0;
@@ -171,7 +171,7 @@ collections {
             }
         }
         part{
-            name :"folder_icon_3";
+            name :"icon_2";
             type: SWALLOW;
             description {
                 state: "default" 0.0;
@@ -205,7 +205,7 @@ collections {
             }
         }
         part{
-            name :"folder_icon_4";
+            name :"icon_3";
             type: SWALLOW;
             description {
                 state: "default" 0.0;
@@ -244,10 +244,10 @@ collections {
                 signal: "set_item_count_1";
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "item_count_1" 0.0;
-                target: "folder_icon_1";
-                target: "folder_icon_2";
-                target: "folder_icon_3";
-                target: "folder_icon_4";
+                target: "icon_0";
+                target: "icon_1";
+                target: "icon_2";
+                target: "icon_3";
                 target: "folder_icon_bg_image";
                 transition: DECELERATE 0.2;
             }
@@ -257,10 +257,10 @@ collections {
                 signal: "set_item_count_2";
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "item_count_2" 0.0;
-                target: "folder_icon_1";
-                target: "folder_icon_2";
-                target: "folder_icon_3";
-                target: "folder_icon_4";
+                target: "icon_0";
+                target: "icon_1";
+                target: "icon_2";
+                target: "icon_3";
                 target: "folder_icon_bg_image";
                 transition: DECELERATE 0.2;
             }
@@ -270,10 +270,10 @@ collections {
                 signal: "set_item_count_3";
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "item_count_3" 0.0;
-                target: "folder_icon_1";
-                target: "folder_icon_2";
-                target: "folder_icon_3";
-                target: "folder_icon_4";
+                target: "icon_0";
+                target: "icon_1";
+                target: "icon_2";
+                target: "icon_3";
                 target: "folder_icon_bg_image";
                 transition: DECELERATE 0.2;
             }
@@ -282,10 +282,10 @@ collections {
                 signal: "set_item_count_4";
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "item_count_4" 0.0;
-                target: "folder_icon_1";
-                target: "folder_icon_2";
-                target: "folder_icon_3";
-                target: "folder_icon_4";
+                target: "icon_0";
+                target: "icon_1";
+                target: "icon_2";
+                target: "icon_3";
                 target: "folder_icon_bg_image";
                 transition: DECELERATE 0.2;
             }
@@ -294,10 +294,10 @@ collections {
                 signal: "set_item_count_0";
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "default" 0.0;
-                target: "folder_icon_1";
-                target: "folder_icon_2";
-                target: "folder_icon_3";
-                target: "folder_icon_4";
+                target: "icon_0";
+                target: "icon_1";
+                target: "icon_2";
+                target: "icon_3";
                 target: "folder_icon_bg_image";
             }
 

@@ -29,13 +29,17 @@ void apps_view_hide(void);
 void apps_view_show_anim(double pos);
 void apps_view_hide_anim(double pos);
 void apps_view_reroder(void);
+void apps_view_folder_reroder(void);
+void apps_view_update_folder_icon(app_data_t *item);
 
 Evas_Object* apps_view_create_icon(app_data_t *item);
-void apps_view_icon_unset(app_data_t *item);
+void apps_view_unset_all(void);
 bool apps_view_icon_set(app_data_t *item);
 void apps_view_icon_add(app_data_t *item);
 
-void apps_view_hw_key_menu(void);
+void apps_view_hw_menu_key(void);
+bool apps_view_hw_home_key(void);
+bool apps_view_hw_back_key(void);
 view_state_t apps_view_get_state(void);
 void apps_view_set_state(view_state_t state);
 

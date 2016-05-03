@@ -9,7 +9,7 @@ type = app
 profile = mobile-3.0
 
 # C Sources
-USER_SRCS = src/apps_data.c src/homescreen-efl.c src/cluster_view.c src/widget_viewer.c src/page_indicator.c src/conf.c src/apps_view.c src/menu.c src/hw_key.c src/apps_db.c src/apps_package_manager.c src/util.c 
+USER_SRCS = src/apps_data.c src/homescreen-efl.c src/cluster_db.c src/cluster_view.c src/widget_viewer.c src/page_indicator.c src/cluster_data.c src/conf.c src/apps_view.c src/menu.c src/hw_key.c src/apps_db.c src/apps_package_manager.c src/util.c 
 USER_SRCS_ABS = 
 
 # EDC Sources
@@ -46,7 +46,7 @@ USER_CPP_INC_FILES =
 USER_CPP_INC_FILES_ABS = 
 
 # User Library Path
-USER_LIB_DIRS = lib 
+USER_LIB_DIRS = 
 USER_LIB_DIRS_ABS = 
 
 # EDC Resource Path
@@ -60,7 +60,7 @@ USER_EDCS_FONT_DIRS_ABS =
 # EDC Flags
 USER_EXT_EDC_KEYS = EDC0 
 
-USER_EXT_EDC0_EDCS = res/edje/apps_folder_icon.edc res/edje/apps_view.edc res/edje/page_indicator_unit.edc res/edje/apps_view_bg.edc res/edje/home_btn.edc res/edje/home.edc res/edje/app_icon.edc res/edje/custer_view.edc 
+USER_EXT_EDC0_EDCS = res/edje/apps_folder_icon.edc res/edje/apps_folder_popup.edc res/edje/apps_view.edc res/edje/page_indicator_unit.edc res/edje/apps_view_bg.edc res/edje/home_btn.edc res/edje/home.edc res/edje/apps_chooser_btn.edc res/edje/app_icon.edc res/edje/custer_view.edc 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
 USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds 

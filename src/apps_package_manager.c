@@ -161,7 +161,7 @@ static bool __apps_data_pkg_get_apps_info(app_info_h app_handle, app_data_t **it
         if (new_item->icon_path_str) free(new_item->icon_path_str);
 
         new_item->icon_path_str = malloc(MAX_FILE_PATH_LEN);
-        sprintf(new_item->icon_path_str, "%s", util_get_res_file_path(IMAGE_DIR"/default_bg.png"));
+        sprintf(new_item->icon_path_str, "%s", util_get_res_file_path(IMAGE_DIR"/default_app_icon.png"));
     }
     if (pkg)
         free(pkg);
