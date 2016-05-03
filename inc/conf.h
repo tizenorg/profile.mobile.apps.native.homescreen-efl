@@ -23,6 +23,7 @@
 #define IMAGE_DIR "images"
 
 #define HOME_ANIMATION_TIME 0.3
+#define HOME_FOLDR_ANIMATION_TIME 0.1
 #define MAX_FILE_PATH_LEN 1024
 
 extern double __conf_get_resolution_scale_h();
@@ -53,6 +54,8 @@ extern int __conf_get_window_w();
 #define PAGE_INDICATOR_GAP 4
 #define PAGE_INDICATOR_X 0
 #define PAGE_INDICATOR_UNIT ((40) * (__conf_get_resolution_scale_w()))
+
+#define APPS_FOLDER_MAX_ITEM 9
 
 void conf_set_resolution_scale(int win_width, int win_height);
 

@@ -14,14 +14,18 @@
  * limitations under the License.
  */
 
-#ifndef __VIEW_H__
-#define __VIEW_H__
+#ifndef __CLUSTER_DB_H__
+#define __CLUSTER_DB_H__
 
-typedef enum {
-    VIEW_STATE_NORMAL = 0,
-    VIEW_STATE_EDIT,
-    VIEW_STATE_CHOOSER,
-    VIEW_STATE_UNKNOWN,
-} view_state_t;
+#include <Elementary.h>
+#include "cluster_data.h"
 
-#endif /* __VIEW_H__ */
+bool cluster_db_create(void);
+bool cluster_db_close();
+bool cluster_db_update(cluster_data_t *item);
+bool cluster_db_insert(cluster_data_t *item);
+bool cluster_db_delete(cluster_data_t *item);
+
+bool cluster_db_get_list(Eina_List **cluster_list);
+
+#endif /* __CLUSTER_DB_H__ */

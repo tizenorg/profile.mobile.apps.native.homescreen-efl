@@ -31,11 +31,13 @@ int __conf_get_window_w(void)
     return window_w;
 }
 
-double __conf_get_resolution_scale_h() {
+double __conf_get_resolution_scale_h()
+{
     return resolution_scale_h;
 }
 
-double __conf_get_resolution_scale_w() {
+double __conf_get_resolution_scale_w()
+{
     return resolution_scale_w;
 }
 

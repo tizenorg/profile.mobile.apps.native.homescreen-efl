@@ -31,7 +31,7 @@ void widget_viewer_fini(void)
 Evas_Object *widget_viewer_add_widget(Evas_Object *parent, const char *pkgid, const char *sub_id
         , double period, int *widget_width, int *widget_height)
 {
-    Evas_Object *widget = widget_viewer_evas_add_widget(parent, "org.tizen.calendar.widget", NULL, 0);
+    Evas_Object *widget = widget_viewer_evas_add_widget(parent, pkgid, NULL, period);
 
     //Evas_Object *widget = evas_object_rectangle_add(parent);
 

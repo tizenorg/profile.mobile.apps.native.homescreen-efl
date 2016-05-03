@@ -1,7 +1,7 @@
 #include "../../inc/edc_conf.h"
 
 
-#define MAKE_TILE(num_x,num_y )\
+#define MAKE_TILE(num_x,num_y)\
     part{ name: "icon_"num_x"_"num_y;\
         type : SWALLOW;\
         description {\
@@ -71,7 +71,7 @@ collections {
         programs {
             program {
                 name: "bg_edit_mode_on";
-                signal: SIGNAL_EDIT_MODE_ON;
+                signal: SIGNAL_EDIT_MODE_ON_ANI;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "edit" 0.0;
                 target: "icon_0_0";
@@ -98,7 +98,7 @@ collections {
             }
             program {
                 name: "bg_edit_mode_off";
-                signal: SIGNAL_EDIT_MODE_OFF;
+                signal: SIGNAL_EDIT_MODE_OFF_ANI;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "default" 0.0;
                 target: "icon_0_0";

@@ -27,6 +27,14 @@ collections {
                     inherit: "default" 0.0;
                     color: 255 255 255 40;
                 }
+                description { state: "show" 0.0;
+                    inherit: "default" 0.0;
+                }
+                description { state: "hide" 0.0;
+                    inherit: "default" 0.0;
+                    color: 0 0 0 0;
+                    visible: 0;
+                }
             }
             part { name: "menu_btn_icon";
                 type: IMAGE;
@@ -40,6 +48,15 @@ collections {
                     image {
                         normal: "../res/images/home_button_menu.png";
                     }
+                }
+                description { state: "show" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 255;
+                }
+                description { state: "hide" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 0;
+                    visible: 0;
                 }
             }
             //Home Button
@@ -59,6 +76,14 @@ collections {
                     state: "press" 0.0;
                     inherit: "default" 0.0;
                     color : 255 255 255 40;
+                }
+                description { state: "show" 0.0;
+                    inherit: "default" 0.0;
+                }
+                description { state: "hide" 0.0;
+                    inherit: "default" 0.0;
+                    color: 0 0 0 0;
+                    visible: 0;
                 }
             }
             part { name: "home_btn_home_icon";
@@ -81,6 +106,7 @@ collections {
                 description { state: "hide" 0.0;
                     inherit: "default" 0.0;
                     color: 255 255 255 0;
+                    visible: 0;
                 }
             }
             part { name: "home_btn_app_icon";
@@ -103,6 +129,7 @@ collections {
                 description { state: "hide" 0.0;
                     inherit: "default" 0.0;
                     color: 255 255 255 0;
+                    visible: 0;
                 }
             }
         }
@@ -139,7 +166,6 @@ collections {
                 target: HOME_BUTTON;
                 transition: DECELERATE 0.1;
             }
-
             program {
                 name: "home_btn_up";
                 signal: "mouse,up,1";
@@ -148,14 +174,12 @@ collections {
                 target: HOME_BUTTON;
                 transition: DECELERATE 0.1;
             }
-
             program {
                 name: "home_btn_click";
                 signal: "mouse,clicked,1";
                 source: HOME_BUTTON;
                 action: SIGNAL_EMIT SIGNAL_HOME_BTN_CLICKED SIGNAL_SOURCE;
             }
-
             program {
                 name: "home_btn_show";
                 signal: SIGNAL_HOME_BTN_SHOW;
@@ -164,7 +188,6 @@ collections {
                 target: "home_btn_home_icon";
                 transition: DECELERATE 0.3;
             }
-
             program {
                 name: "home_btn_hide";
                 signal: SIGNAL_HOME_BTN_HIDE;
@@ -173,7 +196,6 @@ collections {
                 target: "home_btn_home_icon";
                 transition: DECELERATE 0.3;
             }
-
             program {
                 name: "apps_btn_show";
                 signal: SIGNAL_APPS_BTN_SHOW;
@@ -182,12 +204,55 @@ collections {
                 target: "home_btn_app_icon";
                 transition: DECELERATE 0.3;
             }
-
             program {
                 name: "apps_btn_hide";
                 signal: SIGNAL_APPS_BTN_HIDE;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "hide" 0.0;
+                target: "home_btn_app_icon";
+                transition: DECELERATE 0.3;
+            }
+            program {
+                name: "btn_show_home";
+                signal: SIGNAL_BTN_SHOW_HOME;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "show" 0.0;
+                target: MENU_BUTTON;
+                target: "menu_btn_icon";
+                target: HOME_BUTTON;
+                target: "home_btn_home_icon";
+                transition: DECELERATE 0.3;
+            }
+            program {
+                name: "btn_hide_home";
+                signal: SIGNAL_BTN_HIDE_HOME;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "hide" 0.0;
+                target: MENU_BUTTON;
+                target: "menu_btn_icon";
+                target: HOME_BUTTON;
+                target: "home_btn_home_icon";
+                transition: DECELERATE 0.3;
+            }
+            program {
+                name: "btn_show_apps";
+                signal: SIGNAL_BTN_SHOW_APPS;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "show" 0.0;
+                target: MENU_BUTTON;
+                target: "menu_btn_icon";
+                target: HOME_BUTTON;
+                target: "home_btn_app_icon";
+                transition: DECELERATE 0.3;
+            }
+            program {
+                name: "btn_hide_apps";
+                signal: SIGNAL_BTN_HIDE_APPS;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "hide" 0.0;
+                target: MENU_BUTTON;
+                target: "menu_btn_icon";
+                target: HOME_BUTTON;
                 target: "home_btn_app_icon";
                 transition: DECELERATE 0.3;
             }
