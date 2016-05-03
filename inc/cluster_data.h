@@ -14,14 +14,26 @@
  * limitations under the License.
  */
 
-#ifndef __VIEW_H__
-#define __VIEW_H__
+#ifndef __CLUSTER_DATA_H__
+#define __CLUSTER_DATA_H__
 
-typedef enum {
-    VIEW_STATE_NORMAL = 0,
-    VIEW_STATE_EDIT,
-    VIEW_STATE_CHOOSER,
-    VIEW_STATE_UNKNOWN,
-} view_state_t;
+#include <app.h>
+#include <Elementary.h>
 
-#endif /* __VIEW_H__ */
+typedef struct {
+    int cluster_id;
+    int page_idx;
+    int pos_y;
+    int pos_x;
+    char *pkg_name;
+    char *content_info;
+    int type;
+    double period;
+    int allow_duplicate;
+    Evas_Object *widget_layout;
+} cluster_data_t;
+
+void cluster_data_init(void);
+Eina_List *cluster_data_get_list(void);
+
+#endif /* __CLUSTER_DATA_H__ */

@@ -47,5 +47,8 @@ Eina_List *apps_data_get_list(void);
 void apps_data_get_folder_item_list(Eina_List **list, app_data_t *folder);
 void apps_data_install(app_data_t *item);
 void apps_data_uninstall(const char *package);
+app_data_t *apps_data_add_folder(void);
+void apps_data_delete_folder(app_data_t *folder_item);
+void apps_data_update_folder(app_data_t *folder_item);
 
 #endif /* __APPS_DATA_H__ */

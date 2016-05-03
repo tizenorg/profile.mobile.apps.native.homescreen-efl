@@ -15,6 +15,7 @@
  */
 
 #include "conf.h"
+#include "util.h"
 
 static int window_w = 720;
 static int window_h = 1280;
@@ -31,11 +32,13 @@ int __conf_get_window_w(void)
     return window_w;
 }
 
-double __conf_get_resolution_scale_h() {
+double __conf_get_resolution_scale_h()
+{
     return resolution_scale_h;
 }
 
-double __conf_get_resolution_scale_w() {
+double __conf_get_resolution_scale_w()
+{
     return resolution_scale_w;
 }
 
@@ -43,6 +46,6 @@ void conf_set_resolution_scale(int win_width, int win_height)
 {
     window_h = win_height;
     window_w = win_width;
-    resolution_scale_w = win_width / 720;
-    resolution_scale_h = win_height / 1280;
+    resolution_scale_w = (double)win_width / 720;
+    resolution_scale_h = (double)win_height / 1280;
 }

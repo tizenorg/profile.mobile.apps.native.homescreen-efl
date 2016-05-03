@@ -57,7 +57,7 @@ page_indicator_t * page_indictor_create(Evas_Object *scroller)
     evas_object_smart_callback_add(scroller, "scroll", __page_indicator_scroll_cb, page_indicator);
     evas_object_smart_callback_add(scroller, "scroll,anim,stop", __page_indicator_scroll_anim_stop_cb, page_indicator);
 
-    for (i = 0; i < PAGE_INDICATOR_MAX_PAGE_COUNT ; i ++) {
+    for (i = 0; i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
         page_indicator->unit[i] = elm_layout_add(homescreen_efl_get_win());
         elm_layout_file_set(page_indicator->unit[i], edj_path, GROUP_PAGE_INDICATOR_UNIT);
         evas_object_size_hint_weight_set(page_indicator->unit[i], EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
@@ -83,9 +83,14 @@ void page_indicator_set_page_count(page_indicator_t *page_indicator, int count)
         return ;
     }
     elm_box_unpack_all(page_indicator->box);
-    for (i = 0 ; i<count && i<PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
-        elm_box_pack_end(page_indicator->box, page_indicator->unit[i]);
-        evas_object_show(page_indicator->unit[i]);
+    for (i = 0 ; i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
+        if (i < count) {
+            elm_box_pack_end(page_indicator->box, page_indicator->unit[i]);
+            evas_object_show(page_indicator->unit[i]);
+        } else {
+            evas_object_move(page_indicator->unit[i], 0, -100);
+        }
+
     }
 
     page_indicator->x = (WINDOW_W - width) / 2;
@@ -139,13 +144,11 @@ static void __page_indicator_scroll_cb(void *data, Evas_Object *obj, void *event
     if (fabs((float)(x - current_x)) <= page_indicator->w) {
         next_page = x > current_x ? (page_indicator->current_page+1) % page_indicator->page_count : page_indicator->current_page-1;
         color = fabs(angle) * 2;
-    }
-    else {
+    } else {
         if (x > current_x) {
             next_page = page_indicator->page_count-1;
             color = (double)(page_indicator->w*page_indicator->page_count - x)/page_indicator->w * 180.0;
-        }
-        else {
+        } else {
             next_page = 0;
             color = 180.0;
         }
@@ -172,7 +175,7 @@ static void __page_indicator_scroll_anim_stop_cb(void *data, Evas_Object *obj, v
 
     LOGD("current %d", page_indicator->current_page);
 
-    for (i=0; i < page_indicator->page_count && i<PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
+    for (i = 0; i < page_indicator->page_count && i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
         Evas_Object *edje = NULL;
         edje = elm_layout_edje_get(page_indicator->unit[i]);
         if (i == page_indicator->current_page) {

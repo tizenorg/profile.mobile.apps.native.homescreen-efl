@@ -65,6 +65,7 @@ void menu_show(Eina_Hash* hash_table)
         void *data = eina_hash_find(hash_table, &menu_id);
         if (data) {
             elm_ctxpopup_item_append(menu_info.menu, _(menu_text[menu_id]), NULL, data, NULL);
+            LOGD("%s", _(menu_text[menu_id]));
         }
     }
 
