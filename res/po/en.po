@@ -307,6 +307,12 @@ msgstr "Maximum number of characters reached."
 msgid "IDS_COM_SK_OK"
 msgstr "OK"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Cancel"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Done"
+
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Showing %d items"
 
@@ -342,6 +348,9 @@ msgstr "Select"
 
 msgid "IDS_COM_BODY_INTERNET"
 msgstr "Internet"
+
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d selected"
 
 msgid "IDS_ST_SK_NEXT"
 msgstr "Next"
@@ -391,6 +400,63 @@ msgstr "All pages"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Blank"
 
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Add Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Remove"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Remove folder"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Folder will be removed. Applications in this folder will not be uninstalled."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Manually"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "By name (A-Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s will be uninstalled."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Unable to rearrange icons sorted by name (A-Z)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "DONE"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "CANCEL"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Sort items"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Sort items"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Widgets"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Unable to add widget"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Add widget"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "There is not enough space on the Home screen. Remove some widgets and try again."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Edit"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Edit"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Themes"
+
 msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
 msgstr "Sort items alphabetically"
 
@@ -400,3 +466,5 @@ msgstr "Sort items alphabetically"
 msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
 msgstr "App icons and folders will be sorted into alphabetical order. Any customisations you have made will be discarded."
 
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Maximum number of applications in folder (%d) reached."
