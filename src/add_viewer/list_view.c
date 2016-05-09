@@ -125,7 +125,7 @@ static char *__gl_text_get_cb(void *data, Evas_Object *obj, const char *part)
 		return NULL;
 
 	if(!strcmp(part, "elm.text"))
-		return strdup(widget->widget_id);
+		return strdup(widget->label);
 
 	return strdup("widget name not found");
 }
@@ -195,7 +195,7 @@ static Evas_Object *__list_view_widget_box_create(Evas_Object *obj, widget_t *wi
 			return NULL;
 		}
 
-		elm_object_part_text_set(preview_layout, "text", widget->widget_id);
+		elm_object_part_text_set(preview_layout, "text", widget->label);
 
 		//elm_box_pack_end(main_box, preview_layout);
 

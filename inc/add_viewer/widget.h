@@ -22,6 +22,7 @@
 typedef struct {
 	char *widget_id;
 	char *app_id;
+	char *label;
 
 	Eina_List *preview_list;
 	Elm_Object_Item *genlist_item;

@@ -73,7 +73,7 @@ static int __widget_compare_widget_id_cb(const void *data1, const void *data2)
 	widget_t *w1 = (widget_t *)data1;
 	widget_t *w2 = (widget_t *)data2;
 
-	res = strcmp(w1->widget_id, w2->widget_id);
+	res = strcmp(w1->label, w2->label);
 
 	if (res < 0) return -1;
 	else if (res > 0) return 1;
@@ -146,6 +146,9 @@ static int __widget_list_widget_append(const char *appid, const char *widget_id,
 	widget->size_types_count = types_count;
 	widget->app_id = strdup(appid);
 	widget->widget_id = strdup(widget_id);
+	widget->label = widget_service_get_name(widget->widget_id, NULL);
+	if (!widget->label)
+		widget->label = strdup("");
 
 	widget_list = eina_list_sorted_insert(widget_list, __widget_compare_widget_id_cb, widget);
 	//widget_list = eina_list_append(widget_list, widget);
@@ -168,6 +171,7 @@ static void __widget_list_widget_remove(widget_t *widget)
 	eina_list_free(widget->preview_list);
 	free(widget->app_id);
 	free(widget->widget_id);
+	free(widget->label);
 	free(widget);
 }
 
