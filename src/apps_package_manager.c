@@ -112,6 +112,8 @@ static bool __apps_data_pkg_get_apps_info(app_info_h app_handle, app_data_t **it
     new_item->owner = strdup(TEMP_OWNER);
     new_item->is_folder = false;
     new_item->position = -1;
+    new_item->uri = NULL;
+    new_item->type = APPS_DATA_TYPE_APP;
 
     ret = app_info_get_app_id(app_handle, &new_item->pkg_str);
     if (APP_MANAGER_ERROR_NONE != ret) {
