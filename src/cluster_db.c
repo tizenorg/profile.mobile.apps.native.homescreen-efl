@@ -26,6 +26,18 @@
 
 static sqlite3 *cluster_db = NULL;
 
+enum {
+    COL_CLUSTER_ID = 0,
+    COL_PAGE_INDEX,
+    COL_POS_Y,
+    COL_POS_X,
+    COL_PKG_NAME,
+    COL_CONTENT_INFO,
+    COL_TYPE,
+    COL_PERIOD,
+    COL_ALLOW_DUPLICATE
+};
+
 #define CREATE_CLUSTER_DB_TABLE "CREATE TABLE IF NOT EXISTS clusters (\
         clusterId INTEGER PRIMARY KEY AUTOINCREMENT,\
         pageIndex INTEGER default 0,\
@@ -56,18 +68,6 @@ static sqlite3 *cluster_db = NULL;
         type,\
         period,\
         allow) VALUES(%d,%d, %d,'%s','%s',%d, '%lf',%d)"
-
-enum {
-    COL_CLUSTER_ID = 0,
-    COL_PAGE_INDEX,
-    COL_POS_Y,
-    COL_POS_X,
-    COL_PKG_NAME,
-    COL_CONTENT_INFO,
-    COL_TYPE,
-    COL_PERIOD,
-    COL_ALLOW_DUPLICATE
-};
 
 #define SELECT_ITEM "SELECT * FROM clusters;"
 

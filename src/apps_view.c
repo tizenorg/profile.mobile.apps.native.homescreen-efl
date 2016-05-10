@@ -318,6 +318,13 @@ Evas_Object* apps_view_create_icon(app_data_t *item)
             elm_object_part_content_set(icon_layout, APPS_ICON_CONTENT, icon_image);
         } else {
             LOGE("Can not read : %s", item->icon_path_str);
+
+            const char *default_icon = util_get_res_file_path(IMAGE_DIR"/default_app_icon.png");
+            icon_image = elm_image_add(icon_layout);
+            elm_image_file_set(icon_image, default_icon, NULL);
+            evas_object_size_hint_min_set(icon_image, APPS_VIEW_ICON_IMAGE, APPS_VIEW_ICON_IMAGE);
+            evas_object_size_hint_max_set(icon_image, APPS_VIEW_ICON_IMAGE, APPS_VIEW_ICON_IMAGE);
+            elm_object_part_content_set(icon_layout, APPS_ICON_CONTENT, icon_image);
         }
 
         if (item->parent_db_id != APPS_ROOT)
@@ -561,6 +568,17 @@ static void __apps_view_icon_clicked_cb(void *data, Evas_Object *obj, const char
             LOGE("[FAILED][app_control_create]");
             return;
         }
+        /*if (app_control_set_operation(app_control_handle, APP_CONTROL_OPERATION_VIEW) != APP_CONTROL_ERROR_NONE) {
+            LOGE("[FAILED][app_control_set_operation]");
+            app_control_destroy(app_control_handle);
+            return;
+        }*/
+        if (item->type == APPS_DATA_TYPE_URI_SHORTCUT && item->uri && strlen(item->uri) &&
+            app_control_set_uri(app_control_handle, item->uri) != APP_CONTROL_ERROR_NONE) {
+            LOGE("[FAILED][app_control_set_uri]");
+            app_control_destroy(app_control_handle);
+            return;
+        }
         if (app_control_set_app_id(app_control_handle, item->pkg_str) != APP_CONTROL_ERROR_NONE) {
             LOGE("[FAILED][app_control_set_app_id]");
             app_control_destroy(app_control_handle);
@@ -590,6 +608,9 @@ static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *o
     if (item->is_folder) {
         //folder delete
         apps_data_delete_folder(item);
+    } else if (item->type >= APPS_DATA_TYPE_APP_SHORTCUT) {
+        LOGD("Delete shortcut");
+        apps_data_delete_item(item);
     } else {
         if (package_manager_request_create(&request) != PACKAGE_MANAGER_ERROR_NONE) {
             LOGE("Could not create unistall request. App: %s", item->pkg_str);

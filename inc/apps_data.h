@@ -32,6 +32,8 @@ typedef struct {
     char* pkg_str;
     char* label_str;
     char* icon_path_str;
+    char* uri;
+    int type;
     bool is_removable;
     bool is_system;
     Evas_Object *app_layout;
@@ -40,6 +42,12 @@ typedef struct {
     Eina_Bool is_checked;
     bool temp;
 } app_data_t;
+
+enum {
+    APPS_DATA_TYPE_APP= 0,
+    APPS_DATA_TYPE_APP_SHORTCUT,
+    APPS_DATA_TYPE_URI_SHORTCUT
+};
 
 void apps_data_init(void);
 void apps_data_sort(void);
@@ -50,5 +58,7 @@ void apps_data_uninstall(const char *package);
 app_data_t *apps_data_add_folder(void);
 void apps_data_delete_folder(app_data_t *folder_item);
 void apps_data_update_folder(app_data_t *folder_item);
+void apps_data_delete_item(app_data_t *item);
+void apps_data_delete_list(Eina_List *list);
 
 #endif /* __APPS_DATA_H__ */
