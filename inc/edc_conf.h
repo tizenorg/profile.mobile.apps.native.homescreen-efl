@@ -28,27 +28,43 @@
 #define SIGNAL_HOME_BTN_CLICKED "home_btn_clicked"
 #define SIGNAL_SOURCE "source"
 
-#define SIGNAL_BTN_SHOW_HOME "btn_show_home"
-#define SIGNAL_BTN_SHOW_APPS "btn_show_apps"
-#define SIGNAL_BTN_HIDE_HOME "btn_hide_home"
-#define SIGNAL_BTN_HIDE_APPS "btn_hide_apps"
-#define SIGNAL_HOME_BTN_SHOW "home_btn_show"
-#define SIGNAL_HOME_BTN_HIDE "home_btn_hide"
-#define SIGNAL_APPS_BTN_SHOW "apps_btn_show"
-#define SIGNAL_APPS_BTN_HIDE "apps_btn_hide"
+#define SIGNAL_BTN_SHOW_HOME_STATE "btn_show_home_state"
+#define SIGNAL_BTN_SHOW_APPS_STATE "btn_show_apps_state"
+#define SIGNAL_BTN_HIDE_HOME_STATE "btn_hide_home_state"
+#define SIGNAL_BTN_HIDE_APPS_STATE "btn_hide_apps_state"
+#define SIGNAL_HOME_BTN_ICON_SHOW "home_btn_icon_show"
+#define SIGNAL_HOME_BTN_ICON_HIDE "home_btn_icon_hide"
+#define SIGNAL_APPS_BTN_ICON_SHOW "apps_btn_icon_show"
+#define SIGNAL_APPS_BTN_ICON_HIDE "apps_btn_icon_hide"
 
 #define GROUP_HOME_BTN_LY "home_btn_ly"
 
 // cluster
-#define GROUP_CLUSTER_LY "cluster_ly"
 #define SIZE_SETTER "size_setter"
 #define CLUSTER_BOX "cluster_box"
+#define CLUSTER_BG "cluster_bg"
+#define CLUSTER_ADD_PAGE "cluster_add_page"
+#define CLUSTER_ALL_PAGE_MODE_ON "cluster_all_page_on"
+#define CLUSTER_ALL_PAGE_MODE_OFF "cluster_all_page_off"
+#define CLUSTER_PAGE_DELETE_BUTTON "cluster_delete_page"
 
 #define GROUP_PAGE_INDICATOR_UNIT "page_indicator_unit"
 #define SIGNAL_PAGE_IDICATOR_ROTATION_CHANGE "rotation,changed"
 #define SIGNAL_PAGE_IDICATOR_DEFAULT "default,set"
 #define SIGNAL_PAGE_IDICATOR_CURRENT "current,set"
 
+#define GROUP_CLUSTER_PAGE_LY "cluster_page_ly"
+#define GROUP_CLUSTER_ALLPAGE_LY "cluster_allpage_ly"
+#define GROUP_CLUSTER_ALLPAGE_THUMBNAIL_LY "cluster_allpage_thumbnail_ly"
+#define CLUSTER_ALLPAGE_THUMBNAIL_IMAGE "cluster_allpage_thumbnail_image"
+#define CLUSTER_ALLPAGE_DELETE_BUTTON "cluster_allpage_delete_button"
+#define CLUSTER_ALLPAGE_ADD_BUTTON "cluster_allpage_add_button"
+#define SIGNAL_ALLPAGE_DELETE_BUTTON_CLICKED "allpage_delete_button_clicked"
+#define SIGNAL_ALLPAGE_DELETE_BUTTON_SHOW "allpage_delete_button_show"
+#define SIGNAL_ALLPAGE_DELETE_BUTTON_HIDE "allpage_delete_button_hide"
+#define SIGNAL_ALLPAGE_ADD_BUTTON_CLICKED "allpage_add_button_clicked"
+#define SIGNAL_ALLPAGE_ADD_BUTTON_SHOW "allpage_add_button_show"
+#define SIGNAL_ALLPAGE_ADD_BUTTON_HIDE "allpage_add_button_hide"
 
 // apps view
 #define GROUP_APPS_LY "apps_ly"
@@ -122,5 +138,14 @@
 #define SIGNAL_APPS_FOLDER_SET_PLUS_ICON "apps_folder_set_plus_icon"
 #define SIGNAL_APPS_FOLDER_HIDE_PLUS_ICON "apps_folder_hide_plus_icon"
 #define SIGNAL_APPS_FOLDER_CLICKED_PLUS_ICON "apps_folder_clicked_plus_icon"
+
+#define GROUP_WIDGET_LY "widget_ly"
+#define WIDGET_CONTENT "widget_content"
+#define WIDGET_DELETE_BUTTON "widget_delete_button"
+#define SIGNAL_DELETE_BUTTON_SHOW_ANI "delete_button_show_ani"
+#define SIGNAL_DELETE_BUTTON_HIDE_ANI "delete_button_hide_ani"
+#define SIGNAL_DELETE_BUTTON_SHOW "delete_button_show"
+#define SIGNAL_DELETE_BUTTON_HIDE "delete_button_hide"
+#define SIGNAL_DELETE_BUTTON_CLICKED "delete_button_clicked"
 
 #endif /* __EDC_CONF_H__ */

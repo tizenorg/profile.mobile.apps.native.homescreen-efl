@@ -1,0 +1,47 @@
+#include "../../inc/edc_conf.h"
+
+#define MAKE_PAGE(x,y)\
+        part { name: "page_"x"_"y;\
+            type: SWALLOW;\
+            description {\
+                state: "default" 0.0;\
+                align: 0 0;\
+                rel1{relative: (0.044 + 0.466*x) (0.046 + 0.328*y); to: SIZE_SETTER;}\
+                rel2{relative: ((0.044 + 0.466*x)+0.44) ((0.046 + 0.328*y)+0.25); to: SIZE_SETTER;}\
+            }\
+        }\
+        part { name: "page_text_"x"_"y;\
+            type: TEXT;\
+            description {\
+                state: "default" 0.0;\
+                align: 0 0;\
+                rel1{relative: 0 0; to: "page_"x"_"y;}\
+                rel2{relative: 1 1; to: "page_"x"_"y;}\
+                text {\
+                    text: "page_text_"x"_"y;\
+                    size: 22;\
+                }\
+            }\
+        }
+
+collections {
+    group { name: GROUP_CLUSTER_ALLPAGE_LY;
+        parts {
+            part { name: SIZE_SETTER;
+                type: SWALLOW;
+                description {
+                    state: "default" 0.0;
+                    align: 0 0;
+                    rel1.relative: 0.0 0.0;
+                    rel2.relative: 1.0 1.0;
+                }
+            }
+            MAKE_PAGE(0,0);
+            MAKE_PAGE(1,0);
+            MAKE_PAGE(0,1);
+            MAKE_PAGE(1,1);
+            MAKE_PAGE(0,2);
+            MAKE_PAGE(1,2);
+        }
+    }
+}

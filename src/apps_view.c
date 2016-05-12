@@ -849,11 +849,11 @@ static void __apps_view_menu_edit_cb(void *data, Evas_Object *obj, void *event_i
 static void __apps_view_menu_create_folder_cb(void *data, Evas_Object *obj, void *event_info)
 {
     feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
+    menu_hide();
 
     apps_view_s.dest_folder = apps_data_add_folder();
     //apps_view_set_state(VIEW_STATE_CHOOSER);
     __apps_view_open_folder_popup(apps_view_s.dest_folder);
-    menu_hide();
 }
 
 void apps_view_icon_add(app_data_t *item)

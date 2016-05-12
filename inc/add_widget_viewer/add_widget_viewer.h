@@ -14,18 +14,10 @@
  * limitations under the License.
  */
 
-#ifndef __CLUSTER_DB_H__
-#define __CLUSTER_DB_H__
+#ifndef __ADD_WIDGET_VIEWER_H__
+#define __ADD_WIDGET_VIEWER_H__
 
-#include <Elementary.h>
-#include "cluster_data.h"
+void add_widget_viewer_win_create(void);
+void add_widget_viewer_win_destroy(void);
 
-bool cluster_db_create(void);
-bool cluster_db_close();
-bool cluster_db_update(widget_data_t *item);
-bool cluster_db_insert(widget_data_t *item);
-bool cluster_db_delete(widget_data_t *item);
-
-bool cluster_db_get_list(Eina_List **cluster_list);
-
-#endif /* __CLUSTER_DB_H__ */
+#endif /* __ADD_WIDGET_VIEWER_H__ */

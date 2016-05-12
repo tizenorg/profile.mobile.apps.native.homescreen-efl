@@ -27,7 +27,7 @@
 static sqlite3 *cluster_db = NULL;
 
 enum {
-    COL_CLUSTER_ID = 0,
+    COL_WIDGET_ID = 0,
     COL_PAGE_INDEX,
     COL_POS_Y,
     COL_POS_X,
@@ -39,7 +39,7 @@ enum {
 };
 
 #define CREATE_CLUSTER_DB_TABLE "CREATE TABLE IF NOT EXISTS clusters (\
-        clusterId INTEGER PRIMARY KEY AUTOINCREMENT,\
+        widgetId INTEGER PRIMARY KEY AUTOINCREMENT,\
         pageIndex INTEGER default 0,\
         y INTEGER default 0,\
         x INTEGER default 0,\
@@ -57,7 +57,7 @@ enum {
         content='%s',\
         type=%d,\
         period=%lf,\
-        allow=%d WHERE clusterId=%d"
+        allow=%d WHERE widgetId=%d"
 
 #define INSERT_CLUSTER_DB_TABLE "INSERT into clusters (\
         pageIndex,\
@@ -129,16 +129,19 @@ bool cluster_db_get_list(Eina_List **cluster_list)
         return false;
     }
 
+    const char *str;
     while (sqlite3_step(stmt) == SQLITE_ROW) {
-        cluster_data_t *item = (cluster_data_t *)malloc(sizeof(cluster_data_t));
-        memset(item, 0, sizeof(cluster_data_t));
+        widget_data_t *item = (widget_data_t *)malloc(sizeof(widget_data_t));
+        memset(item, 0, sizeof(widget_data_t));
 
-        item->cluster_id = sqlite3_column_int(stmt, COL_CLUSTER_ID);
+        item->widget_id = sqlite3_column_int(stmt, COL_WIDGET_ID);
         item->page_idx = sqlite3_column_int(stmt, COL_PAGE_INDEX);
         item->pos_y = sqlite3_column_int(stmt, COL_POS_Y);
         item->pos_x = sqlite3_column_int(stmt, COL_POS_X);
-        item->pkg_name = strdup((const char *) sqlite3_column_text(stmt, COL_PKG_NAME));
-        item->content_info = strdup((const char *) sqlite3_column_text(stmt, COL_CONTENT_INFO));
+        str = (const char *) sqlite3_column_text(stmt, COL_PKG_NAME);
+        item->pkg_name = (!str || !strlen(str)) ? NULL : strdup(str);
+        str = (const char *) sqlite3_column_text(stmt, COL_CONTENT_INFO);
+        item->content_info = (!str || !strlen(str)) ? NULL : strdup(str);
         item->type = sqlite3_column_int(stmt, COL_TYPE);
         item->period = sqlite3_column_double(stmt, COL_PERIOD);
         item->allow_duplicate = sqlite3_column_int(stmt, COL_ALLOW_DUPLICATE);
@@ -148,7 +151,7 @@ bool cluster_db_get_list(Eina_List **cluster_list)
     return true;
 }
 
-bool cluster_db_update(cluster_data_t *item)
+bool cluster_db_update(widget_data_t *item)
 {
     char query[QUERY_MAXLEN];
     sqlite3_stmt *stmt;
@@ -164,7 +167,7 @@ bool cluster_db_update(cluster_data_t *item)
             item->type,
             item->period,
             item->allow_duplicate,
-            item->cluster_id);
+            item->widget_id);
     int ret = sqlite3_prepare(cluster_db, query, QUERY_MAXLEN , &stmt, NULL);
     if (ret != SQLITE_OK) {
         LOGE("sqlite error : [%s,%s]", query, sqlite3_errmsg(cluster_db));
@@ -176,7 +179,7 @@ bool cluster_db_update(cluster_data_t *item)
     return true;
 }
 
-bool cluster_db_insert(cluster_data_t *item)
+bool cluster_db_insert(widget_data_t *item)
 {
     char query[QUERY_MAXLEN];
     sqlite3_stmt *stmt;
@@ -198,21 +201,21 @@ bool cluster_db_insert(cluster_data_t *item)
     }
     sqlite3_step(stmt);
     sqlite3_finalize(stmt);
-    item->cluster_id = (int)sqlite3_last_insert_rowid(cluster_db);
+    item->widget_id = (int)sqlite3_last_insert_rowid(cluster_db);
 
     cluster_db_close();
     return true;
 }
 
 
-bool cluster_db_delete(cluster_data_t *item)
+bool cluster_db_delete(widget_data_t *item)
 {
     char query[QUERY_MAXLEN];
     sqlite3_stmt *stmt;
     if (!__cluster_db_open())
         return false;
 
-    snprintf(query, QUERY_MAXLEN, "DELETE FROM clusters WHERE clusterId=%d", item->cluster_id);
+    snprintf(query, QUERY_MAXLEN, "DELETE FROM clusters WHERE widgetId=%d", item->widget_id);
     int ret = sqlite3_prepare(cluster_db, query, QUERY_MAXLEN , &stmt, NULL);
     if (ret != SQLITE_OK) {
         LOGE("sqlite error : [%s,%s]", query, sqlite3_errmsg(cluster_db));

@@ -280,15 +280,15 @@ static void __homescreen_efl_change_view(void)
         apps_view_hide();
         main_info.animator = ecore_animator_timeline_add(HOME_ANIMATION_TIME, __homescreen_efl_show_cluster_anim, NULL);
 
-        elm_object_signal_emit(main_info.btn_layout, SIGNAL_APPS_BTN_HIDE, SIGNAL_SOURCE);
-        elm_object_signal_emit(main_info.btn_layout, SIGNAL_HOME_BTN_SHOW, SIGNAL_SOURCE);
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_HOME_BTN_ICON_HIDE, SIGNAL_SOURCE);
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_APPS_BTN_ICON_SHOW, SIGNAL_SOURCE);
         main_info.view_type = HOMESCREEN_VIEW_HOME;
     } else if (main_info.view_type == HOMESCREEN_VIEW_HOME) {
         cluster_view_hide();
         main_info.animator = ecore_animator_timeline_add(HOME_ANIMATION_TIME, __homescreen_efl_show_apps_anim, NULL);
 
-        elm_object_signal_emit(main_info.btn_layout, SIGNAL_HOME_BTN_HIDE, SIGNAL_SOURCE);
-        elm_object_signal_emit(main_info.btn_layout, SIGNAL_APPS_BTN_SHOW, SIGNAL_SOURCE);
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_APPS_BTN_ICON_HIDE, SIGNAL_SOURCE);
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_HOME_BTN_ICON_SHOW, SIGNAL_SOURCE);
         main_info.view_type = HOMESCREEN_VIEW_APPS;
     }
 }
@@ -363,12 +363,13 @@ void homescreen_efl_hw_back_key_release(void)
 
 void homescreen_efl_btn_show(homescreen_view_t view_t)
 {
+    LOGD("state %d", view_t);
     switch (view_t) {
     case HOMESCREEN_VIEW_HOME:
-        elm_object_signal_emit(main_info.btn_layout, SIGNAL_BTN_SHOW_HOME, SIGNAL_SOURCE);
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_BTN_SHOW_HOME_STATE, SIGNAL_SOURCE);
         break;
     case HOMESCREEN_VIEW_APPS:
-        elm_object_signal_emit(main_info.btn_layout, SIGNAL_BTN_SHOW_APPS, SIGNAL_SOURCE);
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_BTN_SHOW_APPS_STATE, SIGNAL_SOURCE);
         break;
     default:
         break;
@@ -377,12 +378,13 @@ void homescreen_efl_btn_show(homescreen_view_t view_t)
 
 void homescreen_efl_btn_hide(homescreen_view_t view_t)
 {
+    LOGD("state %d", view_t);
     switch (view_t) {
     case HOMESCREEN_VIEW_HOME:
-        elm_object_signal_emit(main_info.btn_layout, SIGNAL_BTN_HIDE_HOME, SIGNAL_SOURCE);
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_BTN_HIDE_HOME_STATE, SIGNAL_SOURCE);
         break;
     case HOMESCREEN_VIEW_APPS:
-        elm_object_signal_emit(main_info.btn_layout, SIGNAL_BTN_HIDE_APPS, SIGNAL_SOURCE);
+        elm_object_signal_emit(main_info.btn_layout, SIGNAL_BTN_HIDE_APPS_STATE, SIGNAL_SOURCE);
         break;
     default:
         break;
