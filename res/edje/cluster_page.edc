@@ -1,0 +1,117 @@
+#include "../../inc/edc_conf.h"
+
+collections {
+    images {
+        image: "../res/images/btn_delete_nor.png" COMP;
+        image: "../res/images/btn_delete_press.png" COMP;
+    }
+    group { name: GROUP_CLUSTER_PAGE_LY;
+        parts {
+            part { name: SIZE_SETTER;
+                type: SWALLOW;
+                description {
+                    state: "default" 0.0;
+                    align: 0 0;
+                    rel1.relative: 0.0 0.0;
+                    rel2.relative: 1.0 1.0;
+                }
+            }
+            part { name: CLUSTER_BG;
+                type: RECT;
+                description {
+                    state: "default" 0.0;
+                    align: 0 0;
+                    visible: 0;
+                    color : 0 0 0 0;
+                    rel1{relative: 0.0 0.0; to: SIZE_SETTER;}
+                    rel2{relative: 1.0 1.0; to: SIZE_SETTER;}
+                }
+                description {
+                    state: "edit" 0.0;
+                    inherit: "default" 0.0;
+                    color : 0 0 0 50;
+                    visible: 1;
+                    rel1{relative: 0.05 0.05; to: SIZE_SETTER;}
+                    rel2{relative: 0.95 0.95; to: SIZE_SETTER;}
+                }
+            }
+            part { name: CLUSTER_BOX;
+                type: SWALLOW;
+                description {
+                    state: "default" 0.0;
+                    align: 0 0;
+                    rel1{relative: 0.0 0.0; to: CLUSTER_BG;}
+                    rel2{relative: 1.0 1.0; to: CLUSTER_BG;}
+                }
+            }            
+            part {
+                name: CLUSTER_PAGE_DELETE_BUTTON;
+                type: IMAGE;
+                scale: 0;
+                description {
+                    state: "default" 0.0;
+                    rel1{relative: 0.015 0.015; to: CLUSTER_BG;}
+                    rel2{relative: 0.109 0.109; to: CLUSTER_BG;}
+                    color: 255 255 255 0;
+                    visible: 0;
+                    aspect: 1.0 1.0;
+                    aspect_preference: BOTH;
+                    image {
+                        normal: "../res/images/btn_delete_nor.png";
+                    }
+                }
+                description {
+                    state: "press" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 255;
+                    image {
+                        normal: "../res/images/btn_delete_press.png";
+                    }
+                    visible: 1;
+                }
+            }
+        }
+        programs {
+            program {
+                name: "edit_mode_on";
+                signal: SIGNAL_EDIT_MODE_ON;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "edit" 0.0;
+                target: SIZE_SETTER;
+                target: CLUSTER_BG;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "edit_mode_off";
+                signal: SIGNAL_EDIT_MODE_OFF;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "default" 0.0;
+                target: SIZE_SETTER;
+                target: CLUSTER_BG;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "delete_button_clicked";
+                signal: "mouse,clicked,1";
+                source: CLUSTER_PAGE_DELETE_BUTTON;
+                action: SIGNAL_EMIT SIGNAL_DELETE_BUTTON_CLICKED SIGNAL_SOURCE;
+            }
+            program {
+                name: "delete_button_mouse_down";
+                signal: "mouse,down,1";
+                source: CLUSTER_PAGE_DELETE_BUTTON;
+                action: STATE_SET "press" 0.0;
+                target: CLUSTER_PAGE_DELETE_BUTTON;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "delete_button_mouse_up";
+                signal: "mouse,up,1";
+                source: CLUSTER_PAGE_DELETE_BUTTON;
+                action: STATE_SET "show" 0.0;
+                target: CLUSTER_PAGE_DELETE_BUTTON;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+        }
+    }
+}

@@ -19,21 +19,28 @@
 
 #include <app.h>
 #include <Elementary.h>
+#include <widget_service.h>
 
 typedef struct {
-    int cluster_id;
+    int widget_id;
     int page_idx;
     int pos_y;
     int pos_x;
     char *pkg_name;
     char *content_info;
-    int type;
+    widget_size_type_e type;
     double period;
     int allow_duplicate;
     Evas_Object *widget_layout;
-} cluster_data_t;
+} widget_data_t;
 
 void cluster_data_init(void);
-Eina_List *cluster_data_get_list(void);
+Eina_List *cluster_data_get_widget_list(void);
+
+int cluster_data_get_page_count();
+void cluster_data_set_page_count(int count);
+
+void cluster_data_insert(widget_data_t *item);
+void cluster_data_delete(widget_data_t *item);
 
 #endif /* __CLUSTER_DATA_H__ */

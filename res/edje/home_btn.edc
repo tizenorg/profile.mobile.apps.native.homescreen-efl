@@ -41,8 +41,8 @@ collections {
                 mouse_events: 0;
                 description { state: "default" 0.0;
                     align: 0 0;
-                    rel1{relative: 0.27 0.1; to:"menu_btn";}
-                    rel2{relative: 0.73 0.9; to:"menu_btn";}
+                    rel1{relative: 0.27 0.1; to:MENU_BUTTON;}
+                    rel2{relative: 0.73 0.9; to:MENU_BUTTON;}
                     color: 255 255 255 255;
                     visible: 1;
                     image {
@@ -91,8 +91,8 @@ collections {
                 mouse_events: 0;
                 description { state: "default" 0.0;
                     align: 0 0;
-                    rel1{relative: 0.27 0.1; to:"home_btn";}
-                    rel2{relative: 0.73 0.9; to:"home_btn";}
+                    rel1{relative: 0.27 0.1; to:HOME_BUTTON;}
+                    rel2{relative: 0.73 0.9; to:HOME_BUTTON;}
                     color: 255 255 255 0;
                     visible: 1;
                     image {
@@ -114,8 +114,8 @@ collections {
                 mouse_events: 0;
                 description { state: "default" 0.0;
                     align: 0 0;
-                    rel1{relative: 0.27 0.1; to:"home_btn";}
-                    rel2{relative: 0.73 0.9; to:"home_btn";}
+                    rel1{relative: 0.27 0.1; to:HOME_BUTTON;}
+                    rel2{relative: 0.73 0.9; to:HOME_BUTTON;}
                     color: 255 255 255 255;
                     visible: 1;
                     image {
@@ -182,7 +182,7 @@ collections {
             }
             program {
                 name: "home_btn_show";
-                signal: SIGNAL_HOME_BTN_SHOW;
+                signal: SIGNAL_HOME_BTN_ICON_SHOW;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "show" 0.0;
                 target: "home_btn_home_icon";
@@ -190,7 +190,7 @@ collections {
             }
             program {
                 name: "home_btn_hide";
-                signal: SIGNAL_HOME_BTN_HIDE;
+                signal: SIGNAL_HOME_BTN_ICON_HIDE;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "hide" 0.0;
                 target: "home_btn_home_icon";
@@ -198,7 +198,7 @@ collections {
             }
             program {
                 name: "apps_btn_show";
-                signal: SIGNAL_APPS_BTN_SHOW;
+                signal: SIGNAL_APPS_BTN_ICON_SHOW;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "show" 0.0;
                 target: "home_btn_app_icon";
@@ -206,7 +206,7 @@ collections {
             }
             program {
                 name: "apps_btn_hide";
-                signal: SIGNAL_APPS_BTN_HIDE;
+                signal: SIGNAL_APPS_BTN_ICON_HIDE;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "hide" 0.0;
                 target: "home_btn_app_icon";
@@ -214,7 +214,7 @@ collections {
             }
             program {
                 name: "btn_show_home";
-                signal: SIGNAL_BTN_SHOW_HOME;
+                signal: SIGNAL_BTN_SHOW_APPS_STATE;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "show" 0.0;
                 target: MENU_BUTTON;
@@ -225,7 +225,7 @@ collections {
             }
             program {
                 name: "btn_hide_home";
-                signal: SIGNAL_BTN_HIDE_HOME;
+                signal: SIGNAL_BTN_HIDE_APPS_STATE;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "hide" 0.0;
                 target: MENU_BUTTON;
@@ -236,7 +236,7 @@ collections {
             }
             program {
                 name: "btn_show_apps";
-                signal: SIGNAL_BTN_SHOW_APPS;
+                signal: SIGNAL_BTN_SHOW_HOME_STATE;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "show" 0.0;
                 target: MENU_BUTTON;
@@ -247,7 +247,7 @@ collections {
             }
             program {
                 name: "btn_hide_apps";
-                signal: SIGNAL_BTN_HIDE_APPS;
+                signal: SIGNAL_BTN_HIDE_HOME_STATE;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "hide" 0.0;
                 target: MENU_BUTTON;

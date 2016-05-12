@@ -44,9 +44,16 @@ extern int __conf_get_window_w();
 #define APPS_VIEW_ICON_IMAGE ((118) * (__conf_get_resolution_scale_w()))
 
 #define CLUSTER_VIEW_W ((720) * (__conf_get_resolution_scale_w()))
-#define CLUSTER_VIEW_H ((1060) * (__conf_get_resolution_scale_h()))
+#define CLUSTER_VIEW_H ((1150) * (__conf_get_resolution_scale_h()))
 #define CLUSTER_W CLUSTER_VIEW_W
 #define CLUSTER_H CLUSTER_W
+#define CLUSTER_ALL_PAGE_W ((320) * (__conf_get_resolution_scale_w()))
+#define CLUSTER_ALL_PAGE_H CLUSTER_ALL_PAGE_W
+
+#define CLUSTER_ROW 4
+#define CLUSTER_COL 4
+#define CLUSTER_HOME_PAGE 0
+#define CLUSTER_MAX_PAGE 6
 
 #define PAGE_INDICATOR_PADDING_BOTTON ((16) * (__conf_get_resolution_scale_h()))
 #define PAGE_INDICATOR_H ((76) * (__conf_get_resolution_scale_h()))

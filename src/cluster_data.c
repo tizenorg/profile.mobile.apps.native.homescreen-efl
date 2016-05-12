@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+#include <app_preference.h>
 
 #include "cluster_data.h"
 #include "cluster_db.h"
 #include "cluster_view.h"
 #include "util.h"
+
+#define CLUSTER_DATA_PAGE_COUNT "cluster_page_count"
 
 static struct {
     Eina_List *data_list;
@@ -25,41 +28,72 @@ static struct {
     .data_list = NULL
 };
 
-static void __cluster_data_item_free(cluster_data_t *item);
+static void __cluster_data_item_free(widget_data_t *item);
 static void __cluster_data_insert_default_data(void);
 
 void cluster_data_init(void)
 {
     if (cluster_db_create()) {
         __cluster_data_insert_default_data();
+        cluster_data_set_page_count(2);
     }
 
     cluster_db_get_list(&cluster_data_s.data_list);
 }
 
-Eina_List *cluster_data_get_list(void)
+Eina_List *cluster_data_get_widget_list(void)
 {
     return cluster_data_s.data_list;
 }
 
+int cluster_data_get_page_count()
+{
+    int result = -1;
+    if (preference_get_int(CLUSTER_DATA_PAGE_COUNT, &result) != PREFERENCE_ERROR_NONE) {
+        LOGE("preference_get_int : Error");
+        result = -1;
+    }
+    return result;
+}
+
+void cluster_data_set_page_count(int count)
+{
+    if (preference_set_int(CLUSTER_DATA_PAGE_COUNT, count) != PREFERENCE_ERROR_NONE) {
+        LOGE("preference_set_int(CLUSTER_DATA_PAGE_COUNT, %d): Error", count);
+    }
+}
+
+void cluster_data_insert(widget_data_t *item)
+{
+    cluster_db_insert(item);
+    cluster_data_s.data_list = eina_list_append(cluster_data_s.data_list, item);
+}
+
+void cluster_data_delete(widget_data_t *item)
+{
+    cluster_db_delete(item);
+    cluster_data_s.data_list = eina_list_remove(cluster_data_s.data_list, item);
+    cluster_view_delete_widget(item);
+    __cluster_data_item_free(item);
+}
+
 static void __cluster_data_insert_default_data(void)
 {
-    cluster_data_t *new_item = (cluster_data_t *)malloc(sizeof(cluster_data_t));
-    memset(new_item, 0, sizeof(cluster_data_t));
+    widget_data_t *new_item = (widget_data_t *)malloc(sizeof(widget_data_t));
+    memset(new_item, 0, sizeof(widget_data_t));
 
     new_item->page_idx = 0;
     new_item->pos_y = 0;
     new_item->pos_x = 0;
     new_item->pkg_name = strdup("org.tizen.calendar.widget");
     new_item->content_info = NULL;
-    new_item->type = 0;
+    new_item->type = WIDGET_SIZE_TYPE_4x4;
     new_item->period = 0.0;
-    new_item->allow_duplicate = 0;
-
-    cluster_db_insert(new_item);
+    new_item->allow_duplicate = 1;
+    cluster_data_insert(new_item);
 }
 
-static void __cluster_data_item_free(cluster_data_t *item)
+static void __cluster_data_item_free(widget_data_t *item)
 {
     if (item && item->widget_layout)
         evas_object_del(item->widget_layout);

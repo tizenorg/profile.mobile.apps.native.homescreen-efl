@@ -1,0 +1,107 @@
+#include "../../inc/edc_conf.h"
+
+images {
+    image: "../res/images/btn_delete_nor.png" COMP;
+    image: "../res/images/btn_delete_press.png" COMP;
+}
+
+collections {
+    group { name: GROUP_WIDGET_LY;
+        parts {
+            part { name: WIDGET_CONTENT;
+                type: SWALLOW;
+                description {
+                    state: "default" 0.0;
+                    rel1.relative: 0.0 0.0;
+                    rel1.relative: 0.0 0.0;
+                }
+            }
+            part {
+                name: WIDGET_DELETE_BUTTON;
+                type: IMAGE;
+                scale: 0;
+                description {
+                    state: "default" 0.0;
+                    rel1{relative: 0.015 0.015; to: WIDGET_CONTENT;}
+                    rel2{relative: 0.109 0.109; to: WIDGET_CONTENT;}
+                    color: 255 255 255 0;
+                    visible: 0;
+                    aspect: 1.0 1.0;
+                    aspect_preference: BOTH;
+                    image {
+                        normal: "../res/images/btn_delete_nor.png";
+                    }
+                }
+                description {
+                    state: "show" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 255;
+                    visible: 1;
+                }
+                description {
+                    state: "press" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 255;
+                    image {
+                        normal: "../res/images/btn_delete_press.png";
+                    }
+                    visible: 1;
+                }
+            }
+        }
+        programs {
+            program {
+                name: "delete_button_show_ani";
+                signal: SIGNAL_DELETE_BUTTON_SHOW_ANI;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "show" 0.0;
+                target: WIDGET_DELETE_BUTTON;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "delete_button_show";
+                signal: SIGNAL_DELETE_BUTTON_SHOW;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "show" 0.0;
+                target: WIDGET_DELETE_BUTTON;
+            }
+            program {
+                name: "delete_button_hide_ani";
+                signal: SIGNAL_DELETE_BUTTON_HIDE_ANI;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "default" 0.0;
+                target: WIDGET_DELETE_BUTTON;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "delete_button_hide";
+                signal: SIGNAL_DELETE_BUTTON_HIDE;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "default" 0.0;
+                target: WIDGET_DELETE_BUTTON;
+            }
+            program {
+                name: "delete_button_clicked";
+                signal: "mouse,clicked,1";
+                source: WIDGET_DELETE_BUTTON;
+                action: SIGNAL_EMIT SIGNAL_DELETE_BUTTON_CLICKED SIGNAL_SOURCE;
+            }
+            program {
+                name: "delete_button_mouse_down";
+                signal: "mouse,down,1";
+                source: WIDGET_DELETE_BUTTON;
+                action: STATE_SET "press" 0.0;
+                target: WIDGET_DELETE_BUTTON;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "delete_button_mouse_up";
+                signal: "mouse,up,1";
+                source: WIDGET_DELETE_BUTTON;
+                action: STATE_SET "show" 0.0;
+                target: WIDGET_DELETE_BUTTON;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+        }
+    }
+}

@@ -14,18 +14,16 @@
  * limitations under the License.
  */
 
-#ifndef __CLUSTER_DB_H__
-#define __CLUSTER_DB_H__
+#ifndef __ADD_WIDGET_DATA_H__
+#define __ADD_WIDGET_DATA_H__
 
-#include <Elementary.h>
-#include "cluster_data.h"
+typedef struct {
+    char* app_id;
+    char* widget_id;
+    int is_prime;
+} add_widget_data_t;
 
-bool cluster_db_create(void);
-bool cluster_db_close();
-bool cluster_db_update(widget_data_t *item);
-bool cluster_db_insert(widget_data_t *item);
-bool cluster_db_delete(widget_data_t *item);
+bool add_widget_data_init(void);
+void add_widget_data_fini(void);
 
-bool cluster_db_get_list(Eina_List **cluster_list);
-
-#endif /* __CLUSTER_DB_H__ */
+#endif /* __ADD_WIDGET_DATA_H__ */

@@ -21,6 +21,8 @@ typedef enum {
     VIEW_STATE_NORMAL = 0,
     VIEW_STATE_EDIT,
     VIEW_STATE_CHOOSER,
+    VIEW_STATE_ADD_VIEWER,
+    VIEW_STATE_ALL_PAGE,
     VIEW_STATE_UNKNOWN,
 } view_state_t;
 

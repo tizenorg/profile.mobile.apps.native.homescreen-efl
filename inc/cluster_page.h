@@ -14,18 +14,27 @@
  * limitations under the License.
  */
 
-#ifndef __WIDGET_VIEWER_H__
-#define __WIDGET_VIEWER_H__
+#ifndef __CLUSTER_PAGE_H__
+#define __CLUSTER_PAGE_H__
 
 #include <Elementary.h>
 #include <widget_service.h>
-#include <widget_viewer_evas.h>
-
+#include "conf.h"
 #include "cluster_data.h"
 
-void widget_viewer_init(Evas_Object *win);
-void widget_viewer_fini(void);
+typedef struct {
+    Evas_Object *page_layout;
+    int space[CLUSTER_ROW][CLUSTER_COL];
 
-Evas_Object *widget_viewer_add_widget(Evas_Object *parent, widget_data_t *item, int *widget_width, int *widget_height);
+    Evas_Object *grid;
+    Evas_Object *thumbnail_ly;
+} cluster_page_t;
 
-#endif /* __WIDGET_VIEWER_H__ */
+cluster_page_t *cluster_page_new(Evas_Object* parent);
+void cluster_page_delete(cluster_page_t *page);
+bool cluster_page_set(cluster_page_t *page, widget_data_t *item);
+bool cluster_page_unset(cluster_page_t *page, widget_data_t *item);
+bool cluster_page_check_empty_space(cluster_page_t *page, widget_size_type_e type, int pos_x, int pos_y);
+Evas_Object *cluster_page_thumbnail(cluster_page_t *page);
+
+#endif /* __CLUSTER_VIEW_PAGE_H__ */
