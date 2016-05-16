@@ -36,5 +36,6 @@ bool cluster_view_hw_back_key(void);
 view_state_t cluster_view_get_state(void);
 void cluster_view_set_state(view_state_t state);
 void cluster_view_delete_widget(widget_data_t *item);
+bool cluster_view_add_widget(widget_data_t *item, bool scroll);
 
 #endif /* __CLUSTER_VIEW_H__ */

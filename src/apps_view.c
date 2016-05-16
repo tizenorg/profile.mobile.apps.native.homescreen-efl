@@ -153,7 +153,7 @@ void apps_view_show_anim(double pos)
         LOGE("Failed to get edje from layout");
         return;
     }
-    Edje_Message_Float_Set *msg = malloc(sizeof(*msg) + 2 * sizeof(double));
+    Edje_Message_Float_Set *msg = malloc(sizeof(*msg) + 3 * sizeof(double));
     msg->count = 3;
     msg->val[0] = ((APPS_VIEW_ANIMATION_DELTA * (1-pos)) / apps_view_s.height);
     msg->val[1] = 1+((APPS_VIEW_ANIMATION_DELTA * (1-pos)) / apps_view_s.height);
@@ -179,7 +179,7 @@ void apps_view_hide_anim(double pos)
         LOGE("Failed to get edje from layout");
         return;
     }
-    Edje_Message_Float_Set *msg = malloc(sizeof(*msg) + 2 * sizeof(double));
+    Edje_Message_Float_Set *msg = malloc(sizeof(*msg) + 3 * sizeof(double));
     msg->count = 3;
     msg->val[0] = ((APPS_VIEW_ANIMATION_DELTA * pos) / apps_view_s.height);
     msg->val[1] = 1+((APPS_VIEW_ANIMATION_DELTA * pos) / apps_view_s.height);
@@ -233,7 +233,7 @@ void apps_view_folder_reroder(void)
     }
 
     if (item_count < APPS_FOLDER_MAX_ITEM) {
-        Edje_Message_Float_Set *msg = malloc(sizeof(*msg) + sizeof(double));
+        Edje_Message_Float_Set *msg = malloc(sizeof(*msg) + 2 * sizeof(double));
         msg->count = 2;
         msg->val[0] = item_count / APPS_FOLDER_COL;
         msg->val[1] = item_count % APPS_FOLDER_COL;

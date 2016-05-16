@@ -17,9 +17,6 @@
 #include "homescreen-efl.h"
 #include "menu.h"
 #include "conf.h"
-#include "util.h"
-
-#define STR_LENGTH 256
 
 static struct {
     Evas_Object *menu;
@@ -30,7 +27,7 @@ static struct {
 };
 
 /* menu_item_t */
-static const char menu_text[MENU_MAX][STR_LENGTH] = {
+static const char menu_text[MENU_MAX][PATH_MAX_LEN] = {
         "IDS_HS_OPT_EDIT",
         "IDS_HS_HEADER_ADD_WIDGET",
         "IDS_HS_OPT_CHANGE_WALLPAPER_ABB",
@@ -41,7 +38,12 @@ static const char menu_text[MENU_MAX][STR_LENGTH] = {
 
 static void __menu_dismissed_cb(void *data, Evas_Object *obj, void *event_info)
 {
-    menu_hide();
+    menu_info.is_visible = false;
+
+    if (menu_info.menu) {
+        evas_object_del(menu_info.menu);
+        menu_info.menu = NULL;
+    }
 }
 
 void menu_show(Eina_Hash* hash_table)
@@ -65,7 +67,6 @@ void menu_show(Eina_Hash* hash_table)
         void *data = eina_hash_find(hash_table, &menu_id);
         if (data) {
             elm_ctxpopup_item_append(menu_info.menu, _(menu_text[menu_id]), NULL, data, NULL);
-            LOGD("%s", _(menu_text[menu_id]));
         }
     }
 

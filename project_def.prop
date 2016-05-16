@@ -9,7 +9,7 @@ type = app
 profile = mobile-3.0
 
 # C Sources
-USER_SRCS = src/apps_data.c src/homescreen-efl.c src/cluster_page.c src/cluster_db.c src/cluster_view.c src/widget_viewer.c src/page_indicator.c src/cluster_data.c src/conf.c src/add_widget_viewer/add_widget_data.c src/apps_view.c src/menu.c src/hw_key.c src/add_widget_viewer/add_widget_viewer.c src/apps_db.c src/apps_package_manager.c src/util.c 
+USER_SRCS = src/apps_data.c src/homescreen-efl.c src/popup.c src/cluster_page.c src/cluster_db.c src/cluster_view.c src/widget_viewer.c src/page_indicator.c src/cluster_data.c src/conf.c src/add_widget_viewer/add_widget_data.c src/apps_view.c src/menu.c src/hw_key.c src/add_widget_viewer/add_widget_viewer.c src/apps_db.c src/apps_package_manager.c src/util.c 
 USER_SRCS_ABS = 
 
 # EDC Sources
@@ -60,7 +60,7 @@ USER_EDCS_FONT_DIRS_ABS =
 # EDC Flags
 USER_EXT_EDC_KEYS = EDC0 
 
-USER_EXT_EDC0_EDCS = res/edje/widget.edc res/edje/apps_folder_icon.edc res/edje/apps_folder_popup.edc res/edje/apps_view.edc res/edje/page_indicator_unit.edc res/edje/apps_view_bg.edc res/edje/cluster_allpage_thumbnail.edc res/edje/home_btn.edc res/edje/home.edc res/edje/apps_chooser_btn.edc res/edje/app_icon.edc res/edje/cluster_page.edc res/edje/cluster_allpage.edc 
+USER_EXT_EDC0_EDCS = res/edje/widget.edc res/edje/apps_folder_icon.edc res/edje/apps_folder_popup.edc res/edje/apps_view.edc res/edje/page_indicator_unit.edc res/edje/apps_view_bg.edc res/edje/cluster_allpage_thumbnail.edc res/edje/home_btn.edc res/edje/home.edc res/edje/apps_chooser_btn.edc res/edje/add_widget_viewer.edc res/edje/app_icon.edc res/edje/cluster_page.edc res/edje/cluster_allpage.edc 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images 
 USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
 USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds 

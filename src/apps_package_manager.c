@@ -107,11 +107,11 @@ static bool __apps_data_pkg_get_apps_info(app_info_h app_handle, app_data_t **it
     if (nodisplay)
         goto ERROR;
 
-    new_item->db_id = -1;
+    new_item->db_id = INIT_VALUE;
     new_item->parent_db_id = APPS_ROOT;
     new_item->owner = strdup(TEMP_OWNER);
     new_item->is_folder = false;
-    new_item->position = -1;
+    new_item->position = INIT_VALUE;
     new_item->uri = NULL;
     new_item->type = APPS_DATA_TYPE_APP;
 

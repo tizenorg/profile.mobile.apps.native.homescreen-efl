@@ -21,6 +21,7 @@
 #include "apps_db.h"
 #include "apps_view.h"
 #include "util.h"
+#include "conf.h"
 
 static struct {
     Eina_List *data_list;
@@ -80,7 +81,7 @@ void apps_data_init(void)
     apps_data_sort();
 
     EINA_LIST_FOREACH(apps_data_s.data_list, pkg_find_list, pkg_item) {
-        if (pkg_item->db_id == -1)
+        if (pkg_item->db_id == INIT_VALUE)
             apps_db_insert(pkg_item);
         else
             apps_db_update(pkg_item);
@@ -186,10 +187,10 @@ app_data_t *apps_data_add_folder(void)
     app_data_t *new_item = (app_data_t *)malloc(sizeof(app_data_t));
     memset(new_item, 0, sizeof(app_data_t));
 
-    new_item->db_id = -1;
+    new_item->db_id = INIT_VALUE;
     new_item->parent_db_id = APPS_ROOT;
     new_item->owner = strdup(TEMP_OWNER);
-    new_item->position = -1;
+    new_item->position = INIT_VALUE;
     new_item->label_str = strdup("");
     new_item->type = APPS_DATA_TYPE_APP;
 
@@ -249,10 +250,10 @@ static int __apps_data_shortcur_request_cb(const char *package_name,
     app_data_t *new_item = (app_data_t *)malloc(sizeof(app_data_t));
     memset(new_item, 0, sizeof(app_data_t));
 
-    new_item->db_id = -1;
+    new_item->db_id = INIT_VALUE;
     new_item->parent_db_id = APPS_ROOT;
     new_item->owner = strdup(TEMP_OWNER);
-    new_item->position = -1;
+    new_item->position = INIT_VALUE;
     new_item->label_str = strdup(name);
     new_item->pkg_str = strdup(package_name);
     if (type == LAUNCH_BY_URI) {

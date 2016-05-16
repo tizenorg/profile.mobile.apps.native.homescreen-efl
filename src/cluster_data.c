@@ -19,6 +19,7 @@
 #include "cluster_db.h"
 #include "cluster_view.h"
 #include "util.h"
+#include "conf.h"
 
 #define CLUSTER_DATA_PAGE_COUNT "cluster_page_count"
 
@@ -63,6 +64,27 @@ void cluster_data_set_page_count(int count)
     }
 }
 
+void cluster_data_insert_widget(const char* pkg_name, const char* content_info, int type)
+{
+    widget_data_t *new_item = (widget_data_t *)malloc(sizeof(widget_data_t));
+    memset(new_item, 0, sizeof(widget_data_t));
+
+    new_item->page_idx = INIT_VALUE;
+    new_item->pos_y = INIT_VALUE;
+    new_item->pos_x = INIT_VALUE;
+    new_item->pkg_name = strdup(pkg_name);
+    new_item->content_info = content_info == NULL ? NULL : strdup(content_info);
+    new_item->type = type;
+    new_item->period = 0.0;
+    new_item->allow_duplicate = 1;
+
+    if (!cluster_view_add_widget(new_item, true)) {
+        __cluster_data_item_free(new_item);
+        return ;
+    }
+    cluster_data_insert(new_item);
+}
+
 void cluster_data_insert(widget_data_t *item)
 {
     cluster_db_insert(item);
@@ -77,20 +99,45 @@ void cluster_data_delete(widget_data_t *item)
     __cluster_data_item_free(item);
 }
 
+void cluster_data_update(widget_data_t *item)
+{
+    cluster_db_update(item);
+}
+
 static void __cluster_data_insert_default_data(void)
 {
+    /* org.tizen.gallery.widget
+     * org.tizen.calendar.widget
+     * org.tizen.music-player.widget
+     * org.tizen.contacts-widget
+    */
     widget_data_t *new_item = (widget_data_t *)malloc(sizeof(widget_data_t));
     memset(new_item, 0, sizeof(widget_data_t));
-
     new_item->page_idx = 0;
     new_item->pos_y = 0;
     new_item->pos_x = 0;
-    new_item->pkg_name = strdup("org.tizen.calendar.widget");
+    new_item->pkg_name = strdup("org.tizen.gallery.widget");
     new_item->content_info = NULL;
     new_item->type = WIDGET_SIZE_TYPE_4x4;
     new_item->period = 0.0;
     new_item->allow_duplicate = 1;
+
     cluster_data_insert(new_item);
+/*
+    new_item = (widget_data_t *)malloc(sizeof(widget_data_t));
+    memset(new_item, 0, sizeof(widget_data_t));
+
+    new_item->page_idx = 1;
+    new_item->pos_y = 0;
+    new_item->pos_x = 0;
+    new_item->pkg_name = strdup("org.tizen.gallery.widget");
+    new_item->content_info = NULL;
+    new_item->type = WIDGET_SIZE_TYPE_4x4;
+    new_item->period = 0.0;
+    new_item->allow_duplicate = 1;
+
+    cluster_data_insert(new_item);
+    */
 }
 
 static void __cluster_data_item_free(widget_data_t *item)

@@ -77,6 +77,11 @@ page_indicator_t * page_indictor_create(Evas_Object *scroller)
 
 void page_indicator_set_page_count(page_indicator_t *page_indicator, int count)
 {
+    if (page_indicator == NULL) {
+        LOGE("page indicator is NULL.");
+        return ;
+    }
+
     int i;
     int width = count * PAGE_INDICATOR_UNIT + (PAGE_INDICATOR_GAP * (count-1));
     if (page_indicator->page_count == count) {
@@ -110,6 +115,11 @@ void page_indicator_scroller_resize(page_indicator_t *page_indicator, int width,
 
 void page_indicator_set_current_page(page_indicator_t *page_indicator, int page_number)
 {
+    if (page_indicator == NULL) {
+        LOGE("page indicator is NULL.");
+        return ;
+    }
+
     Evas_Object *edje = NULL;
     LOGD("Set Current :%d, old : %d", page_number, page_indicator->current_page);
 
@@ -203,7 +213,7 @@ static void __page_indicator_unit_rotate(Evas_Object *unit, double angle, double
         return;
     }
 
-    Edje_Message_Float_Set *msg = malloc(sizeof(*msg) + sizeof(double));
+    Edje_Message_Float_Set *msg = malloc(sizeof(*msg) + 2 * sizeof(double));
     msg->count = 2;
     msg->val[0] = angle;
     msg->val[1] = alpha;
