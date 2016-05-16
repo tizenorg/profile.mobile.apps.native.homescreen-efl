@@ -371,7 +371,7 @@ msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
 msgstr "1 item will be hidden."
 
 msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
-msgstr "Unable to add this Home Box to the Home screen. There is not enough space on the Home screen. Remove some Home Boxes and try again."
+msgstr "Unable to add this Widget to the Home screen. There is not enough space on the Home screen. Remove some Home Boxes and try again."
 
 msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
 msgstr "Unable to add"

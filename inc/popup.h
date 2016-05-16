@@ -13,25 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-#include "../../inc/edc_conf.h"
 
-collections {
-    images {
-    }
-    group { name: GROUP_HOME_LY;
-        parts {
-            part { name: HOME_BG;
-                type: SWALLOW;
-                scale: 1;
-                description { state: "default" 0.0;
-                    align: 0 0;
-                    rel1.relative: 0.0 0.0;
-                    rel2.relative: 0.0 0.0;
-                }
-            }
-        }
-        programs {
-        }
-    }
-}
+#ifndef __POPUP_H__
+#define __POPUP_H__
+
+typedef enum {
+    POPUP_DEFAULT = -1,
+    POPUP_CLUSTER_PAGE_FULL = 0,
+    POPUP_CLUSTER_DELETE_PAGE,
+    POPUP_MAX
+} popup_t;
+
+void popup_show(popup_t type, int btn_count, Evas_Smart_Cb btn_func[3], void *func_data[3]);
+void popup_hide(void);
+bool popup_is_show(void);
+
+#endif /* __POPUP_H__ */

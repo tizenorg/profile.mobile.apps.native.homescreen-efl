@@ -1,0 +1,302 @@
+/*
+ * Copyright 2012  Samsung Electronics Co., Ltd
+ *
+ * Licensed under the Flora License, Version 1.1 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://floralicense.org/license/
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
+#include "../../inc/edc_conf.h"
+
+images {
+    image: "preview_bg_4x2.png" COMP;
+    image: "preview_bg_4x4.png" COMP;
+}
+
+styles {
+    style {
+        name: "leaf,font";
+        base: "font=Tizen text_class=T024 font_size=38 align=left color=#AAAAAA color_class=T024 ellipsis=1.0";
+        tag:  "br" "\n";
+        tag:  "hilight" "+ font=Tizen:style=Bold";
+        tag:  "b" "+ font=Tizen:style=Bold";
+        tag:  "tab" "\t";
+    }
+}
+
+collections {
+    group {
+        name: "elm/genlist/item/widget,leaf/default";
+
+        data.item: "contents" "size_setter elm.icon";
+        data.item: "texts" "elm.text";
+
+        parts {
+            part {
+                name: SIZE_SETTER;
+                type: SWALLOW;
+                mouse_events: 1;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.0 0.0; }
+                    rel2 { relative: 1.0 1.0; }
+                }
+            }
+            part {
+                name: "elm.text";
+                type: TEXTBLOCK;
+                mouse_events: 0;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.044 0.046; to: SIZE_SETTER; }
+                    rel2 { relative: 0.894 0.159; to: SIZE_SETTER; }
+                    align: 0.0 0.0;
+                    text { style: "leaf,font"; }
+                }
+            }
+            part {
+                name: "elm.icon";
+                type: SWALLOW;
+                mouse_events: 1;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.044 0.180; to: SIZE_SETTER; }
+                    rel2 { relative: 0.894 0.954; to: SIZE_SETTER; }
+                    align: 0.0 0.0;
+                }
+            }
+        }
+    }
+
+    group {
+        name: ADD_WIDGET_VIEWER_CONFORMANT_FRAME;
+        parts {
+            part {
+                name: "bg";
+                type: RECT;
+                scale: 1;
+                mouse_events: 0;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.0 0.0; }
+                    rel2 { relative: 1.0 1.0; }
+                    visible: 0;
+                }
+            }
+
+            part {
+                name: "content";
+                type: SWALLOW;
+                mouse_events: 1;
+                scale: 1;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.0 0.0; }
+                    rel2 { relative: 1.0 1.0; }
+                }
+            }
+        }
+    }
+
+    group {
+        name: ADD_WIDGET_VIEWER_CONTENT_FRAME;
+        parts {
+            part {
+                name: "content";
+                type: SWALLOW;
+                mouse_events: 1;
+                scale: 1;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.0 0.0; }
+                    rel2 { relative: 1.0 1.0; }
+                    align: 0.0 0.0;
+                    visible: 0;
+                }
+                description {
+                    state: "show,normal" 0.0;
+                    inherit: "default" 0.0;
+                    visible: 1;
+                }
+            }
+
+            part {
+                name: "index";
+                type: SWALLOW;
+                mouse_events: 1;
+                scale: 1;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.00 0.0;}
+                    rel2 { relative: 1.00 1.00; }
+                    visible: 0;
+                }
+                description {
+                    state: "show,normal" 0.0;
+                    inherit: "default" 0.0;
+                    visible: 1;
+                }
+            }
+
+            part {
+                name: "loading";
+                type: RECT;
+                mouse_events: 0;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.25 0.40; }
+                    rel2 { relative: 0.75 0.60; }
+                    color: 100 100 200 200;
+                    visible: 0;
+                }
+
+                description {
+                    state: "show" 0.0;
+                    inherit: "default" 0.0;
+                    visible: 0;
+                }
+            }
+
+            part {
+                name: "loading,txt";
+                type: TEXT;
+                mouse_events: 0;
+                scale: 1;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.0 0.0; to, "loading"; }
+                    rel2 { relative: 1.0 1.0; to, "loading"; }
+                    text {
+                        font: "Tizen:style=Bold";
+                        text_class: "tizen";
+                        align: 0.5 0.5;
+                        size: 26;
+                        text: "Loading";
+                    }
+                    visible: 0;
+                }
+                description {
+                    state: "show" 0.0;
+                    inherit: "default" 0.0;
+                    visible: 0;
+                }
+            }
+        }
+        programs {
+            program {
+                name: "loading,on";
+                source: ADD_WIDGET_VIEWER_CONTENT_FRAME;
+                signal: "loading,on";
+                action: STATE_SET "show" 0.0;
+                target: "loading";
+                target: "loading,txt";
+            }
+            program {
+                name: "loading,off";
+                source: ADD_WIDGET_VIEWER_CONTENT_FRAME;
+                signal: "loading,off";
+                action: STATE_SET "default" 0.0;
+                target: "loading";
+                target: "loading,txt";
+            }
+            program {
+                name: "show,normal";
+                signal: "display,normal";
+                source: "container";
+                action: STATE_SET "show,normal" 0.0;
+                target: "content";
+            }
+            program {
+                name: "show,normal,index";
+                signal: "display,index";
+                source: "container";
+                action: STATE_SET "show,normal" 0.0;
+                target: "index";
+            }
+        }
+    }
+
+    group {
+        name: ADD_WIDGET_VIEWER_PREVIEW;
+        parts {
+            part {
+                name: SIZE_SETTER;
+                type: SWALLOW;
+                mouse_events: 1;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.0 0.0; }
+                    rel2 { relative: 1.0 1.0; }
+                }
+            }
+            part {
+                name: "bg";
+                type: RECT;
+                mouse_events: 0;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.0 0.0; to: SIZE_SETTER; }
+                    rel2 { relative: 1.0 1.0; to: SIZE_SETTER; }
+                    color: 61 185 204 178;
+                }
+                description {
+                    state: "pressed" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 0 121 212;
+                }
+            }
+            part {
+                name: ADD_WIDGET_VIEWER_PREVIEW_ICON;
+                type: SWALLOW;
+                mouse_events: 1;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.0 0.0; to: SIZE_SETTER; }
+                    rel2 { relative: 1.0 1.0; to: SIZE_SETTER; }
+                }
+            }
+            part {
+                name: "icon,touch";
+                type: RECT;
+                mouse_events: 1;
+                description {
+                    state: "default" 0.0;
+                    rel1 { relative: 0.0 0.0; to: ADD_WIDGET_VIEWER_PREVIEW_ICON; }
+                    rel2 { relative: 1.0 1.0; to: ADD_WIDGET_VIEWER_PREVIEW_ICON; }
+                    color: 0 0 0 0;
+                }
+            }
+        }
+        programs {
+            program {
+                name: "icon,clicked";
+                signal: "mouse,clicked,1";
+                source: "icon,touch";
+                action: SIGNAL_EMIT SIGNAL_PREVIEW_CLICKED SIGNAL_SOURCE;
+            }
+            program {
+                name: "icon,down";
+                source: "icon,touch";
+                signal: "mouse,down,1";
+                action: STATE_SET "pressed" 0.0;
+                target: "bg";
+            }
+            program {
+                name: "icon,up";
+                source: "icon,touch";
+                signal: "mouse,up,1";
+                action: STATE_SET "default" 0.0;
+                target: "bg";
+            }
+        }
+    }
+}
+

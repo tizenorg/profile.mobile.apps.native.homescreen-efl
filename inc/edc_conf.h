@@ -47,6 +47,9 @@
 #define CLUSTER_ALL_PAGE_MODE_ON "cluster_all_page_on"
 #define CLUSTER_ALL_PAGE_MODE_OFF "cluster_all_page_off"
 #define CLUSTER_PAGE_DELETE_BUTTON "cluster_delete_page"
+#define SIGNAL_CLUSTER_EDIT_STATE "cluster_edit_state"
+#define SIGNAL_CLUSTER_NORMAL_STATE "cluster_normal_state"
+#define SIGNAL_CLUSTER_PICKUP_STATE "cluster_pickup_state"
 
 #define GROUP_PAGE_INDICATOR_UNIT "page_indicator_unit"
 #define SIGNAL_PAGE_IDICATOR_ROTATION_CHANGE "rotation,changed"
@@ -147,5 +150,11 @@
 #define SIGNAL_DELETE_BUTTON_SHOW "delete_button_show"
 #define SIGNAL_DELETE_BUTTON_HIDE "delete_button_hide"
 #define SIGNAL_DELETE_BUTTON_CLICKED "delete_button_clicked"
+
+#define ADD_WIDGET_VIEWER_CONFORMANT_FRAME "add_widget_viewer_conformant_frame"
+#define ADD_WIDGET_VIEWER_CONTENT_FRAME "add_widget_viewer_content_frame"
+#define ADD_WIDGET_VIEWER_PREVIEW "add_widget_viewer_preview"
+#define ADD_WIDGET_VIEWER_PREVIEW_ICON "add_widget_viewer_preview_ICON"
+#define SIGNAL_PREVIEW_CLICKED "preview_clicked"
 
 #endif /* __EDC_CONF_H__ */

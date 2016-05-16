@@ -1,3 +1,19 @@
+/*
+ * Copyright 2012  Samsung Electronics Co., Ltd
+ *
+ * Licensed under the Flora License, Version 1.1 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://floralicense.org/license/
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ 
 #include "../../inc/edc_conf.h"
 
 collections {
@@ -44,32 +60,6 @@ collections {
                     rel2{relative: 1.0 1.0; to: CLUSTER_BG;}
                 }
             }
-            part {
-                name: CLUSTER_PAGE_DELETE_BUTTON;
-                type: IMAGE;
-                scale: 0;
-                description {
-                    state: "default" 0.0;
-                    rel1{relative: 0.015 0.015; to: CLUSTER_BG;}
-                    rel2{relative: 0.109 0.109; to: CLUSTER_BG;}
-                    color: 255 255 255 0;
-                    visible: 0;
-                    aspect: 1.0 1.0;
-                    aspect_preference: BOTH;
-                    image {
-                        normal: "../res/images/btn_delete_nor.png";
-                    }
-                }
-                description {
-                    state: "press" 0.0;
-                    inherit: "default" 0.0;
-                    color: 255 255 255 255;
-                    image {
-                        normal: "../res/images/btn_delete_press.png";
-                    }
-                    visible: 1;
-                }
-            }
         }
         programs {
             program {
@@ -88,28 +78,6 @@ collections {
                 action: STATE_SET "default" 0.0;
                 target: SIZE_SETTER;
                 target: CLUSTER_BG;
-                transition: DECELERATE ANIMATION_RESIZE_TIME;
-            }
-            program {
-                name: "delete_button_clicked";
-                signal: "mouse,clicked,1";
-                source: CLUSTER_PAGE_DELETE_BUTTON;
-                action: SIGNAL_EMIT SIGNAL_DELETE_BUTTON_CLICKED SIGNAL_SOURCE;
-            }
-            program {
-                name: "delete_button_mouse_down";
-                signal: "mouse,down,1";
-                source: CLUSTER_PAGE_DELETE_BUTTON;
-                action: STATE_SET "press" 0.0;
-                target: CLUSTER_PAGE_DELETE_BUTTON;
-                transition: DECELERATE ANIMATION_RESIZE_TIME;
-            }
-            program {
-                name: "delete_button_mouse_up";
-                signal: "mouse,up,1";
-                source: CLUSTER_PAGE_DELETE_BUTTON;
-                action: STATE_SET "show" 0.0;
-                target: CLUSTER_PAGE_DELETE_BUTTON;
                 transition: DECELERATE ANIMATION_RESIZE_TIME;
             }
         }

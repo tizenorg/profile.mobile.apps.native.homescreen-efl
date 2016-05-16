@@ -40,7 +40,9 @@ Eina_List *cluster_data_get_widget_list(void);
 int cluster_data_get_page_count();
 void cluster_data_set_page_count(int count);
 
+void cluster_data_insert_widget(const char* pkg_name, const char* content_info, int type);
 void cluster_data_insert(widget_data_t *item);
 void cluster_data_delete(widget_data_t *item);
+void cluster_data_update(widget_data_t *item);
 
 #endif /* __CLUSTER_DATA_H__ */

@@ -13,25 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-#include "../../inc/edc_conf.h"
 
-collections {
-    images {
-    }
-    group { name: GROUP_HOME_LY;
-        parts {
-            part { name: HOME_BG;
-                type: SWALLOW;
-                scale: 1;
-                description { state: "default" 0.0;
-                    align: 0 0;
-                    rel1.relative: 0.0 0.0;
-                    rel2.relative: 0.0 0.0;
-                }
-            }
-        }
-        programs {
-        }
-    }
-}
+#ifndef __MOUSE_H__
+#define __MOUSE_H__
+
+#define MOUSE_MOVE_MIN_DISTANCE 100
+
+typedef struct {
+    bool pressed;
+    bool long_pressed;
+    Evas_Coord down_x;
+    Evas_Coord down_y;
+    Evas_Coord move_x;
+    Evas_Coord move_y;
+    Evas_Coord up_x;
+    Evas_Coord up_y;
+    int offset_x;
+    int offset_y;
+    Ecore_Timer *long_press_timer;
+} mouse_info_t;
+
+#endif /* __MOUSE_H__ */
