@@ -138,6 +138,7 @@ static bool __apps_data_pkg_get_apps_info(app_info_h app_handle, app_data_t **it
         LOGE("app_info_get_icon return [%d]", ret);
         goto ERROR;
     }
+
     LOGD("%s", pkg);
 
     ret = package_manager_get_package_info(pkg, &p_handle);

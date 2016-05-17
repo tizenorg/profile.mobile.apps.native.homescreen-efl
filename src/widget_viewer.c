@@ -55,7 +55,7 @@ Evas_Object *widget_viewer_add_widget(Evas_Object *parent, widget_data_t *item, 
     evas_object_size_hint_align_set(widget, EVAS_HINT_FILL, EVAS_HINT_FILL);
     evas_object_size_hint_weight_set(widget, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     evas_object_color_set(widget, 255, 255, 255, 255);
-#else //ttt for TEST
+#else // for TEST
     Evas_Object *widget = evas_object_rectangle_add(evas_object_evas_get(widget_layout));
     evas_object_size_hint_min_set(widget, *widget_width, *widget_height);
     evas_object_size_hint_align_set(widget, EVAS_HINT_FILL, EVAS_HINT_FILL);

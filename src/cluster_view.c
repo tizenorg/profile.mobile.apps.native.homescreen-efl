@@ -36,7 +36,8 @@ static struct {
     Evas_Object *scroller;
     Evas_Object *box;
     Evas_Object *allpage;
-    Evas_Object *allpage_add;
+    Evas_Object *allpage_add_page;
+    Evas_Object *allpage_grid;
     page_indicator_t *indicator;
     int page_count;
     int current_page;
@@ -50,7 +51,8 @@ static struct {
     .scroller = NULL,
     .box = NULL,
     .allpage = NULL,
-    .allpage_add = NULL,
+    .allpage_add_page = NULL,
+    .allpage_grid = NULL,
     .indicator = NULL,
     .page_count = 0,
     .current_page = INIT_VALUE,
@@ -94,22 +96,23 @@ static void __cluster_view_menu_change_wallpaper_cb(void *data, Evas_Object *obj
 static void __cluster_view_menu_all_pages_cb(void *data, Evas_Object *obj, void *event_info);
 static void __cluster_view_app_launch_request_cb(app_control_h request, app_control_h reply, app_control_result_e result, void *data);
 static void __cluster_view_scroll_to_home(void);
-static void __cluster_view_scroll_to_page(int page_idx);
+static void __cluster_view_scroll_to_page(int page_idx, bool animation);
 static void __cluster_view_add_widget_content(widget_data_t *item);
 static void __cluster_view_create_all_page(void);
 static void __cluster_view_destroy_all_page(void);
 static cluster_page_t * __cluster_view_page_new(void);
 static void __cluster_view_page_delete(cluster_page_t *page);
-static void __cluster_view_allpage_delete_clicked (void *data, Evas_Object *obj, const char *emission, const char *source);
-static void __cluster_view_allpage_add_clicked (void *data, Evas_Object *obj, const char *emission, const char *source);
+static void __cluster_view_allpage_delete_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
+static void __cluster_view_allpage_add_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
 static void __cluster_view_allpage_delete_page_cb(void *data, Evas_Object *obj, void *event_info);
-
-static void __cluster_view_reorder_pages(void);
 
 static void __clsuter_view_thumbnail_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
 static void __clsuter_view_thumbnail_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
 static void __clsuter_view_thumbnail_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
-static Eina_Bool __cluster_view_thumbnail_time_cb(void *data);
+static Eina_Bool __cluster_view_thumbnail_long_press_time_cb(void *data);
+static void __cluster_view_allpage_drag_page(void *data);
+static void __cluster_view_allpage_pick_up_page(void *data);
+static void __cluster_view_allpage_drop_page(void *data);
 
 static void __clsuter_view_edit_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
 static void __clsuter_view_edit_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
@@ -124,6 +127,10 @@ static void __cluster_view_edit_drop_widget(void *data);
 static Eina_Bool __cluster_view_scroll_timer_cb(void *data);
 
 static void __cluster_view_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info);
+static void __cluster_view_allpage_get_page_pos(int page_idx, int *w, int *h);
+static int __cluster_view_allpage_get_page_index(int x, int y);
+static void __cluster_view_allpage_reposition(void);
+static int __cluster_view_page_sort_cb(const void *a , const void *b);
 
 Evas_Object *cluster_view_create(Evas_Object *win)
 {
@@ -215,7 +222,7 @@ static void __cluster_view_create_cluster(void)
     int page_count = cluster_data_get_page_count();
     cluster_view_s.current_page = CLUSTER_HOME_PAGE;
 
-    while (page_count--){
+    while (page_count--) {
         __cluster_view_page_new();
     }
 
@@ -312,11 +319,11 @@ bool cluster_view_hw_home_key(void)
 {
     if (cluster_view_s.view_state == VIEW_STATE_NORMAL) {
         __cluster_view_scroll_to_home();
-    } else if(cluster_view_s.view_state == VIEW_STATE_EDIT) {
+    } else if (cluster_view_s.view_state == VIEW_STATE_EDIT) {
         cluster_view_set_state(VIEW_STATE_NORMAL);
-    } else if(cluster_view_s.view_state == VIEW_STATE_ADD_VIEWER) {
+    } else if (cluster_view_s.view_state == VIEW_STATE_ADD_VIEWER) {
         cluster_view_set_state(VIEW_STATE_NORMAL);
-    } else if(cluster_view_s.view_state == VIEW_STATE_ALL_PAGE) {
+    } else if (cluster_view_s.view_state == VIEW_STATE_ALL_PAGE) {
         cluster_view_set_state(VIEW_STATE_NORMAL);
     }
 
@@ -327,11 +334,11 @@ bool cluster_view_hw_back_key(void)
 {
     if (cluster_view_s.view_state == VIEW_STATE_NORMAL) {
         return true;
-    } else if(cluster_view_s.view_state == VIEW_STATE_EDIT) {
+    } else if (cluster_view_s.view_state == VIEW_STATE_EDIT) {
         cluster_view_set_state(VIEW_STATE_NORMAL);
-    } else if(cluster_view_s.view_state == VIEW_STATE_ADD_VIEWER) {
+    } else if (cluster_view_s.view_state == VIEW_STATE_ADD_VIEWER) {
         cluster_view_set_state(VIEW_STATE_NORMAL);
-    } else if(cluster_view_s.view_state == VIEW_STATE_ALL_PAGE) {
+    } else if (cluster_view_s.view_state == VIEW_STATE_ALL_PAGE) {
         cluster_view_set_state(VIEW_STATE_NORMAL);
     }
 
@@ -403,18 +410,19 @@ void cluster_view_set_state(view_state_t state)
             evas_object_show(cluster_view_s.scroller);
             __cluster_view_destroy_all_page();
 
-            Eina_List *data_list = cluster_data_get_widget_list();
             Eina_List *find_list = NULL;
 
             cluster_page_t *page_item = NULL;
             EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
-             /*   if (page_item->page_layout) {
-                    elm_object_signal_emit(page_item->page_layout, CLUSTER_ALL_PAGE_MODE_OFF, SIGNAL_SOURCE);
-                }
-                */
-                if (page_item->page_layout)
+                if (page_item->page_layout) {
                     elm_box_pack_end(cluster_view_s.box, page_item->page_layout);
+                }
             }
+
+            if (cluster_view_s.current_page >= cluster_view_s.page_count) {
+                cluster_view_s.current_page = CLUSTER_HOME_PAGE;
+            }
+            __cluster_view_scroll_to_page(cluster_view_s.current_page, false);
         }
     } else if (state == VIEW_STATE_ADD_VIEWER) {
         add_widget_viewer_win_create();
@@ -431,7 +439,6 @@ void cluster_view_set_state(view_state_t state)
 
 bool cluster_view_add_widget(widget_data_t *item, bool scroll)
 {
-    LOGD("");
     if (!item->widget_layout)
         __cluster_view_add_widget_content(item);
 
@@ -440,10 +447,8 @@ bool cluster_view_add_widget(widget_data_t *item, bool scroll)
 
     if (item->page_idx >= 0) {
         page_idx = item->page_idx;
-        LOGD("idx %d", page_idx);
     } else {
         page_idx = cluster_view_s.current_page;
-        LOGD("idx %d", page_idx);
     }
 
     cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, page_idx);
@@ -459,7 +464,6 @@ bool cluster_view_add_widget(widget_data_t *item, bool scroll)
             } else {
                 if (cluster_page_set_widget(page_item, item)) {
                     page_idx = page_item->page_index;
-                    LOGD("idx %d", page_idx);
                     set_on = true;
                     break;
                 }
@@ -481,14 +485,13 @@ bool cluster_view_add_widget(widget_data_t *item, bool scroll)
                     return false;
                 }
                 page_idx = page_t->page_index;
-                LOGD("idx %d", page_idx);
             }
         }
     }
 
     if (scroll) {
         cluster_view_s.current_page = page_idx;
-        __cluster_view_scroll_to_page(cluster_view_s.current_page);
+        __cluster_view_scroll_to_page(cluster_view_s.current_page, true);
     }
 
     return true;
@@ -507,13 +510,18 @@ void cluster_view_delete_widget(widget_data_t *item)
 
 static void __cluster_view_scroll_to_home(void)
 {
-    __cluster_view_scroll_to_page(CLUSTER_HOME_PAGE);
+    __cluster_view_scroll_to_page(CLUSTER_HOME_PAGE, true);
 }
 
-static void __cluster_view_scroll_to_page(int page_idx)
+static void __cluster_view_scroll_to_page(int page_idx, bool animation)
 {
-    cluster_view_s.is_srolling = true;
-    elm_scroller_page_bring_in(cluster_view_s.scroller, page_idx, 0);
+    if (animation) {
+        cluster_view_s.is_srolling = true;
+        elm_scroller_page_bring_in(cluster_view_s.scroller, page_idx, 0);
+    } else {
+        page_indicator_set_current_page(cluster_view_s.indicator, page_idx);
+        elm_scroller_page_show(cluster_view_s.scroller, page_idx, 0);
+    }
 }
 
 static void __cluster_view_app_launch_request_cb(app_control_h request, app_control_h reply, app_control_result_e result, void *data)
@@ -560,10 +568,16 @@ static void __cluster_view_create_all_page(void)
     evas_object_show(page_bg);
     elm_object_part_content_set(cluster_view_s.allpage, SIZE_SETTER, page_bg);
 
+    Evas_Object *grid = elm_grid_add(cluster_view_s.allpage);
+    evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+    evas_object_size_hint_align_set(grid, EVAS_HINT_FILL, EVAS_HINT_FILL);
+    elm_grid_size_set(grid, WINDOW_W, WINDOW_H);
+    evas_object_show(grid);
+    elm_layout_content_set(cluster_view_s.allpage, CLUSTER_ALLPAGE_GRID, grid);
+    cluster_view_s.allpage_grid = grid;
+
     Eina_List *find_list = NULL;
     cluster_page_t *page_item = NULL;
-    char icon_container[PATH_MAX_LEN];
-    int idx=0;
     elm_box_unpack_all(cluster_view_s.box);
     EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
         //HIDE page
@@ -572,9 +586,6 @@ static void __cluster_view_create_all_page(void)
         if (page_item->page_layout) {
             page_item->thumbnail_ly = elm_layout_add(page_item->page_layout);
             elm_layout_file_set(page_item->thumbnail_ly, util_get_res_file_path(EDJE_DIR"/cluster_allpage_thumbnail.edj"), GROUP_CLUSTER_ALLPAGE_THUMBNAIL_LY);
-            evas_object_event_callback_add(page_item->thumbnail_ly, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_thumbnail_down_cb, page_item);
-            evas_object_event_callback_add(page_item->thumbnail_ly, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_thumbnail_move_cb, page_item);
-            evas_object_event_callback_add(page_item->thumbnail_ly, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_thumbnail_up_cb, page_item);
 
             evas_object_size_hint_align_set(page_item->thumbnail_ly, EVAS_HINT_FILL, EVAS_HINT_FILL);
             evas_object_size_hint_weight_set(page_item->thumbnail_ly, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
@@ -582,32 +593,95 @@ static void __cluster_view_create_all_page(void)
 
             Evas_Object *thumbnail = cluster_page_thumbnail(page_item);
             elm_object_part_content_set(page_item->thumbnail_ly, CLUSTER_ALLPAGE_THUMBNAIL_IMAGE, thumbnail);
-            elm_object_signal_emit(page_item->thumbnail_ly, SIGNAL_ALLPAGE_DELETE_BUTTON_SHOW, SIGNAL_SOURCE);
             elm_object_signal_callback_add(page_item->thumbnail_ly,
                     SIGNAL_ALLPAGE_DELETE_BUTTON_CLICKED, SIGNAL_SOURCE,
                     __cluster_view_allpage_delete_clicked, page_item);
 
-            sprintf(icon_container, "page_%d_%d", idx % 2, idx / 2);
-            elm_object_part_content_set(cluster_view_s.allpage, icon_container, page_item->thumbnail_ly);
+            evas_object_event_callback_add(thumbnail, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_thumbnail_down_cb, page_item);
+            evas_object_event_callback_add(thumbnail, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_thumbnail_move_cb, page_item);
+            evas_object_event_callback_add(thumbnail, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_thumbnail_up_cb, page_item);
         }
-        idx++;
     }
-    if (idx < CLUSTER_MAX_PAGE) {
-        cluster_view_s.allpage_add = elm_layout_add(cluster_view_s.allpage);
-        elm_layout_file_set(cluster_view_s.allpage_add, util_get_res_file_path(EDJE_DIR"/cluster_allpage_thumbnail.edj"), GROUP_CLUSTER_ALLPAGE_THUMBNAIL_LY);
 
-        evas_object_size_hint_align_set(cluster_view_s.allpage_add, EVAS_HINT_FILL, EVAS_HINT_FILL);
-        evas_object_size_hint_weight_set(cluster_view_s.allpage_add, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-        evas_object_show(cluster_view_s.allpage_add);
+    __cluster_view_allpage_reposition();
 
-        elm_object_signal_emit(cluster_view_s.allpage_add, SIGNAL_ALLPAGE_ADD_BUTTON_SHOW, SIGNAL_SOURCE);
-        elm_object_signal_callback_add(cluster_view_s.allpage_add,
+    if (cluster_view_s.page_count < CLUSTER_MAX_PAGE) {
+        int x = 0, y = 0;
+        cluster_view_s.allpage_add_page = elm_layout_add(cluster_view_s.allpage_grid);
+        elm_layout_file_set(cluster_view_s.allpage_add_page, util_get_res_file_path(EDJE_DIR"/cluster_allpage_thumbnail.edj"), GROUP_CLUSTER_ALLPAGE_THUMBNAIL_LY);
+
+        evas_object_size_hint_align_set(cluster_view_s.allpage_add_page, EVAS_HINT_FILL, EVAS_HINT_FILL);
+        evas_object_size_hint_weight_set(cluster_view_s.allpage_add_page, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+        evas_object_show(cluster_view_s.allpage_add_page);
+
+        elm_object_signal_emit(cluster_view_s.allpage_add_page, SIGNAL_ALLPAGE_ADD_BUTTON_SHOW, SIGNAL_SOURCE);
+        elm_object_signal_callback_add(cluster_view_s.allpage_add_page,
                 SIGNAL_ALLPAGE_ADD_BUTTON_CLICKED, SIGNAL_SOURCE,
                 __cluster_view_allpage_add_clicked, NULL);
 
-        sprintf(icon_container, "page_%d_%d", idx % 2, idx / 2);
-        elm_object_part_content_set(cluster_view_s.allpage, icon_container, cluster_view_s.allpage_add);
+        __cluster_view_allpage_get_page_pos(cluster_view_s.page_count, &x, &y);
+        elm_grid_pack(cluster_view_s.allpage_grid, cluster_view_s.allpage_add_page, x, y, CLUSTER_ALL_PAGE_W, CLUSTER_ALL_PAGE_H);
     }
+}
+
+static void __cluster_view_allpage_reposition(void)
+{
+    Eina_List *find_list = NULL;
+    cluster_page_t *page_item = NULL;
+    EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
+        int x = 0, y = 0;
+        __cluster_view_allpage_get_page_pos(page_item->page_index, &x, &y);
+        elm_grid_pack(cluster_view_s.allpage_grid, page_item->thumbnail_ly, x, y, CLUSTER_ALL_PAGE_W, CLUSTER_ALL_PAGE_H);
+        if (cluster_view_s.page_count > 1)
+            elm_object_signal_emit(page_item->thumbnail_ly, SIGNAL_ALLPAGE_DELETE_BUTTON_SHOW, SIGNAL_SOURCE);
+        else {
+            elm_object_signal_emit(page_item->thumbnail_ly, SIGNAL_ALLPAGE_DELETE_BUTTON_HIDE, SIGNAL_SOURCE);
+        }
+    }
+}
+
+static void __cluster_view_allpage_get_page_pos(int page_idx, int *w, int *h)
+{
+    int row, col;
+    int start_y = 0;
+    if (cluster_view_s.page_count < 2) {
+        start_y = (WINDOW_H - CLUSTER_ALL_PAGE_H) / 2;
+    } else if (cluster_view_s.page_count < 4) {
+        start_y = (WINDOW_H - (CLUSTER_ALL_PAGE_H * 2 + CLUSTER_ALL_PAGE_GAP_H)) / 2;
+    } else {
+        start_y = (WINDOW_H - (CLUSTER_ALL_PAGE_H * 3 + CLUSTER_ALL_PAGE_GAP_H * 2)) / 2;
+    }
+    row = page_idx / 2;
+    col = page_idx % 2;
+
+    *w = CLUSTER_ALL_PAGE_PADDING_SIDE + (col * (CLUSTER_ALL_PAGE_W + CLUSTER_ALL_PAGE_GAP_W));
+    *h = start_y + (row * (CLUSTER_ALL_PAGE_H + CLUSTER_ALL_PAGE_GAP_H));
+}
+
+static int __cluster_view_allpage_get_page_index(int x, int y)
+{
+    double row, col;
+    int int_row, int_col;
+    int start_y = 0;
+    int index = 0;
+    if (cluster_view_s.page_count < 2) {
+        start_y = (WINDOW_H - CLUSTER_ALL_PAGE_H) / 2;
+    } else if (cluster_view_s.page_count < 4) {
+        start_y = (WINDOW_H - (CLUSTER_ALL_PAGE_H * 2 + CLUSTER_ALL_PAGE_GAP_H)) / 2;
+    } else {
+        start_y = (WINDOW_H - (CLUSTER_ALL_PAGE_H * 3 + CLUSTER_ALL_PAGE_GAP_H * 2)) / 2;
+    }
+    col = (double)(x - CLUSTER_ALL_PAGE_PADDING_SIDE) / (CLUSTER_ALL_PAGE_W + CLUSTER_ALL_PAGE_GAP_W);
+    int_col = (int)(col + 0.5);
+    row = (double)(y - start_y)/(CLUSTER_ALL_PAGE_H + CLUSTER_ALL_PAGE_GAP_H);
+    int_row = (int)(row + 0.5);
+
+    if (((int_col - ALLPAGE_MOVE_GAP) < col && (int_col + ALLPAGE_MOVE_GAP) > col) &&
+            ((int_row - ALLPAGE_MOVE_GAP) < row && (int_row + ALLPAGE_MOVE_GAP) > row)) {
+        index = int_row * 2 + int_col;
+        return index;
+    }
+    return INIT_VALUE;
 }
 
 static void __cluster_view_destroy_all_page(void)
@@ -616,16 +690,21 @@ static void __cluster_view_destroy_all_page(void)
     cluster_page_t *page_item = NULL;
     EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
         if (page_item) {
+            Evas_Object *image = elm_object_part_content_get(page_item->thumbnail_ly, CLUSTER_ALLPAGE_THUMBNAIL_IMAGE);
+            evas_object_event_callback_del(image, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_thumbnail_down_cb);
+            evas_object_event_callback_del(image, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_thumbnail_move_cb);
+            evas_object_event_callback_del(image, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_thumbnail_up_cb);
+
             evas_object_del(page_item->thumbnail_ly);
             page_item->thumbnail_ly = NULL;
         }
     }
-    if (cluster_view_s.allpage_add)
-        evas_object_del(cluster_view_s.allpage_add);
+    if (cluster_view_s.allpage_add_page)
+        evas_object_del(cluster_view_s.allpage_add_page);
     if (cluster_view_s.allpage)
         evas_object_del(cluster_view_s.allpage);
 
-    cluster_view_s.allpage_add = NULL;
+    cluster_view_s.allpage_add_page = NULL;
     cluster_view_s.allpage = NULL;
 }
 
@@ -644,30 +723,31 @@ static cluster_page_t *__cluster_view_page_new(void)
     cluster_data_set_page_count(cluster_view_s.page_count);
 
     page_indicator_set_page_count(cluster_view_s.indicator, cluster_view_s.page_count);
-    //page_indicator_set_current_page(cluster_view_s.indicator, cluster_view_s.current_page);
 
     return page_t;
 }
 
 static void __cluster_view_page_delete(cluster_page_t *page)
 {
-    cluster_view_s.page_list = eina_list_remove(cluster_view_s.page_list,page);
+    elm_grid_unpack(cluster_view_s.allpage_grid, page->thumbnail_ly);
+
+    cluster_view_s.page_list = eina_list_remove(cluster_view_s.page_list, page);
     elm_box_unpack(cluster_view_s.box, page->page_layout);
-    cluster_view_s.page_count--;
-    cluster_data_set_page_count(cluster_view_s.page_count);
-    page_indicator_set_page_count(cluster_view_s.indicator, cluster_view_s.page_count);
-    //delete widgets on page.
+
     Eina_List *find_list = NULL;
     widget_data_t *widget = NULL;
     EINA_LIST_FOREACH(page->widget_list, find_list, widget) {
         cluster_data_delete(widget);
     }
-    //delete page.
     cluster_page_delete(page);
-    //reorder pages.
-    __cluster_view_reorder_pages();
+
+    cluster_view_s.page_count--;
+
+    cluster_data_set_page_count(cluster_view_s.page_count);
+    page_indicator_set_page_count(cluster_view_s.indicator, cluster_view_s.page_count);
 }
-static void __cluster_view_allpage_delete_clicked (void *data, Evas_Object *obj, const char *emission, const char *source)
+
+static void __cluster_view_allpage_delete_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
     cluster_page_t *page_item = (cluster_page_t *)data;
     if (eina_list_count(page_item->widget_list) > 0) {
@@ -679,22 +759,18 @@ static void __cluster_view_allpage_delete_clicked (void *data, Evas_Object *obj,
     }
 }
 
-static void __cluster_view_allpage_add_clicked (void *data, Evas_Object *obj, const char *emission, const char *source)
+static void __cluster_view_allpage_add_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
-    int page_count = eina_list_count(cluster_view_s.page_list);
-    char icon_container[PATH_MAX_LEN];
-
     cluster_page_t *page_t = __cluster_view_page_new();
     if (!page_t) {
-            LOGE("cluster page is max.");
-            return ;
-        }
+        LOGE("cluster page is max.");
+        return ;
+    }
+
+    elm_grid_unpack(cluster_view_s.allpage_grid, cluster_view_s.allpage_add_page);
 
     page_t->thumbnail_ly = elm_layout_add(page_t->page_layout);
     elm_layout_file_set(page_t->thumbnail_ly, util_get_res_file_path(EDJE_DIR"/cluster_allpage_thumbnail.edj"), GROUP_CLUSTER_ALLPAGE_THUMBNAIL_LY);
-    evas_object_event_callback_add(page_t->thumbnail_ly, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_thumbnail_down_cb, page_t);
-    evas_object_event_callback_add(page_t->thumbnail_ly, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_thumbnail_move_cb, page_t);
-    evas_object_event_callback_add(page_t->thumbnail_ly, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_thumbnail_up_cb, page_t);
 
     evas_object_size_hint_align_set(page_t->thumbnail_ly, EVAS_HINT_FILL, EVAS_HINT_FILL);
     evas_object_size_hint_weight_set(page_t->thumbnail_ly, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
@@ -707,135 +783,239 @@ static void __cluster_view_allpage_add_clicked (void *data, Evas_Object *obj, co
             SIGNAL_ALLPAGE_DELETE_BUTTON_CLICKED, SIGNAL_SOURCE,
             __cluster_view_allpage_delete_clicked, page_t);
 
-    sprintf(icon_container, "page_%d_%d", page_count % 2, page_count / 2);
-    elm_object_part_content_unset(cluster_view_s.allpage, icon_container);
-    elm_object_part_content_set(cluster_view_s.allpage, icon_container, page_t->thumbnail_ly);
+    evas_object_event_callback_add(thumbnail, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_thumbnail_down_cb, page_t);
+    evas_object_event_callback_add(thumbnail, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_thumbnail_move_cb, page_t);
+    evas_object_event_callback_add(thumbnail, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_thumbnail_up_cb, page_t);
 
-    page_count ++;
-    if (page_count < CLUSTER_MAX_PAGE) {
-        sprintf(icon_container, "page_%d_%d", page_count % 2, page_count / 2);
-        elm_object_part_content_set(cluster_view_s.allpage, icon_container, cluster_view_s.allpage_add);
-    }
-    else {
-        evas_object_del(cluster_view_s.allpage_add);
-        cluster_view_s.allpage_add = NULL;
+    __cluster_view_allpage_reposition();
+
+    if (cluster_view_s.page_count < CLUSTER_MAX_PAGE) {
+        int x = 0, y = 0;
+        __cluster_view_allpage_get_page_pos(cluster_view_s.page_count, &x, &y);
+        elm_grid_pack(cluster_view_s.allpage_grid, cluster_view_s.allpage_add_page, x, y, CLUSTER_ALL_PAGE_W, CLUSTER_ALL_PAGE_H);
+    } else {
+        evas_object_del(cluster_view_s.allpage_add_page);
+        cluster_view_s.allpage_add_page = NULL;
     }
 }
 
 static void __cluster_view_allpage_delete_page_cb(void *data, Evas_Object *obj, void *event_info)
 {
     cluster_page_t *page = (cluster_page_t *)data;
-    int page_count =0;
+
+    Eina_List *find_list = NULL;
+    cluster_page_t *page_item = NULL;
+    EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
+        if (page_item->page_index > page->page_index) {
+            page_item->page_index -= 1;
+        }
+    }
+
     __cluster_view_page_delete(page);
-    page_count = eina_list_count(cluster_view_s.page_list);
-    if (page_count < CLUSTER_MAX_PAGE) {
-        char icon_container[PATH_MAX_LEN];
-        if(cluster_view_s.allpage_add == NULL)
-        {
-            cluster_view_s.allpage_add = elm_layout_add(cluster_view_s.allpage);
-            elm_layout_file_set(cluster_view_s.allpage_add, util_get_res_file_path(EDJE_DIR"/cluster_allpage_thumbnail.edj"), GROUP_CLUSTER_ALLPAGE_THUMBNAIL_LY);
+    __cluster_view_allpage_reposition();
 
-            evas_object_size_hint_align_set(cluster_view_s.allpage_add, EVAS_HINT_FILL, EVAS_HINT_FILL);
-            evas_object_size_hint_weight_set(cluster_view_s.allpage_add, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-            evas_object_show(cluster_view_s.allpage_add);
+    if (cluster_view_s.page_count < CLUSTER_MAX_PAGE) {
+        if (cluster_view_s.allpage_add_page == NULL) {
+            cluster_view_s.allpage_add_page = elm_layout_add(cluster_view_s.allpage);
+            elm_layout_file_set(cluster_view_s.allpage_add_page, util_get_res_file_path(EDJE_DIR"/cluster_allpage_thumbnail.edj"), GROUP_CLUSTER_ALLPAGE_THUMBNAIL_LY);
 
-            elm_object_signal_emit(cluster_view_s.allpage_add, SIGNAL_ALLPAGE_ADD_BUTTON_SHOW, SIGNAL_SOURCE);
-            elm_object_signal_callback_add(cluster_view_s.allpage_add,
+            evas_object_size_hint_align_set(cluster_view_s.allpage_add_page, EVAS_HINT_FILL, EVAS_HINT_FILL);
+            evas_object_size_hint_weight_set(cluster_view_s.allpage_add_page, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+            evas_object_show(cluster_view_s.allpage_add_page);
+
+            elm_object_signal_emit(cluster_view_s.allpage_add_page, SIGNAL_ALLPAGE_ADD_BUTTON_SHOW, SIGNAL_SOURCE);
+            elm_object_signal_callback_add(cluster_view_s.allpage_add_page,
                     SIGNAL_ALLPAGE_ADD_BUTTON_CLICKED, SIGNAL_SOURCE,
                     __cluster_view_allpage_add_clicked, NULL);
         }
-        sprintf(icon_container, "page_%d_%d", page_count % 2, page_count / 2);
-        elm_object_part_content_unset(cluster_view_s.allpage, icon_container);
-        elm_object_part_content_set(cluster_view_s.allpage, icon_container, cluster_view_s.allpage_add);
+        int x = 0, y = 0;
+        __cluster_view_allpage_get_page_pos(cluster_view_s.page_count, &x, &y);
+        elm_grid_pack(cluster_view_s.allpage_grid, cluster_view_s.allpage_add_page, x, y, CLUSTER_ALL_PAGE_W, CLUSTER_ALL_PAGE_H);
     }
     popup_hide();
 }
 
-static void __cluster_view_reorder_pages(void)
-{
-    Eina_List *find_list = NULL;
-    Eina_List *find_list2 = NULL;
-    cluster_page_t *page_item = NULL;
-    widget_data_t *widget_item = NULL;
-    int page_index = 5;
-    char icon_container[PATH_MAX_LEN];
-
-    while (page_index >= 0){
-        sprintf(icon_container, "page_%d_%d", page_index % 2, page_index / 2);
-        LOGD("%s unset", icon_container);
-        elm_object_part_content_unset(cluster_view_s.allpage, icon_container);
-        page_index --;
-    }
-    page_index = 0;
-    EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
-        EINA_LIST_FOREACH(page_item->widget_list, find_list2, widget_item) {
-            LOGD("%s - %d -> %d", widget_item->pkg_name, widget_item->page_idx, page_index);
-            widget_item->page_idx = page_index;
-            cluster_data_update(widget_item);
-        }
-        sprintf(icon_container, "page_%d_%d", page_index % 2, page_index / 2);
-        LOGD("%s set", icon_container);
-        elm_object_part_content_set(cluster_view_s.allpage, icon_container, page_item->thumbnail_ly);
-        page_index++;
-    }
-    if (page_index <= CLUSTER_MAX_PAGE) {
-        sprintf(icon_container, "page_%d_%d", page_index % 2, page_index / 2);
-        elm_object_part_content_set(cluster_view_s.allpage, icon_container, cluster_view_s.allpage_add);
-    }
-    //for test
-    EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
-        EINA_LIST_FOREACH(page_item->widget_list, find_list2, widget_item) {
-            LOGD("%s - %d", widget_item->pkg_name, widget_item->page_idx);
-        }
-    }
-
-}
-
 static void  __clsuter_view_thumbnail_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
-    LOGD("");
-    /*if (!cluster_view_s.long_press_timer) {
-        cluster_view_s.long_press_timer = ecore_timer_add(LONG_PRESS_TIME,
-                __cluster_view_thumbnail_time_cb, data);
-    }*/
+    Evas_Event_Mouse_Down* ev = event_info;
+    LOGD("DOWN: (%d,%d)", ev->output.x, ev->output.y);
+
+    cluster_mouse_info.pressed = true;
+    cluster_mouse_info.down_x = cluster_mouse_info.move_x = ev->output.x;
+    cluster_mouse_info.down_y = cluster_mouse_info.move_y = ev->output.y;
+
+    if (cluster_mouse_info.long_press_timer) {
+        ecore_timer_del(cluster_mouse_info.long_press_timer);
+        cluster_mouse_info.long_press_timer = NULL;
+    }
+
+    cluster_mouse_info.long_press_timer = ecore_timer_add(LONG_PRESS_TIME,
+            __cluster_view_thumbnail_long_press_time_cb, data);
 }
+
 static void  __clsuter_view_thumbnail_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
-    LOGD("");
-    /*if (cluster_view_s.long_press_timer) {
-        ecore_timer_del(cluster_view_s.long_press_timer);
-        cluster_view_s.long_press_timer = NULL;
+    cluster_page_t *page_t = (cluster_page_t *)data;
+    Evas_Event_Mouse_Up* ev = event_info;
+    LOGD("UP: (%d,%d)", ev->output.x, ev->output.y);
+
+    if (!cluster_mouse_info.pressed)
+        return ;
+
+    cluster_mouse_info.pressed = false;
+
+    if (cluster_mouse_info.long_press_timer) {
+        ecore_timer_del(cluster_mouse_info.long_press_timer);
+        cluster_mouse_info.long_press_timer = NULL;
     }
-    cluster_view_s.picked_page = NULL;*/
+
+    cluster_mouse_info.up_x = ev->output.x;
+    cluster_mouse_info.up_y = ev->output.y;
+
+    if (!cluster_mouse_info.long_pressed) {
+        int distance = (cluster_mouse_info.down_x - cluster_mouse_info.up_x) * (cluster_mouse_info.down_x - cluster_mouse_info.up_x);
+        distance += (cluster_mouse_info.down_y - cluster_mouse_info.up_y) * (cluster_mouse_info.down_y - cluster_mouse_info.up_y);
+
+        if (distance <= MOUSE_MOVE_MIN_DISTANCE) {
+            cluster_view_s.current_page = page_t->page_index;
+            cluster_view_set_state(VIEW_STATE_NORMAL);
+        }
+
+        return ;
+    }
+
+    cluster_mouse_info.long_pressed = false;
+
+    if (cluster_view_s.picked_page) {
+        __cluster_view_allpage_drop_page(data);
+    }
 }
+
+static int __cluster_view_page_sort_cb(const void *a , const void *b)
+{
+    cluster_page_t *item1 = (cluster_page_t *)a;
+    cluster_page_t *item2 = (cluster_page_t *)b;
+
+    return item1->page_index - item2->page_index;
+}
+
 static void  __clsuter_view_thumbnail_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
-    LOGD("");
-    /*if (cluster_view_s.picked_page != NULL)
-    {
-        Evas_Event_Mouse_Move* ev = event_info;
-        LOGD("MOVE: (%d,%d)", ev->cur.output.x, ev->cur.output.y);
-        evas_object_move(cluster_view_s.picked_page->thumbnail_ly, ev->cur.output.x-50, ev->cur.output.y-50);
-    }*/
-}
-static Eina_Bool __cluster_view_thumbnail_time_cb(void *data)
-{
-    LOGD("");
-    cluster_view_s.picked_page = (cluster_page_t *)data;
+    Evas_Event_Mouse_Move* ev = event_info;
 
-    Eina_List *find_list = NULL;
-    cluster_page_t *page_item = NULL;
-    char icon_container[PATH_MAX_LEN];
-    int idx=0;
-    EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
-        if (page_item == cluster_view_s.picked_page)
-        {
-            sprintf(icon_container, "page_%d_%d", idx % 2, idx / 2);
-            elm_object_part_content_unset(cluster_view_s.allpage, icon_container);
+    if (!cluster_mouse_info.pressed)
+        return ;
+
+    cluster_mouse_info.move_x = ev->cur.output.x;
+    cluster_mouse_info.move_y = ev->cur.output.y;
+
+    if (!cluster_mouse_info.long_pressed) {
+        int distance = (cluster_mouse_info.move_x - cluster_mouse_info.down_x) * (cluster_mouse_info.move_x - cluster_mouse_info.down_x);
+        distance += (cluster_mouse_info.move_y - cluster_mouse_info.down_y) * (cluster_mouse_info.move_y - cluster_mouse_info.down_y);
+
+        if (distance > MOUSE_MOVE_MIN_DISTANCE) {
+            if (cluster_mouse_info.long_press_timer) {
+                ecore_timer_del(cluster_mouse_info.long_press_timer);
+                cluster_mouse_info.long_press_timer = NULL;
+            }
+
+            return ;
         }
-        idx++;
     }
-    return EINA_FALSE;
+
+    if (cluster_view_s.picked_page) {
+        __cluster_view_allpage_drag_page(data);
+    }
+}
+
+static Eina_Bool __cluster_view_thumbnail_long_press_time_cb(void *data)
+{
+    if (!cluster_mouse_info.pressed)
+        return ECORE_CALLBACK_CANCEL;
+
+    cluster_mouse_info.long_pressed = true;
+
+    if (cluster_mouse_info.long_press_timer) {
+        ecore_timer_del(cluster_mouse_info.long_press_timer);
+        cluster_mouse_info.long_press_timer = NULL;
+    }
+
+    __cluster_view_allpage_pick_up_page(data);
+
+    return ECORE_CALLBACK_CANCEL;
+}
+
+static void __cluster_view_allpage_drag_page(void *data)
+{
+    if (cluster_view_s.picked_page) {
+        int move_x = cluster_mouse_info.move_x - cluster_mouse_info.offset_x;
+        int move_y = cluster_mouse_info.move_y - cluster_mouse_info.offset_y;
+        int new_index = INIT_VALUE;
+        evas_object_move(cluster_view_s.picked_page->thumbnail_ly, move_x, move_y);
+        new_index = __cluster_view_allpage_get_page_index(move_x, move_y);
+
+        int move = 0;
+        int start, end;
+        if (new_index != cluster_view_s.picked_page->page_index && new_index != INIT_VALUE) {
+            if (cluster_view_s.picked_page->page_index < new_index) {
+                move = -1;
+                start = cluster_view_s.picked_page->page_index;
+                end = new_index;
+            } else if (cluster_view_s.picked_page->page_index > new_index) {
+                move = +1;
+                end = cluster_view_s.picked_page->page_index;
+                start = new_index;
+            }
+
+            Eina_List *find_list = NULL;
+            cluster_page_t *page_item = NULL;
+            EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
+                if (page_item == cluster_view_s.picked_page) {
+                    page_item->page_index = new_index;
+                } else if (page_item->page_index >= start && page_item->page_index <= end) {
+                    page_item->page_index += move;
+                }
+                elm_grid_unpack(cluster_view_s.allpage_grid, page_item->thumbnail_ly);
+            }
+
+            int x, y;
+            EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
+                if (page_item != cluster_view_s.picked_page) {
+                    __cluster_view_allpage_get_page_pos(page_item->page_index, &x, &y);
+                    elm_grid_pack(cluster_view_s.allpage_grid, page_item->thumbnail_ly, x, y, CLUSTER_ALL_PAGE_W, CLUSTER_ALL_PAGE_H);
+                }
+            }
+        }
+    }
+}
+
+static void __cluster_view_allpage_pick_up_page(void *data)
+{
+    cluster_view_s.picked_page = (cluster_page_t *)data;
+    elm_grid_unpack(cluster_view_s.allpage_grid, cluster_view_s.picked_page->thumbnail_ly);
+
+    elm_object_signal_emit(cluster_view_s.picked_page->thumbnail_ly, SIGNAL_ALLPAGE_DELETE_BUTTON_HIDE, SIGNAL_SOURCE);
+    elm_object_signal_emit(cluster_view_s.picked_page->thumbnail_ly, SIGNAL_ALLPAGE_DRAG_BG_SHOW, SIGNAL_SOURCE);
+
+    int x, y;
+    __cluster_view_allpage_get_page_pos(cluster_view_s.picked_page->page_index, &x, &y);
+    cluster_mouse_info.offset_x = cluster_mouse_info.down_x - x;
+    cluster_mouse_info.offset_y = cluster_mouse_info.down_y - y;
+}
+
+static void __cluster_view_allpage_drop_page(void *data)
+{
+    if (cluster_view_s.picked_page) {
+        elm_object_signal_emit(cluster_view_s.picked_page->thumbnail_ly, SIGNAL_ALLPAGE_DELETE_BUTTON_SHOW, SIGNAL_SOURCE);
+        elm_object_signal_emit(cluster_view_s.picked_page->thumbnail_ly, SIGNAL_ALLPAGE_DRAG_BG_HIDE, SIGNAL_SOURCE);
+
+        int x, y;
+        __cluster_view_allpage_get_page_pos(cluster_view_s.picked_page->page_index, &x, &y);
+        elm_grid_pack(cluster_view_s.allpage_grid, cluster_view_s.picked_page->thumbnail_ly, x, y, CLUSTER_ALL_PAGE_W, CLUSTER_ALL_PAGE_H);
+        cluster_view_s.picked_page = NULL;
+    }
+    cluster_view_s.page_list = eina_list_sort(cluster_view_s.page_list,
+            eina_list_count(cluster_view_s.page_list), __cluster_view_page_sort_cb);
 }
 
 static void __clsuter_view_edit_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
@@ -871,13 +1051,13 @@ static void __clsuter_view_edit_up_cb(void *data, Evas *e, Evas_Object *obj, voi
         cluster_mouse_info.long_press_timer = NULL;
     }
 
+    cluster_mouse_info.up_x = ev->output.x;
+    cluster_mouse_info.up_y = ev->output.y;
+
     if (!cluster_mouse_info.long_pressed)
         return ;
 
     cluster_mouse_info.long_pressed = false;
-
-    cluster_mouse_info.up_x = ev->output.x;
-    cluster_mouse_info.up_y = ev->output.y;
 
     elm_scroller_movement_block_set(cluster_view_s.scroller, ELM_SCROLLER_MOVEMENT_NO_BLOCK);
 
@@ -891,7 +1071,7 @@ static void __clsuter_view_edit_up_cb(void *data, Evas *e, Evas_Object *obj, voi
 static void __clsuter_view_edit_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
     Evas_Event_Mouse_Move* ev = event_info;
-    LOGD("MOVE: (%d,%d)", ev->cur.output.x, ev->cur.output.y);
+    //LOGD("MOVE: (%d,%d)", ev->cur.output.x, ev->cur.output.y);
 
     if (!cluster_mouse_info.pressed)
         return ;
@@ -1004,7 +1184,6 @@ static void __cluster_view_edit_drag_widget(void *data)
 
 static void __cluster_view_edit_drop_widget(void *data)
 {
-    LOGD("");
     Evas_Object *widget_layout = cluster_view_s.picked_widget->widget_layout;
     elm_object_signal_emit(widget_layout, SIGNAL_DELETE_BUTTON_SHOW_ANI, SIGNAL_SOURCE);
     elm_object_signal_emit(widget_layout, SIGNAL_CLUSTER_EDIT_STATE, SIGNAL_SOURCE);
@@ -1042,7 +1221,7 @@ static Eina_Bool __cluster_view_scroll_timer_cb(void *data)
         return ECORE_CALLBACK_CANCEL;
     }
     cluster_page_drag_cancel(current_page);
-    __cluster_view_scroll_to_page(next_page_idx);
+    __cluster_view_scroll_to_page(next_page_idx, true);
     return ECORE_CALLBACK_RENEW;
 }
 

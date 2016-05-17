@@ -47,6 +47,7 @@
 #define CLUSTER_ALL_PAGE_MODE_ON "cluster_all_page_on"
 #define CLUSTER_ALL_PAGE_MODE_OFF "cluster_all_page_off"
 #define CLUSTER_PAGE_DELETE_BUTTON "cluster_delete_page"
+#define CLUSTER_ALLPAGE_GRID "cluster_all_page_grid"
 #define SIGNAL_CLUSTER_EDIT_STATE "cluster_edit_state"
 #define SIGNAL_CLUSTER_NORMAL_STATE "cluster_normal_state"
 #define SIGNAL_CLUSTER_PICKUP_STATE "cluster_pickup_state"
@@ -62,12 +63,15 @@
 #define CLUSTER_ALLPAGE_THUMBNAIL_IMAGE "cluster_allpage_thumbnail_image"
 #define CLUSTER_ALLPAGE_DELETE_BUTTON "cluster_allpage_delete_button"
 #define CLUSTER_ALLPAGE_ADD_BUTTON "cluster_allpage_add_button"
+#define CLUSTER_ALLPAGE_DRAG_IMAGE "cluster_allpage_drag_image"
 #define SIGNAL_ALLPAGE_DELETE_BUTTON_CLICKED "allpage_delete_button_clicked"
 #define SIGNAL_ALLPAGE_DELETE_BUTTON_SHOW "allpage_delete_button_show"
 #define SIGNAL_ALLPAGE_DELETE_BUTTON_HIDE "allpage_delete_button_hide"
 #define SIGNAL_ALLPAGE_ADD_BUTTON_CLICKED "allpage_add_button_clicked"
 #define SIGNAL_ALLPAGE_ADD_BUTTON_SHOW "allpage_add_button_show"
 #define SIGNAL_ALLPAGE_ADD_BUTTON_HIDE "allpage_add_button_hide"
+#define SIGNAL_ALLPAGE_DRAG_BG_SHOW "allpage_drag_bg_show"
+#define SIGNAL_ALLPAGE_DRAG_BG_HIDE "allpage_drag_bg_hide"
 
 // apps view
 #define GROUP_APPS_LY "apps_ly"

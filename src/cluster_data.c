@@ -38,7 +38,6 @@ void cluster_data_init(void)
         __cluster_data_insert_default_data();
         cluster_data_set_page_count(2);
     }
-
     cluster_db_get_list(&cluster_data_s.data_list);
 }
 
@@ -87,12 +86,14 @@ void cluster_data_insert_widget(const char* pkg_name, const char* content_info, 
 
 void cluster_data_insert(widget_data_t *item)
 {
+    LOGD("%s - inserted to paged[%d]", item->pkg_name, item->page_idx);
     cluster_db_insert(item);
     cluster_data_s.data_list = eina_list_append(cluster_data_s.data_list, item);
 }
 
 void cluster_data_delete(widget_data_t *item)
 {
+    LOGD("%s - delete", item->pkg_name);
     cluster_db_delete(item);
     cluster_data_s.data_list = eina_list_remove(cluster_data_s.data_list, item);
     cluster_view_delete_widget(item);
@@ -122,7 +123,7 @@ static void __cluster_data_insert_default_data(void)
     new_item->period = 0.0;
     new_item->allow_duplicate = 1;
 
-    cluster_data_insert(new_item);
+    cluster_db_insert(new_item);
 /*
     new_item = (widget_data_t *)malloc(sizeof(widget_data_t));
     memset(new_item, 0, sizeof(widget_data_t));

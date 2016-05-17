@@ -28,7 +28,7 @@ collections {
             public alpha;
 
             public message(Msg_Type:type, id, ...) {
-                if(type == MSG_FLOAT_SET)
+                if (type == MSG_FLOAT_SET)
                 {
                     set_float(rot, getfarg(2));
                     set_float(alpha, getfarg(3));

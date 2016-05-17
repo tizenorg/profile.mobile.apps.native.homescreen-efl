@@ -93,7 +93,7 @@ static int __add_widget_data_widget_list_cb(const char *app_id, const char *widg
         }
 
         widget_preview_type->path = widget_service_get_preview_image_path(widget_id, type[i]);
-        if(!widget_preview_type->path) {
+        if (!widget_preview_type->path) {
             free(widget_preview_type);
             continue;
         }

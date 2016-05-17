@@ -84,8 +84,8 @@ bool cluster_page_unset(cluster_page_t *page, widget_data_t *item)
     int i, j;
     __cluster_page_get_widget_size(item->type, &w, &h);
 
-    for(i = 0; i < h; i++) {
-        for(j = 0; j < w; j++) {
+    for (i = 0; i < h; i++) {
+        for (j = 0; j < w; j++) {
             page->space[item->pos_y + i][item->pos_x + j] = 0;
         }
     }
@@ -115,11 +115,11 @@ bool cluster_page_check_empty_space(cluster_page_t *page, widget_size_type_e typ
     }
     LOGD("from %d %d", from_x, from_y);
 
-    for(y = from_y; y <= to_y; y++) {
-        for(x = from_x; x <= to_x; x++) {
+    for (y = from_y; y <= to_y; y++) {
+        for (x = from_x; x <= to_x; x++) {
             bool find = true;
-            for(i = 0; i < h; i++) {
-                for(j = 0; j < w; j++) {
+            for (i = 0; i < h; i++) {
+                for (j = 0; j < w; j++) {
                     if (y + i >= 4 || x + j >= 4 || page->space[y + i][x + j] == 1) {
                         find = false;
                         break;
@@ -128,7 +128,7 @@ bool cluster_page_check_empty_space(cluster_page_t *page, widget_size_type_e typ
                         break;
                 }
             }
-            if(find) {
+            if (find) {
                 if (empty_x)
                     *empty_x = x;
                 if (empty_y)
@@ -153,13 +153,12 @@ void __cluster_page_set(cluster_page_t *page, widget_data_t *item)
     int i, j;
     __cluster_page_get_widget_size(item->type, &w, &h);
 
-    for(i = 0; i < h; i++) {
-        for(j = 0; j < w; j++) {
+    for (i = 0; i < h; i++) {
+        for (j = 0; j < w; j++) {
             page->space[item->pos_y + i][item->pos_x + j] = 1;
         }
     }
 
-    LOGD("x %d y %d w %d h %d", item->pos_x, item->pos_y, w, h);
     elm_grid_pack(page->grid, item->widget_layout, item->pos_x, item->pos_y, w, h);
     cluster_data_update(item);
     page->widget_list = eina_list_append(page->widget_list, item);
@@ -168,7 +167,6 @@ void __cluster_page_set(cluster_page_t *page, widget_data_t *item)
 Evas_Object *cluster_page_thumbnail(cluster_page_t *page_t)
 {
     Evas_Object *image = NULL;
-    LOGD("");
     if (!page_t || !page_t->page_layout) {
         LOGE("Invalid page");
         return NULL;
@@ -201,7 +199,7 @@ void cluster_page_drag_cancel(cluster_page_t *page)
 
 void cluster_page_drag_widget(cluster_page_t *page, widget_size_type_e type, int pos_x, int pos_y)
 {
-    if(!page->highlight) {
+    if (!page->highlight) {
         int w = 0, h = 0;
         LOGD("Create Highlight");
         page->highlight_pos_x = INIT_VALUE;
@@ -214,18 +212,16 @@ void cluster_page_drag_widget(cluster_page_t *page, widget_size_type_e type, int
         evas_object_color_set(page->highlight, 255 , 255, 255, 100);
     }
     if (cluster_page_check_empty_space(page, type, pos_x, pos_y, NULL, NULL)) {
-        if(pos_x != page->highlight_pos_x || pos_y != page->highlight_pos_y) {
+        if (pos_x != page->highlight_pos_x || pos_y != page->highlight_pos_y) {
             int w, h;
             page->highlight_pos_x = pos_x;
             page->highlight_pos_y = pos_y;
             elm_grid_unpack(page->grid, page->highlight);
             __cluster_page_get_widget_size(type, &w, &h);
             elm_grid_pack(page->grid, page->highlight, pos_x, pos_y, w, h);
-            LOGD("show");
             evas_object_show(page->highlight);
         }
     } else {
-        LOGD("hide");
         page->highlight_pos_x = INIT_VALUE;
         page->highlight_pos_y = INIT_VALUE;
         elm_grid_unpack(page->grid, page->highlight);
@@ -253,7 +249,7 @@ void __cluster_page_print_space(cluster_page_t *page)
 {
     LOGD("=========================================");
     int i;
-    for(i=0; i<4; i++) {
+    for (i = 0; i < 4; i++) {
         LOGD("%d %d %d %d", page->space[i][0], page->space[i][1], page->space[i][2], page->space[i][3]);
     }
     LOGD("=========================================");
@@ -261,8 +257,7 @@ void __cluster_page_print_space(cluster_page_t *page)
 
 void __cluster_page_get_widget_size(widget_size_type_e type, int *w, int *h)
 {
-    int i, j;
-    switch(type) {
+    switch (type) {
     case WIDGET_SIZE_TYPE_4x2:
         *w = 4;
         *h = 2;
