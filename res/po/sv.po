@@ -385,6 +385,15 @@ msgstr "Alla sidor"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Tom"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sortera objekt i bokstavsordning"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sortera obj. i bokstavsordn."
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Programgenvägar och mappar sorteras i bokstavsordning. Eventuella anpassningar som du har gjort kommer att raderas."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Lägg till Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "%s och alla relaterade funktioner kommer att inaktiveras. Aktivera det i
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Max antal tillåtna program i mappen (%d) har uppnåtts."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Ändra programrutnät"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Ändra programrutnät"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Visa alla sidor"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Designer"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Det högsta antalet favoritprogram (%d) har uppnåtts."
 

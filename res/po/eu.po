@@ -290,7 +290,7 @@ msgid "IDS_COM_BODY_CONTACTS"
 msgstr "Kontaktuak"
 
 msgid "IDS_COM_POP_MAXIMUM_NUMBER_OF_CHARACTERS_REACHED"
-msgstr "Gehienezko karaktere kopurura heldu zara"
+msgstr "Gehienezko karaktere kopurura heldu zara."
 
 msgid "IDS_COM_SK_OK"
 msgstr "Ados"
@@ -385,6 +385,15 @@ msgstr "Orri guztiak"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Hutsik"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Ordenatu elementuak alfabetikoki"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Ordenatu alfabetikoki"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Aplikazio ikonoak eta karpetak alfabetikoki ordenatuko dira. Egin dituzun pertsonalizazioak baztertuko dira."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Gehitu Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "%s eta berari lotutako eginkizun guztiak desgaituko dira. Berriz ere gai
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Karpeta bakoitzeko aplikazioen gehieneko kopurura (%d) iritsi zara."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Aldatu aplikazioaren sareta"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Aldatu aplikazioaren sareta"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Ikusi orri denak"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Estilo\nxehetas."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Gogoko aplikazioen gehienezko kopurura (%d) iritsi zara."
 

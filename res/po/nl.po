@@ -1,11 +1,11 @@
 msgid "IDS_CAM_SK_CANCEL"
-msgstr "Annuleer"
+msgstr "Annuleren"
 
 msgid "IDS_CAM_SK_OK"
 msgstr "OK"
 
 msgid "IDS_COM_BODY_CREATE_FOLDER"
-msgstr "Nieuwe map"
+msgstr "Map maken"
 
 msgid "IDS_COM_POP_SHOW_A"
 msgstr "Tonen"
@@ -14,7 +14,7 @@ msgid "IDS_COM_SK_OPEN"
 msgstr "Openen"
 
 msgid "IDS_MB_SK_EDIT"
-msgstr "Bewerk"
+msgstr "Bewerken"
 
 msgid "IDS_MEMO_SK_ADD_ABB"
 msgstr "Toev."
@@ -32,7 +32,7 @@ msgid "IDS_ST_BODY_LOADING_ING"
 msgstr "Laden..."
 
 msgid "IDS_ST_HEADER_APPLICATIONS"
-msgstr "Applicaties"
+msgstr "Apps"
 
 msgid "IDS_ST_HEADER_MUSIC"
 msgstr "Muziek"
@@ -56,7 +56,7 @@ msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
 msgstr "Deselecteren"
 
 msgid "IDS_AT_BODY_UNINSTALL"
-msgstr "Verwijder"
+msgstr "Verwijderen"
 
 msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
 msgstr "Select. extra apps"
@@ -296,7 +296,7 @@ msgid "IDS_COM_SK_OK"
 msgstr "OK"
 
 msgid "IDS_COM_SK_CANCEL"
-msgstr "Annuleer"
+msgstr "Annuleren"
 
 msgid "IDS_COM_SK_DONE"
 msgstr "Gereed"
@@ -385,6 +385,15 @@ msgstr "Alle pagina's"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Leeg"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Items alfabetisch sorteren"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Items alfabetisch sorteren"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "App-pictogrammen en mappen worden in alfabetische volgorde gesorteerd. Eventuele aanpassingen worden verwijderd."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Dynamic Box toevoegen"
 
@@ -450,4 +459,19 @@ msgstr "%s en alle functies die ermee samenhangen, worden uitgeschakeld. Als u d
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Maximumaantal applicaties in map (%d) is bereikt."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "App-raster wijzigen"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "App-raster wijzigen"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Alle pag. tonen"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Stijl"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Maximumaantal favoriete apps (%d) bereikt."
 

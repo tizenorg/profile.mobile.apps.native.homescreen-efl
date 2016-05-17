@@ -71,7 +71,7 @@ msgid "IDS_AT_OPT_VIEW_AS"
 msgstr "Farklı görüntüle"
 
 msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
-msgstr "Sayfaları yeniden düzenlemek için özelleştirilebilir kılavuzun görünüm tipini değiştirmeniz gerekir."
+msgstr "Sayfaları yeniden düzenlemek için özelleştirilebilir matrisin görünüm tipini değiştirmeniz gerekir."
 
 msgid "IDS_AT_POP_UNINSTALL_PS_Q"
 msgstr "%s kaldırılsın mı?"
@@ -385,6 +385,15 @@ msgstr "Tüm sayfalar"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Boş"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Öğeleri alfabetik olarak sırala"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Öğeleri alfabetk olrk sırala"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Uygulama simgeleri ve klasörleri alfabetik olarak sıralanacak. Yaptığınız tüm özelleştirmeler silinecek."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Dynamic Box ekle"
 
@@ -450,4 +459,19 @@ msgstr "%s ve tüm ilgili özellikleri devre dışı bırakılacak. Tekrar etkin
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Klasörde maksimum uygulama sayısına (%d) ulaşıldı."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Uygulama matrisini değiştir"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Uygulama matrisini değiştir"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Tüm syflr göst"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Stilist"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Maksimum favori uygulama sayısına (%d) ulaşıldı."
 

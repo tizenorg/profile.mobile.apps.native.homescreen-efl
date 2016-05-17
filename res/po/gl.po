@@ -385,6 +385,15 @@ msgstr "Todas as páxinas"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Baleira"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Ordenar elementos alfabeticam."
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Ordenar elementos alfabetic."
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "As iconas e carpetas das aplicacións ordenaranse alfabeticamente. Todas as personalizacións efectuadas descartaranse."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Engadir Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "%s e todas as funcións relacionadas desactivaranse. Para activala de no
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Alcanzouse o número máximo de aplicacións da carpeta (%d)."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Cambiar cuadrícula aplicacións"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Cambiar cuadrícula aplicac."
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Ver todas páx."
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Axustes de estilo"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Alcanzouse o número máximo de aplicacións favoritas (%d)."
 

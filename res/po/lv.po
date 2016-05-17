@@ -385,6 +385,15 @@ msgstr "Visas lapas"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Tukšs"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Kārtot objektus alfabētiski"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Kārtot objektus alfabētiski"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Programmu ikonas un mapes tiks kārtotas alfabētiski. Visi jūsu veiktie pielāgojumi tiks atmesti."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Pievienot Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "%s un visas ar to saistītās funkcijas tiks deaktivizētas. Lai to akti
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Sasniegts maksimālais programmu skaits mapē (%d)."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Mainīt programmas režģi"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Mainīt programmas režģi"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Sk. visas lapas"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Styler"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Sasniegts maksimālais izlases programmu skaits (%d)."
 

@@ -1,0 +1,239 @@
+/*
+ * Copyright 2012  Samsung Electronics Co., Ltd
+ *
+ * Licensed under the Flora License, Version 1.1 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://floralicense.org/license/
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include "../../inc/edc_conf.h"
+
+collections {
+    images {
+        image: "../res/images/btn_delete_nor.png" COMP;
+        image: "../res/images/btn_delete_press.png" COMP;
+        image: "../res/images/all_page_add.png" COMP;
+        image: "../res/images/all_page_add_press.png" COMP;
+        image: "../res/images/all_page_drag.png" COMP;
+    }
+    group { name: GROUP_CLUSTER_ALLPAGE_THUMBNAIL_LY;
+        parts {
+            part { name: "bg";
+                type: RECT;
+                description {
+                    state: "default" 0.0;
+                    align: 0 0;
+                    color: 0 0 0 50;
+                    rel1.relative: 0.0 0.0;
+                    rel2.relative: 1.0 1.0;
+                }
+                description {
+                    state: "hide" 0.0;
+                    inherit: "default" 0.0;
+                    color: 0 0 0 0;
+                    visible: 0;
+                }
+            }
+            part { name: CLUSTER_ALLPAGE_ADD_BUTTON;
+                type: IMAGE;
+                description {
+                    state: "default" 0.0;
+                    rel1{relative: 0.375 0.375; to: "bg";}
+                    rel2{relative: 0.625 0.625; to: "bg";}
+                    visible: 0;
+                    aspect: 1.0 1.0;
+                    aspect_preference: BOTH;
+                    image {
+                        normal: "../res/images/all_page_add.png";
+                    }
+                }
+                description {
+                    state: "show" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 255;
+                    visible: 1;
+                }
+                description {
+                    state: "press" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 255;
+                    image {
+                        normal: "../res/images/all_page_add_press.png";
+                    }
+                    visible: 1;
+                }
+            }
+            part { name: "cluster_allpage_add_button_touch_rect";
+                type: RECT;
+                description {
+                    state: "default" 0.0;
+                    rel1{relative: 0.0 0.0; to: "bg";}
+                    rel2{relative: 1.0 1.0; to: "bg";}
+                    visible: 0;
+                    color: 0 0 0 0;
+                }
+                description {
+                    state: "show" 0.0;
+                    inherit: "default" 0.0;
+                    visible: 1;
+                }
+            }
+            part { name: CLUSTER_ALLPAGE_THUMBNAIL_IMAGE;
+                type: SWALLOW;
+                description {
+                    state: "default" 0.0;
+                    align: 0 0;
+                    rel1.relative: 0.0 0.0;
+                    rel2.relative: 1.0 1.0;
+                }
+            }
+            part { name: CLUSTER_ALLPAGE_DRAG_IMAGE;
+                type: IMAGE;
+                description {
+                    state: "default" 0.0;
+                    rel1{relative: -0.03 -0.03; to: CLUSTER_ALLPAGE_THUMBNAIL_IMAGE;}
+                    rel2{relative: 1.03 1.03; to: CLUSTER_ALLPAGE_THUMBNAIL_IMAGE;}
+                    color: 255 255 255 150;
+                    visible: 0;
+                    image {
+                        normal: "../res/images/all_page_drag.png";
+                    }
+                }
+                description {
+                    state: "show" 0.0;
+                    inherit: "default" 0.0;
+                    visible: 1;
+                }
+            }
+            part {
+                name: CLUSTER_ALLPAGE_DELETE_BUTTON;
+                type: IMAGE;
+                description {
+                    state: "default" 0.0;
+                    rel1{relative: 0.031 0.031; to: CLUSTER_ALLPAGE_THUMBNAIL_IMAGE;}
+                    rel2{relative: 0.218 0.218; to: CLUSTER_ALLPAGE_THUMBNAIL_IMAGE;}
+                    color: 255 255 255 0;
+                    visible: 0;
+                    aspect: 1.0 1.0;
+                    aspect_preference: BOTH;
+                    image {
+                        normal: "../res/images/btn_delete_nor.png";
+                    }
+                }
+                description {
+                    state: "show" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 255;
+                    visible: 1;
+                }
+                description {
+                    state: "press" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 255;
+                    image {
+                        normal: "../res/images/btn_delete_press.png";
+                    }
+                    visible: 1;
+                }
+            }
+        }
+        programs {
+            program {
+                name: "delete_button_clicked";
+                signal: "mouse,clicked,1";
+                source: CLUSTER_ALLPAGE_DELETE_BUTTON;
+                action: SIGNAL_EMIT SIGNAL_ALLPAGE_DELETE_BUTTON_CLICKED SIGNAL_SOURCE;
+            }
+            program {
+                name: "delete_button_mouse_down";
+                signal: "mouse,down,1";
+                source: CLUSTER_ALLPAGE_DELETE_BUTTON;
+                action: STATE_SET "press" 0.0;
+                target: CLUSTER_ALLPAGE_DELETE_BUTTON;
+            }
+            program {
+                name: "delete_button_mouse_up";
+                signal: "mouse,up,1";
+                source: CLUSTER_ALLPAGE_DELETE_BUTTON;
+                action: STATE_SET "show" 0.0;
+                target: CLUSTER_ALLPAGE_DELETE_BUTTON;
+            }
+            program {
+                name: "delete_button_show";
+                signal: SIGNAL_ALLPAGE_DELETE_BUTTON_SHOW;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "show" 0.0;
+                target: CLUSTER_ALLPAGE_DELETE_BUTTON;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "delete_button_hide";
+                signal: SIGNAL_ALLPAGE_DELETE_BUTTON_HIDE;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "default" 0.0;
+                target: CLUSTER_ALLPAGE_DELETE_BUTTON;
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "add_button_clicked";
+                signal: "mouse,clicked,1";
+                source: "cluster_allpage_add_button_touch_rect";
+                action: SIGNAL_EMIT SIGNAL_ALLPAGE_ADD_BUTTON_CLICKED SIGNAL_SOURCE;
+            }
+            program {
+                name: "add_button_mouse_down";
+                signal: "mouse,down,1";
+                source: "cluster_allpage_add_button_touch_rect";
+                action: STATE_SET "press" 0.0;
+                target: CLUSTER_ALLPAGE_ADD_BUTTON;
+            }
+            program {
+                name: "add_button_mouse_up";
+                signal: "mouse,up,1";
+                source: "cluster_allpage_add_button_touch_rect";
+                action: STATE_SET "show" 0.0;
+                target: CLUSTER_ALLPAGE_ADD_BUTTON;
+            }
+            program {
+                name: "add_button_show";
+                signal: SIGNAL_ALLPAGE_ADD_BUTTON_SHOW;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "show" 0.0;
+                target: CLUSTER_ALLPAGE_ADD_BUTTON;
+                target: "cluster_allpage_add_button_touch_rect";
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "add_button_hide";
+                signal: SIGNAL_ALLPAGE_ADD_BUTTON_HIDE;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "default" 0.0;
+                target: CLUSTER_ALLPAGE_ADD_BUTTON;
+                target: "cluster_allpage_add_button_touch_rect";
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "drag_show";
+                signal: SIGNAL_ALLPAGE_DRAG_BG_SHOW;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "show" 0.0;
+                target: CLUSTER_ALLPAGE_DRAG_IMAGE;
+            }
+            program {
+                name: "drag_hide";
+                signal: SIGNAL_ALLPAGE_DRAG_BG_HIDE;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "default" 0.0;
+                target: CLUSTER_ALLPAGE_DRAG_IMAGE;
+            }
+        }
+    }
+}

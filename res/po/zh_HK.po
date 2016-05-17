@@ -74,7 +74,7 @@ msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTO
 msgstr "若要重新安排頁面，您需要將檢視類型變更為可自訂網格。"
 
 msgid "IDS_AT_POP_UNINSTALL_PS_Q"
-msgstr "解除安裝 %s 嗎？"
+msgstr "解除安裝%s嗎？"
 
 msgid "IDS_AT_TAB4_MINI_APPS"
 msgstr "迷你應用程式"
@@ -122,10 +122,10 @@ msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
 msgstr "在我的最愛應用程式中"
 
 msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
-msgstr "移至 %s 資料夾。"
+msgstr "移至%s資料夾。"
 
 msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
-msgstr "正在移動 %s"
+msgstr "正在移動%s"
 
 msgid "IDS_HS_BODY_NO_CONTENT"
 msgstr "無內容"
@@ -365,7 +365,7 @@ msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
 msgstr "顯示已停用的應用程式"
 
 msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
-msgstr "%s 無法解除安裝。將改為停用。"
+msgstr "%s無法解除安裝。將改為停用。"
 
 msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
 msgstr "1 個項目將被隱藏。"
@@ -384,6 +384,15 @@ msgstr "全部頁面"
 
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "空白"
+
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "按字母排序項目"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "按字母排序項目"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "應用程式圖示和資料夾將按字母表順序排列。您所做的任何自訂設定將被捨棄。"
 
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "加入 Dynamic Box"
@@ -404,7 +413,7 @@ msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
 msgstr "按名稱 (A-Z)"
 
 msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
-msgstr "將解除安裝 %s。"
+msgstr "將解除安裝%s。"
 
 msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
 msgstr "無法重新排列按名稱 (A-Z) 排序的圖示。"
@@ -446,8 +455,23 @@ msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
 msgstr "未安裝應用程式。"
 
 msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
-msgstr "將停用 %s 及所有相關功能。若要重新啟用，請前往設定 > 應用程式管理員。"
+msgstr "將停用%s及所有相關功能。若要重新啟用，請前往 [設定] > [應用程式管理員]。"
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "已達資料夾中的應用程式數量上限 (%d)。"
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "變更應用程式網格"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "變更應用程式網格"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "檢視所有頁面"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "樣式工具"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "已達到我的最愛應用程式數量上限 (%d)。"
 

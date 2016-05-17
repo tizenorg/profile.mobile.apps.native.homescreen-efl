@@ -385,6 +385,15 @@ msgstr "Bütün səhifələr"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Boş"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Elementi əlifba sırası ilə ayır"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Elementl əlifba sırs ayır"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Proqram nişanları və qovluqlar əlifba sırası ilə çeşidlənəcək. Etdiyiniz bütün fərdiləşdirmələr silinəcək."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Dynamic Box əlavə et"
 
@@ -450,4 +459,19 @@ msgstr "%s və onunla bağlı bütün xüsusiyyətlər qeyri-aktiv ediləcək. O
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Qovluqdakı proqramların sayı maksimuma (%d) çatdı."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Proqram şəbəkəsini dəyiş"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Proqram şəbəkəsini dəyiş"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Bütün səhifələrə bax"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Üslubçu"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Sevimli proqramların sayı maksimuma (%d) çatıb."
 

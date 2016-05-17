@@ -385,6 +385,15 @@ msgstr "Барлық беттер"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Бос"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Элем-ді алфавит ретімен сұрыптау"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Элем. алфавит реті. сұрыптау"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Қолданба белгішелері мен қалталар алфавит ретімен сұрыпталады. Жасалған кез келген реттеулер алынып тасталынады."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Dynamic Box қосу"
 
@@ -450,4 +459,19 @@ msgstr "%s және оған қатысты барлық мүмкіндікте�
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Қалтадағы қолданбалардың ең көп саны (%d) шегіне жетті."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Қолданба торын өзгерту"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Қолданба торын өзгерту"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Беттерді көру"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Стильдеуші"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Таңдаулы қолданбалардың ең көп саны (%d) шегіне жетті."
 

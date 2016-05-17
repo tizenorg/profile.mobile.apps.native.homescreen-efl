@@ -58,12 +58,6 @@ msgstr "إلغاء التحديد"
 msgid "IDS_AT_BODY_UNINSTALL"
 msgstr "إلغاء التثبيت"
 
-msgid "IDS_AT_BUTTON_CHANGE_VIEW"
-msgstr "تغيير العرض"
-
-msgid "IDS_AT_HEADER_PD_SELECTED"
-msgstr "تم تحديد %d"
-
 msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
 msgstr "حدد تطبيقات للإضافة"
 
@@ -73,14 +67,8 @@ msgstr "تحديد تطبيقات لإخفائها"
 msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
 msgstr "تحديد تطبيقات لعرضها"
 
-msgid "IDS_AT_OPT_ALPHABETICAL_GRID_ABB"
-msgstr "شبكة أبجدية"
-
-msgid "IDS_AT_OPT_CUSTOMISABLE_GRID_ABB"
-msgstr "شبكة قابلة للتخصيص"
-
 msgid "IDS_AT_OPT_VIEW_AS"
-msgstr "عرض ﻜ"
+msgstr "عرض كـ"
 
 msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTOMISABLE_GRID"
 msgstr "لإعادة ترتيب الشاشات، يجب تغيير نوع العرض إلى شبكة قابلة للتخصيص."
@@ -224,7 +212,7 @@ msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
 msgstr "هل تريد إلغاء تفعيل هذا التطبيق؟"
 
 msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
-msgstr "ستتألّف الصفحة الجديدة من صناديق S Memo والمهام وS Planner الديناميكية"
+msgstr "ستتألّف الصفحة الجديدة من صناديق S Planner والمهام وS Memo الديناميكية."
 
 msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
 msgstr "ستتألّف الصفحة الجديدة من صناديق Twitter الديناميكية. في الشاشة التالية، حدّد ما يصل إلى %d من يوميات الأشخاص الذين تتابعهم لعرضها على الصفحة الجديدة."
@@ -239,7 +227,7 @@ msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
 msgstr "الخط بهذا الحجم غير معتمد"
 
 msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
-msgstr "تتعذر إضافة سطر آخر بسبب تقييد المساحة"
+msgstr "تتعذر إضافة سطر آخر بسبب تقييد المساحة."
 
 msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
 msgstr "يوجد عنصر واحد غير مقروء"
@@ -307,6 +295,12 @@ msgstr "تم الوصول إلى أقصى عدد من الحروف."
 msgid "IDS_COM_SK_OK"
 msgstr "موافق"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "إلغاء"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "تمت"
+
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "إظهار %d عناصر"
 
@@ -343,11 +337,11 @@ msgstr "اختيار"
 msgid "IDS_COM_BODY_INTERNET"
 msgstr "الإنترنت"
 
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "تم تحديد %d"
+
 msgid "IDS_ST_SK_NEXT"
 msgstr "التالي"
-
-msgid "IDS_HS_OPT_MANAGE_APPLICATIONS_ABB"
-msgstr "إدارة التطبيقات"
 
 msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
 msgstr "سيتم إخفاء %d من العناصر."
@@ -359,7 +353,7 @@ msgid "IDS_HS_HEADER_DELETE_PAGE_ABB2"
 msgstr "حذف الصفحة"
 
 msgid "IDS_HS_OPT_DELETE"
-msgstr "مسح"
+msgstr "حذف"
 
 msgid "IDS_HS_OPT_SHOW_HIDDEN_APPLICATIONS_ABB"
 msgstr "إظهار التطبيقات المخفية"
@@ -399,4 +393,85 @@ msgstr "فرز العناصر بالترتيب الأبجدي"
 
 msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
 msgstr "سيتم تخزين رموز التطبيقات ومجلداتها بالترتيب الأبجدي. سيتم تجاهل أي عمليات تخصيص قمت بها من قبل."
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "إضافة Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "إزالة"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "إزالة المجلد"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "ستتم إزالة المجلد. لن يتم إلغاء تثبيت التطبيقات الموجودة في هذا المجلد."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "يدوياً"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "حسب الاسم (أ-ي)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "سيتم إلغاء تثبيت %s."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "تتعذر إعادة ترتيب الرموز التي تم فرزها حسب الاسم (أ-ي)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "تم"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "إلغاء"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "فرز العناصر"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "فرز العناصر"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "التطبيقات المصغرة"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "تتعذر إضافة التطبيق المصغر"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "إضافة تطبيق مصغر"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "ما من مساحة كافية على الشاشة الرئيسية. قم بإزالة بعض التطبيقات المصغرة وأعد المحاولة."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "تحرير"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "تعديل"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "السمات"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "لم يتم تثبيت التطبيق."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "سيتم إلغاء تفعيل %s وجميع الميزات ذات الصلة بها. لتفعيلها مرة أخرى، انتقل إلى الإعدادات > مدير التطبيقات‬."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "تم الوصول إلى الحد الأقصى لعدد التطبيقات في المجلد (%d)."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "تغيير شبكة التطبيقات"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "تغيير شبكة التطبيقات"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "عرض كل الصفحات"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "المصمم"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "تم بلوغ الحد الأقصى لعدد التطبيقات المفضلة (%d)."
 

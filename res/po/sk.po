@@ -385,6 +385,15 @@ msgstr "Všetky stránky"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Prázdne"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Zoradiť položky abecedne"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Abecedné zoradenie položiek"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Ikony aplikácií a priečinky sa usporiadajú v abecednom poradí. Všetky prispôsobenia, ktoré ste vykonali, sa zahodia."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Pridať Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "%s a všetky funkcie súvisiace s ňou sa vypnú. Ak ju chcete znova zap
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Dosiahol sa maximálny počet aplikácií v priečinku (%d)."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Zmeniť mriežku aplikácií"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Zmena mriežky aplikácií"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Zobr. vš. str."
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Štýly"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Dosiahol sa maximálny počet obľúbených aplikácií (%d)."
 

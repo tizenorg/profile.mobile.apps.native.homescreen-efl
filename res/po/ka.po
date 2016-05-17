@@ -385,6 +385,15 @@ msgstr "ყველა გვერდი"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "ცარიელი"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "ელემენტების დალაგება ანბანით"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "ელემენტების დალაგება ანბანით"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "აპლიკაციის ნიშნები და საქაღალდეები დალაგდება ანბანით. თქვენ მიერ შერჩეული ყველა პარამეტრი გაუქმდება."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Dynamic Box-ის დამატება"
 
@@ -450,4 +459,19 @@ msgstr "%s და მასთან დაკავშირებული ყ
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "საქაღალდეში მიღწეულია აპლიკაციის მაქსიმალური რაოდენობა (%d)."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "აპლიკაციის ბადის შეცვლა"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "აპლიკაციის ბადის შეცვლა"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "იხ.ყველა გვერდი"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "სტილი"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "მიღწეულია შეტყობინების რჩეული აპლიკაციების მაქსიმალური რაოდენობა (%d)."
 

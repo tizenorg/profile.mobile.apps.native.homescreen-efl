@@ -385,6 +385,15 @@ msgstr "Gach leathanach"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Bán"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sórtáil míreanna go haibítreach"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sórtáil go haibítreach"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Stórálfar íocóin agus fillteáin feidhmchláir in ord aibítreach. Cuileálfar aon saincheapadh a rinne tú."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Cuir Dynamic Box leis"
 
@@ -450,4 +459,19 @@ msgstr "Díchumasófar %s mar aon leis na gnéithe go léir a bhaineann leis. Le
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Uaslíon na bhfeidhmchlár i bhfillteán (%d) bainte amach."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Athraigh greille feidhmchlár"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Athraigh greille feidhmchlár"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Amharc ar gach lch"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Stíleoir"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Uaslíon na bhfeidhmchlar ceanáin (%d) bainte amach."
 
