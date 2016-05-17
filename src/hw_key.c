@@ -100,7 +100,6 @@ static Eina_Bool __hw_key_press_cb(void *data, int type, void *event)
 static Eina_Bool __hw_key_release_cb(void *data, int type, void *event)
 {
     Evas_Event_Key_Up *ev = event;
-    hw_key_t pressed_key = HW_KEY_NONE;
 
     if (!hw_key_info.register_handler || !ev)
         return ECORE_CALLBACK_RENEW;

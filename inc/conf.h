@@ -53,6 +53,10 @@ extern int __conf_get_window_w();
 #define CLUSTER_H CLUSTER_W
 #define CLUSTER_ALL_PAGE_W ((320) * (__conf_get_resolution_scale_w()))
 #define CLUSTER_ALL_PAGE_H CLUSTER_ALL_PAGE_W
+#define CLUSTER_ALL_PAGE_GAP_H ((100) * (__conf_get_resolution_scale_h()))
+#define CLUSTER_ALL_PAGE_GAP_W ((16) * (__conf_get_resolution_scale_w()))
+#define CLUSTER_ALL_PAGE_PADDING_SIDE ((32) * (__conf_get_resolution_scale_w()))
+#define CLUSTER_ALL_PAGE_PADDING_TOP ((60) * (__conf_get_resolution_scale_h()))
 #define CLUSTER_DELETE_BUTTON_W ((60) * (__conf_get_resolution_scale_w()))
 #define CLUSTER_DELETE_BUTTON_H CLUSTER_DELETE_BUTTON_W
 #define CLUSTER_EDIT_LEFT_SCROLL_REGION ((72) * (__conf_get_resolution_scale_w()))
@@ -78,10 +82,11 @@ extern int __conf_get_window_w();
 #define ALLPAGE_PREVIEW_4X4_H ALLPAGE_PREVIEW_4X4_W
 #define ALLPAGE_PREVIEW_4X2_W ((300) * (__conf_get_resolution_scale_w()))
 #define ALLPAGE_PREVIEW_4X2_H ((ALLPAGE_PREVIEW_4X4_W/2) * (__conf_get_resolution_scale_h()))
+#define ALLPAGE_MOVE_GAP 0.15
 
 #define APPS_FOLDER_MAX_ITEM 9
 
-#define LONG_PRESS_TIME 1.0
+#define LONG_PRESS_TIME 0.75
 
 void conf_set_resolution_scale(int win_width, int win_height);
 

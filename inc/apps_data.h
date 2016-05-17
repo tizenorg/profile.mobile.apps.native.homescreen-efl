@@ -44,7 +44,7 @@ typedef struct {
 } app_data_t;
 
 enum {
-    APPS_DATA_TYPE_APP= 0,
+    APPS_DATA_TYPE_APP = 0,
     APPS_DATA_TYPE_APP_SHORTCUT,
     APPS_DATA_TYPE_URI_SHORTCUT
 };

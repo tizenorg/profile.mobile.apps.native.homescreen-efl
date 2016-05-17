@@ -176,7 +176,7 @@ void apps_data_uninstall(const char *package)
     EINA_LIST_FOREACH(apps_data_s.data_list, find_list, item) {
         if (item->pkg_str && (strcmp(item->pkg_str, package) == 0) &&
                 item->owner && (strcmp(item->owner, TEMP_OWNER) == 0)) {
-            find_result = eina_list_append(find_result,item);
+            find_result = eina_list_append(find_result, item);
         }
     }
     apps_data_delete_list(find_result);

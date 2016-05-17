@@ -601,12 +601,10 @@ static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *o
     feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
     if (!item) {
         LOGE("item is NULL");
-
     }
 
     LOGD("Uninstall :: %s", item->pkg_str);
     if (item->is_folder) {
-        //folder delete
         apps_data_delete_folder(item);
     } else if (item->type >= APPS_DATA_TYPE_APP_SHORTCUT) {
         LOGD("Delete shortcut");

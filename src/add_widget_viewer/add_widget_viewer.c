@@ -242,8 +242,7 @@ static Evas_Object *__add_widget_viewer_create_index(Evas_Object *layout)
     elm_index_item_append(index, "#", NULL, NULL);
 
     int i;
-    for (i = 0; i < strlen(idx_str); ++i)
-    {
+    for (i = 0; i < strlen(idx_str); ++i) {
         ch[0] = idx_str[i];
         ch[1] = '\0';
         elm_index_item_append(index, ch, __add_widget_viewer_index_cb, &ch[0]);
@@ -289,8 +288,8 @@ static int __add_widget_viewer_compare_index_cb(const void *data1, const void *d
 
     LOGD("Compare: %c == %c in %s, %s", c1, c2, idx_str, w->widget_id);
 
-    if(c1 < c2) return -1;
-    if(c1 > c2) return 1;
+    if (c1 < c2) return -1;
+    if (c1 > c2) return 1;
     return 0;
 }
 
@@ -360,7 +359,7 @@ static void __add_widget_viewer_item_realized_cb(void *data, Evas_Object *obj, v
     }
 
     index_item = elm_index_item_find(add_widget_viewer_s.index, ch);
-    if(!index_item) {
+    if (!index_item) {
         LOGE("Can not set selected index item");
         return ;
     }
@@ -403,8 +402,7 @@ static Evas_Object *__add_widget_viewer_list_content_get_cb(void *data, Evas_Obj
         evas_object_size_hint_max_set(rect, ALLPAGE_PREVIEW_LIST_ITEM_W, ALLPAGE_PREVIEW_LIST_ITEM_H);
         evas_object_show(rect);
         return rect;
-    }
-    else if (!strcmp(part, "elm.icon")) {
+    } else if (!strcmp(part, "elm.icon")) {
         main_box = __add_widget_viewer_list_widget_box_create(obj, widget);
         if (!main_box) {
             LOGE("Can not create preview box");
@@ -440,7 +438,7 @@ static Evas_Object *__add_widget_viewer_list_widget_box_create(Evas_Object *obj,
 
     EINA_LIST_FOREACH(widget->preview_list, l, preview) {
         preview_layout = __add_widget_viewer_list_widget_preview_box_create(box, widget, preview);
-        if(!preview_layout) {
+        if (!preview_layout) {
             LOGE("Can not create preview layout");
             continue;
         }

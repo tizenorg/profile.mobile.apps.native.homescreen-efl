@@ -58,6 +58,8 @@ void popup_show(popup_t type, int btn_count, Evas_Smart_Cb btn_func[3], void *fu
         return ;
     }
 
+    char part[3][10] = { "button1", "button2", "button3" };
+
     popup_info.is_visible = true;
 
     popup_info.popup = elm_popup_add(homescreen_efl_get_win());
@@ -73,7 +75,7 @@ void popup_show(popup_t type, int btn_count, Evas_Smart_Cb btn_func[3], void *fu
         btn = elm_button_add(popup_info.popup);
         elm_object_style_set(btn, "popup");
         elm_object_text_set(btn, _(popup_button_text[type][idx]));
-        elm_object_part_content_set(popup_info.popup, "button1", btn);
+        elm_object_part_content_set(popup_info.popup, part[idx], btn);
         evas_object_smart_callback_add(btn, "clicked",
                 (btn_func[idx] == NULL ? __popup_default_cb : btn_func[idx]), func_data[idx]);
     }

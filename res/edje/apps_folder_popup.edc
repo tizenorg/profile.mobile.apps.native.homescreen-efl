@@ -46,7 +46,7 @@ collections {
             public plus_y;
 
             public message(Msg_Type:type, id, ...) {
-                if(type == MSG_FLOAT_SET)
+                if (type == MSG_FLOAT_SET)
                 {
                     set_float(plus_x, getfarg(2));
                     set_float(plus_y, getfarg(3));
