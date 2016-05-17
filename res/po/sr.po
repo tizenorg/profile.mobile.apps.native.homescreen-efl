@@ -385,6 +385,15 @@ msgstr "Sve strane"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Prazno"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sortiraj stavke abecedno"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sortiraj stavke abecedno"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Ikone aplikacija i folderi će biti sortirani prema abecednom redosledu. Sva uneta prilagođavanja će biti odbačena."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Dodaj Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "%s i sve druge funkcije s tim u vezi će biti onemogućene. Da bi ih pon
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Dostignut je maksimalan broj aplikacija u folderu (%d)."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Promena mreže aplikacije"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Promena mreže aplikacije"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Prik. sve str."
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Uređivač"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Dostignut je maksimalan broj omiljenih aplikacija (%d)."
 

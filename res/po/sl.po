@@ -385,6 +385,15 @@ msgstr "Vse strani"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Prazno"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Razvrstitev elementov po abecedi"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Razvrstitev elem. po abecedi"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Ikone in mape aplikacije bodo razvrščene po abecednem vrstnem redu. Vse prilagoditve, ki ste jih napravili, bodo zavržene."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Dodaj Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "Aplikacija %s in vse z njo povezane funkcije bodo onemogočene. Če jo �
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Doseženo je največje dovoljeno število aplikacij v mapi (%d)."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Spremeni mrežo aplikacij"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Spremenite mrežo aplikacij"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Ogled vseh str."
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Ustvar-\njalec"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Doseženo je največje število priljubljenih aplikacij (%d)."
 

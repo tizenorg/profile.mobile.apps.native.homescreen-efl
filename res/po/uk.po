@@ -385,6 +385,15 @@ msgstr "Всі сторінки"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Пустий"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Сортув. елементи за алфавітом"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Сортування елементів за алф."
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Значки програм та папки будуть упорядковані в алфавітному порядку. Усі ваші налаштування буде скасовано."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Додати Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "%s і всі пов'язані з нею функції буде вим�
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Досягнуто максимальної кількості програм у папці: %d."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Змінити сітку програми"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Змінити сітку програми"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Перег.усі стор."
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Оформлення"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Досягнуто максимальної кількості улюблених програм (%d)."
 

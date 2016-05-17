@@ -385,6 +385,15 @@ msgstr "Kaikki sivut"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Tyhjä"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Lajittele kohteet aakkosell."
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Lajittele kohteet aakkosell."
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Sovelluskuvakkeet ja kansiot lajitellaan aakkosellisesti. Tekemäsi muutokset hylätään."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Lisää Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "%s ja kaikki siihen liittyvät toiminnot poistetaan käytöstä. Voit ot
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Kansiossa olevien sovellusten enimmäismäärä (%d) on saavutettu."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Muuta sovellusruudukkoa"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Muuta sovellusruudukkoa"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Näytä kaikki siv."
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Tyylittely"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Suosikkisovellusten enimmäismäärä (%d) on saavutettu."
 

@@ -58,12 +58,6 @@ msgstr "Untick"
 msgid "IDS_AT_BODY_UNINSTALL"
 msgstr "Uninstall"
 
-msgid "IDS_AT_BUTTON_CHANGE_VIEW"
-msgstr "Change view"
-
-msgid "IDS_AT_HEADER_PD_SELECTED"
-msgstr "%d selected"
-
 msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
 msgstr "Select apps to add"
 
@@ -72,12 +66,6 @@ msgstr "Select apps to hide"
 
 msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
 msgstr "Select apps to show"
-
-msgid "IDS_AT_OPT_ALPHABETICAL_GRID_ABB"
-msgstr "Alphabetical grid"
-
-msgid "IDS_AT_OPT_CUSTOMISABLE_GRID_ABB"
-msgstr "Customisable grid"
 
 msgid "IDS_AT_OPT_VIEW_AS"
 msgstr "View as"
@@ -355,9 +343,6 @@ msgstr "%d selected"
 msgid "IDS_ST_SK_NEXT"
 msgstr "Next"
 
-msgid "IDS_HS_OPT_MANAGE_APPLICATIONS_ABB"
-msgstr "Manage applications"
-
 msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
 msgstr "%d items will be hidden."
 
@@ -386,7 +371,7 @@ msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
 msgstr "1 item will be hidden."
 
 msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
-msgstr "Unable to add this Home Box to the home screen. There is not enough space on the home screen. Remove some Home Boxes and try again."
+msgstr "Unable to add this Widget to the home screen. There is not enough space on the home screen. Remove some Home Boxes and try again."
 
 msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
 msgstr "Unable to add"
@@ -399,6 +384,15 @@ msgstr "All pages"
 
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Blank"
+
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sort items alphabetically"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sort items alphabetically"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "App icons and folders will be sorted into alphabetical order. Any customisations you have made will be discarded."
 
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Add Dynamic Box"
@@ -446,7 +440,7 @@ msgid "IDS_HS_HEADER_ADD_WIDGET"
 msgstr "Add widget"
 
 msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
-msgstr "There is not enough space on the Home screen. Remove some widgets and try again."
+msgstr "There is not enough space on the home screen. Remove some widgets and try again."
 
 msgid "IDS_HS_HEADER_EDIT"
 msgstr "Edit"
@@ -457,14 +451,27 @@ msgstr "Edit"
 msgid "IDS_HS_BODY_THEMES_ABB"
 msgstr "Themes"
 
-msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
-msgstr "Sort items alphabetically"
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Application not installed."
 
-msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
-msgstr "Sort items alphabetically"
-
-msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
-msgstr "App icons and folders will be sorted into alphabetical order. Any customisations you have made will be discarded."
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s and all the features related to it will be disabled. To enable it again, go to Settings > Application manager."
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Maximum number of applications in folder (%d) reached."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Change app grid"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Change app grid"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "View all pages"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Styler"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Maximum number of favourite apps (%d) reached."
+

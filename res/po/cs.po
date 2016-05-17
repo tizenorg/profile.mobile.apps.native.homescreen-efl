@@ -23,7 +23,7 @@ msgid "IDS_MF_OPT_DELETEFOLDER"
 msgstr "Odstranit složku"
 
 msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
-msgstr "Zadejte název složky."
+msgstr "Zadejte název složky"
 
 msgid "IDS_PB_SK_CREATE_ABB"
 msgstr "Vytv."
@@ -58,12 +58,6 @@ msgstr "Zrušit zaškrtnutí"
 msgid "IDS_AT_BODY_UNINSTALL"
 msgstr "Odinstalovat"
 
-msgid "IDS_AT_BUTTON_CHANGE_VIEW"
-msgstr "Změnit zob."
-
-msgid "IDS_AT_HEADER_PD_SELECTED"
-msgstr "Vybráno: %d"
-
 msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
 msgstr "Vyberte přid. apl."
 
@@ -72,12 +66,6 @@ msgstr "Vyberte skryté aplikace"
 
 msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
 msgstr "Vyberte zobr. aplikace"
-
-msgid "IDS_AT_OPT_ALPHABETICAL_GRID_ABB"
-msgstr "Abecední tabulka"
-
-msgid "IDS_AT_OPT_CUSTOMISABLE_GRID_ABB"
-msgstr "Vlastní tabulka"
 
 msgid "IDS_AT_OPT_VIEW_AS"
 msgstr "Zobrazit jako"
@@ -307,6 +295,12 @@ msgstr "Bylo dosaženo maximálního počtu znaků."
 msgid "IDS_COM_SK_OK"
 msgstr "OK"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Zrušit"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Hotovo"
+
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Zobrazení %d položek"
 
@@ -343,11 +337,11 @@ msgstr "Vybrat"
 msgid "IDS_COM_BODY_INTERNET"
 msgstr "Internet"
 
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "Vybráno %d"
+
 msgid "IDS_ST_SK_NEXT"
 msgstr "Další"
-
-msgid "IDS_HS_OPT_MANAGE_APPLICATIONS_ABB"
-msgstr "Správa aplikací"
 
 msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
 msgstr "%d položek bude skryto."
@@ -399,4 +393,85 @@ msgstr "Seřadit položky abecedně"
 
 msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
 msgstr "Ikony aplikací a složky budou upořádány v abecedním pořadí. Veškeré provedené vlastní úpravy budou zrušeny."
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Přidat Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Odebrat"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Odebrat složku"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "Složka bude odebrána. Aplikace v této složce nebudou odinstalovány."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Ručně"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Podle názvu (A-Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s bude odinstalována."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Není možné změnit uspořádání ikon seřazených podle názvu (A-Z)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "HOTOVO"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "ZRUŠIT"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Řadit položky"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Řadit položky"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Pomůcky"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Pomůcku nelze přidat"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Přidat nástroj"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Na domovské obrazovce není dostatek volného místa. Odeberte některé pomůcky a opakujte akci."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Upravit"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Upravit"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Témata"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Aplikace není nainstalována."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s a všechny související funkce budou zakázány. Když je budete chtít opět povolit, přejděte na Nastavení > Správce aplikací."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Bylo dosaženo maximálního počtu aplikací ve složce (%d)."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Změnit mřížku aplikace"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Změnit mřížku aplikace"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Zobr. vš. str."
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Návrhář stylu"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Bylo dosaženo maximálního počtu oblíbených aplikací (%d)."
 

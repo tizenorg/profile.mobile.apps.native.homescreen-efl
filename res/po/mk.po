@@ -385,6 +385,15 @@ msgstr "Сите страници"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Празно"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Сортирај ставки по азбучен ред"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Сортирај ставки по азб. ред"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Иконите на апликациите и папките ќе се подредат по азбучен ред. Направените приспособувања ќе се отфрлат."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Додај Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "%s и сите други функции поврзани со него 
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Достигнат е максималниот број апликации (%d) во папка."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Промени мрежа на апликација"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Промени мрежа на апликација"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Види ги сите стр."
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Стилист"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Достигнат е максималниот број омилени апликации (%d)."
 

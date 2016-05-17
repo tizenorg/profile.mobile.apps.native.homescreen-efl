@@ -58,12 +58,6 @@ msgstr "Desmarcar"
 msgid "IDS_AT_BODY_UNINSTALL"
 msgstr "Desinstalar"
 
-msgid "IDS_AT_BUTTON_CHANGE_VIEW"
-msgstr "Alt. exib."
-
-msgid "IDS_AT_HEADER_PD_SELECTED"
-msgstr "%d selecionado(s)"
-
 msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
 msgstr "Sel. aplic. adic."
 
@@ -72,12 +66,6 @@ msgstr "Selec. aplic. p/ ocultar"
 
 msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
 msgstr "Selec. aplic. p/ exibir"
-
-msgid "IDS_AT_OPT_ALPHABETICAL_GRID_ABB"
-msgstr "Grade alfabética"
-
-msgid "IDS_AT_OPT_CUSTOMISABLE_GRID_ABB"
-msgstr "Grade personalizável"
 
 msgid "IDS_AT_OPT_VIEW_AS"
 msgstr "Visualizar como"
@@ -107,7 +95,7 @@ msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_TTS"
 msgstr "Tocar duas vezes para abrir."
 
 msgid "IDS_HS_BODY_BUTTON_T_TTS"
-msgstr "Tecla"
+msgstr "Botão"
 
 msgid "IDS_HS_BODY_DELETE_OPT_TTS"
 msgstr "Excluir"
@@ -307,6 +295,12 @@ msgstr "Número máximo de caracteres atingido."
 msgid "IDS_COM_SK_OK"
 msgstr "OK"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "Cancelar"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "Concluir"
+
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "Exibir %d itens"
 
@@ -343,11 +337,11 @@ msgstr "Selecionar"
 msgid "IDS_COM_BODY_INTERNET"
 msgstr "Internet"
 
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d selecionado(s)"
+
 msgid "IDS_ST_SK_NEXT"
 msgstr "Próximo"
-
-msgid "IDS_HS_OPT_MANAGE_APPLICATIONS_ABB"
-msgstr "Gerenciar aplicativos"
 
 msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
 msgstr "%d itens serão ocultos."
@@ -399,4 +393,85 @@ msgstr "Organ. itens alfabeticamente"
 
 msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
 msgstr "Ícones e pastas de aplicativos serão organizados em ordem alfabética. Qualquer personalização feita será descartada."
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Adicionar Dynamic Box"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "Remover"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "Remover pasta"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "A pasta será removida. Os aplicativos nesta pasta não serão removidos."
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "Manualmente"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "Por nome (A-Z)"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s será desinstalado."
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "Não é possível reorganizar os ícones organizados por nome (A-Z)."
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "CONCLUÍDO"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "CANCELAR"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "Ordenar itens"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "Ordenar itens"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "Widgets"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "Impossível adicionar widget"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "Adicionar widget"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "Não existe espaço suficiente na tela de início. Remova alguns widgets e tente novamente."
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "Editar"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "Editar"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "Temas"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "Aplicação não instalada."
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s e todos os recursos relacionados à ele serão desativados. Para ativá-lo novamente, vá para Configurações > Gerenciador de aplicativos."
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "Número máximo de aplicativos na pasta (%d) atingido."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Alterar grade do aplicativo"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Alterar grade do aplicativo"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Vis. páginas"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Estilo"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Número máximo de aplicativos favoritos (%d) atingido."
 

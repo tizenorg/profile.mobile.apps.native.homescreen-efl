@@ -385,6 +385,15 @@ msgstr "Tutte le pagine"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Vuoto"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Ordina alfabeticamente elementi"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Ordina elem. alfabeticamente"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Le icone e le cartelle delle applicazioni verranno riordinate in ordine alfabetico. Le personalizzazioni applicate verranno eliminate."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Aggiungi Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "%s e tutte le funzionalità correlate verranno disattivate. Per abilitar
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "È stato raggiunto il numero massimo di applicazioni nella cartella (%d)."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Modifica griglia applicazioni"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Modifica griglia app"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Vedi tutte le pagine"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Styler"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Il numero massimo di applicazioni preferite (%d) è stato raggiunto."
 

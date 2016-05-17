@@ -385,6 +385,15 @@ msgstr "Todas as páginas"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Em branco"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Ordenar itens alfabeticamente"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Ordenar itens alfabeticamente"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Os ícones e pastas de aplicações serão organizados por ordem alfabética. Quaisquer personalizações que tenha feito serão eliminadas."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Adicionar Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "%s e todas as funções relacionadas serão desactivados. Para o reactiv
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Número máximo de aplicações na pasta (%d) atingido."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Alterar grelha de aplicações"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Alterar grelha de aplicações"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Ver tds. págs."
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Estilista"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Número máximo de aplicações favoritas (%d) atingido."
 

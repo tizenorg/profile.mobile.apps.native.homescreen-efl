@@ -29,7 +29,7 @@ msgid "IDS_PB_SK_CREATE_ABB"
 msgstr "Erstellen"
 
 msgid "IDS_ST_BODY_LOADING_ING"
-msgstr "Ladevorgang läuft"
+msgstr "Lädt..."
 
 msgid "IDS_ST_HEADER_APPLICATIONS"
 msgstr "Anwendungen"
@@ -385,6 +385,15 @@ msgstr "Alle Seiten"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Leer"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Alphabetische Elementsortierung"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Alphabetische Elementsortierung"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "App-Symbole und Ordner werden in alphabetischer Reihenfolge sortiert. Alle von Ihnen vorgenommenen Anpassungen werden verworfen."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Dynamic Box hinzufügen"
 
@@ -450,4 +459,19 @@ msgstr "%s und alle damit zusammenhängenden Funktionen werden deaktiviert. Unte
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Maximale Anzahl an Anwendungen im Ordner (%d) erreicht."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "App-Gitter ändern"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Ändern des App-Gitters"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Alle anzeigen"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Styler"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Maximale Anzahl an bevorzugten Apps (%d) erreicht."
 

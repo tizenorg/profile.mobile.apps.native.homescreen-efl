@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#ifndef MOUSE_H_
-#define MOUSE_H_
+#ifndef __MOUSE_H__
+#define __MOUSE_H__
 
-#include <stdbool.h>
+#define MOUSE_MOVE_MIN_DISTANCE 100
 
-#include "util.h"
+typedef struct {
+    bool pressed;
+    bool long_pressed;
+    Evas_Coord down_x;
+    Evas_Coord down_y;
+    Evas_Coord move_x;
+    Evas_Coord move_y;
+    Evas_Coord up_x;
+    Evas_Coord up_y;
+    int offset_x;
+    int offset_y;
+    Ecore_Timer *long_press_timer;
+} mouse_info_t;
 
-/**
- * @brief Registers all mouse related callbacks.
- */
-extern void mouse_register(void);
-
-/**
- * @brief Unregisters all mouse related callbacks.
- */
-extern void mouse_unregister(void);
-
-
-
-#endif /* MOUSE_H_ */
+#endif /* __MOUSE_H__ */

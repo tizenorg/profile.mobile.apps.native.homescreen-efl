@@ -74,7 +74,7 @@ msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTO
 msgstr "若要重新排列页面，您需要将视图类型更改为可自定义网格。"
 
 msgid "IDS_AT_POP_UNINSTALL_PS_Q"
-msgstr "是否卸载 %s？"
+msgstr "是否卸载%s？"
 
 msgid "IDS_AT_TAB4_MINI_APPS"
 msgstr "迷你应用程序"
@@ -116,16 +116,16 @@ msgid "IDS_HS_BODY_FAVOURITE_APPS_TTS"
 msgstr "常用应用程序"
 
 msgid "IDS_HS_BODY_HOME_SCREEN_WILL_BE_FORMED_WITH_UP_TO_PD_ITEMS_SELECTED_IN_THE_NEXT_SCREEN"
-msgstr "主屏将由在下一屏幕中选中的多达 %d 个项目构成"
+msgstr "主屏幕将由在下一屏幕中选中的最多 %d 个项目构成。"
 
 msgid "IDS_HS_BODY_IN_FAVOURITE_APPLICATIONS_TTS"
 msgstr "在收藏应用程序中"
 
 msgid "IDS_HS_BODY_MOVE_INTO_PS_FOLDER_TTS"
-msgstr "移至 %s 文件夹。"
+msgstr "移至%s文件夹。"
 
 msgid "IDS_HS_BODY_MOVING_PS_M_PROGRESS_TTS"
-msgstr "移动中的 %s"
+msgstr "移动中的%s"
 
 msgid "IDS_HS_BODY_NO_CONTENT"
 msgstr "无内容"
@@ -149,7 +149,7 @@ msgid "IDS_HS_BODY_UNABLE_TO_LOAD_DATA_TAP_TO_RETRY"
 msgstr "无法载入数据。轻敲以重试。"
 
 msgid "IDS_HS_BODY_WALLPAPERS_ABB"
-msgstr "墙纸"
+msgstr "壁纸"
 
 msgid "IDS_HS_BUTTON_APPS"
 msgstr "应用程序"
@@ -164,7 +164,7 @@ msgid "IDS_HS_BUTTON_HELP"
 msgstr "帮助"
 
 msgid "IDS_HS_BUTTON_HOME_ABB"
-msgstr "主界面"
+msgstr "主屏幕"
 
 msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
 msgstr "杂志"
@@ -194,16 +194,16 @@ msgid "IDS_HS_OPT_ADD_TEXT_BOX_ABB"
 msgstr "添加文本框"
 
 msgid "IDS_HS_OPT_CHANGE_WALLPAPER_ABB"
-msgstr "更改墙纸"
+msgstr "更改壁纸"
 
 msgid "IDS_HS_OPT_CREATE_FOLDER_OPT_TTS"
-msgstr "创建文件夹"
+msgstr "新建文件夹"
 
 msgid "IDS_HS_OPT_DELETE_FOLDER_TTS"
 msgstr "删除文件夹"
 
 msgid "IDS_HS_OPT_DOWNLOADED_APPS"
-msgstr "已下载应用程序"
+msgstr "已下载的应用程序"
 
 msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
 msgstr "提取应用程序并删除文件夹"
@@ -212,10 +212,10 @@ msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
 msgstr "是否禁用该应用程序？"
 
 msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
-msgstr "新页面将包含 S 日历、任务和 S 备忘录动态窗口"
+msgstr "新页面将包含 S 日历、任务和 S 备忘录动态窗口。"
 
 msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_TWITTER_DYNAMIC_BOXES_MSG"
-msgstr "新页面将包含 Twitter 动态窗口。在下一个屏幕上，选择多达 %d 个您正在关注的人的时间轴以在新页面上显示。"
+msgstr "将由新页面构成 Twitter 动态窗口。请在下一个屏幕上选择要在新页面上显示的最多 %d 个您正在关注的人的时间轴。"
 
 msgid "IDS_HS_POP_THIS_FOLDER_WILL_BE_DELETED_BUT_THE_APPLICATIONS_WITHIN_IT_WILL_REMAIN_AVAILABLE_ON_YOUR_HOME_SCREEN_DELETE_THIS_FOLDER_Q"
 msgstr "该文件夹将被删除，但其内的应用程序将在您的主屏幕上保持可用。是否删除该文件夹？"
@@ -227,7 +227,7 @@ msgid "IDS_HS_TPOP_FONT_NOT_SUPPORTED_AT_THIS_SIZE"
 msgstr "不支持此大小的字体"
 
 msgid "IDS_HS_TPOP_UNABLE_TO_ADD_EXTRA_LINE_DUE_TO_SPACE_RESTRICTION_ABB"
-msgstr "由于空间限制，无法添加额外的行"
+msgstr "由于空间限制，无法添加其他行。"
 
 msgid "IDS_SCR_BODY_1_UNREAD_ITEM"
 msgstr "1 个未读项目"
@@ -254,7 +254,7 @@ msgid "IDS_ST_BODY_TEXT_IN_BODY_OF_POP_UP_T_TALKBACK"
 msgstr "提示窗口正文文本"
 
 msgid "IDS_ST_HEADER_HOME_SCREEN"
-msgstr "Home screen"
+msgstr "主屏幕"
 
 msgid "IDS_TTS_BODY_PAGE_MOVED_TO_P1SD_OF_P2SD"
 msgstr "页面已移动至 %2$d 之 %1$d。"
@@ -338,7 +338,7 @@ msgid "IDS_COM_BODY_INTERNET"
 msgstr "互联网"
 
 msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
-msgstr "%d 已选中"
+msgstr "已选择 %d"
 
 msgid "IDS_ST_SK_NEXT"
 msgstr "下一步"
@@ -365,7 +365,7 @@ msgid "IDS_HS_OPT_SHOW_DISABLED_APPLICATIONS_ABB"
 msgstr "显示已禁用的应用程序"
 
 msgid "IDS_HS_POP_PS_CANNOT_BE_UNINSTALLED_IT_WILL_BE_DISABLED_INSTEAD"
-msgstr "%s 无法卸载。将改为禁用。"
+msgstr "%s无法卸载。将改为禁用。"
 
 msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
 msgstr "将隐藏 1 个项目。"
@@ -377,13 +377,22 @@ msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
 msgstr "无法添加"
 
 msgid "IDS_HS_OPT_HOME_BOXES"
-msgstr "主页框"
+msgstr "主屏幕方框"
 
 msgid "IDS_HS_OPT_ALL_PAGES"
 msgstr "全部页面"
 
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "无内容"
+
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "按字母顺序排列"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "按字母顺序排列"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "将按字母顺序排列应用程序图标和文件夹。将放弃您做的所有自定义设置。"
 
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "添加 Dynamic Box"
@@ -446,8 +455,23 @@ msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
 msgstr "未安装应用程序。"
 
 msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
-msgstr "将停用 %s 及所有相关功能。若要重新启用，请前往设定 > 应用程序管理器。"
+msgstr "将停用%s及所有相关功能。若要重新启用，请进入【设置】 > 【应用程序管理器】。"
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "已达到文件夹中的最大应用程序数 (%d)"
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "更改应用程序网格"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "更改应用程序网格"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "查看所有页面"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "风格设计"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "已达到最大收藏应用程序数 (%d)"
 

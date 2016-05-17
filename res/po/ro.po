@@ -5,7 +5,7 @@ msgid "IDS_CAM_SK_OK"
 msgstr "OK"
 
 msgid "IDS_COM_BODY_CREATE_FOLDER"
-msgstr "Creare folder"
+msgstr "Creare director"
 
 msgid "IDS_COM_POP_SHOW_A"
 msgstr "Afişare"
@@ -385,6 +385,15 @@ msgstr "Toate paginile"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Necompletat"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sort. elem. în ordine alfabetică"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sort. elem. în ordine alfab."
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Pictogramele şi folderele aplicaţiilor vor fi sortate în ordine alfabetică. Orice personalizare pe care aţi făcut-o va fi anulată."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Adăugare Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "Aplicaţia %s şi toate caracteristicile asociate vor fi dezactivate. Pe
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "A fost atins numărul maxim de aplicaţii în folder (%d)."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Schimbare grilă aplicaţii"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Schimbare grilă aplicaţii"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Viz. toate pag."
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Stilizare"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "S-a atins numărul maxim de aplicaţii preferate (%d)."
 

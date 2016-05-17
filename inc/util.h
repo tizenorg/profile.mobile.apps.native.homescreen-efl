@@ -14,90 +14,31 @@
  * limitations under the License.
  */
 
-#ifndef __HOME_SCREEN_UTIL_H__
-#define __HOME_SCREEN_UTIL_H__
+#ifndef __UTIL_H__
+#define __UTIL_H__
 
 #include <dlog.h>
-#include <Elementary.h>
-#include <stdbool.h>
+
+#ifndef __MODULE__
+#define __MODULE__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
+#endif
 
 #ifdef  LOG_TAG
 #undef  LOG_TAG
 #endif
 #define LOG_TAG "HOMESCREEN_EFL"
 
-#define BUF_SIZE 64
+#define LOG_(prio, tag, fmt, arg...) \
+    ({ do { \
+        dlog_print(prio, tag, "%s: %s(%d) > " fmt, __MODULE__, __func__, __LINE__, ##arg);\
+    } while (0); })
 
-/* Multi-language */
-#ifndef _
-#define _(str) gettext(str)
-#endif
+#define LOGD(format, arg...) LOG_(DLOG_DEBUG, LOG_TAG, format, ##arg)
+#define LOGI(format, arg...) LOG_(DLOG_INFO, LOG_TAG, format, ##arg)
+#define LOGW(format, arg...) LOG_(DLOG_WARN, LOG_TAG, format, ##arg)
+#define LOGE(format, arg...) LOG_(DLOG_ERROR, LOG_TAG, format, ##arg)
+#define LOGF(format, arg...) LOG_(DLOG_FATAL, LOG_TAG, format, ##arg)
 
-/* Build */
-#define HAPI __attribute__((visibility("hidden")))
-#define DAPI __attribute__((visibility("default")))
-
-#define COUNT_OF(x) \
-((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
-
-#define __FILENAME__ (strrchr(__FILE__, '/') ? strrchr(__FILE__, '/') + 1 : __FILE__)
-
-#if !defined(LOGD)
-#define LOGD(fmt, arg...) dlog_print(DLOG_DEBUG, LOG_TAG, "%s: %s[%d]\t " #fmt "\n", __FILENAME__, __func__, __LINE__, ##arg)
-#endif
-
-#if !defined(LOGW)
-#define LOGW(fmt, arg...) dlog_print(DLOG_WARN, LOG_TAG, "%s: %s[%d]\t " #fmt "\n", __FILENAME__, __func__, __LINE__, ##arg)
-#endif
-
-#if !defined(LOGE)
-#define LOGE(fmt, arg...) dlog_print(DLOG_ERROR, LOG_TAG, "%s: %s[%d]\t " #fmt "\n", __FILENAME__, __func__, __LINE__, ##arg)
-#endif
-
-#if !defined(LOGI)
-#define LOGI(fmt, arg...) dlog_print(DLOG_ERROR, LOG_TAG, "%s: %s[%d]\t " #fmt "\n", __FILENAME__, __func__, __LINE__, ##arg)
-#endif
-
-/**
- * @brief Creates elm_layout widget and load edje file to it.
- *
- * @param win Homescreen efl window pointer.
- * @param edje_filename  name of the edje file
- * @param edje_group group name from the edje file
- * @return elm_layout Evas_Object pointer.
- */
-extern Evas_Object *util_create_edje_layout(
-	Evas_Object *win, const char* edje_filename, const char* edje_group);
-
-/*DBG callbacks set. Please use it if new objects are not visible .etc*/
-extern void tst_resize_cb(void *data, Evas *e, Evas_Object *obj, void *ei);
-extern void tst_show_cb(void *data, Evas *e, Evas_Object *obj, void *ei);
-extern void tst_hide_cb(void *data, Evas *e, Evas_Object *obj, void *ei);
-extern void tst_move_cb(void *data, Evas *e, Evas_Object *obj, void *ei);
-extern void tst_del_cb(void *data, Evas *e, Evas_Object *obj, void *ei);
-
-
-
-/**
- * @brief Function returns Eina list of evas objects visible in gengrid
- *
- * @param gengrid Evas_Object pointer to elm_gengrid
- * @return Eina_List pointer which Evas_Objects
- */
-extern Eina_List *elm_gengrid_get_evas_objects_from_items(Evas_Object *gengrid);
-
-/**
- * @brief Function returns pointer to elm_object_item placed in gengrid
- * at specified position
- * @param gengrid Pointer to elm_gengrid_widget;
- * @param idx
- * @return Pointer to elm_object_item
- */
-Elm_Object_Item *elm_gengrid_get_item_at_index(Evas_Object *gengrid, int idx);
-
-/*
- * @brief Application sub-directories type.
- */
 enum app_subdir {
 	APP_DIR_DATA,
 	APP_DIR_CACHE,
@@ -110,19 +51,8 @@ enum app_subdir {
 	APP_DIR_EXTERNAL_SHARED_DATA,
 };
 
-/**
- * @brief Returns absolute path to resource file located in applications directory.
- *
- * @param subdir type of subdirectory
- * @param relative path of resource from starting from "data" dir.
- *        eg. for DATA_DIR subdir and relative "database.db" => "/home/owner/apps/org.tizen.homescreen-efl/data/database.db"
- * @return absolute path string.
- */
 const char *util_get_file_path(enum app_subdir dir, const char *relative);
 
-/**
- * @brief Convinience macros
- */
 #define util_get_data_file_path(x) util_get_file_path(APP_DIR_DATA, (x))
 #define util_get_cache_file_path(x) util_get_file_path(APP_DIR_CACHE, (x))
 #define util_get_res_file_path(x) util_get_file_path(APP_DIR_RESOURCE, (x))
@@ -133,4 +63,4 @@ const char *util_get_file_path(enum app_subdir dir, const char *relative);
 #define util_get_external_cache_file_path(x) util_get_file_path(APP_DIR_EXTERNAL_CACHE, (x))
 #define util_get_external_shared_data_file_path(x) util_get_file_path(APP_DIR_EXTERNAL_SHARED_DATA, (x))
 
-#endif /* __HOME_SCREEN_UTIL_H__ */
+#endif /* __UTIL_H__ */

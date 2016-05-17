@@ -23,7 +23,7 @@ msgid "IDS_MF_OPT_DELETEFOLDER"
 msgstr "Delete folder"
 
 msgid "IDS_MF_POP_ERR_FOLDER_NAME_EMPTY"
-msgstr "Enter folder name."
+msgstr "Enter folder name"
 
 msgid "IDS_PB_SK_CREATE_ABB"
 msgstr "Create"
@@ -32,7 +32,7 @@ msgid "IDS_ST_BODY_LOADING_ING"
 msgstr "Loading..."
 
 msgid "IDS_ST_HEADER_APPLICATIONS"
-msgstr "Applications"
+msgstr "Apps"
 
 msgid "IDS_ST_HEADER_MUSIC"
 msgstr "Music"
@@ -170,7 +170,7 @@ msgid "IDS_HS_BUTTON_MAGAZINE_ABB"
 msgstr "Magazine"
 
 msgid "IDS_HS_BUTTON_PHONE"
-msgstr "Device"
+msgstr "Phone"
 
 msgid "IDS_HS_HEADER_ADD_ITEMS"
 msgstr "Add items"
@@ -371,7 +371,7 @@ msgid "IDS_HS_POP_1_ITEM_WILL_BE_HIDDEN"
 msgstr "1 item will be hidden."
 
 msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"
-msgstr "Unable to add this Home Box to the Home screen. There is not enough space on the Home screen. Remove some Home Boxes and try again."
+msgstr "Unable to add this Widget to the Home screen. There is not enough space on the Home screen. Remove some Home Boxes and try again."
 
 msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
 msgstr "Unable to add"
@@ -384,6 +384,15 @@ msgstr "All pages"
 
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Blank"
+
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sort items alphabetically"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sort items alphabetically"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "App icons and folders will be sorted into alphabetical order. Any customizations you have made will be discarded."
 
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Add Dynamic Box"
@@ -450,4 +459,19 @@ msgstr "%s and all the features related to it will be turned off. To turn it on 
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Maximum number of applications in folder (%d) reached."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Change app grid"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Change app grid"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "View all pages"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Styler"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Maximum number of favorite apps (%d) reached."
 

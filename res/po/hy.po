@@ -385,6 +385,15 @@ msgstr "Բոլոր էջերը"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Դատարկ"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Տարրերը տեսակավորել այբբ. կարգով"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Տարրերը տեսակ. այբբ. կարգով"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Ծրագրի պատկերակներն ու պանակները տեսակավորվելու են այբբենական կարգով: Ձեր կատարած բոլոր ընտրակայումները կանտեսվեն:"
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Ավելացնել Dynamic Box"
 
@@ -450,4 +459,19 @@ msgstr "%s-ն ու դրան առնչվող բոլոր գործառական հն�
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Հասել է պանակում ծրագրերի առավելագույն քանակին (%d):"
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Փոխել ծրագրի վանդակացանցը"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Փոխել ծրագրի վանդակացանցը"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Դիտ. բոլոր էջեր"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Ոճ"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Հասել է սիրված ծրագրերի առավելագույն քանակին (%d):"
 

@@ -58,12 +58,6 @@ msgstr "अनटिक करें"
 msgid "IDS_AT_BODY_UNINSTALL"
 msgstr "स्थापना रद्द करें"
 
-msgid "IDS_AT_BUTTON_CHANGE_VIEW"
-msgstr "दृश्य बदलें"
-
-msgid "IDS_AT_HEADER_PD_SELECTED"
-msgstr "%d चयनित"
-
 msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
 msgstr "जोड़ने के लिए एप्स चुनें"
 
@@ -72,12 +66,6 @@ msgstr "छिपाने के लिए एप्स चुनें"
 
 msgid "IDS_AT_HEADER_SELECT_APPS_TO_SHOW_ABB"
 msgstr "दिखाने के लिए एप्स चुनें"
-
-msgid "IDS_AT_OPT_ALPHABETICAL_GRID_ABB"
-msgstr "वर्णक्रमानुसार ग्रिड"
-
-msgid "IDS_AT_OPT_CUSTOMISABLE_GRID_ABB"
-msgstr "अनुकूलित करने योग्य ग्रिड"
 
 msgid "IDS_AT_OPT_VIEW_AS"
 msgstr "इस रूप में देखें"
@@ -113,7 +101,7 @@ msgid "IDS_HS_BODY_DELETE_OPT_TTS"
 msgstr "हटाएँ"
 
 msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
-msgstr "अन्यत्र ले जाने के लिए डबल टैप और होल्ड करें।"
+msgstr "अन्यत्र ले जाने के लिए दो बार टैप और होल्ड करें।"
 
 msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
 msgstr "बंद करने के लिए दो बार टैप करें।"
@@ -152,7 +140,7 @@ msgid "IDS_HS_BODY_THE_FOLDER_IS_OPEN"
 msgstr "फोल्डर खुला है।"
 
 msgid "IDS_HS_BODY_THIS_WILL_DELETE_THE_FOLDER_AND_ALL_THE_ITEMS_IT_CONTAINS"
-msgstr "यह फ़ोल्डर और इसकी सभी सामग्री को हटा देगा"
+msgstr "यह फोल्डर और इसकी सभी सामग्री को हटा देगा।"
 
 msgid "IDS_HS_BODY_UNABLE_TO_ADD_MORE_APPS_MAXIMUM_NUMBER_OF_APPS_REACHED"
 msgstr "अधिक ऐप जोड़ने में अक्षम। ऐप्स की अधिकतम संख्‍या पास हो गई है।"
@@ -307,6 +295,12 @@ msgstr "वर्णो की संख्‍या अधिकतम पह�
 msgid "IDS_COM_SK_OK"
 msgstr "ओके"
 
+msgid "IDS_COM_SK_CANCEL"
+msgstr "रद्द"
+
+msgid "IDS_COM_SK_DONE"
+msgstr "पूर्ण"
+
 msgid "IDS_CAM_BODY_SHOWING_PD_ITEMS_T_TTS"
 msgstr "%d मदें दिखाना"
 
@@ -343,11 +337,11 @@ msgstr "चुनें"
 msgid "IDS_COM_BODY_INTERNET"
 msgstr "इंटरनेट"
 
+msgid "IDS_MEMO_HEADER_PD_SELECTED_ABB2"
+msgstr "%d चयनित"
+
 msgid "IDS_ST_SK_NEXT"
 msgstr "अगला"
-
-msgid "IDS_HS_OPT_MANAGE_APPLICATIONS_ABB"
-msgstr "एप्लीकेशंस व्यवस्थित करें"
 
 msgid "IDS_HS_POP_PD_ITEMS_WILL_BE_HIDDEN"
 msgstr "%d मदें छिपाई जाएँगी।"
@@ -380,7 +374,7 @@ msgid "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_EN
 msgstr "इस होम बॉक्स को होम स्क्रीन पर जोड़ने में असमर्थ। होम स्क्रीन पर पर्याप्त स्थान नहीं है। कुछ होम बॉक्सेज निकालें और फिर से प्रयास करें।"
 
 msgid "IDS_MSG_HEADER_UNABLE_TO_ADD"
-msgstr "जोड़ने में अक्षम"
+msgstr "जोड़ने में असमर्थ"
 
 msgid "IDS_HS_OPT_HOME_BOXES"
 msgstr "होम बॉक्सेज"
@@ -399,4 +393,85 @@ msgstr "वर्ण क्रम में मदें सॉर्ट कर�
 
 msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
 msgstr "एप चिह्न और फोल्डर्स अक्षरक्रमानुसार क्रम में क्रमबद्ध किए जाएँगे। आपके द्वारा किए गए कोई भी अनुकूलन निरस्त किए जाएँगे।"
+
+msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
+msgstr "Dynamic Box जोड़ें"
+
+msgid "IDS_ST_BUTTON_REMOVE_ABB2"
+msgstr "निकालें"
+
+msgid "IDS_HS_HEADER_REMOVE_FOLDER_ABB"
+msgstr "फोल्डर निकालें"
+
+msgid "IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"
+msgstr "फोल्डर को निकाल दिया जाएगा। इस फोल्डर के एप्लीकेशंस को अस्थापित नहीं किया जाएगा।"
+
+msgid "IDS_HS_OPT_MANUALLY_ABB"
+msgstr "मैनुअल रूप से"
+
+msgid "IDS_HS_OPT_BY_NAME_HA_Z_ABB"
+msgstr "नाम (A-Z) द्वारा"
+
+msgid "IDS_HS_POP_PS_WILL_BE_UNINSTALLED"
+msgstr "%s अस्थापित किया जाएगा।"
+
+msgid "IDS_HS_TPOP_UNABLE_TO_REARRANGE_ICONS_SORTED_BY_NAME_HA_Z"
+msgstr "नाम (A-Z) के अनुसार क्रमबद्ध किए गए चिह्नों को पुनः व्यवस्थित करने में असमर्थ।"
+
+msgid "IDS_TPLATFORM_ACBUTTON_DONE_ABB"
+msgstr "पूर्ण"
+
+msgid "IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"
+msgstr "रद्द करें"
+
+msgid "IDS_HS_OPT_SORT_ITEMS"
+msgstr "मदें क्रमबद्ध करें"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS"
+msgstr "मदें क्रमबद्ध करें"
+
+msgid "IDS_HS_BODY_WIDGETS_ABB"
+msgstr "विजेट्स"
+
+msgid "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"
+msgstr "विजेट जोड़ने में असमर्थ"
+
+msgid "IDS_HS_HEADER_ADD_WIDGET"
+msgstr "विजेट जोड़ें"
+
+msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGETS_AND_TRY_AGAIN"
+msgstr "होम स्क्रीन पर पर्याप्त स्थान नहीं है। कुछ विजेट्स निकालें और फिर से प्रयास करें।"
+
+msgid "IDS_HS_HEADER_EDIT"
+msgstr "संपादन"
+
+msgid "IDS_HS_OPT_EDIT"
+msgstr "संपादन"
+
+msgid "IDS_HS_BODY_THEMES_ABB"
+msgstr "थीम्स"
+
+msgid "IDS_HS_POP_APPLICATION_NOT_INSTALLED"
+msgstr "एप्लीकेशन स्थापित नहीं हुई।"
+
+msgid "IDS_HS_POP_PS_AND_ALL_THE_FEATURES_RELATED_TO_IT_WILL_BE_DISABLED_TO_ENABLE_IT_AGAIN_GO_TO_SETTINGS_APPLICATION_MANAGER"
+msgstr "%s और इससे जुड़ी सभी सुविधाएँ असमर्थ कर दी जाएँगी। इसे फिर से सक्षम करने के लिए सेटिंग्स > एप्लीकेशन प्रबंधक पर जाएँ।"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
+msgstr "फोल्डर में अधिकतम एप्लीकेशंस की संख्या (%d) पूरी हुई।"
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "एप ग्रिड बदलें"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "एप ग्रिड बदलें"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "सभी पेज देखें"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "स्टायलर"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "पसंदीदा एप्स की अधिकतम संख्‍या (%d) पूरी हो गई है।"
 

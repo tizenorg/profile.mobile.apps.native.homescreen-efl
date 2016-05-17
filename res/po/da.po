@@ -1,5 +1,5 @@
 msgid "IDS_CAM_SK_CANCEL"
-msgstr "Annullér"
+msgstr "Annuller"
 
 msgid "IDS_CAM_SK_OK"
 msgstr "OK"
@@ -14,7 +14,7 @@ msgid "IDS_COM_SK_OPEN"
 msgstr "Åbn"
 
 msgid "IDS_MB_SK_EDIT"
-msgstr "Redigér"
+msgstr "Rediger"
 
 msgid "IDS_MEMO_SK_ADD_ABB"
 msgstr "Tilføj"
@@ -47,7 +47,7 @@ msgid "IDS_TPLATFORM_BODY_TICKBOX_T_TTS"
 msgstr "Afkrydsningsfelt"
 
 msgid "IDS_TPLATFORM_BODY_TICK_T_TTS"
-msgstr "Markér"
+msgstr "Marker"
 
 msgid "IDS_TPLATFORM_BODY_TITLE"
 msgstr "Titel"
@@ -56,7 +56,7 @@ msgid "IDS_TPLATFORM_BODY_UNTICK_T_TTS"
 msgstr "Fjern markering"
 
 msgid "IDS_AT_BODY_UNINSTALL"
-msgstr "Afinstallér"
+msgstr "Afinstaller"
 
 msgid "IDS_AT_HEADER_SELECT_APPS_TO_ADD_ABB2"
 msgstr "Vælg app at tilf."
@@ -74,10 +74,10 @@ msgid "IDS_AT_POP_TO_REARRANGE_PAGES_YOU_NEED_TO_CHANGE_THE_VIEW_TYPE_TO_A_CUSTO
 msgstr "For at omorganisere sider skal du ændre visningstypen til et brugerdefinerbart gitter."
 
 msgid "IDS_AT_POP_UNINSTALL_PS_Q"
-msgstr "Afinstallér %s?"
+msgstr "Afinstaller %s?"
 
 msgid "IDS_AT_TAB4_MINI_APPS"
-msgstr "Mini-apps"
+msgstr "Miniapps"
 
 msgid "IDS_CAM_OPT_MULTISHOT_DESELECT"
 msgstr "Fjern markering"
@@ -86,7 +86,7 @@ msgid "IDS_COM_HEADER_UNNAMED_FOLDER"
 msgstr "Mappe uden navn"
 
 msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_CLOSE_APP_TRAY_TTS"
-msgstr "Dobbelttryk for at lukke app-bakken."
+msgstr "Dobbelttryk for at lukke appbakken."
 
 msgid "IDS_HELP_BODY_DOUBLE_TAP_TO_OPEN_APP_TRAY_TTS"
 msgstr "Dobbelttryk for at åbne app-bakken."
@@ -101,7 +101,7 @@ msgid "IDS_HS_BODY_DELETE_OPT_TTS"
 msgstr "Slet"
 
 msgid "IDS_HS_BODY_DOUBLE_TAP_AND_HOLD_TO_MOVE_T_TTS"
-msgstr "Dobbelttap og hold nede for at flytte."
+msgstr "Dobbelttryk og hold for at flytte."
 
 msgid "IDS_HS_BODY_DOUBLE_TAP_TO_CLOSE_T_TTS"
 msgstr "Dobbelttryk for at lukke."
@@ -158,7 +158,7 @@ msgid "IDS_HS_BUTTON_DELETE"
 msgstr "Slet"
 
 msgid "IDS_HS_BUTTON_DISABLE_ABB"
-msgstr "Deaktivér"
+msgstr "Deaktiver"
 
 msgid "IDS_HS_BUTTON_HELP"
 msgstr "Hjælp"
@@ -209,7 +209,7 @@ msgid "IDS_HS_OPT_EXTRACT_APPS_AND_DELETE_FOLDER_ABB"
 msgstr "Pak apps ud, og slet mappen"
 
 msgid "IDS_HS_POP_DISABLE_THIS_APPLICATION_Q"
-msgstr "Deaktivér denne applikation?"
+msgstr "Deaktiver denne applikation?"
 
 msgid "IDS_HS_POP_THE_NEW_PAGE_WILL_CONSIST_OF_THE_S_PLANNER_TASKS_AND_S_MEMO_DYNAMIC_BOXES"
 msgstr "Den nye side vil bestå af S Planner, Opgaver og S Memo Dynamic Box."
@@ -269,7 +269,7 @@ msgid "IDS_TPLATFORM_BODY_NOT_SELECTED_T_TTS"
 msgstr "Ikke valgt"
 
 msgid "IDS_TPLATFORM_BODY_RADIO_BUTTON_T_TTS"
-msgstr "Radioknap"
+msgstr "Alternativknap"
 
 msgid "IDS_TPLATFORM_BODY_SELECTED_T_TTS"
 msgstr "Valgt"
@@ -385,6 +385,15 @@ msgstr "Alle sider"
 msgid "IDS_JAVA_POP_BLANK"
 msgstr "Tom"
 
+msgid "IDS_HS_OPT_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sorter elementer alfabetisk"
+
+msgid "IDS_HS_HEADER_SORT_ITEMS_ALPHABETICALLY_ABB"
+msgstr "Sorter elementer alfabetisk"
+
+msgid "IDS_HS_POP_APP_ICONS_AND_FOLDERS_WILL_BE_SORTED_INTO_ALPHABETICAL_ORDER_ANY_CUSTOMISATIONS_YOU_HAVE_MADE_WILL_BE_DISCARDED"
+msgstr "Appikoner og mapper vil blive sorteret i alfabetisk rækkefølge. Eventuelle tilpasninger, du har foretaget, vil blive kasseret."
+
 msgid "IDS_HS_OPT_ADD_DYNAMIC_BOX"
 msgstr "Tilføj Dynamic Box"
 
@@ -434,10 +443,10 @@ msgid "IDS_HS_POP_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_REMOVE_SOME_WIDGE
 msgstr "Der er ikke tilstrækkelig plads på startskærmen. Fjern nogle widgets, og prøv igen."
 
 msgid "IDS_HS_HEADER_EDIT"
-msgstr "Redigér"
+msgstr "Rediger"
 
 msgid "IDS_HS_OPT_EDIT"
-msgstr "Redigér"
+msgstr "Rediger"
 
 msgid "IDS_HS_BODY_THEMES_ABB"
 msgstr "Temaer"
@@ -450,4 +459,19 @@ msgstr "%s og alle funktioner knyttet hertil vil blive deaktiveret. For at aktiv
 
 msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"
 msgstr "Det maksimale antal applikationer i mappen er blevet nået (%d)."
+
+msgid "IDS_HS_OPT_CHANGE_APP_GRID_ABB"
+msgstr "Skift appgitter"
+
+msgid "IDS_HS_HEADER_CHANGE_APP_GRID_ABB"
+msgstr "Skift appgitter"
+
+msgid "IDS_HS_OPT_VIEW_ALL_PAGES_ABB"
+msgstr "Vis alle sider"
+
+msgid "IDS_DS_BUTTON2_STYLER"
+msgstr "Styler"
+
+msgid "IDS_HS_TPOP_MAXIMUM_NUMBER_OF_FAVOURITE_APPS_HPD_REACHED"
+msgstr "Det maksimale antal yndlingsapps er nået (%d)."
 
