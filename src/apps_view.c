@@ -343,21 +343,14 @@ Evas_Object* apps_view_create_icon(app_data_t *item)
             elm_object_signal_emit(item->app_layout, SIGNAL_CHOOSER_MODE_ON, SIGNAL_SOURCE);
         }
         __apps_view_badge_update_icon(item);
+        evas_object_show(icon_image);
     }
     elm_object_signal_callback_add(icon_layout, SIGNAL_ICON_CLICKED, SIGNAL_SOURCE, __apps_view_icon_clicked_cb, (void *)item);
     elm_object_signal_callback_add(icon_layout, SIGNAL_UNINSTALL_BUTTON_CLICKED, SIGNAL_SOURCE, __apps_view_icon_uninstall_btn_clicked_cb, (void *)item);
     elm_object_signal_callback_add(icon_layout, SIGNAL_CHANGED_CHECK_BOX, SIGNAL_SOURCE, __apps_view_icon_check_changed_cb,  (void *)item);
 
-    /*
-    elm_object_signal_callback_add(icon_layout, SIGNAL_DEFAULT_TOUCH_DOWN , APPS_ICON_CONTENT_TOUCH, _all_apps_icon_touch_down_cb, (void *)item);
-    elm_object_signal_callback_add(icon_layout, SIGNAL_ICON_CLICKED, SIGNAL_SOURCE, _all_apps_icon_clicked_cb, (void *)item);
-    elm_object_signal_callback_add(icon_layout, SIGNAL_UNINSTALL_BUTTON_CLICKED, SIGNAL_SOURCE, _all_apps_icon_uninstall_button_clicked_cb, (void *)item);
-    elm_object_signal_callback_add(icon_layout, SIGNAL_CHANGED_CHECK_BOX, SIGNAL_SOURCE, _all_apps_icon_checkbox_changed,  (void *)item);
-*/
-    //icon label
     elm_object_part_text_set(icon_layout, APPS_ICON_NAME, item->label_str);
 
-    evas_object_show(icon_image);
     evas_object_show(icon_layout);
 
     LOGD("icon [%s] create", item->pkg_str);
@@ -874,12 +867,10 @@ static void __apps_view_open_folder_popup(app_data_t *item)
     evas_object_size_hint_weight_set(apps_view_s.folder_popup_ly, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     evas_object_resize(apps_view_s.folder_popup_ly, apps_view_s.width, apps_view_s.height);
 
-    evas_object_show(apps_view_s.folder_popup_ly);
-
     Evas_Object *entry = elm_entry_add(apps_view_s.folder_popup_ly);
     apps_view_s.folder_title_entry = entry;
     evas_object_size_hint_weight_set(entry, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-    elm_entry_single_line_set(entry, EINA_FALSE);
+    elm_entry_single_line_set(entry, EINA_TRUE);
     elm_entry_scrollable_set(entry, EINA_TRUE);
     evas_object_show(entry);
 
@@ -894,6 +885,8 @@ static void __apps_view_open_folder_popup(app_data_t *item)
     apps_view_s.animator = ecore_animator_timeline_add(HOME_FOLDR_ANIMATION_TIME, __apps_view_show_folder_anim, NULL);
     elm_object_signal_callback_add(apps_view_s.folder_popup_ly, SIGNAL_APPS_FOLDER_HIDE, SIGNAL_SOURCE,
             __apps_view_hide_folder_cb, NULL);
+
+    evas_object_show(apps_view_s.folder_popup_ly);
 }
 
 static Eina_Bool __apps_view_show_folder_anim(void *data, double pos)
@@ -951,6 +944,7 @@ static void __apps_view_close_folder_popup_done(void)
     apps_view_s.folder_popup_ly = NULL;
     apps_view_s.opened_folder = NULL;
 }
+
 static void __apps_view_hide_folder_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
     if (apps_view_s.opened_folder)

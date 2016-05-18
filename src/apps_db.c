@@ -83,7 +83,7 @@ enum {
         iconPath) VALUES(%d,'%s',%d,%d,'%s','%s','%s',%d,%d,%d,'%s')"
 
 #define SELECT_ITEM "SELECT * FROM apps;"
-#define SELECT_APP_ITEM "SELECT * FROM apps WHERE type=0;"
+#define SELECT_APP_ITEM "SELECT * FROM apps WHERE type=0 AND isFolder=0;"
 
 static bool __apps_db_open(void);
 
@@ -160,7 +160,7 @@ bool apps_db_get_list(Eina_List **apps)
         str = (const char *) sqlite3_column_text(stmt, COL_PACKAGE_STR);
         item->pkg_str = (!str || !strlen(str)) ? NULL : strdup(str);
         str = (const char *) sqlite3_column_text(stmt, COL_LABEL);
-        item->label_str = (!str || !strlen(str)) ? NULL : strdup(str);
+        item->label_str = (!str) ? NULL : strdup(str);
         str = (const char *) sqlite3_column_text(stmt, COL_URI);
         item->uri = (!str || !strlen(str)) ? NULL : strdup(str);
         item->type = sqlite3_column_int(stmt, COL_TYPE);

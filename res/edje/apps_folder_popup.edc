@@ -210,8 +210,11 @@ collections {
                 name: "hide_plus_icon";
                 signal: SIGNAL_APPS_FOLDER_HIDE_PLUS_ICON;
                 source: SIGNAL_SOURCE;
-                action: STATE_SET "hide" 0.0;
-                target: APPS_FOLDER_PLUS_ICON;
+                script {
+                    custom_state(PART:APPS_FOLDER_PLUS_ICON, "default", 0.0);
+                    set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_VISIBLE, 0);
+                    set_state(PART:APPS_FOLDER_PLUS_ICON, "custom", 0.0);
+                }
             }
         }
     }
