@@ -51,16 +51,14 @@ Evas_Object *widget_viewer_add_widget(Evas_Object *parent, widget_data_t *item, 
 
 #if 1
     Evas_Object *widget = widget_viewer_evas_add_widget(widget_layout, item->pkg_name, NULL, item->period);
-    evas_object_size_hint_min_set(widget, *widget_width, *widget_height);
     evas_object_size_hint_align_set(widget, EVAS_HINT_FILL, EVAS_HINT_FILL);
     evas_object_size_hint_weight_set(widget, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     evas_object_color_set(widget, 255, 255, 255, 255);
 #else // for TEST
     Evas_Object *widget = evas_object_rectangle_add(evas_object_evas_get(widget_layout));
-    evas_object_size_hint_min_set(widget, *widget_width, *widget_height);
     evas_object_size_hint_align_set(widget, EVAS_HINT_FILL, EVAS_HINT_FILL);
     evas_object_size_hint_weight_set(widget, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-    evas_object_color_set(widget, 0, 0, 255, 255);
+    evas_object_color_set(widget, 0, 0, 255, 100);
     evas_object_show(widget);
 #endif
     elm_object_part_content_set(widget_layout, WIDGET_CONTENT, widget);
@@ -77,4 +75,12 @@ static void __widget_viewer_delete_btn_clicked_cb(void *data, Evas_Object *obj, 
 {
     widget_data_t *item  = (widget_data_t *)data;
     cluster_data_delete(item);
+}
+
+void widget_viewer_send_cancel_click_event(widget_data_t *widget)
+{
+    Evas_Object *widget_obj = NULL;
+    widget_obj = elm_object_part_content_get(widget->widget_layout, WIDGET_CONTENT);
+    // Widget crash. : temp
+    //widget_viewer_evas_cancel_click_event(widget_obj);
 }

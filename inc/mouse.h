@@ -31,6 +31,7 @@ typedef struct {
     int offset_x;
     int offset_y;
     Ecore_Timer *long_press_timer;
+    Evas_Object *pressed_obj;
 } mouse_info_t;
 
 #endif /* __MOUSE_H__ */

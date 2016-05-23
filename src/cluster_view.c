@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-#include <feedback.h>
 #include <efl_extension.h>
 
 #include "homescreen-efl.h"
@@ -83,11 +82,18 @@ static mouse_info_t cluster_mouse_info = {
         .long_press_timer = NULL,
         .offset_x = 0,
         .offset_y = 0,
+        .pressed_obj = NULL,
 };
 
 static Eina_Hash *cluster_menu_table = NULL;
 
 Evas_Object *__cluster_view_create_base_gui(Evas_Object *win);
+
+static void __clsuter_view_scroller_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
+static void __clsuter_view_scroller_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
+static void __clsuter_view_scroller_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
+static Eina_Bool __cluster_view_scroller_long_press_time_cb(void *data);
+
 static void __cluster_view_create_cluster(void);
 static void __cluster_view_create_menu(void);
 static void __cluster_view_menu_edit_cb(void *data, Evas_Object *obj, void *event_info);
@@ -114,10 +120,10 @@ static void __cluster_view_allpage_drag_page(void *data);
 static void __cluster_view_allpage_pick_up_page(void *data);
 static void __cluster_view_allpage_drop_page(void *data);
 
-static void __clsuter_view_edit_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
-static void __clsuter_view_edit_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
-static void __clsuter_view_edit_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
-static Eina_Bool __cluster_view_edit_long_press_time_cb(void *data);
+static void __clsuter_view_widget_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
+static void __clsuter_view_widget_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
+static void __clsuter_view_widget_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
+static Eina_Bool __cluster_view_widget_long_press_time_cb(void *data);
 
 static void __cluster_view_edit_pick_up_widget(void *data);
 static void __cluster_view_edit_drag_widget(void *data);
@@ -157,6 +163,11 @@ Evas_Object *cluster_view_create(Evas_Object *win)
 
 void cluster_view_app_terminate(void)
 {
+
+    evas_object_event_callback_del(cluster_view_s.scroller, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_scroller_down_cb);
+    evas_object_event_callback_del(cluster_view_s.scroller, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_scroller_move_cb);
+    evas_object_event_callback_del(cluster_view_s.scroller, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_scroller_up_cb);
+
     eina_hash_free(cluster_menu_table);
     widget_viewer_fini();
 }
@@ -202,6 +213,10 @@ Evas_Object *__cluster_view_create_base_gui(Evas_Object *win)
 
     elm_scroller_loop_set(cluster_view_s.scroller, EINA_TRUE, EINA_FALSE);
     elm_scroller_page_size_set(cluster_view_s.scroller, CLUSTER_W , CLUSTER_H);
+
+    evas_object_event_callback_add(cluster_view_s.scroller, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_scroller_down_cb, NULL);
+    evas_object_event_callback_add(cluster_view_s.scroller, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_scroller_move_cb, NULL);
+    evas_object_event_callback_add(cluster_view_s.scroller, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_scroller_up_cb, NULL);
 
     evas_object_smart_callback_add(cluster_view_s.scroller, "scroll,anim,stop", __cluster_view_scroll_anim_stop_cb, NULL);
 
@@ -254,7 +269,6 @@ static void __cluster_view_create_menu(void)
 
 static void __cluster_view_menu_edit_cb(void *data, Evas_Object *obj, void *event_info)
 {
-    feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
     menu_hide();
 
     cluster_view_set_state(VIEW_STATE_EDIT);
@@ -262,7 +276,6 @@ static void __cluster_view_menu_edit_cb(void *data, Evas_Object *obj, void *even
 
 static void __cluster_view_menu_add_widget_cb(void *data, Evas_Object *obj, void *event_info)
 {
-    feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
     menu_hide();
 
     cluster_view_set_state(VIEW_STATE_ADD_VIEWER);
@@ -270,8 +283,6 @@ static void __cluster_view_menu_add_widget_cb(void *data, Evas_Object *obj, void
 
 static void __cluster_view_menu_change_wallpaper_cb(void *data, Evas_Object *obj, void *event_info)
 {
-    feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
-
     const char *appid = "org.tizen.wallpaper-ui-service";
     app_control_h app_control_handle = NULL;
 
@@ -303,7 +314,6 @@ static void __cluster_view_menu_change_wallpaper_cb(void *data, Evas_Object *obj
 
 static void __cluster_view_menu_all_pages_cb(void *data, Evas_Object *obj, void *event_info)
 {
-    feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
     menu_hide();
 
     cluster_view_set_state(VIEW_STATE_ALL_PAGE);
@@ -368,12 +378,9 @@ void cluster_view_set_state(view_state_t state)
         widget_data_t *item = NULL;
         EINA_LIST_FOREACH(data_list, find_list, item) {
             if (item->widget_layout) {
-                elm_object_signal_emit(item->widget_layout, SIGNAL_DELETE_BUTTON_SHOW_ANI, SIGNAL_SOURCE);
+                if (!cluster_view_s.picked_widget || item->widget_layout != cluster_view_s.picked_widget->widget_layout)
+                    elm_object_signal_emit(item->widget_layout, SIGNAL_DELETE_BUTTON_SHOW_ANI, SIGNAL_SOURCE);
                 elm_object_signal_emit(item->widget_layout, SIGNAL_CLUSTER_EDIT_STATE, SIGNAL_SOURCE);
-
-                evas_object_event_callback_add(item->widget_layout, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_edit_down_cb, item);
-                evas_object_event_callback_add(item->widget_layout, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_edit_move_cb, item);
-                evas_object_event_callback_add(item->widget_layout, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_edit_up_cb, item);
             }
         }
     } else if (state == VIEW_STATE_NORMAL) {
@@ -395,10 +402,6 @@ void cluster_view_set_state(view_state_t state)
                 if (item->widget_layout) {
                     elm_object_signal_emit(item->widget_layout, SIGNAL_DELETE_BUTTON_HIDE_ANI, SIGNAL_SOURCE);
                     elm_object_signal_emit(item->widget_layout, SIGNAL_CLUSTER_NORMAL_STATE, SIGNAL_SOURCE);
-
-                    evas_object_event_callback_del(item->widget_layout, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_edit_down_cb);
-                    evas_object_event_callback_del(item->widget_layout, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_edit_move_cb);
-                    evas_object_event_callback_del(item->widget_layout, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_edit_up_cb);
                 }
             }
         } else if (cluster_view_s.view_state == VIEW_STATE_ADD_VIEWER) {
@@ -504,6 +507,11 @@ void cluster_view_delete_widget(widget_data_t *item)
         cluster_page_unset(page, item);
     else
         LOGE("Page is NULL");
+
+    evas_object_event_callback_del(item->widget_layout, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_widget_down_cb);
+    evas_object_event_callback_del(item->widget_layout, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_widget_move_cb);
+    evas_object_event_callback_del(item->widget_layout, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_widget_up_cb);
+
     evas_object_del(item->widget_layout);
     item->widget_layout = NULL;
 }
@@ -547,6 +555,9 @@ static void __cluster_view_add_widget_content(widget_data_t *item)
     int w, h;
     LOGD("Create Widget: pkg[%s], type[%d]", item->pkg_name, item->type);
     item->widget_layout = widget_viewer_add_widget(cluster_view_s.win, item, &w, &h);
+    evas_object_event_callback_add(item->widget_layout, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_widget_down_cb, item);
+    evas_object_event_callback_add(item->widget_layout, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_widget_move_cb, item);
+    evas_object_event_callback_add(item->widget_layout, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_widget_up_cb, item);
     LOGD("widget size : %d %d", w, h);
 }
 
@@ -580,9 +591,7 @@ static void __cluster_view_create_all_page(void)
     cluster_page_t *page_item = NULL;
     elm_box_unpack_all(cluster_view_s.box);
     EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
-        //HIDE page
         evas_object_move(page_item->page_layout, -720, 0);
-        //make thumbnail ly
         if (page_item->page_layout) {
             page_item->thumbnail_ly = elm_layout_add(page_item->page_layout);
             elm_layout_file_set(page_item->thumbnail_ly, util_get_res_file_path(EDJE_DIR"/cluster_allpage_thumbnail.edj"), GROUP_CLUSTER_ALLPAGE_THUMBNAIL_LY);
@@ -841,6 +850,8 @@ static void  __clsuter_view_thumbnail_down_cb(void *data, Evas *e, Evas_Object *
     LOGD("DOWN: (%d,%d)", ev->output.x, ev->output.y);
 
     cluster_mouse_info.pressed = true;
+    cluster_mouse_info.pressed_obj = obj;
+
     cluster_mouse_info.down_x = cluster_mouse_info.move_x = ev->output.x;
     cluster_mouse_info.down_y = cluster_mouse_info.move_y = ev->output.y;
 
@@ -863,6 +874,7 @@ static void  __clsuter_view_thumbnail_up_cb(void *data, Evas *e, Evas_Object *ob
         return ;
 
     cluster_mouse_info.pressed = false;
+    cluster_mouse_info.pressed_obj = NULL;
 
     if (cluster_mouse_info.long_press_timer) {
         ecore_timer_del(cluster_mouse_info.long_press_timer);
@@ -1018,12 +1030,14 @@ static void __cluster_view_allpage_drop_page(void *data)
             eina_list_count(cluster_view_s.page_list), __cluster_view_page_sort_cb);
 }
 
-static void __clsuter_view_edit_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
+static void __clsuter_view_widget_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
     Evas_Event_Mouse_Down* ev = event_info;
     LOGD("DOWN: (%d,%d)", ev->output.x, ev->output.y);
 
     cluster_mouse_info.pressed = true;
+    cluster_mouse_info.pressed_obj = obj;
+
     cluster_mouse_info.down_x = cluster_mouse_info.move_x = ev->output.x;
     cluster_mouse_info.down_y = cluster_mouse_info.move_y = ev->output.y;
 
@@ -1033,10 +1047,10 @@ static void __clsuter_view_edit_down_cb(void *data, Evas *e, Evas_Object *obj, v
     }
 
     cluster_mouse_info.long_press_timer = ecore_timer_add(LONG_PRESS_TIME,
-            __cluster_view_edit_long_press_time_cb, data);
+            __cluster_view_widget_long_press_time_cb, data);
 }
 
-static void __clsuter_view_edit_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
+static void __clsuter_view_widget_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
     Evas_Event_Mouse_Up* ev = event_info;
     LOGD("UP: (%d,%d)", ev->output.x, ev->output.y);
@@ -1045,6 +1059,7 @@ static void __clsuter_view_edit_up_cb(void *data, Evas *e, Evas_Object *obj, voi
         return ;
 
     cluster_mouse_info.pressed = false;
+    cluster_mouse_info.pressed_obj = NULL;
 
     if (cluster_mouse_info.long_press_timer) {
         ecore_timer_del(cluster_mouse_info.long_press_timer);
@@ -1068,10 +1083,10 @@ static void __clsuter_view_edit_up_cb(void *data, Evas *e, Evas_Object *obj, voi
     }
 }
 
-static void __clsuter_view_edit_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
+static void __clsuter_view_widget_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
     Evas_Event_Mouse_Move* ev = event_info;
-    //LOGD("MOVE: (%d,%d)", ev->cur.output.x, ev->cur.output.y);
+    LOGD("MOVE: (%d,%d)", ev->cur.output.x, ev->cur.output.y);
 
     if (!cluster_mouse_info.pressed)
         return ;
@@ -1098,8 +1113,9 @@ static void __clsuter_view_edit_move_cb(void *data, Evas *e, Evas_Object *obj, v
     }
 }
 
-static Eina_Bool __cluster_view_edit_long_press_time_cb(void *data)
+static Eina_Bool __cluster_view_widget_long_press_time_cb(void *data)
 {
+    widget_data_t *widget = (widget_data_t *)data;
     if (!cluster_mouse_info.pressed)
         return ECORE_CALLBACK_CANCEL;
 
@@ -1109,35 +1125,48 @@ static Eina_Bool __cluster_view_edit_long_press_time_cb(void *data)
 
     __cluster_view_edit_pick_up_widget(data);
 
+    widget_viewer_send_cancel_click_event(widget);
+
     return ECORE_CALLBACK_CANCEL;
 }
 
 static void __cluster_view_edit_pick_up_widget(void *data)
 {
     int cx = -1, cy = -1;
-    int gx = -1, gy = -1;
+    int gx = -1, gy = -1, gw = 0, gh = 0;
     Evas *e = NULL;
     cluster_view_s.picked_widget = (widget_data_t *)data;
 
     Evas_Object *widget_layout = cluster_view_s.picked_widget->widget_layout;
-    elm_object_signal_emit(widget_layout, SIGNAL_DELETE_BUTTON_HIDE_ANI, SIGNAL_SOURCE);
-    elm_object_signal_emit(widget_layout, SIGNAL_CLUSTER_PICKUP_STATE, SIGNAL_SOURCE);
 
     e = evas_object_evas_get(widget_layout);
 
     evas_pointer_canvas_xy_get(e, &cx, &cy);
-    evas_object_geometry_get(widget_layout, &gx, &gy, NULL, NULL);
+    evas_object_geometry_get(widget_layout, &gx, &gy, &gw, &gh);
+    LOGD("cx, cy (%d, %d )", cx, cy);
+    LOGD("gx, gy, gw, gh (%d, %d, %d, %d)", gx, gy, gw, gh);
 
     cluster_mouse_info.offset_x = cx - gx;
     cluster_mouse_info.offset_y = cy - gy;
 
     cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, cluster_view_s.picked_widget->page_idx);
-    elm_grid_unpack(page->grid, widget_layout);
+
+    cluster_page_unset(page, cluster_view_s.picked_widget);
+
+    if (cluster_view_s.view_state == VIEW_STATE_NORMAL) {
+        evas_object_resize(widget_layout, gw * 0.9, gh * 0.9);
+
+        cluster_mouse_info.offset_x *= 0.9;
+        cluster_mouse_info.offset_y *= 0.9;
+
+        cluster_view_set_state(VIEW_STATE_EDIT);
+    }
+
+    elm_object_signal_emit(widget_layout, SIGNAL_DELETE_BUTTON_HIDE_ANI, SIGNAL_SOURCE);
+    elm_object_signal_emit(widget_layout, SIGNAL_CLUSTER_PICKUP_STATE, SIGNAL_SOURCE);
 
     evas_object_move(widget_layout, cluster_mouse_info.move_x - cluster_mouse_info.offset_x,
             cluster_mouse_info.move_y - cluster_mouse_info.offset_y);
-
-    cluster_page_unset(page, cluster_view_s.picked_widget);
 }
 
 static void __cluster_view_edit_drag_widget(void *data)
@@ -1153,6 +1182,8 @@ static void __cluster_view_edit_drag_widget(void *data)
     Evas_Object *widget_layout = cluster_view_s.picked_widget->widget_layout;
     evas_object_move(widget_layout, cluster_mouse_info.move_x - cluster_mouse_info.offset_x,
             cluster_mouse_info.move_y - cluster_mouse_info.offset_y);
+
+    LOGD("drag %d %d", cluster_mouse_info.move_x - cluster_mouse_info.offset_x, cluster_mouse_info.move_y - cluster_mouse_info.offset_y);
 
     cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, cluster_view_s.current_page);
     evas_object_geometry_get(page->page_layout, &page_x, &page_y, NULL, NULL);
@@ -1198,6 +1229,91 @@ static void __cluster_view_edit_drop_widget(void *data)
     if (!cluster_page_drop_widget(page, cluster_view_s.picked_widget)) {
         cluster_view_add_widget(cluster_view_s.picked_widget, false);
     }
+}
+
+static void __clsuter_view_scroller_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
+{
+    Evas_Event_Mouse_Down* ev = event_info;
+
+    if (cluster_view_s.view_state != VIEW_STATE_NORMAL)
+        return ;
+
+    LOGD("DOWN: (%d,%d)", ev->output.x, ev->output.y);
+
+    cluster_mouse_info.pressed = true;
+    cluster_mouse_info.pressed_obj = obj;
+
+    cluster_mouse_info.down_x = cluster_mouse_info.move_x = ev->output.x;
+    cluster_mouse_info.down_y = cluster_mouse_info.move_y = ev->output.y;
+
+    if (cluster_mouse_info.long_press_timer) {
+        ecore_timer_del(cluster_mouse_info.long_press_timer);
+        cluster_mouse_info.long_press_timer = NULL;
+    }
+
+    cluster_mouse_info.long_press_timer = ecore_timer_add(LONG_PRESS_TIME,
+            __cluster_view_scroller_long_press_time_cb, obj);
+}
+
+static void __clsuter_view_scroller_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
+{
+    Evas_Event_Mouse_Up* ev = event_info;
+
+    if (!cluster_mouse_info.pressed || cluster_mouse_info.pressed_obj != obj)
+        return ;
+
+    LOGD("UP: (%d,%d)", ev->output.x, ev->output.y);
+
+    cluster_mouse_info.pressed = false;
+
+    if (cluster_mouse_info.long_press_timer) {
+        ecore_timer_del(cluster_mouse_info.long_press_timer);
+        cluster_mouse_info.long_press_timer = NULL;
+    }
+
+    cluster_mouse_info.up_x = ev->output.x;
+    cluster_mouse_info.up_y = ev->output.y;
+
+    cluster_mouse_info.long_pressed = false;
+}
+
+static void __clsuter_view_scroller_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
+{
+    Evas_Event_Mouse_Move* ev = event_info;
+
+    if (!cluster_mouse_info.pressed || cluster_mouse_info.pressed_obj != obj)
+        return ;
+
+    LOGD("MOVE: (%d,%d)", ev->cur.output.x, ev->cur.output.y);
+
+    cluster_mouse_info.move_x = ev->cur.output.x;
+    cluster_mouse_info.move_y = ev->cur.output.y;
+
+    if (!cluster_mouse_info.long_pressed) {
+        int distance = (cluster_mouse_info.move_x - cluster_mouse_info.down_x) * (cluster_mouse_info.move_x - cluster_mouse_info.down_x);
+        distance += (cluster_mouse_info.move_y - cluster_mouse_info.down_y) * (cluster_mouse_info.move_y - cluster_mouse_info.down_y);
+
+        if (distance > MOUSE_MOVE_MIN_DISTANCE) {
+            if (cluster_mouse_info.long_press_timer) {
+                ecore_timer_del(cluster_mouse_info.long_press_timer);
+                cluster_mouse_info.long_press_timer = NULL;
+            }
+
+            return ;
+        }
+    }
+}
+
+static Eina_Bool __cluster_view_scroller_long_press_time_cb(void *data)
+{
+    if (!cluster_mouse_info.pressed || cluster_mouse_info.pressed_obj != data)
+        return ECORE_CALLBACK_CANCEL;
+
+    cluster_mouse_info.long_pressed = true;
+
+    cluster_view_set_state(VIEW_STATE_EDIT);
+
+    return ECORE_CALLBACK_CANCEL;
 }
 
 static void __cluster_view_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info)

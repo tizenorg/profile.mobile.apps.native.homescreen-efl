@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#include <feedback.h>
 #include <package_manager.h>
 #include <badge.h>
 #include <efl_extension.h>
+#include <feedback.h>
 
 #include "apps_view.h"
 #include "conf.h"
@@ -592,6 +592,7 @@ static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *o
     package_manager_request_h request;
     int id = 0;
     feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
+
     if (!item) {
         LOGE("item is NULL");
     }
@@ -831,7 +832,6 @@ static void __apps_view_create_menu(void)
 
 static void __apps_view_menu_edit_cb(void *data, Evas_Object *obj, void *event_info)
 {
-    feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
     menu_hide();
 
     apps_view_set_state(VIEW_STATE_EDIT);
@@ -839,7 +839,6 @@ static void __apps_view_menu_edit_cb(void *data, Evas_Object *obj, void *event_i
 
 static void __apps_view_menu_create_folder_cb(void *data, Evas_Object *obj, void *event_info)
 {
-    feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
     menu_hide();
 
     apps_view_s.dest_folder = apps_data_add_folder();

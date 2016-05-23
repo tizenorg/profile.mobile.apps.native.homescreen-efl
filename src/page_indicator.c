@@ -147,7 +147,7 @@ static void __page_indicator_scroll_cb(void *data, Evas_Object *obj, void *event
     angle = (double)(x - current_x) / page_indicator->w * 90.0;
 
     if (fabs((float)(x - current_x)) <= page_indicator->w) {
-        next_page = x > current_x ? (page_indicator->current_page+1) % page_indicator->page_count : page_indicator->current_page-1;
+        next_page = x > current_x ? (page_indicator->current_page + 1) % page_indicator->page_count : page_indicator->current_page-1;
         color = fabs(angle) * 2;
     } else {
         if (x > current_x) {
