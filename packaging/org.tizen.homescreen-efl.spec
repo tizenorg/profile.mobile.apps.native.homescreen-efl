@@ -1,13 +1,14 @@
 Name:       org.tizen.homescreen-efl
-#VCS_FROM:   profile/mobile/apps/native/homescreen-efl#dd8fc18cf763e9020486037098b0c47980831561
-#RS_Ver:    20160518_1 
-Summary:    N/A
+#VCS_FROM:   profile/mobile/apps/native/homescreen-efl#fd9957ef5ec6cc4d3c9c374856827ef05c6965fb
+#RS_Ver:    20160524_4 
+Summary:    homescreen-efl
 Version:    1.0.0
 Release:    1
 Group:      N/A
-License:    N/A
+License:    Flora-1.1
 Source0:    %{name}-%{version}.tar.gz
 
+ExcludeArch:  aarch64 x86_64
 BuildRequires:  pkgconfig(libtzplatform-config)
 Requires(post):  /usr/bin/tpk-backend
 
@@ -25,7 +26,7 @@ Requires(post):  /usr/bin/tpk-backend
 %endif
 
 %description
-profile/mobile/apps/native/homescreen-efl#dd8fc18cf763e9020486037098b0c47980831561
+profile/mobile/apps/native/homescreen-efl#fd9957ef5ec6cc4d3c9c374856827ef05c6965fb
 This is a container package which have preload TPK files
 
 %prep
