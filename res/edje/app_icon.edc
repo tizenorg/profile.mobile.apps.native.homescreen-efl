@@ -30,11 +30,11 @@ images {
 styles {
     style{
         name: "icon_label";
-        base: "font=Samsung Condensed:style=Regular align=center color=#FFFFFFFF font_size=12 wrap=mixed";
+        base: "font=Tizen:style=Regular align=center color=#FFFFFFFF style=shadow,bottom shadow_color=#000000FF font_size=26 ellipsis=1.0 wrap=mixed";
     }
     style{
         name: "icon_label_edit";
-        base: "font=Samsung Condensed:style=Regular align=center color=#FFFFFFFF font_size=10 wrap=mixed";
+        base: "font=Tizen:style=Regular align=center color=#FFFFFFFF style=shadow,bottom shadow_color=#000000FF font_size=23 ellipsis=1.0 wrap=mixed";
     }
 }
 collections {
@@ -113,10 +113,9 @@ collections {
                 type: TEXTBLOCK;
                 mouse_events: 1;
                 repeat_events: 1;
-                scale: 1;
                 description {
                     state: "default" 0.0;
-                    rel1{relative: 0.04 0.63; to: SIZE_SETTER;}
+                    rel1{relative: 0.04 0.6; to: SIZE_SETTER;}
                     rel2{relative: 0.95 0.98; to: SIZE_SETTER;}
                     color: 255 255 255 255;
                     text {
@@ -125,30 +124,14 @@ collections {
                     }
                 }
                 description {
-                    state: "edit" 0.0;
-                    inherit: "default" 0.0;
-                    rel1{relative: 0.04 0.61 ; to: SIZE_SETTER;}
-                    rel2{relative: 0.95 0.90; to: SIZE_SETTER;}
-                    text {
-                        style: "icon_label_edit";
-                    }
-                }
-                description {
-                    state: "black_text" 0.0;
-                    inherit: "default" 0.0;
-                    color: 0 0 0 255;
-                }
-                description {
-                    state: "black_edit" 0.0;
-                    inherit: "black_text" 0.0;
-                    text {
-                        style: "icon_label_edit";
-                    }
-                }
-                description {
                     state: "disable" 0.0;
                     inherit: "default" 0.0;
                     color: 0 0 0 50;
+                }
+                description {
+                    state: "hide" 0.0;
+                    inherit: "default" 0.0;
+                    visible: 0;
                 }
             }//APPS_ICON_NAME
             part
@@ -365,49 +348,6 @@ collections {
                 transition: LINEAR 0.1;
             }
             program {
-                name: "icon_clicked_program";
-                signal :"mouse,clicked,1";
-                source: APPS_ICON_CONTENT_TOUCH;
-                action: SIGNAL_EMIT SIGNAL_ICON_CLICKED SIGNAL_SOURCE;
-            }
-            program {
-                name: "set_black_text";
-                signal: SIGNAL_SET_BLACK_TEXT;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "black_text" 0.0;
-                target: APPS_ICON_NAME;
-            }
-            program {
-                name: "bg_edit_mode_on_ani";
-                signal: SIGNAL_EDIT_MODE_ON_ANI;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "edit" 0.0;
-                target: APPS_ICON_NAME;
-                transition: DECELERATE ANIMATION_RESIZE_TIME;
-            }
-            program {
-                name: "bg_edit_mode_on";
-                signal: SIGNAL_EDIT_MODE_ON;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "edit" 0.0;
-                target: APPS_ICON_NAME;
-            }
-            program {
-                name: "bg_edit_mode_off_ani";
-                signal: SIGNAL_EDIT_MODE_OFF_ANI;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "default" 0.0;
-                target: APPS_ICON_NAME;
-                transition: DECELERATE ANIMATION_RESIZE_TIME;
-            }
-            program {
-                name: "bg_edit_mode_off";
-                signal: SIGNAL_EDIT_MODE_OFF;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "default" 0.0;
-                target: APPS_ICON_NAME;
-            }
-            program {
                 name: "uninstall_button_show_ani";
                 signal: SIGNAL_UNINSTALL_BUTTON_SHOW_ANI;
                 source: SIGNAL_SOURCE;
@@ -537,6 +477,20 @@ collections {
                 action: STATE_SET "default" 0.0;
                 target: APPS_ICON_NAME;
                 target: "app_icon_disable";
+            }
+            program {
+                name: "icon_picked";
+                signal: SIGNAL_ICON_NAME_HIDE;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "hide" 0.0;
+                target: APPS_ICON_NAME;
+            }
+            program {
+                name: "icon_drop";
+                signal: SIGNAL_ICON_NAME_SHOW;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "default" 0.0;
+                target: APPS_ICON_NAME;
             }
         }
     }

@@ -27,7 +27,7 @@ static struct {
 };
 
 /* menu_item_t */
-static const char menu_text[MENU_MAX][PATH_MAX_LEN] = {
+static const char menu_text[MENU_MAX][STR_MAX] = {
         "IDS_HS_OPT_EDIT",
         "IDS_HS_HEADER_ADD_WIDGET",
         "IDS_HS_OPT_CHANGE_WALLPAPER_ABB",

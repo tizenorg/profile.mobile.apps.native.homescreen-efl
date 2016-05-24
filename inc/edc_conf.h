@@ -118,12 +118,13 @@
 #define SIGNAL_ICON_ENABLE "icon_enable"
 #define SIGNAL_BADGE_SHOW "badge_show"
 #define SIGNAL_BADGE_HIDE "badge_hide"
-
-#define SIGNAL_ICON_CLICKED "icon_clicked"
+#define SIGNAL_ICON_NAME_SHOW "icon_name_show"
+#define SIGNAL_ICON_NAME_HIDE "icon_name_hide"
 
 #define GROUP_FOLDER_ICON_LY "folder_ly"
 #define SIGNAL_FRAME_POSSIBLE_SHOW "frame_possible_show"
 #define SIGNAL_FRAME_IMPOSSIBLE_SHOW "frame_impossible_show"
+#define SIGNAL_FRAME_POSSIBLE_HIDE "frame_posible_hide"
 
 #define APPS_ICON_UNINSTALL_BUTTON "uninstall_btn"
 #define SIGNAL_UNINSTALL_BUTTON_SHOW_ANI "uninstall_btn_show_ani"

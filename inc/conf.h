@@ -19,7 +19,7 @@
 
 #define FRAMES_PER_SECOND 1.0/60.0
 
-#define PATH_MAX_LEN 2048
+#define STR_MAX 2048
 #define INIT_VALUE -987654321
 
 #define EDJE_DIR "edje"
@@ -46,6 +46,16 @@ extern int __conf_get_window_w();
 #define APPS_VIEW_ANIMATION_DELTA ((100) * (__conf_get_resolution_scale_h()))
 
 #define APPS_VIEW_ICON_IMAGE ((118) * (__conf_get_resolution_scale_w()))
+
+#define APPS_VIEW_ICON_TEXT_SIZE_NORMAL ((28) * (__conf_get_resolution_scale_h()))
+#define APPS_VIEW_ICON_TEXT_SIZE_EDIT ((25) * (__conf_get_resolution_scale_h()))
+#define APPS_VIEW_ICON_TEXT_COLOR_WHITE "FFFFFF"
+#define APPS_VIEW_ICON_TEXT_COLOR_BLACK "000000"
+
+#define APPS_VIEW_EDIT_LEFT_SCROLL_REGION ((72) * (__conf_get_resolution_scale_w()))
+#define APPS_VIEW_EDIT_RIGHT_SCROLL_REGION (APPS_VIEW_W - APPS_VIEW_EDIT_LEFT_SCROLL_REGION)
+
+#define APPS_VIEW_EDIT_MOVE_GAP 2500
 
 #define CLUSTER_VIEW_W ((720) * (__conf_get_resolution_scale_w()))
 #define CLUSTER_VIEW_H ((1150) * (__conf_get_resolution_scale_h()))

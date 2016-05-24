@@ -16,6 +16,7 @@
 
 #include <app.h>
 #include <Elementary.h>
+#include <efl_extension.h>
 
 #include "homescreen-efl.h"
 #include "popup.h"
@@ -34,23 +35,26 @@ static struct {
  * 0 : POPUP_CLUSTER_PAGE_FULL
  * 1 : POPUP_CLUSTER_DELETE_PAGE
  */
-static const char popup_title_text[POPUP_MAX][PATH_MAX_LEN] = {
+static const char popup_title_text[POPUP_MAX][STR_MAX] = {
         "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB",
         "IDS_HS_HEADER_DELETE_PAGE_ABB2",
 };
 
-static const char popup_text[POPUP_MAX][PATH_MAX_LEN] = {
+static const char popup_text[POPUP_MAX][STR_MAX] = {
         "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG",
         "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED",
 };
 
-static const char popup_button_text[POPUP_MAX][3][PATH_MAX_LEN] = {
+static const char popup_button_text[POPUP_MAX][3][STR_MAX] = {
         { "IDS_CAM_SK_OK", "", "" },
         { "IDS_HS_OPT_DELETE", "IDS_CAM_SK_CANCEL", "" }
 };
 
 static void __popup_default_cb(void *data, Evas_Object *obj, void *event_info);
 static void __popup_dismissed_cb(void *data, Evas_Object *obj, void *event_info);
+
+static void __toast_timeout_cb(void *data, Evas_Object *obj, void *event_info);
+static void __toast_block_clicked_cb(void *data, Evas_Object *obj, void *event_info);
 
 void popup_show(popup_t type, int btn_count, Evas_Smart_Cb btn_func[3], void *func_data[3])
 {
@@ -112,4 +116,29 @@ static void __popup_dismissed_cb(void *data, Evas_Object *obj, void *event_info)
         evas_object_del(popup_info.popup);
         popup_info.popup = NULL;
     }
+}
+
+void toast_show(char* str)
+{
+    Evas_Object *popup;
+
+    popup = elm_popup_add(homescreen_efl_get_win());
+    elm_object_style_set(popup, "toast");
+    evas_object_size_hint_weight_set(popup, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+    elm_object_text_set(popup, str);
+    elm_popup_timeout_set(popup, 2.0);
+    eext_object_event_callback_add(popup, EEXT_CALLBACK_BACK, eext_popup_back_cb, NULL);
+    evas_object_smart_callback_add(popup, "block,clicked", __toast_block_clicked_cb, NULL);
+    evas_object_smart_callback_add(popup, "timeout", __toast_timeout_cb, NULL);
+
+    evas_object_show(popup);
+}
+
+static void __toast_timeout_cb(void *data, Evas_Object *obj, void *event_info)
+{
+    evas_object_del(obj);
+}
+static void __toast_block_clicked_cb(void *data, Evas_Object *obj, void *event_info)
+{
+    evas_object_del(obj);
 }

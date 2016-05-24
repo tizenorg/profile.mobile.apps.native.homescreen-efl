@@ -78,6 +78,7 @@ void cluster_data_insert_widget(const char* pkg_name, const char* content_info, 
     new_item->allow_duplicate = 1;
 
     if (!cluster_view_add_widget(new_item, true)) {
+        cluster_view_delete_widget(new_item);
         __cluster_data_item_free(new_item);
         return ;
     }
@@ -143,8 +144,6 @@ static void __cluster_data_insert_default_data(void)
 
 static void __cluster_data_item_free(widget_data_t *item)
 {
-    if (item && item->widget_layout)
-        evas_object_del(item->widget_layout);
     if (item && item->pkg_name)
         free(item->pkg_name);
     if (item && item->content_info)

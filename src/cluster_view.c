@@ -64,25 +64,25 @@ static struct {
 };
 
 static int cluster_menu_list[4] = {
-        MENU_CLUSTER_EDIT,
-        MENU_CLUSTER_ADD_WIDGET,
-        MENU_CLUSTER_CHANGE_WALLPAPER,
-        MENU_CLUSTER_ALL_PAGES
+    MENU_CLUSTER_EDIT,
+    MENU_CLUSTER_ADD_WIDGET,
+    MENU_CLUSTER_CHANGE_WALLPAPER,
+    MENU_CLUSTER_ALL_PAGES
 };
 
 static mouse_info_t cluster_mouse_info = {
-        .pressed = false,
-        .long_pressed = false,
-        .down_x = 0,
-        .down_y = 0,
-        .move_x = 0,
-        .move_y = 0,
-        .up_x = 0,
-        .up_y = 0,
-        .long_press_timer = NULL,
-        .offset_x = 0,
-        .offset_y = 0,
-        .pressed_obj = NULL,
+    .pressed = false,
+    .long_pressed = false,
+    .down_x = 0,
+    .down_y = 0,
+    .move_x = 0,
+    .move_y = 0,
+    .up_x = 0,
+    .up_y = 0,
+    .long_press_timer = NULL,
+    .offset_x = 0,
+    .offset_y = 0,
+    .pressed_obj = NULL,
 };
 
 static Eina_Hash *cluster_menu_table = NULL;
@@ -163,7 +163,6 @@ Evas_Object *cluster_view_create(Evas_Object *win)
 
 void cluster_view_app_terminate(void)
 {
-
     evas_object_event_callback_del(cluster_view_s.scroller, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_scroller_down_cb);
     evas_object_event_callback_del(cluster_view_s.scroller, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_scroller_move_cb);
     evas_object_event_callback_del(cluster_view_s.scroller, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_scroller_up_cb);
@@ -502,18 +501,23 @@ bool cluster_view_add_widget(widget_data_t *item, bool scroll)
 
 void cluster_view_delete_widget(widget_data_t *item)
 {
+    if (item == NULL)
+        return ;
+
     cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, item->page_idx);
     if (page)
         cluster_page_unset(page, item);
     else
         LOGE("Page is NULL");
 
-    evas_object_event_callback_del(item->widget_layout, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_widget_down_cb);
-    evas_object_event_callback_del(item->widget_layout, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_widget_move_cb);
-    evas_object_event_callback_del(item->widget_layout, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_widget_up_cb);
+    if (item->widget_layout) {
+        evas_object_event_callback_del(item->widget_layout, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_widget_down_cb);
+        evas_object_event_callback_del(item->widget_layout, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_widget_move_cb);
+        evas_object_event_callback_del(item->widget_layout, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_widget_up_cb);
 
-    evas_object_del(item->widget_layout);
-    item->widget_layout = NULL;
+        evas_object_del(item->widget_layout);
+        item->widget_layout = NULL;
+    }
 }
 
 static void __cluster_view_scroll_to_home(void)
@@ -1182,8 +1186,6 @@ static void __cluster_view_edit_drag_widget(void *data)
     Evas_Object *widget_layout = cluster_view_s.picked_widget->widget_layout;
     evas_object_move(widget_layout, cluster_mouse_info.move_x - cluster_mouse_info.offset_x,
             cluster_mouse_info.move_y - cluster_mouse_info.offset_y);
-
-    LOGD("drag %d %d", cluster_mouse_info.move_x - cluster_mouse_info.offset_x, cluster_mouse_info.move_y - cluster_mouse_info.offset_y);
 
     cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, cluster_view_s.current_page);
     evas_object_geometry_get(page->page_layout, &page_x, &page_y, NULL, NULL);

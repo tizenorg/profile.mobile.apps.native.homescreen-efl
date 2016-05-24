@@ -33,7 +33,7 @@ void __apps_data_print(Eina_List *list);
 static int __apps_data_sort_cb(const void *a , const void *b);
 static void __apps_data_item_free(app_data_t *item);
 app_data_t *__apps_data_find_item(int db_id);
-static int __apps_data_shortcur_request_cb(const char *pkgname,
+static int __apps_data_shortcut_request_cb(const char *pkgname,
         const char *name, int type, const char *content_info, const char *icon,
         int pid, double period, int allow_duplicate, void *data);
 
@@ -64,6 +64,7 @@ void apps_data_init(void)
     EINA_LIST_FOREACH(db_list, db_find_list, db_item) {
         if (!db_item->temp) {
             apps_db_delete_by_pkg_str(db_item->pkg_str);
+            apps_view_delete_icon(db_item);
             __apps_data_item_free(db_item);
         }
     }
@@ -88,7 +89,7 @@ void apps_data_init(void)
     }
     __apps_data_print(apps_data_s.data_list);
 
-    int ret = shortcut_set_request_cb(__apps_data_shortcur_request_cb, NULL);
+    int ret = shortcut_set_request_cb(__apps_data_shortcut_request_cb, NULL);
     if (ret != SHORTCUT_ERROR_NONE)
         LOGE("Failed to add shortcut request cb: 0x%X\n", ret);
 }
@@ -224,6 +225,7 @@ void apps_data_delete_folder(app_data_t *folder_item)
     apps_db_delete(folder_item);
     apps_data_sort();
     apps_view_reroder();
+    apps_view_delete_icon(folder_item);
     __apps_data_item_free(folder_item);
 }
 
@@ -234,7 +236,7 @@ void apps_data_update_folder(app_data_t *folder_item)
     apps_view_reroder();
 }
 
-static int __apps_data_shortcur_request_cb(const char *package_name,
+static int __apps_data_shortcut_request_cb(const char *package_name,
         const char *name, int type, const char *content_info, const char *icon,
         int pid, double period, int allow_duplicate, void *data)
 {
@@ -291,6 +293,7 @@ void apps_data_delete_item(app_data_t *item)
         if (parent)
             apps_view_update_folder_icon(parent);
     }
+    apps_view_delete_icon(item);
     __apps_data_item_free(item);
 }
 
@@ -313,9 +316,20 @@ void apps_data_delete_list(Eina_List *list)
             if (parent)
                 apps_view_update_folder_icon(parent);
         }
-
+        apps_view_delete_icon(item);
         __apps_data_item_free(item);
     }
+}
+
+app_data_t *apps_data_find_item_by_index(int index)
+{
+    app_data_t *item = NULL;
+    Eina_List *find_list;
+    EINA_LIST_FOREACH(apps_data_s.data_list, find_list, item) {
+        if (item->position == index && item->parent_db_id == APPS_ROOT)
+            return item;
+    }
+    return NULL;
 }
 
 app_data_t *__apps_data_find_item(int db_id)
@@ -331,10 +345,6 @@ app_data_t *__apps_data_find_item(int db_id)
 
 static void __apps_data_item_free(app_data_t *item)
 {
-    if (item && item->app_layout)
-        evas_object_del(item->app_layout);
-    if (item && item->folder_layout)
-        evas_object_del(item->folder_layout);
     if (item && item->label_str)
         free(item->label_str);
     if (item && item->icon_path_str)

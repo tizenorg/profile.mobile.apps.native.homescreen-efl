@@ -16,7 +16,6 @@
 
 #include <package_manager.h>
 #include <badge.h>
-#include <efl_extension.h>
 #include <feedback.h>
 
 #include "apps_view.h"
@@ -28,8 +27,9 @@
 #include "apps_data.h"
 #include "apps_db.h"
 #include "menu.h"
+#include "mouse.h"
+#include "popup.h"
 
-#define FOLDER_STR_LEN 256
 #define MAX_BADGE_COUNT_STR_LEN 5
 #define MAX_BADGE_DISPLAY_COUNT 999
 
@@ -40,6 +40,7 @@ static struct {
     Evas_Object *chooser_btn;
     Evas_Object *folder_popup_ly;
     Evas_Object *folder_title_entry;
+    app_data_t *picked_item;
     int width;
     int height;
     page_indicator_t *indicator;
@@ -51,8 +52,11 @@ static struct {
     Eina_List *selected_items;
     app_data_t *dest_folder;
     app_data_t *opened_folder;
+    app_data_t *candidate_folder;
     int selected_item_count;
     Ecore_Animator *animator;
+    Ecore_Timer *edit_mode_scroll_timer;
+    bool is_srolling;
 } apps_view_s = {
     .scroller = NULL,
     .bg = NULL,
@@ -60,6 +64,7 @@ static struct {
     .chooser_btn = NULL,
     .folder_popup_ly = NULL,
     .folder_title_entry = NULL,
+    .picked_item = NULL,
     .width = 0,
     .height = 0,
     .indicator = NULL,
@@ -72,12 +77,30 @@ static struct {
     .selected_item_count = 0,
     .dest_folder = NULL,
     .opened_folder = NULL,
-    .animator = NULL
+    .candidate_folder = NULL,
+    .animator = NULL,
+    .edit_mode_scroll_timer = NULL,
+    .is_srolling = false,
 };
 
 static int apps_menu_list[2] = {
-        MENU_APPS_EDIT,
-        MENU_APPS_CREATE_FOLDER
+    MENU_APPS_EDIT,
+    MENU_APPS_CREATE_FOLDER
+};
+
+static mouse_info_t apps_mouse_info = {
+    .pressed = false,
+    .long_pressed = false,
+    .down_x = 0,
+    .down_y = 0,
+    .move_x = 0,
+    .move_y = 0,
+    .up_x = 0,
+    .up_y = 0,
+    .long_press_timer = NULL,
+    .offset_x = 0,
+    .offset_y = 0,
+    .pressed_obj = NULL,
 };
 
 static Eina_Hash *apps_menu_table = NULL;
@@ -86,7 +109,7 @@ static void __apps_view_create_base_gui(Evas_Object *win);
 static Evas_Object * __apps_view_add_page(void);
 static void __apps_view_remove_page(void);
 static void __apps_view_fill_apps(void);
-static void __apps_view_icon_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
+static void __apps_view_icon_clicked_cb(app_data_t *item);
 static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 static void __apps_view_icon_check_changed_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 static void __apps_view_create_chooser(void);
@@ -106,9 +129,25 @@ static void __apps_view_badge_update_cb(unsigned int action, const char *app_id,
 static void __apps_view_badge_update_icon(app_data_t *item);
 static void __apps_view_badge_update_count(app_data_t *item);
 static void __apps_view_plus_icon_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
-static void __apps_view_create_toast_popup(char *str);
-static void __apps_view_toast_popup_timeout_cb(void *data, Evas_Object *obj, void *event_info);
-static void __apps_view_toast_popup_block_clicked_cb(void *data, Evas_Object *obj, void *event_info);
+
+static void __apps_view_scroller_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
+static void __apps_view_scroller_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
+static void __apps_view_scroller_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
+static Eina_Bool __apps_view_scroller_long_press_time_cb(void *data);
+
+static void __apps_view_icon_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
+static void __apps_view_icon_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
+static void __apps_view_icon_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info);
+static Eina_Bool __apps_view_icon_long_press_time_cb(void *data);
+static void __apps_view_edit_pick_up_icon(void *data);
+static void __apps_view_edit_drag_icon(void *data);
+static void __apps_view_edit_drop_icon(void *data);
+static Eina_Bool __apps_view_scroll_timer_cb(void *data);
+
+static void __apps_view_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info);
+static void __apps_view_scroll_to_page(int page_idx, bool animation);
+static int __apps_view_get_index(int page_index, int x, int y);
+static void __apps_view__set_icon_label_style(app_data_t *item, view_state_t state);
 
 Evas_Object *apps_view_create(Evas_Object *win)
 {
@@ -132,6 +171,10 @@ Evas_Object *apps_view_create(Evas_Object *win)
 
 void apps_view_app_terminate(void)
 {
+    evas_object_event_callback_del(apps_view_s.scroller, EVAS_CALLBACK_MOUSE_DOWN, __apps_view_scroller_down_cb);
+    evas_object_event_callback_del(apps_view_s.scroller, EVAS_CALLBACK_MOUSE_MOVE, __apps_view_scroller_move_cb);
+    evas_object_event_callback_del(apps_view_s.scroller, EVAS_CALLBACK_MOUSE_UP, __apps_view_scroller_up_cb);
+
     eina_hash_free(apps_menu_table);
 }
 
@@ -302,12 +345,13 @@ Evas_Object* apps_view_create_icon(app_data_t *item)
         apps_view_update_folder_icon(item);
         elm_object_part_content_set(icon_layout, APPS_ICON_CONTENT, folder_layout);
 
+        __apps_view__set_icon_label_style(item, apps_view_s.view_state);
         if (apps_view_s.view_state == VIEW_STATE_EDIT) {
-            elm_object_signal_emit(item->app_layout, SIGNAL_EDIT_MODE_ON_ANI, SIGNAL_SOURCE);
             elm_object_signal_emit(item->app_layout, SIGNAL_UNINSTALL_BUTTON_SHOW_ANI, SIGNAL_SOURCE);
-        } else if (apps_view_s.view_state == VIEW_STATE_CHOOSER) {
-            elm_object_signal_emit(item->app_layout, SIGNAL_EDIT_MODE_ON_ANI, SIGNAL_SOURCE);
         }
+        evas_object_event_callback_add(folder_layout, EVAS_CALLBACK_MOUSE_DOWN, __apps_view_icon_down_cb, item);
+        evas_object_event_callback_add(folder_layout, EVAS_CALLBACK_MOUSE_MOVE, __apps_view_icon_move_cb, item);
+        evas_object_event_callback_add(folder_layout, EVAS_CALLBACK_MOUSE_UP, __apps_view_icon_up_cb, item);
     } else {
         if (ecore_file_can_read(item->icon_path_str)) {
             LOGD("Create Image: %s", item->icon_path_str);
@@ -327,29 +371,24 @@ Evas_Object* apps_view_create_icon(app_data_t *item)
             elm_object_part_content_set(icon_layout, APPS_ICON_CONTENT, icon_image);
         }
 
-        if (item->parent_db_id != APPS_ROOT)
-            elm_object_signal_emit(item->app_layout, SIGNAL_SET_BLACK_TEXT, SIGNAL_SOURCE);
-
+        __apps_view__set_icon_label_style(item, apps_view_s.view_state);
         if (apps_view_s.view_state == VIEW_STATE_EDIT) {
-            if (item->parent_db_id == APPS_ROOT)
-                elm_object_signal_emit(item->app_layout, SIGNAL_EDIT_MODE_ON, SIGNAL_SOURCE);
-
             if (item->is_removable)
                 elm_object_signal_emit(item->app_layout, SIGNAL_UNINSTALL_BUTTON_SHOW, SIGNAL_SOURCE);
         } else if (apps_view_s.view_state == VIEW_STATE_CHOOSER) {
-            if (item->parent_db_id == APPS_ROOT)
-                elm_object_signal_emit(item->app_layout, SIGNAL_EDIT_MODE_ON, SIGNAL_SOURCE);
-
             elm_object_signal_emit(item->app_layout, SIGNAL_CHOOSER_MODE_ON, SIGNAL_SOURCE);
         }
+
         __apps_view_badge_update_icon(item);
         evas_object_show(icon_image);
+
+        evas_object_event_callback_add(icon_image, EVAS_CALLBACK_MOUSE_DOWN, __apps_view_icon_down_cb, item);
+        evas_object_event_callback_add(icon_image, EVAS_CALLBACK_MOUSE_MOVE, __apps_view_icon_move_cb, item);
+        evas_object_event_callback_add(icon_image, EVAS_CALLBACK_MOUSE_UP, __apps_view_icon_up_cb, item);
     }
-    elm_object_signal_callback_add(icon_layout, SIGNAL_ICON_CLICKED, SIGNAL_SOURCE, __apps_view_icon_clicked_cb, (void *)item);
+
     elm_object_signal_callback_add(icon_layout, SIGNAL_UNINSTALL_BUTTON_CLICKED, SIGNAL_SOURCE, __apps_view_icon_uninstall_btn_clicked_cb, (void *)item);
     elm_object_signal_callback_add(icon_layout, SIGNAL_CHANGED_CHECK_BOX, SIGNAL_SOURCE, __apps_view_icon_check_changed_cb,  (void *)item);
-
-    elm_object_part_text_set(icon_layout, APPS_ICON_NAME, item->label_str);
 
     evas_object_show(icon_layout);
 
@@ -358,10 +397,31 @@ Evas_Object* apps_view_create_icon(app_data_t *item)
     return icon_layout;
 }
 
+void apps_view_delete_icon(app_data_t *item)
+{
+    if (item == NULL)
+        return ;
+
+    if (item->app_layout) {
+        Evas_Object *icon_image = elm_object_part_content_get(item->app_layout, APPS_ICON_CONTENT);
+        evas_object_event_callback_del(icon_image, EVAS_CALLBACK_MOUSE_DOWN, __apps_view_icon_down_cb);
+        evas_object_event_callback_del(icon_image, EVAS_CALLBACK_MOUSE_MOVE, __apps_view_icon_move_cb);
+        evas_object_event_callback_del(icon_image, EVAS_CALLBACK_MOUSE_UP, __apps_view_icon_up_cb);
+
+        evas_object_del(item->app_layout);
+        item->app_layout = NULL;
+    }
+
+    if (item->folder_layout) {
+        evas_object_del(item->folder_layout);
+        item->folder_layout = NULL;
+    }
+}
+
 void apps_view_unset_all(void)
 {
     int i, j;
-    char icon_container[FOLDER_STR_LEN];
+    char icon_container[STR_MAX];
     Eina_List *find_list = NULL;
     Evas_Object * page;
 
@@ -374,12 +434,39 @@ void apps_view_unset_all(void)
     }
 }
 
+void apps_view_icon_unset(app_data_t *item)
+{
+    Evas_Object *page = NULL;
+    int page_index;
+    int col, row;
+    char icon_container[STR_MAX];
+
+    if (item->parent_db_id == APPS_ROOT) {
+        page_index = item->position / (APPS_VIEW_COL*APPS_VIEW_ROW);
+        col = (item->position / APPS_VIEW_COL)%APPS_VIEW_ROW;
+        row = item->position % APPS_VIEW_COL;
+
+        page = eina_list_nth(apps_view_s.page_list, page_index);
+
+        sprintf(icon_container, "icon_%d_%d", col, row);
+        elm_object_part_content_unset(page, icon_container);
+    } else if(apps_view_s.opened_folder && item->parent_db_id == apps_view_s.opened_folder->db_id) {
+        col = (item->position / APPS_FOLDER_COL)%APPS_FOLDER_ROW;
+        row = item->position % APPS_FOLDER_COL;
+
+        sprintf(icon_container, "icon_%d_%d", col, row);
+        if (elm_object_part_content_get(apps_view_s.folder_popup_ly, icon_container) != NULL) {
+            elm_object_part_content_unset(apps_view_s.folder_popup_ly, icon_container);
+        }
+    }
+}
+
 bool apps_view_icon_set(app_data_t *item)
 {
     Evas_Object *page = NULL;
     int page_index;
     int col, row;
-    char icon_container[FOLDER_STR_LEN];
+    char icon_container[STR_MAX];
 
     if (item == NULL)
         return false;
@@ -455,6 +542,12 @@ static void __apps_view_create_base_gui(Evas_Object *win)
     elm_scroller_loop_set(apps_view_s.scroller, EINA_TRUE, EINA_FALSE);
     elm_scroller_page_size_set(apps_view_s.scroller, APPS_VIEW_W, APPS_VIEW_H);
     evas_object_resize(apps_view_s.scroller, APPS_VIEW_W , APPS_VIEW_H);
+
+    evas_object_event_callback_add(apps_view_s.scroller, EVAS_CALLBACK_MOUSE_DOWN, __apps_view_scroller_down_cb, NULL);
+    evas_object_event_callback_add(apps_view_s.scroller, EVAS_CALLBACK_MOUSE_MOVE, __apps_view_scroller_move_cb, NULL);
+    evas_object_event_callback_add(apps_view_s.scroller, EVAS_CALLBACK_MOUSE_UP, __apps_view_scroller_up_cb, NULL);
+
+    evas_object_smart_callback_add(apps_view_s.scroller, "scroll,anim,stop", __apps_view_scroll_anim_stop_cb, NULL);
 
     apps_view_s.box = elm_box_add(apps_view_s.scroller);
     elm_box_horizontal_set(apps_view_s.box, EINA_TRUE);
@@ -546,9 +639,8 @@ static void __apps_view_folder_fill_apps(void)
     apps_view_folder_reroder();
 }
 
-static void __apps_view_icon_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
+static void __apps_view_icon_clicked_cb(app_data_t *item)
 {
-    app_data_t *item  = (app_data_t *)data;
     app_control_h app_control_handle = NULL;
     feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
 
@@ -623,6 +715,7 @@ static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *o
         }
     }
 }
+
 static void __apps_view_icon_check_changed_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
     app_data_t *item  = (app_data_t *)data;
@@ -641,7 +734,7 @@ static void __apps_view_icon_check_changed_cb(void *data, Evas_Object *obj, cons
             LOGD("checked item : %d > HOME_FOLDER_MAX_ITEM(9)", item_count);
             char str[1024];
             sprintf(str, _("IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"), APPS_FOLDER_MAX_ITEM);
-            __apps_view_create_toast_popup(str);
+            toast_show(str);
         } else {
             LOGD("%s - check", item->label_str);
             elm_object_signal_emit(item->app_layout, SIGNAL_CHECK_CHECK_BOX, SIGNAL_SOURCE);
@@ -717,12 +810,19 @@ void apps_view_set_state(view_state_t state)
         app_data_t *item = NULL;
         EINA_LIST_FOREACH(data_list, find_list, item) {
             if (item->app_layout) {
-                elm_object_signal_emit(item->app_layout, SIGNAL_EDIT_MODE_ON_ANI, SIGNAL_SOURCE);
-                if (item->is_removable)
+                elm_object_signal_emit(item->app_layout, SIGNAL_CHOOSER_MODE_OFF, SIGNAL_SOURCE);
+
+                if (item != apps_view_s.picked_item)
+                    __apps_view__set_icon_label_style(item, VIEW_STATE_EDIT);
+                if (item->is_removable && item != apps_view_s.picked_item)
                     elm_object_signal_emit(item->app_layout, SIGNAL_UNINSTALL_BUTTON_SHOW_ANI, SIGNAL_SOURCE);
                 elm_object_signal_emit(item->app_layout, SIGNAL_CHOOSER_MODE_OFF, SIGNAL_SOURCE);
             }
         }
+        if (apps_view_s.dest_folder)
+            elm_object_signal_emit(apps_view_s.dest_folder->app_layout, SIGNAL_ICON_ENABLE, SIGNAL_SOURCE);
+        elm_object_signal_emit(apps_view_s.chooser_btn, SIGNAL_CHOOSER_BUTTON_HIDE, SIGNAL_SOURCE);
+
     } else if (state == VIEW_STATE_CHOOSER) {
         homescreen_efl_btn_hide(HOMESCREEN_VIEW_APPS);
         elm_win_indicator_mode_set(homescreen_efl_get_win(), ELM_WIN_INDICATOR_HIDE);
@@ -745,9 +845,10 @@ void apps_view_set_state(view_state_t state)
         app_data_t *item = NULL;
         EINA_LIST_FOREACH(data_list, find_list, item) {
             if (item->app_layout) {
-                elm_object_signal_emit(item->app_layout, SIGNAL_EDIT_MODE_ON_ANI, SIGNAL_SOURCE);
+                __apps_view__set_icon_label_style(item, VIEW_STATE_CHOOSER);
                 if (!item->is_folder)
                     elm_object_signal_emit(item->app_layout, SIGNAL_CHOOSER_MODE_ON, SIGNAL_SOURCE);
+                elm_object_signal_emit(item->app_layout, SIGNAL_UNINSTALL_BUTTON_HIDE_ANI, SIGNAL_SOURCE);
             }
         }
         elm_object_signal_emit(apps_view_s.chooser_btn, SIGNAL_CHOOSER_BUTTON_SHOW, SIGNAL_SOURCE);
@@ -772,7 +873,7 @@ void apps_view_set_state(view_state_t state)
         app_data_t *item = NULL;
         EINA_LIST_FOREACH(data_list, find_list, item) {
             if (item->app_layout) {
-                elm_object_signal_emit(item->app_layout, SIGNAL_EDIT_MODE_OFF_ANI, SIGNAL_SOURCE);
+                __apps_view__set_icon_label_style(item, VIEW_STATE_NORMAL);
                 elm_object_signal_emit(item->app_layout, SIGNAL_UNINSTALL_BUTTON_HIDE_ANI, SIGNAL_SOURCE);
                 elm_object_signal_emit(item->app_layout, SIGNAL_CHOOSER_MODE_OFF, SIGNAL_SOURCE);
             }
@@ -795,7 +896,7 @@ void apps_view_update_folder_icon(app_data_t* item)
     Eina_List *folder_list = NULL;
     Eina_List *find_list;
     app_data_t *temp_item;
-    char folder_item_count_string[FOLDER_STR_LEN];
+    char folder_item_count_string[STR_MAX];
     Evas_Object *icon_image = NULL;
 
     int item_count = 0;
@@ -916,7 +1017,8 @@ static Eina_Bool __apps_view_hide_folder_anim(void *data, double pos)
 
 static void __apps_view_close_folder_popup(app_data_t *item)
 {
-    apps_view_s.animator = ecore_animator_timeline_add(HOME_FOLDR_ANIMATION_TIME, __apps_view_hide_folder_anim, NULL);
+    if (apps_view_s.animator == NULL)
+        apps_view_s.animator = ecore_animator_timeline_add(HOME_FOLDR_ANIMATION_TIME, __apps_view_hide_folder_anim, NULL);
 }
 
 static void __apps_view_close_folder_popup_done(void)
@@ -942,6 +1044,7 @@ static void __apps_view_close_folder_popup_done(void)
     apps_view_s.folder_title_entry = NULL;
     apps_view_s.folder_popup_ly = NULL;
     apps_view_s.opened_folder = NULL;
+    apps_view_s.animator = NULL;
 }
 
 static void __apps_view_hide_folder_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
@@ -1002,7 +1105,7 @@ static void __apps_view_chooser_right_btn_clicked(void *data, Evas_Object *obj, 
 
 static void __apps_view_update_chooser_text(int item_count)
 {
-    char text[FOLDER_STR_LEN];
+    char text[STR_MAX];
     if (apps_view_s.selected_item_count + item_count > 0) {
         sprintf(text, _("IDS_MEMO_HEADER_PD_SELECTED_ABB2"), apps_view_s.selected_item_count + item_count);
     } else
@@ -1064,7 +1167,7 @@ static void __apps_view_badge_update_count(app_data_t *item)
 
 static void __apps_view_badge_update_icon(app_data_t *item)
 {
-    char number_str[FOLDER_STR_LEN];
+    char number_str[STR_MAX];
     if (item->badge_count == 0) {
         elm_object_signal_emit(item->app_layout, SIGNAL_BADGE_HIDE, SIGNAL_SOURCE);
         return;
@@ -1095,28 +1198,396 @@ static void __apps_view_plus_icon_clicked(void *data, Evas_Object *obj, const ch
     eina_list_free(folder_list);
 }
 
-static void __apps_view_create_toast_popup(char *str)
+static void __apps_view_scroller_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
-    Evas_Object *popup;
+    Evas_Event_Mouse_Down* ev = event_info;
 
-    popup = elm_popup_add(homescreen_efl_get_win());
-    elm_object_style_set(popup, "toast");
-    evas_object_size_hint_weight_set(popup, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-    elm_object_text_set(popup, str);
-    elm_popup_timeout_set(popup, 2.0);
-    eext_object_event_callback_add(popup, EEXT_CALLBACK_BACK, eext_popup_back_cb, NULL);
-    evas_object_smart_callback_add(popup, "block,clicked", __apps_view_toast_popup_block_clicked_cb, NULL);
-    evas_object_smart_callback_add(popup, "timeout", __apps_view_toast_popup_timeout_cb, NULL);
+    if (apps_view_s.view_state != VIEW_STATE_NORMAL)
+        return ;
 
-    evas_object_show(popup);
+    LOGD("DOWN: (%d,%d)", ev->output.x, ev->output.y);
 
+    apps_mouse_info.pressed = true;
+    apps_mouse_info.pressed_obj = obj;
+
+    apps_mouse_info.down_x = apps_mouse_info.move_x = ev->output.x;
+    apps_mouse_info.down_y = apps_mouse_info.move_y = ev->output.y;
+
+    if (apps_mouse_info.long_press_timer) {
+        ecore_timer_del(apps_mouse_info.long_press_timer);
+        apps_mouse_info.long_press_timer = NULL;
+    }
+
+    apps_mouse_info.long_press_timer = ecore_timer_add(LONG_PRESS_TIME,
+            __apps_view_scroller_long_press_time_cb, obj);
 }
 
-static void __apps_view_toast_popup_timeout_cb(void *data, Evas_Object *obj, void *event_info)
+static void __apps_view_scroller_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
-    evas_object_del(obj);
+    Evas_Event_Mouse_Up* ev = event_info;
+
+    if (!apps_mouse_info.pressed || apps_mouse_info.pressed_obj != obj)
+        return ;
+
+    LOGD("UP: (%d,%d)", ev->output.x, ev->output.y);
+
+    apps_mouse_info.pressed = false;
+
+    if (apps_mouse_info.long_press_timer) {
+        ecore_timer_del(apps_mouse_info.long_press_timer);
+        apps_mouse_info.long_press_timer = NULL;
+    }
+
+    apps_mouse_info.up_x = ev->output.x;
+    apps_mouse_info.up_y = ev->output.y;
+
+    apps_mouse_info.long_pressed = false;
 }
-static void __apps_view_toast_popup_block_clicked_cb(void *data, Evas_Object *obj, void *event_info)
+
+static void __apps_view_scroller_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
-    evas_object_del(obj);
+    Evas_Event_Mouse_Move* ev = event_info;
+
+    if (!apps_mouse_info.pressed || apps_mouse_info.pressed_obj != obj)
+        return ;
+
+    LOGD("MOVE: (%d,%d)", ev->cur.output.x, ev->cur.output.y);
+
+    apps_mouse_info.move_x = ev->cur.output.x;
+    apps_mouse_info.move_y = ev->cur.output.y;
+
+    if (!apps_mouse_info.long_pressed) {
+        int distance = (apps_mouse_info.move_x - apps_mouse_info.down_x) * (apps_mouse_info.move_x - apps_mouse_info.down_x);
+        distance += (apps_mouse_info.move_y - apps_mouse_info.down_y) * (apps_mouse_info.move_y - apps_mouse_info.down_y);
+
+        if (distance > MOUSE_MOVE_MIN_DISTANCE) {
+            if (apps_mouse_info.long_press_timer) {
+                ecore_timer_del(apps_mouse_info.long_press_timer);
+                apps_mouse_info.long_press_timer = NULL;
+            }
+            return ;
+        }
+    }
+}
+
+static Eina_Bool __apps_view_scroller_long_press_time_cb(void *data)
+{
+    if (!apps_mouse_info.pressed || apps_mouse_info.pressed_obj != data)
+        return ECORE_CALLBACK_CANCEL;
+
+    apps_mouse_info.long_pressed = true;
+
+    apps_view_set_state(VIEW_STATE_EDIT);
+
+    return ECORE_CALLBACK_CANCEL;
+}
+
+static void __apps_view_icon_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
+{
+    Evas_Event_Mouse_Down* ev = event_info;
+    LOGD("DOWN: (%d,%d)", ev->output.x, ev->output.y);
+
+    apps_mouse_info.pressed = true;
+    apps_mouse_info.pressed_obj = obj;
+
+    apps_mouse_info.down_x = apps_mouse_info.move_x = ev->output.x;
+    apps_mouse_info.down_y = apps_mouse_info.move_y = ev->output.y;
+
+    if (apps_mouse_info.long_press_timer) {
+        ecore_timer_del(apps_mouse_info.long_press_timer);
+        apps_mouse_info.long_press_timer = NULL;
+    }
+
+    apps_mouse_info.long_press_timer = ecore_timer_add(LONG_PRESS_TIME,
+            __apps_view_icon_long_press_time_cb, data);
+}
+
+static void __apps_view_icon_up_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
+{
+    Evas_Event_Mouse_Up* ev = event_info;
+    LOGD("UP: (%d,%d)", ev->output.x, ev->output.y);
+
+    if (!apps_mouse_info.pressed)
+        return ;
+
+    apps_mouse_info.pressed = false;
+    apps_mouse_info.pressed_obj = NULL;
+
+    if (apps_mouse_info.long_press_timer) {
+        ecore_timer_del(apps_mouse_info.long_press_timer);
+        apps_mouse_info.long_press_timer = NULL;
+    }
+
+    apps_mouse_info.up_x = ev->output.x;
+    apps_mouse_info.up_y = ev->output.y;
+
+    if (!apps_mouse_info.long_pressed) {
+        int distance = (apps_mouse_info.move_x - apps_mouse_info.down_x) * (apps_mouse_info.move_x - apps_mouse_info.down_x);
+        distance += (apps_mouse_info.move_y - apps_mouse_info.down_y) * (apps_mouse_info.move_y - apps_mouse_info.down_y);
+
+        if (distance <= MOUSE_MOVE_MIN_DISTANCE) {
+            __apps_view_icon_clicked_cb((app_data_t *)data);
+        }
+        return ;
+    }
+
+    apps_mouse_info.long_pressed = false;
+
+    elm_scroller_movement_block_set(apps_view_s.scroller, ELM_SCROLLER_MOVEMENT_NO_BLOCK);
+
+    if (apps_view_s.picked_item) {
+        __apps_view_edit_drop_icon(data);
+        apps_view_s.picked_item = NULL;
+    }
+}
+
+static void __apps_view_icon_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
+{
+    Evas_Event_Mouse_Move* ev = event_info;
+    LOGD("MOVE: (%d,%d)", ev->cur.output.x, ev->cur.output.y);
+
+    if (!apps_mouse_info.pressed)
+        return ;
+
+    apps_mouse_info.move_x = ev->cur.output.x;
+    apps_mouse_info.move_y = ev->cur.output.y;
+
+    if (!apps_mouse_info.long_pressed) {
+        int distance = (apps_mouse_info.move_x - apps_mouse_info.down_x) * (apps_mouse_info.move_x - apps_mouse_info.down_x);
+        distance += (apps_mouse_info.move_y - apps_mouse_info.down_y) * (apps_mouse_info.move_y - apps_mouse_info.down_y);
+
+        if (distance > MOUSE_MOVE_MIN_DISTANCE) {
+            if (apps_mouse_info.long_press_timer) {
+                ecore_timer_del(apps_mouse_info.long_press_timer);
+                apps_mouse_info.long_press_timer = NULL;
+            }
+            return ;
+        }
+    }
+
+    if (apps_view_s.picked_item) {
+        __apps_view_edit_drag_icon(data);
+    }
+}
+
+static Eina_Bool __apps_view_icon_long_press_time_cb(void *data)
+{
+    app_data_t *item = (app_data_t *)data;
+    if (!apps_mouse_info.pressed)
+        return ECORE_CALLBACK_CANCEL;
+
+    apps_mouse_info.long_pressed = true;
+
+    elm_scroller_movement_block_set(apps_view_s.scroller, ELM_SCROLLER_MOVEMENT_BLOCK_HORIZONTAL);
+
+    if (!item->is_folder) {
+        __apps_view_edit_pick_up_icon(data);
+    }
+
+    if (apps_view_s.view_state == VIEW_STATE_NORMAL)
+        apps_view_set_state(VIEW_STATE_EDIT);
+
+    return ECORE_CALLBACK_CANCEL;
+}
+
+static void __apps_view_edit_pick_up_icon(void *data)
+{
+    int cx = -1, cy = -1;
+    int gx = -1, gy = -1, gw = 0, gh = 0;
+    Evas *e = NULL;
+    apps_view_s.picked_item = (app_data_t *)data;
+
+    Evas_Object *icon_layout = apps_view_s.picked_item->app_layout;
+
+    e = evas_object_evas_get(icon_layout);
+
+    evas_pointer_canvas_xy_get(e, &cx, &cy);
+    evas_object_geometry_get(icon_layout, &gx, &gy, &gw, &gh);
+    LOGD("cx, cy (%d, %d )", cx, cy);
+    LOGD("gx, gy, gw, gh (%d, %d, %d, %d)", gx, gy, gw, gh);
+
+    apps_mouse_info.offset_x = cx - gx;
+    apps_mouse_info.offset_y = cy - gy;
+
+    apps_view_icon_unset(apps_view_s.picked_item);
+
+    elm_object_signal_emit(icon_layout, SIGNAL_UNINSTALL_BUTTON_HIDE_ANI, SIGNAL_SOURCE);
+    elm_object_signal_emit(icon_layout, SIGNAL_ICON_NAME_HIDE, SIGNAL_SOURCE);
+
+    evas_object_move(icon_layout, apps_mouse_info.move_x - apps_mouse_info.offset_x,
+            apps_mouse_info.move_y - apps_mouse_info.offset_y);
+}
+
+static void __apps_view_edit_drag_icon(void *data)
+{
+    int page_x, page_y;
+    int bg_x, bg_y, bg_w, bg_h;
+    int widget_x, widget_y;
+
+    if (!apps_view_s.picked_item)
+        return ;
+
+    Evas_Object *app_layout = apps_view_s.picked_item->app_layout;
+    evas_object_move(app_layout, apps_mouse_info.move_x - apps_mouse_info.offset_x,
+                apps_mouse_info.move_y - apps_mouse_info.offset_y);
+
+    if (apps_view_s.folder_popup_ly) {
+        int gx, gy, gw, gh;
+        edje_object_part_geometry_get(elm_layout_edje_get(apps_view_s.folder_popup_ly), APPS_FOLDER_BG, &gx, &gy, &gw, &gh);
+
+        if (apps_mouse_info.move_x < gx || apps_mouse_info.move_x > gx + gw ||
+                apps_mouse_info.move_y < gy || apps_mouse_info.move_y > gy + gh) {
+            if (apps_view_s.animator == NULL) {
+                app_data_t *opened_folder = apps_view_s.opened_folder;
+                __apps_view_close_folder_popup(apps_view_s.opened_folder);
+                apps_view_s.picked_item->parent_db_id = APPS_ROOT;
+                apps_db_update(apps_view_s.picked_item);
+                apps_data_sort();
+                apps_view_update_folder_icon(opened_folder);
+            }
+        }
+    } else if (apps_mouse_info.move_x > APPS_VIEW_EDIT_RIGHT_SCROLL_REGION) {
+        LOGD("Move to next page");
+        if (!apps_view_s.edit_mode_scroll_timer)
+            apps_view_s.edit_mode_scroll_timer = ecore_timer_add(HOME_EDIT_SCROLL_MOVE_TIME, __apps_view_scroll_timer_cb, NULL);
+
+    } else if (apps_mouse_info.move_x < APPS_VIEW_EDIT_LEFT_SCROLL_REGION) {
+        LOGD("Move to prev page");
+        if (!apps_view_s.edit_mode_scroll_timer)
+            apps_view_s.edit_mode_scroll_timer = ecore_timer_add(HOME_EDIT_SCROLL_MOVE_TIME, __apps_view_scroll_timer_cb, NULL);
+    } else {
+        if (apps_view_s.edit_mode_scroll_timer) {
+            ecore_timer_del(apps_view_s.edit_mode_scroll_timer);
+            apps_view_s.edit_mode_scroll_timer = NULL;
+        }
+
+        if (apps_view_s.picked_item->parent_db_id == APPS_ROOT) {
+            int index = __apps_view_get_index(apps_view_s.current_page, apps_mouse_info.move_x - apps_mouse_info.offset_x,
+                    apps_mouse_info.move_y - apps_mouse_info.offset_y);
+            LOGD("ttt index = %d", index);
+            if(apps_view_s.candidate_folder == NULL ||
+                    apps_view_s.candidate_folder->position != index) {
+                if (apps_view_s.candidate_folder)
+                    elm_object_signal_emit(apps_view_s.candidate_folder->folder_layout, SIGNAL_FRAME_POSSIBLE_HIDE, SIGNAL_SOURCE);
+                apps_view_s.candidate_folder = apps_data_find_item_by_index(index);
+                if (apps_view_s.candidate_folder && !apps_view_s.candidate_folder->is_folder) {
+                    apps_view_s.candidate_folder = NULL;
+                }
+            }
+            if (apps_view_s.candidate_folder) {
+                LOGD("ttt this is folder");
+                elm_object_signal_emit(apps_view_s.candidate_folder->folder_layout, SIGNAL_FRAME_POSSIBLE_SHOW, SIGNAL_SOURCE);
+            }
+        }
+    }
+}
+
+static void __apps_view_edit_drop_icon(void *data)
+{
+    app_data_t *item = (app_data_t *)data;
+    Evas_Object *app_layout = apps_view_s.picked_item->app_layout;
+
+    if (apps_view_s.edit_mode_scroll_timer) {
+        ecore_timer_del(apps_view_s.edit_mode_scroll_timer);
+        apps_view_s.edit_mode_scroll_timer = NULL;
+    }
+
+    if (item->is_removable)
+        elm_object_signal_emit(app_layout, SIGNAL_UNINSTALL_BUTTON_SHOW_ANI, SIGNAL_SOURCE);
+
+    elm_object_signal_emit(app_layout, SIGNAL_ICON_NAME_SHOW, SIGNAL_SOURCE);
+
+    __apps_view__set_icon_label_style(item, VIEW_STATE_EDIT);
+
+    if (apps_view_s.candidate_folder) {
+        Eina_List *folder_list = NULL;
+        int folder_item_count =0;
+        apps_data_get_folder_item_list(&folder_list, apps_view_s.candidate_folder);
+        folder_item_count = eina_list_count(folder_list);
+        if (folder_item_count >= APPS_FOLDER_MAX_ITEM) {
+            char str[1024];
+            sprintf(str, _("IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"), APPS_FOLDER_MAX_ITEM);
+            toast_show(str);
+            apps_view_icon_set(item);
+            return ;
+        } else {
+            item->parent_db_id = apps_view_s.candidate_folder->db_id;
+            apps_db_update(apps_view_s.picked_item);
+            apps_view_update_folder_icon(apps_view_s.candidate_folder);
+            elm_object_signal_emit(apps_view_s.candidate_folder->folder_layout, SIGNAL_FRAME_POSSIBLE_HIDE, SIGNAL_SOURCE);
+            if (item->app_layout) {
+                evas_object_del(item->app_layout);
+                item->app_layout = NULL;
+            }
+            apps_view_s.candidate_folder = NULL;
+        }
+    }
+    apps_data_sort();
+    apps_view_reroder();
+}
+
+static Eina_Bool __apps_view_scroll_timer_cb(void *data)
+{
+    int next_page_idx = 0;
+    if (apps_mouse_info.move_x > APPS_VIEW_EDIT_RIGHT_SCROLL_REGION) {
+        next_page_idx = apps_view_s.current_page + 1;
+    } else if (apps_mouse_info.move_x < APPS_VIEW_EDIT_LEFT_SCROLL_REGION) {
+        next_page_idx = apps_view_s.current_page - 1;
+    } else {
+        return ECORE_CALLBACK_CANCEL;
+    }
+    __apps_view_scroll_to_page(next_page_idx, true);
+    return ECORE_CALLBACK_RENEW;
+}
+
+static void __apps_view_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info)
+{
+    apps_view_s.is_srolling = false;
+    elm_scroller_current_page_get(obj, &apps_view_s.current_page, NULL);
+    apps_view_s.current_page = apps_view_s.current_page % apps_view_s.page_count;
+    LOGD("current page %d", apps_view_s.current_page);
+}
+
+static void __apps_view_scroll_to_page(int page_idx, bool animation)
+{
+    if (animation) {
+        apps_view_s.is_srolling = true;
+        elm_scroller_page_bring_in(apps_view_s.scroller, page_idx, 0);
+    } else {
+        page_indicator_set_current_page(apps_view_s.indicator, page_idx);
+        elm_scroller_page_show(apps_view_s.scroller, page_idx, 0);
+    }
+}
+
+static int __apps_view_get_index(int page_index, int x, int y)
+{
+    int row, col;
+    int sx = APPS_VIEW_W * 0.04;
+    int sy = APPS_VIEW_PADDING_TOP + APPS_VIEW_H * 0.05;
+    int w = (APPS_VIEW_W * 0.9) / APPS_VIEW_COL;
+    int h = (APPS_VIEW_H * 0.9) / APPS_VIEW_ROW;
+
+    for (row = 0; row < APPS_VIEW_ROW; row++) {
+        for(col = 0; col < APPS_VIEW_COL; col++) {
+            int ny = sy + (row * h);
+            int nx = sx + (col * w);
+
+            int d = (ny - y) * (ny - y) + (nx - x) * (nx - x);
+            if (d < APPS_VIEW_EDIT_MOVE_GAP) {
+                return ((APPS_VIEW_COL * APPS_VIEW_ROW) * page_index) + (row * APPS_VIEW_COL) + col;
+            }
+        }
+    }
+
+    return INIT_VALUE;
+}
+
+static void __apps_view__set_icon_label_style(app_data_t *item, view_state_t state)
+{
+    char style_string[STR_MAX] = {0, };
+    char *text_color = item->parent_db_id == APPS_ROOT ? APPS_VIEW_ICON_TEXT_COLOR_WHITE : APPS_VIEW_ICON_TEXT_COLOR_BLACK;
+    char *text_shadow_color = item->parent_db_id == APPS_ROOT ? "000000FF" : "FFFFFFFF";
+    int font_size = (state == VIEW_STATE_NORMAL || item->parent_db_id != APPS_ROOT) ? APPS_VIEW_ICON_TEXT_SIZE_NORMAL : APPS_VIEW_ICON_TEXT_SIZE_EDIT;
+    snprintf(style_string, sizeof(style_string), "<font_size=%d><color=#%s><shadow_color=#%s>%s</shadow_color></color></font_size>", font_size, text_color, text_shadow_color,item->label_str);
+    elm_object_part_text_set(item->app_layout, APPS_ICON_NAME, style_string);
 }

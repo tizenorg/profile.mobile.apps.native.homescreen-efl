@@ -211,6 +211,7 @@ void cluster_page_drag_widget(cluster_page_t *page, widget_size_type_e type, int
         evas_object_size_hint_weight_set(page->highlight, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
         evas_object_color_set(page->highlight, 255 , 255, 255, 100);
     }
+
     if (cluster_page_check_empty_space(page, type, pos_x, pos_y, NULL, NULL)) {
         if (pos_x != page->highlight_pos_x || pos_y != page->highlight_pos_y) {
             int w, h;

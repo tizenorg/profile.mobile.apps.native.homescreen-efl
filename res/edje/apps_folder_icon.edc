@@ -331,6 +331,13 @@ collections {
                 action: STATE_SET "frame_impossible" 0.0;
                 target: "folder_icon_image_possible";
             }
+            program {
+                name: "hide,bg,possible";
+                signal: SIGNAL_FRAME_POSSIBLE_HIDE;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "default" 0.0;
+                target: "folder_icon_image_possible";
+            }
         }
     }
 }

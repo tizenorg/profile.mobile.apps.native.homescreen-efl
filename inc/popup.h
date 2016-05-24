@@ -28,4 +28,6 @@ void popup_show(popup_t type, int btn_count, Evas_Smart_Cb btn_func[3], void *fu
 void popup_hide(void);
 bool popup_is_show(void);
 
+void toast_show(char* str);
+
 #endif /* __POPUP_H__ */

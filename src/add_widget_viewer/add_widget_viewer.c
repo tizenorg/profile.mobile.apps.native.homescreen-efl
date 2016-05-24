@@ -156,7 +156,7 @@ static Evas_Object *__add_widget_viewer_create_conformant(void)
 static Evas_Object *__add_widget_viewer_create_layout()
 {
     Evas_Object *layout;
-    char edj_path[PATH_MAX_LEN] = {0, };
+    char edj_path[STR_MAX] = {0, };
 
     if (!add_widget_viewer_s.conformant) {
         return NULL;
