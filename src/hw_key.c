@@ -23,6 +23,7 @@
 #include "conf.h"
 #include "homescreen-efl.h"
 #include "menu.h"
+#include "popup.h"
 
 #define KEY_HOME "XF86Home"
 #define KEY_MENU "XF86Menu"
@@ -112,6 +113,8 @@ static Eina_Bool __hw_key_release_cb(void *data, int type, void *event)
     if (!strcmp(ev->keyname, KEY_BACK)) {
         if (menu_is_show()) {
             menu_hide();
+        } else if (popup_is_show()) {
+            popup_hide();
         } else {
             homescreen_efl_hw_back_key_release();
         }
@@ -120,6 +123,8 @@ static Eina_Bool __hw_key_release_cb(void *data, int type, void *event)
     } else if (!strcmp(ev->keyname, KEY_HOME)) {
         if (menu_is_show()) {
             menu_hide();
+        } else if (popup_is_show()) {
+            popup_hide();
         }
         homescreen_efl_hw_home_key_release();
     } else {

@@ -20,7 +20,6 @@
 
 #include "homescreen-efl.h"
 #include "popup.h"
-#include "conf.h"
 #include "util.h"
 
 static struct {
@@ -31,32 +30,14 @@ static struct {
     .is_visible = false
 };
 
-/* popup_t
- * 0 : POPUP_CLUSTER_PAGE_FULL
- * 1 : POPUP_CLUSTER_DELETE_PAGE
- */
-static const char popup_title_text[POPUP_MAX][STR_MAX] = {
-        "IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB",
-        "IDS_HS_HEADER_DELETE_PAGE_ABB2",
-};
-
-static const char popup_text[POPUP_MAX][STR_MAX] = {
-        "IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG",
-        "IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED",
-};
-
-static const char popup_button_text[POPUP_MAX][3][STR_MAX] = {
-        { "IDS_CAM_SK_OK", "", "" },
-        { "IDS_HS_OPT_DELETE", "IDS_CAM_SK_CANCEL", "" }
-};
-
 static void __popup_default_cb(void *data, Evas_Object *obj, void *event_info);
 static void __popup_dismissed_cb(void *data, Evas_Object *obj, void *event_info);
 
 static void __toast_timeout_cb(void *data, Evas_Object *obj, void *event_info);
 static void __toast_block_clicked_cb(void *data, Evas_Object *obj, void *event_info);
 
-void popup_show(popup_t type, int btn_count, Evas_Smart_Cb btn_func[3], void *func_data[3])
+void popup_show(int btn_count, Evas_Smart_Cb btn_func[3], void *func_data[3],
+        const char (*btn_text)[STR_MAX], const char *title_text, const char *popup_text)
 {
     if (popup_info.is_visible) {
         return ;
@@ -69,8 +50,8 @@ void popup_show(popup_t type, int btn_count, Evas_Smart_Cb btn_func[3], void *fu
     popup_info.popup = elm_popup_add(homescreen_efl_get_win());
     elm_popup_align_set(popup_info.popup, ELM_NOTIFY_ALIGN_FILL, 1.0);
     evas_object_size_hint_weight_set(popup_info.popup, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-    elm_object_part_text_set(popup_info.popup, "title,text", _(popup_title_text[type]));
-    elm_object_part_text_set(popup_info.popup, "default", _(popup_text[type]));
+    elm_object_part_text_set(popup_info.popup, "title,text", title_text);
+    elm_object_part_text_set(popup_info.popup, "default", popup_text);
     evas_object_smart_callback_add(popup_info.popup, "dismissed", __popup_dismissed_cb, NULL);
 
     int idx = 0;
@@ -78,7 +59,7 @@ void popup_show(popup_t type, int btn_count, Evas_Smart_Cb btn_func[3], void *fu
         Evas_Object *btn;
         btn = elm_button_add(popup_info.popup);
         elm_object_style_set(btn, "popup");
-        elm_object_text_set(btn, _(popup_button_text[type][idx]));
+        elm_object_text_set(btn, btn_text[idx]);
         elm_object_part_content_set(popup_info.popup, part[idx], btn);
         evas_object_smart_callback_add(btn, "clicked",
                 (btn_func[idx] == NULL ? __popup_default_cb : btn_func[idx]), func_data[idx]);

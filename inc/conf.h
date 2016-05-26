@@ -19,6 +19,8 @@
 
 #define FRAMES_PER_SECOND 1.0/60.0
 
+#define STR_ID_LEN 256
+#define STR_PATH_LEN 1024
 #define STR_MAX 2048
 #define INIT_VALUE -987654321
 
@@ -71,6 +73,7 @@ extern int __conf_get_window_w();
 #define CLUSTER_DELETE_BUTTON_H CLUSTER_DELETE_BUTTON_W
 #define CLUSTER_EDIT_LEFT_SCROLL_REGION ((72) * (__conf_get_resolution_scale_w()))
 #define CLUSTER_EDIT_RIGHT_SCROLL_REGION (CLUSTER_VIEW_W - CLUSTER_EDIT_LEFT_SCROLL_REGION)
+#define CLUSTER_ADDVIEWER_TEXT_SIZE ((38) * (__conf_get_resolution_scale_h()))
 
 #define CLUSTER_ROW 4
 #define CLUSTER_COL 4
@@ -87,11 +90,11 @@ extern int __conf_get_window_w();
 #define ALLPAGE_PREVIEW_PADDING_MID ((12) * (__conf_get_resolution_scale_w()))
 #define ALLPAGE_PREVIEW_PADDING_TOP ((18) * (__conf_get_resolution_scale_h()))
 #define ALLPAGE_PREVIEW_LIST_ITEM_W ((720) * (__conf_get_resolution_scale_w()))
-#define ALLPAGE_PREVIEW_LIST_ITEM_H ((388) * (__conf_get_resolution_scale_h()))
+#define ALLPAGE_PREVIEW_LIST_ITEM_H ((405) * (__conf_get_resolution_scale_h()))
 #define ALLPAGE_PREVIEW_4X4_W ((300) * (__conf_get_resolution_scale_w()))
 #define ALLPAGE_PREVIEW_4X4_H ALLPAGE_PREVIEW_4X4_W
 #define ALLPAGE_PREVIEW_4X2_W ((300) * (__conf_get_resolution_scale_w()))
-#define ALLPAGE_PREVIEW_4X2_H ((ALLPAGE_PREVIEW_4X4_W/2) * (__conf_get_resolution_scale_h()))
+#define ALLPAGE_PREVIEW_4X2_H (ALLPAGE_PREVIEW_4X4_W / 2)
 #define ALLPAGE_MOVE_GAP 0.15
 
 #define APPS_FOLDER_MAX_ITEM 9

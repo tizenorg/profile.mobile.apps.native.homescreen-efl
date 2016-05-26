@@ -62,6 +62,27 @@ collections {
                     rel2.relative: 0.0 0.0;
                 }
             }
+            part { name: APPS_APPS_VIEW_BG;
+                type: RECT;
+                mouse_events: 1;
+                repeat_events: 1;
+                description {
+                    state: "default" 0.0;
+                    align: 0 0;
+                    rel1 {relative: 0.0 0.0; to:SIZE_SETTER;}
+                    rel2 {relative: 1.0 1.0; to:SIZE_SETTER;}
+                    color: 0 0 0 0;
+                    visible: 0;
+                }
+                description {
+                    state: "edit_done" 0.0;
+                    inherit: "default" 0.0;
+                    rel1 {relative: 0.055 0.035; to:SIZE_SETTER;}
+                    rel2 {relative: 0.95 0.985; to:SIZE_SETTER;}
+                    color: 0 0 0 APPS_VIEW_BG_OPACITY;
+                    visible: 1;
+                }
+            }
             MAKE_TILE(0,0);
             MAKE_TILE(0,1);
             MAKE_TILE(0,2);
@@ -110,10 +131,19 @@ collections {
                 target: "icon_4_2";
                 target: "icon_4_3";
                 transition: DECELERATE ANIMATION_RESIZE_TIME;
+                after: bg_edit_mode_on_ani_done;
             }
             program {
                 name: "bg_edit_mode_off";
                 signal: SIGNAL_EDIT_MODE_OFF_ANI;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "default" 0.0;
+                target: APPS_APPS_VIEW_BG;
+                after: "bg_edit_mode_off2";
+            }
+            program {
+                name: "bg_edit_mode_off2";
+                signal: "bg_edit_mode_off2";
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "default" 0.0;
                 target: "icon_0_0";
@@ -137,6 +167,13 @@ collections {
                 target: "icon_4_2";
                 target: "icon_4_3";
                 transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
+            program {
+                name: "bg_edit_mode_on_ani_done";
+                signal: SIGNAL_EDIT_MODE_ON_ANI_DONE;
+                source: SIGNAL_SOURCE;
+                action: STATE_SET "edit_done" 0.0;
+                target: APPS_APPS_VIEW_BG;
             }
         }
     }
