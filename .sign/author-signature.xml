@@ -4,7 +4,7 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI="bin%2Fhomescreen-efl">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>R/GdPheI6ENeaZXAuFNgLeu4rlXVsKAxbYM6fehbfy0=</DigestValue>
+<DigestValue>eTq3efsJy3ZZoKNlLaZ9YAEzn/s5GNn8Ld3OAWbZ6yw=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fadd_widget_viewer.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -387,9 +387,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-ATS/lBe3U3mDOGWBzlGsQQAthuPohthWdudegnw6d0psxAgmbYMGD/chaeYPmmbVLsFTiopEtmrl
-xE1T8DFjKqG+snMMKQAd82XF2vATSbHAEkHgt2b1kjqw0iaggHNAjK2AedwLL/tH5zFMHt+3GpI5
-6b24fmnPqpQZDqCfoxY=
+d6OHq4Nq3I1jnehuAEg9cUpAahMi3ddhrop/NS3AuN9u7rKnllR3OJRcfkSRlFvodPyPVt2VhuhG
+wCzgAvUvOxODuHCdT0lwoNrJ2GtVRNVHJAYsgv6zofvvRLmJ+d77w9XtMaehYx+1pKv7d/RL5CpB
+OuqHAY2pFA7UkLpXyhE=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

@@ -153,6 +153,8 @@ static void __apps_view_scroll_to_page(int page_idx, bool animation);
 static int __apps_view_get_index(int page_index, int x, int y);
 static void __apps_view__set_icon_label_style(app_data_t *item, view_state_t state);
 
+static void __apps_view_folder_entry_done_cb(void *data, Evas_Object *obj, void *event_info);
+
 Evas_Object *apps_view_create(Evas_Object *win)
 {
     int ret = BADGE_ERROR_NONE;
@@ -211,9 +213,8 @@ void apps_view_show_anim(double pos)
 
     evas_object_color_set(apps_view_s.box, 255, 255, 255, pos*255);
     evas_object_move(apps_view_s.scroller, 0, APPS_VIEW_PADDING_TOP + (APPS_VIEW_ANIMATION_DELTA * (1-pos)));
-    if (pos <= 0.01) {
+    if (pos >= (1.0 - (1e-10))) {
         evas_object_show(apps_view_s.event_block_bg);
-    } else if (pos >= (1.0 - (1e-10))) {
         evas_object_color_set(apps_view_s.box, 255, 255, 255, 255);
         evas_object_move(apps_view_s.scroller, 0, APPS_VIEW_PADDING_TOP);
         edje_object_signal_emit(edje, SIGNAL_APPS_VIEW_SHOW, SIGNAL_SOURCE);
@@ -239,9 +240,8 @@ void apps_view_hide_anim(double pos)
 
     evas_object_color_set(apps_view_s.box, 255, 255, 255, (1-pos)*255);
     evas_object_move(apps_view_s.scroller, 0, APPS_VIEW_PADDING_TOP + (APPS_VIEW_ANIMATION_DELTA * pos));
-    if (pos <= 0.01) {
+    if (pos >= (1.0 - (1e-10))) {
         evas_object_hide(apps_view_s.event_block_bg);
-    } else if (pos >= (1.0 - (1e-10))) {
         evas_object_color_set(apps_view_s.box, 255, 255, 255, 0);
         evas_object_move(apps_view_s.scroller, 0, apps_view_s.height);
         edje_object_signal_emit(edje, SIGNAL_APPS_VIEW_HIDE, SIGNAL_SOURCE);
@@ -1011,8 +1011,15 @@ static void __apps_view_open_folder_popup(app_data_t *item)
     elm_entry_scrollable_set(entry, EINA_TRUE);
     evas_object_show(entry);
 
+    char style_string[STR_MAX] = {0, };
+    snprintf(style_string, sizeof(style_string), "<font_size=40><color=#60606060><align=center>%s</align></color></font_size>", _("IDS_COM_HEADER_UNNAMED_FOLDER"));
+    elm_object_part_text_set(entry, "elm.guide", style_string);
+
     elm_entry_input_panel_return_key_type_set(entry, ELM_INPUT_PANEL_RETURN_KEY_TYPE_DONE);
-    elm_entry_text_style_user_push(entry, "DEFAULT='font=Samsung Condensed:style=Regular align=center color=#4DE7FFFF font_size=40 wrap=none'");
+
+    evas_object_smart_callback_add(entry, "activated", __apps_view_folder_entry_done_cb, entry);
+
+    elm_entry_text_style_user_push(entry, "DEFAULT='font=Tizen:style=Regular align=center color=#4DE7FFFF font_size=40 wrap=none'");
     elm_entry_entry_set(entry, apps_view_s.opened_folder->label_str);
     elm_object_part_content_set(apps_view_s.folder_popup_ly, APPS_FOLDER_TITLE, entry);
 
@@ -1620,4 +1627,10 @@ static void __apps_view__set_icon_label_style(app_data_t *item, view_state_t sta
     int font_size = (state == VIEW_STATE_NORMAL || item->parent_db_id != APPS_ROOT) ? APPS_VIEW_ICON_TEXT_SIZE_NORMAL : APPS_VIEW_ICON_TEXT_SIZE_EDIT;
     snprintf(style_string, sizeof(style_string), "<font_size=%d><color=#%s><shadow_color=#%s>%s</shadow_color></color></font_size>", font_size, text_color, text_shadow_color,item->label_str);
     elm_object_part_text_set(item->app_layout, APPS_ICON_NAME, style_string);
+}
+
+static void __apps_view_folder_entry_done_cb(void *data, Evas_Object *obj, void *event_info)
+{
+    elm_entry_input_panel_hide(obj);
+    elm_object_focus_set(obj, EINA_FALSE);
 }
