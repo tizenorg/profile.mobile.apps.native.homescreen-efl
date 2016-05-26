@@ -88,6 +88,8 @@
 #define SIGNAL_CHOOSER_BUTTON_HIDE "chooser_button_hide"
 
 #define ANIMATION_RESIZE_TIME 0.3
+
+#define SIGNAL_EDIT_MODE_ON_ANI_DONE "edit_on_ani_done"
 #define SIGNAL_SET_BLACK_TEXT "set_black_text"
 #define SIGNAL_EDIT_MODE_ON_ANI "edit_on_ani"
 #define SIGNAL_EDIT_MODE_ON "edit_on"

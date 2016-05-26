@@ -24,11 +24,7 @@ images {
 styles {
     style {
         name: "leaf,font";
-        base: "font=Tizen text_class=T024 font_size=38 align=left color=#AAAAAA color_class=T024 ellipsis=1.0";
-        tag:  "br" "\n";
-        tag:  "hilight" "+ font=Tizen:style=Bold";
-        tag:  "b" "+ font=Tizen:style=Bold";
-        tag:  "tab" "\t";
+        base: "font=Tizen text_class=T024 font_size=38 align=left color=#606060FF color_class=T024 ellipsis=1.0";
     }
 }
 
@@ -56,7 +52,7 @@ collections {
                 mouse_events: 0;
                 description {
                     state: "default" 0.0;
-                    rel1 { relative: 0.044 0.046; to: SIZE_SETTER; }
+                    rel1 { relative: 0.044 0.026; to: SIZE_SETTER; }
                     rel2 { relative: 0.894 0.159; to: SIZE_SETTER; }
                     align: 0.0 0.0;
                     text { style: "leaf,font"; }

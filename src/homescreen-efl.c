@@ -338,13 +338,10 @@ void homescreen_efl_hw_menu_key_release(void)
 void homescreen_efl_hw_home_key_release(void)
 {
     if (main_info.view_type == HOMESCREEN_VIEW_HOME) {
-        if (cluster_view_hw_home_key() == false) {
-            __homescreen_efl_change_view();
-        }
+        cluster_view_hw_home_key();
     } else if (main_info.view_type == HOMESCREEN_VIEW_APPS) {
-        if (apps_view_hw_home_key() == false) {
-            __homescreen_efl_change_view();
-        }
+        apps_view_hw_home_key();
+        __homescreen_efl_change_view();
     }
 }
 

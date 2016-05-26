@@ -40,6 +40,7 @@ static struct {
     Evas_Object *chooser_btn;
     Evas_Object *folder_popup_ly;
     Evas_Object *folder_title_entry;
+    Evas_Object *event_block_bg;
     app_data_t *picked_item;
     int width;
     int height;
@@ -64,6 +65,7 @@ static struct {
     .chooser_btn = NULL,
     .folder_popup_ly = NULL,
     .folder_title_entry = NULL,
+    .event_block_bg = NULL,
     .picked_item = NULL,
     .width = 0,
     .height = 0,
@@ -111,6 +113,8 @@ static void __apps_view_remove_page(void);
 static void __apps_view_fill_apps(void);
 static void __apps_view_icon_clicked_cb(app_data_t *item);
 static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
+static void __apps_view_delete_folder_cb(void *data, Evas_Object *obj, void *event_info);
+static void __apps_view_uninstall_app_cb(void *data, Evas_Object *obj, void *event_info);
 static void __apps_view_icon_check_changed_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 static void __apps_view_create_chooser(void);
 static void __apps_view_chooser_left_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
@@ -207,7 +211,9 @@ void apps_view_show_anim(double pos)
 
     evas_object_color_set(apps_view_s.box, 255, 255, 255, pos*255);
     evas_object_move(apps_view_s.scroller, 0, APPS_VIEW_PADDING_TOP + (APPS_VIEW_ANIMATION_DELTA * (1-pos)));
-    if (pos >= (1.0 - (1e-10))) {
+    if (pos <= 0.01) {
+        evas_object_show(apps_view_s.event_block_bg);
+    } else if (pos >= (1.0 - (1e-10))) {
         evas_object_color_set(apps_view_s.box, 255, 255, 255, 255);
         evas_object_move(apps_view_s.scroller, 0, APPS_VIEW_PADDING_TOP);
         edje_object_signal_emit(edje, SIGNAL_APPS_VIEW_SHOW, SIGNAL_SOURCE);
@@ -233,7 +239,9 @@ void apps_view_hide_anim(double pos)
 
     evas_object_color_set(apps_view_s.box, 255, 255, 255, (1-pos)*255);
     evas_object_move(apps_view_s.scroller, 0, APPS_VIEW_PADDING_TOP + (APPS_VIEW_ANIMATION_DELTA * pos));
-    if (pos >= (1.0 - (1e-10))) {
+    if (pos <= 0.01) {
+        evas_object_hide(apps_view_s.event_block_bg);
+    } else if (pos >= (1.0 - (1e-10))) {
         evas_object_color_set(apps_view_s.box, 255, 255, 255, 0);
         evas_object_move(apps_view_s.scroller, 0, apps_view_s.height);
         edje_object_signal_emit(edje, SIGNAL_APPS_VIEW_HIDE, SIGNAL_SOURCE);
@@ -528,6 +536,13 @@ static void __apps_view_create_base_gui(Evas_Object *win)
     elm_object_part_content_set(apps_view_s.bg, SIZE_SETTER, rect);
     evas_object_show(rect);
 
+    apps_view_s.event_block_bg = evas_object_rectangle_add(homescreen_efl_get_win());
+    evas_object_color_set(apps_view_s.event_block_bg, 0, 0, 0, 0);
+    evas_object_resize(apps_view_s.event_block_bg, apps_view_s.width, CLUSTER_VIEW_H + INDICATOR_H);
+    evas_object_move(apps_view_s.event_block_bg, 0, 0);
+    evas_object_repeat_events_set(apps_view_s.event_block_bg, EINA_FALSE);
+    evas_object_hide(apps_view_s.event_block_bg);
+
     apps_view_s.scroller = elm_scroller_add(win);
     if (!apps_view_s.scroller) {
         LOGE("[FAILED][apps_view_s.scroller==NULL]");
@@ -681,8 +696,6 @@ static void __apps_view_icon_clicked_cb(app_data_t *item)
 static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
     app_data_t *item  = (app_data_t *)data;
-    package_manager_request_h request;
-    int id = 0;
     feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
 
     if (!item) {
@@ -691,28 +704,64 @@ static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *o
 
     LOGD("Uninstall :: %s", item->pkg_str);
     if (item->is_folder) {
-        apps_data_delete_folder(item);
+        Evas_Smart_Cb func[3] = { __apps_view_delete_folder_cb, NULL, NULL };
+        void *data[3] = { item, NULL, NULL };
+        char btn_text[3][STR_MAX] = { "", "", "" };
+        char title_text[STR_MAX] = { "" };
+        char popup_text[STR_MAX] = { "" };
+        snprintf(btn_text[0], sizeof(btn_text[0]), "%s", _("IDS_ST_BUTTON_REMOVE_ABB2"));
+        snprintf(btn_text[1], sizeof(btn_text[1]), "%s", _("IDS_CAM_SK_CANCEL"));
+        snprintf(title_text, sizeof(title_text), "%s", _("IDS_HS_HEADER_REMOVE_FOLDER_ABB"));
+        snprintf(popup_text, sizeof(popup_text), "%s", _("IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"));
+        popup_show(2, func, data, btn_text, title_text, popup_text);
     } else if (item->type >= APPS_DATA_TYPE_APP_SHORTCUT) {
         LOGD("Delete shortcut");
         apps_data_delete_item(item);
     } else {
-        if (package_manager_request_create(&request) != PACKAGE_MANAGER_ERROR_NONE) {
-            LOGE("Could not create unistall request. App: %s", item->pkg_str);
-            return;
-        }
-        int ret = package_manager_request_set_mode(request, PACKAGE_MANAGER_REQUEST_MODE_DEFAULT);
-        if (ret != PACKAGE_MANAGER_ERROR_NONE) {
-            LOGE("Could not set request mode. App: %s", item->pkg_str);
-            return;
-        }
-        if (package_manager_request_uninstall(request, item->pkg_str, &id) != PACKAGE_MANAGER_ERROR_NONE) {
-            LOGE("Could not uninstall application. App: %s", item->pkg_str);
-            return;
-        }
-        if (package_manager_request_destroy(request) != PACKAGE_MANAGER_ERROR_NONE) {
-            LOGE("Could not destroy unistall request. App: %s", item->pkg_str);
-            return;
-        }
+        Evas_Smart_Cb func[3] = { __apps_view_uninstall_app_cb, NULL, NULL };
+        void *data[3] = { item, NULL, NULL };
+        char btn_text[3][STR_MAX] = { "", "", "" };
+        char title_text[STR_MAX] = { "" };
+        char popup_text[STR_MAX] = { "" };
+        snprintf(btn_text[0], sizeof(btn_text[0]), "%s", _("IDS_AT_BODY_UNINSTALL"));
+        snprintf(btn_text[1], sizeof(btn_text[1]), "%s", _("IDS_CAM_SK_CANCEL"));
+        snprintf(title_text, sizeof(title_text), "%s", _("IDS_AT_BODY_UNINSTALL"));
+        snprintf(popup_text, sizeof(popup_text), _("IDS_HS_POP_PS_WILL_BE_UNINSTALLED"), item->label_str);
+        popup_show(2, func, data, btn_text, title_text, popup_text);
+    }
+}
+
+static void __apps_view_delete_folder_cb(void *data, Evas_Object *obj, void *event_info)
+{
+    popup_hide();
+    app_data_t *item  = (app_data_t *)data;
+    apps_data_delete_folder(item);
+}
+
+static void __apps_view_uninstall_app_cb(void *data, Evas_Object *obj, void *event_info)
+{
+    app_data_t *item  = (app_data_t *)data;
+    package_manager_request_h request;
+    int id = 0;
+
+    popup_hide();
+
+    if (package_manager_request_create(&request) != PACKAGE_MANAGER_ERROR_NONE) {
+        LOGE("Could not create unistall request. App: %s", item->pkg_str);
+        return;
+    }
+    int ret = package_manager_request_set_mode(request, PACKAGE_MANAGER_REQUEST_MODE_DEFAULT);
+    if (ret != PACKAGE_MANAGER_ERROR_NONE) {
+        LOGE("Could not set request mode. App: %s", item->pkg_str);
+        return;
+    }
+    if (package_manager_request_uninstall(request, item->pkg_str, &id) != PACKAGE_MANAGER_ERROR_NONE) {
+        LOGE("Could not uninstall application. App: %s", item->pkg_str);
+        return;
+    }
+    if (package_manager_request_destroy(request) != PACKAGE_MANAGER_ERROR_NONE) {
+        LOGE("Could not destroy unistall request. App: %s", item->pkg_str);
+        return;
     }
 }
 
@@ -751,15 +800,13 @@ void apps_view_hw_menu_key(void)
         menu_change_state_on_hw_menu_key(apps_menu_table);
 }
 
-bool apps_view_hw_home_key(void)
+void apps_view_hw_home_key(void)
 {
     if (apps_view_s.opened_folder != NULL) {
         __apps_view_close_folder_popup(apps_view_s.opened_folder);
     }
 
     apps_view_set_state(VIEW_STATE_NORMAL);
-
-    return false;
 }
 
 bool apps_view_hw_back_key(void)
@@ -792,13 +839,8 @@ void apps_view_set_state(view_state_t state)
     if (state == VIEW_STATE_EDIT) {
         homescreen_efl_btn_hide(HOMESCREEN_VIEW_APPS);
 
-        Evas_Object *edje = NULL;
-        edje = elm_layout_edje_get(apps_view_s.bg);
-        if (!edje) {
-            LOGE("Failed to get edje from layout");
-            return;
-        }
-        edje_object_signal_emit(edje, SIGNAL_EDIT_MODE_ON_ANI, SIGNAL_SOURCE);
+        if (apps_view_s.view_state != VIEW_STATE_CHOOSER)
+            elm_object_signal_emit(apps_view_s.bg, SIGNAL_EDIT_MODE_ON_ANI, SIGNAL_SOURCE);
 
         Eina_List *find_list = NULL;
         Evas_Object *page_ly;
@@ -827,14 +869,8 @@ void apps_view_set_state(view_state_t state)
         homescreen_efl_btn_hide(HOMESCREEN_VIEW_APPS);
         elm_win_indicator_mode_set(homescreen_efl_get_win(), ELM_WIN_INDICATOR_HIDE);
 
-        Evas_Object *edje = NULL;
-        edje = elm_layout_edje_get(apps_view_s.bg);
-        if (!edje) {
-            LOGE("Failed to get edje from layout");
-            return;
-        }
-        edje_object_signal_emit(edje, SIGNAL_EDIT_MODE_ON_ANI, SIGNAL_SOURCE);
-
+        if (apps_view_s.view_state != VIEW_STATE_EDIT)
+            elm_object_signal_emit(apps_view_s.bg, SIGNAL_EDIT_MODE_ON_ANI, SIGNAL_SOURCE);
         Eina_List *find_list = NULL;
         Evas_Object *page_ly;
         EINA_LIST_FOREACH(apps_view_s.page_list, find_list, page_ly) {
@@ -851,6 +887,7 @@ void apps_view_set_state(view_state_t state)
                 elm_object_signal_emit(item->app_layout, SIGNAL_UNINSTALL_BUTTON_HIDE_ANI, SIGNAL_SOURCE);
             }
         }
+
         elm_object_signal_emit(apps_view_s.chooser_btn, SIGNAL_CHOOSER_BUTTON_SHOW, SIGNAL_SOURCE);
     } else if (state == VIEW_STATE_NORMAL) {
         homescreen_efl_btn_show(HOMESCREEN_VIEW_APPS);
@@ -1062,8 +1099,7 @@ static void __apps_view_create_chooser(void)
     apps_view_s.chooser_btn = elm_layout_add(homescreen_efl_get_win());
     elm_layout_file_set(apps_view_s.chooser_btn, edj_path, GROUP_APPS_CHOOSER_BTN_LY);
     evas_object_size_hint_weight_set(apps_view_s.chooser_btn, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-    elm_win_resize_object_add(homescreen_efl_get_win(), apps_view_s.chooser_btn);
-
+    evas_object_resize(apps_view_s.chooser_btn, apps_view_s.width, apps_view_s.height);
     evas_object_show(apps_view_s.chooser_btn);
 
     elm_object_signal_callback_add(apps_view_s.chooser_btn, SIGNAL_CHOOSER_LEFT_BTN_CLICKED, SIGNAL_SOURCE, __apps_view_chooser_left_btn_clicked, NULL);
@@ -1080,6 +1116,7 @@ static void __apps_view_chooser_left_btn_clicked(void *data, Evas_Object *obj, c
 static void __apps_view_chooser_right_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
     LOGD("Done button clicked");
+    app_data_t *dest_folder_item = apps_view_s.dest_folder;
     Eina_List *find_list;
     app_data_t *item = NULL;
     EINA_LIST_FOREACH(apps_view_s.selected_items, find_list, item) {
@@ -1101,6 +1138,7 @@ static void __apps_view_chooser_right_btn_clicked(void *data, Evas_Object *obj, 
     }
     //apps_view_update_folder_icon(apps_view_s.dest_folder);
     apps_view_set_state(VIEW_STATE_NORMAL);
+    __apps_view_open_folder_popup(dest_folder_item);
 }
 
 static void __apps_view_update_chooser_text(int item_count)
@@ -1420,10 +1458,6 @@ static void __apps_view_edit_pick_up_icon(void *data)
 
 static void __apps_view_edit_drag_icon(void *data)
 {
-    int page_x, page_y;
-    int bg_x, bg_y, bg_w, bg_h;
-    int widget_x, widget_y;
-
     if (!apps_view_s.picked_item)
         return ;
 
@@ -1464,7 +1498,6 @@ static void __apps_view_edit_drag_icon(void *data)
         if (apps_view_s.picked_item->parent_db_id == APPS_ROOT) {
             int index = __apps_view_get_index(apps_view_s.current_page, apps_mouse_info.move_x - apps_mouse_info.offset_x,
                     apps_mouse_info.move_y - apps_mouse_info.offset_y);
-            LOGD("ttt index = %d", index);
             if(apps_view_s.candidate_folder == NULL ||
                     apps_view_s.candidate_folder->position != index) {
                 if (apps_view_s.candidate_folder)
@@ -1475,7 +1508,6 @@ static void __apps_view_edit_drag_icon(void *data)
                 }
             }
             if (apps_view_s.candidate_folder) {
-                LOGD("ttt this is folder");
                 elm_object_signal_emit(apps_view_s.candidate_folder->folder_layout, SIGNAL_FRAME_POSSIBLE_SHOW, SIGNAL_SOURCE);
             }
         }
@@ -1508,8 +1540,6 @@ static void __apps_view_edit_drop_icon(void *data)
             char str[1024];
             sprintf(str, _("IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"), APPS_FOLDER_MAX_ITEM);
             toast_show(str);
-            apps_view_icon_set(item);
-            return ;
         } else {
             item->parent_db_id = apps_view_s.candidate_folder->db_id;
             apps_db_update(apps_view_s.picked_item);

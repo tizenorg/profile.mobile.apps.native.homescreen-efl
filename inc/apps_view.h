@@ -40,7 +40,7 @@ void apps_view_icon_unset(app_data_t *item);
 void apps_view_icon_add(app_data_t *item);
 
 void apps_view_hw_menu_key(void);
-bool apps_view_hw_home_key(void);
+void apps_view_hw_home_key(void);
 bool apps_view_hw_back_key(void);
 view_state_t apps_view_get_state(void);
 void apps_view_set_state(view_state_t state);

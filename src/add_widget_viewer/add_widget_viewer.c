@@ -156,7 +156,7 @@ static Evas_Object *__add_widget_viewer_create_conformant(void)
 static Evas_Object *__add_widget_viewer_create_layout()
 {
     Evas_Object *layout;
-    char edj_path[STR_MAX] = {0, };
+    char edj_path[STR_PATH_LEN] = {0, };
 
     if (!add_widget_viewer_s.conformant) {
         return NULL;
@@ -374,8 +374,11 @@ static char *__add_widget_viewer_list_text_get_cb(void *data, Evas_Object *obj, 
     if (!widget || !part)
         return NULL;
 
-    if (!strcmp(part, "elm.text"))
-        return strdup(widget->label);
+    if (!strcmp(part, "elm.text")) {
+        char style_string[STR_MAX] = {0, };
+        snprintf(style_string, sizeof(style_string), "<font_size=%d>%s</font_size>", (int)CLUSTER_ADDVIEWER_TEXT_SIZE, widget->label);
+        return strdup(style_string);
+    }
 
     return strdup("widget name not found");
 }

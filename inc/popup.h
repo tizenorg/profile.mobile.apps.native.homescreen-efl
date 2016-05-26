@@ -17,14 +17,10 @@
 #ifndef __POPUP_H__
 #define __POPUP_H__
 
-typedef enum {
-    POPUP_DEFAULT = -1,
-    POPUP_CLUSTER_PAGE_FULL = 0,
-    POPUP_CLUSTER_DELETE_PAGE,
-    POPUP_MAX
-} popup_t;
+#include "conf.h"
 
-void popup_show(popup_t type, int btn_count, Evas_Smart_Cb btn_func[3], void *func_data[3]);
+void popup_show(int btn_count, Evas_Smart_Cb btn_func[3], void *func_data[3],
+        const char (*btn_text)[STR_MAX], const char *title_text, const char *popup_text);
 void popup_hide(void);
 bool popup_is_show(void);
 

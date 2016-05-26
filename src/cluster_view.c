@@ -324,7 +324,7 @@ void cluster_view_hw_menu_key(void)
         menu_change_state_on_hw_menu_key(cluster_menu_table);
 }
 
-bool cluster_view_hw_home_key(void)
+void cluster_view_hw_home_key(void)
 {
     if (cluster_view_s.view_state == VIEW_STATE_NORMAL) {
         __cluster_view_scroll_to_home();
@@ -335,8 +335,6 @@ bool cluster_view_hw_home_key(void)
     } else if (cluster_view_s.view_state == VIEW_STATE_ALL_PAGE) {
         cluster_view_set_state(VIEW_STATE_NORMAL);
     }
-
-    return true;
 }
 
 bool cluster_view_hw_back_key(void)
@@ -478,7 +476,13 @@ bool cluster_view_add_widget(widget_data_t *item, bool scroll)
 
                 Evas_Smart_Cb func[3] = { NULL, NULL, NULL };
                 void *data[3] = { NULL, NULL, NULL };
-                popup_show(POPUP_CLUSTER_PAGE_FULL, 1, func, data);
+                char btn_text[3][STR_MAX] = { "", "", "" };
+                char title_text[STR_MAX] = { "" };
+                char popup_text[STR_MAX] = { "" };
+                snprintf(btn_text[0], sizeof(btn_text[0]), "%s", _("IDS_CAM_SK_OK"));
+                snprintf(title_text, sizeof(title_text), "%s", _("IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"));
+                snprintf(popup_text, sizeof(popup_text), "%s", _("IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"));
+                popup_show(1, func, data, btn_text, title_text, popup_text);
                 return false;
             } else {
                 cluster_page_t *page_t = __cluster_view_page_new();
@@ -766,7 +770,14 @@ static void __cluster_view_allpage_delete_clicked(void *data, Evas_Object *obj, 
     if (eina_list_count(page_item->widget_list) > 0) {
         Evas_Smart_Cb func[3] = { __cluster_view_allpage_delete_page_cb, NULL, NULL };
         void *data[3] = { page_item, NULL, NULL };
-        popup_show(POPUP_CLUSTER_DELETE_PAGE, 2, func, data);
+        char btn_text[3][STR_MAX] = { "", "", "" };
+        char title_text[STR_MAX] = { "" };
+        char popup_text[STR_MAX] = { "" };
+        snprintf(btn_text[0], sizeof(btn_text[0]), "%s", _("IDS_HS_OPT_DELETE"));
+        snprintf(btn_text[1], sizeof(btn_text[1]), "%s", _("IDS_CAM_SK_CANCEL"));
+        snprintf(title_text, sizeof(title_text), "%s", _("IDS_HS_HEADER_DELETE_PAGE_ABB2"));
+        snprintf(popup_text, sizeof(popup_text), "%s", _("IDS_HS_POP_THIS_PAGE_AND_ALL_THE_ITEMS_IT_CONTAINS_WILL_BE_DELETED"));
+        popup_show(2, func, data, btn_text, title_text, popup_text);
     } else {
         __cluster_view_allpage_delete_page_cb(page_item, NULL, NULL);
     }
