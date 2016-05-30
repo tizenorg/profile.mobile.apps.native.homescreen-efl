@@ -571,9 +571,12 @@ static void __add_widget_viewer_preview_clicked_cb(void *data, Evas_Object *obj,
         return;
     }
 
-    cluster_data_insert_widget(widget->widget_id, widget->widget_id, *size);
-
+    int type = *size;
     free(size);
+    char *widget_id = strdup(widget->widget_id);
 
     cluster_view_set_state(VIEW_STATE_NORMAL);
+
+    cluster_data_insert_widget(widget_id, widget_id, type);
+    free(widget_id);
 }

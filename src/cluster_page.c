@@ -147,6 +147,39 @@ bool cluster_page_check_empty_space(cluster_page_t *page, widget_size_type_e typ
     return false;
 }
 
+void cluster_page_check_empty_space_pos(cluster_page_t *page, widget_data_t *item, int *out_x, int *out_y)
+{
+    int x, y;
+    *out_x = INIT_VALUE;
+    *out_y = INIT_VALUE;
+
+    int gx, gy, w, h;
+    evas_object_geometry_get(page->grid, &gx, &gy, &w, &h);
+    if (cluster_page_check_empty_space(page, item->type, item->pos_x, item->pos_y, &x, &y)) {
+        *out_x = gx + x * (w / CLUSTER_COL);
+        *out_y = gy + y * (h / CLUSTER_ROW);
+    } else if (cluster_page_check_empty_space(page, item->type, INIT_VALUE, INIT_VALUE, &x, &y)) {
+        *out_x = gx + x * (w / CLUSTER_COL);
+        *out_y = gy + y * (h / CLUSTER_ROW);
+    } else {
+        *out_x = gx + item->pos_x * (w / CLUSTER_COL);
+        *out_y = gy + item->pos_y * (h / CLUSTER_ROW);
+    }
+}
+
+void cluster_page_get_highlight_xy(cluster_page_t *page, int *x, int *y)
+{
+    int gx, gy, w, h;
+    evas_object_geometry_get(page->grid, &gx, &gy, &w, &h);
+    if (page->highlight_pos_x == INIT_VALUE || page->highlight_pos_y == INIT_VALUE) {
+        *x = INIT_VALUE;
+        *y = INIT_VALUE;
+    } else {
+        *x = gx + page->highlight_pos_x * (w / CLUSTER_COL);
+        *y = gy + page->highlight_pos_y * (h / CLUSTER_ROW);
+    }
+}
+
 void __cluster_page_set(cluster_page_t *page, widget_data_t *item)
 {
     int w, h;
@@ -194,6 +227,8 @@ void cluster_page_drag_cancel(cluster_page_t *page)
     if (page->highlight) {
         evas_object_del(page->highlight);
         page->highlight = NULL;
+        page->highlight_pos_x = INIT_VALUE;
+        page->highlight_pos_y = INIT_VALUE;
     }
 }
 
@@ -232,8 +267,18 @@ void cluster_page_drag_widget(cluster_page_t *page, widget_size_type_e type, int
 
 bool cluster_page_drop_widget(cluster_page_t *page, widget_data_t *widget)
 {
-    if (!page->highlight || page->highlight_pos_x == INIT_VALUE || page->highlight_pos_y == INIT_VALUE)
+    if (!page->highlight || page->highlight_pos_x == INIT_VALUE || page->highlight_pos_y == INIT_VALUE) {
+        int x, y;
+        if (cluster_page_check_empty_space(page, widget->type, widget->pos_x, widget->pos_y, &x, &y) ||
+                cluster_page_check_empty_space(page, widget->type, INIT_VALUE, INIT_VALUE, &x, &y)) {
+            widget->page_idx = page->page_index;
+            widget->pos_x = x;
+            widget->pos_y = y;
+            __cluster_page_set(page, widget);
+            return true;
+        }
         return false;
+    }
 
     elm_grid_unpack(page->grid, page->highlight);
     evas_object_del(page->highlight);
@@ -243,6 +288,9 @@ bool cluster_page_drop_widget(cluster_page_t *page, widget_data_t *widget)
     widget->pos_x = page->highlight_pos_x;
     widget->pos_y = page->highlight_pos_y;
     __cluster_page_set(page, widget);
+
+    page->highlight_pos_x = INIT_VALUE;
+    page->highlight_pos_y = INIT_VALUE;
     return true;
 }
 

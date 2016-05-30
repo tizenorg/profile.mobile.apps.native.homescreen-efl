@@ -29,7 +29,7 @@ static struct {
     .data_list = NULL
 };
 
-void __apps_data_print(Eina_List *list);
+static void __apps_data_print(Eina_List *list);
 static int __apps_data_sort_cb(const void *a , const void *b);
 static void __apps_data_item_free(app_data_t *item);
 app_data_t *__apps_data_find_item(int db_id);
@@ -359,7 +359,7 @@ static void __apps_data_item_free(app_data_t *item)
         free(item);
 }
 
-void __apps_data_print(Eina_List *list)
+static void __apps_data_print(Eina_List *list)
 {
     app_data_t *item = NULL;
     Eina_List *find_list;
@@ -369,4 +369,16 @@ void __apps_data_print(Eina_List *list)
             LOGD("%d [pkg: %s][name:%s][iconPath: %s][icon:%p]", item->position, item->pkg_str, item->label_str, item->icon_path_str, item->app_layout);
     }
     LOGD("========================================");
+}
+
+int apps_data_get_folder_item_count(app_data_t *folder)
+{
+    int cnt = 0;
+    app_data_t *item = NULL;
+    Eina_List *find_list;
+    EINA_LIST_FOREACH(apps_data_s.data_list, find_list, item) {
+        if (item->parent_db_id == folder->db_id)
+            cnt += 1;
+    }
+    return cnt;
 }

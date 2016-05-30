@@ -50,7 +50,7 @@ static struct {
     .root_width = 0,
     .root_height = 0,
     .view_type = HOMESCREEN_VIEW_HOME,
-    .animator = NULL
+    .animator = NULL,
 };
 
 static void __homescreen_efl_get_window_size(Evas_Object *win);
@@ -340,8 +340,8 @@ void homescreen_efl_hw_home_key_release(void)
     if (main_info.view_type == HOMESCREEN_VIEW_HOME) {
         cluster_view_hw_home_key();
     } else if (main_info.view_type == HOMESCREEN_VIEW_APPS) {
-        apps_view_hw_home_key();
-        __homescreen_efl_change_view();
+        if (apps_view_hw_home_key() == false)
+            __homescreen_efl_change_view();
     }
 }
 

@@ -31,10 +31,10 @@ void cluster_view_show_anim(double pos);
 void cluster_view_hide_anim(double pos);
 
 void cluster_view_hw_menu_key(void);
-void cluster_view_hw_home_key(void);
+bool cluster_view_hw_home_key(void);
 bool cluster_view_hw_back_key(void);
 view_state_t cluster_view_get_state(void);
-void cluster_view_set_state(view_state_t state);
+bool cluster_view_set_state(view_state_t state);
 void cluster_view_delete_widget(widget_data_t *item);
 bool cluster_view_add_widget(widget_data_t *item, bool scroll);
 

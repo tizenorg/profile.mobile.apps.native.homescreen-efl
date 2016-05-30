@@ -79,6 +79,7 @@ extern int __conf_get_window_w();
 #define CLUSTER_COL 4
 #define CLUSTER_HOME_PAGE 0
 #define CLUSTER_MAX_PAGE 6
+#define CLUSTER_VIEW_ALLPAGE_MOVE_GAP 10000
 
 #define PAGE_INDICATOR_PADDING_BOTTON ((16) * (__conf_get_resolution_scale_h()))
 #define PAGE_INDICATOR_H ((76) * (__conf_get_resolution_scale_h()))

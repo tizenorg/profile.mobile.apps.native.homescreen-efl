@@ -704,16 +704,20 @@ static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *o
 
     LOGD("Uninstall :: %s", item->pkg_str);
     if (item->is_folder) {
-        Evas_Smart_Cb func[3] = { __apps_view_delete_folder_cb, NULL, NULL };
-        void *data[3] = { item, NULL, NULL };
-        char btn_text[3][STR_MAX] = { "", "", "" };
-        char title_text[STR_MAX] = { "" };
-        char popup_text[STR_MAX] = { "" };
-        snprintf(btn_text[0], sizeof(btn_text[0]), "%s", _("IDS_ST_BUTTON_REMOVE_ABB2"));
-        snprintf(btn_text[1], sizeof(btn_text[1]), "%s", _("IDS_CAM_SK_CANCEL"));
-        snprintf(title_text, sizeof(title_text), "%s", _("IDS_HS_HEADER_REMOVE_FOLDER_ABB"));
-        snprintf(popup_text, sizeof(popup_text), "%s", _("IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"));
-        popup_show(2, func, data, btn_text, title_text, popup_text);
+        if (apps_data_get_folder_item_count(item) > 0) {
+            Evas_Smart_Cb func[3] = { __apps_view_delete_folder_cb, NULL, NULL };
+            void *data[3] = { item, NULL, NULL };
+            char btn_text[3][STR_MAX] = { "", "", "" };
+            char title_text[STR_MAX] = { "" };
+            char popup_text[STR_MAX] = { "" };
+            snprintf(btn_text[0], sizeof(btn_text[0]), "%s", _("IDS_ST_BUTTON_REMOVE_ABB2"));
+            snprintf(btn_text[1], sizeof(btn_text[1]), "%s", _("IDS_CAM_SK_CANCEL"));
+            snprintf(title_text, sizeof(title_text), "%s", _("IDS_HS_HEADER_REMOVE_FOLDER_ABB"));
+            snprintf(popup_text, sizeof(popup_text), "%s", _("IDS_HS_BODY_FOLDER_WILL_BE_REMOVED_APPLICATIONS_IN_THIS_FOLDER_WILL_NOT_BE_UNINSTALLED"));
+            popup_show(2, func, data, btn_text, title_text, popup_text);
+        } else {
+            apps_data_delete_folder(item);
+        }
     } else if (item->type >= APPS_DATA_TYPE_APP_SHORTCUT) {
         LOGD("Delete shortcut");
         apps_data_delete_item(item);
@@ -800,13 +804,15 @@ void apps_view_hw_menu_key(void)
         menu_change_state_on_hw_menu_key(apps_menu_table);
 }
 
-void apps_view_hw_home_key(void)
+bool apps_view_hw_home_key(void)
 {
     if (apps_view_s.opened_folder != NULL) {
         __apps_view_close_folder_popup(apps_view_s.opened_folder);
     }
 
     apps_view_set_state(VIEW_STATE_NORMAL);
+
+    return false;
 }
 
 bool apps_view_hw_back_key(void)
@@ -994,6 +1000,11 @@ void apps_view_icon_add(app_data_t *item)
 
 static void __apps_view_open_folder_popup(app_data_t *item)
 {
+    if (apps_view_s.animator != NULL) {
+        LOGE("apps_view_s.animator != NULL");
+        return ;
+    }
+
     char edj_path[PATH_MAX] = {0, };
     snprintf(edj_path, sizeof(edj_path), "%s", util_get_res_file_path(EDJE_DIR"/apps_folder_popup.edj"));
 
@@ -1061,8 +1072,12 @@ static Eina_Bool __apps_view_hide_folder_anim(void *data, double pos)
 
 static void __apps_view_close_folder_popup(app_data_t *item)
 {
-    if (apps_view_s.animator == NULL)
-        apps_view_s.animator = ecore_animator_timeline_add(HOME_FOLDR_ANIMATION_TIME, __apps_view_hide_folder_anim, NULL);
+    if (apps_view_s.animator != NULL) {
+        LOGE("apps_view_s.animator != NULL");
+        return ;
+    }
+
+    apps_view_s.animator = ecore_animator_timeline_add(HOME_FOLDR_ANIMATION_TIME, __apps_view_hide_folder_anim, NULL);
 }
 
 static void __apps_view_close_folder_popup_done(void)

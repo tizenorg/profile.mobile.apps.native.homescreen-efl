@@ -46,6 +46,11 @@ static struct {
     widget_data_t *picked_widget;
     Ecore_Timer *edit_mode_scroll_timer;
     bool is_srolling;
+    Ecore_Animator *edit_animator;
+    int animation_from_x;
+    int animation_from_y;
+    int animation_to_x;
+    int animation_to_y;
 } cluster_view_s = {
     .scroller = NULL,
     .box = NULL,
@@ -61,6 +66,11 @@ static struct {
     .picked_widget = NULL,
     .edit_mode_scroll_timer = NULL,
     .is_srolling = false,
+    .edit_animator = NULL,
+    .animation_from_x = INIT_VALUE,
+    .animation_from_y = INIT_VALUE,
+    .animation_to_x = INIT_VALUE,
+    .animation_to_y = INIT_VALUE,
 };
 
 static int cluster_menu_list[4] = {
@@ -128,10 +138,12 @@ static Eina_Bool __cluster_view_widget_long_press_time_cb(void *data);
 static void __cluster_view_edit_pick_up_widget(void *data);
 static void __cluster_view_edit_drag_widget(void *data);
 static void __cluster_view_edit_drop_widget(void *data);
-
+static Eina_Bool __cluster_view_edit_move_anim(void *data, double pos);
+static void __cluster_view_edit_move_anim_done(void *data);
 
 static Eina_Bool __cluster_view_scroll_timer_cb(void *data);
 
+static void __cluster_view_scroll_anim_start_cb(void *data, Evas_Object *obj, void *event_info);
 static void __cluster_view_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info);
 static void __cluster_view_allpage_get_page_pos(int page_idx, int *w, int *h);
 static int __cluster_view_allpage_get_page_index(int x, int y);
@@ -218,6 +230,7 @@ Evas_Object *__cluster_view_create_base_gui(Evas_Object *win)
     evas_object_event_callback_add(cluster_view_s.scroller, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_scroller_up_cb, NULL);
 
     evas_object_smart_callback_add(cluster_view_s.scroller, "scroll,anim,stop", __cluster_view_scroll_anim_stop_cb, NULL);
+    evas_object_smart_callback_add(cluster_view_s.scroller, "scroll,anim,start", __cluster_view_scroll_anim_start_cb, NULL);
 
     cluster_view_s.box = elm_box_add(cluster_view_s.scroller);
     elm_box_horizontal_set(cluster_view_s.box, EINA_TRUE);
@@ -324,7 +337,7 @@ void cluster_view_hw_menu_key(void)
         menu_change_state_on_hw_menu_key(cluster_menu_table);
 }
 
-void cluster_view_hw_home_key(void)
+bool cluster_view_hw_home_key(void)
 {
     if (cluster_view_s.view_state == VIEW_STATE_NORMAL) {
         __cluster_view_scroll_to_home();
@@ -335,13 +348,13 @@ void cluster_view_hw_home_key(void)
     } else if (cluster_view_s.view_state == VIEW_STATE_ALL_PAGE) {
         cluster_view_set_state(VIEW_STATE_NORMAL);
     }
+
+    return false;
 }
 
 bool cluster_view_hw_back_key(void)
 {
-    if (cluster_view_s.view_state == VIEW_STATE_NORMAL) {
-        return true;
-    } else if (cluster_view_s.view_state == VIEW_STATE_EDIT) {
+    if (cluster_view_s.view_state == VIEW_STATE_EDIT) {
         cluster_view_set_state(VIEW_STATE_NORMAL);
     } else if (cluster_view_s.view_state == VIEW_STATE_ADD_VIEWER) {
         cluster_view_set_state(VIEW_STATE_NORMAL);
@@ -357,8 +370,19 @@ view_state_t cluster_view_get_state(void)
     return cluster_view_s.view_state;
 }
 
-void cluster_view_set_state(view_state_t state)
+bool cluster_view_set_state(view_state_t state)
 {
+    if (cluster_view_s.is_srolling) {
+        LOGE("cannot change view-state");
+        return false;
+    }
+
+    if (cluster_view_s.edit_animator) {
+        ecore_animator_del(cluster_view_s.edit_animator);
+        cluster_view_s.edit_animator = NULL;
+        __cluster_view_edit_move_anim_done(cluster_view_s.picked_widget);
+    }
+
     if (state == VIEW_STATE_EDIT) {
         homescreen_efl_btn_hide(HOMESCREEN_VIEW_HOME);
 
@@ -413,6 +437,7 @@ void cluster_view_set_state(view_state_t state)
             Eina_List *find_list = NULL;
 
             cluster_page_t *page_item = NULL;
+            elm_box_unpack_all(cluster_view_s.box);
             EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
                 if (page_item->page_layout) {
                     elm_box_pack_end(cluster_view_s.box, page_item->page_layout);
@@ -435,6 +460,8 @@ void cluster_view_set_state(view_state_t state)
     }
 
     cluster_view_s.view_state = state;
+
+    return true;
 }
 
 bool cluster_view_add_widget(widget_data_t *item, bool scroll)
@@ -454,7 +481,7 @@ bool cluster_view_add_widget(widget_data_t *item, bool scroll)
     cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, page_idx);
     set_on = cluster_page_set_widget(page, item);
 
-    if (!set_on && !cluster_page_set_widget(page, item)) {
+    if (!set_on) {
         Eina_List *find_list = NULL;
         cluster_page_t *page_item = NULL;
         bool set_on = false;
@@ -532,7 +559,6 @@ static void __cluster_view_scroll_to_home(void)
 static void __cluster_view_scroll_to_page(int page_idx, bool animation)
 {
     if (animation) {
-        cluster_view_s.is_srolling = true;
         elm_scroller_page_bring_in(cluster_view_s.scroller, page_idx, 0);
     } else {
         page_indicator_set_current_page(cluster_view_s.indicator, page_idx);
@@ -677,27 +703,31 @@ static void __cluster_view_allpage_get_page_pos(int page_idx, int *w, int *h)
 
 static int __cluster_view_allpage_get_page_index(int x, int y)
 {
-    double row, col;
-    int int_row, int_col;
-    int start_y = 0;
-    int index = 0;
+    int idx = 0;
+    int sx = CLUSTER_ALL_PAGE_PADDING_SIDE;
+    int sy = 0;
     if (cluster_view_s.page_count < 2) {
-        start_y = (WINDOW_H - CLUSTER_ALL_PAGE_H) / 2;
+        sy = (WINDOW_H - CLUSTER_ALL_PAGE_H) / 2;
     } else if (cluster_view_s.page_count < 4) {
-        start_y = (WINDOW_H - (CLUSTER_ALL_PAGE_H * 2 + CLUSTER_ALL_PAGE_GAP_H)) / 2;
+        sy = (WINDOW_H - (CLUSTER_ALL_PAGE_H * 2 + CLUSTER_ALL_PAGE_GAP_H)) / 2;
     } else {
-        start_y = (WINDOW_H - (CLUSTER_ALL_PAGE_H * 3 + CLUSTER_ALL_PAGE_GAP_H * 2)) / 2;
+        sy = (WINDOW_H - (CLUSTER_ALL_PAGE_H * 3 + CLUSTER_ALL_PAGE_GAP_H * 2)) / 2;
     }
-    col = (double)(x - CLUSTER_ALL_PAGE_PADDING_SIDE) / (CLUSTER_ALL_PAGE_W + CLUSTER_ALL_PAGE_GAP_W);
-    int_col = (int)(col + 0.5);
-    row = (double)(y - start_y)/(CLUSTER_ALL_PAGE_H + CLUSTER_ALL_PAGE_GAP_H);
-    int_row = (int)(row + 0.5);
+    int w = CLUSTER_ALL_PAGE_W + CLUSTER_ALL_PAGE_GAP_W;
+    int h = CLUSTER_ALL_PAGE_H + CLUSTER_ALL_PAGE_GAP_H;
 
-    if (((int_col - ALLPAGE_MOVE_GAP) < col && (int_col + ALLPAGE_MOVE_GAP) > col) &&
-            ((int_row - ALLPAGE_MOVE_GAP) < row && (int_row + ALLPAGE_MOVE_GAP) > row)) {
-        index = int_row * 2 + int_col;
-        return index;
+    for (idx=0; idx < cluster_view_s.page_count; idx++) {
+        int row = idx / 2;
+        int col = idx % 2;
+        int ny = sy + (row * h);
+        int nx = sx + (col * w);
+
+        int d = (ny - y) * (ny - y) + (nx - x) * (nx - x);
+        if (d < CLUSTER_VIEW_ALLPAGE_MOVE_GAP) {
+            return (row * 2) + col;
+        }
     }
+
     return INIT_VALUE;
 }
 
@@ -766,6 +796,9 @@ static void __cluster_view_page_delete(cluster_page_t *page)
 
 static void __cluster_view_allpage_delete_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
 {
+    if (cluster_view_s.page_count <= 1)
+        return ;
+
     cluster_page_t *page_item = (cluster_page_t *)data;
     if (eina_list_count(page_item->widget_list) > 0) {
         Evas_Smart_Cb func[3] = { __cluster_view_allpage_delete_page_cb, NULL, NULL };
@@ -1033,7 +1066,8 @@ static void __cluster_view_allpage_pick_up_page(void *data)
 static void __cluster_view_allpage_drop_page(void *data)
 {
     if (cluster_view_s.picked_page) {
-        elm_object_signal_emit(cluster_view_s.picked_page->thumbnail_ly, SIGNAL_ALLPAGE_DELETE_BUTTON_SHOW, SIGNAL_SOURCE);
+        if (cluster_view_s.page_count > 1)
+            elm_object_signal_emit(cluster_view_s.picked_page->thumbnail_ly, SIGNAL_ALLPAGE_DELETE_BUTTON_SHOW, SIGNAL_SOURCE);
         elm_object_signal_emit(cluster_view_s.picked_page->thumbnail_ly, SIGNAL_ALLPAGE_DRAG_BG_HIDE, SIGNAL_SOURCE);
 
         int x, y;
@@ -1043,12 +1077,27 @@ static void __cluster_view_allpage_drop_page(void *data)
     }
     cluster_view_s.page_list = eina_list_sort(cluster_view_s.page_list,
             eina_list_count(cluster_view_s.page_list), __cluster_view_page_sort_cb);
+
+    Eina_List *find_list = NULL, *widget_list = NULL;
+    cluster_page_t *page_item = NULL;
+    widget_data_t *widget_item = NULL;
+    EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
+        EINA_LIST_FOREACH(page_item->widget_list, widget_list, widget_item) {
+            widget_item->page_idx = page_item->page_index;
+            cluster_data_update(widget_item);
+        }
+    }
 }
 
 static void __clsuter_view_widget_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
     Evas_Event_Mouse_Down* ev = event_info;
     LOGD("DOWN: (%d,%d)", ev->output.x, ev->output.y);
+
+    if (cluster_view_s.edit_animator) {
+        LOGE("edit animator is running");
+        return ;
+    }
 
     cluster_mouse_info.pressed = true;
     cluster_mouse_info.pressed_obj = obj;
@@ -1093,8 +1142,6 @@ static void __clsuter_view_widget_up_cb(void *data, Evas *e, Evas_Object *obj, v
 
     if (cluster_view_s.picked_widget) {
         __cluster_view_edit_drop_widget(data);
-
-        cluster_view_s.picked_widget = NULL;
     }
 }
 
@@ -1228,20 +1275,63 @@ static void __cluster_view_edit_drag_widget(void *data)
 
 static void __cluster_view_edit_drop_widget(void *data)
 {
-    Evas_Object *widget_layout = cluster_view_s.picked_widget->widget_layout;
-    elm_object_signal_emit(widget_layout, SIGNAL_DELETE_BUTTON_SHOW_ANI, SIGNAL_SOURCE);
-    elm_object_signal_emit(widget_layout, SIGNAL_CLUSTER_EDIT_STATE, SIGNAL_SOURCE);
-
     if (cluster_view_s.edit_mode_scroll_timer) {
         ecore_timer_del(cluster_view_s.edit_mode_scroll_timer);
         cluster_view_s.edit_mode_scroll_timer = NULL;
     }
 
+    if (cluster_view_s.edit_animator) {
+        ecore_animator_del(cluster_view_s.edit_animator);
+        cluster_view_s.edit_animator = NULL;
+    }
+
+    int to_x, to_y;
+    cluster_view_s.animation_from_x = cluster_mouse_info.move_x - cluster_mouse_info.offset_x;
+    cluster_view_s.animation_from_y = cluster_mouse_info.move_y - cluster_mouse_info.offset_y;
+
+    cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, cluster_view_s.current_page);
+    cluster_page_get_highlight_xy(page, &to_x, &to_y);
+    if (to_x == INIT_VALUE || to_y == INIT_VALUE) {
+        cluster_page_check_empty_space_pos(page, cluster_view_s.picked_widget, &to_x, &to_y);
+    }
+
+    cluster_view_s.animation_to_x = to_x;
+    cluster_view_s.animation_to_y = to_y;
+
+    cluster_view_s.edit_animator = ecore_animator_timeline_add(HOME_ANIMATION_TIME, __cluster_view_edit_move_anim, NULL);
+}
+static Eina_Bool __cluster_view_edit_move_anim(void *data, double pos)
+{
+    evas_object_move(cluster_view_s.picked_widget->widget_layout,
+            (cluster_view_s.animation_to_x - cluster_view_s.animation_from_x) * pos + cluster_view_s.animation_from_x,
+            (cluster_view_s.animation_to_y - cluster_view_s.animation_from_y) * pos + cluster_view_s.animation_from_y);
+
+    if (pos >= 1.0 - (1e-10)) {
+        __cluster_view_edit_move_anim_done(data);
+
+        cluster_view_s.edit_animator = NULL;
+        return ECORE_CALLBACK_DONE;
+    }
+
+    return ECORE_CALLBACK_RENEW;
+}
+
+static void __cluster_view_edit_move_anim_done(void *data)
+{
+    Evas_Object *widget_layout = cluster_view_s.picked_widget->widget_layout;
+    elm_object_signal_emit(widget_layout, SIGNAL_DELETE_BUTTON_SHOW_ANI, SIGNAL_SOURCE);
+    elm_object_signal_emit(widget_layout, SIGNAL_CLUSTER_EDIT_STATE, SIGNAL_SOURCE);
+
     cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, cluster_view_s.current_page);
 
     if (!cluster_page_drop_widget(page, cluster_view_s.picked_widget)) {
-        cluster_view_add_widget(cluster_view_s.picked_widget, false);
+        cluster_view_s.current_page = cluster_view_s.picked_widget->page_idx;
+        __cluster_view_scroll_to_page(cluster_view_s.current_page, true);
+
+        cluster_view_add_widget(cluster_view_s.picked_widget, true);
     }
+
+    cluster_view_s.picked_widget = NULL;
 }
 
 static void __clsuter_view_scroller_down_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
@@ -1250,6 +1340,11 @@ static void __clsuter_view_scroller_down_cb(void *data, Evas *e, Evas_Object *ob
 
     if (cluster_view_s.view_state != VIEW_STATE_NORMAL)
         return ;
+
+    if (cluster_view_s.edit_animator) {
+        LOGE("edit animator is running");
+        return ;
+    }
 
     LOGD("DOWN: (%d,%d)", ev->output.x, ev->output.y);
 
@@ -1328,6 +1423,10 @@ static Eina_Bool __cluster_view_scroller_long_press_time_cb(void *data)
 
     return ECORE_CALLBACK_CANCEL;
 }
+static void __cluster_view_scroll_anim_start_cb(void *data, Evas_Object *obj, void *event_info)
+{
+    cluster_view_s.is_srolling = true;
+}
 
 static void __cluster_view_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info)
 {
@@ -1353,4 +1452,3 @@ static Eina_Bool __cluster_view_scroll_timer_cb(void *data)
     __cluster_view_scroll_to_page(next_page_idx, true);
     return ECORE_CALLBACK_RENEW;
 }
-

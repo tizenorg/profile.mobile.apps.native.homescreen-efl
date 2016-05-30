@@ -42,9 +42,11 @@ bool cluster_page_set_widget(cluster_page_t *page, widget_data_t *item);
 bool cluster_page_unset(cluster_page_t *page, widget_data_t *item);
 bool cluster_page_check_empty_space(cluster_page_t *page, widget_size_type_e type,
         int pos_x, int pos_y, int *empty_x, int *empty_y);
+void cluster_page_check_empty_space_pos(cluster_page_t *page, widget_data_t *item, int *out_x, int *out_y);
 Evas_Object *cluster_page_thumbnail(cluster_page_t *page);
 void cluster_page_drag_cancel(cluster_page_t *page);
 void cluster_page_drag_widget(cluster_page_t *page, widget_size_type_e type, int pos_x, int pos_y);
 bool cluster_page_drop_widget(cluster_page_t *page, widget_data_t *widget);
+void cluster_page_get_highlight_xy(cluster_page_t *page, int *x, int *y);
 
 #endif /* __CLUSTER_VIEW_PAGE_H__ */

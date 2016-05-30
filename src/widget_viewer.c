@@ -20,6 +20,16 @@
 #include "conf.h"
 #include "edc_conf.h"
 
+//#define _TEST_
+#ifdef _TEST_
+static Eina_Bool __widget_viewer_test_timer_cb(void *data)
+{
+    Evas_Object *widget = (Evas_Object*) data;
+    evas_object_color_set(widget, rand()%255, rand()%255, rand()%255, 100);
+    return ECORE_CALLBACK_RENEW;
+}
+static int count = 0;
+#endif
 static void __widget_viewer_delete_btn_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 
 void widget_viewer_init(Evas_Object *win)
@@ -49,17 +59,29 @@ Evas_Object *widget_viewer_add_widget(Evas_Object *parent, widget_data_t *item, 
     evas_object_show(rect);
     elm_object_part_content_set(widget_layout, SIZE_SETTER, rect);
 
-#if 1
+#ifndef _TEST_
     Evas_Object *widget = widget_viewer_evas_add_widget(widget_layout, item->pkg_name, NULL, item->period);
     evas_object_size_hint_align_set(widget, EVAS_HINT_FILL, EVAS_HINT_FILL);
     evas_object_size_hint_weight_set(widget, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     evas_object_color_set(widget, 255, 255, 255, 255);
 #else // for TEST
-    Evas_Object *widget = evas_object_rectangle_add(evas_object_evas_get(widget_layout));
+/*    Evas_Object *widget = evas_object_rectangle_add(evas_object_evas_get(widget_layout));
     evas_object_size_hint_align_set(widget, EVAS_HINT_FILL, EVAS_HINT_FILL);
     evas_object_size_hint_weight_set(widget, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     evas_object_color_set(widget, 0, 0, 255, 100);
     evas_object_show(widget);
+*/
+    char number[1000];
+    sprintf(number, "<font_size=50>%s_%d</font_size>", item->pkg_name, count++);
+    Evas_Object *widget = elm_label_add(evas_object_evas_get(widget_layout));
+    elm_object_style_set(widget, "popup/default");
+    evas_object_size_hint_weight_set(widget, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+    evas_object_size_hint_align_set(widget, EVAS_HINT_FILL, EVAS_HINT_FILL);
+    elm_object_text_set(widget, number);
+    evas_object_color_set(widget, 0, 0, 255, 100);
+    evas_object_show(widget);
+
+    Ecore_Timer *timer = ecore_timer_add(1, __widget_viewer_test_timer_cb, widget);
 #endif
     elm_object_part_content_set(widget_layout, WIDGET_CONTENT, widget);
 
