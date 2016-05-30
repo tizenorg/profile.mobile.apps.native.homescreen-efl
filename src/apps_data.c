@@ -37,7 +37,7 @@ static int __apps_data_shortcut_request_cb(const char *pkgname,
         const char *name, int type, const char *content_info, const char *icon,
         int pid, double period, int allow_duplicate, void *data);
 
-void apps_data_init(void)
+void apps_data_init(void *data, Ecore_Thread *th)
 {
     Eina_List *pkg_list = NULL, *db_list = NULL;
     Eina_List *pkg_find_list, *db_find_list;

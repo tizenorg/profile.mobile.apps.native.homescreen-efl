@@ -32,6 +32,8 @@
 #define MAX_FILE_PATH_LEN 1024
 #define HOME_EDIT_SCROLL_MOVE_TIME 1
 
+#define HOME_LOADING_TIME 0.5
+
 extern double __conf_get_resolution_scale_h();
 extern double __conf_get_resolution_scale_w();
 extern int __conf_get_window_h();

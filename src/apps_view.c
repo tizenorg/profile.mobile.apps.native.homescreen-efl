@@ -110,7 +110,7 @@ static Eina_Hash *apps_menu_table = NULL;
 static void __apps_view_create_base_gui(Evas_Object *win);
 static Evas_Object * __apps_view_add_page(void);
 static void __apps_view_remove_page(void);
-static void __apps_view_fill_apps(void);
+static void __apps_view_fill_apps(void *data, Ecore_Thread *th);
 static void __apps_view_icon_clicked_cb(app_data_t *item);
 static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 static void __apps_view_delete_folder_cb(void *data, Evas_Object *obj, void *event_info);
@@ -157,21 +157,19 @@ static void __apps_view_folder_entry_done_cb(void *data, Evas_Object *obj, void 
 
 Evas_Object *apps_view_create(Evas_Object *win)
 {
-    int ret = BADGE_ERROR_NONE;
     elm_win_screen_size_get(win, NULL, NULL, &apps_view_s.width, &apps_view_s.height);
 
-    apps_data_init();
     __apps_view_create_base_gui(win);
-    __apps_view_fill_apps();
     __apps_view_create_chooser();
     __apps_view_create_menu();
-
-    ret = badge_register_changed_cb(__apps_view_badge_update_cb, NULL);
 
     if (!apps_view_s.scroller) {
         LOGE("[FAILED][apps_view_s.scroller==NULL]");
         return NULL;
     }
+
+    ecore_thread_run(apps_data_init, __apps_view_fill_apps, __apps_view_fill_apps, NULL);
+
     return apps_view_s.scroller;
 }
 
@@ -626,7 +624,7 @@ static void __apps_view_remove_page(void)
     evas_object_del(item);
 }
 
-static void __apps_view_fill_apps(void)
+static void __apps_view_fill_apps(void *data, Ecore_Thread *th)
 {
     Eina_List *list = apps_data_get_list();
     app_data_t *item = NULL;
@@ -638,6 +636,13 @@ static void __apps_view_fill_apps(void)
         }
     }
     apps_view_reroder();
+
+    int ret = BADGE_ERROR_NONE;
+    ret = badge_register_changed_cb(__apps_view_badge_update_cb, NULL);
+
+    if (ret != BADGE_ERROR_NONE) {
+        LOGE("badge_register_changed_cb failed [%d]", ret);
+    }
 }
 
 static void __apps_view_folder_fill_apps(void)

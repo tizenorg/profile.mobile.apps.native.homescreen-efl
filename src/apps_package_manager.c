@@ -76,9 +76,11 @@ static void __apps_package_manager_event_cb(const char *type, const char *packag
 Eina_Bool apps_package_manger_get_list(Eina_List **list)
 {
     int ret;
-    ret = app_manager_foreach_app_info(__apps_package_manager_get_item, list);
-    if (ret != PACKAGE_MANAGER_ERROR_NONE)
-        LOGE("package_manager_foreach_package_info failed[%d]", ret);
+    app_info_filter_h handle = NULL;
+
+    ret = app_info_filter_create(&handle);
+    app_info_filter_add_bool(handle, PACKAGE_INFO_PROP_APP_NODISPLAY , false);
+    app_info_filter_foreach_appinfo(handle, __apps_package_manager_get_item, list);
     return true;
 }
 
@@ -89,6 +91,7 @@ static bool __apps_package_manager_get_item(app_info_h app_handle, void *data)
     if (__apps_data_pkg_get_apps_info(app_handle, &item)) {
         *list = eina_list_append(*list, item);
     }
+    usleep(1);
     return true;
 }
 

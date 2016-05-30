@@ -61,6 +61,7 @@ Evas_Object *widget_viewer_add_widget(Evas_Object *parent, widget_data_t *item, 
 
 #ifndef _TEST_
     Evas_Object *widget = widget_viewer_evas_add_widget(widget_layout, item->pkg_name, NULL, item->period);
+    //evas_object_smart_callback_add(widget, WIDGET_SMART_SIGNAL_WIDGET_CREATED, __widget_viewer_widget_create_cb, NULL);
     evas_object_size_hint_align_set(widget, EVAS_HINT_FILL, EVAS_HINT_FILL);
     evas_object_size_hint_weight_set(widget, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     evas_object_color_set(widget, 255, 255, 255, 255);
@@ -103,6 +104,5 @@ void widget_viewer_send_cancel_click_event(widget_data_t *widget)
 {
     Evas_Object *widget_obj = NULL;
     widget_obj = elm_object_part_content_get(widget->widget_layout, WIDGET_CONTENT);
-    // Widget crash. : temp
-    //widget_viewer_evas_cancel_click_event(widget_obj);
+    widget_viewer_evas_cancel_click_event(widget_obj);
 }

@@ -49,7 +49,7 @@ enum {
     APPS_DATA_TYPE_URI_SHORTCUT
 };
 
-void apps_data_init(void);
+void apps_data_init(void *data, Ecore_Thread *th);
 void apps_data_sort(void);
 Eina_List *apps_data_get_list(void);
 void apps_data_get_folder_item_list(Eina_List **list, app_data_t *folder);
