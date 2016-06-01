@@ -4,63 +4,63 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI="bin%2Fhomescreen-efl">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>m+q3OmoWJI96OeYhREaKgoFEowzqjVOWoU0o4DE3xIQ=</DigestValue>
+<DigestValue>2bQyZdR+e7aZA2LJArWX+QjznWXcHXO2sjkckoKtWTE=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fadd_widget_viewer.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>KaDoUUh0Qg+t+Cw1qHJXA6PUxIh2xuIQHnCu9OV4/hc=</DigestValue>
+<DigestValue>WVuCE87r6Uhnl66QCW4dLyP14oUDuhlPnL255AipxA8=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fapp_icon.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>Eu43j1+2+ea+oxjufrHtApUvLicZcONCnpZkQFMLZUs=</DigestValue>
+<DigestValue>rOtWL2AxfqW96Wwkch+uDB+/3DNmFjzR6RWNaTn2HI0=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fapps_chooser_btn.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>pAJeOFkfFmGw5h4Uvur4s7KUUVSRScqAnG8rBBiF/b8=</DigestValue>
+<DigestValue>ft6uFlFwFCuZim+9EGDAUXsYd3Chl5oN22kt9563Qoc=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fapps_folder_icon.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>CjxtXzz3JIaxVzS7/4sMm1530dLMMbLt7bXsXUTaxVY=</DigestValue>
+<DigestValue>HfUJDyWtwwyrwWfg3GMNJVFdUhQgFV5uk8H6ZWTCh3Y=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fapps_folder_popup.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>4jjfC1WUf47jMNjx4HiA4jSqqJT3TkWSY8Y9smNAnho=</DigestValue>
+<DigestValue>NemFZXEB7HdOyX7tqY73NgbdekXidPmVuYfLP1g1x0g=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fapps_view.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>uPbY0nk6vZ4l4LCSw022vHFGA0ImbzIhlVJ8MzFltzc=</DigestValue>
+<DigestValue>x1m1yASDqi3xtE37FecJxGmv9dgKTq2kg1hzKmnr+24=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fapps_view_bg.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>1Ng05qvrCC315hPy/ekMeqiXqNfIYyt+LuUsU5m0eLE=</DigestValue>
+<DigestValue>JHAfBFXpv7S+wXFHC+qN5E+aTgpaofr4ixMApxn0mp8=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fcluster_allpage.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>WtmYWB3bi4WEzN28IlodOnIZ6T88qo52wR/xBwFB3kA=</DigestValue>
+<DigestValue>5mFrg7kh/41OXDQSoHPjuJ32IzminUUlsTH8m4Prs3U=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fcluster_allpage_thumbnail.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>QhYcaoP9mnP4J8Uski3uKtyWFp8+oGs5aaCRix1yCcI=</DigestValue>
+<DigestValue>Tjc7p5sS3R89AeuLrdipemku9hGhg02dyHu2eLoo4q4=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fcluster_page.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>oXQPkNrYEB4djrOeNNEoyqqTPKDQ+u2GzDLaxIT5AIA=</DigestValue>
+<DigestValue>dSDcDYHetB628r52JWmKTxom2tqL1FP4inJhWsSopcA=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fhome.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>MPsLzRdqMFBPp+0veKjxytfv3IRY/Rs0FUPKXiWTn7c=</DigestValue>
+<DigestValue>CYUtxYlsFmW9C54nDWSIbwr6kkR1BtgMHIJQgjk3RH4=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fhome_btn.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>cjUutx3Xu/QaCKyySHoTGTM4O2a2ml4cn34QTMbJUAI=</DigestValue>
+<DigestValue>RQ79phnrU52HqrCRonx0x23PuMwsO0H/+kGUJsS5xDY=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fpage_indicator_unit.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>e/SQs2RRSuMGl4kkrXtNO8klSqR+9ig29iTQr3svMPw=</DigestValue>
+<DigestValue>c9v+iek1DlusuZNu12LvN73sUY/mSftiw5y29JXVUGw=</DigestValue>
 </Reference>
 <Reference URI="res%2Fedje%2Fwidget.edj">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>bZiBoDmHJvmEm7iXTEZ4pVkriORUqUpnKHeFoxygJfM=</DigestValue>
+<DigestValue>6yc1tUF/pJkCMzQEj32/O+Yz7VV5LW82L0CY3bINmnA=</DigestValue>
 </Reference>
 <Reference URI="res%2Fimages%2Fadd_page_nor.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -387,9 +387,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-jmy7AwRuptKwzUHMVwFhNITs1iuJsZKDH3ntFO2nJ0Zt0RJAwc9cR96bIh37hQ2k1FyAHQkPl8xV
-xpVITLtZ38zyTSHJtNLqXrQiq0OOJvR2DPgnekiLZI3KzuYhJfJZpC7vh+wPfWTz1YtFgpyCfaWD
-BSjoHZHNjag/Jop0vV4=
+L3+ROfTa/630v48AAqEpYCbArvO764GkHhFtq/whERmMVO6JdxcNNZTSw+jrTHtzbujs9cc8peGd
+ZZEfvbmlGoEheHNpcppw+93GdvA31Y234X6R6RSjxQ7mt8B0xBiJH28lMjpTwrOJD66EL6cujf42
+hAYIFDgsJ35hu6PmnW4=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

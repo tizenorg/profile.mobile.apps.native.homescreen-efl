@@ -60,6 +60,9 @@ extern int __conf_get_window_w();
 #define APPS_VIEW_EDIT_RIGHT_SCROLL_REGION (APPS_VIEW_W - APPS_VIEW_EDIT_LEFT_SCROLL_REGION)
 
 #define APPS_VIEW_EDIT_MOVE_GAP 2500
+#define APPS_VIEW_CHOOSER_TEXT_SIZE ((48) * (__conf_get_resolution_scale_h()))
+#define APPS_VIEW_CHOOSER_BUTTON_TEXT_SIZE ((32) * (__conf_get_resolution_scale_h()))
+#define APPS_VIEW_CHOOSER_TEXT "<font_size=%d>%s</font_size>"
 
 #define CLUSTER_VIEW_W ((720) * (__conf_get_resolution_scale_w()))
 #define CLUSTER_VIEW_H ((1150) * (__conf_get_resolution_scale_h()))

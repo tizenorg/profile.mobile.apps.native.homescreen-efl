@@ -23,6 +23,7 @@
 #include "view.h"
 
 Evas_Object *cluster_view_create(Evas_Object *parent);
+void cluster_view_init(void);
 void cluster_view_app_terminate(void);
 
 void cluster_view_show(void);

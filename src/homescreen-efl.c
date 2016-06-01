@@ -66,7 +66,8 @@ static void __homescreen_efl_change_view(void);
 static Eina_Bool __homescreen_efl_show_apps_anim(void *data, double pos);
 static Eina_Bool __homescreen_efl_show_cluster_anim(void *data, double pos);
 
-static Eina_Bool __homescreen_efl_create_view(void *data);
+static bool __homescreen_efl_create_view(void);
+static Eina_Bool __homescreen_efl_init_view(void *data);
 
 static void __homescreen_efl_lang_changed_cb(app_event_info_h event_info, void *user_data)
 {
@@ -108,10 +109,12 @@ static bool __homescreen_efl_app_create_cb(void *data)
     __homescreen_efl_set_wallpaper();
     evas_object_show(main_info.win);
 
+    __homescreen_efl_create_view();
+
     __homescreen_efl_set_conformant();
     __homescreen_efl_create_home_btn();
 
-    ecore_timer_add(HOME_LOADING_TIME, __homescreen_efl_create_view, NULL);
+    ecore_timer_add(HOME_LOADING_TIME, __homescreen_efl_init_view, NULL);
 
     return true;
 }
@@ -378,12 +381,12 @@ void homescreen_efl_btn_hide(homescreen_view_t view_t)
     }
 }
 
-static Eina_Bool __homescreen_efl_create_view(void *data)
+static bool __homescreen_efl_create_view(void)
 {
     main_info.cluster_layout = cluster_view_create(main_info.win);
     if (main_info.cluster_layout == NULL) {
         LOGE("main_info.cluster_layout  == NULL");
-        return ECORE_CALLBACK_CANCEL;
+        return false;
     }
     evas_object_move(main_info.cluster_layout, 0, INDICATOR_H);
     evas_object_show(main_info.cluster_layout);
@@ -391,10 +394,19 @@ static Eina_Bool __homescreen_efl_create_view(void *data)
     main_info.apps_layout = apps_view_create(main_info.win);
     if (main_info.apps_layout == NULL) {
         LOGE("main_info.apps_layout  == NULL");
-        return ECORE_CALLBACK_CANCEL;
+        return false;
     }
     evas_object_move(main_info.apps_layout, 0, main_info.root_height);
     evas_object_show(main_info.apps_layout);
+
+    return true;
+}
+
+
+static Eina_Bool __homescreen_efl_init_view(void *data)
+{
+    cluster_view_init();
+    apps_view_init();
 
     return ECORE_CALLBACK_CANCEL;
 }

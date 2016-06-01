@@ -304,6 +304,12 @@ collections {
                     color: 255 255 255 255;
                     visible: 1;
                 }
+                description {
+                    state: "half-checked" 0.0;
+                    inherit: "default" 0.0;
+                    color: 255 255 255 127;
+                    visible: 1;
+                }
             }
             part {
                 name: "icon_checkbox_touch";
@@ -399,7 +405,6 @@ collections {
                 target: APPS_ICON_UNINSTALL_BUTTON;
                 transition: DECELERATE ANIMATION_RESIZE_TIME;
             }
-
             program{
                 name: "checkbox_show";
                 signal:SIGNAL_CHOOSER_MODE_ON;
@@ -421,13 +426,28 @@ collections {
                 target:"icon_checkbox_touch";
                 transition: DECELERATE ANIMATION_RESIZE_TIME;
             }
-
+            program{
+                name: "checkbox_show_folder";
+                signal:SIGNAL_CHOOSER_MODE_ON_FOLDER;
+                source:SIGNAL_SOURCE;
+                action:STATE_SET "blank" 0.0;
+                target:"icon_checkbox_bg";
+                target:"icon_checkbox_border";
+                transition: DECELERATE ANIMATION_RESIZE_TIME;
+            }
             //Set default value of check box.
             program{
                 name: "checkbox_check";
                 signal:SIGNAL_CHECK_CHECK_BOX;
                 source:SIGNAL_SOURCE;
                 action:STATE_SET "checked" 0.0;
+                target:"icon_checkbox";
+            }
+            program{
+                name: "checkbox_half_check";
+                signal:SIGNAL_CHECK_HALF_CHECK_BOX;
+                source:SIGNAL_SOURCE;
+                action:STATE_SET "half-checked" 0.0;
                 target:"icon_checkbox";
             }
             //Set default value of check box.

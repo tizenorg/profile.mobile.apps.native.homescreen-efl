@@ -23,6 +23,7 @@
 #include "apps_data.h"
 
 Evas_Object *apps_view_create(Evas_Object *parent);
+void apps_view_init(void);
 void apps_view_app_terminate(void);
 void apps_view_show(void);
 void apps_view_hide(void);

@@ -97,11 +97,13 @@
 #define SIGNAL_EDIT_MODE_OFF "edit_off"
 #define SIGNAL_CHOOSER_MODE_ON "chooser_on"
 #define SIGNAL_CHOOSER_MODE_OFF "chooser_off"
+#define SIGNAL_CHOOSER_MODE_ON_FOLDER "chooser_on_folder"
 #define SIGNAL_CHOOSER_LEFT_BTN_CLICKED "chooser_left_btn_clicked"
 #define SIGNAL_CHOOSER_RIGHT_BTN_CLICKED "chooser_right_btn_clicked"
 #define SIGNAL_CHECK_CHECK_BOX "check"
 #define SIGNAL_UNCHECK_CHECK_BOX "uncheck"
 #define SIGNAL_CHANGED_CHECK_BOX "changed_checkbox_state"
+#define SIGNAL_CHECK_HALF_CHECK_BOX "half-check"
 
 #define SIGNAL_APPS_VIEW_HIDE "apps_bg_hide"
 #define SIGNAL_APPS_VIEW_SHOW "apps_bg_show"

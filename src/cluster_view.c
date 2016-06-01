@@ -154,9 +154,6 @@ Evas_Object *cluster_view_create(Evas_Object *win)
 {
     cluster_view_s.win = win;
 
-    widget_viewer_init(win);
-    cluster_data_init();
-
     Evas_Object *base_layout = __cluster_view_create_base_gui(win);
 
     if (base_layout == NULL) {
@@ -167,10 +164,16 @@ Evas_Object *cluster_view_create(Evas_Object *win)
     cluster_view_s.indicator = page_indictor_create(cluster_view_s.scroller);
     page_indicator_scroller_resize(cluster_view_s.indicator, CLUSTER_VIEW_W , CLUSTER_VIEW_H);
 
+    return base_layout;
+}
+
+void cluster_view_init(void)
+{
+    widget_viewer_init(cluster_view_s.win);
+    cluster_data_init();
+
     __cluster_view_create_cluster();
     __cluster_view_create_menu();
-
-    return base_layout;
 }
 
 void cluster_view_app_terminate(void)
