@@ -262,9 +262,19 @@ void apps_view_reorder(void)
         if (apps_view_icon_set(item))
             item_count++;
     }
+
     //Delete empty page
     while (((item_count-1) / (APPS_VIEW_COL*APPS_VIEW_ROW) +1) < eina_list_count(apps_view_s.page_list)) {
         __apps_view_remove_page();
+    }
+
+    Evas_Object *mapbuf = NULL;
+    find_list = NULL;
+    Evas_Object *page_ly = NULL;
+    EINA_LIST_FOREACH(apps_view_s.page_list, find_list, page_ly) {
+        mapbuf = evas_object_data_get(page_ly, "mapbuf");
+        LOGD("ttt: %p", mapbuf);
+        elm_mapbuf_enabled_set(mapbuf, EINA_TRUE);
     }
 }
 
@@ -601,8 +611,20 @@ static Evas_Object *__apps_view_add_page(void)
     evas_object_show(rect);
     elm_object_part_content_set(page_ly, SIZE_SETTER, rect);
 
-    elm_box_pack_end(apps_view_s.box, page_ly);
     evas_object_show(page_ly);
+
+    Evas_Object *mapbuf;
+    mapbuf = elm_mapbuf_add(apps_view_s.box);
+    LOGD("ttt: %p", mapbuf);
+
+    elm_mapbuf_smooth_set(mapbuf, EINA_TRUE);
+    elm_mapbuf_alpha_set(mapbuf, EINA_TRUE);
+    elm_object_content_set(mapbuf, page_ly);
+    evas_object_show(mapbuf);
+
+    elm_box_pack_end(apps_view_s.box, mapbuf);
+
+    evas_object_data_set(page_ly, "mapbuf", mapbuf);
 
     apps_view_s.page_list = eina_list_append(apps_view_s.page_list, page_ly);
     apps_view_s.page_count += 1;
