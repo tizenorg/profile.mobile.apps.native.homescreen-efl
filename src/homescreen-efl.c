@@ -180,19 +180,21 @@ static void __homescreen_efl_get_window_size(Evas_Object *win)
 
 static void __homescreen_efl_set_wallpaper(void)
 {
-    char edj_path[PATH_MAX] = {0, };
     const char *bg_path = util_get_res_file_path(IMAGE_DIR"/default_bg.png");
     char *buf = NULL;
     int ret = -1;
 
-    snprintf(edj_path, sizeof(edj_path), "%s", util_get_res_file_path(EDJE_DIR"/home.edj"));
+	if (main_info.main_layout == NULL) {
+        char edj_path[PATH_MAX] = {0, };
+        snprintf(edj_path, sizeof(edj_path), "%s", util_get_res_file_path(EDJE_DIR"/home.edj"));
 
-    main_info.main_layout = elm_layout_add(main_info.win);
-    elm_layout_file_set(main_info.main_layout, edj_path, GROUP_HOME_LY);
-    evas_object_size_hint_weight_set(main_info.main_layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-    elm_win_resize_object_add(main_info.win, main_info.main_layout);
+        main_info.main_layout = elm_layout_add(main_info.win);
+        elm_layout_file_set(main_info.main_layout, edj_path, GROUP_HOME_LY);
+        evas_object_size_hint_weight_set(main_info.main_layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+        elm_win_resize_object_add(main_info.win, main_info.main_layout);
 
-    evas_object_show(main_info.main_layout);
+        evas_object_show(main_info.main_layout);
+	}
 
     if (main_info.bg == NULL) {
         main_info.bg = evas_object_image_filled_add(evas_object_evas_get(main_info.main_layout));
