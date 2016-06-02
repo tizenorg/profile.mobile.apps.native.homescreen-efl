@@ -249,7 +249,7 @@ void apps_view_hide_anim(double pos)
     }
 }
 
-void apps_view_reroder(void)
+void apps_view_reorder(void)
 {
     Eina_List *data_list = apps_data_get_list();
     app_data_t *item = NULL;
@@ -641,7 +641,7 @@ static void __apps_view_fill_apps(void *data, Ecore_Thread *th)
             item->app_layout = apps_view_create_icon(item);
         }
     }
-    apps_view_reroder();
+    apps_view_reorder();
 
     int ret = BADGE_ERROR_NONE;
     ret = badge_register_changed_cb(__apps_view_badge_update_cb, NULL);
@@ -1208,7 +1208,7 @@ static void __apps_view_chooser_right_btn_clicked(void *data, Evas_Object *obj, 
         }
     }
     apps_data_sort();
-    apps_view_reroder();
+    apps_view_reorder();
 
     Eina_List *list = apps_data_get_list();
     EINA_LIST_FOREACH(list, find_list, item) {
@@ -1593,7 +1593,10 @@ static void __apps_view_edit_drag_icon(void *data)
                 }
             }
             if (apps_view_s.candidate_folder) {
-                elm_object_signal_emit(apps_view_s.candidate_folder->folder_layout, SIGNAL_FRAME_POSSIBLE_SHOW, SIGNAL_SOURCE);
+                if(apps_data_get_folder_item_count(apps_view_s.candidate_folder) >= APPS_FOLDER_MAX_ITEM)
+                    elm_object_signal_emit(apps_view_s.candidate_folder->folder_layout, SIGNAL_FRAME_IMPOSSIBLE_SHOW, SIGNAL_SOURCE);
+                else
+                    elm_object_signal_emit(apps_view_s.candidate_folder->folder_layout, SIGNAL_FRAME_POSSIBLE_SHOW, SIGNAL_SOURCE);
             }
         }
     }
@@ -1634,11 +1637,13 @@ static void __apps_view_edit_drop_icon(void *data)
                 evas_object_del(item->app_layout);
                 item->app_layout = NULL;
             }
-            apps_view_s.candidate_folder = NULL;
         }
+        elm_object_signal_emit(apps_view_s.candidate_folder->folder_layout, SIGNAL_FRAME_POSSIBLE_HIDE, SIGNAL_SOURCE);
+        apps_view_s.candidate_folder = NULL;
+
     }
     apps_data_sort();
-    apps_view_reroder();
+    apps_view_reorder();
 }
 
 static Eina_Bool __apps_view_scroll_timer_cb(void *data)

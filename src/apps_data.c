@@ -165,7 +165,7 @@ void apps_data_install(app_data_t *item)
     apps_db_insert(item);
     apps_data_sort();
     apps_view_icon_add(item);
-    apps_view_reroder();
+    apps_view_reorder();
 }
 
 void apps_data_uninstall(const char *package)
@@ -205,7 +205,7 @@ app_data_t *apps_data_add_folder(void)
     apps_db_insert(new_item);
     apps_view_icon_add(new_item);
     apps_data_sort();
-    apps_view_reroder();
+    apps_view_reorder();
 
     return new_item;
 }
@@ -224,7 +224,7 @@ void apps_data_delete_folder(app_data_t *folder_item)
     apps_data_s.data_list = eina_list_remove(apps_data_s.data_list, folder_item);
     apps_db_delete(folder_item);
     apps_data_sort();
-    apps_view_reroder();
+    apps_view_reorder();
     apps_view_delete_icon(folder_item);
     __apps_data_item_free(folder_item);
 }
@@ -233,7 +233,7 @@ void apps_data_update_folder(app_data_t *folder_item)
 {
     apps_db_update(folder_item);
     apps_data_sort();
-    apps_view_reroder();
+    apps_view_reorder();
 }
 
 static int __apps_data_shortcut_request_cb(const char *package_name,
@@ -276,7 +276,7 @@ static int __apps_data_shortcut_request_cb(const char *package_name,
     apps_db_insert(new_item);
     apps_view_icon_add(new_item);
     apps_data_sort();
-    apps_view_reroder();
+    apps_view_reorder();
 
     return 0;
 }
@@ -286,7 +286,7 @@ void apps_data_delete_item(app_data_t *item)
     apps_data_s.data_list = eina_list_remove(apps_data_s.data_list, item);
     apps_db_delete(item);
     apps_data_sort();
-    apps_view_reroder();
+    apps_view_reorder();
     apps_view_folder_reroder();
     if (item->parent_db_id != APPS_ROOT) {
         app_data_t *parent = __apps_data_find_item(item->parent_db_id);
@@ -307,7 +307,7 @@ void apps_data_delete_list(Eina_List *list)
     }
 
     apps_data_sort();
-    apps_view_reroder();
+    apps_view_reorder();
     apps_view_folder_reroder();
 
     EINA_LIST_FOREACH(list, find_list, item) {
