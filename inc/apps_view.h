@@ -29,7 +29,7 @@ void apps_view_show(void);
 void apps_view_hide(void);
 void apps_view_show_anim(double pos);
 void apps_view_hide_anim(double pos);
-void apps_view_reroder(void);
+void apps_view_reorder(void);
 void apps_view_folder_reroder(void);
 void apps_view_update_folder_icon(app_data_t *item);
 

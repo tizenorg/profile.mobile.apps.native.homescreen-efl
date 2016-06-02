@@ -49,34 +49,6 @@ collections {
                 aspect: 1.0 1.0;
                 aspect_preference: BOTH;
                 image {
-                    normal: "../res/images/folder_appicon_empty_bg.png";
-                }
-            }
-            description {
-                state: "item_count_1" 0.0;
-                inherit: "default" 0.0;
-                image {
-                    normal: "../res/images/folder_appicon_bg.png";
-                }
-            }
-            description {
-                state: "item_count_2" 0.0;
-                inherit: "default" 0.0;
-                image {
-                    normal: "../res/images/folder_appicon_bg.png";
-                }
-            }
-            description {
-                state: "item_count_3" 0.0;
-                inherit: "default" 0.0;
-                image {
-                    normal: "../res/images/folder_appicon_bg.png";
-                }
-            }
-            description {
-                state: "item_count_4" 0.0;
-                inherit: "default" 0.0;
-                image {
                     normal: "../res/images/folder_appicon_bg.png";
                 }
             }
@@ -119,34 +91,30 @@ collections {
             type: SWALLOW;
             description {
                 state: "default" 0.0;
-                rel1{relative: 0.325 0.325; to: SIZE_SETTER;}
-                rel2{relative: 0.675 0.675; to: SIZE_SETTER;}
+                rel1{relative: 0.185 0.185; to: SIZE_SETTER;}
+                rel2{relative: 0.485 0.485; to: SIZE_SETTER;}
                 aspect: 1.0 1.0;
                 aspect_preference: BOTH;
                 visible: 0;
             }
             description {
                 state: "item_count_1" 0.0;
-                rel1{relative: 0.325 0.325; to: SIZE_SETTER;}
-                rel2{relative: 0.675 0.675; to: SIZE_SETTER;}
+                inherit: "default" 0.0;
                 visible: 1;
             }
             description {
                 state: "item_count_2" 0.0;
-                rel1{relative: 0.135 0.325; to: SIZE_SETTER;}
-                rel2{relative: 0.485 0.675; to: SIZE_SETTER;}
+                inherit: "default" 0.0;
                 visible: 1;
             }
             description {
                 state: "item_count_3" 0.0;
-                rel1{relative: 0.185 0.185; to: SIZE_SETTER;}
-                rel2{relative: 0.485 0.485; to: SIZE_SETTER;}
+                inherit: "default" 0.0;
                 visible: 1;
             }
             description {
                 state: "item_count_4" 0.0;
-                rel1{relative: 0.185 0.185; to: SIZE_SETTER;}
-                rel2{relative: 0.485 0.485; to: SIZE_SETTER;}
+                inherit: "default" 0.0;
                 visible: 1;
             }
         }
@@ -155,8 +123,8 @@ collections {
             type: SWALLOW;
             description {
                 state: "default" 0.0;
-                rel1{relative: 0.488 0.325; to: SIZE_SETTER;}
-                rel2{relative: 0.838 0.675; to: SIZE_SETTER;}
+                rel1{relative: 0.515 0.185; to: SIZE_SETTER;}
+                rel2{relative: 0.815 0.485; to: SIZE_SETTER;}
                 aspect: 1.0 1.0;
                 aspect_preference: BOTH;
                 visible: 0;
@@ -169,20 +137,17 @@ collections {
             }
             description {
                 state: "item_count_2" 0.0;
-                rel1{relative: 0.488 0.325; to: SIZE_SETTER;}
-                rel2{relative: 0.838 0.675; to: SIZE_SETTER;}
+                inherit: "default" 0.0;
                 visible: 1;
             }
             description {
                 state: "item_count_3" 0.0;
-                rel1{relative: 0.515 0.185; to: SIZE_SETTER;}
-                rel2{relative: 0.815 0.485; to: SIZE_SETTER;}
+                inherit: "default" 0.0;
                 visible: 1;
             }
             description {
                 state: "item_count_4" 0.0;
-                rel1{relative: 0.515 0.185; to: SIZE_SETTER;}
-                rel2{relative: 0.815 0.485; to: SIZE_SETTER;}
+                inherit: "default" 0.0;
                 visible: 1;
             }
         }
@@ -209,14 +174,12 @@ collections {
             }
             description {
                 state: "item_count_3" 0.0;
-                rel1{relative: 0.185 0.515; to: SIZE_SETTER;}
-                rel2{relative: 0.485 0.815; to: SIZE_SETTER;}
+                inherit: "default" 0.0;
                 visible: 1;
             }
             description {
                 state: "item_count_4" 0.0;
-                rel1{relative: 0.185 0.515; to: SIZE_SETTER;}
-                rel2{relative: 0.485 0.815; to: SIZE_SETTER;}
+                inherit: "default" 0.0;
                 visible: 1;
             }
         }
@@ -248,8 +211,7 @@ collections {
             }
             description {
                 state: "item_count_4" 0.0;
-                rel1{relative: 0.515 0.515; to: SIZE_SETTER;}
-                rel2{relative: 0.815 0.815; to: SIZE_SETTER;}
+                inherit: "default" 0.0;
                 visible: 1;
             }
         }
@@ -264,7 +226,6 @@ collections {
                 target: "icon_1";
                 target: "icon_2";
                 target: "icon_3";
-                target: "folder_icon_bg_image";
                 transition: DECELERATE 0.2;
             }
 
@@ -277,7 +238,6 @@ collections {
                 target: "icon_1";
                 target: "icon_2";
                 target: "icon_3";
-                target: "folder_icon_bg_image";
                 transition: DECELERATE 0.2;
             }
 
@@ -290,7 +250,6 @@ collections {
                 target: "icon_1";
                 target: "icon_2";
                 target: "icon_3";
-                target: "folder_icon_bg_image";
                 transition: DECELERATE 0.2;
             }
             program {
@@ -302,7 +261,6 @@ collections {
                 target: "icon_1";
                 target: "icon_2";
                 target: "icon_3";
-                target: "folder_icon_bg_image";
                 transition: DECELERATE 0.2;
             }
             program {
@@ -314,7 +272,6 @@ collections {
                 target: "icon_1";
                 target: "icon_2";
                 target: "icon_3";
-                target: "folder_icon_bg_image";
             }
 
             program {
