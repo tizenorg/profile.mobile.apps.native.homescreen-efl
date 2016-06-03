@@ -19,17 +19,13 @@
 collections {
     group { name: GROUP_APPS_BG_LY;
         script {
-            public rel1;
-            public rel2;
             public alpha;
 
             public message(Msg_Type:type, id, ...) {
                 if (type == MSG_FLOAT_SET)
                 {
-                    set_float(rel1, getfarg(2));
-                    set_float(rel2, getfarg(3));
-                    set_float(alpha, getfarg(4));
-                    send_message(type, id, getfarg(2), getfarg(3), getfarg(4));
+                    set_float(alpha, getfarg(2));
+                    send_message(type, id, getfarg(2));
                 }
             }
         }
@@ -62,8 +58,8 @@ collections {
                     state: "edit" 0.0;
                     inherit: "default" 0.0;
                     visible: 1;
-                    rel1 {relative: 0.06 0.09; to:SIZE_SETTER;}
-                    rel2 {relative: 0.95 0.87; to:SIZE_SETTER;}
+                    rel1 {relative: 0.055 0.0855; to:SIZE_SETTER;}
+                    rel2 {relative: 0.95 0.873; to:SIZE_SETTER;}
                 }
                 description {
                     state: "hide" 0.0;
@@ -98,8 +94,6 @@ collections {
                 source: SIGNAL_SOURCE;
                 script {
                     custom_state(PART:APPS_APPS_VIEW_BG, "show", 0.0);
-                    //set_state_val(PART:APPS_APPS_VIEW_BG, STATE_REL1, 0, get_float(rel1));
-                    //set_state_val(PART:APPS_APPS_VIEW_BG, STATE_REL2, 0, get_float(rel2));
                     set_state_val(PART:APPS_APPS_VIEW_BG, STATE_COLOR, 0, 0, 0, round(get_float(alpha)));
                     set_state(PART:APPS_APPS_VIEW_BG, "custom", 0.0);
                 }

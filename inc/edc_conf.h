@@ -111,7 +111,7 @@
 #define APPS_VIEW_COL 4
 #define APPS_VIEW_ROW 5
 
-#define APPS_VIEW_BG_OPACITY 70
+#define APPS_VIEW_BG_OPACITY 50
 
 #define GROUP_APP_ICON_LY "icon_ly"
 #define APPS_ICON_CONTENT "icon_content"

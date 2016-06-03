@@ -145,26 +145,18 @@ static void __page_indicator_scroll_cb(void *data, Evas_Object *obj, void *event
 
     current_x = page_indicator->current_page * page_indicator->w;
     angle = (double)(x - current_x) / page_indicator->w * 90.0;
-
-    if (fabs((float)(x - current_x)) <= page_indicator->w) {
-        next_page = x > current_x ? (page_indicator->current_page + 1) % page_indicator->page_count : page_indicator->current_page-1;
-        color = fabs(angle) * 2;
+    if (angle > 90.0) {
+        angle = (double)(x - page_indicator->w * page_indicator->page_count) / page_indicator->w * 90.0;
+        next_page = page_indicator->page_count - 1;
     } else {
-        if (x > current_x) {
-            next_page = page_indicator->page_count-1;
-            color = (double)(page_indicator->w*page_indicator->page_count - x)/page_indicator->w * 180.0;
-        } else {
-            next_page = 0;
-            color = 180.0;
-        }
+        next_page = page_indicator->current_page + (angle > 0 ? 1 : -1);
+        next_page %= page_indicator->page_count;
     }
 
-    if (next_page == page_indicator->page_count - 1 && page_indicator->current_page == 0 && page_indicator->page_count % 2 == 1) {
-        angle = angle - 270.0;
-    }
+    color = fabs(angle) * 2;
 
-    __page_indicator_unit_rotate(page_indicator->unit[page_indicator->current_page], 90.0 + angle, 255.0 - color);
-    __page_indicator_unit_rotate(page_indicator->unit[next_page], angle, 75.0 + color);
+    __page_indicator_unit_rotate(page_indicator->unit[page_indicator->current_page], 90 + angle, 255.0 - color);
+    __page_indicator_unit_rotate(page_indicator->unit[next_page], (angle < 0 ? 360 + angle : angle), 75.0 + color);
 }
 
 static void __page_indicator_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info)
@@ -177,6 +169,7 @@ static void __page_indicator_scroll_anim_stop_cb(void *data, Evas_Object *obj, v
     page_indicator_t *page_indicator = (page_indicator_t*) data;
 
     elm_scroller_current_page_get(obj, &page_indicator->current_page, NULL);
+    page_indicator->current_page %= page_indicator->page_count;
 
     __page_indicator_set_current_page(page_indicator);
 }
