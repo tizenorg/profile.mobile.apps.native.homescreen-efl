@@ -29,7 +29,8 @@ typedef struct {
     char* owner;
     Eina_Bool is_folder;
     int position;
-    char* pkg_str;
+    char* app_id;
+    char* pkg_id;
     char* label_str;
     char* icon_path_str;
     char* uri;

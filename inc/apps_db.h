@@ -25,7 +25,8 @@ bool apps_db_close();
 bool apps_db_update(app_data_t *item);
 bool apps_db_insert(app_data_t *item);
 bool apps_db_delete(app_data_t *item);
-bool apps_db_delete_by_pkg_str(const char* pkg);
+bool apps_db_delete_by_app_id(const char* app_id);
+bool apps_db_delete_by_pkg_id(const char* pkg_id);
 
 bool apps_db_get_list(Eina_List **apps);
 bool apps_db_get_app_list(Eina_List **apps);
