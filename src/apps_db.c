@@ -34,6 +34,7 @@ enum {
     COL_IS_FOLDER,
     COL_POSITION,
     COL_PACKAGE_STR,
+    COL_PACKAGE_ID,
     COL_LABEL,
     COL_URI,
     COL_TYPE,
@@ -49,6 +50,7 @@ enum {
         isFolder    INTEGER,\
         position    INTEGER,\
         pkgStr      TEXT,\
+        pkgId       TEXT,\
         label       TEXT,\
         uri         TEXT,\
         type        INTEGER,\
@@ -62,6 +64,7 @@ enum {
         isFolder=%d,\
         position=%d,\
         pkgStr='%s',\
+        pkgId='%s',\
         label='%s',\
         uri='%s',\
         type=%d,\
@@ -75,12 +78,13 @@ enum {
         isFolder,\
         position,\
         pkgStr,\
+        pkgId,\
         label,\
         uri,\
         type,\
         isSystem,\
         isRemovable,\
-        iconPath) VALUES(%d,'%s',%d,%d,'%s','%s','%s',%d,%d,%d,'%s')"
+        iconPath) VALUES(%d,'%s',%d,%d,'%s','%s','%s','%s',%d,%d,%d,'%s')"
 
 #define SELECT_ITEM "SELECT * FROM apps;"
 #define SELECT_APP_ITEM "SELECT * FROM apps WHERE type=0 AND isFolder=0;"
@@ -158,7 +162,9 @@ bool apps_db_get_list(Eina_List **apps)
         item->is_folder = sqlite3_column_int(stmt, COL_IS_FOLDER);
         item->position = sqlite3_column_int(stmt, COL_POSITION);
         str = (const char *) sqlite3_column_text(stmt, COL_PACKAGE_STR);
-        item->pkg_str = (!str || !strlen(str)) ? NULL : strdup(str);
+        item->app_id = (!str || !strlen(str)) ? NULL : strdup(str);
+        str = (const char *) sqlite3_column_text(stmt, COL_PACKAGE_ID);
+        item->pkg_id = (!str || !strlen(str)) ? NULL : strdup(str);
         str = (const char *) sqlite3_column_text(stmt, COL_LABEL);
         item->label_str = (!str) ? NULL : strdup(str);
         str = (const char *) sqlite3_column_text(stmt, COL_URI);
@@ -199,7 +205,9 @@ bool apps_db_get_app_list(Eina_List **apps)
         item->is_folder = sqlite3_column_int(stmt, COL_IS_FOLDER);
         item->position = sqlite3_column_int(stmt, COL_POSITION);
         str = (const char *) sqlite3_column_text(stmt, COL_PACKAGE_STR);
-        item->pkg_str = (!str || !strlen(str)) ? NULL : strdup(str);
+        item->app_id = (!str || !strlen(str)) ? NULL : strdup(str);
+        str = (const char *) sqlite3_column_text(stmt, COL_PACKAGE_ID);
+        item->pkg_id = (!str || !strlen(str)) ? NULL : strdup(str);
         str = (const char *) sqlite3_column_text(stmt, COL_LABEL);
         item->label_str = (!str || !strlen(str)) ? NULL : strdup(str);
         str = (const char *) sqlite3_column_text(stmt, COL_URI);
@@ -226,7 +234,8 @@ bool apps_db_update(app_data_t *item)
             item->owner,
             item->is_folder,
             item->position,
-            item->pkg_str,
+            item->app_id,
+            item->pkg_id,
             item->label_str,
             item->uri,
             item->type,
@@ -257,7 +266,8 @@ bool apps_db_insert(app_data_t *item)
             item->owner,
             item->is_folder,
             item->position,
-            item->pkg_str,
+            item->app_id,
+            item->pkg_id,
             item->label_str,
             item->uri,
             item->type,
@@ -298,13 +308,33 @@ bool apps_db_delete(app_data_t *item)
     return true;
 }
 
-bool apps_db_delete_by_pkg_str(const char* pkg)
+bool apps_db_delete_by_app_id(const char* pkg)
 {
     char query[QUERY_MAXLEN];
     sqlite3_stmt *stmt;
     if (!__apps_db_open())
         return false;
     snprintf(query, QUERY_MAXLEN, "DELETE FROM apps WHERE pkgStr='%s'", pkg);
+    int ret = sqlite3_prepare(apps_db, query, QUERY_MAXLEN , &stmt, NULL);
+    if (ret != SQLITE_OK) {
+        LOGE("sqlite error : [%s,%s]", query, sqlite3_errmsg(apps_db));
+        return false;
+    }
+
+    sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+
+    apps_db_close();
+    return true;
+}
+
+bool apps_db_delete_by_pkg_id(const char* pkg_id)
+{
+    char query[QUERY_MAXLEN];
+    sqlite3_stmt *stmt;
+    if (!__apps_db_open())
+        return false;
+    snprintf(query, QUERY_MAXLEN, "DELETE FROM apps WHERE pkgId='%s'", pkg_id);
     int ret = sqlite3_prepare(apps_db, query, QUERY_MAXLEN , &stmt, NULL);
     if (ret != SQLITE_OK) {
         LOGE("sqlite error : [%s,%s]", query, sqlite3_errmsg(apps_db));
