@@ -411,7 +411,7 @@ Evas_Object* apps_view_create_icon(app_data_t *item)
 
     evas_object_show(icon_layout);
 
-    LOGD("icon [%s] create", item->pkg_str);
+    LOGD("icon [%s, %s] create", item->pkg_str, item->pkg_id);
 
     return icon_layout;
 }
@@ -791,8 +791,8 @@ static void __apps_view_uninstall_app_cb(void *data, Evas_Object *obj, void *eve
         LOGE("Could not set request mode. App: %s", item->pkg_str);
         return;
     }
-    if (package_manager_request_uninstall(request, item->pkg_str, &id) != PACKAGE_MANAGER_ERROR_NONE) {
-        LOGE("Could not uninstall application. App: %s", item->pkg_str);
+    if (package_manager_request_uninstall(request, item->pkg_id, &id) != PACKAGE_MANAGER_ERROR_NONE) {
+        LOGE("Could not uninstall application. App: %s", item->pkg_id);
         return;
     }
     if (package_manager_request_destroy(request) != PACKAGE_MANAGER_ERROR_NONE) {
