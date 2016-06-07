@@ -97,7 +97,6 @@ static bool __apps_package_manager_get_item(app_info_h app_handle, void *data)
 
 static bool __apps_data_pkg_get_apps_info(app_info_h app_handle, app_data_t **item)
 {
-    char *pkg = NULL;
     bool nodisplay = false;
     int ret;
     package_info_h p_handle = NULL;
@@ -118,9 +117,15 @@ static bool __apps_data_pkg_get_apps_info(app_info_h app_handle, app_data_t **it
     new_item->uri = NULL;
     new_item->type = APPS_DATA_TYPE_APP;
 
-    ret = app_info_get_app_id(app_handle, &new_item->pkg_str);
+    ret = app_info_get_app_id(app_handle, &new_item->app_id);
     if (APP_MANAGER_ERROR_NONE != ret) {
-        LOGE("app_info_get_app_id return [%d] %s", ret, new_item->pkg_str);
+        LOGE("app_info_get_app_id return [%d] %s", ret, new_item->app_id);
+        goto ERROR;
+    }
+
+    ret = app_info_get_package(app_handle, &new_item->pkg_id);
+    if (APP_MANAGER_ERROR_NONE != ret) {
+        LOGE("app_info_get_package return [%d] %s", ret, new_item->pkg_id);
         goto ERROR;
     }
 
@@ -136,18 +141,11 @@ static bool __apps_data_pkg_get_apps_info(app_info_h app_handle, app_data_t **it
         goto ERROR;
     }
 
-    ret = app_info_get_package(app_handle, &pkg);
-    if (APP_MANAGER_ERROR_NONE != ret) {
-        LOGE("app_info_get_icon return [%d]", ret);
-        goto ERROR;
-    }
-
-    LOGD("%s", pkg);
-
-    ret = package_manager_get_package_info(pkg, &p_handle);
+    LOGD("%s", new_item->pkg_id);
+    
+    ret = package_manager_get_package_info(new_item->pkg_id, &p_handle);
     if (ret != PACKAGE_MANAGER_ERROR_NONE) {
-        LOGE("Failed to inialize package handle for item : %s",
-                pkg);
+        LOGE("Failed to inialize package handle for item : %s", new_item->pkg_id);
         goto ERROR;
     }
 
@@ -169,19 +167,17 @@ static bool __apps_data_pkg_get_apps_info(app_info_h app_handle, app_data_t **it
         new_item->icon_path_str = malloc(MAX_FILE_PATH_LEN);
         sprintf(new_item->icon_path_str, "%s", util_get_res_file_path(IMAGE_DIR"/default_app_icon.png"));
     }
-    if (pkg)
-        free(pkg);
     return true;
 
 ERROR:
-    if (pkg)
-        free(pkg);
     if (new_item && new_item->label_str)
         free(new_item->label_str);
     if (new_item && new_item->icon_path_str)
         free(new_item->icon_path_str);
-    if (new_item && new_item->pkg_str)
-        free(new_item->pkg_str);
+    if (new_item && new_item->app_id)
+        free(new_item->app_id);
+    if (new_item && new_item->pkg_id)
+        free(new_item->pkg_id);
     if (new_item && new_item->owner)
         free(new_item->owner);
     if (new_item) free(new_item);
