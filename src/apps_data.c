@@ -63,7 +63,7 @@ void apps_data_init(void *data, Ecore_Thread *th)
 
     EINA_LIST_FOREACH(db_list, db_find_list, db_item) {
         if (!db_item->temp) {
-            apps_db_delete_by_pkg_str(db_item->pkg_str);
+            apps_db_delete_by_pkg_id(db_item->pkg_id);
             apps_view_delete_icon(db_item);
             __apps_data_item_free(db_item);
         }
@@ -175,7 +175,7 @@ void apps_data_uninstall(const char *package)
     app_data_t *item = NULL;
 
     EINA_LIST_FOREACH(apps_data_s.data_list, find_list, item) {
-        if (item->pkg_str && (strcmp(item->pkg_str, package) == 0) &&
+        if (item->pkg_id && (strcmp(item->pkg_id, package) == 0) &&
                 item->owner && (strcmp(item->owner, TEMP_OWNER) == 0)) {
             find_result = eina_list_append(find_result, item);
         }
@@ -258,6 +258,15 @@ static int __apps_data_shortcut_request_cb(const char *package_name,
     new_item->position = INIT_VALUE;
     new_item->label_str = strdup(name);
     new_item->pkg_str = strdup(package_name);
+
+    char* pkg_id = NULL;
+    int ret = package_manager_get_package_id_by_app_id(package_name, &pkg_id);
+    if (ret != PACKAGE_MANAGER_ERROR_NONE) {
+    	new_item->pkg_id = strdup(package_name);
+    	LOGE("Failed to get package ID, %s, [%d] %s", package_name, ret, get_error_message(ret));
+    } else {
+    	new_item->pkg_id = pkg_id;
+    }    
     if (type == LAUNCH_BY_URI) {
         new_item->uri = strdup(content_info);
         new_item->type = APPS_DATA_TYPE_URI_SHORTCUT;
@@ -351,6 +360,8 @@ static void __apps_data_item_free(app_data_t *item)
         free(item->icon_path_str);
     if (item && item->pkg_str)
         free(item->pkg_str);
+    if (item && item->pkg_id)
+        free(item->pkg_id);
     if (item && item->owner)
         free(item->owner);
     if (item && item->uri)
@@ -366,7 +377,7 @@ static void __apps_data_print(Eina_List *list)
     LOGD("========================================");
     EINA_LIST_FOREACH(list, find_list, item) {
         if (item != NULL)
-            LOGD("%d [pkg: %s][name:%s][iconPath: %s][icon:%p]", item->position, item->pkg_str, item->label_str, item->icon_path_str, item->app_layout);
+            LOGD("%d [pkg: %s][id: %s][name:%s][iconPath: %s][icon:%p]", item->position, item->pkg_str, item->pkg_id, item->label_str, item->icon_path_str, item->app_layout);
     }
     LOGD("========================================");
 }

@@ -30,6 +30,7 @@ typedef struct {
     Eina_Bool is_folder;
     int position;
     char* pkg_str;
+    char* pkg_id;
     char* label_str;
     char* icon_path_str;
     char* uri;
