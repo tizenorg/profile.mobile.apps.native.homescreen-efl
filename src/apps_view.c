@@ -411,7 +411,7 @@ Evas_Object* apps_view_create_icon(app_data_t *item)
 
     evas_object_show(icon_layout);
 
-    LOGD("icon [%s] create", item->pkg_str);
+    LOGD("icon [%s, %s] create", item->app_id, item->pkg_id);
 
     return icon_layout;
 }
@@ -490,7 +490,7 @@ bool apps_view_icon_set(app_data_t *item)
     if (item == NULL)
         return false;
 
-    LOGD("%s %d %d", item->pkg_str, item->parent_db_id, item->position);
+    LOGD("%s %d %d", item->app_id, item->parent_db_id, item->position);
     if (item->parent_db_id == APPS_ROOT) {
         page_index = item->position / (APPS_VIEW_COL*APPS_VIEW_ROW);
         col = (item->position / APPS_VIEW_COL)%APPS_VIEW_ROW;
@@ -507,7 +507,7 @@ bool apps_view_icon_set(app_data_t *item)
             elm_object_part_content_unset(page, icon_container);
         }
         elm_object_part_content_set(page, icon_container, item->app_layout);
-        LOGD("[%s] -> [%s], [%p] page : %d", item->pkg_str, icon_container, item->app_layout, page_index);
+        LOGD("[%s] -> [%s], [%p] page : %d", item->app_id, icon_container, item->app_layout, page_index);
         return true;
     } else if (apps_view_s.opened_folder && item->parent_db_id == apps_view_s.opened_folder->db_id) {
         col = (item->position / APPS_FOLDER_COL)%APPS_FOLDER_ROW;
@@ -519,7 +519,7 @@ bool apps_view_icon_set(app_data_t *item)
             elm_object_part_content_unset(apps_view_s.folder_popup_ly, icon_container);
         }
         elm_object_part_content_set(apps_view_s.folder_popup_ly, icon_container, item->app_layout);
-        LOGD("[%s] -> [%s], [%p]", item->pkg_str, icon_container, item->app_layout);
+        LOGD("[%s] -> [%s], [%p]", item->app_id, icon_container, item->app_layout);
     }
 
     return false;
@@ -695,7 +695,7 @@ static void __apps_view_icon_clicked_cb(app_data_t *item)
         LOGD("%d(%s) folder clicked", item->db_id, item->label_str);
         __apps_view_open_folder_popup(item);
     } else if (apps_view_s.view_state == VIEW_STATE_NORMAL) {
-        LOGD("%s(%s) applciation clicked", item->pkg_str, item->owner);
+        LOGD("%s(%s) applciation clicked", item->app_id, item->owner);
         if (app_control_create(&app_control_handle) != APP_CONTROL_ERROR_NONE) {
             LOGE("[FAILED][app_control_create]");
             return;
@@ -711,7 +711,7 @@ static void __apps_view_icon_clicked_cb(app_data_t *item)
             app_control_destroy(app_control_handle);
             return;
         }
-        if (app_control_set_app_id(app_control_handle, item->pkg_str) != APP_CONTROL_ERROR_NONE) {
+        if (app_control_set_app_id(app_control_handle, item->app_id) != APP_CONTROL_ERROR_NONE) {
             LOGE("[FAILED][app_control_set_app_id]");
             app_control_destroy(app_control_handle);
             return;
@@ -734,7 +734,7 @@ static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *o
         LOGE("item is NULL");
     }
 
-    LOGD("Uninstall :: %s", item->pkg_str);
+    LOGD("Uninstall :: %s", item->app_id);
     if (item->is_folder) {
         if (apps_data_get_folder_item_count(item) > 0) {
             Evas_Smart_Cb func[3] = { __apps_view_delete_folder_cb, NULL, NULL };
@@ -783,20 +783,20 @@ static void __apps_view_uninstall_app_cb(void *data, Evas_Object *obj, void *eve
     popup_hide();
 
     if (package_manager_request_create(&request) != PACKAGE_MANAGER_ERROR_NONE) {
-        LOGE("Could not create unistall request. App: %s", item->pkg_str);
+        LOGE("Could not create unistall request. App: %s", item->pkg_id);
         return;
     }
     int ret = package_manager_request_set_mode(request, PACKAGE_MANAGER_REQUEST_MODE_DEFAULT);
     if (ret != PACKAGE_MANAGER_ERROR_NONE) {
-        LOGE("Could not set request mode. App: %s", item->pkg_str);
+        LOGE("Could not set request mode. App: %s", item->pkg_id);
         return;
     }
-    if (package_manager_request_uninstall(request, item->pkg_str, &id) != PACKAGE_MANAGER_ERROR_NONE) {
-        LOGE("Could not uninstall application. App: %s", item->pkg_str);
+    if (package_manager_request_uninstall(request, item->pkg_id, &id) != PACKAGE_MANAGER_ERROR_NONE) {
+        LOGE("Could not uninstall application. App: %s", item->pkg_id);
         return;
     }
     if (package_manager_request_destroy(request) != PACKAGE_MANAGER_ERROR_NONE) {
-        LOGE("Could not destroy unistall request. App: %s", item->pkg_str);
+        LOGE("Could not destroy unistall request. App: %s", item->pkg_id);
         return;
     }
 }
@@ -1275,7 +1275,7 @@ static void __apps_view_badge_update_cb(unsigned int action, const char *app_id,
         return;
     }
     EINA_LIST_FOREACH(data_list, find_list, item) {
-        if (strcmp(app_id, item->pkg_str) == 0) {
+        if (strcmp(app_id, item->app_id) == 0) {
             __apps_view_badge_update_count(item);
         }
     }
@@ -1286,12 +1286,12 @@ static void __apps_view_badge_update_count(app_data_t *item)
     unsigned int to_be_displayed = 0;
     int result = BADGE_ERROR_NONE;
 
-    if (!item->pkg_str) {
+    if (!item->app_id) {
         LOGE("app_item is NULL in badge count");
         return;
     }
 
-    result = badge_get_display(item->pkg_str, &to_be_displayed);
+    result = badge_get_display(item->app_id, &to_be_displayed);
     if (result != BADGE_ERROR_NONE) {
         LOGE("badge_get_display error %d", result);
         item->badge_count = 0;
@@ -1302,7 +1302,7 @@ static void __apps_view_badge_update_count(app_data_t *item)
         return;
     }
 
-    result = badge_get_count(item->pkg_str, &item->badge_count);
+    result = badge_get_count(item->app_id, &item->badge_count);
     if (result != BADGE_ERROR_NONE) {
         LOGE("badge_get_count error %d", result);
         item->badge_count = 0;

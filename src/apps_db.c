@@ -28,12 +28,13 @@
 static sqlite3 *apps_db = NULL;
 
 enum {
-    COL_APP_ID = 0,
+    COL_ID = 0,
     COL_PARENT_ID,
     COL_OWNER,
     COL_IS_FOLDER,
     COL_POSITION,
-    COL_PACKAGE_STR,
+    COL_APPLICATION_ID,
+    COL_PACKAGE_ID,
     COL_LABEL,
     COL_URI,
     COL_TYPE,
@@ -43,12 +44,13 @@ enum {
 };
 
 #define CREATE_APPS_DB_TABLE "create table if not exists apps(\
-        appId INTEGER PRIMARY KEY AUTOINCREMENT,\
+        id INTEGER PRIMARY KEY AUTOINCREMENT,\
         parentId    INTEGER,\
         owner       TEXT,\
         isFolder    INTEGER,\
         position    INTEGER,\
-        pkgStr      TEXT,\
+        appId       TEXT,\
+        pkgId       TEXT,\
         label       TEXT,\
         uri         TEXT,\
         type        INTEGER,\
@@ -61,26 +63,28 @@ enum {
         owner='%s',\
         isFolder=%d,\
         position=%d,\
-        pkgStr='%s',\
+        appId='%s',\
+        pkgId='%s',\
         label='%s',\
         uri='%s',\
         type=%d,\
         isSystem=%d,\
         isRemovable=%d,\
-        iconPath='%s' WHERE appId = %d"
+        iconPath='%s' WHERE id = %d"
 
 #define INSERT_APPS_DB_TABLE "INSERT into apps (\
         parentId,\
         owner,\
         isFolder,\
         position,\
-        pkgStr,\
+        appId,\
+        pkgId,\
         label,\
         uri,\
         type,\
         isSystem,\
         isRemovable,\
-        iconPath) VALUES(%d,'%s',%d,%d,'%s','%s','%s',%d,%d,%d,'%s')"
+        iconPath) VALUES(%d,'%s',%d,%d,'%s','%s','%s','%s',%d,%d,%d,'%s')"
 
 #define SELECT_ITEM "SELECT * FROM apps;"
 #define SELECT_APP_ITEM "SELECT * FROM apps WHERE type=0 AND isFolder=0;"
@@ -151,14 +155,16 @@ bool apps_db_get_list(Eina_List **apps)
         app_data_t *item = (app_data_t *)malloc(sizeof(app_data_t));
         memset(item, 0, sizeof(app_data_t));
 
-        item->db_id = sqlite3_column_int(stmt, COL_APP_ID);
+        item->db_id = sqlite3_column_int(stmt, COL_ID);
         item->parent_db_id = sqlite3_column_int(stmt, COL_PARENT_ID);
         str = (const char *) sqlite3_column_text(stmt, COL_OWNER);
         item->owner = (!str || !strlen(str)) ? NULL : strdup(str);
         item->is_folder = sqlite3_column_int(stmt, COL_IS_FOLDER);
         item->position = sqlite3_column_int(stmt, COL_POSITION);
-        str = (const char *) sqlite3_column_text(stmt, COL_PACKAGE_STR);
-        item->pkg_str = (!str || !strlen(str)) ? NULL : strdup(str);
+        str = (const char *) sqlite3_column_text(stmt, COL_APPLICATION_ID);
+        item->app_id = (!str || !strlen(str)) ? NULL : strdup(str);
+        str = (const char *) sqlite3_column_text(stmt, COL_PACKAGE_ID);
+        item->pkg_id = (!str || !strlen(str)) ? NULL : strdup(str);
         str = (const char *) sqlite3_column_text(stmt, COL_LABEL);
         item->label_str = (!str) ? NULL : strdup(str);
         str = (const char *) sqlite3_column_text(stmt, COL_URI);
@@ -192,14 +198,16 @@ bool apps_db_get_app_list(Eina_List **apps)
         app_data_t *item = (app_data_t *)malloc(sizeof(app_data_t));
         memset(item, 0, sizeof(app_data_t));
 
-        item->db_id = sqlite3_column_int(stmt, COL_APP_ID);
+        item->db_id = sqlite3_column_int(stmt, COL_ID);
         item->parent_db_id = sqlite3_column_int(stmt, COL_PARENT_ID);
         str = (const char *) sqlite3_column_text(stmt, COL_OWNER);
         item->owner = (!str || !strlen(str)) ? NULL : strdup(str);
         item->is_folder = sqlite3_column_int(stmt, COL_IS_FOLDER);
         item->position = sqlite3_column_int(stmt, COL_POSITION);
-        str = (const char *) sqlite3_column_text(stmt, COL_PACKAGE_STR);
-        item->pkg_str = (!str || !strlen(str)) ? NULL : strdup(str);
+        str = (const char *) sqlite3_column_text(stmt, COL_APPLICATION_ID);
+        item->app_id = (!str || !strlen(str)) ? NULL : strdup(str);
+        str = (const char *) sqlite3_column_text(stmt, COL_PACKAGE_ID);
+        item->pkg_id = (!str || !strlen(str)) ? NULL : strdup(str);
         str = (const char *) sqlite3_column_text(stmt, COL_LABEL);
         item->label_str = (!str || !strlen(str)) ? NULL : strdup(str);
         str = (const char *) sqlite3_column_text(stmt, COL_URI);
@@ -226,7 +234,8 @@ bool apps_db_update(app_data_t *item)
             item->owner,
             item->is_folder,
             item->position,
-            item->pkg_str,
+            item->app_id,
+            item->pkg_id,
             item->label_str,
             item->uri,
             item->type,
@@ -257,7 +266,8 @@ bool apps_db_insert(app_data_t *item)
             item->owner,
             item->is_folder,
             item->position,
-            item->pkg_str,
+            item->app_id,
+            item->pkg_id,
             item->label_str,
             item->uri,
             item->type,
@@ -284,7 +294,7 @@ bool apps_db_delete(app_data_t *item)
     sqlite3_stmt *stmt;
     if (!__apps_db_open())
         return false;
-    snprintf(query, QUERY_MAXLEN, "DELETE FROM apps WHERE appId=%d", item->db_id);
+    snprintf(query, QUERY_MAXLEN, "DELETE FROM apps WHERE id=%d", item->db_id);
     int ret = sqlite3_prepare(apps_db, query, QUERY_MAXLEN , &stmt, NULL);
     if (ret != SQLITE_OK) {
         LOGE("sqlite error : [%s,%s]", query, sqlite3_errmsg(apps_db));
@@ -298,13 +308,33 @@ bool apps_db_delete(app_data_t *item)
     return true;
 }
 
-bool apps_db_delete_by_pkg_str(const char* pkg)
+bool apps_db_delete_by_app_id(const char* app_id)
 {
     char query[QUERY_MAXLEN];
     sqlite3_stmt *stmt;
     if (!__apps_db_open())
         return false;
-    snprintf(query, QUERY_MAXLEN, "DELETE FROM apps WHERE pkgStr='%s'", pkg);
+    snprintf(query, QUERY_MAXLEN, "DELETE FROM apps WHERE appId='%s'", app_id);
+    int ret = sqlite3_prepare(apps_db, query, QUERY_MAXLEN , &stmt, NULL);
+    if (ret != SQLITE_OK) {
+        LOGE("sqlite error : [%s,%s]", query, sqlite3_errmsg(apps_db));
+        return false;
+    }
+
+    sqlite3_step(stmt);
+    sqlite3_finalize(stmt);
+
+    apps_db_close();
+    return true;
+}
+
+bool apps_db_delete_by_pkg_id(const char* pkg_id)
+{
+    char query[QUERY_MAXLEN];
+    sqlite3_stmt *stmt;
+    if (!__apps_db_open())
+        return false;
+    snprintf(query, QUERY_MAXLEN, "DELETE FROM apps WHERE pkgId='%s'", pkg_id);
     int ret = sqlite3_prepare(apps_db, query, QUERY_MAXLEN , &stmt, NULL);
     if (ret != SQLITE_OK) {
         LOGE("sqlite error : [%s,%s]", query, sqlite3_errmsg(apps_db));
