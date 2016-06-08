@@ -185,6 +185,20 @@ ERROR:
 
 }
 
+void apps_package_manager_update_label(const	 char *app_id, app_data_t *item)
+{
+	app_info_h app_info = NULL;
+	int ret = APP_MANAGER_ERROR_NONE;
+	app_manager_get_app_info(app_id, &app_info);
+
+	if (item->label_str)
+		free(item->label_str);
+	ret = app_info_get_label(app_info, &item->label_str);
+	if (APP_MANAGER_ERROR_NONE != ret) {
+		LOGE("app_info_get_label return [%d] %s", ret, item->label_str);
+	}
+}
+
 static void __apps_package_manager_install(const char *package)
 {
 	app_info_h app_info = NULL;

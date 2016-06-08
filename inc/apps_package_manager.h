@@ -24,7 +24,10 @@
 #include <app_info.h>
 #include <Elementary.h>
 
+#include "apps_data.h"
+
 void apps_package_manager_init();
 Eina_Bool apps_package_manger_get_list(Eina_List **list);
+void apps_package_manager_update_label(const char *app_id, app_data_t *item);
 
 #endif /* __APPS_PACKAGE_MANAGER_H__ */

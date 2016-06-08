@@ -26,6 +26,7 @@
 #include "cluster_view.h"
 #include "hw_key.h"
 #include "view.h"
+#include "menu.h"
 
 static struct {
 	Evas_Object *win;
@@ -72,6 +73,8 @@ static Eina_Bool __homescreen_efl_init_view(void *data);
 static void __homescreen_efl_lang_changed_cb(app_event_info_h event_info, void *user_data)
 {
 	LOGD("called");
+	menu_hide();
+	apps_view_lang_changed(main_info.view_type);
 }
 
 static void __homescreen_efl_orient_changed_cb(app_event_info_h event_info, void *user_data)
