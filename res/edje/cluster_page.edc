@@ -17,67 +17,67 @@
 #include "../../inc/edc_conf.h"
 
 collections {
-    images {
-        image: "../res/images/btn_delete_nor.png" COMP;
-        image: "../res/images/btn_delete_press.png" COMP;
-    }
-    group { name: GROUP_CLUSTER_PAGE_LY;
-        parts {
-            part { name: SIZE_SETTER;
-                type: SWALLOW;
-                description {
-                    state: "default" 0.0;
-                    align: 0 0;
-                    rel1.relative: 0.0 0.0;
-                    rel2.relative: 1.0 1.0;
-                }
-            }
-            part { name: CLUSTER_BG;
-                type: RECT;
-                description {
-                    state: "default" 0.0;
-                    align: 0 0;
-                    visible: 0;
-                    color : 0 0 0 0;
-                    rel1{relative: 0.0 0.0; to: SIZE_SETTER;}
-                    rel2{relative: 1.0 1.0; to: SIZE_SETTER;}
-                }
-                description {
-                    state: "edit" 0.0;
-                    inherit: "default" 0.0;
-                    color : 0 0 0 50;
-                    visible: 1;
-                    rel1{relative: 0.05 0.05; to: SIZE_SETTER;}
-                    rel2{relative: 0.95 0.95; to: SIZE_SETTER;}
-                }
-            }
-            part { name: CLUSTER_BOX;
-                type: SWALLOW;
-                description {
-                    state: "default" 0.0;
-                    align: 0 0;
-                    rel1{relative: 0.0 0.0; to: CLUSTER_BG;}
-                    rel2{relative: 1.0 1.0; to: CLUSTER_BG;}
-                }
-            }
-        }
-        programs {
-            program {
-                name: "edit_mode_on";
-                signal: SIGNAL_EDIT_MODE_ON;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "edit" 0.0;
-                target: CLUSTER_BG;
-                transition: DECELERATE ANIMATION_RESIZE_TIME;
-            }
-            program {
-                name: "edit_mode_off";
-                signal: SIGNAL_EDIT_MODE_OFF;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "default" 0.0;
-                target: CLUSTER_BG;
-                transition: DECELERATE ANIMATION_RESIZE_TIME;
-            }
-        }
-    }
+	images {
+		image: "../res/images/btn_delete_nor.png" COMP;
+		image: "../res/images/btn_delete_press.png" COMP;
+	}
+	group { name: GROUP_CLUSTER_PAGE_LY;
+		parts {
+			part { name: SIZE_SETTER;
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					align: 0 0;
+					rel1.relative: 0.0 0.0;
+					rel2.relative: 1.0 1.0;
+				}
+			}
+			part { name: CLUSTER_BG;
+				type: RECT;
+				description {
+					state: "default" 0.0;
+					align: 0 0;
+					visible: 0;
+					color : 0 0 0 0;
+					rel1{relative: 0.0 0.0; to: SIZE_SETTER;}
+					rel2{relative: 1.0 1.0; to: SIZE_SETTER;}
+				}
+				description {
+					state: "edit" 0.0;
+					inherit: "default" 0.0;
+					color : 0 0 0 50;
+					visible: 1;
+					rel1{relative: 0.05 0.05; to: SIZE_SETTER;}
+					rel2{relative: 0.95 0.95; to: SIZE_SETTER;}
+				}
+			}
+			part { name: CLUSTER_BOX;
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					align: 0 0;
+					rel1{relative: 0.0 0.0; to: CLUSTER_BG;}
+					rel2{relative: 1.0 1.0; to: CLUSTER_BG;}
+				}
+			}
+		}
+		programs {
+			program {
+				name: "edit_mode_on";
+				signal: SIGNAL_EDIT_MODE_ON;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "edit" 0.0;
+				target: CLUSTER_BG;
+				transition: DECELERATE ANIMATION_RESIZE_TIME;
+			}
+			program {
+				name: "edit_mode_off";
+				signal: SIGNAL_EDIT_MODE_OFF;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "default" 0.0;
+				target: CLUSTER_BG;
+				transition: DECELERATE ANIMATION_RESIZE_TIME;
+			}
+		}
+	}
 }

@@ -22,16 +22,16 @@
 #include <widget_service.h>
 
 typedef struct {
-    int widget_id;
-    int page_idx;
-    int pos_y;
-    int pos_x;
-    char *pkg_name;
-    char *content_info;
-    widget_size_type_e type;
-    double period;
-    int allow_duplicate;
-    Evas_Object *widget_layout;
+	int widget_id;
+	int page_idx;
+	int pos_y;
+	int pos_x;
+	char *pkg_name;
+	char *content_info;
+	widget_size_type_e type;
+	double period;
+	int allow_duplicate;
+	Evas_Object *widget_layout;
 } widget_data_t;
 
 void cluster_data_init(void);

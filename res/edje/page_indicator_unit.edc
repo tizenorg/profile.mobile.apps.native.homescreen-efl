@@ -17,92 +17,92 @@
 #include "../../inc/edc_conf.h"
 
 collections {
-    group {
-        name: GROUP_PAGE_INDICATOR_UNIT;
-        images {
-            image: "../res/images/page_indicator_current.png" COMP;
-            image: "../res/images/page_indicator_unit.png" COMP;
-        }
-        script {
-            public rot;
-            public alpha;
+	group {
+		name: GROUP_PAGE_INDICATOR_UNIT;
+		images {
+			image: "../res/images/page_indicator_current.png" COMP;
+			image: "../res/images/page_indicator_unit.png" COMP;
+		}
+		script {
+			public rot;
+			public alpha;
 
-            public message(Msg_Type:type, id, ...) {
-                if (type == MSG_FLOAT_SET)
-                {
-                    set_float(rot, getfarg(2));
-                    set_float(alpha, getfarg(3));
-                    send_message(type, id, getfarg(2), getfarg(3));
-                }
-            }
-        }
-        parts {
-            part { name: SIZE_SETTER;
-                type: SWALLOW;
-                description {
-                    state: "default" 0.0;
-                    align: 0 0;
-                    rel1.relative: 0.0 0.0;
-                    rel2.relative: 0.0 0.0;
-                }
-            }
-            part {
-                name: "unit";
-                type: IMAGE;
+			public message(Msg_Type:type, id, ...) {
+				if (type == MSG_FLOAT_SET)
+				{
+					set_float(rot, getfarg(2));
+					set_float(alpha, getfarg(3));
+					send_message(type, id, getfarg(2), getfarg(3));
+				}
+			}
+		}
+		parts {
+			part { name: SIZE_SETTER;
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					align: 0 0;
+					rel1.relative: 0.0 0.0;
+					rel2.relative: 0.0 0.0;
+				}
+			}
+			part {
+				name: "unit";
+				type: IMAGE;
 
-                description {
-                    state: "default" 0.0;
-                    color: 255 255 255 75;
-                    rel1{relative: 0.0 0.0; to:SIZE_SETTER;}
-                    rel2{relative: 1.0 1.0; to:SIZE_SETTER;}
-                    image {
-                        normal: "../res/images/page_indicator_unit.png";
-                    }
-                    map {
-                        on: 1;
-                        perspective_on: 1;
-                        smooth: 1;
-                        alpha: 1;
-                    }
-                }
-                description {
-                    state: "current" 0.0;
-                    inherit: "default" 0.0;
-                    color: 255 255 255 255;
-                    image {
-                        normal: "../res/images/page_indicator_current.png";
-                    }
-                }
-            }
-        }
-        programs {
-            program
-            {
-                name: "indice_set_default";
-                signal: SIGNAL_PAGE_IDICATOR_DEFAULT;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "default" 0.0;
-                target: "unit";
-            }
-            program
-            {
-                name: "indice_set_current";
-                signal: SIGNAL_PAGE_IDICATOR_CURRENT;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "current" 0.0;
-                target: "unit";
-            }
-            program {
-                name: "rotation,changed";
-                signal: SIGNAL_PAGE_IDICATOR_ROTATION_CHANGE;
-                source: SIGNAL_SOURCE;
-                script {
-                    custom_state(PART:"unit", "default", 0.0);
-                    set_state_val(PART:"unit", STATE_MAP_ROT_Z, get_float(rot));
-                    set_state_val(PART:"unit", STATE_COLOR, 255, 255, 255, round(get_float(alpha)));
-                    set_state(PART:"unit", "custom", 0.0);
-                }
-            }
-        }
-    }
+				description {
+					state: "default" 0.0;
+					color: 255 255 255 75;
+					rel1{relative: 0.0 0.0; to:SIZE_SETTER;}
+					rel2{relative: 1.0 1.0; to:SIZE_SETTER;}
+					image {
+						normal: "../res/images/page_indicator_unit.png";
+					}
+					map {
+						on: 1;
+						perspective_on: 1;
+						smooth: 1;
+						alpha: 1;
+					}
+				}
+				description {
+					state: "current" 0.0;
+					inherit: "default" 0.0;
+					color: 255 255 255 255;
+					image {
+						normal: "../res/images/page_indicator_current.png";
+					}
+				}
+			}
+		}
+		programs {
+			program
+			{
+				name: "indice_set_default";
+				signal: SIGNAL_PAGE_IDICATOR_DEFAULT;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "default" 0.0;
+				target: "unit";
+			}
+			program
+			{
+				name: "indice_set_current";
+				signal: SIGNAL_PAGE_IDICATOR_CURRENT;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "current" 0.0;
+				target: "unit";
+			}
+			program {
+				name: "rotation,changed";
+				signal: SIGNAL_PAGE_IDICATOR_ROTATION_CHANGE;
+				source: SIGNAL_SOURCE;
+				script {
+					custom_state(PART:"unit", "default", 0.0);
+					set_state_val(PART:"unit", STATE_MAP_ROT_Z, get_float(rot));
+					set_state_val(PART:"unit", STATE_COLOR, 255, 255, 255, round(get_float(alpha)));
+					set_state(PART:"unit", "custom", 0.0);
+				}
+			}
+		}
+	}
 }

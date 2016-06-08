@@ -18,20 +18,20 @@
 #define __ADD_WIDGET_DATA_H__
 
 typedef struct {
-    char *widget_id;
-    char *app_id;
-    char *label;
+	char *widget_id;
+	char *app_id;
+	char *label;
 
-    Eina_List *preview_list;
-    Elm_Object_Item *genlist_item;
+	Eina_List *preview_list;
+	Elm_Object_Item *genlist_item;
 
-    int size_types_count;
-    int size_types;
+	int size_types_count;
+	int size_types;
 } add_widget_data_t;
 
 typedef struct {
-    int type;
-    char *path;
+	int type;
+	char *path;
 } add_widget_data_preview_t;
 
 bool add_widget_data_init(void);

@@ -17,148 +17,148 @@
 #include "../../inc/edc_conf.h"
 
 #define MAKE_TILE(num_x,num_y)\
-    part{ name: "icon_"num_x"_"num_y;\
-        type : SWALLOW;\
-        description {\
-            state : "default" 0.0;\
-            fixed : 1 1;\
-            rel1 {\
-                relative :num_y/APPS_VIEW_COL num_x/APPS_VIEW_ROW ;\
-                to: SIZE_SETTER;\
-            }\
-            rel2 {\
-                relative :(num_y+1)/APPS_VIEW_COL (num_x+1)/APPS_VIEW_ROW ;\
-                to: SIZE_SETTER;\
-            }\
-            align: 0.0 0.0;\
-        }\
-        description {\
-            state: "edit" 0.0;\
-            inherit: "default" 0.0;\
-            rel1 {\
-                relative :0.04+(num_y/APPS_VIEW_COL)*0.9 0.05+(num_x/APPS_VIEW_ROW)*0.9 ;\
-                to: SIZE_SETTER;\
-            }\
-            rel2 {\
-                relative :0.04+((num_y+1)/APPS_VIEW_COL)*0.9 0.05+((num_x+1)/APPS_VIEW_ROW)*0.09 ;\
-                to: SIZE_SETTER;\
-            };\
-        }\
-    }
+	part{ name: "icon_"num_x"_"num_y;\
+		type : SWALLOW;\
+		description {\
+			state : "default" 0.0;\
+			fixed : 1 1;\
+			rel1 {\
+				relative :num_y/APPS_VIEW_COL num_x/APPS_VIEW_ROW ;\
+				to: SIZE_SETTER;\
+			}\
+			rel2 {\
+				relative :(num_y+1)/APPS_VIEW_COL (num_x+1)/APPS_VIEW_ROW ;\
+				to: SIZE_SETTER;\
+			}\
+			align: 0.0 0.0;\
+		}\
+		description {\
+			state: "edit" 0.0;\
+			inherit: "default" 0.0;\
+			rel1 {\
+				relative :0.04+(num_y/APPS_VIEW_COL)*0.9 0.05+(num_x/APPS_VIEW_ROW)*0.9 ;\
+				to: SIZE_SETTER;\
+			}\
+			rel2 {\
+				relative :0.04+((num_y+1)/APPS_VIEW_COL)*0.9 0.05+((num_x+1)/APPS_VIEW_ROW)*0.09 ;\
+				to: SIZE_SETTER;\
+			};\
+		}\
+	}
 
 collections {
-    images {
-    }
-    group { name: GROUP_APPS_LY;
-        parts {
-            part { name: SIZE_SETTER;
-                type: SWALLOW;
-                mouse_events: 1;
-                repeat_events: 1;
-                description {
-                    state: "default" 0.0;
-                    align: 0 0;
-                    rel1.relative: 0.0 0.0;
-                    rel2.relative: 0.0 0.0;
-                }
-            }
-            part { name: APPS_VIEW_BG;
-                type: RECT;
-                mouse_events: 1;
-                repeat_events: 1;
-                description {
-                    state: "default" 0.0;
-                    align: 0 0;
-                    rel1 {relative: 0.0 0.0; to:SIZE_SETTER;}
-                    rel2 {relative: 1.0 1.0; to:SIZE_SETTER;}
-                    color: 0 0 0 0;
-                    visible: 0;
-                }
-                description {
-                    state: "edit_done" 0.0;
-                    inherit: "default" 0.0;
-                    rel1 {relative :0.05 0.05; to: SIZE_SETTER;}
-                    rel2 {relative :0.95 0.95; to: SIZE_SETTER;}
-                    color: 0 0 0 APPS_VIEW_BG_OPACITY;
-                    visible: 1;
-                }
-            }
-            part { name: APPS_VIEW_GRID;
-                type: SWALLOW;
-                mouse_events: 1;
-                repeat_events: 1;
-                description {
-                    state: "default" 0.0;
-                    align: 0 0;
-                    rel1 {relative: 0.0 0.0; to:SIZE_SETTER;}
-                    rel2 {relative: 1.0 1.0; to:SIZE_SETTER;}
-                }
-                description {
-                    state: "edit" 0.0;
-                    inherit: "default" 0.0;
-                    rel1 {relative :0.05 0.05; to: SIZE_SETTER;}
-                    rel2 {relative :0.95 0.95; to: SIZE_SETTER;}
-                }
-            }
-        }
-        programs {
-            program {
-                name: "bg_edit_mode_on_ani";
-                signal: SIGNAL_EDIT_MODE_ON_ANI;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "edit" 0.0;
-                target: APPS_VIEW_GRID;
-                transition: DECELERATE ANIMATION_RESIZE_TIME;
-                after: bg_edit_mode_on_ani_done;
-            }
-            
-            program {
-                name: "bg_edit_mode_on";
-                signal: SIGNAL_EDIT_MODE_ON;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "edit" 0.0;
-                target: APPS_VIEW_GRID;
-                after: bg_edit_mode_on_ani_done;
-            }
-            program {
-                name: "bg_edit_mode_on_ani_done";
-                signal: SIGNAL_EDIT_MODE_ON_ANI_DONE;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "edit_done" 0.0;
-                target: APPS_VIEW_BG;
-            }
-            
-            program {
-                name: "bg_edit_mode_off_ani";
-                signal: SIGNAL_EDIT_MODE_OFF_ANI;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "default" 0.0;
-                target: APPS_VIEW_BG;
-                after: "bg_edit_mode_off2_ani";
-            }
-            program {
-                name: "bg_edit_mode_off";
-                signal: SIGNAL_EDIT_MODE_OFF;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "default" 0.0;
-                target: APPS_VIEW_BG;
-                after: "bg_edit_mode_off2";
-            }
-            program {
-                name: "bg_edit_mode_off2_ani";
-                signal: "bg_edit_mode_off2_ani";
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "default" 0.0;
-                target: APPS_VIEW_GRID;
-                transition: DECELERATE ANIMATION_RESIZE_TIME;
-            }
-            program {
-                name: "bg_edit_mode_off2";
-                signal: "bg_edit_mode_off2";
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "default" 0.0;
-                target: APPS_VIEW_GRID;
-            }
-        }
-    }
+	images {
+	}
+	group { name: GROUP_APPS_LY;
+		parts {
+			part { name: SIZE_SETTER;
+				type: SWALLOW;
+				mouse_events: 1;
+				repeat_events: 1;
+				description {
+					state: "default" 0.0;
+					align: 0 0;
+					rel1.relative: 0.0 0.0;
+					rel2.relative: 0.0 0.0;
+				}
+			}
+			part { name: APPS_VIEW_BG;
+				type: RECT;
+				mouse_events: 1;
+				repeat_events: 1;
+				description {
+					state: "default" 0.0;
+					align: 0 0;
+					rel1 {relative: 0.0 0.0; to:SIZE_SETTER;}
+					rel2 {relative: 1.0 1.0; to:SIZE_SETTER;}
+					color: 0 0 0 0;
+					visible: 0;
+				}
+				description {
+					state: "edit_done" 0.0;
+					inherit: "default" 0.0;
+					rel1 {relative :0.05 0.05; to: SIZE_SETTER;}
+					rel2 {relative :0.95 0.95; to: SIZE_SETTER;}
+					color: 0 0 0 APPS_VIEW_BG_OPACITY;
+					visible: 1;
+				}
+			}
+			part { name: APPS_VIEW_GRID;
+				type: SWALLOW;
+				mouse_events: 1;
+				repeat_events: 1;
+				description {
+					state: "default" 0.0;
+					align: 0 0;
+					rel1 {relative: 0.0 0.0; to:SIZE_SETTER;}
+					rel2 {relative: 1.0 1.0; to:SIZE_SETTER;}
+				}
+				description {
+					state: "edit" 0.0;
+					inherit: "default" 0.0;
+					rel1 {relative :0.05 0.05; to: SIZE_SETTER;}
+					rel2 {relative :0.95 0.95; to: SIZE_SETTER;}
+				}
+			}
+		}
+		programs {
+			program {
+				name: "bg_edit_mode_on_ani";
+				signal: SIGNAL_EDIT_MODE_ON_ANI;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "edit" 0.0;
+				target: APPS_VIEW_GRID;
+				transition: DECELERATE ANIMATION_RESIZE_TIME;
+				after: bg_edit_mode_on_ani_done;
+			}
+			
+			program {
+				name: "bg_edit_mode_on";
+				signal: SIGNAL_EDIT_MODE_ON;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "edit" 0.0;
+				target: APPS_VIEW_GRID;
+				after: bg_edit_mode_on_ani_done;
+			}
+			program {
+				name: "bg_edit_mode_on_ani_done";
+				signal: SIGNAL_EDIT_MODE_ON_ANI_DONE;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "edit_done" 0.0;
+				target: APPS_VIEW_BG;
+			}
+			
+			program {
+				name: "bg_edit_mode_off_ani";
+				signal: SIGNAL_EDIT_MODE_OFF_ANI;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "default" 0.0;
+				target: APPS_VIEW_BG;
+				after: "bg_edit_mode_off2_ani";
+			}
+			program {
+				name: "bg_edit_mode_off";
+				signal: SIGNAL_EDIT_MODE_OFF;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "default" 0.0;
+				target: APPS_VIEW_BG;
+				after: "bg_edit_mode_off2";
+			}
+			program {
+				name: "bg_edit_mode_off2_ani";
+				signal: "bg_edit_mode_off2_ani";
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "default" 0.0;
+				target: APPS_VIEW_GRID;
+				transition: DECELERATE ANIMATION_RESIZE_TIME;
+			}
+			program {
+				name: "bg_edit_mode_off2";
+				signal: "bg_edit_mode_off2";
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "default" 0.0;
+				target: APPS_VIEW_GRID;
+			}
+		}
+	}
 }

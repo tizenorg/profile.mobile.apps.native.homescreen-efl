@@ -20,18 +20,18 @@
 #define MOUSE_MOVE_MIN_DISTANCE 100
 
 typedef struct {
-    bool pressed;
-    bool long_pressed;
-    Evas_Coord down_x;
-    Evas_Coord down_y;
-    Evas_Coord move_x;
-    Evas_Coord move_y;
-    Evas_Coord up_x;
-    Evas_Coord up_y;
-    int offset_x;
-    int offset_y;
-    Ecore_Timer *long_press_timer;
-    Evas_Object *pressed_obj;
+	bool pressed;
+	bool long_pressed;
+	Evas_Coord down_x;
+	Evas_Coord down_y;
+	Evas_Coord move_x;
+	Evas_Coord move_y;
+	Evas_Coord up_x;
+	Evas_Coord up_y;
+	int offset_x;
+	int offset_y;
+	Ecore_Timer *long_press_timer;
+	Evas_Object *pressed_obj;
 } mouse_info_t;
 
 #endif /* __MOUSE_H__ */

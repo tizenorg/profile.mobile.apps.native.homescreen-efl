@@ -24,30 +24,30 @@
 #define TEMP_OWNER "owner"
 
 typedef struct {
-    int db_id;
-    int parent_db_id;
-    char* owner;
-    Eina_Bool is_folder;
-    int position;
-    char* app_id;
-    char* pkg_id;
-    char* label_str;
-    char* icon_path_str;
-    char* uri;
-    int type;
-    bool is_removable;
-    bool is_system;
-    Evas_Object *app_layout;
-    Evas_Object *folder_layout;
-    unsigned int badge_count;
-    Eina_Bool is_checked;
-    bool temp;
+	int db_id;
+	int parent_db_id;
+	char* owner;
+	Eina_Bool is_folder;
+	int position;
+	char* app_id;
+	char* pkg_id;
+	char* label_str;
+	char* icon_path_str;
+	char* uri;
+	int type;
+	bool is_removable;
+	bool is_system;
+	Evas_Object *app_layout;
+	Evas_Object *folder_layout;
+	unsigned int badge_count;
+	Eina_Bool is_checked;
+	bool temp;
 } app_data_t;
 
 enum {
-    APPS_DATA_TYPE_APP = 0,
-    APPS_DATA_TYPE_APP_SHORTCUT,
-    APPS_DATA_TYPE_URI_SHORTCUT
+	APPS_DATA_TYPE_APP = 0,
+	APPS_DATA_TYPE_APP_SHORTCUT,
+	APPS_DATA_TYPE_URI_SHORTCUT
 };
 
 void apps_data_init(void *data, Ecore_Thread *th);

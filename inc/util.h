@@ -29,9 +29,9 @@
 #define LOG_TAG "HOMESCREEN_EFL"
 
 #define LOG_(prio, tag, fmt, arg...) \
-    ({ do { \
-        dlog_print(prio, tag, "%s: %s(%d) > " fmt, __MODULE__, __func__, __LINE__, ##arg);\
-    } while (0); })
+	({ do { \
+		dlog_print(prio, tag, "%s: %s(%d) > " fmt, __MODULE__, __func__, __LINE__, ##arg);\
+	} while (0); })
 
 #define LOGD(format, arg...) LOG_(DLOG_DEBUG, LOG_TAG, format, ##arg)
 #define LOGI(format, arg...) LOG_(DLOG_INFO, LOG_TAG, format, ##arg)

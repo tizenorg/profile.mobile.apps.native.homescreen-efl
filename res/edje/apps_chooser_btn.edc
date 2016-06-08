@@ -17,167 +17,167 @@
 #include "../../inc/edc_conf.h"
 
 collections {
-    images {
-    }
-    styles {
-        style{
-            name: "label";
-            base: "font=Tizen:style=Regular align=center color=#FFFFFFFF font_size=26 ellipsis=1.0";
-        }
-    }
-    group { name: GROUP_APPS_CHOOSER_BTN_LY;
-        parts {
-            part {
-                name: "chooser_spacer";
-                type: SPACER;
-                mouse_events: 0;
-                description {
-                    state: "default" 0.0;
-                    rel1.relative: 0.0 0.0;
-                    rel2.relative: 1.0 0.0625;
-                }
-            }
-            part {
-                name: APPS_CHOOSER_LEFT_LABEL;
-                type: TEXTBLOCK;
-                description
-                {
-                    color: 255 255 255 255;
-                    state: "default" 0.0;
-                    visible: 0;
-                    text
-                    {
-                        align: 0.25 0.90;
-                        style: label;
-                        text: "CANCEL";
-                    }
-                    rel1 { relative: 0.0 0.0;to: "chooser_spacer"; }
-                    rel2 { relative: 0.28 1.0;to: "chooser_spacer"; }
-                }
-                description {
-                    state: "show" 0.0;
-                    inherit: "default" 0.0;
-                    visible: 1;
-                }
-             }
-             part {
-                name: "chooser_left_clickable_space";
-                type: RECT;
-                mouse_events: 1;
-                description
-                {
-                    state: "default" 0.0;
-                    color: 0 0 0 0;
-                    visible: 0;
-                    rel1 { relative: 0.0 0.0; to: APPS_CHOOSER_LEFT_LABEL; }
-                    rel2 { relative: 1.0 1.5; to: APPS_CHOOSER_LEFT_LABEL; }
-                }
-                description {
-                    state: "show" 0.0;
-                    inherit: "default" 0.0;
-                    visible: 1;
-                }
-            }
-            part {
-                name: APPS_CHOOSER_MIDDLE_LABEL;
-                type: TEXTBLOCK;
-                description
-                {
-                    state: "default" 0.0;
-                    visible: 0;
-                    color: 255 255 255 255;
-                    text
-                    {
-                        align: 0.5 0.90;
-                        text: "0 Selected";
-                        style: label;
-                    }
-                    rel1 { relative: 0.30 0.0;to: "chooser_spacer"; }
-                    rel2 { relative: 0.70 1.0;to: "chooser_spacer"; }
-                }
-                description {
-                    state: "show" 0.0;
-                    inherit: "default" 0.0;
-                    visible: 1;
-                }
-            }
-            part {
-                name: APPS_CHOOSER_RIGHT_LABEL;
-                type: TEXTBLOCK;
-                description
-                {
-                    state: "default" 0.0;
-                    visible: 0;
-                    color: 255 255 255 255;
-                    text
-                    {
-                        align: (1.0 - 0.25) 0.90;
-                        style: label;
-                        text: "DONE";
-                    }
-                    rel1 { relative: 0.72 0.0;to: "chooser_spacer"; }
-                    rel2 { relative: 1.0 1.0;to: "chooser_spacer"; }
-                }
-                description {
-                    state: "show" 0.0;
-                    inherit: "default" 0.0;
-                    visible: 1;
-                }
-            }
-            part {
-                name: "chooser_right_clickable_space";
-                type: RECT;
-                mouse_events: 1;
-                description
-                {
-                    state: "default" 0.0;
-                    visible: 0;
-                    color: 0 0 0 0;
-                    rel1 { relative: 0.0 0.0;to: APPS_CHOOSER_RIGHT_LABEL; }
-                    rel2 { relative: 1.0 1.5;to: APPS_CHOOSER_RIGHT_LABEL; }
-                }
-                description {
-                    state: "show" 0.0;
-                    inherit: "default" 0.0;
-                    visible: 1;
-                }
-            }
-        }
-        programs {
-            program {
-                name: "chooser_btn_show";
-                signal: SIGNAL_CHOOSER_BUTTON_SHOW;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "show" 0.0;
-                target: APPS_CHOOSER_LEFT_LABEL;
-                target: "chooser_left_clickable_space";
-                target: APPS_CHOOSER_MIDDLE_LABEL;
-                target: APPS_CHOOSER_RIGHT_LABEL;
-                target: "chooser_right_clickable_space";
-            }
-            program {
-                name: "chooser_btn_hide";
-                signal: SIGNAL_CHOOSER_BUTTON_HIDE;
-                source: SIGNAL_SOURCE;
-                action: STATE_SET "default" 0.0;
-                target: APPS_CHOOSER_LEFT_LABEL;
-                target: "chooser_left_clickable_space";
-                target: APPS_CHOOSER_MIDDLE_LABEL;
-                target: APPS_CHOOSER_RIGHT_LABEL;
-                target: "chooser_right_clickable_space";
-            }
-            program {
-                name: "chooser_left_click";
-                signal: "mouse,down,1";
-                source: "chooser_left_clickable_space";
-                action: SIGNAL_EMIT SIGNAL_CHOOSER_LEFT_BTN_CLICKED SIGNAL_SOURCE;
-            }
-            program {
-                name: "chooser_right_click";
-                signal: "mouse,clicked,1";
-                source: "chooser_right_clickable_space";
-                action: SIGNAL_EMIT SIGNAL_CHOOSER_RIGHT_BTN_CLICKED SIGNAL_SOURCE;
-            }
-       }
-    }
+	images {
+	}
+	styles {
+		style{
+			name: "label";
+			base: "font=Tizen:style=Regular align=center color=#FFFFFFFF font_size=26 ellipsis=1.0";
+		}
+	}
+	group { name: GROUP_APPS_CHOOSER_BTN_LY;
+		parts {
+			part {
+				name: "chooser_spacer";
+				type: SPACER;
+				mouse_events: 0;
+				description {
+					state: "default" 0.0;
+					rel1.relative: 0.0 0.0;
+					rel2.relative: 1.0 0.0625;
+				}
+			}
+			part {
+				name: APPS_CHOOSER_LEFT_LABEL;
+				type: TEXTBLOCK;
+				description
+				{
+					color: 255 255 255 255;
+					state: "default" 0.0;
+					visible: 0;
+					text
+					{
+						align: 0.25 0.90;
+						style: label;
+						text: "CANCEL";
+					}
+					rel1 { relative: 0.0 0.0;to: "chooser_spacer"; }
+					rel2 { relative: 0.28 1.0;to: "chooser_spacer"; }
+				}
+				description {
+					state: "show" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			 }
+			 part {
+				name: "chooser_left_clickable_space";
+				type: RECT;
+				mouse_events: 1;
+				description
+				{
+					state: "default" 0.0;
+					color: 0 0 0 0;
+					visible: 0;
+					rel1 { relative: 0.0 0.0; to: APPS_CHOOSER_LEFT_LABEL; }
+					rel2 { relative: 1.0 1.5; to: APPS_CHOOSER_LEFT_LABEL; }
+				}
+				description {
+					state: "show" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+			part {
+				name: APPS_CHOOSER_MIDDLE_LABEL;
+				type: TEXTBLOCK;
+				description
+				{
+					state: "default" 0.0;
+					visible: 0;
+					color: 255 255 255 255;
+					text
+					{
+						align: 0.5 0.90;
+						text: "0 Selected";
+						style: label;
+					}
+					rel1 { relative: 0.30 0.0;to: "chooser_spacer"; }
+					rel2 { relative: 0.70 1.0;to: "chooser_spacer"; }
+				}
+				description {
+					state: "show" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+			part {
+				name: APPS_CHOOSER_RIGHT_LABEL;
+				type: TEXTBLOCK;
+				description
+				{
+					state: "default" 0.0;
+					visible: 0;
+					color: 255 255 255 255;
+					text
+					{
+						align: (1.0 - 0.25) 0.90;
+						style: label;
+						text: "DONE";
+					}
+					rel1 { relative: 0.72 0.0;to: "chooser_spacer"; }
+					rel2 { relative: 1.0 1.0;to: "chooser_spacer"; }
+				}
+				description {
+					state: "show" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+			part {
+				name: "chooser_right_clickable_space";
+				type: RECT;
+				mouse_events: 1;
+				description
+				{
+					state: "default" 0.0;
+					visible: 0;
+					color: 0 0 0 0;
+					rel1 { relative: 0.0 0.0;to: APPS_CHOOSER_RIGHT_LABEL; }
+					rel2 { relative: 1.0 1.5;to: APPS_CHOOSER_RIGHT_LABEL; }
+				}
+				description {
+					state: "show" 0.0;
+					inherit: "default" 0.0;
+					visible: 1;
+				}
+			}
+		}
+		programs {
+			program {
+				name: "chooser_btn_show";
+				signal: SIGNAL_CHOOSER_BUTTON_SHOW;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "show" 0.0;
+				target: APPS_CHOOSER_LEFT_LABEL;
+				target: "chooser_left_clickable_space";
+				target: APPS_CHOOSER_MIDDLE_LABEL;
+				target: APPS_CHOOSER_RIGHT_LABEL;
+				target: "chooser_right_clickable_space";
+			}
+			program {
+				name: "chooser_btn_hide";
+				signal: SIGNAL_CHOOSER_BUTTON_HIDE;
+				source: SIGNAL_SOURCE;
+				action: STATE_SET "default" 0.0;
+				target: APPS_CHOOSER_LEFT_LABEL;
+				target: "chooser_left_clickable_space";
+				target: APPS_CHOOSER_MIDDLE_LABEL;
+				target: APPS_CHOOSER_RIGHT_LABEL;
+				target: "chooser_right_clickable_space";
+			}
+			program {
+				name: "chooser_left_click";
+				signal: "mouse,down,1";
+				source: "chooser_left_clickable_space";
+				action: SIGNAL_EMIT SIGNAL_CHOOSER_LEFT_BTN_CLICKED SIGNAL_SOURCE;
+			}
+			program {
+				name: "chooser_right_click";
+				signal: "mouse,clicked,1";
+				source: "chooser_right_clickable_space";
+				action: SIGNAL_EMIT SIGNAL_CHOOSER_RIGHT_BTN_CLICKED SIGNAL_SOURCE;
+			}
+		}
+	}
 }

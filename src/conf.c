@@ -24,28 +24,28 @@ static double resolution_scale_w = 1.0;
 
 int __conf_get_window_h(void)
 {
-    return window_h;
+	return window_h;
 }
 
 int __conf_get_window_w(void)
 {
-    return window_w;
+	return window_w;
 }
 
 double __conf_get_resolution_scale_h()
 {
-    return resolution_scale_h;
+	return resolution_scale_h;
 }
 
 double __conf_get_resolution_scale_w()
 {
-    return resolution_scale_w;
+	return resolution_scale_w;
 }
 
 void conf_set_resolution_scale(int win_width, int win_height)
 {
-    window_h = win_height;
-    window_w = win_width;
-    resolution_scale_w = (double)win_width / 720;
-    resolution_scale_h = (double)win_height / 1280;
+	window_h = win_height;
+	window_w = win_width;
+	resolution_scale_w = (double)win_width / 720;
+	resolution_scale_h = (double)win_height / 1280;
 }
