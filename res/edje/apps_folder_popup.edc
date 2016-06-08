@@ -23,11 +23,11 @@
             state : "default" 0.0;\
             fixed : 1 1;\
             rel1 {\
-                relative: num_y/APPS_FOLDER_COL num_x/APPS_FOLDER_ROW ;\
+                relative: num_x/APPS_FOLDER_COL num_y/APPS_FOLDER_ROW;\
                 to: APPS_FOLDER_CONTAINER;\
             }\
             rel2 {\
-                relative :(num_y+1)/APPS_FOLDER_COL (num_x+1)/APPS_FOLDER_ROW ;\
+                relative :(num_x+1)/APPS_FOLDER_COL (num_y+1)/APPS_FOLDER_ROW;\
                 to: APPS_FOLDER_CONTAINER;\
             }\
             align: 0.0 0.0;\
@@ -116,13 +116,13 @@ collections {
                 }
             }
             MAKE_TILE(0,0)
-            MAKE_TILE(0,1)
-            MAKE_TILE(0,2)
             MAKE_TILE(1,0)
-            MAKE_TILE(1,1)
-            MAKE_TILE(1,2)
             MAKE_TILE(2,0)
+            MAKE_TILE(0,1)
+            MAKE_TILE(1,1)
             MAKE_TILE(2,1)
+            MAKE_TILE(0,2)
+            MAKE_TILE(1,2)
             MAKE_TILE(2,2)
             part { name: APPS_FOLDER_PLUS_ICON;
                 type: IMAGE;

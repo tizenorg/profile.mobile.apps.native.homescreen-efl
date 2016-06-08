@@ -48,7 +48,7 @@ collections {
                     state: "default" 0.0;
                     align: 0 0;
                     rel1.relative: 0.0 0.0;
-                    rel2.relative: 0.0 0.0;
+                    rel2.relative: 1.0 1.0;
                 }
             }
             part { name: APPS_ICON_CONTENT;
@@ -58,6 +58,7 @@ collections {
                     rel1{relative: 0.16 0; to: SIZE_SETTER;}
                     rel2{relative: 0.84 0.6; to: SIZE_SETTER;}
                     align: 0.5 0.5;
+                    fixed: 1 1;
                 }
             } //APPS_ICON_CONTENT
 
@@ -193,8 +194,8 @@ collections {
                 scale: 0;
                 description {
                     state: "default" 0.0;
-                    rel1{relative: -0.1 -0.1; to: APPS_ICON_CONTENT;}
-                    rel2{relative: 0.4 0.4; to: APPS_ICON_CONTENT;}
+                    rel1{relative: 0.0 -0.1; to: SIZE_SETTER;}
+                    rel2{relative: 0.4 0.4; to: SIZE_SETTER;}
                     color: 255 255 255 0;
                     visible: 0;
                     aspect: 1.0 1.0;

@@ -42,7 +42,7 @@ collections {
                     visible: 1;
                 }
             }
-            part { name: APPS_APPS_VIEW_BG;
+            part { name: APPS_VIEW_BG;
                 type: RECT;
                 mouse_events: 1;
                 repeat_events: 1;
@@ -58,8 +58,8 @@ collections {
                     state: "edit" 0.0;
                     inherit: "default" 0.0;
                     visible: 1;
-                    rel1 {relative: 0.055 0.0855; to:SIZE_SETTER;}
-                    rel2 {relative: 0.95 0.873; to:SIZE_SETTER;}
+                    rel1 {relative: 0.052 0.1; to:SIZE_SETTER;}
+                    rel2 {relative: 0.95 0.845; to:SIZE_SETTER;}
                 }
                 description {
                     state: "hide" 0.0;
@@ -79,23 +79,23 @@ collections {
                 signal: SIGNAL_APPS_VIEW_HIDE;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "hide" 0.0;
-                target: APPS_APPS_VIEW_BG;
+                target: APPS_VIEW_BG;
             }
             program {
                 name: "apps_bg_show";
                 signal: SIGNAL_APPS_VIEW_SHOW;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "show" 0.0;
-                target: APPS_APPS_VIEW_BG;
+                target: APPS_VIEW_BG;
             }
             program {
                 name: "rotation,changed";
                 signal: SIGNAL_APPS_VIEW_ANIM;
                 source: SIGNAL_SOURCE;
                 script {
-                    custom_state(PART:APPS_APPS_VIEW_BG, "show", 0.0);
-                    set_state_val(PART:APPS_APPS_VIEW_BG, STATE_COLOR, 0, 0, 0, round(get_float(alpha)));
-                    set_state(PART:APPS_APPS_VIEW_BG, "custom", 0.0);
+                    custom_state(PART:APPS_VIEW_BG, "show", 0.0);
+                    set_state_val(PART:APPS_VIEW_BG, STATE_COLOR, 0, 0, 0, round(get_float(alpha)));
+                    set_state(PART:APPS_VIEW_BG, "custom", 0.0);
                 }
             }
             program {
@@ -103,7 +103,7 @@ collections {
                 signal: SIGNAL_EDIT_MODE_ON_ANI;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "edit" 0.0;
-                target: APPS_APPS_VIEW_BG;
+                target: APPS_VIEW_BG;
                 transition: DECELERATE ANIMATION_RESIZE_TIME;
                 after: SIGNAL_APPS_VIEW_HIDE;
             }
@@ -112,7 +112,7 @@ collections {
                 signal: SIGNAL_EDIT_MODE_OFF_ANI;
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "edit" 0.0;
-                target: APPS_APPS_VIEW_BG;
+                target: APPS_VIEW_BG;
                 after: "bg_edit_mode_off2";
             }
             program {
@@ -120,7 +120,7 @@ collections {
                 signal: "bg_edit_mode_off2";
                 source: SIGNAL_SOURCE;
                 action: STATE_SET "show" 0.0;
-                target: APPS_APPS_VIEW_BG;
+                target: APPS_VIEW_BG;
                 transition: DECELERATE ANIMATION_RESIZE_TIME;
             }
         }

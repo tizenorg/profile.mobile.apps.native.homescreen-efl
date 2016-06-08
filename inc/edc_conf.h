@@ -75,7 +75,7 @@
 
 // apps view
 #define GROUP_APPS_LY "apps_ly"
-#define APPS_APPS_VIEW_BG "apps_view_bg"
+#define APPS_VIEW_BG "apps_view_bg"
 
 #define GROUP_APPS_BG_LY "apps_bg_ly"
 #define GROUP_APPS_CHOOSER_BTN_LY "apps_chooser_btn_ly"
@@ -105,6 +105,7 @@
 #define SIGNAL_CHANGED_CHECK_BOX "changed_checkbox_state"
 #define SIGNAL_CHECK_HALF_CHECK_BOX "half-check"
 
+#define APPS_VIEW_GRID "apps_view_grid"
 #define SIGNAL_APPS_VIEW_HIDE "apps_bg_hide"
 #define SIGNAL_APPS_VIEW_SHOW "apps_bg_show"
 #define SIGNAL_APPS_VIEW_ANIM "apps_bg_anim"
