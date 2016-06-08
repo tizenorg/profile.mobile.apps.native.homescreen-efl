@@ -502,7 +502,7 @@ bool apps_view_icon_set(app_data_t *item)
 		LOGD("[%s] -> [%s], [%p] page : %d", item->app_id, icon_container, item->app_layout, page_index);
 		return true;
 	} else if (apps_view_s.opened_folder && item->parent_db_id == apps_view_s.opened_folder->db_id) {
-		row = (item->position / APPS_VIEW_COL) % APPS_FOLDER_ROW;
+		row = (item->position / APPS_FOLDER_COL) % APPS_FOLDER_ROW;
 		col = item->position % APPS_FOLDER_COL;
 
 		snprintf(icon_container, sizeof(icon_container), "icon_%d_%d", col, row);
