@@ -17,21 +17,21 @@
 #include "../../inc/edc_conf.h"
 
 collections {
-    images {
-    }
-    group { name: GROUP_HOME_LY;
-        parts {
-            part { name: HOME_BG;
-                type: SWALLOW;
-                scale: 1;
-                description { state: "default" 0.0;
-                    align: 0 0;
-                    rel1.relative: 0.0 0.0;
-                    rel2.relative: 0.0 0.0;
-                }
-            }
-        }
-        programs {
-        }
-    }
+	images {
+	}
+	group { name: GROUP_HOME_LY;
+		parts {
+			part { name: HOME_BG;
+				type: SWALLOW;
+				scale: 1;
+				description { state: "default" 0.0;
+					align: 0 0;
+					rel1.relative: 0.0 0.0;
+					rel2.relative: 0.0 0.0;
+				}
+			}
+		}
+		programs {
+		}
+	}
 }

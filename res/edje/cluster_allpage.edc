@@ -16,26 +16,26 @@
 
 #include "../../inc/edc_conf.h"
 collections {
-    group { name: GROUP_CLUSTER_ALLPAGE_LY;
-        parts {
-            part { name: SIZE_SETTER;
-                type: SWALLOW;
-                description {
-                    state: "default" 0.0;
-                    align: 0 0;
-                    rel1.relative: 0.0 0.0;
-                    rel2.relative: 1.0 1.0;
-                }
-            }
-            part { name: CLUSTER_ALLPAGE_GRID;
-                type: SWALLOW;
-                description {
-                    state: "default" 0.0;
-                    align: 0 0;
-                    rel1{relative: 0.0 0.0; to: SIZE_SETTER;}
-                    rel2{relative: 1.0 1.0; to: SIZE_SETTER;}
-                }
-            }
-        }
-    }
+	group { name: GROUP_CLUSTER_ALLPAGE_LY;
+		parts {
+			part { name: SIZE_SETTER;
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					align: 0 0;
+					rel1.relative: 0.0 0.0;
+					rel2.relative: 1.0 1.0;
+				}
+			}
+			part { name: CLUSTER_ALLPAGE_GRID;
+				type: SWALLOW;
+				description {
+					state: "default" 0.0;
+					align: 0 0;
+					rel1{relative: 0.0 0.0; to: SIZE_SETTER;}
+					rel2{relative: 1.0 1.0; to: SIZE_SETTER;}
+				}
+			}
+		}
+	}
 }

@@ -23,16 +23,16 @@
 #define PAGE_INDICATOR_MAX_PAGE_COUNT 7
 
 typedef struct {
-    Evas_Object *scroller;
-    Evas_Object *box;
-    Evas_Object *unit[PAGE_INDICATOR_MAX_PAGE_COUNT];
+	Evas_Object *scroller;
+	Evas_Object *box;
+	Evas_Object *unit[PAGE_INDICATOR_MAX_PAGE_COUNT];
 
-    int page_count;
-    int x;
-    int y;
-    int w;
-    int h;
-    int current_page;
+	int page_count;
+	int x;
+	int y;
+	int w;
+	int h;
+	int current_page;
 } page_indicator_t;
 
 page_indicator_t * page_indictor_create(Evas_Object *scroller);
