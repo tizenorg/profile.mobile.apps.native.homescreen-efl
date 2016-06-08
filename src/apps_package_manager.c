@@ -102,6 +102,11 @@ static bool __apps_data_pkg_get_apps_info(app_info_h app_handle, app_data_t **it
 	package_info_h p_handle = NULL;
 
 	app_data_t *new_item = (app_data_t *)malloc(sizeof(app_data_t));
+	if (!new_item) {
+		LOGE("memory allocation is failed!!!");
+		return false;
+	}
+
 	memset(new_item, 0, sizeof(app_data_t));
 	*item = new_item;
 
@@ -165,7 +170,7 @@ static bool __apps_data_pkg_get_apps_info(app_info_h app_handle, app_data_t **it
 		if (new_item->icon_path_str) free(new_item->icon_path_str);
 
 		new_item->icon_path_str = malloc(MAX_FILE_PATH_LEN);
-		sprintf(new_item->icon_path_str, "%s", util_get_res_file_path(IMAGE_DIR"/default_app_icon.png"));
+		snprintf(new_item->icon_path_str, MAX_FILE_PATH_LEN, "%s", util_get_res_file_path(IMAGE_DIR"/default_app_icon.png"));
 	}
 	return true;
 

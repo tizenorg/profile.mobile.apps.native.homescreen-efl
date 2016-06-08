@@ -476,8 +476,6 @@ static Evas_Object *__add_widget_viewer_list_widget_box_create(Evas_Object *obj,
 
 static Evas_Object *__add_widget_viewer_list_widget_preview_box_create(Evas_Object *main_box, add_widget_data_t *widget, add_widget_data_preview_t *preview)
 {
-	LOGD("Create preview: type->%d path->%s", preview->type, preview->path);
-
 	Evas_Object *preview_layout = NULL;
 	Evas_Object *preview_img = NULL;
 	int w = 0, h = 0;
@@ -487,6 +485,8 @@ static Evas_Object *__add_widget_viewer_list_widget_preview_box_create(Evas_Obje
 		LOGE("Path to preview image is empty");
 		return NULL;
 	}
+
+	LOGD("Create preview: type->%d path->%s", preview->type, preview->path);
 
 	preview_layout = elm_layout_add(main_box);
 	if (!preview_layout) {
@@ -537,6 +537,8 @@ static Evas_Object *__add_widget_viewer_list_widget_preview_box_create(Evas_Obje
 	if (!preview_img) {
 		LOGE("Can not create image object");
 		evas_object_del(preview_layout);
+		if (preview_type)
+			free(preview_type);
 		return NULL;
 	}
 
@@ -560,7 +562,7 @@ static void __add_widget_viewer_preview_clicked_cb(void *data, Evas_Object *obj,
 	int *size = NULL;
 
 	size = evas_object_data_del(obj, "preview_type");
-	if (*size == WIDGET_SIZE_TYPE_UNKNOWN) {
+	if (!size || *size == WIDGET_SIZE_TYPE_UNKNOWN) {
 		LOGE("Can not get widgets size type");
 		return;
 	}

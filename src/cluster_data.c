@@ -125,6 +125,7 @@ static void __cluster_data_insert_default_data(void)
 	new_item->allow_duplicate = 1;
 
 	cluster_db_insert(new_item);
+	__cluster_data_item_free(new_item);
 /*
 	new_item = (widget_data_t *)malloc(sizeof(widget_data_t));
 	memset(new_item, 0, sizeof(widget_data_t));

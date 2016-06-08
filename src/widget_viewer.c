@@ -73,7 +73,7 @@ Evas_Object *widget_viewer_add_widget(Evas_Object *parent, widget_data_t *item, 
 	evas_object_show(widget);
 */
 	char number[1000];
-	sprintf(number, "<font_size=50>%s_%d</font_size>", item->pkg_name, count++);
+	snprintf(number, sizeof(number), "<font_size=50>%s_%d</font_size>", item->pkg_name, count++);
 	Evas_Object *widget = elm_label_add(evas_object_evas_get(widget_layout));
 	elm_object_style_set(widget, "popup/default");
 	evas_object_size_hint_weight_set(widget, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);

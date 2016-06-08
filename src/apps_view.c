@@ -209,6 +209,7 @@ void apps_view_show_anim(double pos)
 
 	edje_object_message_send(edje, EDJE_MESSAGE_FLOAT_SET, 1, msg);
 	edje_object_signal_emit(edje, SIGNAL_APPS_VIEW_ANIM, SIGNAL_SOURCE);
+	free(msg);
 
 	evas_object_color_set(apps_view_s.box, 255, 255, 255, pos*255);
 	evas_object_move(apps_view_s.scroller, 0, APPS_VIEW_PADDING_TOP + (APPS_VIEW_ANIMATION_DELTA * (1-pos)));
@@ -236,6 +237,7 @@ void apps_view_hide_anim(double pos)
 
 	edje_object_message_send(edje, EDJE_MESSAGE_FLOAT_SET, 1, msg);
 	edje_object_signal_emit(edje, SIGNAL_APPS_VIEW_ANIM, SIGNAL_SOURCE);
+	free(msg);
 
 	evas_object_color_set(apps_view_s.box, 255, 255, 255, (1-pos)*255);
 	evas_object_move(apps_view_s.scroller, 0, APPS_VIEW_PADDING_TOP + (APPS_VIEW_ANIMATION_DELTA * pos));
@@ -459,7 +461,7 @@ void apps_view_icon_unset(app_data_t *item)
 		row = (item->position / APPS_FOLDER_COL) % APPS_FOLDER_ROW;
 		col = item->position % APPS_FOLDER_COL;
 
-		sprintf(icon_container, "icon_%d_%d", col, row);
+		snprintf(icon_container, sizeof(icon_container), "icon_%d_%d", col, row);
 		if (elm_object_part_content_get(apps_view_s.folder_popup_ly, icon_container) != NULL) {
 			elm_object_part_content_unset(apps_view_s.folder_popup_ly, icon_container);
 		}
@@ -503,7 +505,7 @@ bool apps_view_icon_set(app_data_t *item)
 		row = (item->position / APPS_VIEW_COL) % APPS_FOLDER_ROW;
 		col = item->position % APPS_FOLDER_COL;
 
-		sprintf(icon_container, "icon_%d_%d", col, row);
+		snprintf(icon_container, sizeof(icon_container), "icon_%d_%d", col, row);
 		if (elm_object_part_content_get(apps_view_s.folder_popup_ly, icon_container) != NULL) {
 			LOGE("unset %p", elm_object_part_content_get(apps_view_s.folder_popup_ly, icon_container));
 			elm_object_part_content_unset(apps_view_s.folder_popup_ly, icon_container);
@@ -744,6 +746,7 @@ static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *o
 
 	if (!item) {
 		LOGE("item is NULL");
+		return;
 	}
 
 	LOGD("Uninstall :: %s", item->app_id);
@@ -851,7 +854,7 @@ static void __apps_view_icon_check_changed_cb(void *data, Evas_Object *obj, cons
 		if (apps_view_s.selected_item_count + item_count >= APPS_FOLDER_MAX_ITEM) {
 			LOGD("checked item : %d > HOME_FOLDER_MAX_ITEM(9)", item_count);
 			char str[1024];
-			sprintf(str, _("IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"), APPS_FOLDER_MAX_ITEM);
+			snprintf(str, sizeof(str), _("IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"), APPS_FOLDER_MAX_ITEM);
 			toast_show(str);
 		} else {
 			LOGD("%s - check", item->label_str);
@@ -1052,7 +1055,7 @@ void apps_view_update_folder_icon(app_data_t* item)
 			i < 4 && find_list;
 			i++, find_list = eina_list_next(find_list), temp_item = eina_list_data_get(find_list)) {
 		LOGD("%s", temp_item->label_str);
-		sprintf(folder_item_count_string, "icon_%d", i);
+		snprintf(folder_item_count_string, sizeof(folder_item_count_string), "icon_%d", i);
 		LOGD("%s", folder_item_count_string);
 		icon_image = elm_image_add(item->folder_layout);
 		elm_image_file_set(icon_image, temp_item->icon_path_str, NULL);
@@ -1060,7 +1063,7 @@ void apps_view_update_folder_icon(app_data_t* item)
 		elm_object_part_content_set(item->folder_layout, folder_item_count_string, icon_image);
 		evas_object_show(icon_image);
 	}
-	sprintf(folder_item_count_string, "set_item_count_%d", item_count > 4 ? 4 : item_count);
+	snprintf(folder_item_count_string, sizeof(folder_item_count_string), "set_item_count_%d", item_count > 4 ? 4 : item_count);
 	LOGD("%s", folder_item_count_string);
 	elm_object_signal_emit(item->folder_layout, folder_item_count_string, SIGNAL_SOURCE);
 	evas_object_show(item->folder_layout);
@@ -1269,17 +1272,17 @@ static void __apps_view_update_chooser_text(int item_count)
 {
 	char text1[STR_MAX], text2[STR_MAX];
 	if (apps_view_s.selected_item_count + item_count > 0) {
-		sprintf(text1, _("IDS_MEMO_HEADER_PD_SELECTED_ABB2"), apps_view_s.selected_item_count + item_count);
+		snprintf(text1, sizeof(text1), _("IDS_MEMO_HEADER_PD_SELECTED_ABB2"), apps_view_s.selected_item_count + item_count);
 	} else
-		sprintf(text1, "");
+		snprintf(text1, sizeof(text1), "");
 
-	sprintf(text2, APPS_VIEW_CHOOSER_TEXT, (int)APPS_VIEW_CHOOSER_TEXT_SIZE, text1);
+	snprintf(text2, sizeof(text2), APPS_VIEW_CHOOSER_TEXT, (int)APPS_VIEW_CHOOSER_TEXT_SIZE, text1);
 	elm_object_part_text_set(apps_view_s.chooser_btn, APPS_CHOOSER_MIDDLE_LABEL, text2);
 
-	sprintf(text2, APPS_VIEW_CHOOSER_TEXT, (int)APPS_VIEW_CHOOSER_BUTTON_TEXT_SIZE, _("IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"));
+	snprintf(text2, sizeof(text2), APPS_VIEW_CHOOSER_TEXT, (int)APPS_VIEW_CHOOSER_BUTTON_TEXT_SIZE, _("IDS_TPLATFORM_ACBUTTON_CANCEL_ABB"));
 	elm_object_part_text_set(apps_view_s.chooser_btn, APPS_CHOOSER_LEFT_LABEL, text2);
 
-	sprintf(text2, APPS_VIEW_CHOOSER_TEXT, (int)APPS_VIEW_CHOOSER_BUTTON_TEXT_SIZE, _("IDS_TPLATFORM_ACBUTTON_DONE_ABB"));
+	snprintf(text2, sizeof(text2), APPS_VIEW_CHOOSER_TEXT, (int)APPS_VIEW_CHOOSER_BUTTON_TEXT_SIZE, _("IDS_TPLATFORM_ACBUTTON_DONE_ABB"));
 	elm_object_part_text_set(apps_view_s.chooser_btn, APPS_CHOOSER_RIGHT_LABEL, text2);
 }
 
@@ -1342,9 +1345,9 @@ static void __apps_view_badge_update_icon(app_data_t *item)
 	}
 
 	if (item->badge_count > MAX_BADGE_DISPLAY_COUNT) {
-		sprintf(number_str, "%d+", MAX_BADGE_DISPLAY_COUNT);
+		snprintf(number_str, sizeof(number_str), "%d+", MAX_BADGE_DISPLAY_COUNT);
 	} else {
-		sprintf(number_str, "%d", item->badge_count);
+		snprintf(number_str, sizeof(number_str), "%d", item->badge_count);
 	}
 	elm_layout_text_set(item->app_layout, APPS_ICON_BADGE_TEXT, number_str);
 	elm_object_signal_emit(item->app_layout, SIGNAL_BADGE_SHOW, SIGNAL_SOURCE);
@@ -1680,7 +1683,7 @@ static void __apps_view_edit_drop_icon(void *data)
 		folder_item_count = eina_list_count(folder_list);
 		if (folder_item_count >= APPS_FOLDER_MAX_ITEM) {
 			char str[1024];
-			sprintf(str, _("IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"), APPS_FOLDER_MAX_ITEM);
+			snprintf(str, sizeof(str), _("IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"), APPS_FOLDER_MAX_ITEM);
 			toast_show(str);
 		} else {
 			item->parent_db_id = apps_view_s.candidate_folder->db_id;
