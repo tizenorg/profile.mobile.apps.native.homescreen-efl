@@ -515,6 +515,22 @@ bool apps_view_icon_set(app_data_t *item)
 	return false;
 }
 
+void apps_view_update_label(app_data_t *item)
+{
+	__apps_view__set_icon_label_style(item, apps_view_s.view_state);
+}
+
+void apps_view_lang_changed(homescreen_view_t view_type)
+{
+	if (apps_view_s.opened_folder != NULL) {
+		__apps_view_close_folder_popup(apps_view_s.opened_folder);
+	}
+	if (view_type == HOMESCREEN_VIEW_APPS) {
+		apps_view_set_state(VIEW_STATE_NORMAL);
+	}
+	apps_data_update_item_label();
+}
+
 static void __apps_view_create_base_gui(Evas_Object *win)
 {
 	char edj_path[PATH_MAX] = {0, };

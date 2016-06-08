@@ -393,3 +393,17 @@ int apps_data_get_folder_item_count(app_data_t *folder)
 	}
 	return cnt;
 }
+
+
+void apps_data_update_item_label(void)
+{
+	app_data_t *item = NULL;
+	Eina_List *find_list;
+	EINA_LIST_FOREACH(apps_data_s.data_list, find_list, item) {
+		if (!item->is_folder) {
+			apps_package_manager_update_label(item->app_id, item);
+			apps_db_update(item);
+			apps_view_update_label(item);
+    	}
+    }
+}

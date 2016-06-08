@@ -21,6 +21,7 @@
 
 #include "view.h"
 #include "apps_data.h"
+#include "homescreen-efl.h"
 
 Evas_Object *apps_view_create(Evas_Object *parent);
 void apps_view_init(void);
@@ -45,5 +46,7 @@ bool apps_view_hw_home_key(void);
 bool apps_view_hw_back_key(void);
 view_state_t apps_view_get_state(void);
 void apps_view_set_state(view_state_t state);
+void apps_view_update_label(app_data_t *item);
+void apps_view_lang_changed(homescreen_view_t view_type);
 
 #endif /* __APPS_VIEW_H__ */
