@@ -58,7 +58,7 @@ collections {
 					state: "edit" 0.0;
 					inherit: "default" 0.0;
 					visible: 1;
-					rel1 {relative: 0.052 0.1; to:SIZE_SETTER;}
+					rel1 {relative: 0.052 0.08; to:SIZE_SETTER;}
 					rel2 {relative: 0.95 0.845; to:SIZE_SETTER;}
 				}
 				description {

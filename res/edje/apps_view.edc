@@ -16,36 +16,6 @@
 
 #include "../../inc/edc_conf.h"
 
-#define MAKE_TILE(num_x,num_y)\
-	part{ name: "icon_"num_x"_"num_y;\
-		type : SWALLOW;\
-		description {\
-			state : "default" 0.0;\
-			fixed : 1 1;\
-			rel1 {\
-				relative :num_y/APPS_VIEW_COL num_x/APPS_VIEW_ROW ;\
-				to: SIZE_SETTER;\
-			}\
-			rel2 {\
-				relative :(num_y+1)/APPS_VIEW_COL (num_x+1)/APPS_VIEW_ROW ;\
-				to: SIZE_SETTER;\
-			}\
-			align: 0.0 0.0;\
-		}\
-		description {\
-			state: "edit" 0.0;\
-			inherit: "default" 0.0;\
-			rel1 {\
-				relative :0.04+(num_y/APPS_VIEW_COL)*0.9 0.05+(num_x/APPS_VIEW_ROW)*0.9 ;\
-				to: SIZE_SETTER;\
-			}\
-			rel2 {\
-				relative :0.04+((num_y+1)/APPS_VIEW_COL)*0.9 0.05+((num_x+1)/APPS_VIEW_ROW)*0.09 ;\
-				to: SIZE_SETTER;\
-			};\
-		}\
-	}
-
 collections {
 	images {
 	}
@@ -77,7 +47,7 @@ collections {
 				description {
 					state: "edit_done" 0.0;
 					inherit: "default" 0.0;
-					rel1 {relative :0.05 0.05; to: SIZE_SETTER;}
+					rel1 {relative :0.05 0.03; to: SIZE_SETTER;}
 					rel2 {relative :0.95 0.95; to: SIZE_SETTER;}
 					color: 0 0 0 APPS_VIEW_BG_OPACITY;
 					visible: 1;
