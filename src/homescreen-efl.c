@@ -27,6 +27,7 @@
 #include "hw_key.h"
 #include "view.h"
 #include "menu.h"
+#include "popup.h"
 
 static struct {
 	Evas_Object *win;
@@ -122,8 +123,51 @@ static bool __homescreen_efl_app_create_cb(void *data)
 	return true;
 }
 
+#define APP_CONTROL_HOME_OP_KEY "__HOME_OP__"
+#define APP_CONTROL_HOME_OP_VAL_LAUNCH_BY_HOME_KEY "__LAUNCH_BY_HOME_KEY__"
 static void __homescreen_efl_app_control_cb(app_control_h app_control, void *data)
 {
+	char *operation = NULL;
+	int ret = 0;
+
+	if (!app_control) {
+		LOGE("appcontrol is NULL");
+		return;
+	}
+
+	ret = app_control_get_operation(app_control, &operation);
+	if (ret != APP_CONTROL_ERROR_NONE) {
+		LOGE("Failed to get operation");
+		return;
+	}
+
+	if (!strncmp(operation, APP_CONTROL_OPERATION_DEFAULT, strlen(operation))) {
+		char *value = NULL;
+		ret = app_control_get_extra_data(app_control, APP_CONTROL_HOME_OP_KEY, &value);
+		if (ret != APP_CONTROL_ERROR_NONE) {
+			LOGE("Failed to get extra data");
+			free(operation);
+			return;
+		}
+
+		if (value && !strncmp(value, APP_CONTROL_HOME_OP_VAL_LAUNCH_BY_HOME_KEY, strlen(value))) {
+			/*
+			 * If the homescreen is launched by home key,
+			 * show the first view of the homescreen.
+			 */
+			LOGD("launched by home key");
+			if (menu_is_show()) {
+				menu_hide();
+			} else if (popup_is_show()) {
+				popup_hide();
+			}
+			homescreen_efl_hw_home_key_release();
+
+			free(value);
+		}
+	}
+
+	free(operation);
 }
 
 static void __homescreen_efl_app_pause_cb(void *data)
