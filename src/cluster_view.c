@@ -392,19 +392,26 @@ bool cluster_view_set_state(view_state_t state)
 		Eina_List *data_list = cluster_data_get_widget_list();
 		Eina_List *find_list = NULL;
 
-		cluster_page_t *page_item = NULL;
-		EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
-			if (page_item->page_layout) {
-				elm_object_signal_emit(page_item->page_layout, SIGNAL_EDIT_MODE_ON, SIGNAL_SOURCE);
-			}
-		}
-
 		widget_data_t *item = NULL;
 		EINA_LIST_FOREACH(data_list, find_list, item) {
 			if (item->widget_layout) {
 				if (!cluster_view_s.picked_widget || item->widget_layout != cluster_view_s.picked_widget->widget_layout)
+				{
 					elm_object_signal_emit(item->widget_layout, SIGNAL_DELETE_BUTTON_SHOW_ANI, SIGNAL_SOURCE);
+				} else {
+					evas_object_event_callback_add(item->widget_content, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_widget_down_cb, item);
+					evas_object_event_callback_add(item->widget_content, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_widget_move_cb, item);
+					evas_object_event_callback_add(item->widget_content, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_widget_up_cb, item);
+				}
+				widget_viewer_thumbnail_add(item);
 				elm_object_signal_emit(item->widget_layout, SIGNAL_CLUSTER_EDIT_STATE, SIGNAL_SOURCE);
+			}
+		}
+
+		cluster_page_t *page_item = NULL;
+		EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
+			if (page_item->page_layout) {
+				elm_object_signal_emit(page_item->page_layout, SIGNAL_EDIT_MODE_ON, SIGNAL_SOURCE);
 			}
 		}
 	} else if (state == VIEW_STATE_NORMAL) {
@@ -554,6 +561,17 @@ void cluster_view_delete_widget(widget_data_t *item)
 	}
 }
 
+void cluster_view_edit_on_done(cluster_page_t *page)
+{
+	if (cluster_view_s.picked_widget) {
+		if (page->page_index == cluster_view_s.picked_widget->page_idx) {
+			cluster_page_unset(page, cluster_view_s.picked_widget);
+			cluster_mouse_info.offset_x *= 0.9;
+			cluster_mouse_info.offset_y *= 0.9;
+		}
+	}
+}
+
 static void __cluster_view_scroll_to_home(void)
 {
 	__cluster_view_scroll_to_page(CLUSTER_HOME_PAGE, true);
@@ -591,7 +609,7 @@ static void __cluster_view_add_widget_content(widget_data_t *item)
 {
 	int w, h;
 	LOGD("Create Widget: pkg[%s], type[%d]", item->pkg_name, item->type);
-	item->widget_layout = widget_viewer_add_widget(cluster_view_s.win, item, &w, &h);
+	widget_viewer_add_widget(cluster_view_s.win, item, &w, &h);
 	evas_object_event_callback_add(item->widget_layout, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_widget_down_cb, item);
 	evas_object_event_callback_add(item->widget_layout, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_widget_move_cb, item);
 	evas_object_event_callback_add(item->widget_layout, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_widget_up_cb, item);
@@ -1188,9 +1206,9 @@ static Eina_Bool __cluster_view_widget_long_press_time_cb(void *data)
 
 	elm_scroller_movement_block_set(cluster_view_s.scroller, ELM_SCROLLER_MOVEMENT_BLOCK_HORIZONTAL);
 
-	__cluster_view_edit_pick_up_widget(data);
-
 	widget_viewer_send_cancel_click_event(widget);
+
+	__cluster_view_edit_pick_up_widget(data);
 
 	return ECORE_CALLBACK_CANCEL;
 }
@@ -1216,15 +1234,10 @@ static void __cluster_view_edit_pick_up_widget(void *data)
 
 	cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, cluster_view_s.picked_widget->page_idx);
 
-	cluster_page_unset(page, cluster_view_s.picked_widget);
-
 	if (cluster_view_s.view_state == VIEW_STATE_NORMAL) {
-		evas_object_resize(widget_layout, gw * 0.9, gh * 0.9);
-
-		cluster_mouse_info.offset_x *= 0.9;
-		cluster_mouse_info.offset_y *= 0.9;
-
 		cluster_view_set_state(VIEW_STATE_EDIT);
+	} else {
+		cluster_page_unset(page, cluster_view_s.picked_widget);
 	}
 
 	elm_object_signal_emit(widget_layout, SIGNAL_DELETE_BUTTON_HIDE_ANI, SIGNAL_SOURCE);
@@ -1293,6 +1306,7 @@ static void __cluster_view_edit_drop_widget(void *data)
 	cluster_view_s.animation_from_y = cluster_mouse_info.move_y - cluster_mouse_info.offset_y;
 
 	cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, cluster_view_s.current_page);
+	cluster_page_unset(page,  cluster_view_s.picked_widget);
 	cluster_page_get_highlight_xy(page, &to_x, &to_y);
 	if (to_x == INIT_VALUE || to_y == INIT_VALUE) {
 		cluster_page_check_empty_space_pos(page, cluster_view_s.picked_widget, &to_x, &to_y);
@@ -1302,6 +1316,10 @@ static void __cluster_view_edit_drop_widget(void *data)
 	cluster_view_s.animation_to_y = to_y;
 
 	cluster_view_s.edit_animator = ecore_animator_timeline_add(HOME_ANIMATION_TIME, __cluster_view_edit_move_anim, NULL);
+
+	evas_object_event_callback_del(cluster_view_s.picked_widget->widget_content, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_widget_down_cb);
+	evas_object_event_callback_del(cluster_view_s.picked_widget->widget_content, EVAS_CALLBACK_MOUSE_MOVE, __clsuter_view_widget_move_cb);
+	evas_object_event_callback_del(cluster_view_s.picked_widget->widget_content, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_widget_up_cb);
 }
 static Eina_Bool __cluster_view_edit_move_anim(void *data, double pos)
 {

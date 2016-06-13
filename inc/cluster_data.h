@@ -32,6 +32,7 @@ typedef struct {
 	double period;
 	int allow_duplicate;
 	Evas_Object *widget_layout;
+	Evas_Object *widget_content;
 } widget_data_t;
 
 void cluster_data_init(void);

@@ -93,8 +93,10 @@
 #define SIGNAL_SET_BLACK_TEXT "set_black_text"
 #define SIGNAL_EDIT_MODE_ON_ANI "edit_on_ani"
 #define SIGNAL_EDIT_MODE_ON "edit_on"
+#define SIGNAL_EDIT_MODE_ON_DONE "edit_on_done"
 #define SIGNAL_EDIT_MODE_OFF_ANI "edit_off_ani"
 #define SIGNAL_EDIT_MODE_OFF "edit_off"
+#define SIGNAL_EDIT_MODE_OFF_DONE "edit_off_done"
 #define SIGNAL_CHOOSER_MODE_ON "chooser_on"
 #define SIGNAL_CHOOSER_MODE_OFF "chooser_off"
 #define SIGNAL_CHOOSER_MODE_ON_FOLDER "chooser_on_folder"
@@ -154,6 +156,7 @@
 
 #define GROUP_WIDGET_LY "widget_ly"
 #define WIDGET_CONTENT "widget_content"
+#define WIDGET_THUMBNAIL "widget_thumbnail"
 #define WIDGET_DELETE_BUTTON "widget_delete_button"
 #define SIGNAL_DELETE_BUTTON_SHOW_ANI "delete_button_show_ani"
 #define SIGNAL_DELETE_BUTTON_HIDE_ANI "delete_button_hide_ani"

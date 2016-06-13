@@ -17,6 +17,15 @@ collections {
 					rel1.relative: 0.0 0.0;
 				}
 			}
+			part { name: WIDGET_THUMBNAIL;
+				type: SWALLOW;
+				mouse_events: 1;
+				repeat_events: 1;
+				description {
+					state: "default" 0.0;
+					rel1.relative: 0.0 0.0;
+				}
+			}
 			part { name: SIZE_SETTER;
 				type: SWALLOW;
 				mouse_events: 1;

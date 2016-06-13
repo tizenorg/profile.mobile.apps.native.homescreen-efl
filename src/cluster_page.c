@@ -18,10 +18,16 @@
 #include "conf.h"
 #include "edc_conf.h"
 #include "util.h"
+#include "widget_viewer.h"
+#include "cluster_view.h"
 
-void __cluster_page_set(cluster_page_t *page, widget_data_t *item);
-void __cluster_page_print_space(cluster_page_t *page);
-void __cluster_page_get_widget_size(widget_size_type_e type, int *w, int *h);
+static void __cluster_page_set(cluster_page_t *page, widget_data_t *item);
+static void __cluster_page_print_space(cluster_page_t *page);
+static void __cluster_page_get_widget_size(widget_size_type_e type, int *w, int *h);
+
+static void __cluster_page_edit_on_done(void *data, Evas_Object *obj, const char *emission, const char *source);
+static void __cluster_page_edit_off_done(void *data, Evas_Object *obj, const char *emission, const char *source);
+
 
 cluster_page_t *cluster_page_new(Evas_Object* parent)
 {
@@ -50,6 +56,12 @@ cluster_page_t *cluster_page_new(Evas_Object* parent)
 	evas_object_show(grid);
 	elm_layout_content_set(page_t->page_layout, CLUSTER_BOX, grid);
 	page_t->grid = grid;
+
+	elm_object_signal_callback_add(page_t->page_layout, SIGNAL_EDIT_MODE_ON_DONE, SIGNAL_SOURCE,
+			__cluster_page_edit_on_done, (void *)page_t);
+	elm_object_signal_callback_add(page_t->page_layout, SIGNAL_EDIT_MODE_OFF_DONE, SIGNAL_SOURCE,
+			__cluster_page_edit_off_done, (void *)page_t);
+
 	return page_t;
 }
 
@@ -180,7 +192,7 @@ void cluster_page_get_highlight_xy(cluster_page_t *page, int *x, int *y)
 	}
 }
 
-void __cluster_page_set(cluster_page_t *page, widget_data_t *item)
+static void __cluster_page_set(cluster_page_t *page, widget_data_t *item)
 {
 	int w, h;
 	int i, j;
@@ -294,7 +306,7 @@ bool cluster_page_drop_widget(cluster_page_t *page, widget_data_t *widget)
 	return true;
 }
 
-void __cluster_page_print_space(cluster_page_t *page)
+static void __cluster_page_print_space(cluster_page_t *page)
 {
 	LOGD("=========================================");
 	int i;
@@ -304,7 +316,7 @@ void __cluster_page_print_space(cluster_page_t *page)
 	LOGD("=========================================");
 }
 
-void __cluster_page_get_widget_size(widget_size_type_e type, int *w, int *h)
+static void __cluster_page_get_widget_size(widget_size_type_e type, int *w, int *h)
 {
 	switch (type) {
 	case WIDGET_SIZE_TYPE_4x2:
@@ -319,5 +331,22 @@ void __cluster_page_get_widget_size(widget_size_type_e type, int *w, int *h)
 		*w = *h = 0;
 		LOGE("NOT support type : %d", type);
 		break;
+	}
+}
+
+static void __cluster_page_edit_on_done(void *data, Evas_Object *obj, const char *emission, const char *source)
+{
+	cluster_page_t *page_t = (cluster_page_t *)data;
+	cluster_view_edit_on_done(page_t);
+}
+
+static void __cluster_page_edit_off_done(void *data, Evas_Object *obj, const char *emission, const char *source)
+{
+	cluster_page_t *page_t = (cluster_page_t *)data;
+	Eina_List *find_list;
+	widget_data_t *item;
+
+	EINA_LIST_FOREACH(page_t->widget_list, find_list, item) {
+		widget_viewer_thumbnail_delete(item);
 	}
 }

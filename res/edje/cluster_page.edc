@@ -69,6 +69,11 @@ collections {
 				action: STATE_SET "edit" 0.0;
 				target: CLUSTER_BG;
 				transition: DECELERATE ANIMATION_RESIZE_TIME;
+				after: "edit_mode_on_done";
+			}
+			program {
+				name: "edit_mode_on_done";
+				action: SIGNAL_EMIT SIGNAL_EDIT_MODE_ON_DONE SIGNAL_SOURCE;
 			}
 			program {
 				name: "edit_mode_off";
@@ -77,6 +82,11 @@ collections {
 				action: STATE_SET "default" 0.0;
 				target: CLUSTER_BG;
 				transition: DECELERATE ANIMATION_RESIZE_TIME;
+				after: "edit_mode_off_done";
+			}
+			program {
+				name: "edit_mode_off_done";
+				action: SIGNAL_EMIT SIGNAL_EDIT_MODE_OFF_DONE SIGNAL_SOURCE;
 			}
 		}
 	}

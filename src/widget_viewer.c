@@ -42,7 +42,7 @@ void widget_viewer_fini(void)
 	widget_viewer_evas_fini();
 }
 
-Evas_Object *widget_viewer_add_widget(Evas_Object *parent, widget_data_t *item, int *widget_width, int *widget_height)
+void widget_viewer_add_widget(Evas_Object *parent, widget_data_t *item, int *widget_width, int *widget_height)
 {
 	Evas_Object *widget_layout;
 
@@ -60,11 +60,14 @@ Evas_Object *widget_viewer_add_widget(Evas_Object *parent, widget_data_t *item, 
 	elm_object_part_content_set(widget_layout, SIZE_SETTER, rect);
 
 #ifndef _TEST_
+	int w, h;
 	Evas_Object *widget = widget_viewer_evas_add_widget(widget_layout, item->pkg_name, NULL, item->period);
-	//evas_object_smart_callback_add(widget, WIDGET_SMART_SIGNAL_WIDGET_CREATED, __widget_viewer_widget_create_cb, NULL);
 	evas_object_size_hint_align_set(widget, EVAS_HINT_FILL, EVAS_HINT_FILL);
 	evas_object_size_hint_weight_set(widget, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-	evas_object_color_set(widget, 255, 255, 255, 255);
+
+	//Notify widget_size_type_e to widget application.
+	widget_service_get_size(item->type, &w, &h);
+	evas_object_resize(widget, w, h);
 #else // for TEST
 /*	Evas_Object *widget = evas_object_rectangle_add(evas_object_evas_get(widget_layout));
 	evas_object_size_hint_align_set(widget, EVAS_HINT_FILL, EVAS_HINT_FILL);
@@ -85,13 +88,13 @@ Evas_Object *widget_viewer_add_widget(Evas_Object *parent, widget_data_t *item, 
 	Ecore_Timer *timer = ecore_timer_add(1, __widget_viewer_test_timer_cb, widget);
 #endif
 	elm_object_part_content_set(widget_layout, WIDGET_CONTENT, widget);
-
 	elm_object_signal_callback_add(widget_layout, SIGNAL_DELETE_BUTTON_CLICKED, SIGNAL_SOURCE, __widget_viewer_delete_btn_clicked_cb, (void *)item);
 
 	evas_object_show(widget);
 	evas_object_show(widget_layout);
 
-	return widget_layout;
+	item->widget_content = widget;
+	item->widget_layout = widget_layout;
 }
 
 static void __widget_viewer_delete_btn_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
@@ -100,9 +103,48 @@ static void __widget_viewer_delete_btn_clicked_cb(void *data, Evas_Object *obj, 
 	cluster_data_delete(item);
 }
 
-void widget_viewer_send_cancel_click_event(widget_data_t *widget)
+void widget_viewer_send_cancel_click_event(widget_data_t *item)
 {
 	Evas_Object *widget_obj = NULL;
-	widget_obj = elm_object_part_content_get(widget->widget_layout, WIDGET_CONTENT);
+	widget_obj = elm_object_part_content_get(item->widget_layout, WIDGET_CONTENT);
 	widget_viewer_evas_cancel_click_event(widget_obj);
+}
+
+void widget_viewer_thumbnail_add(widget_data_t *item)
+{
+	Evas_Object *image = NULL;
+
+	image = evas_object_image_filled_add(evas_object_evas_get(item->widget_layout));
+	if (!image) {
+		LOGE("Could not create image proxy object");
+		return;
+	}
+
+	if (!evas_object_image_source_set(image, item->widget_content)) {
+		evas_object_del(image);
+		LOGE("Could not set proxy image source");
+		return;
+	}
+
+	evas_object_image_source_visible_set(image, EINA_FALSE);
+
+	int gw, gh;
+	evas_object_geometry_get(item->widget_layout, NULL, NULL, &gw, &gh);
+	evas_object_image_fill_set(image, 0, 0, gw, gh);
+	evas_object_show(image);
+
+	elm_object_part_content_set(item->widget_layout, WIDGET_THUMBNAIL, image);
+	elm_object_part_content_unset(item->widget_layout, WIDGET_CONTENT);
+}
+
+void widget_viewer_thumbnail_delete(widget_data_t *item)
+{
+	if (item && item->widget_layout && item->widget_content) {
+		Evas_Object *image = NULL;
+		image = elm_object_part_content_get(item->widget_layout, WIDGET_THUMBNAIL);
+		evas_object_image_source_visible_set(image, EINA_TRUE);
+		elm_object_part_content_unset(item->widget_layout, WIDGET_THUMBNAIL);
+		evas_object_del(image);
+		elm_object_part_content_set(item->widget_layout, WIDGET_CONTENT, item->widget_content);
+	}
 }

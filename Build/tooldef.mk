@@ -4,10 +4,19 @@ ifeq ($(strip $(BUILD_CONFIG)),)
 BUILD_CONFIG = Debug
 endif
 
+ifneq ($(strip $(PROJROOT)),)
+PROJPATH := $(PROJROOT)
+endif
+
 ifeq ($(strip $(OUTPUT_DIR)),)
 OUTPUT_DIR := $(PROJPATH)/$(BUILD_CONFIG)
 endif
 
+ifneq ($(strip $(SHELL_BIN)),)
+SHELL = $(SHELL_BIN)
+else
+SHELL = sh
+endif
 
 ifneq ($(strip $(MKDIR_BIN)),)
 MKDIR = $(MKDIR_BIN)
@@ -39,6 +48,12 @@ ifneq ($(strip $(FIND_BIN)),)
 FIND = $(FIND_BIN)
 else
 FIND = find
+endif
+
+ifneq ($(strip $(SED_BIN)),)
+SED = $(SED_BIN)
+else
+SED = sed
 endif
 
 ifneq ($(strip $(GREP_BIN)),)

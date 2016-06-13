@@ -26,7 +26,9 @@
 void widget_viewer_init(Evas_Object *win);
 void widget_viewer_fini(void);
 
-Evas_Object *widget_viewer_add_widget(Evas_Object *parent, widget_data_t *item, int *widget_width, int *widget_height);
-void widget_viewer_send_cancel_click_event(widget_data_t *widget);
+void widget_viewer_add_widget(Evas_Object *parent, widget_data_t *item, int *widget_width, int *widget_height);
+void widget_viewer_send_cancel_click_event(widget_data_t *item);
+void widget_viewer_thumbnail_add(widget_data_t *item);
+void widget_viewer_thumbnail_delete(widget_data_t *item);
 
 #endif /* __WIDGET_VIEWER_H__ */

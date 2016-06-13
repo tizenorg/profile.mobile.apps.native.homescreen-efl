@@ -20,6 +20,7 @@
 #include <Elementary.h>
 
 #include "cluster_data.h"
+#include "cluster_page.h"
 #include "view.h"
 
 Evas_Object *cluster_view_create(Evas_Object *parent);
@@ -38,5 +39,6 @@ view_state_t cluster_view_get_state(void);
 bool cluster_view_set_state(view_state_t state);
 void cluster_view_delete_widget(widget_data_t *item);
 bool cluster_view_add_widget(widget_data_t *item, bool scroll);
+void cluster_view_edit_on_done(cluster_page_t *page);
 
 #endif /* __CLUSTER_VIEW_H__ */
