@@ -889,7 +889,7 @@ static void __apps_view_icon_check_changed_cb(void *data, Evas_Object *obj, cons
 
 void apps_view_hw_menu_key(void)
 {
-	if (apps_view_s.view_state == VIEW_STATE_NORMAL)
+	if (apps_view_s.view_state == VIEW_STATE_NORMAL && apps_view_s.opened_folder == NULL)
 		menu_change_state_on_hw_menu_key(apps_menu_table);
 }
 

@@ -1305,8 +1305,10 @@ static void __cluster_view_edit_drop_widget(void *data)
 	cluster_view_s.animation_from_x = cluster_mouse_info.move_x - cluster_mouse_info.offset_x;
 	cluster_view_s.animation_from_y = cluster_mouse_info.move_y - cluster_mouse_info.offset_y;
 
-	cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, cluster_view_s.current_page);
+	cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, cluster_view_s.picked_widget->page_idx);
 	cluster_page_unset(page,  cluster_view_s.picked_widget);
+
+	page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, cluster_view_s.current_page);
 	cluster_page_get_highlight_xy(page, &to_x, &to_y);
 	if (to_x == INIT_VALUE || to_y == INIT_VALUE) {
 		cluster_page_check_empty_space_pos(page, cluster_view_s.picked_widget, &to_x, &to_y);
