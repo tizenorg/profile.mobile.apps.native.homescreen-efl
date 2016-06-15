@@ -34,9 +34,9 @@
 		}\
 	}
 images {
-	image: "../res/images/folder_popup_bg.png" COMP;
-	image: "../res/images/btn_add_nor.png" COMP;
-	image: "../res/images/btn_add_press.png" COMP;
+	image: "folder_popup_bg.png" COMP;
+	image: "btn_add_nor.png" COMP;
+	image: "btn_add_press.png" COMP;
 }
 
 collections {
@@ -77,7 +77,7 @@ collections {
 					rel1 {relative: 0.04 0.2; to:SIZE_SETTER;}
 					rel2 {relative: 0.96 0.8; to:SIZE_SETTER;}
 					image {
-						normal: "../res/images/folder_popup_bg.png";
+						normal: "folder_popup_bg.png";
 						border: 5 5 5 5;
 					}
 					color: 255 255 255 255;
@@ -139,14 +139,14 @@ collections {
 						to: APPS_FOLDER_CONTAINER;
 					}
 					image {
-						normal: "../res/images/btn_add_nor.png";
+						normal: "btn_add_nor.png";
 					}
 				}
 				description {
 					state: "press" 0.0;
 					inherit: "default" 0.0;
 					image {
-						normal: "../res/images/btn_add_press.png";
+						normal: "btn_add_press.png";
 					}
 				}
 				description {
@@ -171,7 +171,7 @@ collections {
 					custom_state(PART:APPS_FOLDER_PLUS_ICON, "default", 0.0);
 					set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_REL1, ((get_float(plus_y) + 0.16) / APPS_FOLDER_COL), (get_float(plus_x)) / APPS_FOLDER_ROW);
 					set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_REL2, (((get_float(plus_y)) + 0.84) / APPS_FOLDER_COL), (((get_float(plus_x)) + 0.6) / APPS_FOLDER_ROW));
-					set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_IMAGE, get_image_id("../res/images/btn_add_nor.png"));
+					set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_IMAGE, get_image_id("btn_add_nor.png"));
 					set_state(PART:APPS_FOLDER_PLUS_ICON, "custom", 0.0);
 				}
 			}
@@ -183,7 +183,7 @@ collections {
 					custom_state(PART:APPS_FOLDER_PLUS_ICON, "default", 0.0);
 					set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_REL1, ((get_float(plus_y) + 0.16) / APPS_FOLDER_COL), (get_float(plus_x)) / APPS_FOLDER_ROW);
 					set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_REL2, (((get_float(plus_y)) + 0.84) / APPS_FOLDER_COL), (((get_float(plus_x)) + 0.6) / APPS_FOLDER_ROW));
-					set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_IMAGE, get_image_id("../res/images/btn_add_nor.png"));
+					set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_IMAGE, get_image_id("btn_add_nor.png"));
 					set_state(PART:APPS_FOLDER_PLUS_ICON, "custom", 0.0);
 				}
 			}
@@ -195,7 +195,7 @@ collections {
 					custom_state(PART:APPS_FOLDER_PLUS_ICON, "press", 0.0);
 					set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_REL1, ((get_float(plus_y) + 0.16) / APPS_FOLDER_COL), (get_float(plus_x)) / APPS_FOLDER_ROW);
 					set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_REL2, (((get_float(plus_y)) + 0.84) / APPS_FOLDER_COL), (((get_float(plus_x)) + 0.6) / APPS_FOLDER_ROW));
-					set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_IMAGE, get_image_id("../res/images/btn_add_press.png"));
+					set_state_val(PART:APPS_FOLDER_PLUS_ICON, STATE_IMAGE, get_image_id("btn_add_press.png"));
 					set_state(PART:APPS_FOLDER_PLUS_ICON, "custom", 0.0);
 				}
 			}

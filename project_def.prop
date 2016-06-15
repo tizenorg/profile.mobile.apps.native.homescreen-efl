@@ -61,7 +61,7 @@ USER_EDCS_FONT_DIRS_ABS =
 USER_EXT_EDC_KEYS = EDC0 
 
 USER_EXT_EDC0_EDCS = res/edje/widget.edc res/edje/apps_folder_icon.edc res/edje/apps_folder_popup.edc res/edje/apps_view.edc res/edje/page_indicator_unit.edc res/edje/apps_view_bg.edc res/edje/cluster_allpage_thumbnail.edc res/edje/home_btn.edc res/edje/home.edc res/edje/apps_chooser_btn.edc res/edje/add_widget_viewer.edc res/edje/app_icon.edc res/edje/cluster_page.edc res/edje/cluster_allpage.edc 
-USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images 
+USER_EXT_EDC0_EDCS_IMAGE_DIRS = edje/images res/images
 USER_EXT_EDC0_EDCS_IMAGE_DIRS_ABS = 
 USER_EXT_EDC0_EDCS_SOUND_DIRS = edje/sounds 
 USER_EXT_EDC0_EDCS_SOUND_DIRS_ABS = 

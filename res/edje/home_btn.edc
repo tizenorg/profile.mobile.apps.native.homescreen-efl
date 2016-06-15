@@ -18,10 +18,10 @@
 
 collections {
 	images {
-		image: "../res/images/home_button_bg.png" COMP;
-		image: "../res/images/home_button_menu.png" COMP;
-		image: "../res/images/home_button_home.png" COMP;
-		image: "../res/images/home_button_apps.png" COMP;
+		image: "home_button_bg.png" COMP;
+		image: "home_button_menu.png" COMP;
+		image: "home_button_home.png" COMP;
+		image: "home_button_apps.png" COMP;
 	}
 	group { name: GROUP_HOME_BTN_LY;
 		parts {
@@ -35,7 +35,7 @@ collections {
 					color: 0 0 0 40;
 					visible: 1;
 					image {
-						normal: "../res/images/home_button_bg.png";
+						normal: "home_button_bg.png";
 					}
 				}
 				description {
@@ -62,7 +62,7 @@ collections {
 					color: 255 255 255 255;
 					visible: 1;
 					image {
-						normal: "../res/images/home_button_menu.png";
+						normal: "home_button_menu.png";
 					}
 				}
 				description { state: "show" 0.0;
@@ -85,7 +85,7 @@ collections {
 					color: 0 0 0 40;
 					visible: 1;
 					image {
-						normal: "../res/images/home_button_bg.png";
+						normal: "home_button_bg.png";
 					}
 				}
 				description {
@@ -112,7 +112,7 @@ collections {
 					color: 255 255 255 0;
 					visible: 1;
 					image {
-						normal: "../res/images/home_button_home.png";
+						normal: "home_button_home.png";
 					}
 				}
 				description { state: "show" 0.0;
@@ -135,7 +135,7 @@ collections {
 					color: 255 255 255 255;
 					visible: 1;
 					image {
-						normal: "../res/images/home_button_apps.png";
+						normal: "home_button_apps.png";
 					}
 				}
 				description { state: "show" 0.0;

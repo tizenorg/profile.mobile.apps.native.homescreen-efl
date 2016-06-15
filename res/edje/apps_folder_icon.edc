@@ -17,10 +17,10 @@
 #include "../../inc/edc_conf.h"
 
 images {
-	image: "../res/images/folder_appicon_bg.png" COMP;
-	image: "../res/images/folder_appicon_bg_possible.png" COMP;
-	image: "../res/images/folder_appicon_bg_impossible.png" COMP;
-	image: "../res/images/folder_appicon_empty_bg.png" COMP;
+	image: "folder_appicon_bg.png" COMP;
+	image: "folder_appicon_bg_possible.png" COMP;
+	image: "folder_appicon_bg_impossible.png" COMP;
+	image: "folder_appicon_empty_bg.png" COMP;
 }
 collections {
 	group { name: GROUP_FOLDER_ICON_LY;
@@ -49,7 +49,7 @@ collections {
 				aspect: 1.0 1.0;
 				aspect_preference: BOTH;
 				image {
-					normal: "../res/images/folder_appicon_bg.png";
+					normal: "folder_appicon_bg.png";
 				}
 			}
 		}
@@ -65,7 +65,7 @@ collections {
 				aspect: 1.0 1.0;
 				aspect_preference: BOTH;
 				image {
-					normal: "../res/images/folder_appicon_bg_possible.png";
+					normal: "folder_appicon_bg_possible.png";
 				}
 				visible: 0;
 			}
@@ -73,7 +73,7 @@ collections {
 				state: "frame_possible" 0.0;
 				inherit: "default" 0.0;
 				image {
-					normal: "../res/images/folder_appicon_bg_possible.png";
+					normal: "folder_appicon_bg_possible.png";
 				}
 				visible: 1;
 			}
@@ -81,7 +81,7 @@ collections {
 				state: "frame_impossible" 0.0;
 				inherit: "default" 0.0;
 				image {
-					normal: "../res/images/folder_appicon_bg_impossible.png";
+					normal: "folder_appicon_bg_impossible.png";
 				}
 				visible: 1;
 			}

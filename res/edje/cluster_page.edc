@@ -18,8 +18,8 @@
 
 collections {
 	images {
-		image: "../res/images/btn_delete_nor.png" COMP;
-		image: "../res/images/btn_delete_press.png" COMP;
+		image: "btn_delete_nor.png" COMP;
+		image: "btn_delete_press.png" COMP;
 	}
 	group { name: GROUP_CLUSTER_PAGE_LY;
 		parts {

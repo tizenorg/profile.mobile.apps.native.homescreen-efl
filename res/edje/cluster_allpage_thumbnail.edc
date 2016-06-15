@@ -18,11 +18,11 @@
 
 collections {
 	images {
-		image: "../res/images/btn_delete_nor.png" COMP;
-		image: "../res/images/btn_delete_press.png" COMP;
-		image: "../res/images/all_page_add.png" COMP;
-		image: "../res/images/all_page_add_press.png" COMP;
-		image: "../res/images/all_page_drag.png" COMP;
+		image: "btn_delete_nor.png" COMP;
+		image: "btn_delete_press.png" COMP;
+		image: "all_page_add.png" COMP;
+		image: "all_page_add_press.png" COMP;
+		image: "all_page_drag.png" COMP;
 	}
 	group { name: GROUP_CLUSTER_ALLPAGE_THUMBNAIL_LY;
 		parts {
@@ -52,7 +52,7 @@ collections {
 					aspect: 1.0 1.0;
 					aspect_preference: BOTH;
 					image {
-						normal: "../res/images/all_page_add.png";
+						normal: "all_page_add.png";
 					}
 				}
 				description {
@@ -66,7 +66,7 @@ collections {
 					inherit: "default" 0.0;
 					color: 255 255 255 255;
 					image {
-						normal: "../res/images/all_page_add_press.png";
+						normal: "all_page_add_press.png";
 					}
 					visible: 1;
 				}
@@ -104,7 +104,7 @@ collections {
 					color: 255 255 255 150;
 					visible: 0;
 					image {
-						normal: "../res/images/all_page_drag.png";
+						normal: "all_page_drag.png";
 					}
 				}
 				description {
@@ -125,7 +125,7 @@ collections {
 					aspect: 1.0 1.0;
 					aspect_preference: BOTH;
 					image {
-						normal: "../res/images/btn_delete_nor.png";
+						normal: "btn_delete_nor.png";
 					}
 				}
 				description {
@@ -139,7 +139,7 @@ collections {
 					inherit: "default" 0.0;
 					color: 255 255 255 255;
 					image {
-						normal: "../res/images/btn_delete_press.png";
+						normal: "btn_delete_press.png";
 					}
 					visible: 1;
 				}

@@ -17,14 +17,14 @@
 #include "../../inc/edc_conf.h"
 
 images {
-	image: "../res/images/app_press_117.png" COMP;
-	image: "../res/images/btn_delete_nor.png" COMP;
-	image: "../res/images/btn_delete_press.png" COMP;
-	image: "../res/images/icon_badge_container.png" COMP;
-	image: "../res/images/core_check_bg.png" COMP;
-	image: "../res/images/core_check_bg_stroke.png" COMP;
-	image: "../res/images/core_check_icon.png" COMP;
-	image: "../res/images/folder_appicon_bg.png" COMP;
+	image: "app_press_117.png" COMP;
+	image: "btn_delete_nor.png" COMP;
+	image: "btn_delete_press.png" COMP;
+	image: "icon_badge_container.png" COMP;
+	image: "core_check_bg.png" COMP;
+	image: "core_check_bg_stroke.png" COMP;
+	image: "core_check_icon.png" COMP;
+	image: "folder_appicon_bg.png" COMP;
 }
 
 styles {
@@ -75,7 +75,7 @@ collections {
 					aspect_preference: BOTH;
 					color: 0 0 0 0;
 					image {
-						normal: "../res/images/app_press_117.png";
+						normal: "app_press_117.png";
 					}
 				}
 				description{
@@ -98,7 +98,7 @@ collections {
 					aspect_preference: BOTH;
 					color: 0 0 0 0;
 					image {
-						normal: "../res/images/folder_appicon_bg.png";
+						normal: "folder_appicon_bg.png";
 					}
 					visible: 0;
 				}
@@ -148,7 +148,7 @@ collections {
 					visible: 0;
 					image
 					{
-						normal: "../res/images/icon_badge_container.png";
+						normal: "icon_badge_container.png";
 					}
 				}
 				description
@@ -201,7 +201,7 @@ collections {
 					aspect: 1.0 1.0;
 					aspect_preference: BOTH;
 					image {
-						normal: "../res/images/btn_delete_nor.png";
+						normal: "btn_delete_nor.png";
 					}
 				}
 				description {
@@ -215,7 +215,7 @@ collections {
 					inherit: "default" 0.0;
 					color: 255 255 255 255;
 					image {
-						normal: "../res/images/btn_delete_press.png";
+						normal: "btn_delete_press.png";
 					}
 					visible: 1;
 				}
@@ -234,7 +234,7 @@ collections {
 					aspect: 1.0 1.0;
 					aspect_preference: BOTH;
 					image {
-						normal: "../res/images/core_check_bg.png";
+						normal: "core_check_bg.png";
 					}
 				}
 				description {
@@ -262,7 +262,7 @@ collections {
 					aspect: 1.0 1.0;
 					aspect_preference: BOTH;
 					image {
-						normal: "../res/images/core_check_bg_stroke.png";
+						normal: "core_check_bg_stroke.png";
 					}
 				}
 				description {
@@ -291,7 +291,7 @@ collections {
 					aspect: 1.0 1.0;
 					aspect_preference: BOTH;
 					image {
-						normal: "../res/images/core_check_icon.png";
+						normal: "core_check_icon.png";
 					}
 				}
 				description {

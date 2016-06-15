@@ -1,8 +1,8 @@
 #include "../../inc/edc_conf.h"
 
 images {
-	image: "../res/images/btn_delete_nor.png" COMP;
-	image: "../res/images/btn_delete_press.png" COMP;
+	image: "btn_delete_nor.png" COMP;
+	image: "btn_delete_press.png" COMP;
 }
 
 collections {
@@ -75,7 +75,7 @@ collections {
 					aspect: 1.0 1.0;
 					aspect_preference: BOTH;
 					image {
-						normal: "../res/images/btn_delete_nor.png";
+						normal: "btn_delete_nor.png";
 					}
 				}
 				description {
@@ -89,7 +89,7 @@ collections {
 					inherit: "default" 0.0;
 					color: 255 255 255 255;
 					image {
-						normal: "../res/images/btn_delete_press.png";
+						normal: "btn_delete_press.png";
 					}
 					visible: 1;
 				}
