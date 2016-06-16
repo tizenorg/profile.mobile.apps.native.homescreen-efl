@@ -892,6 +892,15 @@ static void __cluster_view_allpage_delete_page_cb(void *data, Evas_Object *obj, 
 	__cluster_view_page_delete(page);
 	__cluster_view_allpage_reposition();
 
+	Eina_List *widget_list = NULL;
+	widget_data_t *widget_item = NULL;
+	EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
+		EINA_LIST_FOREACH(page_item->widget_list, widget_list, widget_item) {
+			widget_item->page_idx = page_item->page_index;
+			cluster_data_update(widget_item);
+		}
+	}
+
 	if (cluster_view_s.page_count < CLUSTER_MAX_PAGE) {
 		if (cluster_view_s.allpage_add_page == NULL) {
 			cluster_view_s.allpage_add_page = elm_layout_add(cluster_view_s.allpage);
