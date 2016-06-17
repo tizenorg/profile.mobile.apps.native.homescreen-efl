@@ -120,13 +120,6 @@ static Eina_Bool __hw_key_release_cb(void *data, int type, void *event)
 		}
 	} else if (!strcmp(ev->keyname, KEY_MENU)) {
 		homescreen_efl_hw_menu_key_release();
-	} else if (!strcmp(ev->keyname, KEY_HOME)) {
-		if (menu_is_show()) {
-			menu_hide();
-		} else if (popup_is_show()) {
-			popup_hide();
-		}
-		homescreen_efl_hw_home_key_release();
 	} else {
 		hw_key_info.pressed = EINA_FALSE;
 
