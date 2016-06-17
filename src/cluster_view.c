@@ -395,8 +395,7 @@ bool cluster_view_set_state(view_state_t state)
 		widget_data_t *item = NULL;
 		EINA_LIST_FOREACH(data_list, find_list, item) {
 			if (item->widget_layout) {
-				if (!cluster_view_s.picked_widget || item->widget_layout != cluster_view_s.picked_widget->widget_layout)
-				{
+				if (!cluster_view_s.picked_widget || item->widget_layout != cluster_view_s.picked_widget->widget_layout) {
 					elm_object_signal_emit(item->widget_layout, SIGNAL_DELETE_BUTTON_SHOW_ANI, SIGNAL_SOURCE);
 				} else {
 					evas_object_event_callback_add(item->widget_content, EVAS_CALLBACK_MOUSE_DOWN, __clsuter_view_widget_down_cb, item);
@@ -886,20 +885,25 @@ static void __cluster_view_allpage_delete_page_cb(void *data, Evas_Object *obj, 
 	EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
 		if (page_item->page_index > page->page_index) {
 			page_item->page_index -= 1;
+
+		}
+	}
+
+	Eina_List *widget_list = NULL;
+	widget_data_t *widget_item = NULL;
+	EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
+		EINA_LIST_FOREACH(page_item->widget_list, widget_list, widget_item) {
+			if (page_item == page)
+				widget_item->page_idx = -1;
+			else
+				widget_item->page_idx = page_item->page_index;
+			cluster_data_update(widget_item);
 		}
 	}
 
 	__cluster_view_page_delete(page);
 	__cluster_view_allpage_reposition();
 
-	Eina_List *widget_list = NULL;
-	widget_data_t *widget_item = NULL;
-	EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
-		EINA_LIST_FOREACH(page_item->widget_list, widget_list, widget_item) {
-			widget_item->page_idx = page_item->page_index;
-			cluster_data_update(widget_item);
-		}
-	}
 
 	if (cluster_view_s.page_count < CLUSTER_MAX_PAGE) {
 		if (cluster_view_s.allpage_add_page == NULL) {
