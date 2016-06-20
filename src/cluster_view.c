@@ -475,9 +475,6 @@ bool cluster_view_set_state(view_state_t state)
 
 bool cluster_view_add_widget(widget_data_t *item, bool scroll)
 {
-	if (!item->widget_layout)
-		__cluster_view_add_widget_content(item);
-
 	int page_idx = INIT_VALUE;
 	bool set_on = false;
 
@@ -488,51 +485,58 @@ bool cluster_view_add_widget(widget_data_t *item, bool scroll)
 	}
 
 	cluster_page_t *page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, page_idx);
-	set_on = cluster_page_set_widget(page, item);
+	set_on = cluster_page_check_empty_space(page, item->type, item->pos_x, item->pos_y, NULL, NULL);
 
 	if (!set_on) {
 		Eina_List *find_list = NULL;
 		cluster_page_t *page_item = NULL;
-		bool set_on = false;
 		EINA_LIST_FOREACH(cluster_view_s.page_list, find_list, page_item) {
 			if (page_item == NULL) {
 				LOGE("page is NULL");
 			} else {
-				if (cluster_page_set_widget(page_item, item)) {
-					page_idx = page_item->page_index;
-					set_on = true;
+				set_on = cluster_page_check_empty_space(page_item, item->type, item->pos_x, item->pos_y, NULL, NULL);
+				if (set_on) {
+					page = page_item;
 					break;
 				}
 			}
 		}
+	}
 
-		if (!set_on) {
-			if (cluster_view_s.page_count >= CLUSTER_MAX_PAGE) {
-				LOGE("cluster page is max.");
+	if (!set_on) {
+		if (cluster_view_s.page_count >= CLUSTER_MAX_PAGE) {
+			LOGE("cluster page is max.");
 
-				Evas_Smart_Cb func[3] = { NULL, NULL, NULL };
-				void *data[3] = { NULL, NULL, NULL };
-				char btn_text[3][STR_MAX] = { "", "", "" };
-				char title_text[STR_MAX] = { "" };
-				char popup_text[STR_MAX] = { "" };
-				snprintf(btn_text[0], sizeof(btn_text[0]), "%s", _("IDS_CAM_SK_OK"));
-				snprintf(title_text, sizeof(title_text), "%s", _("IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"));
-				snprintf(popup_text, sizeof(popup_text), "%s", _("IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"));
-				popup_show(1, func, data, btn_text, title_text, popup_text);
-				return false;
-			} else {
-				cluster_page_t *page_t = __cluster_view_page_new();
-				if (!page_t || !cluster_page_set_widget(page_t, item)) {
-					LOGE("Cannot add widget");
-					return false;
-				}
-				page_idx = page_t->page_index;
-			}
+			Evas_Smart_Cb func[3] = { NULL, NULL, NULL };
+			void *data[3] = { NULL, NULL, NULL };
+			char btn_text[3][STR_MAX] = { "", "", "" };
+			char title_text[STR_MAX] = { "" };
+			char popup_text[STR_MAX] = { "" };
+			snprintf(btn_text[0], sizeof(btn_text[0]), "%s", _("IDS_CAM_SK_OK"));
+			snprintf(title_text, sizeof(title_text), "%s", _("IDS_HS_HEADER_UNABLE_TO_ADD_WIDGET_ABB"));
+			snprintf(popup_text, sizeof(popup_text), "%s", _("IDS_HS_POP_UNABLE_TO_ADD_THIS_HOME_BOX_TO_THE_HOME_SCREEN_THERE_IS_NOT_ENOUGH_SPACE_ON_THE_HOME_SCREEN_MSG"));
+			popup_show(1, func, data, btn_text, title_text, popup_text);
+			return false;
 		}
+
+		cluster_page_t *page_t = __cluster_view_page_new();
+		if (!page_t) {
+			LOGE("Cannot add widget");
+			return false;
+		}
+
+		page = page_t;
+	}
+
+	if (!item->widget_layout)
+		__cluster_view_add_widget_content(item);
+
+	if (!cluster_page_set_widget(page, item)) {
+		LOGE("cluster_page_set_widget is failed!!!");
 	}
 
 	if (scroll) {
-		cluster_view_s.current_page = page_idx;
+		cluster_view_s.current_page = item->page_idx;
 		__cluster_view_scroll_to_page(cluster_view_s.current_page, true);
 	}
 

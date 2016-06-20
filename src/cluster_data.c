@@ -119,7 +119,7 @@ static void __cluster_data_insert_default_data(void)
 	new_item->pos_y = 0;
 	new_item->pos_x = 0;
 	new_item->pkg_name = strdup("org.tizen.calendar.widget");
-	new_item->content_info = NULL;
+	new_item->content_info = strdup("org.tizen.calendar.widget");
 	new_item->type = WIDGET_SIZE_TYPE_4x4;
 	new_item->period = 0.0;
 	new_item->allow_duplicate = 1;
