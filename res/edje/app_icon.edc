@@ -169,8 +169,8 @@ collections {
 					visible: 0;
 					fixed: 1 1;
 					color: 255 255 255 255;
-					rel1{relative: 0.95 -0.05; to: APPS_ICON_CONTENT;}
-					rel2{relative: 0.95 -0.05; to: APPS_ICON_CONTENT;}
+					rel1{relative: 0.95 0.0; to: APPS_ICON_CONTENT;}
+					rel2{relative: 0.95 0.0; to: APPS_ICON_CONTENT;}
 					align: 1.0 0.0;
 					text
 					{
