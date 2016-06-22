@@ -89,6 +89,7 @@ static int __add_widget_data_widget_list_cb(const char *app_id, const char *widg
 		if (!widget_preview_type) {
 			LOGE("Can not allocate memory for list item preview type");
 			__add_widget_data_list_delete();
+			__add_widget_data_free(widget);
 			return WIDGET_ERROR_FAULT;
 		}
 
