@@ -227,7 +227,6 @@ static void __homescreen_efl_get_window_size(Evas_Object *win)
 
 static void __homescreen_efl_set_wallpaper(void)
 {
-	const char *bg_path = util_get_res_file_path(IMAGE_DIR"/default_bg.png");
 	char *buf = NULL;
 	int ret = -1;
 
@@ -241,24 +240,27 @@ static void __homescreen_efl_set_wallpaper(void)
 		elm_win_resize_object_add(main_info.win, main_info.main_layout);
 
 		evas_object_show(main_info.main_layout);
-	}
-
-	if (main_info.bg == NULL) {
-		main_info.bg = evas_object_image_filled_add(evas_object_evas_get(main_info.main_layout));
-
 		system_settings_set_changed_cb(SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN, __homescreen_efl_home_bg_changed_cb, NULL);
-
-		evas_object_size_hint_min_set(main_info.bg, main_info.root_width, main_info.root_height);
-		elm_object_part_content_set(main_info.main_layout, "home_bg", main_info.bg);
-		evas_object_show(main_info.bg);
 	}
 
+	if (main_info.bg != NULL) {
+		evas_object_del(main_info.bg);
+		main_info.bg = NULL;
+	}
+
+	main_info.bg = evas_object_image_filled_add(evas_object_evas_get(main_info.main_layout));
+	evas_object_size_hint_min_set(main_info.bg, main_info.root_width, main_info.root_height);
+	elm_object_part_content_set(main_info.main_layout, "home_bg", main_info.bg);
+	evas_object_show(main_info.bg);
+
+	const char *bg_path = util_get_res_file_path(IMAGE_DIR"/default_bg.png");
 	ret = system_settings_get_value_string(SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN, &buf);
 	if (!buf || !ecore_file_can_read(buf) || ret != SYSTEM_SETTINGS_ERROR_NONE) {
 		evas_object_image_file_set(main_info.bg, bg_path, "bg");
 	} else {
 		evas_object_image_file_set(main_info.bg, buf, "bg");
 	}
+
 	if (buf) free(buf);
 }
 

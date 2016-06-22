@@ -16,5 +16,7 @@
         <privilege>http://tizen.org/privilege/notification</privilege>
         <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
         <privilege>http://tizen.org/privilege/widget.viewer</privilege>
+        <privilege>http://tizen.org/privilege/mediastorage</privilege>
+        <privilege>http://tizen.org/privilege/externalstorage</privilege>
     </privileges>
 </manifest>
