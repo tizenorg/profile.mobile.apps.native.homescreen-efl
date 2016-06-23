@@ -31,4 +31,7 @@ void widget_viewer_send_cancel_click_event(widget_data_t *item);
 void widget_viewer_thumbnail_add(widget_data_t *item);
 void widget_viewer_thumbnail_delete(widget_data_t *item);
 
+void widget_viewer_pause_widget(widget_data_t *widget_data);
+void widget_viewer_resume_widget(widget_data_t *widget_data);
+
 #endif /* __WIDGET_VIEWER_H__ */

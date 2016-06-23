@@ -403,6 +403,7 @@ bool cluster_view_set_state(view_state_t state)
 					evas_object_event_callback_add(item->widget_content, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_widget_up_cb, item);
 				}
 				widget_viewer_thumbnail_add(item);
+				widget_viewer_pause_widget(item);
 				elm_object_signal_emit(item->widget_layout, SIGNAL_CLUSTER_EDIT_STATE, SIGNAL_SOURCE);
 			}
 		}
@@ -432,6 +433,7 @@ bool cluster_view_set_state(view_state_t state)
 				if (item->widget_layout) {
 					elm_object_signal_emit(item->widget_layout, SIGNAL_DELETE_BUTTON_HIDE_ANI, SIGNAL_SOURCE);
 					elm_object_signal_emit(item->widget_layout, SIGNAL_CLUSTER_NORMAL_STATE, SIGNAL_SOURCE);
+					widget_viewer_resume_widget(item);
 				}
 			}
 		} else if (cluster_view_s.view_state == VIEW_STATE_ADD_VIEWER) {
@@ -453,6 +455,14 @@ bool cluster_view_set_state(view_state_t state)
 				}
 			}
 
+			Eina_List *data_list = cluster_data_get_widget_list();
+			widget_data_t *item = NULL;
+			EINA_LIST_FOREACH(data_list, find_list, item) {
+				if (item->widget_layout) {
+					widget_viewer_resume_widget(item);
+				}
+			}
+
 			if (cluster_view_s.current_page >= cluster_view_s.page_count) {
 				cluster_view_s.current_page = CLUSTER_HOME_PAGE;
 			}
@@ -466,6 +476,15 @@ bool cluster_view_set_state(view_state_t state)
 		page_indicator_hide(cluster_view_s.indicator);
 
 		__cluster_view_create_all_page();
+
+		Eina_List *data_list = cluster_data_get_widget_list();
+		Eina_List *find_list = NULL;
+		widget_data_t *item = NULL;
+		EINA_LIST_FOREACH(data_list, find_list, item) {
+			if (item->widget_layout) {
+				widget_viewer_pause_widget(item);
+			}
+		}
 	}
 
 	cluster_view_s.view_state = state;
