@@ -143,7 +143,7 @@ static void __cluster_view_edit_move_anim_done(void *data);
 
 static Eina_Bool __cluster_view_scroll_timer_cb(void *data);
 
-static void __cluster_view_scroll_anim_start_cb(void *data, Evas_Object *obj, void *event_info);
+static void __cluster_view_scroll_drag_start_cb(void *data, Evas_Object *obj, void *event_info);
 static void __cluster_view_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info);
 static void __cluster_view_allpage_get_page_pos(int page_idx, int *w, int *h);
 static int __cluster_view_allpage_get_page_index(int x, int y);
@@ -233,7 +233,7 @@ Evas_Object *__cluster_view_create_base_gui(Evas_Object *win)
 	evas_object_event_callback_add(cluster_view_s.scroller, EVAS_CALLBACK_MOUSE_UP, __clsuter_view_scroller_up_cb, NULL);
 
 	evas_object_smart_callback_add(cluster_view_s.scroller, "scroll,anim,stop", __cluster_view_scroll_anim_stop_cb, NULL);
-	evas_object_smart_callback_add(cluster_view_s.scroller, "scroll,anim,start", __cluster_view_scroll_anim_start_cb, NULL);
+	evas_object_smart_callback_add(cluster_view_s.scroller, "scroll,drag,start", __cluster_view_scroll_drag_start_cb, NULL);
 
 	cluster_view_s.box = elm_box_add(cluster_view_s.scroller);
 	elm_box_horizontal_set(cluster_view_s.box, EINA_TRUE);
@@ -1463,9 +1463,16 @@ static Eina_Bool __cluster_view_scroller_long_press_time_cb(void *data)
 
 	return ECORE_CALLBACK_CANCEL;
 }
-static void __cluster_view_scroll_anim_start_cb(void *data, Evas_Object *obj, void *event_info)
+static void __cluster_view_scroll_drag_start_cb(void *data, Evas_Object *obj, void *event_info)
 {
 	cluster_view_s.is_srolling = true;
+	cluster_page_t *current_page = (cluster_page_t *)eina_list_nth(cluster_view_s.page_list, cluster_view_s.current_page);
+	Eina_List *find_list = NULL;
+	widget_data_t *item;
+	LOGD("Current Page : %d", cluster_view_s.current_page);
+	EINA_LIST_FOREACH(current_page->widget_list, find_list, item) {
+		widget_viewer_send_cancel_click_event(item);
+	}
 }
 
 static void __cluster_view_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info)

@@ -579,6 +579,6 @@ static void __add_widget_viewer_preview_clicked_cb(void *data, Evas_Object *obj,
 
 	cluster_view_set_state(VIEW_STATE_NORMAL);
 
-	cluster_data_insert_widget(widget_id, widget_id, type);
+	cluster_data_insert_widget(widget_id, NULL, type);
 	free(widget_id);
 }

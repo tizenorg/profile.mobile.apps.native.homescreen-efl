@@ -141,7 +141,7 @@ bool cluster_db_get_list(Eina_List **cluster_list)
 		str = (const char *) sqlite3_column_text(stmt, COL_PKG_NAME);
 		item->pkg_name = (!str || !strlen(str)) ? NULL : strdup(str);
 		str = (const char *) sqlite3_column_text(stmt, COL_CONTENT_INFO);
-		item->content_info = (!str || !strlen(str)) ? NULL : strdup(str);
+		item->content_info = (!str || !strlen(str) || strncmp(str, "(null)", strlen("(null)")) == 0 ) ? NULL : strdup(str);
 		item->type = sqlite3_column_int(stmt, COL_TYPE);
 		item->period = sqlite3_column_double(stmt, COL_PERIOD);
 		item->allow_duplicate = sqlite3_column_int(stmt, COL_ALLOW_DUPLICATE);
