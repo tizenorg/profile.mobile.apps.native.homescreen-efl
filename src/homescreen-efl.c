@@ -123,21 +123,67 @@ static bool __homescreen_efl_app_create_cb(void *data)
 	return true;
 }
 
+static void _print_app_control_err_to_str(app_control_error_e err)
+{
+	char *err_str = NULL;
+
+	switch(err) {
+	case APP_CONTROL_ERROR_INVALID_PARAMETER:
+		err_str = "APP_CONTROL_ERROR_INVALID_PARAMETER";
+		break;
+	case APP_CONTROL_ERROR_OUT_OF_MEMORY:
+		err_str = "APP_CONTROL_ERROR_OUT_OF_MEMORY";
+		break;
+	case APP_CONTROL_ERROR_APP_NOT_FOUND:
+		err_str = "APP_CONTROL_ERROR_APP_NOT_FOUND";
+		break;
+	case APP_CONTROL_ERROR_KEY_NOT_FOUND:
+		err_str = "APP_CONTROL_ERROR_KEY_NOT_FOUND";
+		break;
+	case APP_CONTROL_ERROR_KEY_REJECTED:
+		err_str = "APP_CONTROL_ERROR_KEY_REJECTED";
+		break;
+	case APP_CONTROL_ERROR_INVALID_DATA_TYPE:
+		err_str = "APP_CONTROL_ERROR_INVALID_DATA_TYPE";
+		break;
+	case APP_CONTROL_ERROR_LAUNCH_REJECTED:
+		err_str = "APP_CONTROL_ERROR_LAUNCH_REJECTED";
+		break;
+	case APP_CONTROL_ERROR_PERMISSION_DENIED:
+		err_str = "APP_CONTROL_ERROR_PERMISSION_DENIED";
+		break;
+	case APP_CONTROL_ERROR_LAUNCH_FAILED:
+		err_str = "APP_CONTROL_ERROR_LAUNCH_FAILED";
+		break;
+	case APP_CONTROL_ERROR_TIMED_OUT:
+		err_str = "APP_CONTROL_ERROR_TIMED_OUT";
+		break;
+	case APP_CONTROL_ERROR_IO_ERROR:
+		err_str = "APP_CONTROL_ERROR_IO_ERROR";
+		break;
+	default:
+		LOGE("Unknown error(%d)");
+		return;
+	}
+
+	LOGE("app_control error(%d) : %s", err, err_str);
+}
+
 #define APP_CONTROL_HOME_OP_KEY "__HOME_OP__"
 #define APP_CONTROL_HOME_OP_VAL_LAUNCH_BY_HOME_KEY "__LAUNCH_BY_HOME_KEY__"
 static void __homescreen_efl_app_control_cb(app_control_h app_control, void*data)
 {
-	int ret = 0;
+	app_control_error_e ret = 0;
 	char *operation = NULL;
 
 	if (!app_control) {
-		LOGE("appcontrol is NULL");
+		LOGE("app_control is NULL");
 		return;
 	}
 
 	ret = app_control_get_operation(app_control, &operation);
 	if (ret != APP_CONTROL_ERROR_NONE) {
-		LOGE("Failed to get operation");
+		_print_app_control_err_to_str(ret);
 		return;
 	}
 
@@ -145,7 +191,7 @@ static void __homescreen_efl_app_control_cb(app_control_h app_control, void*data
 		char *value = NULL;
 		ret = app_control_get_extra_data(app_control, APP_CONTROL_HOME_OP_KEY, &value);
 		if (ret != APP_CONTROL_ERROR_NONE) {
-			LOGE("Failed to get extra data");
+			_print_app_control_err_to_str(ret);
 			free(operation);
 			return;
 		}
