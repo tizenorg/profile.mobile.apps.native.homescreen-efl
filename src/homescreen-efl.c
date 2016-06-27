@@ -294,18 +294,21 @@ static void __homescreen_efl_set_wallpaper(void)
 		main_info.bg = NULL;
 	}
 
-	main_info.bg = evas_object_image_filled_add(evas_object_evas_get(main_info.main_layout));
+	main_info.bg = elm_image_add(main_info.main_layout);
+	elm_image_aspect_fixed_set(main_info.bg, EINA_TRUE);
+	elm_image_fill_outside_set(main_info.bg, EINA_TRUE);
+	elm_image_preload_disabled_set(main_info.bg, EINA_TRUE);
 	evas_object_size_hint_min_set(main_info.bg, main_info.root_width, main_info.root_height);
 	elm_object_part_content_set(main_info.main_layout, "home_bg", main_info.bg);
-	evas_object_show(main_info.bg);
 
-	const char *bg_path = util_get_res_file_path(IMAGE_DIR"/default_bg.png");
 	ret = system_settings_get_value_string(SYSTEM_SETTINGS_KEY_WALLPAPER_HOME_SCREEN, &buf);
 	if (!buf || !ecore_file_can_read(buf) || ret != SYSTEM_SETTINGS_ERROR_NONE) {
-		evas_object_image_file_set(main_info.bg, bg_path, "bg");
+		elm_image_file_set(main_info.bg, util_get_res_file_path(IMAGE_DIR"/default_bg.png"), "bg");
 	} else {
-		evas_object_image_file_set(main_info.bg, buf, "bg");
+		elm_image_file_set(main_info.bg, buf, "bg");
 	}
+
+	evas_object_show(main_info.bg);
 
 	if (buf) free(buf);
 }

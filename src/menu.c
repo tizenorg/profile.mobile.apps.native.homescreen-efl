@@ -58,7 +58,7 @@ void menu_show(Eina_Hash* hash_table)
 	menu_info.menu = elm_ctxpopup_add(homescreen_efl_get_win());
 	elm_object_style_set(menu_info.menu, "more/default");
 	elm_ctxpopup_horizontal_set(menu_info.menu, EINA_FALSE);
-	elm_ctxpopup_auto_hide_disabled_set(menu_info.menu, EINA_TRUE);
+	//elm_ctxpopup_auto_hide_disabled_set(menu_info.menu, EINA_TRUE);
 	elm_ctxpopup_direction_priority_set(menu_info.menu, ELM_CTXPOPUP_DIRECTION_DOWN, ELM_CTXPOPUP_DIRECTION_DOWN, ELM_CTXPOPUP_DIRECTION_DOWN, ELM_CTXPOPUP_DIRECTION_DOWN);
 
 	evas_object_smart_callback_add(menu_info.menu, "dismissed", __menu_dismissed_cb, NULL);
