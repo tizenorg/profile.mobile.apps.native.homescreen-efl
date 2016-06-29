@@ -181,6 +181,7 @@ void apps_data_uninstall(const char *package)
 		}
 	}
 	apps_data_delete_list(find_result);
+	eina_list_free(find_result);
 }
 
 app_data_t *apps_data_add_folder(void)

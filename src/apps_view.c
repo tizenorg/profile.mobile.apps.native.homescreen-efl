@@ -843,6 +843,8 @@ static void __apps_view_icon_check_changed_cb(void *data, Evas_Object *obj, cons
 					break;
 				}
 			}
+			eina_list_free(list);
+
 			if (blank) {
 				elm_object_signal_emit(apps_view_s.opened_folder->app_layout, SIGNAL_UNCHECK_CHECK_BOX, SIGNAL_SOURCE);
 			} else {
@@ -876,6 +878,8 @@ static void __apps_view_icon_check_changed_cb(void *data, Evas_Object *obj, cons
 						break;
 					}
 				}
+				eina_list_free(list);
+
 				if (all_check) {
 					elm_object_signal_emit(apps_view_s.opened_folder->app_layout, SIGNAL_CHECK_CHECK_BOX, SIGNAL_SOURCE);
 				} else {
@@ -1199,7 +1203,7 @@ static void __apps_view_close_folder_popup_done(void)
 	Eina_List *find_list;
 	EINA_LIST_FOREACH(list, find_list, item) {
 		if (item != NULL && item->parent_db_id == apps_view_s.opened_folder->db_id && item->app_layout) {
-			evas_object_del(item->app_layout);
+			apps_view_delete_icon(item);
 		}
 	}
 	evas_object_del(apps_view_s.folder_popup_ly);
@@ -1677,10 +1681,8 @@ static void __apps_view_edit_drop_icon(void *data)
 	__apps_view__set_icon_label_style(item, VIEW_STATE_EDIT);
 
 	if (apps_view_s.candidate_folder) {
-		Eina_List *folder_list = NULL;
 		int folder_item_count = 0;
-		apps_data_get_folder_item_list(&folder_list, apps_view_s.candidate_folder);
-		folder_item_count = eina_list_count(folder_list);
+		folder_item_count = apps_data_get_folder_item_count(apps_view_s.candidate_folder);
 		if (folder_item_count >= APPS_FOLDER_MAX_ITEM) {
 			char str[1024];
 			snprintf(str, sizeof(str), _("IDS_HS_TPOP_MAXIMUM_NUMBER_OF_APPLICATIONS_IN_FOLDER_HPD_REACHED"), APPS_FOLDER_MAX_ITEM);
