@@ -1,6 +1,6 @@
 Name:       org.tizen.homescreen-efl
-VCS:         profile/mobile/apps/native/homescreen-efl#3a641625cb326325732cdc46e9176e60fe43fbd6
-#RS_Ver:    20160623_1 
+#VCS_FROM:   profile/mobile/apps/native/homescreen-efl#65e7d6f8afb2dcdb5d24eab3d577ed5ac13f5856
+#RS_Ver:    20160628_3 
 Summary:    homescreen-efl
 Version:    1.0.0
 Release:    1
@@ -26,7 +26,7 @@ Requires(post):  /usr/bin/tpk-backend
 %endif
 
 %description
-#
+profile/mobile/apps/native/homescreen-efl#65e7d6f8afb2dcdb5d24eab3d577ed5ac13f5856
 This is a container package which have preload TPK files
 
 %prep
