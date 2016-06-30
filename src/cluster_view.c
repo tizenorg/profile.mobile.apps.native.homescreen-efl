@@ -1205,7 +1205,6 @@ static void __clsuter_view_widget_up_cb(void *data, Evas *e, Evas_Object *obj, v
 static void __clsuter_view_widget_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
 	Evas_Event_Mouse_Move* ev = event_info;
-	LOGD("MOVE: (%d,%d)", ev->cur.output.x, ev->cur.output.y);
 
 	if (!cluster_mouse_info.pressed)
 		return ;
@@ -1450,8 +1449,6 @@ static void __clsuter_view_scroller_move_cb(void *data, Evas *e, Evas_Object *ob
 
 	if (!cluster_mouse_info.pressed || cluster_mouse_info.pressed_obj != obj)
 		return ;
-
-	LOGD("MOVE: (%d,%d)", ev->cur.output.x, ev->cur.output.y);
 
 	cluster_mouse_info.move_x = ev->cur.output.x;
 	cluster_mouse_info.move_y = ev->cur.output.y;

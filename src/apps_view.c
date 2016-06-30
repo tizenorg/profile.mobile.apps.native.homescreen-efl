@@ -1426,8 +1426,6 @@ static void __apps_view_scroller_move_cb(void *data, Evas *e, Evas_Object *obj, 
 	if (!apps_mouse_info.pressed || apps_mouse_info.pressed_obj != obj)
 		return ;
 
-	LOGD("MOVE: (%d,%d)", ev->cur.output.x, ev->cur.output.y);
-
 	apps_mouse_info.move_x = ev->cur.output.x;
 	apps_mouse_info.move_y = ev->cur.output.y;
 
@@ -1519,7 +1517,6 @@ static void __apps_view_icon_up_cb(void *data, Evas *e, Evas_Object *obj, void *
 static void __apps_view_icon_move_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 {
 	Evas_Event_Mouse_Move* ev = event_info;
-	LOGD("MOVE: (%d,%d)", ev->cur.output.x, ev->cur.output.y);
 
 	if (!apps_mouse_info.pressed)
 		return ;
