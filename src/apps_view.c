@@ -131,6 +131,7 @@ static Eina_Bool __apps_view_hide_folder_anim(void *data, double pos);
 static void __apps_view_hide_folder_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
 static void __apps_view_badge_update_cb(unsigned int action, const char *app_id, unsigned int count, void *user_data);
 static void __apps_view_badge_update_icon(app_data_t *item);
+static void __apps_view_badge_update_folder(app_data_t *item);
 static void __apps_view_badge_update_count(app_data_t *item);
 static void __apps_view_plus_icon_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
 
@@ -1304,7 +1305,7 @@ static void __apps_view_badge_update_cb(unsigned int action, const char *app_id,
 		return;
 	}
 	EINA_LIST_FOREACH(data_list, find_list, item) {
-		if (strcmp(app_id, item->app_id) == 0) {
+		if (item->app_id && strcmp(app_id, item->app_id) == 0) {
 			__apps_view_badge_update_count(item);
 		}
 	}
@@ -1324,10 +1325,12 @@ static void __apps_view_badge_update_count(app_data_t *item)
 	if (result != BADGE_ERROR_NONE) {
 		LOGE("badge_get_display error %d", result);
 		item->badge_count = 0;
+		__apps_view_badge_update_icon(item);
 		return;
 	}
 	if (!to_be_displayed) {
 		item->badge_count = 0;
+		__apps_view_badge_update_icon(item);
 		return;
 	}
 
@@ -1343,18 +1346,53 @@ static void __apps_view_badge_update_count(app_data_t *item)
 static void __apps_view_badge_update_icon(app_data_t *item)
 {
 	char number_str[STR_MAX];
-	if (item->badge_count == 0) {
-		elm_object_signal_emit(item->app_layout, SIGNAL_BADGE_HIDE, SIGNAL_SOURCE);
-		return;
-	}
-
 	if (item->badge_count > MAX_BADGE_DISPLAY_COUNT) {
 		snprintf(number_str, sizeof(number_str), "%d+", MAX_BADGE_DISPLAY_COUNT);
 	} else {
 		snprintf(number_str, sizeof(number_str), "%d", item->badge_count);
 	}
-	elm_layout_text_set(item->app_layout, APPS_ICON_BADGE_TEXT, number_str);
-	elm_object_signal_emit(item->app_layout, SIGNAL_BADGE_SHOW, SIGNAL_SOURCE);
+	if (item->app_layout) {
+		if (item->badge_count <= 0) {
+			elm_object_signal_emit(item->app_layout, SIGNAL_BADGE_HIDE, SIGNAL_SOURCE);
+		} else {
+			elm_layout_text_set(item->app_layout, APPS_ICON_BADGE_TEXT, number_str);
+			elm_object_signal_emit(item->app_layout, SIGNAL_BADGE_SHOW, SIGNAL_SOURCE);
+		}
+	}
+	if (item->parent_db_id != APPS_ROOT )
+		__apps_view_badge_update_folder(item);
+}
+
+static void __apps_view_badge_update_folder(app_data_t *item)
+{
+	Eina_List *find_list = NULL;
+	app_data_t *find_item = NULL;
+	app_data_t *folder_item = NULL;
+	Eina_List *apps_list = apps_data_get_list();
+	int badge_count = 0;
+	char number_str[STR_MAX];
+
+	EINA_LIST_FOREACH(apps_list, find_list, find_item) {
+		if (find_item->db_id == item->parent_db_id)
+			folder_item = find_item;
+		if (find_item->parent_db_id == item->parent_db_id)
+			badge_count += find_item->badge_count;
+	}
+	if (badge_count > MAX_BADGE_DISPLAY_COUNT) {
+		snprintf(number_str, sizeof(number_str), "%d+", MAX_BADGE_DISPLAY_COUNT);
+	} else {
+		snprintf(number_str, sizeof(number_str), "%d", badge_count);
+	}
+
+	if (folder_item->app_layout) {
+		if (badge_count <= 0) {
+			elm_object_signal_emit(folder_item->app_layout, SIGNAL_BADGE_HIDE, SIGNAL_SOURCE);
+		} else {
+			elm_layout_text_set(folder_item->app_layout, APPS_ICON_BADGE_TEXT, number_str);
+			elm_object_signal_emit(folder_item->app_layout, SIGNAL_BADGE_SHOW, SIGNAL_SOURCE);
+		}
+	}
+
 }
 
 static void __apps_view_plus_icon_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
