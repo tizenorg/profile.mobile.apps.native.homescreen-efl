@@ -28,6 +28,7 @@
 #include "view.h"
 #include "menu.h"
 #include "popup.h"
+#include "add_widget_viewer/add_widget_viewer.h"
 
 static struct {
 	Evas_Object *win;
@@ -75,6 +76,7 @@ static void __homescreen_efl_lang_changed_cb(app_event_info_h event_info, void *
 {
 	LOGD("called");
 	menu_hide();
+	cluster_view_lang_changed(main_info.view_type);
 	apps_view_lang_changed(main_info.view_type);
 }
 
