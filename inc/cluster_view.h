@@ -22,6 +22,7 @@
 #include "cluster_data.h"
 #include "cluster_page.h"
 #include "view.h"
+#include "homescreen-efl.h"
 
 Evas_Object *cluster_view_create(Evas_Object *parent);
 void cluster_view_init(void);
@@ -35,6 +36,7 @@ void cluster_view_hide_anim(double pos);
 void cluster_view_hw_menu_key(void);
 bool cluster_view_hw_home_key(void);
 bool cluster_view_hw_back_key(void);
+void cluster_view_lang_changed(homescreen_view_t view_type);
 view_state_t cluster_view_get_state(void);
 bool cluster_view_set_state(view_state_t state);
 void cluster_view_delete_widget(widget_data_t *item);

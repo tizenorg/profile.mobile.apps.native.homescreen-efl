@@ -368,6 +368,13 @@ bool cluster_view_hw_back_key(void)
 	return true;
 }
 
+void cluster_view_lang_changed(homescreen_view_t view_type)
+{
+	if (view_type == HOMESCREEN_VIEW_HOME) {
+		cluster_view_set_state(VIEW_STATE_NORMAL);
+	}
+}
+
 view_state_t cluster_view_get_state(void)
 {
 	return cluster_view_s.view_state;
