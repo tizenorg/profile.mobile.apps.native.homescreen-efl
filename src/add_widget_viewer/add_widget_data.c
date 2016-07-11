@@ -17,6 +17,7 @@
 #include <Elementary.h>
 #include <widget_service.h>
 #include <widget_errno.h>
+#include <system_settings.h>
 
 #include "add_widget_viewer/add_widget_data.h"
 #include "util.h"
@@ -69,6 +70,7 @@ static int __add_widget_data_widget_list_cb(const char *app_id, const char *widg
 
 	int *type = NULL;
 	int types_count = 0;
+	char *lang = NULL;
 	int ret = WIDGET_ERROR_NONE;
 
 	ret = widget_service_get_supported_size_types(widget_id, &types_count, &type);
@@ -108,7 +110,13 @@ static int __add_widget_data_widget_list_cb(const char *app_id, const char *widg
 	widget->size_types_count = types_count;
 	widget->app_id = strdup(app_id);
 	widget->widget_id = strdup(widget_id);
-	widget->label = widget_service_get_name(widget->widget_id, NULL);
+
+	ret = system_settings_get_value_string(SYSTEM_SETTINGS_KEY_LOCALE_LANGUAGE, &lang);
+	if (ret != SYSTEM_SETTINGS_ERROR_NONE) {
+		LOGE("SYSTEM_SETTINGS_KEY_LOCALE_LANGUAGE : fail");
+		lang = NULL;
+	}
+	widget->label = widget_service_get_name(widget->widget_id, lang);
 	if (!widget->label || strlen(widget->label) == 0)
 		widget->label = strdup(widget_id);
 
