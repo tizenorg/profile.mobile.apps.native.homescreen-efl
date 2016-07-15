@@ -1,6 +1,6 @@
 Name:       org.tizen.homescreen-efl
 #VCS_FROM:   profile/mobile/apps/native/homescreen-efl#e09b4cc4c02e40ccc5c1d315d37f7dd16ea7c940
-#RS_Ver:    20160711_2 
+#RS_Ver:    20160714_4 
 Summary:    homescreen-efl
 Version:    1.0.0
 Release:    1
