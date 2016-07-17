@@ -46,6 +46,8 @@ static struct {
 	.index = NULL
 };
 
+static const char *IDX_STR = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 static void __add_widget_viewer_win_del_cb(void *data, Evas_Object* obj, void* event_info);
 static Elm_Theme *__add_widget_viewer_create_theme(void);
 static Evas_Object *__add_widget_viewer_create_conformant(void);
@@ -54,6 +56,7 @@ static Evas_Object *__add_widget_viewer_create_naviframe();
 
 static Evas_Object *__add_widget_viewer_create_content(Evas_Object *naviframe, Evas_Object *genlist);
 static Evas_Object *__add_widget_viewer_create_index(Evas_Object *layout);
+static void __add_widget_viewer_index_changed_cb(void *data, Evas_Object *obj, void *event_info);
 static void __add_widget_viewer_index_cb(void *data, Evas_Object *obj, void *event_info);
 static int __add_widget_viewer_compare_index_cb(const void *data1, const void *data2);
 static Evas_Object *__add_widget_viewer_create_list(Evas_Object *content);
@@ -233,24 +236,53 @@ static Evas_Object *__add_widget_viewer_create_content(Evas_Object *naviframe, E
 static Evas_Object *__add_widget_viewer_create_index(Evas_Object *layout)
 {
 	Evas_Object *index;
-	const char *idx_str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char ch[2] = {0, };
 
 	index = elm_index_add(layout);
 	elm_index_autohide_disabled_set(index, EINA_TRUE);
 	elm_index_omit_enabled_set(index, EINA_TRUE);
-	elm_index_item_append(index, "#", NULL, NULL);
+	elm_index_item_append(index, "#", __add_widget_viewer_index_cb, IDX_STR);
 
 	int i;
-	for (i = 0; i < strlen(idx_str); ++i) {
-		ch[0] = idx_str[i];
+	for (i = 1; i < strlen(IDX_STR); ++i) {
+		char ch[2];
+		ch[0] = IDX_STR[i];
 		ch[1] = '\0';
-		elm_index_item_append(index, ch, __add_widget_viewer_index_cb, &ch[0]);
+		elm_index_item_append(index, ch, __add_widget_viewer_index_cb, (IDX_STR+i));
 	}
 
 	elm_index_level_go(index, 0);
 
+	evas_object_smart_callback_add(index, "changed", __add_widget_viewer_index_changed_cb, NULL);
+
 	return index;
+}
+
+static void __add_widget_viewer_index_changed_cb(void *data, Evas_Object *obj, void *event_info)
+{
+	char *idx_str = (char*)elm_object_item_data_get(event_info);
+	Eina_List *widget_list = NULL;
+	add_widget_data_t *widget = NULL;
+
+	widget_list = add_widget_data_get_widget_list();
+	if (!widget_list) {
+		LOGE("Can not get widget list");
+		return;
+	}
+
+	if(idx_str[0] == '#') {
+		widget = eina_list_data_get(widget_list);
+	}
+
+	if(!widget) {
+		widget = eina_list_search_unsorted(widget_list, __add_widget_viewer_compare_index_cb, idx_str);
+	}
+
+	if (!widget) {
+		LOGD("Can not find widget");
+		return;
+	}
+
+	elm_genlist_item_bring_in(widget->genlist_item, ELM_GENLIST_ITEM_SCROLLTO_TOP);
 }
 
 static void __add_widget_viewer_index_cb(void *data, Evas_Object *obj, void *event_info)
@@ -265,14 +297,25 @@ static void __add_widget_viewer_index_cb(void *data, Evas_Object *obj, void *eve
 		return;
 	}
 
-	widget = eina_list_search_unsorted(widget_list, __add_widget_viewer_compare_index_cb, idx_str);
+	if(idx_str[0] == '#') {
+		widget = eina_list_data_get(widget_list);
+	}
+
+	while(!widget && idx_str[0] != '\0') {
+		widget = eina_list_search_unsorted(widget_list, __add_widget_viewer_compare_index_cb, idx_str);
+		idx_str += 1;
+	}
+
+	if(!widget) {
+		widget = eina_list_last_data_get(widget_list);
+	}
+
 	if (!widget) {
 		LOGE("Can not find widget");
 		return;
 	}
 
 	elm_genlist_item_bring_in(widget->genlist_item, ELM_GENLIST_ITEM_SCROLLTO_TOP);
-
 }
 
 static int __add_widget_viewer_compare_index_cb(const void *data1, const void *data2)
@@ -281,12 +324,12 @@ static int __add_widget_viewer_compare_index_cb(const void *data1, const void *d
 	char *idx_str = (char *)data2;
 
 	char c1 = 0;
-		char c2 = 0;
+	char c2 = 0;
 
 	c1 = tolower(idx_str[0]);
-	c2 = tolower(w->widget_id[0]);
+	c2 = tolower(w->label[0]);
 
-	LOGD("Compare: %c == %c in %s, %s", c1, c2, idx_str, w->widget_id);
+	LOGD("Compare: %c == %c in %s, %s", c1, c2, idx_str, w->label);
 
 	if (c1 < c2) return -1;
 	if (c1 > c2) return 1;
