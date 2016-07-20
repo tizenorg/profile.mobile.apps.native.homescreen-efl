@@ -704,7 +704,6 @@ static void __apps_view_folder_fill_apps(void)
 static void __apps_view_icon_clicked_cb(app_data_t *item)
 {
 	app_control_h app_control_handle = NULL;
-	feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
 
 	if (item->is_folder) {
 		LOGD("%d(%s) folder clicked", item->db_id, item->label_str);
@@ -738,6 +737,8 @@ static void __apps_view_icon_clicked_cb(app_data_t *item)
 		}
 		app_control_destroy(app_control_handle);
 	}
+
+	feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
 }
 
 static void __apps_view_icon_uninstall_btn_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
