@@ -15,6 +15,7 @@
  */
 
 #include "../../inc/edc_conf.h"
+
 collections {
 	group { name: GROUP_CLUSTER_ALLPAGE_LY;
 		parts {

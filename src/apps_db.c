@@ -182,6 +182,7 @@ bool apps_db_get_list(Eina_List **apps)
 
 bool apps_db_get_app_list(Eina_List **apps)
 {
+	LOGD("Get apps list from apps_db");
 	sqlite3_stmt *stmt;
 
 	if (!__apps_db_open())
@@ -256,6 +257,7 @@ bool apps_db_update(app_data_t *item)
 
 bool apps_db_insert(app_data_t *item)
 {
+	LOGD("Apps DB insert");
 	char query[QUERY_MAXLEN];
 	sqlite3_stmt *stmt;
 	if (!__apps_db_open())

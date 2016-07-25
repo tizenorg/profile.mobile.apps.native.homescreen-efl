@@ -159,6 +159,7 @@ static void __apps_view_folder_entry_done_cb(void *data, Evas_Object *obj, void 
 Evas_Object *apps_view_create(Evas_Object *win)
 {
 	elm_win_screen_size_get(win, NULL, NULL, &apps_view_s.width, &apps_view_s.height);
+	LOGD("Screen size for apps view: width[%d] height[%d]", apps_view_s.width, apps_view_s.height);
 
 	__apps_view_create_base_gui(win);
 	__apps_view_create_chooser();
@@ -685,6 +686,8 @@ static void __apps_view_fill_apps(void *data, Ecore_Thread *th)
 	if (ret != BADGE_ERROR_NONE) {
 		LOGE("badge_register_changed_cb failed [%d]", ret);
 	}
+
+	page_indicator_set_current_page(apps_view_s.indicator, 0);
 }
 
 static void __apps_view_folder_fill_apps(void)
