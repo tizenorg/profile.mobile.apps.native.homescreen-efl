@@ -42,5 +42,6 @@ bool cluster_view_set_state(view_state_t state);
 void cluster_view_delete_widget(widget_data_t *item);
 bool cluster_view_add_widget(widget_data_t *item, bool scroll);
 void cluster_view_edit_on_done(cluster_page_t *page);
+Elm_Theme *cluster_view_get_theme(void);
 
 #endif /* __CLUSTER_VIEW_H__ */

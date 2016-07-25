@@ -22,6 +22,7 @@
 
 #define PAGE_INDICATOR_MAX_PAGE_COUNT 7
 
+
 typedef struct {
 	Evas_Object *scroller;
 	Evas_Object *box;

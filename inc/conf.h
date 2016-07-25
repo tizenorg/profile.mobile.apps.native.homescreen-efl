@@ -92,6 +92,7 @@ extern int __conf_get_window_w();
 #define PAGE_INDICATOR_GAP 4
 #define PAGE_INDICATOR_X 0
 #define PAGE_INDICATOR_UNIT ((40) * (__conf_get_resolution_scale_w()))
+#define PAGE_INDICATOR_UNIT_CENTER ((50) * (__conf_get_resolution_scale_w()))
 
 #define ALLPAGE_PREVIEW_PADDING_MID ((12) * (__conf_get_resolution_scale_w()))
 #define ALLPAGE_PREVIEW_PADDING_TOP ((18) * (__conf_get_resolution_scale_h()))

@@ -51,6 +51,7 @@ static struct {
 	int animation_from_y;
 	int animation_to_x;
 	int animation_to_y;
+	Elm_Theme *theme;
 } cluster_view_s = {
 	.scroller = NULL,
 	.box = NULL,
@@ -71,6 +72,7 @@ static struct {
 	.animation_from_y = INIT_VALUE,
 	.animation_to_x = INIT_VALUE,
 	.animation_to_y = INIT_VALUE,
+	.theme = NULL,
 };
 
 static int cluster_menu_list[4] = {
@@ -106,6 +108,7 @@ static Eina_Bool __cluster_view_scroller_long_press_time_cb(void *data);
 
 static void __cluster_view_create_cluster(void);
 static void __cluster_view_create_menu(void);
+static Elm_Theme *__cluster_view_create_theme(void);
 static void __cluster_view_menu_edit_cb(void *data, Evas_Object *obj, void *event_info);
 static void __cluster_view_menu_add_widget_cb(void *data, Evas_Object *obj, void *event_info);
 static void __cluster_view_menu_change_wallpaper_cb(void *data, Evas_Object *obj, void *event_info);
@@ -150,6 +153,11 @@ static int __cluster_view_allpage_get_page_index(int x, int y);
 static void __cluster_view_allpage_reposition(void);
 static int __cluster_view_page_sort_cb(const void *a , const void *b);
 
+Elm_Theme *cluster_view_get_theme(void)
+{
+	return cluster_view_s.theme;
+}
+
 Evas_Object *cluster_view_create(Evas_Object *win)
 {
 	cluster_view_s.win = win;
@@ -160,6 +168,8 @@ Evas_Object *cluster_view_create(Evas_Object *win)
 		LOGE("[FAILED][base_layout == NULL]");
 		return NULL;
 	}
+
+	cluster_view_s.theme = __cluster_view_create_theme();
 
 	cluster_view_s.indicator = page_indictor_create(cluster_view_s.scroller);
 	page_indicator_scroller_resize(cluster_view_s.indicator, CLUSTER_VIEW_W , CLUSTER_VIEW_H);
@@ -271,6 +281,15 @@ static void __cluster_view_create_cluster(void)
 	}
 
 	page_indicator_set_current_page(cluster_view_s.indicator, cluster_view_s.current_page);
+}
+
+static Elm_Theme *__cluster_view_create_theme(void)
+{
+	Elm_Theme *theme = elm_theme_new();
+	elm_theme_ref_set(theme, NULL);
+	elm_theme_extension_add(theme, util_get_res_file_path(EDJE_DIR"/cluster_allpage.edj"));
+
+	return theme;
 }
 
 static void __cluster_view_create_menu(void)
