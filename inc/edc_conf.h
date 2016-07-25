@@ -53,9 +53,12 @@
 #define SIGNAL_CLUSTER_PICKUP_STATE "cluster_pickup_state"
 
 #define GROUP_PAGE_INDICATOR_UNIT "page_indicator_unit"
-#define SIGNAL_PAGE_IDICATOR_ROTATION_CHANGE "rotation,changed"
-#define SIGNAL_PAGE_IDICATOR_DEFAULT "default,set"
-#define SIGNAL_PAGE_IDICATOR_CURRENT "current,set"
+#define GROUP_PAGE_INDICATOR_UNIT_CENTER "page_indicator_unit_center"
+#define SIGNAL_PAGE_INDICATOR_ROTATION_CHANGE "rotation,changed"
+#define SIGNAL_PAGE_INDICATOR_CENTER_CURRENT "center,selected"
+#define SIGNAL_PAGE_INDICATOR_DEFAULT "default,set"
+#define SIGNAL_PAGE_INDICATOR_CENTER "center,set"
+#define SIGNAL_PAGE_INDICATOR_CURRENT "current,set"
 
 #define GROUP_CLUSTER_PAGE_LY "cluster_page_ly"
 #define GROUP_CLUSTER_ALLPAGE_LY "cluster_allpage_ly"
@@ -72,6 +75,9 @@
 #define SIGNAL_ALLPAGE_ADD_BUTTON_HIDE "allpage_add_button_hide"
 #define SIGNAL_ALLPAGE_DRAG_BG_SHOW "allpage_drag_bg_show"
 #define SIGNAL_ALLPAGE_DRAG_BG_HIDE "allpage_drag_bg_hide"
+
+#define PAGE_INDICATOR_UNIT_BUTTON "unit_button"
+#define PAGE_INDICATOR_UNIT_INDICATING_PAGE "page_indicator_unit_indicating_page"
 
 // apps view
 #define GROUP_APPS_LY "apps_ly"
