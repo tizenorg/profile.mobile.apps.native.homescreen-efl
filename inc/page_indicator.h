@@ -21,11 +21,14 @@
 #include <Elementary.h>
 
 #define PAGE_INDICATOR_MAX_PAGE_COUNT 7
+#define PAGE_INDICATOR_CENTER_PAGE_INDEX 3
+
 
 typedef struct {
 	Evas_Object *scroller;
 	Evas_Object *box;
 	Evas_Object *unit[PAGE_INDICATOR_MAX_PAGE_COUNT];
+	Elm_Theme *theme;
 
 	int page_count;
 	int x;

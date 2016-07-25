@@ -89,7 +89,7 @@ extern int __conf_get_window_w();
 #define PAGE_INDICATOR_PADDING_BOTTON ((16) * (__conf_get_resolution_scale_h()))
 #define PAGE_INDICATOR_H ((76) * (__conf_get_resolution_scale_h()))
 #define PAGE_INDICATOR_W ((720) * (__conf_get_resolution_scale_w()))
-#define PAGE_INDICATOR_GAP 4
+#define PAGE_INDICATOR_GAP 4 
 #define PAGE_INDICATOR_X 0
 #define PAGE_INDICATOR_UNIT ((40) * (__conf_get_resolution_scale_w()))
 

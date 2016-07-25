@@ -15,15 +15,25 @@
  */
 
 #include "page_indicator.h"
+#include "cluster_view.h"
 #include "homescreen-efl.h"
 #include "conf.h"
 #include "edc_conf.h"
 #include "util.h"
 
+static Elm_Theme *__page_indicator_create_theme(void);
 static void __page_indicator_scroll_cb(void *data, Evas_Object *obj, void *event_info);
 static void __page_indicator_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info);
 static void __page_indicator_set_current_page(page_indicator_t *page_indicator);
 static void __page_indicator_unit_rotate(Evas_Object *unit, double angle, double alpha);
+static void __page_indicator_unit_clicked_cb(void *data, Evas_Object *obj, void *event_info);
+
+static void _box_resize_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
+{
+	int x, y, w, h;
+	evas_object_geometry_get(obj, &x, &y, &w, &h);
+	LOGD(" >>>>>> box: x[%d] y[%d] w[%d] h[%d]", x, y, w, h);
+}
 
 page_indicator_t * page_indictor_create(Evas_Object *scroller)
 {
@@ -40,9 +50,11 @@ page_indicator_t * page_indictor_create(Evas_Object *scroller)
 	page_indicator->page_count = 0;
 	page_indicator->current_page = -1;
 
+	page_indicator->theme = __page_indicator_create_theme();
+
 	page_indicator->box = elm_box_add(homescreen_efl_get_win());
 	if (!page_indicator->box) {
-		LOGE("page_index->box==NULL");
+		LOGE("page_index->box == NULL");
 		free(page_indicator);
 		return NULL;
 	}
@@ -59,10 +71,10 @@ page_indicator_t * page_indictor_create(Evas_Object *scroller)
 	evas_object_smart_callback_add(scroller, "scroll,anim,stop", __page_indicator_scroll_anim_stop_cb, page_indicator);
 
 	for (i = 0; i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
-		page_indicator->unit[i] = elm_layout_add(homescreen_efl_get_win());
-		elm_layout_file_set(page_indicator->unit[i], edj_path, GROUP_PAGE_INDICATOR_UNIT);
-		evas_object_size_hint_weight_set(page_indicator->unit[i], EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-		evas_object_resize(page_indicator->unit[i], PAGE_INDICATOR_UNIT, PAGE_INDICATOR_UNIT);
+		page_indicator->unit[i] = elm_button_add(homescreen_efl_get_win());
+		elm_object_theme_set(page_indicator->unit[i], page_indicator->theme);
+		elm_object_style_set(page_indicator->unit[i], "page_indicator_unit");
+		evas_object_smart_callback_add(page_indicator->unit[i], "clicked", __page_indicator_unit_clicked_cb, page_indicator);
 
 		Evas_Object *rect = evas_object_rectangle_add(homescreen_efl_get_win());
 		evas_object_color_set(rect, 255, 255, 255, 0);
@@ -72,6 +84,8 @@ page_indicator_t * page_indictor_create(Evas_Object *scroller)
 		evas_object_show(rect);
 		elm_object_part_content_set(page_indicator->unit[i], SIZE_SETTER, rect);
 	}
+
+	evas_object_event_callback_add(page_indicator->box, EVAS_CALLBACK_RESIZE, _box_resize_cb, NULL);
 
 	return page_indicator;
 }
@@ -84,25 +98,46 @@ void page_indicator_set_page_count(page_indicator_t *page_indicator, int count)
 	}
 
 	int i;
-	int width = count * PAGE_INDICATOR_UNIT + (PAGE_INDICATOR_GAP * (count-1));
+	int width = 0;
+	if (count < PAGE_INDICATOR_MAX_PAGE_COUNT) {
+		width = count * PAGE_INDICATOR_UNIT + (PAGE_INDICATOR_GAP * (count-1));
+	}
+	else {
+		width = PAGE_INDICATOR_MAX_PAGE_COUNT * PAGE_INDICATOR_UNIT + (PAGE_INDICATOR_GAP * (PAGE_INDICATOR_MAX_PAGE_COUNT - 1));
+	}
 	if (page_indicator->page_count == count) {
 		return ;
 	}
 	elm_box_unpack_all(page_indicator->box);
-	for (i = 0 ; i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
-		if (i < count) {
+	LOGD("page count: %d", count);
+
+	if (count > PAGE_INDICATOR_MAX_PAGE_COUNT) {
+		for (i = 0 ; i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
+			if (i == PAGE_INDICATOR_CENTER_PAGE_INDEX) {
+				elm_object_style_set(page_indicator->unit[i], "page_indicator_unit_center");
+			}
 			elm_box_pack_end(page_indicator->box, page_indicator->unit[i]);
 			evas_object_show(page_indicator->unit[i]);
-		} else {
-			evas_object_move(page_indicator->unit[i], 0, -100);
 		}
-
+	} else {
+		for (i = 0 ; i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
+			if (i < count) {
+				if (i == PAGE_INDICATOR_CENTER_PAGE_INDEX) {
+					elm_object_style_set(page_indicator->unit[i], "page_indicator_unit");
+				}
+				elm_box_pack_end(page_indicator->box, page_indicator->unit[i]);
+				evas_object_show(page_indicator->unit[i]);
+			} else {
+				evas_object_move(page_indicator->unit[i], 0, -100);
+			}
+		}
 	}
 
 	page_indicator->x = (WINDOW_W - width) / 2;
 	page_indicator->y = WINDOW_H - PAGE_INDICATOR_H - PAGE_INDICATOR_PADDING_BOTTON;
 	page_indicator->page_count = count;
 
+	LOGD(">>>> x: %d, width: %d, count: %d >>>>>>", page_indicator->x, width, count);
 	evas_object_resize(page_indicator->box, width, PAGE_INDICATOR_H);
 	evas_object_move(page_indicator->box, page_indicator->x, page_indicator->y);
 }
@@ -126,6 +161,15 @@ void page_indicator_set_current_page(page_indicator_t *page_indicator, int page_
 	page_indicator->current_page = page_number;
 
 	__page_indicator_set_current_page(page_indicator);
+}
+
+static Elm_Theme *__page_indicator_create_theme(void)
+{
+	Elm_Theme *theme = elm_theme_new();
+	elm_theme_ref_set(theme, NULL);
+	elm_theme_extension_add(theme, util_get_res_file_path(EDJE_DIR"/page_indicator_unit.edj"));
+
+	return theme;
 }
 
 static void __page_indicator_scroll_cb(void *data, Evas_Object *obj, void *event_info)
@@ -177,22 +221,90 @@ static void __page_indicator_scroll_anim_stop_cb(void *data, Evas_Object *obj, v
 static void __page_indicator_set_current_page(page_indicator_t *page_indicator)
 {
 	int i;
-	for (i = 0; i < page_indicator->page_count && i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
+	int cur_indicator = 0;
+	int cur_page = 0;
+	int convert_count_to_index = 0;
+	char cur_page_num[1024];
+
+	cur_page = page_indicator->current_page;
+	convert_count_to_index = page_indicator->page_count - 1;
+
+	if (page_indicator->page_count <= PAGE_INDICATOR_MAX_PAGE_COUNT) {
+		cur_indicator = cur_page;
+	}
+	else {
+		if (cur_page < PAGE_INDICATOR_CENTER_PAGE_INDEX) {
+			cur_indicator = cur_page;
+		}
+		else if (cur_page > convert_count_to_index - PAGE_INDICATOR_CENTER_PAGE_INDEX) {
+			cur_indicator = (PAGE_INDICATOR_MAX_PAGE_COUNT - 1) - (convert_count_to_index - cur_page);
+		}
+		else {
+			cur_indicator = PAGE_INDICATOR_CENTER_PAGE_INDEX;
+		} 
+	}
+
+	for (i = 0; i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++)
+	{
 		Evas_Object *edje = NULL;
 		edje = elm_layout_edje_get(page_indicator->unit[i]);
-		if (i == page_indicator->current_page) {
-			edje_object_signal_emit(edje, SIGNAL_PAGE_IDICATOR_CURRENT, SIGNAL_SOURCE);
+		snprintf(cur_page_num, sizeof(cur_page_num), "%d", cur_page + 1);
+		LOGD("Current page is %s, set the number to the page indicator", cur_page_num);
+
+		if (i == cur_indicator) {
+			edje_object_signal_emit(edje, SIGNAL_PAGE_INDICATOR_CURRENT, SIGNAL_SOURCE);
 		}
-		//else if { } // i == center_circle
 		else {
-			edje_object_signal_emit(edje, SIGNAL_PAGE_IDICATOR_DEFAULT, SIGNAL_SOURCE);
+			edje_object_signal_emit(edje, SIGNAL_PAGE_INDICATOR_DEFAULT, SIGNAL_SOURCE);
 		}
+
+		if (edje_object_part_text_set(elm_layout_edje_get(page_indicator->unit[PAGE_INDICATOR_CENTER_PAGE_INDEX]), "page_num", cur_page_num) == EINA_FALSE) {
+			LOGE("Failed to set text on the page indicator");
+		}
+	}
+}
+
+static void __page_indicator_unit_clicked_cb(void *data, Evas_Object *obj, void *event_info)
+{
+	unsigned int clicked_indicator_index = 0;
+	Eina_List *list = NULL;
+	Eina_List *cur_list = NULL;
+	Eina_List *next_list = NULL;
+	Evas_Object *page_indicator_unit = NULL;
+	page_indicator_t *page_indicator = data;
+
+	list = elm_box_children_get(page_indicator->box);
+	if (list == NULL) {
+		LOGE("Failed to get the list from the box");
+		return;
+	}
+
+	EINA_LIST_FOREACH_SAFE(list, cur_list, next_list, page_indicator_unit) {
+		if (obj == page_indicator_unit) break;	
+		clicked_indicator_index++;
+	}
+
+	if (page_indicator->page_count > PAGE_INDICATOR_MAX_PAGE_COUNT) {
+		if (clicked_indicator_index < PAGE_INDICATOR_CENTER_PAGE_INDEX) {
+			LOGD("Clicked idx is smaller than CENTER, Go to %dth page", clicked_indicator_index); 
+			elm_scroller_page_bring_in(page_indicator->scroller, clicked_indicator_index, 0);
+		} else if (clicked_indicator_index == PAGE_INDICATOR_CENTER_PAGE_INDEX) {
+			LOGD("Clicked idx is CENTER, Go to %dth page", PAGE_INDICATOR_CENTER_PAGE_INDEX); 
+			elm_scroller_page_bring_in(page_indicator->scroller, PAGE_INDICATOR_CENTER_PAGE_INDEX, 0);
+		} else {
+			LOGD("Clicked idx is bigger than CENTER, Go to %dth page", (page_indicator->page_count - PAGE_INDICATOR_MAX_PAGE_COUNT) + clicked_indicator_index); 
+			elm_scroller_page_bring_in(page_indicator->scroller, (page_indicator->page_count - PAGE_INDICATOR_MAX_PAGE_COUNT + clicked_indicator_index), 0);
+		}
+	} else {
+		LOGD("Page Indicator is CLICKED %dth page", clicked_indicator_index);
+		elm_scroller_page_bring_in(page_indicator->scroller, clicked_indicator_index, 0);
 	}
 }
 
 static void __page_indicator_unit_rotate(Evas_Object *unit, double angle, double alpha)
 {
 	Evas_Object *edje = NULL;
+	LOGD("Rotate animation start");
 
 	if (!unit) {
 		LOGE("Invalid argument : unit is NULL");
@@ -211,7 +323,7 @@ static void __page_indicator_unit_rotate(Evas_Object *unit, double angle, double
 	msg->val[1] = alpha;
 
 	edje_object_message_send(edje, EDJE_MESSAGE_FLOAT_SET, 1, msg);
-	edje_object_signal_emit(edje, SIGNAL_PAGE_IDICATOR_ROTATION_CHANGE, SIGNAL_SOURCE);
+	edje_object_signal_emit(edje, SIGNAL_PAGE_INDICATOR_ROTATION_CHANGE, SIGNAL_SOURCE);
 
 	free(msg);
 }
