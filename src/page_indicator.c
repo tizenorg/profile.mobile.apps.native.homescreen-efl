@@ -24,6 +24,7 @@ static void __page_indicator_scroll_cb(void *data, Evas_Object *obj, void *event
 static void __page_indicator_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info);
 static void __page_indicator_set_current_page(page_indicator_t *page_indicator);
 static void __page_indicator_unit_rotate(Evas_Object *unit, double angle, double alpha);
+static void __page_indicator_unit_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
 
 page_indicator_t * page_indictor_create(Evas_Object *scroller)
 {
@@ -71,6 +72,8 @@ page_indicator_t * page_indictor_create(Evas_Object *scroller)
 		evas_object_resize(rect, PAGE_INDICATOR_UNIT, PAGE_INDICATOR_UNIT);
 		evas_object_show(rect);
 		elm_object_part_content_set(page_indicator->unit[i], SIZE_SETTER, rect);
+
+		elm_object_signal_callback_add(page_indicator->unit[i], SIGNAL_PAGE_INDICATOR_CLICKED, SIGNAL_SOURCE, __page_indicator_unit_clicked, page_indicator);
 	}
 
 	return page_indicator;
@@ -130,33 +133,41 @@ void page_indicator_set_current_page(page_indicator_t *page_indicator, int page_
 
 static void __page_indicator_scroll_cb(void *data, Evas_Object *obj, void *event_info)
 {
+	int i = 0;
 	int x = 0;
-	int current_x = 0;
-	double angle = 0.0;
-	double color = 0.0;
-	int next_page = -1;
+	int from_x = 0, to_x = 0;
+	int from_page = 0;
+	int to_page = 0;
+	double from_page_angle = 0.0;
+	double to_page_angle = 0.0;
 
 	page_indicator_t *page_indicator = (page_indicator_t*) data;
-	if (!page_indicator) {
-		LOGE("Invalid page_indicator");
-		return;
-	}
+
 	elm_scroller_region_get(obj, &x, NULL, NULL, NULL);
+	from_page = x / page_indicator->w;
+	to_page = (from_page + 1) % page_indicator->page_count;
 
-	current_x = page_indicator->current_page * page_indicator->w;
-	angle = (double)(x - current_x) / page_indicator->w * 90.0;
-	if (angle > 90.0) {
-		angle = (double)(x - page_indicator->w * page_indicator->page_count) / page_indicator->w * 90.0;
-		next_page = page_indicator->page_count - 1;
-	} else {
-		next_page = page_indicator->current_page + (angle > 0 ? 1 : -1);
-		next_page %= page_indicator->page_count;
+	from_x = x;
+	to_x = (from_x + page_indicator->w) % (page_indicator->w * page_indicator->page_count);
+
+	to_page_angle = (double)(to_x - (to_page * page_indicator->w)) * 90.0 / page_indicator->w;
+	from_page_angle = (to_page_angle + 90) - 180;
+
+	for (i=0; i < page_indicator->page_count; i++) {
+		double angle = 0.0;
+		double color = 0.0;
+		if (i == from_page) {
+			angle = from_page_angle;
+		} else if (i == to_page) {
+			angle = to_page_angle;
+		} else {
+			angle = 0.0;
+		}
+
+		color = fabs(angle) * 2 + 75.0;
+
+		__page_indicator_unit_rotate(page_indicator->unit[i], angle, color);
 	}
-
-	color = fabs(angle) * 2;
-
-	__page_indicator_unit_rotate(page_indicator->unit[page_indicator->current_page], 90 + angle, 255.0 - color);
-	__page_indicator_unit_rotate(page_indicator->unit[next_page], (angle < 0 ? 360 + angle : angle), 75.0 + color);
 }
 
 static void __page_indicator_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info)
@@ -224,5 +235,18 @@ void page_indicator_show(page_indicator_t *page_indicator)
 void page_indicator_hide(page_indicator_t *page_indicator)
 {
 	evas_object_hide(page_indicator->box);
+}
+
+static void __page_indicator_unit_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
+{
+	page_indicator_t *page_indicator = (page_indicator_t*) data;
+	Evas_Object *unit = obj;
+	int i;
+	for (i = 0; i < page_indicator->page_count && i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
+		if (unit == page_indicator->unit[i]) {
+			elm_scroller_page_bring_in(page_indicator->scroller, i, 0);
+			break;
+		}
+	}
 }
 

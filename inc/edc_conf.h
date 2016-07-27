@@ -170,4 +170,6 @@
 #define ADD_WIDGET_VIEWER_PREVIEW_ICON "add_widget_viewer_preview_ICON"
 #define SIGNAL_PREVIEW_CLICKED "preview_clicked"
 
+#define SIGNAL_PAGE_INDICATOR_CLICKED "page_indicator_clicked"
+
 #endif /* __EDC_CONF_H__ */

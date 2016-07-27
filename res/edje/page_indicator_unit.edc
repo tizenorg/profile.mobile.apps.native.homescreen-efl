@@ -103,6 +103,12 @@ collections {
 					set_state(PART:"unit", "custom", 0.0);
 				}
 			}
+			program {
+				name: "unit,clicked";
+				signal: "mouse,clicked,1";
+				source: "unit";
+				action: SIGNAL_EMIT SIGNAL_PAGE_INDICATOR_CLICKED SIGNAL_SOURCE;
+			}
 		}
 	}
 }
