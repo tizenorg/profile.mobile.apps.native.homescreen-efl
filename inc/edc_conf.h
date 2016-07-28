@@ -40,6 +40,7 @@
 #define GROUP_HOME_BTN_LY "home_btn_ly"
 
 // cluster
+#define ACCESS_RECT "access_rect"
 #define SIZE_SETTER "size_setter"
 #define CLUSTER_BOX "cluster_box"
 #define CLUSTER_BG "cluster_bg"

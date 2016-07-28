@@ -65,6 +65,10 @@ static void __homescreen_efl_home_bg_changed_cb(system_settings_key_e key, void 
 static void __homescreen_efl_menu_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
 static void __homescreen_efl_home_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
 
+//Accessibility
+static Eina_Bool _access_homescreen_efl_menu_btn_clicked(void *data, Evas_Object *obj, Elm_Access_Action_Info *action_info);
+static Eina_Bool _access_homescreen_efl_home_btn_clicked(void *data, Evas_Object *obj, Elm_Access_Action_Info *action_info);
+
 static void __homescreen_efl_change_view(void);
 static Eina_Bool __homescreen_efl_show_apps_anim(void *data, double pos);
 static Eina_Bool __homescreen_efl_show_cluster_anim(void *data, double pos);
@@ -119,6 +123,8 @@ static bool __homescreen_efl_app_create_cb(void *data)
 
 	__homescreen_efl_set_conformant();
 	__homescreen_efl_create_home_btn();
+
+	elm_atspi_accessible_description_set(main_info.win, _("IDS_ST_HEADER_HOME_SCREEN"));
 
 	ecore_timer_add(HOME_LOADING_TIME, __homescreen_efl_init_view, NULL);
 
@@ -348,8 +354,36 @@ static void __homescreen_efl_create_home_btn(void)
 
 	evas_object_show(main_info.btn_layout);
 
+	//Accessibility
+	Evas_Object *ao, *to;
+	to = (Evas_Object*) edje_object_part_object_get(elm_layout_edje_get(main_info.btn_layout), HOME_BUTTON);
+	ao = elm_access_object_register(to, main_info.btn_layout);
+	elm_access_info_set(ao, ELM_ACCESS_INFO, "HOME");
+	elm_access_action_cb_set(ao, ELM_ACCESS_ACTION_ACTIVATE, _access_homescreen_efl_home_btn_clicked, NULL);
+
+	to = (Evas_Object*) edje_object_part_object_get(elm_layout_edje_get(main_info.btn_layout), MENU_BUTTON);
+	ao = elm_access_object_register(to, main_info.btn_layout);
+	elm_access_info_set(ao, ELM_ACCESS_INFO, "MENU");
+	elm_access_action_cb_set(ao, ELM_ACCESS_ACTION_ACTIVATE, _access_homescreen_efl_menu_btn_clicked, NULL);
+
 	elm_object_signal_callback_add(main_info.btn_layout, SIGNAL_MENU_BTN_CLICKED, SIGNAL_SOURCE, __homescreen_efl_menu_btn_clicked, NULL);
 	elm_object_signal_callback_add(main_info.btn_layout, SIGNAL_HOME_BTN_CLICKED, SIGNAL_SOURCE, __homescreen_efl_home_btn_clicked, NULL);
+}
+
+//Accessibility
+static Eina_Bool _access_homescreen_efl_menu_btn_clicked(void *data, Evas_Object *obj, Elm_Access_Action_Info *action_info)
+{
+	feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
+	homescreen_efl_hw_menu_key_release();
+	return EINA_TRUE;
+}
+
+//Accessibility
+static Eina_Bool _access_homescreen_efl_home_btn_clicked(void *data, Evas_Object *obj, Elm_Access_Action_Info *action_info)
+{
+	feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
+	__homescreen_efl_change_view();
+	return EINA_TRUE;
 }
 
 static void __homescreen_efl_menu_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
