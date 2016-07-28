@@ -685,6 +685,8 @@ static void __apps_view_fill_apps(void *data, Ecore_Thread *th)
 	if (ret != BADGE_ERROR_NONE) {
 		LOGE("badge_register_changed_cb failed [%d]", ret);
 	}
+
+	page_indicator_set_current_page(apps_view_s.indicator, 0);
 }
 
 static void __apps_view_folder_fill_apps(void)
