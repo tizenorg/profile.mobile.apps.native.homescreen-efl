@@ -21,6 +21,8 @@
 #include <Elementary.h>
 
 #define PAGE_INDICATOR_MAX_PAGE_COUNT 7
+#define PAGE_INDICATOR_CENTER_PAGE_INDEX 3
+
 
 typedef struct {
 	Evas_Object *scroller;
