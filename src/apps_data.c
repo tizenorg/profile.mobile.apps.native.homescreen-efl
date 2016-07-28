@@ -63,6 +63,7 @@ void apps_data_init(void *data, Ecore_Thread *th)
 
 	EINA_LIST_FOREACH(db_list, db_find_list, db_item) {
 		if (!db_item->temp) {
+			LOGD("Will be deleted, app_id: %s", db_item->app_id);
 			apps_db_delete_by_app_id(db_item->app_id);
 			apps_view_delete_icon(db_item);
 			__apps_data_item_free(db_item);

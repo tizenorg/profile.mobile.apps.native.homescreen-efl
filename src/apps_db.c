@@ -182,10 +182,40 @@ bool apps_db_get_list(Eina_List **apps)
 
 bool apps_db_get_app_list(Eina_List **apps)
 {
+	LOGD("Get apps list from apps_db");
 	sqlite3_stmt *stmt;
 
 	if (!__apps_db_open())
 		return false;
+#if 0
+	int i;
+	char query[QUERY_MAXLEN];
+	for (i = 0; i < 140; i++) {
+		snprintf(query, QUERY_MAXLEN, INSERT_APPS_DB_TABLE,
+				APPS_ROOT,
+				TEMP_OWNER,
+				true,
+				0,
+				NULL,
+				NULL,
+				NULL,
+				NULL,
+				APPS_DATA_TYPE_APP,
+				false,
+				true,
+				NULL,
+				0);
+
+		int ret_1 = sqlite3_prepare(apps_db, query, QUERY_MAXLEN , &stmt, NULL);
+		if (ret_1 != SQLITE_OK) {
+			LOGE("sqlite error : [%s,%s]", query, sqlite3_errmsg(apps_db));
+			return false;
+		}
+		LOGD("Insert !!");
+		sqlite3_step(stmt);
+	}
+#endif
+
 
 	int ret = sqlite3_prepare_v2(apps_db, SELECT_APP_ITEM, strlen(SELECT_APP_ITEM), &stmt, NULL);
 	if (ret != SQLITE_OK) {
@@ -256,6 +286,7 @@ bool apps_db_update(app_data_t *item)
 
 bool apps_db_insert(app_data_t *item)
 {
+	LOGD("Apps DB insert");
 	char query[QUERY_MAXLEN];
 	sqlite3_stmt *stmt;
 	if (!__apps_db_open())

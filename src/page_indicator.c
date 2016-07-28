@@ -15,6 +15,7 @@
  */
 
 #include "page_indicator.h"
+#include "cluster_view.h"
 #include "homescreen-efl.h"
 #include "conf.h"
 #include "edc_conf.h"
@@ -24,7 +25,8 @@ static void __page_indicator_scroll_cb(void *data, Evas_Object *obj, void *event
 static void __page_indicator_scroll_anim_stop_cb(void *data, Evas_Object *obj, void *event_info);
 static void __page_indicator_set_current_page(page_indicator_t *page_indicator);
 static void __page_indicator_unit_rotate(Evas_Object *unit, double angle, double alpha);
-static void __page_indicator_unit_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
+static void __page_indicator_unit_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source);
+static int __page_indicator_get_indicator_unit(int page_count, int cur_page);
 
 page_indicator_t * page_indictor_create(Evas_Object *scroller)
 {
@@ -43,7 +45,7 @@ page_indicator_t * page_indictor_create(Evas_Object *scroller)
 
 	page_indicator->box = elm_box_add(homescreen_efl_get_win());
 	if (!page_indicator->box) {
-		LOGE("page_index->box==NULL");
+		LOGE("page_index->box == NULL");
 		free(page_indicator);
 		return NULL;
 	}
@@ -63,7 +65,7 @@ page_indicator_t * page_indictor_create(Evas_Object *scroller)
 		page_indicator->unit[i] = elm_layout_add(homescreen_efl_get_win());
 		elm_layout_file_set(page_indicator->unit[i], edj_path, GROUP_PAGE_INDICATOR_UNIT);
 		evas_object_size_hint_weight_set(page_indicator->unit[i], EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-		evas_object_resize(page_indicator->unit[i], PAGE_INDICATOR_UNIT, PAGE_INDICATOR_UNIT);
+		edje_object_signal_callback_add(elm_layout_edje_get(page_indicator->unit[i]), "clicked", "move_to_another", __page_indicator_unit_clicked_cb, page_indicator);
 
 		Evas_Object *rect = evas_object_rectangle_add(homescreen_efl_get_win());
 		evas_object_color_set(rect, 255, 255, 255, 0);
@@ -72,8 +74,6 @@ page_indicator_t * page_indictor_create(Evas_Object *scroller)
 		evas_object_resize(rect, PAGE_INDICATOR_UNIT, PAGE_INDICATOR_UNIT);
 		evas_object_show(rect);
 		elm_object_part_content_set(page_indicator->unit[i], SIZE_SETTER, rect);
-
-		elm_object_signal_callback_add(page_indicator->unit[i], SIGNAL_PAGE_INDICATOR_CLICKED, SIGNAL_SOURCE, __page_indicator_unit_clicked, page_indicator);
 	}
 
 	return page_indicator;
@@ -87,19 +87,44 @@ void page_indicator_set_page_count(page_indicator_t *page_indicator, int count)
 	}
 
 	int i;
-	int width = count * PAGE_INDICATOR_UNIT + (PAGE_INDICATOR_GAP * (count-1));
+	int width = 0;
+	char edj_path[PATH_MAX] = {0, };
+
+	snprintf(edj_path, sizeof(edj_path), "%s", util_get_res_file_path(EDJE_DIR"/page_indicator_unit.edj"));
+
+	if (count < PAGE_INDICATOR_MAX_PAGE_COUNT) {
+		width = count * PAGE_INDICATOR_UNIT + (PAGE_INDICATOR_GAP * (count-1));
+	}
+	else {
+		width = PAGE_INDICATOR_MAX_PAGE_COUNT * PAGE_INDICATOR_UNIT + (PAGE_INDICATOR_GAP * (PAGE_INDICATOR_MAX_PAGE_COUNT - 1));
+	}
 	if (page_indicator->page_count == count) {
 		return ;
 	}
 	elm_box_unpack_all(page_indicator->box);
-	for (i = 0 ; i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
-		if (i < count) {
+	LOGD("page count: %d", count);
+
+	if (count > PAGE_INDICATOR_MAX_PAGE_COUNT) {
+		for (i = 0 ; i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
+			if (i == PAGE_INDICATOR_CENTER_PAGE_INDEX) {
+				elm_layout_file_set(page_indicator->unit[i], edj_path, GROUP_PAGE_INDICATOR_UNIT_CENTER);
+			}
 			elm_box_pack_end(page_indicator->box, page_indicator->unit[i]);
 			evas_object_show(page_indicator->unit[i]);
-		} else {
-			evas_object_move(page_indicator->unit[i], 0, -100);
 		}
-
+	} else {
+		for (i = 0 ; i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
+			if (i < count) {
+				if (i == PAGE_INDICATOR_CENTER_PAGE_INDEX) {
+					elm_layout_file_set(page_indicator->unit[i], edj_path, GROUP_PAGE_INDICATOR_UNIT);
+					elm_object_style_set(page_indicator->unit[i], "page_indicator_unit");
+				}
+				elm_box_pack_end(page_indicator->box, page_indicator->unit[i]);
+				evas_object_show(page_indicator->unit[i]);
+			} else {
+				evas_object_move(page_indicator->unit[i], 0, -100);
+			}
+		}
 	}
 
 	page_indicator->x = (WINDOW_W - width) / 2;
@@ -124,48 +149,84 @@ void page_indicator_set_current_page(page_indicator_t *page_indicator, int page_
 		return ;
 	}
 
-	LOGD("Set Current :%d, old : %d", page_number, page_indicator->current_page);
-
 	page_indicator->current_page = page_number;
 
 	__page_indicator_set_current_page(page_indicator);
+}
+
+static int __page_indicator_get_indicator_unit(int page_count, int page)
+{
+	int indicator = 0;
+	LOGD("Page count : %d, page index: %d", page_count, page);
+
+	if (page_count > PAGE_INDICATOR_MAX_PAGE_COUNT) {
+		int center_left = PAGE_INDICATOR_CENTER_PAGE_INDEX;
+		int center_right = page_count - 1 - PAGE_INDICATOR_CENTER_PAGE_INDEX;
+
+		if (page < center_left) {
+			indicator = page;
+		}
+		else if (page >= center_left && page <= center_right) {
+			indicator = PAGE_INDICATOR_CENTER_PAGE_INDEX;
+		}
+		else {
+			indicator = page - center_right + PAGE_INDICATOR_CENTER_PAGE_INDEX;
+		}
+	}
+	else {
+		indicator = page;
+	}
+
+	return indicator;
 }
 
 static void __page_indicator_scroll_cb(void *data, Evas_Object *obj, void *event_info)
 {
 	int i = 0;
 	int x = 0;
-	int from_x = 0, to_x = 0;
-	int from_page = 0;
-	int to_page = 0;
-	double from_page_angle = 0.0;
-	double to_page_angle = 0.0;
+	int max_unit_count = 0;
+	double cur_unit_angle = 0.0;
+	double next_unit_angle = 0.0;
+	int cur_indicator_unit = -1;
+	int next_indicator_unit = -1;
+	int cur_page = 0, next_page = 0;
+	int cur_x = 0, next_x = 0;
 
 	page_indicator_t *page_indicator = (page_indicator_t*) data;
+	if (!page_indicator) {
+		LOGE("Invalid page_indicator");
+		return;
+	}
 
 	elm_scroller_region_get(obj, &x, NULL, NULL, NULL);
-	from_page = x / page_indicator->w;
-	to_page = (from_page + 1) % page_indicator->page_count;
 
-	from_x = x;
-	to_x = (from_x + page_indicator->w) % (page_indicator->w * page_indicator->page_count);
+	cur_page = x / page_indicator->w;
+	next_page = (cur_page + 1) % page_indicator->page_count;
 
-	to_page_angle = (double)(to_x - (to_page * page_indicator->w)) * 90.0 / page_indicator->w;
-	from_page_angle = (to_page_angle + 90) - 180;
+	cur_indicator_unit = __page_indicator_get_indicator_unit(page_indicator->page_count, cur_page);
+	next_indicator_unit = __page_indicator_get_indicator_unit(page_indicator->page_count, next_page);
 
-	for (i=0; i < page_indicator->page_count; i++) {
+	cur_x = x;
+	next_x = (cur_x + page_indicator->w) % (page_indicator->w * page_indicator->page_count);
+
+	next_unit_angle = (double)(next_x - next_page * page_indicator->w) / page_indicator->w * 90.0;
+	cur_unit_angle = (next_unit_angle + 90) - 180;
+
+	max_unit_count = page_indicator->page_count < PAGE_INDICATOR_MAX_PAGE_COUNT ? page_indicator->page_count : PAGE_INDICATOR_MAX_PAGE_COUNT;
+	for (i = 0; i < max_unit_count; i++)
+	{
 		double angle = 0.0;
 		double color = 0.0;
-		if (i == from_page) {
-			angle = from_page_angle;
-		} else if (i == to_page) {
-			angle = to_page_angle;
+
+		if (i == cur_indicator_unit) {
+			angle = cur_unit_angle;
+		} else if (i == next_indicator_unit) {
+			angle = next_unit_angle;
 		} else {
 			angle = 0.0;
 		}
 
 		color = fabs(angle) * 2 + 75.0;
-
 		__page_indicator_unit_rotate(page_indicator->unit[i], angle, color);
 	}
 }
@@ -188,22 +249,69 @@ static void __page_indicator_scroll_anim_stop_cb(void *data, Evas_Object *obj, v
 static void __page_indicator_set_current_page(page_indicator_t *page_indicator)
 {
 	int i;
-	for (i = 0; i < page_indicator->page_count && i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
+	int cur_indicator_unit = 0;
+	char cur_page_num[1024];
+
+	cur_indicator_unit = __page_indicator_get_indicator_unit(page_indicator->page_count, page_indicator->current_page);
+
+	for (i = 0; i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++)
+	{
 		Evas_Object *edje = NULL;
 		edje = elm_layout_edje_get(page_indicator->unit[i]);
-		if (i == page_indicator->current_page) {
-			edje_object_signal_emit(edje, SIGNAL_PAGE_IDICATOR_CURRENT, SIGNAL_SOURCE);
+		snprintf(cur_page_num, sizeof(cur_page_num), "%d", page_indicator->current_page + 1);
+		LOGD("Current page is %s, set the number to the page indicator", cur_page_num);
+
+		if (i == cur_indicator_unit) {
+			edje_object_signal_emit(edje, SIGNAL_PAGE_INDICATOR_CURRENT, SIGNAL_SOURCE);
 		}
-		//else if { } // i == center_circle
 		else {
-			edje_object_signal_emit(edje, SIGNAL_PAGE_IDICATOR_DEFAULT, SIGNAL_SOURCE);
+			edje_object_signal_emit(edje, SIGNAL_PAGE_INDICATOR_DEFAULT, SIGNAL_SOURCE);
 		}
+
+		if (edje_object_part_text_set(elm_layout_edje_get(page_indicator->unit[PAGE_INDICATOR_CENTER_PAGE_INDEX]), "page_num", cur_page_num) == EINA_FALSE) {
+			LOGE("Failed to set text on the page indicator");
+		}
+	}
+}
+
+static void __page_indicator_unit_clicked_cb(void *data, Evas_Object *obj, const char *emission, const char *source)
+{
+	unsigned int clicked_indicator_unit = 0;
+	int cur_indicator_index = -1;
+	Eina_List *list = NULL;
+	Eina_List *cur_list = NULL;
+	Eina_List *next_list = NULL;
+	Evas_Object *page_indicator_unit = NULL;
+	page_indicator_t *page_indicator = data;
+
+	list = elm_box_children_get(page_indicator->box);
+	if (list == NULL) {
+		LOGE("Failed to get the list from the box");
+		return;
+	}
+
+	EINA_LIST_FOREACH_SAFE(list, cur_list, next_list, page_indicator_unit) {
+		if (obj == elm_layout_edje_get(page_indicator_unit)) break;
+		clicked_indicator_unit++;
+	}
+
+	if (page_indicator->page_count > PAGE_INDICATOR_MAX_PAGE_COUNT) {
+		if (clicked_indicator_unit < PAGE_INDICATOR_CENTER_PAGE_INDEX) {
+			elm_scroller_page_bring_in(page_indicator->scroller, clicked_indicator_unit, 0);
+		} else if (clicked_indicator_unit == PAGE_INDICATOR_CENTER_PAGE_INDEX) {
+			elm_scroller_page_bring_in(page_indicator->scroller, page_indicator->page_count / 2, 0);
+		} else {
+			elm_scroller_page_bring_in(page_indicator->scroller, (page_indicator->page_count - PAGE_INDICATOR_MAX_PAGE_COUNT + clicked_indicator_unit), 0);
+		}
+	} else {
+		elm_scroller_page_bring_in(page_indicator->scroller, clicked_indicator_unit, 0);
 	}
 }
 
 static void __page_indicator_unit_rotate(Evas_Object *unit, double angle, double alpha)
 {
 	Evas_Object *edje = NULL;
+	LOGD("Rotate animation start");
 
 	if (!unit) {
 		LOGE("Invalid argument : unit is NULL");
@@ -222,7 +330,7 @@ static void __page_indicator_unit_rotate(Evas_Object *unit, double angle, double
 	msg->val[1] = alpha;
 
 	edje_object_message_send(edje, EDJE_MESSAGE_FLOAT_SET, 1, msg);
-	edje_object_signal_emit(edje, SIGNAL_PAGE_IDICATOR_ROTATION_CHANGE, SIGNAL_SOURCE);
+	edje_object_signal_emit(edje, SIGNAL_PAGE_INDICATOR_ROTATION_CHANGE, SIGNAL_SOURCE);
 
 	free(msg);
 }
@@ -235,18 +343,5 @@ void page_indicator_show(page_indicator_t *page_indicator)
 void page_indicator_hide(page_indicator_t *page_indicator)
 {
 	evas_object_hide(page_indicator->box);
-}
-
-static void __page_indicator_unit_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
-{
-	page_indicator_t *page_indicator = (page_indicator_t*) data;
-	Evas_Object *unit = obj;
-	int i;
-	for (i = 0; i < page_indicator->page_count && i < PAGE_INDICATOR_MAX_PAGE_COUNT; i++) {
-		if (unit == page_indicator->unit[i]) {
-			elm_scroller_page_bring_in(page_indicator->scroller, i, 0);
-			break;
-		}
-	}
 }
 
