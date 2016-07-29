@@ -39,6 +39,9 @@
 
 #define GROUP_HOME_BTN_LY "home_btn_ly"
 
+//Accessibility
+#define ACCESS_RECT "access_rect"
+
 // cluster
 #define SIZE_SETTER "size_setter"
 #define CENTER_UNIT_TEXT "center_unit_text"

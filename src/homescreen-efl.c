@@ -42,6 +42,13 @@ static struct {
 	int root_height;
 	homescreen_view_t view_type;
 	Ecore_Animator *animator;
+
+	//Accessibility
+	Evas_Object *access_obj_home;
+	Evas_Object *access_obj_menu;
+	Evas_Object *target_obj_home;
+	Evas_Object *target_obj_menu;
+
 } main_info = {
 	.win = NULL,
 	.bg = NULL,
@@ -54,6 +61,10 @@ static struct {
 	.root_height = 0,
 	.view_type = HOMESCREEN_VIEW_HOME,
 	.animator = NULL,
+	.access_obj_home = NULL,
+	.access_obj_menu = NULL,
+	.target_obj_home = NULL,
+	.target_obj_menu = NULL,
 };
 
 static void __homescreen_efl_get_window_size(Evas_Object *win);
@@ -64,6 +75,10 @@ static void __homescreen_efl_create_home_btn(void);
 static void __homescreen_efl_home_bg_changed_cb(system_settings_key_e key, void *data);
 static void __homescreen_efl_menu_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
 static void __homescreen_efl_home_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source);
+
+//Accessibility
+static Eina_Bool _access_homescreen_efl_menu_btn_clicked(void *data, Evas_Object *obj, Elm_Access_Action_Info *action_info);
+static Eina_Bool _access_homescreen_efl_home_btn_clicked(void *data, Evas_Object *obj, Elm_Access_Action_Info *action_info);
 
 static void __homescreen_efl_change_view(void);
 static Eina_Bool __homescreen_efl_show_apps_anim(void *data, double pos);
@@ -121,6 +136,9 @@ static bool __homescreen_efl_app_create_cb(void *data)
 	__homescreen_efl_create_home_btn();
 
 	ecore_timer_add(HOME_LOADING_TIME, __homescreen_efl_init_view, NULL);
+
+	//Accessibility
+	elm_atspi_accessible_description_set(main_info.win, _("IDS_ST_HEADER_HOME_SCREEN"));
 
 	return true;
 }
@@ -229,6 +247,10 @@ static void __homescreen_efl_app_resume_cb(void *data)
 
 static void __homescreen_efl_app_terminate_cb(void *data)
 {
+	//Accessibility
+	elm_access_object_unregister(main_info.target_obj_home);
+	elm_access_object_unregister(main_info.target_obj_menu);
+
 	apps_view_app_terminate();
 	cluster_view_app_terminate();
 	hw_key_unregister();
@@ -350,6 +372,18 @@ static void __homescreen_efl_create_home_btn(void)
 
 	elm_object_signal_callback_add(main_info.btn_layout, SIGNAL_MENU_BTN_CLICKED, SIGNAL_SOURCE, __homescreen_efl_menu_btn_clicked, NULL);
 	elm_object_signal_callback_add(main_info.btn_layout, SIGNAL_HOME_BTN_CLICKED, SIGNAL_SOURCE, __homescreen_efl_home_btn_clicked, NULL);
+
+	//Accessibility
+	main_info.target_obj_home = (Evas_Object*) edje_object_part_object_get(elm_layout_edje_get(main_info.btn_layout), HOME_BUTTON);
+	main_info.access_obj_home = elm_access_object_register(main_info.target_obj_home, main_info.btn_layout);
+	elm_access_info_set(main_info.access_obj_home, ELM_ACCESS_INFO, "HOME");
+	elm_access_action_cb_set(main_info.access_obj_home, ELM_ACCESS_ACTION_ACTIVATE, _access_homescreen_efl_home_btn_clicked, NULL);
+
+	main_info.target_obj_menu = (Evas_Object*) edje_object_part_object_get(elm_layout_edje_get(main_info.btn_layout), MENU_BUTTON);
+	main_info.access_obj_menu = elm_access_object_register(main_info.target_obj_menu, main_info.btn_layout);
+	elm_access_info_set(main_info.access_obj_menu, ELM_ACCESS_INFO, "MENU");
+	elm_access_action_cb_set(main_info.access_obj_menu, ELM_ACCESS_ACTION_ACTIVATE, _access_homescreen_efl_menu_btn_clicked, NULL);
+
 }
 
 static void __homescreen_efl_menu_btn_clicked(void *data, Evas_Object *obj, const char *emission, const char *source)
@@ -363,6 +397,23 @@ static void __homescreen_efl_home_btn_clicked(void *data, Evas_Object *obj, cons
 	feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
 	__homescreen_efl_change_view();
 }
+
+//Accessibility
+static Eina_Bool _access_homescreen_efl_menu_btn_clicked(void *data, Evas_Object *obj, Elm_Access_Action_Info *action_info)
+{
+	feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
+	homescreen_efl_hw_menu_key_release();
+	return EINA_TRUE;
+}
+
+//Accessibility
+static Eina_Bool _access_homescreen_efl_home_btn_clicked(void *data, Evas_Object *obj, Elm_Access_Action_Info *action_info)
+{
+	feedback_play_type(FEEDBACK_TYPE_SOUND, FEEDBACK_PATTERN_TAP);
+	__homescreen_efl_change_view();
+	return EINA_TRUE;
+}
+
 
 static void __homescreen_efl_change_view(void)
 {

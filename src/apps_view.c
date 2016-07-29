@@ -186,14 +186,44 @@ void apps_view_app_terminate(void)
 	eina_hash_free(apps_menu_table);
 }
 
+//Accessibility
+static Eina_Bool _access_context_info_cb (void *data, Evas_Object *obj, Elm_Access_Action_Info *event_info)
+{
+	__apps_view_icon_clicked_cb((app_data_t *)data);
+	return EINA_TRUE;
+}
+
 void apps_view_show(void)
 {
 	page_indicator_show(apps_view_s.indicator);
+
+	//Accessibility
+	Eina_List *find_list = NULL;
+	Eina_List *data_list = apps_data_get_list();
+	app_data_t *item = NULL;
+	EINA_LIST_FOREACH(data_list, find_list, item) {
+		if (item->app_layout) {
+			item->target_obj = (Evas_Object*)edje_object_part_object_get(elm_layout_edje_get(item->app_layout), ACCESS_RECT);
+			item->access_obj = elm_access_object_register(item->target_obj, item->app_layout);
+			elm_access_info_set(item->access_obj, ELM_ACCESS_INFO, item->label_str);
+			elm_access_action_cb_set(item->access_obj, ELM_ACCESS_ACTION_ACTIVATE, _access_context_info_cb, item);
+		}
+	}
 }
 
 void apps_view_hide(void)
 {
 	page_indicator_hide(apps_view_s.indicator);
+
+	//Accessibility
+	Eina_List *find_list = NULL;
+	Eina_List *data_list = apps_data_get_list();
+	app_data_t *item = NULL;
+	EINA_LIST_FOREACH(data_list, find_list, item) {
+		if (item->app_layout) {
+			elm_access_object_unregister(item->target_obj);
+		}
+	}
 }
 
 void apps_view_show_anim(double pos)
