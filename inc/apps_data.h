@@ -42,6 +42,11 @@ typedef struct {
 	unsigned int badge_count;
 	Eina_Bool is_checked;
 	bool temp;
+
+	//accessibility
+	Evas_Object *access_obj;
+	Evas_Object *target_obj;
+	Evas_Object *icon_image;
 } app_data_t;
 
 enum {

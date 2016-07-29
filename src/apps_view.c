@@ -186,14 +186,46 @@ void apps_view_app_terminate(void)
 	eina_hash_free(apps_menu_table);
 }
 
+//Accessibility
+static Eina_Bool _access_context_info_cb (void *data, Evas_Object *obj, Elm_Access_Action_Info *event_info)
+{
+	__apps_view_icon_clicked_cb((app_data_t *)data);
+	return EINA_TRUE;
+}
+
 void apps_view_show(void)
 {
 	page_indicator_show(apps_view_s.indicator);
+
+	//Accessibility
+	Eina_List *find_list = NULL;
+	Eina_List *data_list = apps_data_get_list();
+	app_data_t *item = NULL;
+	EINA_LIST_FOREACH(data_list, find_list, item) {
+		if (item->app_layout) {
+			item->target_obj = (Evas_Object*)edje_object_part_object_get(elm_layout_edje_get(item->app_layout), ACCESS_RECT);
+			item->access_obj = elm_access_object_register(item->target_obj, item->app_layout);
+			elm_access_info_set(item->access_obj, ELM_ACCESS_INFO, item->label_str);
+			elm_access_action_cb_set(item->access_obj, ELM_ACCESS_ACTION_ACTIVATE, _access_context_info_cb, item);
+			elm_atspi_accessible_relationship_append(item->icon_image, ELM_ATSPI_RELATION_CONTROLLED_BY, item->access_obj);
+		}
+	}
 }
 
 void apps_view_hide(void)
 {
 	page_indicator_hide(apps_view_s.indicator);
+
+	//Accessibility
+	Eina_List *find_list = NULL;
+	Eina_List *data_list = apps_data_get_list();
+	app_data_t *item = NULL;
+	EINA_LIST_FOREACH(data_list, find_list, item) {
+		if (item->app_layout) {
+			elm_atspi_accessible_relationship_remove(item->icon_image, ELM_ATSPI_RELATION_CONTROLLED_BY, item->access_obj);
+			elm_access_object_unregister(item->target_obj);
+		}
+	}
 }
 
 void apps_view_show_anim(double pos)
@@ -314,7 +346,6 @@ Evas_Object* apps_view_create_icon(app_data_t *item)
 {
 	Evas_Object *icon_layout;
 	Evas_Object *rect = NULL;
-	Evas_Object *icon_image = NULL;
 
 	icon_layout = elm_layout_add(apps_view_s.box);
 	elm_layout_file_set(icon_layout, util_get_res_file_path(EDJE_DIR"/app_icon.edj"), GROUP_APP_ICON_LY);
@@ -366,20 +397,20 @@ Evas_Object* apps_view_create_icon(app_data_t *item)
 	} else {
 		if (ecore_file_can_read(item->icon_path_str)) {
 			LOGD("Create Image: %s", item->icon_path_str);
-			icon_image = elm_image_add(icon_layout);
-			elm_image_file_set(icon_image, item->icon_path_str, NULL);
-			evas_object_size_hint_weight_set(icon_image, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-			evas_object_size_hint_align_set(icon_image, EVAS_HINT_FILL, EVAS_HINT_FILL);
-			elm_object_part_content_set(icon_layout, APPS_ICON_CONTENT, icon_image);
+			item->icon_image = elm_image_add(icon_layout);
+			elm_image_file_set(item->icon_image, item->icon_path_str, NULL);
+			evas_object_size_hint_weight_set(item->icon_image, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+			evas_object_size_hint_align_set(item->icon_image, EVAS_HINT_FILL, EVAS_HINT_FILL);
+			elm_object_part_content_set(icon_layout, APPS_ICON_CONTENT, item->icon_image);
 		} else {
 			LOGE("Can not read : %s", item->icon_path_str);
 
 			const char *default_icon = util_get_res_file_path(IMAGE_DIR"/default_app_icon.png");
-			icon_image = elm_image_add(icon_layout);
-			elm_image_file_set(icon_image, default_icon, NULL);
-			evas_object_size_hint_weight_set(icon_image, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-			evas_object_size_hint_align_set(icon_image, EVAS_HINT_FILL, EVAS_HINT_FILL);
-			elm_object_part_content_set(icon_layout, APPS_ICON_CONTENT, icon_image);
+			item->icon_image = elm_image_add(icon_layout);
+			elm_image_file_set(item->icon_image, default_icon, NULL);
+			evas_object_size_hint_weight_set(item->icon_image, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+			evas_object_size_hint_align_set(item->icon_image, EVAS_HINT_FILL, EVAS_HINT_FILL);
+			elm_object_part_content_set(icon_layout, APPS_ICON_CONTENT, item->icon_image);
 		}
 
 		__apps_view__set_icon_label_style(item, apps_view_s.view_state);
@@ -394,11 +425,11 @@ Evas_Object* apps_view_create_icon(app_data_t *item)
 		}
 
 		__apps_view_badge_update_icon(item);
-		evas_object_show(icon_image);
+		evas_object_show(item->icon_image);
 
-		evas_object_event_callback_add(icon_image, EVAS_CALLBACK_MOUSE_DOWN, __apps_view_icon_down_cb, item);
-		evas_object_event_callback_add(icon_image, EVAS_CALLBACK_MOUSE_MOVE, __apps_view_icon_move_cb, item);
-		evas_object_event_callback_add(icon_image, EVAS_CALLBACK_MOUSE_UP, __apps_view_icon_up_cb, item);
+		evas_object_event_callback_add(item->icon_image, EVAS_CALLBACK_MOUSE_DOWN, __apps_view_icon_down_cb, item);
+		evas_object_event_callback_add(item->icon_image, EVAS_CALLBACK_MOUSE_MOVE, __apps_view_icon_move_cb, item);
+		evas_object_event_callback_add(item->icon_image, EVAS_CALLBACK_MOUSE_UP, __apps_view_icon_up_cb, item);
 	}
 
 	elm_object_signal_callback_add(icon_layout, SIGNAL_UNINSTALL_BUTTON_CLICKED, SIGNAL_SOURCE, __apps_view_icon_uninstall_btn_clicked_cb, (void *)item);
